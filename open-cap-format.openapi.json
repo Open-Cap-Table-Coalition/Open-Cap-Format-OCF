@@ -1,0 +1,254 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "OCF Specification (Open Cap Table Format)",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/cap-table/{issuerId}": {
+      "get": {
+        "tags": ["Cap Table"],
+        "summary": "GET Cap Table",
+        "description": "Retrieve the cap table information for an issuer",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapTable"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CapTable": {
+        "description": "Top-level object describing a capitalization table",
+        "type": "object",
+        "properties": {
+          "issuer": {
+            "description": "Issuer for the cap table",
+            "nullable": false,
+            "$ref": "#/components/schemas/Issuer"
+          },
+          "stakeholders": {
+            "description": "List of stakeholders",
+            "type": "array",
+            "nullable": false,
+            "items": {
+              "$ref": "#/components/schemas/Stakeholder"
+            }
+          },
+          "stock_plans": {
+            "description": "List of issued stock plans",
+            "type": "array",
+            "nullable": false,
+            "items": {
+              "$ref": "#/components/schemas/StockPlan"
+            }
+          },
+          "valuations": {
+            "description": "List of valuations",
+            "type": "array",
+            "nullable": false,
+            "items": {
+              "$ref": "#/components/schemas/Valuation"
+            }
+          }
+        }
+      },
+
+      "Issuer": {
+        "description": "Object describing the issuer of the cap table",
+        "type": "object",
+        "properties": {
+          "issuer_id": {
+            "description": "Identifier for the issuer",
+            "type": "string",
+            "nullable": false
+          },
+          "legal_name": {
+            "description": "Legal name of the issuer",
+            "type": "string",
+            "nullable": false
+          },
+          "formation_date": {
+            "description": "Date of formation",
+            "nullable": true,
+            "$ref": "#/components/schemas/DateTime"
+          }
+        }
+      },
+
+      "Stakeholder": {
+        "description": "Object describing a share holder",
+        "type": "object",
+        "properties": {
+          "stakeholder_id": {
+            "description": "Identifier for the stakeholder",
+            "type": "string",
+            "nullable": false
+          },
+          "name": {
+            "description": "Name for the stakeholder",
+            "nullable": true,
+            "$ref": "#/components/schemas/Name"
+          },
+          "stakeholder_type": {
+            "description": "Distinguish individuals from institutions",
+            "nullable": true,
+            "$ref": "#/components/schemas/StakeholderType"
+          }
+        }
+      },
+
+      "StockPlan": {
+        "description": "Object describing a plan which stock options are issued from",
+        "type": "object",
+        "properties": {
+          "stock_plan_id": {
+            "description": "Identifier for the stock plan",
+            "type": "string",
+            "nullable": false
+          },
+          "plan_name": {
+            "description": "Name for the stock plan",
+            "type": "string",
+            "nullable": false
+          },
+          "board_approval_date": {
+            "description": "Date which board approved the plan",
+            "nullable": true,
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "shares_reserved": {
+            "description": "Date which board approved the plan",
+            "nullable": false,
+            "$ref": "#/components/schemas/Numeric"
+          }
+        }
+      },
+
+      "Valuation": {
+        "description": "Object describing a valuation",
+        "type": "object",
+        "properties": {
+          "valuation_id": {
+            "description": "Identifier for the valuation",
+            "type": "string",
+            "nullable": false
+          },
+          "provider": {
+            "description": "Entity which provided the valuation",
+            "type": "string",
+            "nullable": true
+          },
+          "price_per_share": {
+            "description": "Valued price per share",
+            "nullable": false,
+            "$ref": "#/components/schemas/Money"
+          },
+          "valuation_date": {
+            "description": "Date of the valuation",
+            "nullable": false,
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "valuation_type": {
+            "description": "Seam for supporting different types of valuations in future versions",
+            "nullable": false,
+            "$ref": "#/components/schemas/ValuationType"
+          }
+        }
+      },
+
+      "StakeholderType": {
+        "description": "Enumeration of stakeholder types",
+        "type": "string",
+        "enum": ["INDIVIDUAL", "INSTITUTION"]
+      },
+
+      "ValuationType": {
+        "description": "Enumeration of valuation types",
+        "type": "string",
+        "enum": ["409A"]
+      },
+
+      "DateTime": {
+        "description": "Type representing an instant in Universal Coordinated Time (UTC)",
+        "type": "object",
+        "properties": {
+          "epoch_millis": {
+            "description": "Number of milliseconds elapsed since Unix epoch",
+            "type": "integer",
+            "nullable": false,
+            "format": "int64"
+          }
+        }
+      },
+
+      "Money": {
+        "description": "Type representing a monetary value in a specified currency code",
+        "type": "object",
+        "properties": {
+          "amount": {
+            "description": "Numeric value",
+            "nullable": false,
+            "$ref": "#/components/schemas/Numeric"
+          },
+          "currency": {
+            "description": "ISO-4217 currency code",
+            "type": "string",
+            "nullable": false
+          }
+        }
+      },
+
+      "Name": {
+        "type": "object",
+        "description": "Type representing multiple name components",
+        "properties": {
+          "legal_name": {
+            "description": "Legal full name for the individual/institution",
+            "type": "string",
+            "nullable": false
+          },
+          "first_name": {
+            "description": "First/given name for the individual",
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "description": "Last/family name for the individual",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+
+      "Numeric": {
+        "description": "Type representation of a number (up to 10 decimal places supported by the spec)",
+        "type": "object",
+        "properties": {
+          "string_value": {
+            "description": "Fixed-point numeric value as string",
+            "type": "string",
+            "nullable": false
+          }
+        }
+      }
+    }
+  }
+}
