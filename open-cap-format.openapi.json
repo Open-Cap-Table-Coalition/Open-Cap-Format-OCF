@@ -39,6 +39,11 @@
         "description": "Top-level object describing a capitalization table",
         "type": "object",
         "properties": {
+          "id": {
+            "description": "Identifier for the cap table",
+            "type": "string",
+            "nullable": false
+          },
           "issuer": {
             "description": "Issuer for the cap table",
             "nullable": false,
@@ -67,6 +72,14 @@
             "items": {
               "$ref": "#/components/schemas/Valuation"
             }
+          },
+          "comments": {
+            "description": "List of comments for the cap table",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -75,7 +88,7 @@
         "description": "Object describing the issuer of the cap table",
         "type": "object",
         "properties": {
-          "issuer_id": {
+          "id": {
             "description": "Identifier for the issuer",
             "type": "string",
             "nullable": false
@@ -89,15 +102,23 @@
             "description": "Date of formation",
             "nullable": true,
             "$ref": "#/components/schemas/DateTime"
+          },
+          "comments": {
+            "description": "List of comments for the issuer",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
 
       "Stakeholder": {
-        "description": "Object describing a share holder",
+        "description": "Object describing a stakeholder",
         "type": "object",
         "properties": {
-          "stakeholder_id": {
+          "id": {
             "description": "Identifier for the stakeholder",
             "type": "string",
             "nullable": false
@@ -111,6 +132,14 @@
             "description": "Distinguish individuals from institutions",
             "nullable": true,
             "$ref": "#/components/schemas/StakeholderType"
+          },
+          "comments": {
+            "description": "List of comments for the stakeholder",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -119,7 +148,7 @@
         "description": "Object describing a plan which stock options are issued from",
         "type": "object",
         "properties": {
-          "stock_plan_id": {
+          "id": {
             "description": "Identifier for the stock plan",
             "type": "string",
             "nullable": false
@@ -138,6 +167,14 @@
             "description": "Date which board approved the plan",
             "nullable": false,
             "$ref": "#/components/schemas/Numeric"
+          },
+          "comments": {
+            "description": "List of comments for the stock plan",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -146,7 +183,7 @@
         "description": "Object describing a valuation",
         "type": "object",
         "properties": {
-          "valuation_id": {
+          "id": {
             "description": "Identifier for the valuation",
             "type": "string",
             "nullable": false
@@ -170,6 +207,14 @@
             "description": "Seam for supporting different types of valuations in future versions",
             "nullable": false,
             "$ref": "#/components/schemas/ValuationType"
+          },
+          "comments": {
+            "description": "List of comments for the valuation",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

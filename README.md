@@ -22,9 +22,9 @@ Data Schema and Specification for Open Cap Format (OCF)
 
 ### Schema Organization within the file
 - List schemas in alphabetical order within three categories
-  1. Objects describing the structure of OCF (e.g. CapTable, Issuer)
-  2. Enumeration definitions (e.g. StakeholderType, ValuationType)
-  3. Helper types used as common building blocks (e.g. DateTime, Name, Numeric)
+  1. Objects describing the structure of OCF (e.g. `CapTable`, `Issuer`) -- these contain the common object properties `id` and `comments`
+  2. Enumeration definitions (e.g. `StakeholderType`, `ValuationType`)
+  3. Helper types used as common building blocks (e.g. `DateTime`, `Name`, `Numeric`)
 
 ### Visualization
 - https://editor.swagger.io/ can be used to visualize the schemas
