@@ -4,7 +4,7 @@ Data Schema and Specification for Open Cap Format (OCF)
 ## Schema Development Info
 
 ### Editors
-- John Schrudato (Gunderson)
+- John Scrudato (Gunderson)
 - Ray Shan (LTSE)
 - Caroline Taymor (LTSE)
 - Dan Owen (Carta)
