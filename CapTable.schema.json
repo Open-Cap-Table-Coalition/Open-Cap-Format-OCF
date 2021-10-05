@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/CapTable.schema.json",
+  "title": "Cap Table",
+  "description": "Top-level object describing a capitalization table",
+  "type": "object",
+  "properties": {
+    "issuer": {
+      "description": "Issuer for the cap table",
+      "$ref": "file:objects/Issuer.schema.json"
+    },
+    "stakeholders": {
+      "description": "List of stakeholders for the cap table",
+      "type": "array",
+      "items": { "$ref": "file:objects/Stakeholder.schema.json" }
+    },
+    "stock_plans": {
+      "description": "List of issued stock plans for the cap table",
+      "type": "array",
+      "items": { "$ref": "file:objects/StockPlan.schema.json" }
+    },
+    "valuations": {
+      "description": "List of valuations for the cap table",
+      "type": "array",
+      "items": { "$ref": "file:objects/Valuation.schema.json" }
+    }
+  },
+  "required": ["issuer", "stakeholders", "stock_plans", "valuations"]
+}

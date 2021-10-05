@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/Stakeholder.schema.json",
+  "title": "Stakeholder",
+  "description": "Object describing a stakeholder",
+  "type": "object",
+  "properties": {
+    "id": { "description": "Identifier for the stakeholder", "type": "string" },
+    "name": {
+      "description": "Name for the stakeholder",
+      "$ref": "file:../types/Name.schema.json"
+    },
+    "stakeholder_type": {
+      "description": "Distinguish individuals from institutions",
+      "$ref": "file:../enums/StakeholderType.schema.json"
+    },
+    "comments": {
+      "description": "List of comments for the stakeholder",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["id", "name", "stakeholder_type"]
+}

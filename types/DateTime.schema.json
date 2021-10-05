@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/DateTime.schema.json",
+  "title": "Date-Time",
+  "description": "Type representing an instant in Universal Coordinated Time (UTC)",
+  "type": "object",
+  "properties": {
+    "epoch_millis": {
+      "description": "Number of milliseconds elapsed since Unix epoch",
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "required": ["epoch_millis"]
+}

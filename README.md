@@ -13,19 +13,14 @@ Data Schema and Specification for Open Cap Format (OCF)
 - Jacob Yavis (Shareworks by Morgan Stanley)
 
 ### Proposed Format
-- OAS 3 [(OpenAPI 3.0.3 at time of writing)](https://swagger.io/specification/)
+- [JSON Schema 2020-12](https://json-schema.org/specification-links.html#2020-12)
 
 ### Recommended Editor for the openapi.json file
-- Simply use [VSCode](https://code.visualstudio.com/) with the following extensions for a setup including simple schema validation, formatting and intellisense:
-  - OpenAPI (Swagger) Editor
-  - Prettier - Code formatter
+- Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter" 
 
-### Schema Organization within the file
-- List schemas in alphabetical order within three categories
-  1. Objects describing the structure of OCF (e.g. `CapTable`, `Issuer`) -- these contain the common object properties `id` and `comments`
-  2. Enumeration definitions (e.g. `StakeholderType`, `ValuationType`)
-  3. Helper types used as common building blocks (e.g. `DateTime`, `Name`, `Numeric`)
+### Schema Organization
+- Schemas divided into three folders
+  1. `objects` describing the structure of OCF (e.g. `CapTable`, `Issuer`) -- these contain the common object properties `id` and `comments`
+  2. `enums` definitions (e.g. `StakeholderType`, `ValuationType`)
+  3. `types` used as common building blocks (e.g. `DateTime`, `Name`, `Numeric`)
 
-### Visualization
-- https://editor.swagger.io/ can be used to visualize the schemas
-  - an API endpoint is included in the file to visualize the top level object as a GET response
