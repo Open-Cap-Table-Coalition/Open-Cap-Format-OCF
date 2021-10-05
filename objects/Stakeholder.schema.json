@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Stakeholder.schema.json",
   "title": "Stakeholder",
   "description": "Object describing a stakeholder",
