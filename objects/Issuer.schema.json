@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Objects.Issuer.schema.json",
+  "title": "Cap Table",
+  "description": "Object describing the issuer of the cap table",
+  "type": "object",
+  "properties": {
+    "id": { "description": "Identifier for the issuer", "type": "string" },
+    "legal_name": {
+      "description": "Legal name of the issuer",
+      "type": "string"
+    },
+    "formation_date": {
+      "description": "Date of formation",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "comments": {
+      "description": "List of comments for the issuer",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["id", "legal_name", "formation_date"]
+}

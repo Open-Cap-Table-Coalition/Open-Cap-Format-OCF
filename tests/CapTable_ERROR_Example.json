@@ -1,0 +1,27 @@
+{
+  "id": "7d597e5b-4dc7-43af-82f1-1633e23c2048",
+  "issuer": {
+    "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
+    "legal_name": "Vandelay Industries",
+    "formation_date": {
+      "epoch_millis": 615614400
+    },
+    "comments": []
+  },
+  "stakeholders": [
+    {
+      "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
+      "name": {
+        "legal_name": "Jerry Seinfeld",
+        "first_name": "Jerry",
+        "last_name": "Seinfeld"
+      },
+      "stakeholder_type": "ALIEN",
+      "comments": [
+        "Exported from ABC123 Capitalization management system on 2021-10-05 09:56:07.477957"
+      ]
+    }
+  ],
+  "stock_plans": [],
+  "valuations": []
+}

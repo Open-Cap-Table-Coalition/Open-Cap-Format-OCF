@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Objects.StockPlan.schema.json",
+  "title": "Stock Plan",
+  "description": "Object describing a plan which stock options are issued from",
+  "type": "object",
+  "properties": {
+    "id": { "description": "Identifier for the stock plan", "type": "string" },
+    "plan_name": { "description": "Name for the stock plan", "type": "string" },
+    "board_approval_date": {
+      "description": "Date which board approved the plan",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "shares_reserved": {
+      "description": "Date which board approved the plan",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "comments": {
+      "description": "List of comments for the stock plan",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["id", "plan_name", "shares_reserved"]
+}
