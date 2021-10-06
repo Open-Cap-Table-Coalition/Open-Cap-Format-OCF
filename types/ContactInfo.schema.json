@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.ContactInfo.schema.json",
+  "title": "ContactInfo",
+  "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund).",
+  "type": "object",
+  "properties": {
+    "contact_first_name": {
+      "description": "Contact's first name",
+      "type": "string"
+    },
+    "contact_last_name": {
+      "description": "Contact's last name",
+      "type": "string"
+    }
+  },
+  "required": [
+    "contact_first_name",
+    "contact_last_name"
+  ]
+}

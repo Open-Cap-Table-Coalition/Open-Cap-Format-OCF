@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.StockClass.schema.json",
+  "title": "Stock Class",
+  "description": "Object describing a type of stock class issued by the issuer",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifier for the stock class",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
+      "type": "string"
+    },
+    "class_type": {
+      "description": "The type of this StockClass (e.g. Preferred or Common)",
+      "$ref": "Enums.StockClass.schema.json"
+    },
+    "default_id_prefix": {
+      "description": "Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1)",
+      "type": "string"
+    },
+    "current_shares_authorized": {
+      "description": "The most current number of share authorized for this StockClass",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "board_approval_date": {
+      "description": "Date which board approved the class",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "votes_per_share": {
+      "description": "The number of votes each share of this StockClass gets",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "par_value": {
+      "description": "Per-share par value of this StockClass",
+      "$ref": "Types.Money.schema.json"
+    },
+    "price_per_share": {
+      "description": "Per-share price this StockClass was issued for",
+      "$ref": "Types.Money.schema.json"
+    },
+    "seniority": {
+      "description": "Seniority is ordered by increasing number so that Stock classes with a higher Seniority have higher repayment priority. The following properties hold for all stock classes for a given company: \na) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, \nb) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "conversion_rights": {
+      "description": "List of StockClassConversionRights possible for this StockClass",
+      "type": "array",
+      "items": {
+        "$ref": "Types.StockClassConversionRights.schema.json"
+      }
+    },
+    "liquidation_preference_multiple": {
+      "description": "The liquidation preference per share for this StockClass",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "participation_cap_multiple": {
+      "description": "The participation cap multiple per share for this StockClass",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "comments": {
+      "description": "List of comments for the stock class",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "class_type",
+    "default_id_prefix",
+    "current_shares_authorized",
+    "board_approval_date",
+    "votes_per_share",
+    "par_value",
+    "price_per_share",
+    "seniority",
+    "conversion_rights",
+    "liquidation_preference_multiple",
+    "participation_cap_multiple"
+  ]
+}
