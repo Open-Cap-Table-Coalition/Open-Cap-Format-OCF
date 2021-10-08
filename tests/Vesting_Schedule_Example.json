@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1234",
+    "name": "2 yr 1 yr cliff",
+    "description": "1/2 of shares vest after 1 year, and 1/24 of shares vest every month following",
+    "allocation_type": "CUMULATIVE_ROUNDING",
+    "fractional_tranches_allowed": false,
+    "schedule_driven_vesting_conditions": [
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 2,
+        "period_length": 1,
+        "period_type": "YEARS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 13,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 14,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 15,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 16,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 17,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 18,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 19,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 20,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 21,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 22,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 23,
+        "period_type": "MONTHS"
+      },
+      {
+        "amount_numerator": 1,
+        "amount_denominator": 24,
+        "period_length": 24,
+        "period_type": "MONTHS"
+      }
+    ],
+    "comments": ["Jake was here"]
+  }
+]
