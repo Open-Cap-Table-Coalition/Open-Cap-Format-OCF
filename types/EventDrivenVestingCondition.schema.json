@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.EventDrivenVestingCondition.schema.json",
+  "title": "Event-driven Vesting Condition",
+  "description": "Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)",
+  "type": "object",
+  "properties": {
+    "event_decription": {
+      "description": "Full detailed description of the vesting condition, whether it be milestone-based or some other specified event",
+      "type": "string"
+    },
+    "event_occurred": {
+      "description": "Date of the event, if it has occurred already",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "event_expiration": {
+      "description": "Date by which event must be met to qualify, given that the condition carries an expiry",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "share_amount": {
+      "description": "Number of shares which vest upon successfully meeting the condition",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "priority": {
+      "description": "Given sibling conditions, this field determines the order by which conditions shall be applied",
+      "type": "integer"
+    },
+    "dependent_conditions": {
+        "description": "Additional vesting conditions which become operative once this condition is met",
+        "type": "array",
+        "items": {
+          "$ref": "Types.EventDrivenVestingCondition.schema.json"
+        }
+      }
+  },
+  "required": ["event_decription", "share_amount"]
+}
