@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # Stock Class Schema
 
 ```txt

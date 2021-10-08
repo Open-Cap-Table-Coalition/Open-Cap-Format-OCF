@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # TerminationWindow Schema
 
 ```txt

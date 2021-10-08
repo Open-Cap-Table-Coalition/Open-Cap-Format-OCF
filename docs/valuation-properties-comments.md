@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # Untitled array in Valuation Schema
 
 ```txt

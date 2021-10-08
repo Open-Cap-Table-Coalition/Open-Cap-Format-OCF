@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # Untitled string in StockClassConversionRights Schema
 
 ```txt

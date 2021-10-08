@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Warrants.schema.json",
+  "title": "Warrant",
+  "description": "Object describing warrants issued by the issuer and held by a stakeholder",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifier for the warrant (must be unique within warrant objs)",
+      "type": "string"
+    },
+    "custom_id": {
+      "description": "A custom ID for this warrant (e.g. W-1.)",
+      "type": "string"
+    },
+    "stakeholder_id": {
+      "description": "Id of the stakeholder that holds legal title to this warrant.",
+      "type": "string"
+    },
+    "issue_date": {
+      "description": "The issue date of this warrant",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "canceled_at": {
+      "description": "The cancellation date of this warrant (if applicable)",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "security_law_exemptions": {
+      "description": "List of security law exemptions applicable to this warrant",
+      "type": "array",
+      "items": {
+        "$ref": "Types.SecurityExemption.schema.json"
+      }
+    },
+    "conversion_rights": {
+      "description": "What can this instrument convert into for a maturity or next equity financing conversion?"
+      "type": "array",
+      "items": {
+        "$ref": "Types.StockClassConversionRights.schema.json"
+      }
+    },
+    "shares": {
+      "description": "Shares the warrant is exercisable for",
+      "type": "Types.Numeric.schema.json"
+    },
+    "exercise_price": {
+      "description": "The exercise price of the warrant",
+      "type": "Types.Money.schema.json"
+    },
+    "purchase_price": {
+      "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)"
+      "type": "Types.Money.schema.json"
+    },
+    "vesting": {
+      "description": "Vesting conditions applicable to the warrant",
+      "$ref": "Types.Vesting.schema.json"
+    },
+    "expiration_date": {
+      "description": "Expiration date of the warrant, if applicable",
+      "type": "Types.DateTime.schema.json"
+    },
+    "comments": {
+      "description": "List of comments for this stock",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "issue_date",
+    "shares",
+    "stakeholder_id",
+    "conversion_rights",
+    "purchase_price",
+    "exercise_price"
+  ]
+}

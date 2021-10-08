@@ -22,6 +22,10 @@
       "$ref": "Enums.Rounding.schema.json"
     }
   },
+  "oneOf": [
+    {"required": ["converts_to_future_round"]},
+    {"required": ["converts_to_stock_class_id"]}
+  ],
   "required": [
     "ratio",
     "rounding_type"

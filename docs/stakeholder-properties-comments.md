@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # Untitled array in Stakeholder Schema
 
 ```txt

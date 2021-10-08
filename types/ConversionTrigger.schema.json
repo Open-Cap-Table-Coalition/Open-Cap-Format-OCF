@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.ConversionTrigger.schema.json",
+  "title": "ConversionTrigger",
+  "description": "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)",
+  "type": "object",
+  "properties": {
+    "ratio": {
+      "description": "What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)",
+      "$ref": "Types.Ratio.schema.json"
+    },
+    "rounding_type": {
+      "description": "How should fractional shares be rounded?",
+      "$ref": "Enums.Rounding.schema.json"
+    },
+    "nickname": {
+      "description": "Human-friendly nickname to describe the conversion right",
+      "type": "string"
+    },
+    "description": {
+      "description": "Legal language describiing the conversion right (ideally, this should be excerpted from the instrument where possible)",
+      "type": "string"
+    },
+    "capitalization_definition": {
+      "description": "How is capitalization defined in the convertible for purposes of calculating company capitalization to calculate the conversion ratio?"
+      "type": "string"
+    },
+    "converts_to_future_round": {
+      "description": "Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)",
+      "type": "boolean"
+    },
+    "converts_to_stock_class_id": {
+      "description": "What is the id of the StockClass this StockClass can convert into?",
+      "type": "string"
+    }
+  },
+  "oneOf": [
+    {"required": ["converts_to_future_round"]},
+    {"required": ["converts_to_stock_class_id"]}
+  ],
+  "required": [
+    "rounding_type",
+    "description"
+  ]
+}

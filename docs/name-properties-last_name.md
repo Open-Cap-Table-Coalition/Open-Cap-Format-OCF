@@ -1,3 +1,8 @@
+---
+template: reference
+hide-nav: 'false'
+---
+
 # Untitled undefined type in Name Schema
 
 ```txt

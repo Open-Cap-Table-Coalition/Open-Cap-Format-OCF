@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Convertible.schema.json",
+  "title": "Convertible",
+  "description": "Object describing convertible instrucment issued by the issuer and held by a stakeholder",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifier for the convertible (must be unique within convertible objs)",
+      "type": "string"
+    },
+    "convertible_type": {
+      "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
+      "$ref": "Enums.Convertible.schema.json"
+    },
+    "conversion_type": {
+      "description": "Does this conversion happen pre or post money?",
+      "$ref": "Enums.Conversion.schema.json"
+    },
+    "custom_id": {
+      "description": "A custom ID for this convertible (e.g. CN-1.)",
+      "type": "string"
+    },
+    "stakeholder_id": {
+      "description": "Id of the stakeholder that holds legal title to this convertible.",
+      "type": "string"
+    },
+    "issue_date": {
+      "description": "The issue date of this convertible",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "canceled_at": {
+      "description": "The cancellation date of this convertible (if applicable)",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "security_law_exemptions": {
+      "description": "List of security law exemptions applicable to this convertible",
+      "type": "array",
+      "items": {
+        "$ref": "Types.SecurityExemption.schema.json"
+      }
+    },
+    "original_principal_amount": {
+      "description": "Principal at date of issuance of this convertible",
+      "type": "Types.Money.schema.json"
+    },
+    "interest_rate": {
+      "description": "Interest rate of the convertible (if applicable)",
+      "type": "Types.Numeric.schema.json"
+    },
+    "day_count_convention": {
+      "description": "How many days are there is a given period for calculation purposes?",
+      "$ref": "Enums.DayCount.schema.json"
+    },
+    "interest_payout": {
+      "description": "How is interest paid out (if at applicable)",
+      "$ref": "Enums.InterestPayout.schema.json"
+    },
+    "maturity_date": {
+      "description": "What is the maturity date (if applicable)",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "default_conversion_rights": {
+      "description": "What can this instrument convert into for a maturity or next equity financing conversion?"
+      "$ref": "Types.StockClassConversionRights.schema.json"
+    },
+    "conversion_triggers": {
+      "description": "In event the convertible can convert due to manual triggers (e.g. Change of Control, Election of Holder), what are the terms and has conversion been triggered?"
+      "type": "array",
+      "items": {
+        "$ref": "Types.ConversionTrigger.schema.json"
+      }
+    },
+    "exit_multiple": {
+      "description": "For cash procedes calculation during a liquidity event.",
+      "$ref": "Types.Ratio.schema.json"
+    },
+    "interest_accrual_period": {
+      "description": "What is the period over which interest is calculated?",
+      "$ref": "Enums.AccrualPeriod.schema.json"
+    },
+    "compounding_type": {
+      "description": "What type of interest compounding?",
+      "$ref": "Enums.Compounding.schema.json"
+    },
+    "pro_rate": {
+      "description": "What pro-rata (if any) is holder entitled to buy at next round?",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "conversion_valuation_cap": {
+      "description": "What is the valuation cap (if applicable)?",
+      "$ref": "Types.Money.schema.json"
+    },
+    "conversion_discount": {
+      "description": "What is the discount available upon conversion (as decimal percent - e.g. .12 for 12%, - if applicable)",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "conversion_fixed_ownership": {
+      "description": "If the instrument purports to grant a percentage ownership of the Company, what is the percentage (as decimal percent - e.g. .12 for 12%, - if applicable)?",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "seniority": {
+      "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority"
+      "type": "integer"
+    },
+    "comments": {
+      "description": "List of comments for this stock",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "anyOf": [
+    {"required": ["conversion_triggers"]},
+    {"required": ["default_conversion_rights"]}
+  ],
+  "required": [
+    "id",
+    "conversion_type",
+    "convertible_type",
+    "custom_id",
+    "issue_date",
+    "original_principal_amount",
+    "day_count_convention",
+    "seniority",
+    "stakeholder_id"
+  ]
+}

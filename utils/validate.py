@@ -29,6 +29,25 @@ schema_search_paths = [
 ]
 
 
+def load_schemas():
+    """
+    :return: Dict of schema ids to jsonschemas
+    """
+
+    schemastore = {}
+
+    for schema_search_path in schema_search_paths:
+        fnames = os.listdir(schema_search_path)
+        for fname in fnames:
+            fpath = os.path.join(schema_search_path, fname)
+            if fpath[-5:] == ".json":
+                with open(fpath, "r") as schema_fd:
+                    schema = json.load(schema_fd)
+                    if "$id" in schema:
+                        schemastore[schema["$id"]] = schema
+
+    return schemastore
+
 def validate_snapshot(instance, parent_schema):
     """
 
@@ -40,17 +59,7 @@ def validate_snapshot(instance, parent_schema):
     """
     try:
 
-        schemastore = {}
-
-        for schema_search_path in schema_search_paths:
-            fnames = os.listdir(schema_search_path)
-            for fname in fnames:
-                fpath = os.path.join(schema_search_path, fname)
-                if fpath[-5:] == ".json":
-                    with open(fpath, "r") as schema_fd:
-                        schema = json.load(schema_fd)
-                        if "$id" in schema:
-                            schemastore[schema["$id"]] = schema
+        schemastore = load_schemas()
 
         resolver = RefResolver.from_schema(parent_schema, store=schemastore)
         Draft7Validator(parent_schema, resolver=resolver).validate(instance)

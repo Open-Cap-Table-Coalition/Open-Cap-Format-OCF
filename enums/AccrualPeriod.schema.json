@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Enums.AccrualPeriod.schema.json",
+  "title": "AccrualPeriod Type",
+  "description": "Enumeration of interest accrual period type",
+  "type": "string",
+  "enum": ["DAILY", "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL"]
+}

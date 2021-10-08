@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Enums.Conversion.schema.json",
+  "title": "Conversion Type",
+  "description": "Enumeration of convertible conversion type",
+  "type": "string",
+  "enum": ["PRE_MONEY", "POST_MONEY"]
+}
