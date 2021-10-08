@@ -19,6 +19,11 @@
       "type": "array",
       "items": { "$ref": "Objects.StockPlan.schema.json" }
     },
+    "vesting_schedules": {
+      "description": "List of vesting schedules used by the issuer",
+      "type": "array",
+      "items": { "$ref": "Objects.VestingSchedule.schema.json" }
+    },
     "valuations": {
       "description": "List of valuations for the cap table",
       "type": "array",
