@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Stock Plan Schema
+# Untitled string in Object - StockPlan Schema
 
 ```txt
 Objects.StockPlan.schema.json#/properties/plan_name

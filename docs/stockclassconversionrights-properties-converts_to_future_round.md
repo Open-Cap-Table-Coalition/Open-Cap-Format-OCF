@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled boolean in StockClassConversionRights Schema
+# Untitled boolean in Type - StockClassConversionRights Schema
 
 ```txt
 Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round

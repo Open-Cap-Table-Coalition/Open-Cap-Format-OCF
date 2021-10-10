@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in TaxID Schema
+# Untitled string in Type - TaxID Schema
 
 ```txt
 Types.TaxID.schema.json#/properties/country

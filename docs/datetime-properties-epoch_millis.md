@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled integer in Date-Time Schema
+# Untitled integer in Type - DateTime Schema
 
 ```txt
 Types.DateTime.schema.json#/properties/epoch_millis

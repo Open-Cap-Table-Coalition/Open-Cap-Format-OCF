@@ -1,8 +1,3 @@
----
-template: reference
-hide-nav: 'false'
----
-
 # Valuation Schema
 
 ```txt

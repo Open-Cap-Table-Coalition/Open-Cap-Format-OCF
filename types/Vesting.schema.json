@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.Vesting.schema.json",
-  "title": "Vesting",
+  "title": "Type - Vesting",
   "description": "Type representing all aspects related to vesting securities",
   "type": "object",
   "properties": {
@@ -14,14 +14,16 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "event_driven_vesting_conditions": {
-      "description": "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration. Note: complex vesting rules which mix time-and event-based conditions should be modeled using this field, because human intervention will ultimately be required by the importing system due to the nature/complexity of the rules.",
+      "title": "Vesting Type - EventDrivenVestingCondition Array",
+      "description": "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration.\n\n**Note**: complex vesting rules which mix time-and event-based conditions should be modeled using this field, because human intervention will ultimately be required by the importing system due to the nature/complexity of the rules.",
       "type": "array",
       "items": {
         "$ref": "Types.EventDrivenVestingCondition.schema.json"
       }
     },
     "custom_vesting_tranches": {
-      "description": "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule. Note: custom vesting tranches override the applied vesting schedule if both are present.",
+      "title": "Vesting Type - CustomVestingTranche Array",
+      "description": "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.\n\n**Note**: custom vesting tranches override the applied vesting schedule if both are present.",
       "type": "array",
       "items": {
         "$ref": "Types.CustomVestingTranche.schema.json"

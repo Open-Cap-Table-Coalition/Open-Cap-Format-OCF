@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Period Type Schema
+# Enum - Time Period Type Schema
 
 ```txt
 Enums.Period.schema.json
@@ -15,11 +10,11 @@ Enumeration of time period types
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Period.schema.json](../enums/Period.schema.json "open original schema") |
 
-## Period Type Type
+## Enum - Time Period Type Type
 
-`string` ([Period Type](period.md))
+`string` ([Enum - Time Period Type](period.md))
 
-## Period Type Constraints
+## Enum - Time Period Type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

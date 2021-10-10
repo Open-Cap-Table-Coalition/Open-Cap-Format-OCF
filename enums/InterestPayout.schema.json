@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.InterestPayout.schema.json",
-  "title": "InterestPayout Type",
+  "title": "Enum - InterestPayout Type",
   "description": "Enumeration of type of interest payout (e.g. deferred or cash payment)",
   "type": "string",
   "enum": ["DEFERRED", "CASH"]

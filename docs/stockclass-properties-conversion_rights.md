@@ -1,8 +1,3 @@
----
-template: reference
-hide-nav: 'false'
----
-
 # Untitled array in Stock Class Schema
 
 ```txt
@@ -17,4 +12,4 @@ List of StockClassConversionRights possible for this StockClass
 
 ## conversion_rights Type
 
-`object[]` ([StockClassConversionRights](stockclass-properties-conversion_rights-stockclassconversionrights.md))
+`object[]` ([StockClassConversionRights](convertible-properties-stockclassconversionrights.md))

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.TerminationWindow.schema.json",
-  "title": "TerminationWindow",
+  "title": "Type - TerminationWindow",
   "description": "Type representation of a termination window as an object.",
   "type": "object",
   "properties": {

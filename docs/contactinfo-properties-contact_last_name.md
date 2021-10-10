@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in ContactInfo Schema
+# Untitled string in Type - ContactInfo Schema
 
 ```txt
 Types.ContactInfo.schema.json#/properties/contact_last_name

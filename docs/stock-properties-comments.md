@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled array in Stock Schema
+# Untitled array in Object - Stock Schema
 
 ```txt
 Objects.Stock.schema.json#/properties/comments

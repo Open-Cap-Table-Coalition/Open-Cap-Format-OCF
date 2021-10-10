@@ -1,6 +1,6 @@
 ---
 template: reference
-hide-nav: 'false'
+hide-nav: 'true'
 ---
 
 # Untitled string in Cap Table Schema

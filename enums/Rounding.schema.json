@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.Rounding.schema.json",
-  "title": "Rounding Type",
+  "title": "Enum - Rounding Type",
   "description": "Enumeration of rounding types",
   "type": "string",
   "enum": ["CEILING", "FLOOR", "NORMAL"]

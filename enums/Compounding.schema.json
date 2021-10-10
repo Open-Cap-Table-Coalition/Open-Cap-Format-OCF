@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.Compounding.schema.json",
-  "title": "Compounding Type",
+  "title": "Enum - Compounding Type",
   "description": "Enumeration of interest compounding type",
   "type": "string",
   "enum": ["COMPOUNDING", "SIMPLE"]

@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Cap Table Schema
+# Object - Issuer Schema
 
 ```txt
 Objects.Issuer.schema.json
@@ -15,18 +10,18 @@ Object describing the issuer of the cap table
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json](../objects/Issuer.schema.json "open original schema") |
 
-## Cap Table Type
+## Object - Issuer Type
 
-`object` ([Cap Table](issuer.md))
+`object` ([Object - Issuer](issuer.md))
 
-# Cap Table Properties
+# Object - Issuer Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                          |
-| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------- |
-| [id](#id)                         | `string` | Required | cannot be null | [Cap Table](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")                    |
-| [legal_name](#legal_name)         | `string` | Required | cannot be null | [Cap Table](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")    |
-| [formation_date](#formation_date) | `object` | Required | cannot be null | [Cap Table](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/formation_date") |
-| [comments](#comments)             | `array`  | Optional | cannot be null | [Cap Table](issuer-properties-comments.md "Objects.Issuer.schema.json#/properties/comments")        |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                      |
+| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                         | `string` | Required | cannot be null | [Object - Issuer](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")                          |
+| [legal_name](#legal_name)         | `string` | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")          |
+| [formation_date](#formation_date) | `object` | Required | cannot be null | [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date") |
+| [comments](#comments)             | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---comments.md "Objects.Issuer.schema.json#/properties/comments")     |
 
 ## id
 
@@ -40,7 +35,7 @@ Identifier for the issuer
 
 *   cannot be null
 
-*   defined in: [Cap Table](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
+*   defined in: [Object - Issuer](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
 
 ### id Type
 
@@ -58,7 +53,7 @@ Legal name of the issuer
 
 *   cannot be null
 
-*   defined in: [Cap Table](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
+*   defined in: [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -72,19 +67,19 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 *   is required
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/formation_date")
+*   defined in: [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")
 
 ### formation_date Type
 
-`object` ([Date-Time](issuer-properties-date-time.md))
+`object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 ## comments
 
-List of comments for the issuer
+Unstructured comments related to and stored for the issuer
 
 `comments`
 
@@ -94,7 +89,7 @@ List of comments for the issuer
 
 *   cannot be null
 
-*   defined in: [Cap Table](issuer-properties-comments.md "Objects.Issuer.schema.json#/properties/comments")
+*   defined in: [Object - Issuer](issuer-properties-issuer---comments.md "Objects.Issuer.schema.json#/properties/comments")
 
 ### comments Type
 

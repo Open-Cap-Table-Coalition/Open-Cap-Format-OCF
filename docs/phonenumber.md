@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Phone Number Type Schema
+# Enum - PhoneNumber Type Schema
 
 ```txt
 Enums.PhoneNumber.schema.json
@@ -15,11 +10,11 @@ Enumeration of phone number types
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [PhoneNumber.schema.json](../enums/PhoneNumber.schema.json "open original schema") |
 
-## Phone Number Type Type
+## Enum - PhoneNumber Type Type
 
-`string` ([Phone Number Type](phonenumber.md))
+`string` ([Enum - PhoneNumber Type](phonenumber.md))
 
-## Phone Number Type Constraints
+## Enum - PhoneNumber Type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

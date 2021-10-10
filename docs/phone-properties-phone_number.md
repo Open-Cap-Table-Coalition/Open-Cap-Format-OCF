@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in PhoneNumber Schema
+# Untitled string in Type - PhoneNumber Schema
 
 ```txt
 Types.PhoneNumber.schema.json#/properties/phone_number

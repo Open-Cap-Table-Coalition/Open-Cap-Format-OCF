@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Stock Schema
+# Object - Stock Schema
 
 ```txt
 Objects.Stock.schema.json
@@ -15,27 +10,28 @@ Object describing stock issued by the issuer and held by a stakeholder
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stock.schema.json](../objects/Stock.schema.json "open original schema") |
 
-## Stock Type
+## Object - Stock Type
 
-`object` ([Stock](stock.md))
+`object` ([Object - Stock](stock.md))
 
-# Stock Properties
+# Object - Stock Properties
 
-| Property                                                      | Type     | Required | Nullable       | Defined by                                                                                                                     |
-| :------------------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                                     | `string` | Required | cannot be null | [Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")                                                     |
-| [stock_class_id](#stock_class_id)                             | `string` | Required | cannot be null | [Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")                             |
-| [stakeholder_id](#stakeholder_id)                             | `string` | Required | cannot be null | [Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")                             |
-| [issue_date](#issue_date)                                     | `object` | Required | cannot be null | [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/issue_date")                                    |
-| [canceled_at](#canceled_at)                                   | `object` | Optional | cannot be null | [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/canceled_at")                                   |
-| [security_law_exemptions](#security_law_exemptions)           | `array`  | Optional | cannot be null | [Stock](stock-properties-security_law_exemptions.md "Objects.Stock.schema.json#/properties/security_law_exemptions")           |
-| [share_price](#share_price)                                   | `object` | Required | cannot be null | [Stock](valuation-properties-money.md "Types.Money.schema.json#/properties/share_price")                                       |
-| [shares](#shares)                                             | `object` | Required | cannot be null | [Stock](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/shares")                                           |
-| [vesting_schedule_template_id](#vesting_schedule_template_id) | Merged   | Optional | cannot be null | [Stock](stock-properties-vesting_schedule_template_id.md "Objects.Stock.schema.json#/properties/vesting_schedule_template_id") |
-| [vesting_start_date](#vesting_start_date)                     | `object` | Optional | cannot be null | [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/vesting_start_date")                            |
-| [cost_basis](#cost_basis)                                     | `object` | Required | cannot be null | [Stock](valuation-properties-money.md "Types.Money.schema.json#/properties/cost_basis")                                        |
-| [stock_legend_ids](#stock_legend_ids)                         | `array`  | Required | cannot be null | [Stock](stock-properties-stock_legend_ids.md "Objects.Stock.schema.json#/properties/stock_legend_ids")                         |
-| [comments](#comments)                                         | `array`  | Optional | cannot be null | [Stock](stock-properties-comments.md "Objects.Stock.schema.json#/properties/comments")                                         |
+| Property                                                | Type                        | Required | Nullable       | Defined by                                                                                                                                     |
+| :------------------------------------------------------ | :-------------------------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                               | `string`                    | Required | cannot be null | [Object - Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")                                                            |
+| [stock_class_id](#stock_class_id)                       | `string`                    | Required | cannot be null | [Object - Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")                                    |
+| [custom_id](#custom_id)                                 | `string`                    | Optional | cannot be null | [Object - Stock](stock-properties-custom_id.md "Objects.Stock.schema.json#/properties/custom_id")                                              |
+| [stakeholder_id](#stakeholder_id)                       | `string`                    | Required | cannot be null | [Object - Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")                                    |
+| [issue_date](#issue_date)                               | `object`                    | Required | cannot be null | [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")                                     |
+| [canceled_at](#canceled_at)                             | `object`                    | Optional | cannot be null | [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")                                    |
+| [security_law_exemptions](#security_law_exemptions)     | `array`                     | Optional | cannot be null | [Object - Stock](stock-properties-stock---security-law-exemption-ids-array.md "Objects.Stock.schema.json#/properties/security_law_exemptions") |
+| [share_price](#share_price)                             | `object`                    | Required | cannot be null | [Object - Stock](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/share_price")                                     |
+| [shares](#shares)                                       | `object`                    | Required | cannot be null | [Object - Stock](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")                                        |
+| [vesting](#vesting)                                     | `Types.Vesting.schema.json` | Optional | cannot be null | [Object - Stock](stock-properties-vesting.md "Objects.Stock.schema.json#/properties/vesting")                                                  |
+| [cost_basis](#cost_basis)                               | `object`                    | Required | cannot be null | [Object - Stock](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")                                      |
+| [stock_legend_ids](#stock_legend_ids)                   | `array`                     | Required | cannot be null | [Object - Stock](stock-properties-stock---stock-legend-id-array.md "Objects.Stock.schema.json#/properties/stock_legend_ids")                   |
+| [issued_from_parent_object](#issued_from_parent_object) | `object`                    | Required | cannot be null | [Object - Stock](stock-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")                 |
+| [comments](#comments)                                   | `array`                     | Optional | cannot be null | [Object - Stock](stock-properties-stock---comments.md "Objects.Stock.schema.json#/properties/comments")                                        |
 
 ## id
 
@@ -49,7 +45,7 @@ Identifier for the stock
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")
+*   defined in: [Object - Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")
 
 ### id Type
 
@@ -67,9 +63,27 @@ Id of StockClass of this stock issuance
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")
+*   defined in: [Object - Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")
 
 ### stock_class_id Type
+
+`string`
+
+## custom_id
+
+An override of the StockClass custom_id for this issuance (e.g. CS-1.)
+
+`custom_id`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Object - Stock](stock-properties-custom_id.md "Objects.Stock.schema.json#/properties/custom_id")
+
+### custom_id Type
 
 `string`
 
@@ -85,7 +99,7 @@ Id of stakeholder that owns this stock
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")
+*   defined in: [Object - Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -99,15 +113,15 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 *   is required
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 *   cannot be null
 
-*   defined in: [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/issue_date")
+*   defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
 
 ### issue_date Type
 
-`object` ([Date-Time](issuer-properties-date-time.md))
+`object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 ## canceled_at
 
@@ -117,15 +131,15 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 *   is optional
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 *   cannot be null
 
-*   defined in: [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/canceled_at")
+*   defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
 
 ### canceled_at Type
 
-`object` ([Date-Time](issuer-properties-date-time.md))
+`object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 ## security_law_exemptions
 
@@ -135,15 +149,15 @@ List of security law exemptions applicable to this stock and corresponding juris
 
 *   is optional
 
-*   Type: `object[]` ([SecurityExemption](stock-properties-security_law_exemptions-securityexemption.md))
+*   Type: `object[]` ([Type - SecurityExemption](convertible-1-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-security_law_exemptions.md "Objects.Stock.schema.json#/properties/security_law_exemptions")
+*   defined in: [Object - Stock](stock-properties-stock---security-law-exemption-ids-array.md "Objects.Stock.schema.json#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
-`object[]` ([SecurityExemption](stock-properties-security_law_exemptions-securityexemption.md))
+`object[]` ([Type - SecurityExemption](convertible-1-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
 ## share_price
 
@@ -153,15 +167,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Money](valuation-properties-money.md))
+*   Type: `object` ([Type - Money](valuation-1-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Stock](valuation-properties-money.md "Types.Money.schema.json#/properties/share_price")
+*   defined in: [Object - Stock](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
 
 ### share_price Type
 
-`object` ([Money](valuation-properties-money.md))
+`object` ([Type - Money](valuation-1-properties-type---money.md))
 
 ## shares
 
@@ -171,57 +185,33 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   is required
 
-*   Type: `object` ([Name](stockplan-properties-name.md))
+*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 *   cannot be null
 
-*   defined in: [Stock](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/shares")
+*   defined in: [Object - Stock](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")
 
 ### shares Type
 
-`object` ([Name](stockplan-properties-name.md))
+`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-## vesting_schedule_template_id
+## vesting
 
-Pointed to the vesting schedule template applicable to the stock
+Vesting conditions applicable to this stock
 
-`vesting_schedule_template_id`
-
-*   is optional
-
-*   Type: merged type ([Details](stock-properties-vesting_schedule_template_id.md))
-
-*   cannot be null
-
-*   defined in: [Stock](stock-properties-vesting_schedule_template_id.md "Objects.Stock.schema.json#/properties/vesting_schedule_template_id")
-
-### vesting_schedule_template_id Type
-
-merged type ([Details](stock-properties-vesting_schedule_template_id.md))
-
-one (and only one) of
-
-*   [Untitled null in Stock](stock-properties-vesting_schedule_template_id-oneof-0.md "check type definition")
-
-*   [VestingScheduleTemplate](stock-properties-vesting_schedule_template_id-oneof-vestingscheduletemplate.md "check type definition")
-
-## vesting_start_date
-
-Type representing an instant in Universal Coordinated Time (UTC)
-
-`vesting_start_date`
+`vesting`
 
 *   is optional
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+*   Type: `Types.Vesting.schema.json`
 
 *   cannot be null
 
-*   defined in: [Stock](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/vesting_start_date")
+*   defined in: [Object - Stock](stock-properties-vesting.md "Objects.Stock.schema.json#/properties/vesting")
 
-### vesting_start_date Type
+### vesting Type
 
-`object` ([Date-Time](issuer-properties-date-time.md))
+`Types.Vesting.schema.json`
 
 ## cost_basis
 
@@ -231,15 +221,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Money](valuation-properties-money.md))
+*   Type: `object` ([Type - Money](valuation-1-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Stock](valuation-properties-money.md "Types.Money.schema.json#/properties/cost_basis")
+*   defined in: [Object - Stock](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
 
 ### cost_basis Type
 
-`object` ([Money](valuation-properties-money.md))
+`object` ([Type - Money](valuation-1-properties-type---money.md))
 
 ## stock_legend_ids
 
@@ -253,11 +243,29 @@ List of stock legend ids that apply to this stock
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-stock_legend_ids.md "Objects.Stock.schema.json#/properties/stock_legend_ids")
+*   defined in: [Object - Stock](stock-properties-stock---stock-legend-id-array.md "Objects.Stock.schema.json#/properties/stock_legend_ids")
 
 ### stock_legend_ids Type
 
 `string[]`
+
+## issued_from_parent_object
+
+Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a Stock came from a previous Stock entry)
+
+`issued_from_parent_object`
+
+*   is required
+
+*   Type: `object` ([Type - StockParent](stock-properties-type---stockparent.md))
+
+*   cannot be null
+
+*   defined in: [Object - Stock](stock-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")
+
+### issued_from_parent_object Type
+
+`object` ([Type - StockParent](stock-properties-type---stockparent.md))
 
 ## comments
 
@@ -271,7 +279,7 @@ List of comments for this stock
 
 *   cannot be null
 
-*   defined in: [Stock](stock-properties-comments.md "Objects.Stock.schema.json#/properties/comments")
+*   defined in: [Object - Stock](stock-properties-stock---comments.md "Objects.Stock.schema.json#/properties/comments")
 
 ### comments Type
 

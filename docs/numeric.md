@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Name Schema
+# Type - Numeric Schema
 
 ```txt
 Types.Numeric.schema.json
@@ -15,15 +10,15 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Numeric.schema.json](../types/Numeric.schema.json "open original schema") |
 
-## Name Type
+## Type - Numeric Type
 
-`object` ([Name](numeric.md))
+`object` ([Type - Numeric](numeric.md))
 
-# Name Properties
+# Type - Numeric Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                      |
-| :---------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------- |
-| [string_value](#string_value) | `string` | Required | cannot be null | [Name](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------- |
+| [string_value](#string_value) | `string` | Required | cannot be null | [Type - Numeric](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value") |
 
 ## string_value
 
@@ -37,7 +32,7 @@ Fixed-point numeric value as string
 
 *   cannot be null
 
-*   defined in: [Name](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value")
+*   defined in: [Type - Numeric](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value")
 
 ### string_value Type
 

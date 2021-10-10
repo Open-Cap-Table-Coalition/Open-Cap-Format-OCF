@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.StockClass.schema.json",
-  "title": "StockClass Type",
+  "title": "Enum - StockClass Type",
   "description": "Enumeration of stockclass types",
   "type": "string",
   "enum": ["COMMON", "PREFERRED"]

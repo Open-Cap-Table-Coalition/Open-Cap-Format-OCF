@@ -1,88 +1,20 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Stakeholder Schema
+# Enum - Stakeholder Type Schema
 
 ```txt
-Objects.Stakeholder.schema.json
+Enums.Stakeholder.schema.json
 ```
 
-Object describing a stakeholder
+Enumeration of stakeholder types - individual (human) or institution (entity)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stakeholder.schema.json](../objects/Stakeholder.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Stakeholder.schema.json](../enums/Stakeholder.schema.json "open original schema") |
 
-## Stakeholder Type
+## Enum - Stakeholder Type Type
 
-`object` ([Stakeholder](stakeholder.md))
+`string` ([Enum - Stakeholder Type](stakeholder.md))
 
-# Stakeholder Properties
-
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                             |
-| :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                             | `string` | Required | cannot be null | [Stakeholder](stakeholder-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")                           |
-| [name](#name)                         | `object` | Required | cannot be null | [Stakeholder](stakeholder-properties-name.md "Types.Name.schema.json#/properties/name")                                |
-| [stakeholder_type](#stakeholder_type) | `string` | Required | cannot be null | [Stakeholder](stakeholder-properties-stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type") |
-| [comments](#comments)                 | `array`  | Optional | cannot be null | [Stakeholder](stakeholder-properties-comments.md "Objects.Stakeholder.schema.json#/properties/comments")               |
-
-## id
-
-Identifier for the stakeholder
-
-`id`
-
-*   is required
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Stakeholder](stakeholder-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")
-
-### id Type
-
-`string`
-
-## name
-
-Type comprising of multiple name components
-
-`name`
-
-*   is required
-
-*   Type: `object` ([Name](stakeholder-properties-name.md))
-
-*   cannot be null
-
-*   defined in: [Stakeholder](stakeholder-properties-name.md "Types.Name.schema.json#/properties/name")
-
-### name Type
-
-`object` ([Name](stakeholder-properties-name.md))
-
-## stakeholder_type
-
-Enumeration of stakeholder types
-
-`stakeholder_type`
-
-*   is required
-
-*   Type: `string` ([Stakeholder Type](stakeholder-properties-stakeholder-type.md))
-
-*   cannot be null
-
-*   defined in: [Stakeholder](stakeholder-properties-stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type")
-
-### stakeholder_type Type
-
-`string` ([Stakeholder Type](stakeholder-properties-stakeholder-type.md))
-
-### stakeholder_type Constraints
+## Enum - Stakeholder Type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -90,21 +22,3 @@ Enumeration of stakeholder types
 | :-------------- | :---------- |
 | `"INDIVIDUAL"`  |             |
 | `"INSTITUTION"` |             |
-
-## comments
-
-List of comments for the stakeholder
-
-`comments`
-
-*   is optional
-
-*   Type: `string[]`
-
-*   cannot be null
-
-*   defined in: [Stakeholder](stakeholder-properties-comments.md "Objects.Stakeholder.schema.json#/properties/comments")
-
-### comments Type
-
-`string[]`

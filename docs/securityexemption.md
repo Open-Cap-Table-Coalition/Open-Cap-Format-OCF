@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# SecurityExemption Schema
+# Type - SecurityExemption Schema
 
 ```txt
 Types.SecurityExemption.schema.json
@@ -15,16 +10,16 @@ Type representation of a securities issuance exemption that includes an unstruct
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [SecurityExemption.schema.json](../types/SecurityExemption.schema.json "open original schema") |
 
-## SecurityExemption Type
+## Type - SecurityExemption Type
 
-`object` ([SecurityExemption](securityexemption.md))
+`object` ([Type - SecurityExemption](securityexemption.md))
 
-# SecurityExemption Properties
+# Type - SecurityExemption Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                       |
-| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| [description](#description)   | `string` | Required | cannot be null | [SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")   |
-| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                              |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| [description](#description)   | `string` | Required | cannot be null | [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")   |
+| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction") |
 
 ## description
 
@@ -38,7 +33,7 @@ Description of an applicable security law exemption governing the issuance
 
 *   cannot be null
 
-*   defined in: [SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")
+*   defined in: [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")
 
 ### description Type
 
@@ -56,7 +51,7 @@ Country code of the jurisdiction of the applicable law (ISO-3166)
 
 *   cannot be null
 
-*   defined in: [SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction")
+*   defined in: [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction")
 
 ### jurisdiction Type
 

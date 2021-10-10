@@ -1,8 +1,3 @@
----
-template: reference
-hide-nav: 'false'
----
-
 # Date-Time Schema
 
 ```txt

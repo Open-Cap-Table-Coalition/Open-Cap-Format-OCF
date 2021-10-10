@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# TaxID Schema
+# Type - TaxID Schema
 
 ```txt
 Types.TaxID.schema.json
@@ -15,16 +10,16 @@ Type representation of a government identifier for tax purposes (e.g. EIN) and c
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [TaxID.schema.json](../types/TaxID.schema.json "open original schema") |
 
-## TaxID Type
+## Type - TaxID Type
 
-`object` ([TaxID](taxid.md))
+`object` ([Type - TaxID](taxid.md))
 
-# TaxID Properties
+# Type - TaxID Properties
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                         |
-| :------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------- |
-| [tax_id](#tax_id)   | `string` | Required | cannot be null | [TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")   |
-| [country](#country) | `string` | Required | cannot be null | [TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                |
+| :------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------- |
+| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")   |
+| [country](#country) | `string` | Required | cannot be null | [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country") |
 
 ## tax_id
 
@@ -38,7 +33,7 @@ Tax identifier as string
 
 *   cannot be null
 
-*   defined in: [TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")
+*   defined in: [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")
 
 ### tax_id Type
 
@@ -56,7 +51,7 @@ Identifier's issuing country code (ISO-3166)
 
 *   cannot be null
 
-*   defined in: [TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country")
+*   defined in: [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country")
 
 ### country Type
 

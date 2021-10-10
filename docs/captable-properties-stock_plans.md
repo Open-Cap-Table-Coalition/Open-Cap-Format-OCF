@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled undefined type in Cap Table Schema
+# Untitled array in Cap Table Schema
 
 ```txt
 CapTable.schema.json#/properties/stock_plans

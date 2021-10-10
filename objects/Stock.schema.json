@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Stock.schema.json",
-  "title": "Stock",
+  "title": "Object - Stock",
   "description": "Object describing stock issued by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
@@ -14,7 +14,7 @@
       "type": "string"
     },
     "custom_id": {
-      "description": "An override of the StockClass custom_id for this issuance (e.g. CS-1.)(MUST be unique.)",
+      "description": "An override of the StockClass custom_id for this issuance (e.g. CS-1.)",
       "type": "string"
     },
     "stakeholder_id": {
@@ -26,10 +26,11 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "canceled_at": {
-      "description": "Cancellation date of the stock",
+      "description": "Cancellation date of the stock, if applicable",
       "$ref": "Types.DateTime.schema.json"
     },
     "security_law_exemptions": {
+      "title": "Stock - Security Law Exemption Ids Array",
       "description": "List of security law exemptions applicable to this stock and corresponding jurisdictions",
       "type": "array",
       "items": {
@@ -48,15 +49,12 @@
       "description": "Vesting conditions applicable to this stock",
       "type": "Types.Vesting.schema.json"
     },
-    "vesting_start_date": {
-      "description": "The vesting start date",
-      "$ref": "Types.DateTime.schema.json"
-    },
     "cost_basis": {
       "description": "The cost basis for this particular stock",
       "$ref": "Types.Money.schema.json"
     },
     "stock_legend_ids": {
+      "title": "Stock - Stock Legend Id Array",
       "description": "List of stock legend ids that apply to this stock",
       "type": "array",
       "items": {
@@ -64,10 +62,11 @@
       }
     },
     "issued_from_parent_object": {
-      "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?"
+      "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
       "$ref": "Types.StockParent.schema.json"
     },
     "comments": {
+      "title": "Stock - Comments",
       "description": "List of comments for this stock",
       "type": "array",
       "items": {

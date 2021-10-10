@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.ConversionTrigger.schema.json",
-  "title": "ConversionTrigger",
+  "title": "Type - ConversionTrigger",
   "description": "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)",
   "type": "object",
   "properties": {
@@ -22,7 +22,7 @@
       "type": "string"
     },
     "capitalization_definition": {
-      "description": "How is capitalization defined in the convertible for purposes of calculating company capitalization to calculate the conversion ratio?"
+      "description": "How is capitalization defined in the convertible for purposes of calculating company capitalization to calculate the conversion ratio?",
       "type": "string"
     },
     "converts_to_future_round": {
@@ -35,8 +35,16 @@
     }
   },
   "oneOf": [
-    {"required": ["converts_to_future_round"]},
-    {"required": ["converts_to_stock_class_id"]}
+    {
+      "title": "Converts to a future round of stock (boolean)",
+      "description": "Some conversion triggers let holders convert into a future round/series of stock - e.g. at the next qualified financing or some similar formulation. If this is true, such a right applies to securities using this ConversionTrigger.",
+      "required": ["converts_to_future_round"]
+    },
+    {
+      "title": "Converts to known Id of StockClass (String Id)",
+      "description": "Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' Id here.",
+      "required": ["converts_to_stock_class_id"]
+    }
   ],
   "required": [
     "rounding_type",

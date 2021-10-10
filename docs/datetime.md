@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Date-Time Schema
+# Type - DateTime Schema
 
 ```txt
 Types.DateTime.schema.json
@@ -15,15 +10,15 @@ Type representing an instant in Universal Coordinated Time (UTC)
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [DateTime.schema.json](../types/DateTime.schema.json "open original schema") |
 
-## Date-Time Type
+## Type - DateTime Type
 
-`object` ([Date-Time](datetime.md))
+`object` ([Type - DateTime](datetime.md))
 
-# Date-Time Properties
+# Type - DateTime Properties
 
-| Property                      | Type      | Required | Nullable       | Defined by                                                                                             |
-| :---------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------- |
-| [epoch_millis](#epoch_millis) | `integer` | Required | cannot be null | [Date-Time](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis") |
+| Property                      | Type      | Required | Nullable       | Defined by                                                                                                   |
+| :---------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------- |
+| [epoch_millis](#epoch_millis) | `integer` | Required | cannot be null | [Type - DateTime](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis") |
 
 ## epoch_millis
 
@@ -37,7 +32,7 @@ Number of milliseconds elapsed since Unix epoch
 
 *   cannot be null
 
-*   defined in: [Date-Time](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
+*   defined in: [Type - DateTime](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
 
 ### epoch_millis Type
 

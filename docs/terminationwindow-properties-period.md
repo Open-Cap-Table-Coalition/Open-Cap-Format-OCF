@@ -1,8 +1,3 @@
----
-template: reference
-hide-nav: 'false'
----
-
 # Untitled integer in TerminationWindow Schema
 
 ```txt

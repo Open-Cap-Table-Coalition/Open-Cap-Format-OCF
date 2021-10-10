@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.Numeric.schema.json",
-  "title": "Name",
+  "title": "Type - Numeric",
   "description": "Type representation of a number (up to 10 decimal places supported by the spec)",
   "type": "object",
   "properties": {

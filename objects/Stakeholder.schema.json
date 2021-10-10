@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Stakeholder.schema.json",
-  "title": "Stakeholder",
+  "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
   "properties": {
@@ -15,7 +15,8 @@
       "$ref": "Enums.Stakeholder.schema.json"
     },
     "comments": {
-      "description": "List of comments for the stakeholder",
+      "title": "Stakeholder - Comments",
+      "description": "Unstructured text comments related to and stored for this Stakeholder",
       "type": "array",
       "items": { "type": "string" }
     }

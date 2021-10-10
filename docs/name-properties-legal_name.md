@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Name Schema
+# Untitled string in Type - Name Schema
 
 ```txt
 Types.Name.schema.json#/properties/legal_name

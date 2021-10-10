@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.StockPlan.schema.json",
-  "title": "Stock Plan",
+  "title": "Object - StockPlan",
   "description": "Object describing a plan which stock options are issued from",
   "type": "object",
   "properties": {
@@ -16,6 +16,7 @@
       "$ref": "Types.Numeric.schema.json"
     },
     "comments": {
+      "title": "StockPlan - Comments",
       "description": "List of comments for the stock plan",
       "type": "array",
       "items": { "type": "string" }

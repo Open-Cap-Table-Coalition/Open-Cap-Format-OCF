@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Issuer.schema.json",
-  "title": "Cap Table",
+  "title": "Object - Issuer",
   "description": "Object describing the issuer of the cap table",
   "type": "object",
   "properties": {
@@ -15,7 +15,8 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "comments": {
-      "description": "List of comments for the issuer",
+      "title": "Issuer - Comments",
+      "description": "Unstructured comments related to and stored for the issuer",
       "type": "array",
       "items": { "type": "string" }
     }

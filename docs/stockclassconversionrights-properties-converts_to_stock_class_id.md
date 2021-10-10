@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in StockClassConversionRights Schema
+# Untitled string in Type - StockClassConversionRights Schema
 
 ```txt
 Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id

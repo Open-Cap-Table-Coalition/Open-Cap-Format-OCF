@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.PhoneNumber.schema.json",
-  "title": "Phone Number Type",
+  "title": "Enum - PhoneNumber Type",
   "description": "Enumeration of phone number types",
   "type": "string",
   "enum": ["HOME", "MOBILE","BUSINESS", "OTHER"]

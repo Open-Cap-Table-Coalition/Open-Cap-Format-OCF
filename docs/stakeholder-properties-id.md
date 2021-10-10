@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Stakeholder Schema
+# Untitled string in Objects.Stakeholder.schema.json Schema
 
 ```txt
 Objects.Stakeholder.schema.json#/properties/id

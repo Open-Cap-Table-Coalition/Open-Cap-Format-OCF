@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Money Schema
+# Untitled string in Type - Money Schema
 
 ```txt
 Types.Money.schema.json#/properties/currency

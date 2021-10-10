@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Warrants.schema.json",
-  "title": "Warrant",
+  "title": "Object - Warrant",
   "description": "Object describing warrants issued by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
@@ -26,6 +26,7 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "security_law_exemptions": {
+      "title": "Warrant - SecurityExemption Array",
       "description": "List of security law exemptions applicable to this warrant",
       "type": "array",
       "items": {
@@ -33,7 +34,8 @@
       }
     },
     "conversion_rights": {
-      "description": "What can this instrument convert into for a maturity or next equity financing conversion?"
+      "title": "Warrant - StockClassConversionRights Array",
+      "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
       "type": "array",
       "items": {
         "$ref": "Types.StockClassConversionRights.schema.json"
@@ -48,7 +50,7 @@
       "type": "Types.Money.schema.json"
     },
     "purchase_price": {
-      "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)"
+      "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
       "type": "Types.Money.schema.json"
     },
     "vesting": {
@@ -60,6 +62,7 @@
       "type": "Types.DateTime.schema.json"
     },
     "comments": {
+      "title": "Warrant - Comments",
       "description": "List of comments for this stock",
       "type": "array",
       "items": {

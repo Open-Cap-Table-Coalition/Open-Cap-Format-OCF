@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.ContactInfo.schema.json",
-  "title": "ContactInfo",
+  "title": "Type - ContactInfo",
   "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund).",
   "type": "object",
   "properties": {

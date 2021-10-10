@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# PhoneNumber Schema
+# Type - PhoneNumber Schema
 
 ```txt
 Types.PhoneNumber.schema.json
@@ -15,16 +10,16 @@ Type representation of a phone number.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Phone.schema.json](../types/Phone.schema.json "open original schema") |
 
-## PhoneNumber Type
+## Type - PhoneNumber Type
 
-`object` ([PhoneNumber](phone.md))
+`object` ([Type - PhoneNumber](phone.md))
 
-# PhoneNumber Properties
+# Type - PhoneNumber Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                  |
-| :---------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------- |
-| [phone_type](#phone_type)     | `string` | Required | cannot be null | [PhoneNumber](phone-properties-phone-number-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type") |
-| [phone_number](#phone_number) | `string` | Required | cannot be null | [PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")    |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                               |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------- |
+| [phone_type](#phone_type)     | `string` | Required | cannot be null | [Type - PhoneNumber](phone-properties-enum---phonenumber-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type") |
+| [phone_number](#phone_number) | `string` | Required | cannot be null | [Type - PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")          |
 
 ## phone_type
 
@@ -34,15 +29,15 @@ Enumeration of phone number types
 
 *   is required
 
-*   Type: `string` ([Phone Number Type](phone-properties-phone-number-type.md))
+*   Type: `string` ([Enum - PhoneNumber Type](phone-properties-enum---phonenumber-type.md))
 
 *   cannot be null
 
-*   defined in: [PhoneNumber](phone-properties-phone-number-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type")
+*   defined in: [Type - PhoneNumber](phone-properties-enum---phonenumber-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type")
 
 ### phone_type Type
 
-`string` ([Phone Number Type](phone-properties-phone-number-type.md))
+`string` ([Enum - PhoneNumber Type](phone-properties-enum---phonenumber-type.md))
 
 ### phone_type Constraints
 
@@ -67,7 +62,7 @@ A valid phone number
 
 *   cannot be null
 
-*   defined in: [PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")
+*   defined in: [Type - PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")
 
 ### phone_number Type
 

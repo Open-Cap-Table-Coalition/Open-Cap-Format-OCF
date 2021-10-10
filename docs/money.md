@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Money Schema
+# Type - Money Schema
 
 ```txt
 Types.Money.schema.json
@@ -15,16 +10,16 @@ Type representing a monetary value in a specified currency code
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Money.schema.json](../types/Money.schema.json "open original schema") |
 
-## Money Type
+## Type - Money Type
 
-`object` ([Money](money.md))
+`object` ([Type - Money](money.md))
 
-# Money Properties
+# Type - Money Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                           |
-| :-------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------- |
-| [amount](#amount)     | `object` | Required | cannot be null | [Money](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/amount") |
-| [currency](#currency) | `string` | Optional | cannot be null | [Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                            |
+| :-------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------- |
+| [amount](#amount)     | `object` | Required | cannot be null | [Type - Money](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/amount") |
+| [currency](#currency) | `string` | Optional | cannot be null | [Type - Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency")           |
 
 ## amount
 
@@ -34,15 +29,15 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   is required
 
-*   Type: `object` ([Name](stockplan-properties-name.md))
+*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 *   cannot be null
 
-*   defined in: [Money](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/amount")
+*   defined in: [Type - Money](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/amount")
 
 ### amount Type
 
-`object` ([Name](stockplan-properties-name.md))
+`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 ## currency
 
@@ -56,7 +51,7 @@ ISO-4217 currency code
 
 *   cannot be null
 
-*   defined in: [Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency")
+*   defined in: [Type - Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency")
 
 ### currency Type
 

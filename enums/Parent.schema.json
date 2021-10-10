@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Enums.Parent.schema.json",
+  "title": "Enum - Parent Stock Type",
+  "description": "Enumeration of parent stock types",
+  "type": "string",
+  "enum": ["STOCK_PLAN", "STOCK", "WARRANT", "CONVERTIBLE"]
+}

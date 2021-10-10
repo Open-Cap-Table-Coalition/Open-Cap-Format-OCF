@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.StockParent.schema.json",
+  "title": "Type - StockParent",
+  "description": "Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a Stock came from a previous Stock entry)",
+  "type": "object",
+  "properties": {
+    "parent_object_type": {
+      "description": "Parent object type for this Stock issuance (e.g. a Stock Plan or Warrant)",
+      "$ref": "Enums.Parent.schema.json"
+    },
+    "parent_object_id": {
+      "description": "Parent object's ID, which must be a valid ID pointing to an object of type parent_object_type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "parent_object_type",
+    "parent_object_id"
+  ]
+}

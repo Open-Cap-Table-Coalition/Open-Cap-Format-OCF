@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Name Schema
+# Type - Name Schema
 
 ```txt
 Types.Name.schema.json
@@ -15,17 +10,17 @@ Type comprising of multiple name components
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Name.schema.json](../types/Name.schema.json "open original schema") |
 
-## Name Type
+## Type - Name Type
 
-`object` ([Name](name.md))
+`object` ([Type - Name](name.md))
 
-# Name Properties
+# Type - Name Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                            |
-| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------ |
-| [legal_name](#legal_name) | `string` | Required | cannot be null | [Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name") |
-| [first_name](#first_name) | `string` | Optional | can be null    | [Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name") |
-| [last_name](#last_name)   | `string` | Optional | can be null    | [Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")   |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                   |
+| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------- |
+| [legal_name](#legal_name) | `string` | Required | cannot be null | [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name") |
+| [first_name](#first_name) | `string` | Optional | can be null    | [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name") |
+| [last_name](#last_name)   | `string` | Optional | can be null    | [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")   |
 
 ## legal_name
 
@@ -39,7 +34,7 @@ Legal full name for the individual/institution
 
 *   cannot be null
 
-*   defined in: [Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name")
+*   defined in: [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -57,7 +52,7 @@ First/given name for the individual
 
 *   can be null
 
-*   defined in: [Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name")
+*   defined in: [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name")
 
 ### first_name Type
 
@@ -75,7 +70,7 @@ Last/family name for the individual
 
 *   can be null
 
-*   defined in: [Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")
+*   defined in: [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")
 
 ### last_name Type
 

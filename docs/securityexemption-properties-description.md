@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in SecurityExemption Schema
+# Untitled string in Type - SecurityExemption Schema
 
 ```txt
 Types.SecurityExemption.schema.json#/properties/description

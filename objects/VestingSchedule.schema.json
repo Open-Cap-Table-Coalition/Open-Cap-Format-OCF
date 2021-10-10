@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.VestingSchedule.schema.json",
-  "title": "Vesting Schedule",
+  "title": "Object - VestingSchedule",
   "description": "Object describing a strictly time-based vesting schedule",
   "type": "object",
   "properties": {
@@ -26,6 +26,7 @@
       "type": "boolean"
     },
     "schedule_driven_vesting_conditions": {
+      "title": "VestingSchedule - ScheduleDrivenVestingCondition Array",
       "description": "Schedule rows defining the vesting schedule tranches",
       "type": "array",
       "items": {
@@ -33,6 +34,7 @@
       }
     },
     "comments": {
+      "title": "VestingSchedule - Comments",
       "description": "List of comments for the vesting schedule",
       "type": "array",
       "items": {

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.EventDrivenVestingCondition.schema.json",
-  "title": "Event-driven Vesting Condition",
+  "title": "Type - Event-driven Vesting Condition",
   "description": "Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)",
   "type": "object",
   "properties": {
@@ -26,12 +26,13 @@
       "type": "integer"
     },
     "dependent_conditions": {
-        "description": "Additional vesting conditions which become operative once this condition is met",
-        "type": "array",
-        "items": {
-          "$ref": "Types.EventDrivenVestingCondition.schema.json"
-        }
+      "title": "EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array",
+      "description": "Additional vesting conditions which become operative once this condition is met",
+      "type": "array",
+      "items": {
+        "$ref": "Types.EventDrivenVestingCondition.schema.json"
       }
+    }
   },
   "required": ["event_decription", "share_amount"]
 }

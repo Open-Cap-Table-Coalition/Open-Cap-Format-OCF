@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.Money.schema.json",
-  "title": "Money",
+  "title": "Type - Money",
   "description": "Type representing a monetary value in a specified currency code",
   "type": "object",
   "properties": {

@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Ratio Schema
+# Type - Ratio Schema
 
 ```txt
 Types.Ratio.schema.json
@@ -15,16 +10,16 @@ Type representation of a ratio as antecedent and consequent numeric values.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Ratio.schema.json](../types/Ratio.schema.json "open original schema") |
 
-## Ratio Type
+## Type - Ratio Type
 
-`object` ([Ratio](ratio.md))
+`object` ([Type - Ratio](ratio.md))
 
-# Ratio Properties
+# Type - Ratio Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                               |
-| :------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------- |
-| [antecedent](#antecedent) | `object` | Required | cannot be null | [Ratio](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/antecedent") |
-| [consequent](#consequent) | `object` | Required | cannot be null | [Ratio](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/consequent") |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                |
+| :------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------- |
+| [antecedent](#antecedent) | `object` | Required | cannot be null | [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent") |
+| [consequent](#consequent) | `object` | Required | cannot be null | [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent") |
 
 ## antecedent
 
@@ -34,15 +29,15 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   is required
 
-*   Type: `object` ([Name](stockplan-properties-name.md))
+*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 *   cannot be null
 
-*   defined in: [Ratio](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/antecedent")
+*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent")
 
 ### antecedent Type
 
-`object` ([Name](stockplan-properties-name.md))
+`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 ## consequent
 
@@ -52,12 +47,12 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   is required
 
-*   Type: `object` ([Name](stockplan-properties-name.md))
+*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
 *   cannot be null
 
-*   defined in: [Ratio](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/consequent")
+*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent")
 
 ### consequent Type
 
-`object` ([Name](stockplan-properties-name.md))
+`object` ([Type - Numeric](stockplan-properties-type---numeric.md))

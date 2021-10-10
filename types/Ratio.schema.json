@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.Ratio.schema.json",
-  "title": "Ratio",
+  "title": "Type - Ratio",
   "description": "Type representation of a ratio as antecedent and consequent numeric values.",
   "type": "object",
   "properties": {

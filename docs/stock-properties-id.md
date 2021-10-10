@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Stock Schema
+# Untitled string in Object - Stock Schema
 
 ```txt
 Objects.Stock.schema.json#/properties/id

@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Cap Table Schema
+# Cap Table ("Snapshot") Schema
 
 ```txt
 CapTable.schema.json
@@ -15,18 +10,19 @@ Top-level object describing a capitalization table
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json](../CapTable.schema.json "open original schema") |
 
-## Cap Table Type
+## Cap Table ("Snapshot") Type
 
-`object` ([Cap Table](captable.md))
+`object` ([Cap Table ("Snapshot")](captable.md))
 
-# Cap Table Properties
+# Cap Table ("Snapshot") Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                       |
-| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------- |
-| [issuer](#issuer)             | `object` | Required | cannot be null | [Cap Table](captable-properties-cap-table.md "Objects.Issuer.schema.json#/properties/issuer")    |
-| [stakeholders](#stakeholders) | `array`  | Required | cannot be null | [Cap Table](captable-properties-stakeholders.md "CapTable.schema.json#/properties/stakeholders") |
-| [stock_plans](#stock_plans)   | `array`  | Required | cannot be null | [Cap Table](captable-properties-stock_plans.md "CapTable.schema.json#/properties/stock_plans")   |
-| [valuations](#valuations)     | `array`  | Required | cannot be null | [Cap Table](captable-properties-valuations.md "CapTable.schema.json#/properties/valuations")     |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                              |
+| :-------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [issuer](#issuer)                       | `object` | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")                                        |
+| [stakeholders](#stakeholders)           | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")          |
+| [stock_plans](#stock_plans)             | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")             |
+| [vesting_schedules](#vesting_schedules) | `array`  | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules") |
+| [valuations](#valuations)               | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")              |
 
 ## issuer
 
@@ -36,15 +32,15 @@ Object describing the issuer of the cap table
 
 *   is required
 
-*   Type: `object` ([Cap Table](captable-properties-cap-table.md))
+*   Type: `object` ([Object - Issuer](captable-properties-object---issuer.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table](captable-properties-cap-table.md "Objects.Issuer.schema.json#/properties/issuer")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")
 
 ### issuer Type
 
-`object` ([Cap Table](captable-properties-cap-table.md))
+`object` ([Object - Issuer](captable-properties-object---issuer.md))
 
 ## stakeholders
 
@@ -54,15 +50,15 @@ List of stakeholders for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Stakeholder](captable-properties-stakeholders-stakeholder.md))
+*   Type: `object[]` ([Object - Stakeholder](captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table](captable-properties-stakeholders.md "CapTable.schema.json#/properties/stakeholders")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")
 
 ### stakeholders Type
 
-`object[]` ([Stakeholder](captable-properties-stakeholders-stakeholder.md))
+`object[]` ([Object - Stakeholder](captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md))
 
 ## stock_plans
 
@@ -72,15 +68,33 @@ List of issued stock plans for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Stock Plan](captable-properties-stock_plans-stock-plan.md))
+*   Type: `object[]` ([Object - StockPlan](captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table](captable-properties-stock_plans.md "CapTable.schema.json#/properties/stock_plans")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")
 
 ### stock_plans Type
 
-`object[]` ([Stock Plan](captable-properties-stock_plans-stock-plan.md))
+`object[]` ([Object - StockPlan](captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md))
+
+## vesting_schedules
+
+List of vesting schedules used by the issuer
+
+`vesting_schedules`
+
+*   is optional
+
+*   Type: `object[]` ([Object - VestingSchedule](captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md))
+
+*   cannot be null
+
+*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules")
+
+### vesting_schedules Type
+
+`object[]` ([Object - VestingSchedule](captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md))
 
 ## valuations
 
@@ -90,12 +104,12 @@ List of valuations for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Valuation](captable-properties-valuations-valuation.md))
+*   Type: `object[]` ([Object - Valuation](captable-properties-captable---objectsvaluationschemajson-array-object---valuation.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table](captable-properties-valuations.md "CapTable.schema.json#/properties/valuations")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")
 
 ### valuations Type
 
-`object[]` ([Valuation](captable-properties-valuations-valuation.md))
+`object[]` ([Object - Valuation](captable-properties-captable---objectsvaluationschemajson-array-object---valuation.md))

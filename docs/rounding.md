@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Rounding Type Schema
+# Enum - Rounding Type Schema
 
 ```txt
 Enums.Rounding.schema.json
@@ -15,11 +10,11 @@ Enumeration of rounding types
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Rounding.schema.json](../enums/Rounding.schema.json "open original schema") |
 
-## Rounding Type Type
+## Enum - Rounding Type Type
 
-`string` ([Rounding Type](rounding.md))
+`string` ([Enum - Rounding Type](rounding.md))
 
-## Rounding Type Constraints
+## Enum - Rounding Type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

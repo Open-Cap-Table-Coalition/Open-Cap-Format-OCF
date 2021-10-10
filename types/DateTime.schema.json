@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.DateTime.schema.json",
-  "title": "Date-Time",
+  "title": "Type - DateTime",
   "description": "Type representing an instant in Universal Coordinated Time (UTC)",
   "type": "object",
   "properties": {

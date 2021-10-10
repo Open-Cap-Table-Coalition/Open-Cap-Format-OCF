@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled string in Name Schema
+# Untitled string in Type - Numeric Schema
 
 ```txt
 Types.Numeric.schema.json#/properties/string_value

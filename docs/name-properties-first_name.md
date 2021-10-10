@@ -1,9 +1,4 @@
----
-template: reference
-hide-nav: 'false'
----
-
-# Untitled undefined type in Name Schema
+# Untitled undefined type in Type - Name Schema
 
 ```txt
 Types.Name.schema.json#/properties/first_name

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.StockClassConversionRights.schema.json",
-  "title": "StockClassConversionRights",
+  "title": "Type - StockClassConversionRights",
   "description": "Type representation of a stock class or series conversion rights into another stock class or series as an object.",
   "type": "object",
   "properties": {
@@ -23,8 +23,14 @@
     }
   },
   "oneOf": [
-    {"required": ["converts_to_future_round"]},
-    {"required": ["converts_to_stock_class_id"]}
+    {
+      "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
+      "required": ["converts_to_future_round"]
+    },
+    {
+      "title": "Converts to existing, known StockClass Id",
+      "required": ["converts_to_stock_class_id"]
+    }
   ],
   "required": [
     "ratio",
