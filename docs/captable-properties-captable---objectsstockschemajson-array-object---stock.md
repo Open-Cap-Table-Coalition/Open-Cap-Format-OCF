@@ -1,20 +1,20 @@
 # Object - Stock Schema
 
 ```txt
-Objects.Stock.schema.json
+Objects.Stock.schema.json#/properties/stock_issuances/items
 ```
 
 Object describing stock issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stock.schema.json](../objects/Stock.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
-## Object - Stock Type
+## items Type
 
-`object` ([Object - Stock](stock.md))
+`object` ([Object - Stock](captable-properties-captable---objectsstockschemajson-array-object---stock.md))
 
-# Object - Stock Properties
+# items Properties
 
 | Property                                                | Type                        | Required | Nullable       | Defined by                                                                                                                                     |
 | :------------------------------------------------------ | :-------------------------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |

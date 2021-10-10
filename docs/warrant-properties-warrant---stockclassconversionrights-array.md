@@ -1,7 +1,7 @@
 # Warrant - StockClassConversionRights Array Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/conversion_rights
+Objects.Warrant.schema.json#/properties/conversion_rights
 ```
 
 What can this instrument convert into for a maturity or next equity financing conversion?
@@ -12,4 +12,4 @@ What can this instrument convert into for a maturity or next equity financing co
 
 ## conversion_rights Type
 
-`object[]` ([Type - StockClassConversionRights](convertible-1-properties-type---stockclassconversionrights.md))
+`object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))

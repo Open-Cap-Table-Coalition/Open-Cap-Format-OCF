@@ -14,26 +14,76 @@
       "title": "CapTable - Objects.Stakeholder.schema.json Array",
       "description": "List of stakeholders for the cap table",
       "type": "array",
-      "items": { "$ref": "Objects.Stakeholder.schema.json" }
+      "items": {
+        "$ref": "Objects.Stakeholder.schema.json"
+      }
     },
     "stock_plans": {
       "title": "CapTable - Objects.StockPlan.schema.json Array",
       "description": "List of issued stock plans for the cap table",
       "type": "array",
-      "items": { "$ref": "Objects.StockPlan.schema.json" }
+      "items": {
+        "$ref": "Objects.StockPlan.schema.json"
+      }
+    },
+    "plan_securities": {
+      "title": "CapTable - Objects.PlanSecurities.schema.json Array",
+      "description": "List of plan securities for the cap table",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.PlanSecurities.schema.json"
+      }
+    },
+    "warrants": {
+      "title": "CapTable - Objects.Warrant.schema.json Array",
+      "description": "List of warrants for the cap table",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.Warrant.schema.json"
+      }
+    },
+    "stock_issuances": {
+      "title": "CapTable - Objects.Stock.schema.json Array",
+      "description": "List of stock issuances (Stock) for the cap table",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.Stock.schema.json"
+      }
+    },
+    "convertibles": {
+      "title": "CapTable - Objects.Convertible.schema.json Array",
+      "description": "List of convertibles for the cap table",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.Convertible.schema.json"
+      }
     },
     "vesting_schedules": {
       "title": "CapTable - Objects.VestingSchedule.schema.json Array",
       "description": "List of vesting schedules used by the issuer",
       "type": "array",
-      "items": { "$ref": "Objects.VestingSchedule.schema.json" }
+      "items": {
+        "$ref": "Objects.VestingSchedule.schema.json"
+      }
     },
     "valuations": {
       "title": "CapTable - Objects.Valuation.schema.json Array",
       "description": "List of valuations for the cap table",
       "type": "array",
-      "items": { "$ref": "Objects.Valuation.schema.json" }
+      "items": {
+        "$ref": "Objects.Valuation.schema.json"
+      }
     }
   },
-  "required": ["issuer", "stakeholders", "stock_plans", "valuations"]
+  "required": [
+    "issuer",
+    "stakeholders",
+    "stock_plans",
+    "plan_securities",
+    "warrants",
+    "stock_issuances",
+    "convertibles",
+    "vesting_schedules",
+    "valuations"
+  ]
 }

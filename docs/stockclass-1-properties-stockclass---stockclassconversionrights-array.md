@@ -12,4 +12,4 @@ List of StockClassConversionRights possible for this StockClass
 
 ## conversion_rights Type
 
-`object[]` ([Type - StockClassConversionRights](convertible-1-properties-type---stockclassconversionrights.md))
+`object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))

@@ -1,18 +1,18 @@
 # Type - StockClassConversionRights Schema
 
 ```txt
-Types.StockClassConversionRights.schema.json
+Types.StockClassConversionRights.schema.json#/properties/conversion_rights/items
 ```
 
 Type representation of a stock class or series conversion rights into another stock class or series as an object.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                       |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClassConversionRights.schema.json](../types/StockClassConversionRights.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                    |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json*](../objects/Warrant.schema.json "open original schema") |
 
-## Type - StockClassConversionRights Type
+## items Type
 
-`object` ([Type - StockClassConversionRights](stockclassconversionrights.md))
+`object` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
 
 one (and only one) of
 
@@ -20,7 +20,7 @@ one (and only one) of
 
 *   [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
 
-# Type - StockClassConversionRights Properties
+# items Properties
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

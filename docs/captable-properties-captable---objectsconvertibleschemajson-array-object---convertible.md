@@ -1,20 +1,20 @@
 # Object - Convertible Schema
 
 ```txt
-Objects.Convertible.schema.json
+Objects.Convertible.schema.json#/properties/convertibles/items
 ```
 
 Object describing convertible instrument issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json](../objects/Convertible.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
-## Object - Convertible Type
+## items Type
 
-`object` ([Object - Convertible](convertible-1.md))
+`object` ([Object - Convertible](captable-properties-captable---objectsconvertibleschemajson-array-object---convertible.md))
 
-# Object - Convertible Properties
+# items Properties
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                      |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

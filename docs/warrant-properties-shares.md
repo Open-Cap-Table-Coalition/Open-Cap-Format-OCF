@@ -1,7 +1,7 @@
 # Untitled Types.Numeric.schema.json in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/shares
+Objects.Warrant.schema.json#/properties/shares
 ```
 
 Shares the warrant is exercisable for

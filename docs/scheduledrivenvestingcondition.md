@@ -21,7 +21,7 @@ Type representation of a row in a vesting schedule.
 | [amount_numerator](#amount_numerator)     | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")     |
 | [amount_denominator](#amount_denominator) | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator") |
 | [period_length](#period_length)           | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")           |
-| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")                           |
+| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")                                      |
 
 ## amount_numerator
 
@@ -85,15 +85,15 @@ Enumeration of time period types
 
 *   is required
 
-*   Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
+*   Type: `string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
+*   defined in: [Type - Schedule-driven Vesting Condition](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
 
 ### period_type Type
 
-`string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
+`string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
 
 ### period_type Constraints
 

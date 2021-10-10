@@ -1,7 +1,7 @@
 # Untitled string in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/custom_id
+Objects.Warrant.schema.json#/properties/custom_id
 ```
 
 A custom ID for this warrant (e.g. W-1.)

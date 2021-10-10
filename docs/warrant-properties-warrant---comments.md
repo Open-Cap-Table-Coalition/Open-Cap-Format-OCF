@@ -1,7 +1,7 @@
 # Warrant - Comments Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/comments
+Objects.Warrant.schema.json#/properties/comments
 ```
 
 List of comments for this stock

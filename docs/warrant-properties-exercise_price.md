@@ -1,7 +1,7 @@
 # Untitled Types.Money.schema.json in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/exercise_price
+Objects.Warrant.schema.json#/properties/exercise_price
 ```
 
 The exercise price of the warrant

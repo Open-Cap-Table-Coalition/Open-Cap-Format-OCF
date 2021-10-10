@@ -4,7 +4,7 @@
 Objects.Valuation.schema.json
 ```
 
-Object describing a valuation
+Object describing a valuation used in the cap table
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
@@ -20,7 +20,7 @@ Object describing a valuation
 | :---------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | [id](#id)                           | `string` | Required | cannot be null | [Object - Valuation](valuation-1-properties-id.md "Objects.Valuation.schema.json#/properties/id")                              |
 | [provider](#provider)               | `string` | Optional | cannot be null | [Object - Valuation](valuation-1-properties-provider.md "Objects.Valuation.schema.json#/properties/provider")                  |
-| [price_per_share](#price_per_share) | `object` | Required | cannot be null | [Object - Valuation](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")             |
+| [price_per_share](#price_per_share) | `object` | Required | cannot be null | [Object - Valuation](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")          |
 | [valuation_date](#valuation_date)   | `object` | Required | cannot be null | [Object - Valuation](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/valuation_date")             |
 | [valuation_type](#valuation_type)   | `string` | Required | cannot be null | [Object - Valuation](valuation-1-properties-enum---valuation-type.md "Enums.Valuation.schema.json#/properties/valuation_type") |
 | [comments](#comments)               | `array`  | Optional | cannot be null | [Object - Valuation](valuation-1-properties-valuation---comments.md "Objects.Valuation.schema.json#/properties/comments")      |
@@ -69,15 +69,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](valuation-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
+*   defined in: [Object - Valuation](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
-`object` ([Type - Money](valuation-1-properties-type---money.md))
+`object` ([Type - Money](plansecurities-properties-type---money.md))
 
 ## valuation_date
 

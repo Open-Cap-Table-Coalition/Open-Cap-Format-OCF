@@ -1,20 +1,20 @@
 # Type - Vesting Schema
 
 ```txt
-Types.Vesting.schema.json
+Types.Vesting.schema.json#/properties/vesting/oneOf/1
 ```
 
 Type representing all aspects related to vesting securities
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Vesting.schema.json](../types/Vesting.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json*](../objects/PlanSecurities.schema.json "open original schema") |
 
-## Type - Vesting Type
+## 1 Type
 
-`object` ([Type - Vesting](vesting.md))
+`object` ([Type - Vesting](plansecurities-properties-vesting-oneof-type---vesting.md))
 
-# Type - Vesting Properties
+# 1 Properties
 
 | Property                                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                       |
 | :------------------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |

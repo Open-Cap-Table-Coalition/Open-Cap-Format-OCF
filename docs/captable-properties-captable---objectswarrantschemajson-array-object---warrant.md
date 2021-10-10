@@ -1,20 +1,20 @@
 # Object - Warrant Schema
 
 ```txt
-Objects.Warrant.schema.json
+Objects.Warrant.schema.json#/properties/warrants/items
 ```
 
 Object describing warrants issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json](../objects/Warrant.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
-## Object - Warrant Type
+## items Type
 
-`object` ([Object - Warrant](warrant.md))
+`object` ([Object - Warrant](captable-properties-captable---objectswarrantschemajson-array-object---warrant.md))
 
-# Object - Warrant Properties
+# items Properties
 
 | Property                                            | Type                         | Required | Nullable       | Defined by                                                                                                                                       |
 | :-------------------------------------------------- | :--------------------------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |

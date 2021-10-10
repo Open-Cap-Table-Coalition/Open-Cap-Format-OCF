@@ -1,7 +1,7 @@
 # Untitled string in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/id
+Objects.Warrant.schema.json#/properties/id
 ```
 
 Identifier for the warrant (must be unique within warrant objs)

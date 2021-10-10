@@ -1,18 +1,18 @@
 # Type - StockClassConversionRights Schema
 
 ```txt
-Types.StockClassConversionRights.schema.json
+Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights
 ```
 
 Type representation of a stock class or series conversion rights into another stock class or series as an object.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                       |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClassConversionRights.schema.json](../types/StockClassConversionRights.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json*](../objects/Convertible.schema.json "open original schema") |
 
-## Type - StockClassConversionRights Type
+## default_conversion_rights Type
 
-`object` ([Type - StockClassConversionRights](stockclassconversionrights.md))
+`object` ([Type - StockClassConversionRights](convertible-1-properties-type---stockclassconversionrights.md))
 
 one (and only one) of
 
@@ -20,11 +20,11 @@ one (and only one) of
 
 *   [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
 
-# Type - StockClassConversionRights Properties
+# default_conversion_rights Properties
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ratio](#ratio)                                           | `object`  | Required | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                                         |
+| [ratio](#ratio)                                           | `object`  | Required | cannot be null | [Type - StockClassConversionRights](convertible-1-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                                                      |
 | [converts_to_future_round](#converts_to_future_round)     | `boolean` | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")     |
 | [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`  | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id") |
 | [rounding_type](#rounding_type)                           | `string`  | Required | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")                                      |
@@ -37,15 +37,15 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 *   is required
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+*   Type: `object` ([Type - Ratio](convertible-1-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+*   defined in: [Type - StockClassConversionRights](convertible-1-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
 
 ### ratio Type
 
-`object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+`object` ([Type - Ratio](convertible-1-properties-type---ratio.md))
 
 ## converts_to_future_round
 

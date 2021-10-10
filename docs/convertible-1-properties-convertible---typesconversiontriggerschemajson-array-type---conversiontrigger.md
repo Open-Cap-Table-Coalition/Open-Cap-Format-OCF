@@ -1,18 +1,18 @@
 # Type - ConversionTrigger Schema
 
 ```txt
-Types.ConversionTrigger.schema.json
+Types.ConversionTrigger.schema.json#/properties/conversion_triggers/items
 ```
 
 Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                     |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ConversionTrigger.schema.json](../types/ConversionTrigger.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json*](../objects/Convertible.schema.json "open original schema") |
 
-## Type - ConversionTrigger Type
+## items Type
 
-`object` ([Type - ConversionTrigger](conversiontrigger.md))
+`object` ([Type - ConversionTrigger](convertible-1-properties-convertible---typesconversiontriggerschemajson-array-type---conversiontrigger.md))
 
 one (and only one) of
 
@@ -20,7 +20,7 @@ one (and only one) of
 
 *   [Converts to known Id of StockClass (String Id)](conversiontrigger-oneof-converts-to-known-id-of-stockclass-string-id.md "check type definition")
 
-# Type - ConversionTrigger Properties
+# items Properties
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                          |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

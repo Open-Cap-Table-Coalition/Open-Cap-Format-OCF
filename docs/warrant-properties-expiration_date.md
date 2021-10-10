@@ -1,7 +1,7 @@
 # Untitled Types.DateTime.schema.json in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/expiration_date
+Objects.Warrant.schema.json#/properties/expiration_date
 ```
 
 Expiration date of the warrant, if applicable

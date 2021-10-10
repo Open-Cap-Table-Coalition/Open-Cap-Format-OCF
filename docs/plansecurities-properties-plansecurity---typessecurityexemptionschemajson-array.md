@@ -12,4 +12,4 @@ List of security law exemptions (and applicable jurisdictions) applicable to the
 
 ## security_law_exemptions Type
 
-`object[]` ([Type - SecurityExemption](convertible-1-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md))
+`object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))

@@ -1,7 +1,7 @@
 # Untitled string in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/stakeholder_id
+Objects.Warrant.schema.json#/properties/stakeholder_id
 ```
 
 Id of the stakeholder that holds legal title to this warrant.

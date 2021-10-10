@@ -14,4 +14,4 @@ Tree-structured event-driven vesting conditions for the securities, including si
 
 ## event_driven_vesting_conditions Type
 
-`object[]` ([Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-type---event-driven-vesting-condition.md))
+`object[]` ([Type - Event-driven Vesting Condition](vesting-properties-vesting-type---eventdrivenvestingcondition-array-type---event-driven-vesting-condition.md))

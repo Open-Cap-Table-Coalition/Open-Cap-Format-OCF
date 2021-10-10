@@ -1,7 +1,7 @@
 # Untitled Types.Money.schema.json in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/purchase_price
+Objects.Warrant.schema.json#/properties/purchase_price
 ```
 
 Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)

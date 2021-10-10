@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Warrants.schema.json",
+  "$id": "Objects.Warrant.schema.json",
   "title": "Object - Warrant",
   "description": "Object describing warrants issued by the issuer and held by a stakeholder",
   "type": "object",

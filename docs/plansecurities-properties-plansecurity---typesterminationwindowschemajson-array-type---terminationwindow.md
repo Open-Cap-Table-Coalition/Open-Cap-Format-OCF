@@ -1,20 +1,20 @@
 # Type - TerminationWindow Schema
 
 ```txt
-Types.TerminationWindow.schema.json
+Types.TerminationWindow.schema.json#/properties/termination_exercise_windows/items
 ```
 
 Type representation of a termination window as an object.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                     |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [TerminationWindow.schema.json](../types/TerminationWindow.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json*](../objects/PlanSecurities.schema.json "open original schema") |
 
-## Type - TerminationWindow Type
+## items Type
 
-`object` ([Type - TerminationWindow](terminationwindow-1.md))
+`object` ([Type - TerminationWindow](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md))
 
-# Type - TerminationWindow Properties
+# items Properties
 
 | Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                                |
 | :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |

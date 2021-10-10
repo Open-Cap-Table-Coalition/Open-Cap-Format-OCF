@@ -1,7 +1,7 @@
 # Untitled string in Object - Warrant Schema
 
 ```txt
-Objects.Warrants.schema.json#/properties/comments/items
+Objects.Warrant.schema.json#/properties/comments/items
 ```
 
 
