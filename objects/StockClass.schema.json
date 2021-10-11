@@ -81,9 +81,6 @@
     "votes_per_share",
     "par_value",
     "price_per_share",
-    "seniority",
-    "conversion_rights",
-    "liquidation_preference_multiple",
-    "participation_cap_multiple"
+    "seniority"
   ]
 }
