@@ -15,6 +15,10 @@
       "description": "Date which board approved the plan",
       "$ref": "Types.Numeric.schema.json"
     },
+    "stockclass_id": {
+      "description": "Id of the StockClass object this plan is composed of",
+      "type": "string"
+    },
     "comments": {
       "title": "StockPlan - Comments",
       "description": "List of comments for the stock plan",
@@ -22,5 +26,5 @@
       "items": { "type": "string" }
     }
   },
-  "required": ["id", "plan_name", "shares_reserved"]
+  "required": ["id", "plan_name", "stockclass_id", "shares_reserved"]
 }

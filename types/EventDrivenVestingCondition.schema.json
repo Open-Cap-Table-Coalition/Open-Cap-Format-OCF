@@ -16,10 +16,6 @@
         {"$ref": "Types.DateTime.schema.json", "description": "Event has occurred at this datetime"}
       ]
     },
-    "event_expected_date": {
-      "description": "Date the event is expected (for anticipated vesting dates)",
-      "$ref": "Types.DateTime.schema.json"
-    },
     "event_expiration": {
       "description": "Date by which event must be met to qualify, given that the condition carries an expiry",
       "oneOf": [

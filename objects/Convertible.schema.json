@@ -67,14 +67,14 @@
     },
     "conversion_triggers": {
       "title": "Convertible - Types.ConversionTrigger.schema.json Array",
-      "description": "In event the convertible can convert due to trigger events (e.g. Change of Control, at Election of Holder), what are the terms and has conversion been triggered? Conversion possibilities for this convertible more complex than a ratio of shares / unit principal.",
+      "description": "In event the convertible can convert due to trigger events (e.g. Change of Control, at Election of Holder), what are the terms and has conversion been triggered? Use this for conversion possibilities for this convertible more complex than a ratio of shares / unit principal.",
       "type": ["array", "null"],
       "items": {
         "$ref": "Types.ConversionTrigger.schema.json"
       }
     },
     "exit_multiple": {
-      "description": "For cash procedes calculation during a liquidity event.",
+      "description": "For cash proceeds calculation during a liquidity event.",
       "$ref": "Types.Ratio.schema.json"
     },
     "interest_accrual_period": {
@@ -85,8 +85,8 @@
       "description": "What type of interest compounding?",
       "$ref": "Enums.Compounding.schema.json"
     },
-    "pro_rate": {
-      "description": "What pro-rata (if any) is holder entitled to buy at next round?",
+    "pro_rata": {
+      "description": "What pro-rata (if any) is the holder entitled to buy at the next round?",
       "$ref": "Types.Numeric.schema.json"
     },
     "conversion_valuation_cap": {
