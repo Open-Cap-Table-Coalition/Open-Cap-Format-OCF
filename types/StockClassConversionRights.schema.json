@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Types.StockClassConversionRights.schema.json",
   "title": "Type - StockClassConversionRights",
-  "description": "Type representation of a stock class or series conversion rights into another stock class or series as an object.",
+  "description": "Type representation of one converstion right for shares of this stock class or series to convert to another class. Stock Classes may have many StockClassConversionRights.",
   "type": "object",
   "properties": {
     "ratio": {
-      "description": "What number of target StockClass shares do one share of this StockClass convert into",
+      "description": "One share of this StockClass converts into this many target StockClass shares",
       "$ref": "Types.Ratio.schema.json"
     },
     "converts_to_future_round": {
@@ -14,7 +14,7 @@
       "type": "boolean"
     },
     "converts_to_stock_class_id": {
-      "description": "What is the id of the StockClass this StockClass can convert into?",
+      "description": "What is the id of the existing, known StockClass this StockClass can convert into?",
       "type": "string"
     },
     "rounding_type": {
