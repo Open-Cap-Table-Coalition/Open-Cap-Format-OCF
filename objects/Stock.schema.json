@@ -14,7 +14,7 @@
       "type": "string"
     },
     "custom_id": {
-      "description": "An override of the StockClass custom_id for this issuance (e.g. CS-1.)",
+      "description": "An override of the StockClass custom_id for this issuance (e.g. CS-1.). Also known as the certificate id",
       "type": "string"
     },
     "stakeholder_id": {
