@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Enums.Address.schema.json",
-  "title": "Enum - Address Types",
+  "title": "Enum - Address Type",
   "description": "Enumeration of address types",
   "type": "string",
   "enum": ["LEGAL", "CONTACT", "OTHER"]
