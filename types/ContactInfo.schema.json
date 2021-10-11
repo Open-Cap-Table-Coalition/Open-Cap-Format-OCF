@@ -12,6 +12,20 @@
     "contact_last_name": {
       "description": "Contact's last name",
       "type": "string"
+    },
+    "phone_numbers": {
+      "description": "Phone numbers to reach the contact at",
+      "type": "array",
+      "items": {
+        "$ref": "Types.PhoneNumber.schema.json"
+      }
+    },
+    "emails": {
+      "description": "Emails to reach the contact at",
+      "type": "array",
+      "items": {
+        "$ref": "Types.Email.schema.json"
+      }
     }
   },
   "required": [
