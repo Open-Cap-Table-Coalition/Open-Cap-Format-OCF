@@ -17,6 +17,32 @@
       "description": "Distinguish individuals from institutions",
       "$ref": "Enums.Stakeholder.schema.json"
     },
+    "issuer_assigned_id": {
+      "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
+      "type": "string"
+    },
+    "current_relationship": {
+      "description": "What is the current relationship of the stakeholder to the issuer?",
+      "$ref": "Enums.StakeholderRelationship.schema.json"
+    },
+    "primary_contact": {
+      "description": "The primary contact info for the stakeholder",
+      "$ref": "Types.ContactInfo.schema.json"
+    },
+    "addresses": {
+      "description": "Addresses for the stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "Types.Address.schema.json"
+      }
+    },
+    "tax_ids": {
+      "description": "The tax ids for this stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "Types.TaxID.schema.json"
+      }
+    },
     "comments": {
       "title": "Stakeholder - Comments",
       "description": "Unstructured text comments related to and stored for this Stakeholder",

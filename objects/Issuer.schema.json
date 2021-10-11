@@ -42,7 +42,7 @@
     },
     "phone": {
       "description": "A phone number that the issuer company can be reached at",
-      "$ref": "Types.Phone.schema.json"
+      "$ref": "Types.PhoneNumber.schema.json"
     },
     "address": {
       "description": "The headquarters address of the issuing company",
