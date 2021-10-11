@@ -31,8 +31,8 @@
     }
   ],
   "stockclasses": [
-      {
-      "id":"8d8371e8-d41d-4a49-9f42-b91758fd155d",
+    {
+      "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "name": "Common Stock",
       "class_type": "COMMON",
       "default_id_prefix": "CS-",
@@ -70,7 +70,7 @@
       "comments": []
     },
     {
-      "id":"cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
+      "id": "cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
       "name": "Series Seed Preferred",
       "class_type": "PREFERRED",
       "default_id_prefix": "PS-",
@@ -98,18 +98,20 @@
       "seniority": {
         "string_value": "2"
       },
-      "conversion_rights": [{
-        "ratio": {
-          "antecedent": {
-            "string_value": "1"
+      "conversion_rights": [
+        {
+          "ratio": {
+            "antecedent": {
+              "string_value": "1"
+            },
+            "consequent": {
+              "string_value": "1"
+            }
           },
-          "consequent": {
-            "string_value": "1"
-          }
-        },
-        "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-        "rounding_type": "NORMAL"
-      }],
+          "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+          "rounding_type": "NORMAL"
+        }
+      ],
       "liquidation_preference_multiple": {
         "string_value": "2"
       },
@@ -141,10 +143,10 @@
         "string_value": "1000000"
       },
       "exercise_price": {
-         "amount": {
-            "string_value": "0.0100000000"
-          },
-          "currency": "USD"
+        "amount": {
+          "string_value": "0.0100000000"
+        },
+        "currency": "USD"
       },
       "vesting": {
         "vesting_type": "SCHEDULE_AND_EVENT_DRIVEN",
@@ -155,7 +157,9 @@
           {
             "event_description": "Change in Control - Single Trigger Acceleration",
             "event_occurred": null,
-            "event_expiration": null,
+            "event_expiration": {
+              "epoch_millis": 1949452702000
+            },
             "priority": 1,
             "share_amount": {
               "string_value": "1000000"
@@ -166,16 +170,259 @@
             "amount_denominator": 48,
             "period_length": 1,
             "period_type": "YEARS",
-            "priority": 2,
-            "dependent_vesting:": [
-              {
-                "amount_numerator": 1,
-                "amount_denominator": 48,
-                "period_length": 1,
-                "period_type": "MONTHS",
-                "priority": 1
-              }
-            ]
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 13,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 14,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 15,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 16,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 17,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 18,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 19,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 20,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 21,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 22,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 23,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 24,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 25,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 26,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 27,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 28,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 29,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 30,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 31,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 32,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 33,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 34,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 35,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 36,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 37,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 38,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 39,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 40,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 41,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 42,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 43,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 44,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 45,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 46,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 47,
+            "period_type": "MONTHS",
+            "priority": 2
+          },
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 48,
+            "period_length": 48,
+            "period_type": "MONTHS",
+            "priority": 2
           }
         ],
         "custom_vesting_description": "4 Year / 1 Year Cliff + Single Trigger"
@@ -236,10 +483,10 @@
         "string_value": "10000"
       },
       "exercise_price": {
-         "amount": {
-            "string_value": "0.0100000000"
-          },
-          "currency": "USD"
+        "amount": {
+          "string_value": "0.0100000000"
+        },
+        "currency": "USD"
       },
       "vesting": {
         "vesting_type": "SCHEDULE_DRIVEN_ONLY",
@@ -288,19 +535,21 @@
   ],
   "warrants": [],
   "convertibles": [],
-  "stock_plans": [{
-    "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
-    "plan_name": "2021 Stock Incentive Plan",
-    "board_approval_date": {
-      "epoch_millis": 1633906514750837
-    },
-    "shares_reserved": {
-      "string_value": "10000000.00"
-    },
-    "comments": [
-      "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
-    ]
-  }],
+  "stock_plans": [
+    {
+      "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "plan_name": "2021 Stock Incentive Plan",
+      "board_approval_date": {
+        "epoch_millis": 1633906514750837
+      },
+      "shares_reserved": {
+        "string_value": "10000000.00"
+      },
+      "comments": [
+        "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
+      ]
+    }
+  ],
   "vesting_schedules": [
     {
       "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
