@@ -26,9 +26,11 @@
 
 *   [Enum - Option Type](./option.md "Enumeration of option types") – `Enums.Option.schema.json`
 
-*   [Enum - Parent Stock Type](./parent.md "Enumeration of parent stock types") – `Enums.Parent.schema.json`
+*   [Enum - Parent Stock Type](./parent.md "Enumeration of parent sources a stock can be issued or created from") – `Enums.Parent.schema.json`
 
 *   [Enum - PhoneNumber Type](./phonenumber.md "Enumeration of phone number types") – `Enums.PhoneNumber.schema.json`
+
+*   [Enum - Relationships between stakeholder and issuer](./stakeholderrelationship.md "Enumeration of types of relationships") – `Enums.StakeholderRelationship.schema.json`
 
 *   [Enum - Rounding Type](./rounding.md "Enumeration of rounding types") – `Enums.Rounding.schema.json`
 
@@ -55,6 +57,8 @@
 *   [Object - Stock](./stock.md "Object describing stock issued by the issuer and held by a stakeholder") – `Objects.Stock.schema.json`
 
 *   [Object - StockClass](./stockclass-1.md "Object describing a type of stock class issued by the issuer") – `Objects.StockClass.schema.json`
+
+*   [Object - StockLegendTemplate](./stocklegendtemplate.md "Object describing a stock legend template") – `Objects.StockLegendTempate.schema.json`
 
 *   [Object - StockPlan](./stockplan.md "Object describing a plan which stock options are issued from") – `Objects.StockPlan.schema.json`
 
@@ -84,7 +88,7 @@
 
 *   [Type - Numeric](./numeric.md "Type representation of a number (up to 10 decimal places supported by the spec)") – `Types.Numeric.schema.json`
 
-*   [Type - PhoneNumber](./phone.md "Type representation of a phone number") – `Types.PhoneNumber.schema.json`
+*   [Type - PhoneNumber](./phonenumber-1.md "Type representation of a phone number") – `Types.PhoneNumber.schema.json`
 
 *   [Type - Ratio](./ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `Types.Ratio.schema.json`
 
@@ -92,7 +96,7 @@
 
 *   [Type - SecurityExemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `Types.SecurityExemption.schema.json`
 
-*   [Type - StockClassConversionRights](./stockclassconversionrights.md "Type representation of a stock class or series conversion rights into another stock class or series as an object") – `Types.StockClassConversionRights.schema.json`
+*   [Type - StockClassConversionRights](./stockclassconversionrights.md "Type representation of one converstion right for shares of this stock class or series to convert to another class") – `Types.StockClassConversionRights.schema.json`
 
 *   [Type - StockParent](./stockparent.md "Type representation of the parent security of a given stock issuance (e") – `Types.StockParent.schema.json`
 
@@ -180,9 +184,31 @@
 
 *   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
 
+*   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTempate.schema.json#/properties/comments`
+
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
 
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
+
+*   [Untitled array in Object - Issuer](./issuer-properties-tax_ids.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
+
+*   [Untitled array in Object - Issuer](./issuer-properties-tax_ids.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
+
+*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-addresses.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
+
+*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-tax_ids.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
+
+*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-addresses.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
+
+*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-tax_ids.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
+
+*   [Untitled array in Type - ContactInfo](./contactinfo-properties-phone_numbers.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
+
+*   [Untitled array in Type - ContactInfo](./contactinfo-properties-emails.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
+
+*   [Untitled array in Type - ContactInfo](./contactinfo-properties-phone_numbers.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
+
+*   [Untitled array in Type - ContactInfo](./contactinfo-properties-emails.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
 
 *   [Untitled array in Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition-properties-dependent_vesting.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 

@@ -4,11 +4,11 @@
 Types.StockClassConversionRights.schema.json
 ```
 
-Type representation of a stock class or series conversion rights into another stock class or series as an object.
+Type representation of one converstion right for shares of this stock class or series to convert to another class. Stock Classes may have many StockClassConversionRights.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                       |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClassConversionRights.schema.json](../types/StockClassConversionRights.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClassConversionRights.schema.json](../out/types/StockClassConversionRights.schema.json "open original schema") |
 
 ## Type - StockClassConversionRights Type
 
@@ -67,7 +67,7 @@ Is this StockClass potentially convertible into a future, as-yet undetermined St
 
 ## converts_to_stock_class_id
 
-What is the id of the StockClass this StockClass can convert into?
+What is the id of the existing, known StockClass this StockClass can convert into?
 
 `converts_to_stock_class_id`
 
