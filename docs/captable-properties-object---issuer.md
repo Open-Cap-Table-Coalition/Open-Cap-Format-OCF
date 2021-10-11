@@ -24,7 +24,7 @@ Object describing the issuer of the cap table. This is the company whsoe captabl
 | [formation_date](#formation_date)             | `object` | Required | cannot be null | [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")            |
 | [country_of_formation](#country_of_formation) | `string` | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation") |
 | [state_of_formation](#state_of_formation)     | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")     |
-| [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-tax_ids.md "Objects.Issuer.schema.json#/properties/tax_ids")                           |
+| [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---taxid-array.md "Objects.Issuer.schema.json#/properties/tax_ids")              |
 | [email](#email)                               | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")                           |
 | [phone](#phone)                               | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---phonenumber.md "Types.PhoneNumber.schema.json#/properties/phone")               |
 | [address](#address)                           | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---address.md "Types.Address.schema.json#/properties/address")                     |
@@ -146,15 +146,15 @@ The tax ids for this issuer company
 
 *   is optional
 
-*   Type: `object[]` ([Type - TaxID](issuer-properties-tax_ids-type---taxid.md))
+*   Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-tax_ids.md "Objects.Issuer.schema.json#/properties/tax_ids")
+*   defined in: [Object - Issuer](issuer-properties-issuer---taxid-array.md "Objects.Issuer.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
-`object[]` ([Type - TaxID](issuer-properties-tax_ids-type---taxid.md))
+`object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
 ## email
 

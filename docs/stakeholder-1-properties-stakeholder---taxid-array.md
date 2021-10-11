@@ -1,4 +1,4 @@
-# Untitled array in Object - Stakeholder Schema
+# Stakeholder - TaxID Array Schema
 
 ```txt
 Objects.Stakeholder.schema.json#/properties/tax_ids

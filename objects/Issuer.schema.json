@@ -30,6 +30,7 @@
       "type": "string"
     },
     "tax_ids": {
+      "title": "Issuer - TaxID Array",
       "description": "The tax ids for this issuer company",
       "type": "array",
       "items": {

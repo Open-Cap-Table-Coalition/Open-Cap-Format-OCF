@@ -26,6 +26,7 @@
       "type": "integer"
     },
     "dependent_vesting": {
+      "title": "ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array",
       "description": "Vesting periods or conditions which become operative once this condition is met",
       "type": "array",
       "items": {

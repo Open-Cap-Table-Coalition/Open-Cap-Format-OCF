@@ -134,119 +134,61 @@
 
 *   [CapTable - Objects.Warrant.schema.json Array](./captable-properties-captable---objectswarrantschemajson-array.md "List of warrants for the cap table") – `CapTable.schema.json#/properties/warrants`
 
-*   [Convertible - Comments](./convertible-1-properties-convertible---comments.md "Unstructured text comments related to and stored for this convertible") – `Objects.Convertible.schema.json#/properties/comments`
+*   [ContactInfo - Email Array](./contactinfo-properties-contactinfo---email-array.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
+
+*   [ContactInfo - Phone Number Array](./contactinfo-properties-contactinfo---phone-number-array.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
 
 *   [Convertible - Comments](./convertible-1-properties-convertible---comments.md "Unstructured text comments related to and stored for this convertible") – `Objects.Convertible.schema.json#/properties/comments`
 
 *   [Convertible - Types.SecurityExemption.schema.json Array](./convertible-1-properties-convertible---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `Objects.Convertible.schema.json#/properties/security_law_exemptions`
 
-*   [Convertible - Types.SecurityExemption.schema.json Array](./convertible-1-properties-convertible---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `Objects.Convertible.schema.json#/properties/security_law_exemptions`
-
-*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
-
 *   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 
 *   [Issuer - Comments](./issuer-properties-issuer---comments.md "Unstructured comments related to and stored for the issuer") – `Objects.Issuer.schema.json#/properties/comments`
 
-*   [Issuer - Comments](./issuer-properties-issuer---comments.md "Unstructured comments related to and stored for the issuer") – `Objects.Issuer.schema.json#/properties/comments`
-
-*   [PlanSecurity - Comments](./plansecurities-properties-plansecurity---comments.md "Unstructured text comments related to and stored for this PlanSecurity") – `Objects.PlanSecurities.schema.json#/properties/comments`
+*   [Issuer - TaxID Array](./issuer-properties-issuer---taxid-array.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
 
 *   [PlanSecurity - Comments](./plansecurities-properties-plansecurity---comments.md "Unstructured text comments related to and stored for this PlanSecurity") – `Objects.PlanSecurities.schema.json#/properties/comments`
 
 *   [PlanSecurity - Types.SecurityExemption.schema.json Array](./plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) applicable to the PlanSecurities") – `Objects.PlanSecurities.schema.json#/properties/security_law_exemptions`
 
-*   [PlanSecurity - Types.SecurityExemption.schema.json Array](./plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) applicable to the PlanSecurities") – `Objects.PlanSecurities.schema.json#/properties/security_law_exemptions`
-
 *   [PlanSecurity - Types.TerminationWindow.schema.json Array](./plansecurities-properties-plansecurity---typesterminationwindowschemajson-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `Objects.PlanSecurities.schema.json#/properties/termination_exercise_windows`
 
-*   [PlanSecurity - Types.TerminationWindow.schema.json Array](./plansecurities-properties-plansecurity---typesterminationwindowschemajson-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `Objects.PlanSecurities.schema.json#/properties/termination_exercise_windows`
+*   [ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+
+*   [Stakeholder - Address Array](./stakeholder-1-properties-stakeholder---address-array.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
 
 *   [Stakeholder - Comments](./stakeholder-1-properties-stakeholder---comments.md "Unstructured text comments related to and stored for this Stakeholder") – `Objects.Stakeholder.schema.json#/properties/comments`
 
-*   [Stakeholder - Comments](./stakeholder-1-properties-stakeholder---comments.md "Unstructured text comments related to and stored for this Stakeholder") – `Objects.Stakeholder.schema.json#/properties/comments`
-
-*   [Stock - Comments](./stock-properties-stock---comments.md "List of comments for this stock") – `Objects.Stock.schema.json#/properties/comments`
+*   [Stakeholder - TaxID Array](./stakeholder-1-properties-stakeholder---taxid-array.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
 
 *   [Stock - Comments](./stock-properties-stock---comments.md "List of comments for this stock") – `Objects.Stock.schema.json#/properties/comments`
 
 *   [Stock - Security Law Exemption Ids Array](./stock-properties-stock---security-law-exemption-ids-array.md "List of security law exemptions applicable to this stock and corresponding jurisdictions") – `Objects.Stock.schema.json#/properties/security_law_exemptions`
 
-*   [Stock - Security Law Exemption Ids Array](./stock-properties-stock---security-law-exemption-ids-array.md "List of security law exemptions applicable to this stock and corresponding jurisdictions") – `Objects.Stock.schema.json#/properties/security_law_exemptions`
-
 *   [Stock - Stock Legend Id Array](./stock-properties-stock---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `Objects.Stock.schema.json#/properties/stock_legend_ids`
-
-*   [Stock - Stock Legend Id Array](./stock-properties-stock---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `Objects.Stock.schema.json#/properties/stock_legend_ids`
-
-*   [StockClass - Comments](./stockclass-1-properties-stockclass---comments.md "List of comments for the stock class") – `Objects.StockClass.schema.json#/properties/comments`
 
 *   [StockClass - Comments](./stockclass-1-properties-stockclass---comments.md "List of comments for the stock class") – `Objects.StockClass.schema.json#/properties/comments`
 
 *   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
 
-*   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
-
-*   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTemplate.schema.json#/properties/comments`
-
 *   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTemplate.schema.json#/properties/comments`
 
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
-
-*   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
-
-*   [Untitled array in Object - Issuer](./issuer-properties-tax_ids.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
-
-*   [Untitled array in Object - Issuer](./issuer-properties-tax_ids.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
-
-*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-addresses.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
-
-*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-tax_ids.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
-
-*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-addresses.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
-
-*   [Untitled array in Object - Stakeholder](./stakeholder-1-properties-tax_ids.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
-
-*   [Untitled array in Type - ContactInfo](./contactinfo-properties-phone_numbers.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
-
-*   [Untitled array in Type - ContactInfo](./contactinfo-properties-emails.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
-
-*   [Untitled array in Type - ContactInfo](./contactinfo-properties-phone_numbers.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
-
-*   [Untitled array in Type - ContactInfo](./contactinfo-properties-emails.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
-
-*   [Untitled array in Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition-properties-dependent_vesting.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
-
-*   [Untitled array in Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition-properties-dependent_vesting.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
-
-*   [Valuation - Comments](./valuation-1-properties-valuation---comments.md "List of comments for the valuation") – `Objects.Valuation.schema.json#/properties/comments`
 
 *   [Valuation - Comments](./valuation-1-properties-valuation---comments.md "List of comments for the valuation") – `Objects.Valuation.schema.json#/properties/comments`
 
 *   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
 
-*   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
-
 *   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
-
-*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
-
-*   [VestingSchedule - Comments](./vestingschedule-properties-vestingschedule---comments.md "List of comments for the vesting schedule") – `Objects.VestingSchedule.schema.json#/properties/comments`
 
 *   [VestingSchedule - Comments](./vestingschedule-properties-vestingschedule---comments.md "List of comments for the vesting schedule") – `Objects.VestingSchedule.schema.json#/properties/comments`
 
 *   [VestingSchedule - ScheduleDrivenVestingCondition Array](./vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Schedule rows defining the vesting schedule tranches") – `Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions`
 
-*   [VestingSchedule - ScheduleDrivenVestingCondition Array](./vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Schedule rows defining the vesting schedule tranches") – `Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions`
-
-*   [Warrant - Comments](./warrant-properties-warrant---comments.md "List of comments for this stock") – `Objects.Warrant.schema.json#/properties/comments`
-
 *   [Warrant - Comments](./warrant-properties-warrant---comments.md "List of comments for this stock") – `Objects.Warrant.schema.json#/properties/comments`
 
 *   [Warrant - SecurityExemption Array](./warrant-properties-warrant---securityexemption-array.md "List of security law exemptions applicable to this warrant") – `Objects.Warrant.schema.json#/properties/security_law_exemptions`
-
-*   [Warrant - SecurityExemption Array](./warrant-properties-warrant---securityexemption-array.md "List of security law exemptions applicable to this warrant") – `Objects.Warrant.schema.json#/properties/security_law_exemptions`
-
-*   [Warrant - StockClassConversionRights Array](./warrant-properties-warrant---stockclassconversionrights-array.md "What can this instrument convert into for a maturity or next equity financing conversion?") – `Objects.Warrant.schema.json#/properties/conversion_rights`
 
 *   [Warrant - StockClassConversionRights Array](./warrant-properties-warrant---stockclassconversionrights-array.md "What can this instrument convert into for a maturity or next equity financing conversion?") – `Objects.Warrant.schema.json#/properties/conversion_rights`
 

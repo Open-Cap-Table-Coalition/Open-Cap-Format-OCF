@@ -24,8 +24,8 @@ Object describing a stakeholder
 | [issuer_assigned_id](#issuer_assigned_id)     | `string` | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-issuer_assigned_id.md "Objects.Stakeholder.schema.json#/properties/issuer_assigned_id")                                              |
 | [current_relationship](#current_relationship) | `string` | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-enum---relationships-between-stakeholder-and-issuer.md "Enums.StakeholderRelationship.schema.json#/properties/current_relationship") |
 | [primary_contact](#primary_contact)           | `object` | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-type---contactinfo.md "Types.ContactInfo.schema.json#/properties/primary_contact")                                                   |
-| [addresses](#addresses)                       | `array`  | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-addresses.md "Objects.Stakeholder.schema.json#/properties/addresses")                                                                |
-| [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-tax_ids.md "Objects.Stakeholder.schema.json#/properties/tax_ids")                                                                    |
+| [addresses](#addresses)                       | `array`  | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-stakeholder---address-array.md "Objects.Stakeholder.schema.json#/properties/addresses")                                              |
+| [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-stakeholder---taxid-array.md "Objects.Stakeholder.schema.json#/properties/tax_ids")                                                  |
 | [comments](#comments)                         | `array`  | Optional | cannot be null | [Object - Stakeholder](stakeholder-1-properties-stakeholder---comments.md "Objects.Stakeholder.schema.json#/properties/comments")                                                    |
 
 ## id
@@ -177,7 +177,7 @@ Addresses for the stakeholder
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-addresses.md "Objects.Stakeholder.schema.json#/properties/addresses")
+*   defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---address-array.md "Objects.Stakeholder.schema.json#/properties/addresses")
 
 ### addresses Type
 
@@ -191,15 +191,15 @@ The tax ids for this stakeholder
 
 *   is optional
 
-*   Type: `object[]` ([Type - TaxID](issuer-properties-tax_ids-type---taxid.md))
+*   Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-tax_ids.md "Objects.Stakeholder.schema.json#/properties/tax_ids")
+*   defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---taxid-array.md "Objects.Stakeholder.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
-`object[]` ([Type - TaxID](issuer-properties-tax_ids-type---taxid.md))
+`object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
 ## comments
 

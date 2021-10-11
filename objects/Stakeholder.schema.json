@@ -30,6 +30,7 @@
       "$ref": "Types.ContactInfo.schema.json"
     },
     "addresses": {
+      "title": "Stakeholder - Address Array",
       "description": "Addresses for the stakeholder",
       "type": "array",
       "items": {
@@ -37,6 +38,7 @@
       }
     },
     "tax_ids": {
+      "title": "Stakeholder - TaxID Array",
       "description": "The tax ids for this stakeholder",
       "type": "array",
       "items": {

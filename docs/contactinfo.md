@@ -16,12 +16,12 @@ Type representation of a primary contact person for a stakeholder (e.g. a fund).
 
 # Type - ContactInfo Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                        |
-| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| [contact_first_name](#contact_first_name) | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_first_name.md "Types.ContactInfo.schema.json#/properties/contact_first_name") |
-| [contact_last_name](#contact_last_name)   | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_last_name.md "Types.ContactInfo.schema.json#/properties/contact_last_name")   |
-| [phone_numbers](#phone_numbers)           | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-phone_numbers.md "Types.ContactInfo.schema.json#/properties/phone_numbers")           |
-| [emails](#emails)                         | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-emails.md "Types.ContactInfo.schema.json#/properties/emails")                         |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                 |
+| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| [contact_first_name](#contact_first_name) | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_first_name.md "Types.ContactInfo.schema.json#/properties/contact_first_name")          |
+| [contact_last_name](#contact_last_name)   | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_last_name.md "Types.ContactInfo.schema.json#/properties/contact_last_name")            |
+| [phone_numbers](#phone_numbers)           | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-contactinfo---phone-number-array.md "Types.ContactInfo.schema.json#/properties/phone_numbers") |
+| [emails](#emails)                         | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-contactinfo---email-array.md "Types.ContactInfo.schema.json#/properties/emails")               |
 
 ## contact_first_name
 
@@ -71,7 +71,7 @@ Phone numbers to reach the contact at
 
 *   cannot be null
 
-*   defined in: [Type - ContactInfo](contactinfo-properties-phone_numbers.md "Types.ContactInfo.schema.json#/properties/phone_numbers")
+*   defined in: [Type - ContactInfo](contactinfo-properties-contactinfo---phone-number-array.md "Types.ContactInfo.schema.json#/properties/phone_numbers")
 
 ### phone_numbers Type
 
@@ -89,7 +89,7 @@ Emails to reach the contact at
 
 *   cannot be null
 
-*   defined in: [Type - ContactInfo](contactinfo-properties-emails.md "Types.ContactInfo.schema.json#/properties/emails")
+*   defined in: [Type - ContactInfo](contactinfo-properties-contactinfo---email-array.md "Types.ContactInfo.schema.json#/properties/emails")
 
 ### emails Type
 

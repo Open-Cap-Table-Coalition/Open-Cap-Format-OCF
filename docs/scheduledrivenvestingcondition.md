@@ -16,14 +16,14 @@ Type representation of a row in a vesting schedule.
 
 # Type - Schedule-driven Vesting Condition Properties
 
-| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                    |
-| :---------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [amount_numerator](#amount_numerator)     | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")     |
-| [amount_denominator](#amount_denominator) | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator") |
-| [period_length](#period_length)           | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")           |
-| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")                           |
-| [priority](#priority)                     | `integer` | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/priority")                     |
-| [dependent_vesting](#dependent_vesting)   | `array`   | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-dependent_vesting.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")   |
+| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                    |
+| :---------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [amount_numerator](#amount_numerator)     | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")                                                     |
+| [amount_denominator](#amount_denominator) | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")                                                 |
+| [period_length](#period_length)           | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")                                                           |
+| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")                                                                           |
+| [priority](#priority)                     | `integer` | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/priority")                                                                     |
+| [dependent_vesting](#dependent_vesting)   | `array`   | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting") |
 
 ## amount_numerator
 
@@ -133,12 +133,12 @@ Vesting periods or conditions which become operative once this condition is met
 
 *   is optional
 
-*   Type: an array of merged types ([Details](scheduledrivenvestingcondition-properties-dependent_vesting-items.md))
+*   Type: an array of merged types ([Details](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array-items.md))
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-dependent_vesting.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")
 
 ### dependent_vesting Type
 
-an array of merged types ([Details](scheduledrivenvestingcondition-properties-dependent_vesting-items.md))
+an array of merged types ([Details](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array-items.md))
