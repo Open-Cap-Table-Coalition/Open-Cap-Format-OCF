@@ -6,9 +6,9 @@ Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration
 
 Date by which event must be met to qualify, given that the condition carries an expiry
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                          |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json*](../types/EventDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                              |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json*](../out/types/EventDrivenVestingCondition.schema.json "open original schema") |
 
 ## event_expiration Type
 

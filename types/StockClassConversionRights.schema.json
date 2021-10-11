@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "ratio": {
-      "description": "What number of target StockClass shares do one share of this StockClass convert into",
+      "description": "One share of this StockClass converts into this many target StockClass shares",
       "$ref": "Types.Ratio.schema.json"
     },
     "converts_to_future_round": {
@@ -14,7 +14,7 @@
       "type": "boolean"
     },
     "converts_to_stock_class_id": {
-      "description": "What is the id of the StockClass this StockClass can convert into?",
+      "description": "What is the id of the existing, known StockClass this StockClass can convert into?",
       "type": "string"
     },
     "rounding_type": {
@@ -25,11 +25,15 @@
   "oneOf": [
     {
       "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
-      "required": ["converts_to_future_round"]
+      "required": [
+        "converts_to_future_round"
+      ]
     },
     {
       "title": "Converts to existing, known StockClass Id",
-      "required": ["converts_to_stock_class_id"]
+      "required": [
+        "converts_to_stock_class_id"
+      ]
     }
   ],
   "required": [

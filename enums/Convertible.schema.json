@@ -4,5 +4,9 @@
   "title": "Enum - Convertible Type",
   "description": "Enumeration of convertible instrument types",
   "type": "string",
-  "enum": ["NOTE", "SAFE", "CONVERTIBLE_SECURITY"]
+  "enum": [
+    "NOTE",
+    "SAFE",
+    "CONVERTIBLE_SECURITY"
+  ]
 }

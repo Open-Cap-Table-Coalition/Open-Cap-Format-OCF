@@ -6,9 +6,9 @@ Objects.Convertible.schema.json
 
 Object describing convertible instrument issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json](../objects/Convertible.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json](../out/objects/Convertible.schema.json "open original schema") |
 
 ## Object - Convertible Type
 
@@ -316,7 +316,7 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 ## default_conversion_rights
 
-Type representation of a stock class or series conversion rights into another stock class or series as an object.
+Type representation of one converstion right for shares of this stock class or series to convert to another class. Stock Classes may have many StockClassConversionRights.
 
 `default_conversion_rights`
 

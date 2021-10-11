@@ -11,5 +11,7 @@
       "format": "int64"
     }
   },
-  "required": ["epoch_millis"]
+  "required": [
+    "epoch_millis"
+  ]
 }

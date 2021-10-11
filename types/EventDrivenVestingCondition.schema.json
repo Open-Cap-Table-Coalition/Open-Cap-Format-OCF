@@ -12,15 +12,27 @@
     "event_occurred": {
       "description": "Date of the event, if it has occurred already",
       "oneOf": [
-        {"type":  "null", "description": "Event has not occurred (null)"},
-        {"$ref": "Types.DateTime.schema.json", "description": "Event has occurred at this datetime"}
+        {
+          "type": "null",
+          "description": "Event has not occurred (null)"
+        },
+        {
+          "$ref": "Types.DateTime.schema.json",
+          "description": "Event has occurred at this datetime"
+        }
       ]
     },
     "event_expiration": {
       "description": "Date by which event must be met to qualify, given that the condition carries an expiry",
       "oneOf": [
-        {"type":  "null", "description": "No expiration date (null)"},
-        {"$ref": "Types.DateTime.schema.json", "description": "Datetime @ which condition ceases to apply"}
+        {
+          "type": "null",
+          "description": "No expiration date (null)"
+        },
+        {
+          "$ref": "Types.DateTime.schema.json",
+          "description": "Datetime @ which condition ceases to apply"
+        }
       ]
     },
     "share_amount": {

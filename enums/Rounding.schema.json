@@ -4,5 +4,9 @@
   "title": "Enum - Rounding Type",
   "description": "Enumeration of rounding types",
   "type": "string",
-  "enum": ["CEILING", "FLOOR", "NORMAL"]
+  "enum": [
+    "CEILING",
+    "FLOOR",
+    "NORMAL"
+  ]
 }

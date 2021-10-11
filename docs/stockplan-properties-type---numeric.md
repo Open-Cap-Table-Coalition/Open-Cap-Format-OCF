@@ -1,20 +1,20 @@
 # Type - Numeric Schema
 
 ```txt
-Types.Numeric.schema.json#/properties/shares_reserved
+Types.Numeric.schema.json#/properties/current_shares_reserved
 ```
 
 Type representation of a number (up to 10 decimal places supported by the spec)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../objects/StockPlan.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../out/objects/StockPlan.schema.json "open original schema") |
 
-## shares_reserved Type
+## current_shares_reserved Type
 
 `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-# shares_reserved Properties
+# current_shares_reserved Properties
 
 | Property                      | Type     | Required | Nullable       | Defined by                                                                                                |
 | :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------- |

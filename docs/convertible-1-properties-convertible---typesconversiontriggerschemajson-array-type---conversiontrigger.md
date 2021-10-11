@@ -6,9 +6,9 @@ Types.ConversionTrigger.schema.json#/properties/conversion_triggers/items
 
 Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json*](../objects/Convertible.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json*](../out/objects/Convertible.schema.json "open original schema") |
 
 ## items Type
 

@@ -4,5 +4,7 @@
   "title": "Enum - Valuation Type",
   "description": "Enumeration of valuation types",
   "type": "string",
-  "enum": ["409A"]
+  "enum": [
+    "409A"
+  ]
 }

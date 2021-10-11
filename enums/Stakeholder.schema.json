@@ -4,5 +4,8 @@
   "title": "Enum - Stakeholder Type",
   "description": "Enumeration of stakeholder types - individual (human) or institution (entity)",
   "type": "string",
-  "enum": ["INDIVIDUAL", "INSTITUTION"]
+  "enum": [
+    "INDIVIDUAL",
+    "INSTITUTION"
+  ]
 }

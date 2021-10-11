@@ -6,9 +6,9 @@ Types.ScheduleDrivenVestingCondition.schema.json
 
 Type representation of a row in a vesting schedule.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json](../types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                   |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json](../out/types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
 
 ## Type - Schedule-driven Vesting Condition Type
 

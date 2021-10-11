@@ -6,9 +6,9 @@ Types.TaxID.schema.json
 
 Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                             |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [TaxID.schema.json](../types/TaxID.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [TaxID.schema.json](../out/types/TaxID.schema.json "open original schema") |
 
 ## Type - TaxID Type
 

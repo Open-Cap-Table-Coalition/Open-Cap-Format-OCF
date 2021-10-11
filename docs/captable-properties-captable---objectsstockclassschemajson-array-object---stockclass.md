@@ -6,9 +6,9 @@ Objects.StockClass.schema.json#/properties/stockclasses/items
 
 Object describing a type of stock class issued by the issuer
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../out/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -28,9 +28,9 @@ Object describing a type of stock class issued by the issuer
 | [par_value](#par_value)                                             | `object` | Required | cannot be null | [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/par_value")                                               |
 | [price_per_share](#price_per_share)                                 | `object` | Required | cannot be null | [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")                                         |
 | [seniority](#seniority)                                             | `object` | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/seniority")                                                |
-| [conversion_rights](#conversion_rights)                             | `array`  | Required | cannot be null | [Object - StockClass](stockclass-1-properties-stockclass---stockclassconversionrights-array.md "Objects.StockClass.schema.json#/properties/conversion_rights") |
-| [liquidation_preference_multiple](#liquidation_preference_multiple) | `object` | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/liquidation_preference_multiple")                          |
-| [participation_cap_multiple](#participation_cap_multiple)           | `object` | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/participation_cap_multiple")                               |
+| [conversion_rights](#conversion_rights)                             | `array`  | Optional | cannot be null | [Object - StockClass](stockclass-1-properties-stockclass---stockclassconversionrights-array.md "Objects.StockClass.schema.json#/properties/conversion_rights") |
+| [liquidation_preference_multiple](#liquidation_preference_multiple) | `object` | Optional | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/liquidation_preference_multiple")                          |
+| [participation_cap_multiple](#participation_cap_multiple)           | `object` | Optional | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/participation_cap_multiple")                               |
 | [comments](#comments)                                               | `array`  | Optional | cannot be null | [Object - StockClass](stockclass-1-properties-stockclass---comments.md "Objects.StockClass.schema.json#/properties/comments")                                  |
 
 ## id
@@ -98,7 +98,7 @@ Enumeration of stockclass types
 
 ## default_id_prefix
 
-Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1)
+Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1). If certificate IDs have a dash, the prefix should end in the dash like CS-
 
 `default_id_prefix`
 
@@ -228,7 +228,7 @@ List of StockClassConversionRights possible for this StockClass
 
 `conversion_rights`
 
-*   is required
+*   is optional
 
 *   Type: `object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
 
@@ -246,7 +246,7 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `liquidation_preference_multiple`
 
-*   is required
+*   is optional
 
 *   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
@@ -264,7 +264,7 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `participation_cap_multiple`
 
-*   is required
+*   is optional
 
 *   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 

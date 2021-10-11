@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "address_type": {
-      "description": "What type of address is this (e.g. domicile, office, etc.)",
+      "description": "What type of address is this (e.g. legal address, contact address, etc.)",
       "$ref": "Enums.Address.schema.json"
     },
     "street_suite": {

@@ -60,8 +60,12 @@
     "expiration_date": {
       "description": "Expiration date of the plan security",
       "oneOf": [
-        {"type": "null"},
-        {"$ref": "Types.DateTime.schema.json"}
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "Types.DateTime.schema.json"
+        }
       ]
     },
     "termination_exercise_windows": {
@@ -84,13 +88,19 @@
   "anyOf": [
     {
       "properties": {
-        "compensation_type": { "const": "OPTION" }
+        "compensation_type": {
+          "const": "OPTION"
+        }
       },
-      "required": ["option_grant_type"]
+      "required": [
+        "option_grant_type"
+      ]
     },
     {
       "properties": {
-        "compensation_type": { "const": "RSU" }
+        "compensation_type": {
+          "const": "RSU"
+        }
       }
     }
   ],

@@ -6,9 +6,9 @@ Objects.Stock.schema.json#/properties/stock/items
 
 Object describing stock issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../out/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -71,7 +71,7 @@ Id of StockClass of this stock issuance
 
 ## custom_id
 
-An override of the StockClass custom_id for this issuance (e.g. CS-1.)
+An override of the StockClass custom_id for this issuance (e.g. CS-1.). Also known as the certificate id
 
 `custom_id`
 
