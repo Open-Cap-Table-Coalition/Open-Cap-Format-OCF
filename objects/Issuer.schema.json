@@ -60,6 +60,7 @@
   "required": [
     "id",
     "legal_name",
-    "formation_date"
+    "formation_date",
+    "country_of_formation"
   ]
 }
