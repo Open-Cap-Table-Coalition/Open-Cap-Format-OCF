@@ -10,7 +10,8 @@
       "$ref": "Enums.Parent.schema.json"
     },
     "parent_object_id": {
-      "description": "Parent object's ID, which must be a valid ID pointing to an object of type parent_object_type",
+      "title": "ID of the parent object",
+      "description": "Parent object's ID must be a valid ID pointing to an object of the type specified in parent_object_type",
       "type": "string"
     }
   },
