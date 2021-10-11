@@ -9,7 +9,12 @@
       "description": "Numeric value",
       "$ref": "Types.Numeric.schema.json"
     },
-    "currency": { "description": "ISO-4217 currency code", "type": "string" }
+    "currency": {
+      "description": "ISO-4217 currency code",
+      "type": "string"
+    }
   },
-  "required": ["amount"]
+  "required": [
+    "amount"
+  ]
 }

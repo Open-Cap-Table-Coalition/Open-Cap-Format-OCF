@@ -5,7 +5,10 @@
   "description": "Object describing a valuation used in the cap table",
   "type": "object",
   "properties": {
-    "id": { "description": "Identifier for the valuation", "type": "string" },
+    "id": {
+      "description": "Identifier for the valuation",
+      "type": "string"
+    },
     "provider": {
       "description": "Entity which provided the valuation",
       "type": "string"
@@ -26,8 +29,15 @@
       "title": "Valuation - Comments",
       "description": "List of comments for the valuation",
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
   },
-  "required": ["id", "price_per_share", "valuation_date", "valuation_type"]
+  "required": [
+    "id",
+    "price_per_share",
+    "valuation_date",
+    "valuation_type"
+  ]
 }

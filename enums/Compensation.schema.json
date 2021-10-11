@@ -4,5 +4,8 @@
   "title": "Enum - Compensation Type",
   "description": "Enumeration of stock compensation types",
   "type": "string",
-  "enum": ["OPTION", "RSU"]
+  "enum": [
+    "OPTION",
+    "RSU"
+  ]
 }

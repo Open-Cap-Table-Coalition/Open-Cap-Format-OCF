@@ -5,7 +5,10 @@
   "description": "Object describing a stakeholder",
   "type": "object",
   "properties": {
-    "id": { "description": "Identifier for the stakeholder", "type": "string" },
+    "id": {
+      "description": "Identifier for the stakeholder",
+      "type": "string"
+    },
     "name": {
       "description": "Name for the stakeholder",
       "$ref": "Types.Name.schema.json"
@@ -18,8 +21,14 @@
       "title": "Stakeholder - Comments",
       "description": "Unstructured text comments related to and stored for this Stakeholder",
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
   },
-  "required": ["id", "name", "stakeholder_type"]
+  "required": [
+    "id",
+    "name",
+    "stakeholder_type"
+  ]
 }

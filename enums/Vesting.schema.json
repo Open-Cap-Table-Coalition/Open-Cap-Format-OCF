@@ -4,5 +4,9 @@
   "title": "Enum - Vesting Type",
   "description": "Enumeration of vesting types",
   "type": "string",
-  "enum": ["SCHEDULE_DRIVEN_ONLY", "EVENT_DRIVEN_ONLY", "SCHEDULE_AND_EVENT_DRIVEN"]
+  "enum": [
+    "SCHEDULE_DRIVEN_ONLY",
+    "EVENT_DRIVEN_ONLY",
+    "SCHEDULE_AND_EVENT_DRIVEN"
+  ]
 }

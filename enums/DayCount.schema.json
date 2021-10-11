@@ -4,5 +4,8 @@
   "title": "Enum - DayCount Type",
   "description": "Enumeration of ways days are determine per period",
   "type": "string",
-  "enum": ["ACTUAL_365", "30_360"]
+  "enum": [
+    "ACTUAL_365",
+    "30_360"
+  ]
 }

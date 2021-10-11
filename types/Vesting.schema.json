@@ -41,9 +41,9 @@
       }
     },
     "custom_vesting_description": {
-        "description": "Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches",
-        "type": "string"
-      }
+      "description": "Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches",
+      "type": "string"
+    }
   },
   "required": [
     "vesting_type"

@@ -4,5 +4,8 @@
   "title": "Enum - StockClass Type",
   "description": "Enumeration of stockclass types",
   "type": "string",
-  "enum": ["COMMON", "PREFERRED"]
+  "enum": [
+    "COMMON",
+    "PREFERRED"
+  ]
 }

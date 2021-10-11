@@ -4,5 +4,9 @@
   "title": "Enum - Time Period Type",
   "description": "Enumeration of time period types",
   "type": "string",
-  "enum": ["DAYS", "MONTHS", "YEARS"]
+  "enum": [
+    "DAYS",
+    "MONTHS",
+    "YEARS"
+  ]
 }
