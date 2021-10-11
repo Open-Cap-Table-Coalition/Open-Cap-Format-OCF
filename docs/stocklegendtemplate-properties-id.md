@@ -1,7 +1,7 @@
 # Untitled string in Object - StockLegendTemplate Schema
 
 ```txt
-Objects.StockLegendTempate.schema.json#/properties/id
+Objects.StockLegendTemplate.schema.json#/properties/id
 ```
 
 Identifier for the stock legend template

@@ -1,7 +1,7 @@
 # Untitled string in Object - StockLegendTemplate Schema
 
 ```txt
-Objects.StockLegendTempate.schema.json#/properties/text
+Objects.StockLegendTemplate.schema.json#/properties/text
 ```
 
 The full text of the stock legend

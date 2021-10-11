@@ -16,18 +16,19 @@ Top-level object describing a capitalization table
 
 # Cap Table ("Snapshot") Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                              |
-| :-------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [issuer](#issuer)                       | `object` | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")                                        |
-| [stakeholders](#stakeholders)           | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")          |
-| [stock_plans](#stock_plans)             | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")             |
-| [plan_securities](#plan_securities)     | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsplansecuritiesschemajson-array.md "CapTable.schema.json#/properties/plan_securities")    |
-| [warrants](#warrants)                   | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectswarrantschemajson-array.md "CapTable.schema.json#/properties/warrants")                  |
-| [stockclasses](#stockclasses)           | `array`  | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockclassschemajson-array.md "CapTable.schema.json#/properties/stockclasses")           |
-| [stock](#stock)                         | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockschemajson-array.md "CapTable.schema.json#/properties/stock")                       |
-| [convertibles](#convertibles)           | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsconvertibleschemajson-array.md "CapTable.schema.json#/properties/convertibles")          |
-| [vesting_schedules](#vesting_schedules) | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules") |
-| [valuations](#valuations)               | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")              |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
+| :------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [issuer](#issuer)                                 | `object` | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")                                                  |
+| [stakeholders](#stakeholders)                     | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")                    |
+| [stock_plans](#stock_plans)                       | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")                       |
+| [stock_legend_templates](#stock_legend_templates) | `array`  | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "CapTable.schema.json#/properties/stock_legend_templates") |
+| [plan_securities](#plan_securities)               | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsplansecuritiesschemajson-array.md "CapTable.schema.json#/properties/plan_securities")              |
+| [warrants](#warrants)                             | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectswarrantschemajson-array.md "CapTable.schema.json#/properties/warrants")                            |
+| [stockclasses](#stockclasses)                     | `array`  | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockclassschemajson-array.md "CapTable.schema.json#/properties/stockclasses")                     |
+| [stock](#stock)                                   | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockschemajson-array.md "CapTable.schema.json#/properties/stock")                                 |
+| [convertibles](#convertibles)                     | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsconvertibleschemajson-array.md "CapTable.schema.json#/properties/convertibles")                    |
+| [vesting_schedules](#vesting_schedules)           | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules")           |
+| [valuations](#valuations)                         | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")                        |
 
 ## issuer
 
@@ -82,6 +83,24 @@ List of issued stock plans for the cap table
 ### stock_plans Type
 
 `object[]` ([Object - StockPlan](captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md))
+
+## stock_legend_templates
+
+List of stock legend templates for the cap table
+
+`stock_legend_templates`
+
+*   is optional
+
+*   Type: `object[]` ([Object - StockLegendTemplate](captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md))
+
+*   cannot be null
+
+*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "CapTable.schema.json#/properties/stock_legend_templates")
+
+### stock_legend_templates Type
+
+`object[]` ([Object - StockLegendTemplate](captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md))
 
 ## plan_securities
 

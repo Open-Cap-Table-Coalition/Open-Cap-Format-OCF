@@ -58,7 +58,7 @@
 
 *   [Object - StockClass](./stockclass-1.md "Object describing a type of stock class issued by the issuer") – `Objects.StockClass.schema.json`
 
-*   [Object - StockLegendTemplate](./stocklegendtemplate.md "Object describing a stock legend template") – `Objects.StockLegendTempate.schema.json`
+*   [Object - StockLegendTemplate](./stocklegendtemplate.md "Object describing a stock legend template") – `Objects.StockLegendTemplate.schema.json`
 
 *   [Object - StockPlan](./stockplan.md "Object describing a plan which stock options are issued from") – `Objects.StockPlan.schema.json`
 
@@ -124,6 +124,8 @@
 
 *   [CapTable - Objects.StockClass.schema.json Array](./captable-properties-captable---objectsstockclassschemajson-array.md "List of StockClasses authorized for the issuer") – `CapTable.schema.json#/properties/stockclasses`
 
+*   [CapTable - Objects.StockLegendTemplates.schema.json Array](./captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "List of stock legend templates for the cap table") – `CapTable.schema.json#/properties/stock_legend_templates`
+
 *   [CapTable - Objects.StockPlan.schema.json Array](./captable-properties-captable---objectsstockplanschemajson-array.md "List of issued stock plans for the cap table") – `CapTable.schema.json#/properties/stock_plans`
 
 *   [CapTable - Objects.Valuation.schema.json Array](./captable-properties-captable---objectsvaluationschemajson-array.md "List of valuations for the cap table") – `CapTable.schema.json#/properties/valuations`
@@ -184,7 +186,9 @@
 
 *   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
 
-*   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTempate.schema.json#/properties/comments`
+*   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTemplate.schema.json#/properties/comments`
+
+*   [StockLegendTemplate - Comments](./stocklegendtemplate-properties-stocklegendtemplate---comments.md "Unstructured text comments related to and stored for this StockLegend") – `Objects.StockLegendTemplate.schema.json#/properties/comments`
 
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
 

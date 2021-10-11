@@ -1,20 +1,20 @@
 # Object - StockLegendTemplate Schema
 
 ```txt
-Objects.StockLegendTemplate.schema.json
+Objects.StockLegendTemplate.schema.json#/properties/stock_legend_templates/items
 ```
 
 Object describing a stock legend template
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockLegendTemplate.schema.json](../out/objects/StockLegendTemplate.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../out/CapTable.schema.json "open original schema") |
 
-## Object - StockLegendTemplate Type
+## items Type
 
-`object` ([Object - StockLegendTemplate](stocklegendtemplate.md))
+`object` ([Object - StockLegendTemplate](captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md))
 
-# Object - StockLegendTemplate Properties
+# items Properties
 
 | Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
 | :-------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |

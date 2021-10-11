@@ -1,7 +1,7 @@
 # StockLegendTemplate - Comments Schema
 
 ```txt
-Objects.StockLegendTempate.schema.json#/properties/comments
+Objects.StockLegendTemplate.schema.json#/properties/comments
 ```
 
 Unstructured text comments related to and stored for this StockLegend

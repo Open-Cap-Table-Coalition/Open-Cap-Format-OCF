@@ -26,6 +26,14 @@
         "$ref": "Objects.StockPlan.schema.json"
       }
     },
+    "stock_legend_templates": {
+      "title": "CapTable - Objects.StockLegendTemplates.schema.json Array",
+      "description": "List of stock legend templates for the cap table",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.StockLegendTemplate.schema.json"
+      }
+    },
     "plan_securities": {
       "title": "CapTable - Objects.PlanSecurities.schema.json Array",
       "description": "List of plan securities for the cap table",
