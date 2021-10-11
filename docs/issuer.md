@@ -25,7 +25,7 @@ Object describing the issuer of the cap table. This is the company whsoe captabl
 | [country_of_formation](#country_of_formation) | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation") |
 | [state_of_formation](#state_of_formation)     | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")     |
 | [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-tax_ids.md "Objects.Issuer.schema.json#/properties/tax_ids")                           |
-| [email](#email)                               | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-email.md "Objects.Issuer.schema.json#/properties/email")                               |
+| [email](#email)                               | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")                           |
 | [phone](#phone)                               | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---phonenumber.md "Types.PhoneNumber.schema.json#/properties/phone")               |
 | [address](#address)                           | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---address.md "Types.Address.schema.json#/properties/address")                     |
 | [comments](#comments)                         | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---comments.md "Objects.Issuer.schema.json#/properties/comments")                |
@@ -158,21 +158,21 @@ The tax ids for this issuer company
 
 ## email
 
-A work email that the issuer company can be reached at
+Type representation of an email address.
 
 `email`
 
 *   is optional
 
-*   Type: `string`
+*   Type: `object` ([Type - Email](issuer-properties-type---email.md))
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-email.md "Objects.Issuer.schema.json#/properties/email")
+*   defined in: [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")
 
 ### email Type
 
-`string`
+`object` ([Type - Email](issuer-properties-type---email.md))
 
 ## phone
 

@@ -38,7 +38,7 @@
     },
     "email": {
       "description": "A work email that the issuer company can be reached at",
-      "type": "string"
+      "$ref": "Types.Email.schema.json"
     },
     "phone": {
       "description": "A phone number that the issuer company can be reached at",

@@ -12,4 +12,4 @@ Emails to reach the contact at
 
 ## emails Type
 
-`object[]` ([Type - Email](contactinfo-properties-emails-type---email.md))
+`object[]` ([Type - Email](issuer-properties-type---email.md))
