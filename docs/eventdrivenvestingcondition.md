@@ -6,9 +6,9 @@ Types.EventDrivenVestingCondition.schema.json
 
 Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                             |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json](../out/types/EventDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                         |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json](../types/EventDrivenVestingCondition.schema.json "open original schema") |
 
 ## Type - Event-driven Vesting Condition Type
 
@@ -16,15 +16,14 @@ Type representation of complex event-driven vesting criteria. These conditions m
 
 # Type - Event-driven Vesting Condition Properties
 
-| Property                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
-| :------------------------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [event_description](#event_description)     | `string`  | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_description")                                                              |
-| [event_occurred](#event_occurred)           | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_occurred")                                                                    |
-| [event_expected_date](#event_expected_date) | `object`  | Optional | cannot be null | [Type - Event-driven Vesting Condition](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/event_expected_date")                                                                                                      |
-| [event_expiration](#event_expiration)       | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration")                                                                |
-| [share_amount](#share_amount)               | `object`  | Required | cannot be null | [Type - Event-driven Vesting Condition](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/share_amount")                                                                                                            |
-| [priority](#priority)                       | `integer` | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "Types.EventDrivenVestingCondition.schema.json#/properties/priority")                                                                                |
-| [dependent_vesting](#dependent_vesting)     | `array`   | Optional | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting") |
+| Property                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
+| :-------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [event_description](#event_description) | `string`  | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_description")                                                              |
+| [event_occurred](#event_occurred)       | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_occurred")                                                                    |
+| [event_expiration](#event_expiration)   | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration")                                                                |
+| [share_amount](#share_amount)           | `object`  | Required | cannot be null | [Type - Event-driven Vesting Condition](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/share_amount")                                                                                                            |
+| [priority](#priority)                   | `integer` | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "Types.EventDrivenVestingCondition.schema.json#/properties/priority")                                                                                |
+| [dependent_vesting](#dependent_vesting) | `array`   | Optional | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting") |
 
 ## event_description
 
@@ -67,24 +66,6 @@ one (and only one) of
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
 
 *   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
-
-## event_expected_date
-
-Type representing an instant in Universal Coordinated Time (UTC)
-
-`event_expected_date`
-
-*   is optional
-
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
-
-*   cannot be null
-
-*   defined in: [Type - Event-driven Vesting Condition](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/event_expected_date")
-
-### event_expected_date Type
-
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
 ## event_expiration
 

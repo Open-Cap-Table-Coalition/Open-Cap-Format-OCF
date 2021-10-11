@@ -6,9 +6,9 @@ Objects.Convertible.schema.json#/properties/convertibles/items
 
 Object describing convertible instrument issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../out/CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -36,7 +36,7 @@ Object describing convertible instrument issued by the issuer and held by a stak
 | [exit_multiple](#exit_multiple)                           | `object`  | Optional | cannot be null | [Object - Convertible](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")                                                                               |
 | [interest_accrual_period](#interest_accrual_period)       | `string`  | Optional | cannot be null | [Object - Convertible](convertible-1-properties-enum---accrualperiod-types.md "Enums.AccrualPeriod.schema.json#/properties/interest_accrual_period")                                                            |
 | [compounding_type](#compounding_type)                     | `string`  | Optional | cannot be null | [Object - Convertible](convertible-1-properties-enum---compounding-type.md "Enums.Compounding.schema.json#/properties/compounding_type")                                                                        |
-| [pro_rate](#pro_rate)                                     | `object`  | Optional | cannot be null | [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rate")                                                                                                 |
+| [pro_rata](#pro_rata)                                     | `object`  | Optional | cannot be null | [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")                                                                                                 |
 | [conversion_valuation_cap](#conversion_valuation_cap)     | `object`  | Optional | cannot be null | [Object - Convertible](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")                                                                                |
 | [conversion_discount](#conversion_discount)               | `object`  | Optional | cannot be null | [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_discount")                                                                                      |
 | [conversion_fixed_ownership](#conversion_fixed_ownership) | `object`  | Optional | cannot be null | [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_fixed_ownership")                                                                               |
@@ -244,7 +244,7 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 ## day_count_convention
 
-Enumeration of ways days are determine per period
+Enumeration of how the number of days are determined per period
 
 `day_count_convention`
 
@@ -316,7 +316,7 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 ## default_conversion_rights
 
-Type representation of one converstion right for shares of this stock class or series to convert to another class. Stock Classes may have many StockClassConversionRights.
+Type representation of a conversion right from one security into a StockClass.
 
 `default_conversion_rights`
 
@@ -431,11 +431,11 @@ Enumeration of interest compounding type
 | `"COMPOUNDING"` |             |
 | `"SIMPLE"`      |             |
 
-## pro_rate
+## pro_rata
 
 Type representation of a number (up to 10 decimal places supported by the spec)
 
-`pro_rate`
+`pro_rata`
 
 *   is optional
 
@@ -443,9 +443,9 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   cannot be null
 
-*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rate")
+*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")
 
-### pro_rate Type
+### pro_rata Type
 
 `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 

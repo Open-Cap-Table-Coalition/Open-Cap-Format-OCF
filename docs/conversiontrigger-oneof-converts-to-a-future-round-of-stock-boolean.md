@@ -6,9 +6,9 @@ Types.ConversionTrigger.schema.json#/oneOf/0
 
 Some conversion triggers let holders convert into a future round/series of stock - e.g. at the next qualified financing or some similar formulation. If this is true, such a right applies to securities using this ConversionTrigger.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                          |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [ConversionTrigger.schema.json*](../out/types/ConversionTrigger.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                      |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [ConversionTrigger.schema.json*](../types/ConversionTrigger.schema.json "open original schema") |
 
 ## 0 Type
 

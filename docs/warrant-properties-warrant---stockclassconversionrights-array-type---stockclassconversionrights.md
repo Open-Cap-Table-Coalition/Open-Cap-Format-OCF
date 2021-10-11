@@ -4,11 +4,11 @@
 Types.StockClassConversionRights.schema.json#/properties/conversion_rights/items
 ```
 
-Type representation of one converstion right for shares of this stock class or series to convert to another class. Stock Classes may have many StockClassConversionRights.
+Type representation of a conversion right from one security into a StockClass.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json*](../out/objects/Warrant.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                    |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json*](../objects/Warrant.schema.json "open original schema") |
 
 ## items Type
 

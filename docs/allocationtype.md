@@ -13,9 +13,9 @@ Enumeration of allocation types for vesting schedules. Using an example of 18 sh
 5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
 6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [AllocationType.schema.json](../out/enums/AllocationType.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [AllocationType.schema.json](../enums/AllocationType.schema.json "open original schema") |
 
 ## Enum - AllocationType Type
 

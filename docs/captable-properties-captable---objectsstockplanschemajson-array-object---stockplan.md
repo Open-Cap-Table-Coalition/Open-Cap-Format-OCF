@@ -6,9 +6,9 @@ Objects.StockPlan.schema.json#/properties/stock_plans/items
 
 Object describing a plan which stock options are issued from
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../out/CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -22,6 +22,7 @@ Object describing a plan which stock options are issued from
 | [plan_name](#plan_name)                             | `string` | Required | cannot be null | [Object - StockPlan](stockplan-properties-plan_name.md "Objects.StockPlan.schema.json#/properties/plan_name")                |
 | [board_approval_date](#board_approval_date)         | `object` | Optional | cannot be null | [Object - StockPlan](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")      |
 | [current_shares_reserved](#current_shares_reserved) | `object` | Required | cannot be null | [Object - StockPlan](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_reserved") |
+| [stockclass_id](#stockclass_id)                     | `string` | Required | cannot be null | [Object - StockPlan](stockplan-properties-stockclass_id.md "Objects.StockPlan.schema.json#/properties/stockclass_id")        |
 | [comments](#comments)                               | `array`  | Optional | cannot be null | [Object - StockPlan](stockplan-properties-stockplan---comments.md "Objects.StockPlan.schema.json#/properties/comments")      |
 
 ## id
@@ -95,6 +96,24 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 ### current_shares_reserved Type
 
 `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+
+## stockclass_id
+
+Id of the StockClass object this plan is composed of
+
+`stockclass_id`
+
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Object - StockPlan](stockplan-properties-stockclass_id.md "Objects.StockPlan.schema.json#/properties/stockclass_id")
+
+### stockclass_id Type
+
+`string`
 
 ## comments
 

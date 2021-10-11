@@ -6,9 +6,9 @@ Types.CustomVestingTranche.schema.json
 
 Type representation of an vesting tranche by date and quantity
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CustomVestingTranche.schema.json](../out/types/CustomVestingTranche.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CustomVestingTranche.schema.json](../types/CustomVestingTranche.schema.json "open original schema") |
 
 ## Type - Custom Vesting Tranche Type
 

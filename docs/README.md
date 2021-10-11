@@ -18,7 +18,7 @@
 
 *   [Enum - Convertible Type](./convertible.md "Enumeration of convertible instrument types") – `Enums.Convertible.schema.json`
 
-*   [Enum - DayCount Type](./daycount.md "Enumeration of ways days are determine per period") – `Enums.DayCount.schema.json`
+*   [Enum - DayCount Type](./daycount.md "Enumeration of how the number of days are determined per period") – `Enums.DayCount.schema.json`
 
 *   [Enum - Email Type](./email.md "Enumeration of email types") – `Enums.Email.schema.json`
 
@@ -96,7 +96,7 @@
 
 *   [Type - SecurityExemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `Types.SecurityExemption.schema.json`
 
-*   [Type - StockClassConversionRights](./stockclassconversionrights.md "Type representation of one converstion right for shares of this stock class or series to convert to another class") – `Types.StockClassConversionRights.schema.json`
+*   [Type - StockClassConversionRights](./stockclassconversionrights.md "Type representation of a conversion right from one security into a StockClass") – `Types.StockClassConversionRights.schema.json`
 
 *   [Type - StockParent](./stockparent.md "Type representation of the parent security of a given stock issuance (e") – `Types.StockParent.schema.json`
 
