@@ -35,7 +35,7 @@ any of
 | [option_grant_type](#option_grant_type)                       | `string` | Optional | cannot be null | [Object - PlanSecurities](plansecurities-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")                                                         |
 | [shares](#shares)                                             | `object` | Required | cannot be null | [Object - PlanSecurities](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")                                                                            |
 | [exercise_price](#exercise_price)                             | `object` | Required | cannot be null | [Object - PlanSecurities](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                                   |
-| [vesting](#vesting)                                           | Merged   | Required | cannot be null | [Object - PlanSecurities](plansecurities-properties-vesting.md "Objects.PlanSecurities.schema.json#/properties/vesting")                                                                    |
+| [vesting](#vesting)                                           | `object` | Required | cannot be null | [Object - PlanSecurities](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                      |
 | [expiration_date](#expiration_date)                           | Merged   | Required | cannot be null | [Object - PlanSecurities](plansecurities-properties-expiration_date.md "Objects.PlanSecurities.schema.json#/properties/expiration_date")                                                    |
 | [termination_exercise_windows](#termination_exercise_windows) | `array`  | Required | cannot be null | [Object - PlanSecurities](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.PlanSecurities.schema.json#/properties/termination_exercise_windows") |
 | [comments](#comments)                                         | `array`  | Optional | cannot be null | [Object - PlanSecurities](plansecurities-properties-plansecurity---comments.md "Objects.PlanSecurities.schema.json#/properties/comments")                                                   |
@@ -259,27 +259,21 @@ Type representing a monetary value in a specified currency code
 
 ## vesting
 
-What vesting applies to this plan security?
+Type representing all aspects related to vesting securities
 
 `vesting`
 
 *   is required
 
-*   Type: merged type ([Details](plansecurities-properties-vesting.md))
+*   Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
 *   cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-vesting.md "Objects.PlanSecurities.schema.json#/properties/vesting")
+*   defined in: [Object - PlanSecurities](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
 
 ### vesting Type
 
-merged type ([Details](plansecurities-properties-vesting.md))
-
-one (and only one) of
-
-*   [Untitled null in Object - PlanSecurities](plansecurities-properties-vesting-oneof-0.md "check type definition")
-
-*   [Type - Vesting](plansecurities-properties-vesting-oneof-type---vesting.md "check type definition")
+`object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
 ## expiration_date
 

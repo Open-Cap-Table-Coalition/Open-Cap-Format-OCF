@@ -1,15 +1,15 @@
-# CapTable - Objects.Stock.schema.json Array Schema
+# CapTable - Objects.StockClass.schema.json Array Schema
 
 ```txt
-CapTable.schema.json#/properties/stock
+CapTable.schema.json#/properties/stockclasses
 ```
 
-List of stock issuances (Stock) for the cap table
+List of StockClasses authorized for the issuer
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
 
-## stock Type
+## stockclasses Type
 
-`object[]` ([Object - Stock](captable-properties-captable---objectsstockschemajson-array-object---stock.md))
+`object[]` ([Object - StockClass](captable-properties-captable---objectsstockclassschemajson-array-object---stockclass.md))

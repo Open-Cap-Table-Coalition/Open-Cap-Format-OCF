@@ -1,15 +1,15 @@
-# EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array Schema
+# Untitled string in Type - Event-driven Vesting Condition Schema
 
 ```txt
-Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting
+Types.EventDrivenVestingCondition.schema.json#/properties/event_description
 ```
 
-Additional vesting conditions which become operative once this condition is met
+Full detailed description of the vesting condition, whether it be milestone-based or some other specified event
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                          |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json*](../types/EventDrivenVestingCondition.schema.json "open original schema") |
 
-## dependent_vesting Type
+## event_description Type
 
-an array of merged types ([Details](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items.md))
+`string`

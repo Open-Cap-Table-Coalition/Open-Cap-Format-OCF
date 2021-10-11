@@ -5,12 +5,16 @@
   "description": "Type representing all aspects related to vesting securities",
   "type": "object",
   "properties": {
+    "vesting_type": {
+      "description": "What kind of vesting is this",
+      "$ref": "Enums.Vesting.schema.json"
+    },
     "vesting_schedule_id": {
       "description": "Time-based vesting schedule applied to the securities",
       "type": "string"
     },
-    "vesting_schedule_start_date": {
-      "description": "Vesting commencement date to which the vesting schedule is applied",
+    "vesting_start_date": {
+      "description": "Vesting commencement date",
       "$ref": "Types.DateTime.schema.json"
     },
     "event_driven_vesting_conditions": {
@@ -18,7 +22,14 @@
       "description": "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration.\n\n**Note**: complex vesting rules which mix time-and event-based conditions should be modeled using this field, because human intervention will ultimately be required by the importing system due to the nature/complexity of the rules.",
       "type": "array",
       "items": {
-        "$ref": "Types.EventDrivenVestingCondition.schema.json"
+        "anyOf": [
+          {
+            "$ref": "Types.EventDrivenVestingCondition.schema.json"
+          },
+          {
+            "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+          }
+        ]
       }
     },
     "custom_vesting_tranches": {
@@ -34,5 +45,7 @@
         "type": "string"
       }
   },
-  "required": []
+  "required": [
+    "vesting_type"
+  ]
 }

@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Enums.Vesting.schema.json",
+  "title": "Enum - Vesting Type",
+  "description": "Enumeration of vesting types",
+  "type": "string",
+  "enum": ["SCHEDULE_DRIVEN_ONLY", "EVENT_DRIVEN_ONLY", "SCHEDULE_AND_EVENT_DRIVEN"]
+}

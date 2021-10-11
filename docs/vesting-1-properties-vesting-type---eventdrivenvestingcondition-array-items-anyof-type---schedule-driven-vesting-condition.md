@@ -1,20 +1,20 @@
 # Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-Types.ScheduleDrivenVestingCondition.schema.json
+Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items/anyOf/1
 ```
 
 Type representation of a row in a vesting schedule.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json](../types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                          |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json*](../types/EventDrivenVestingCondition.schema.json "open original schema") |
 
-## Type - Schedule-driven Vesting Condition Type
+## 1 Type
 
-`object` ([Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition.md))
+`object` ([Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md))
 
-# Type - Schedule-driven Vesting Condition Properties
+# 1 Properties
 
 | Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                    |
 | :---------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -42,6 +42,8 @@
 
 *   [Enum - Valuation Type](./valuation.md "Enumeration of valuation types") – `Enums.Valuation.schema.json`
 
+*   [Enum - Vesting Type](./vesting.md "Enumeration of vesting types") – `Enums.Vesting.schema.json`
+
 *   [Object - Convertible](./convertible-1.md "Object describing convertible instrument issued by the issuer and held by a stakeholder") – `Objects.Convertible.schema.json`
 
 *   [Object - Issuer](./issuer.md "Object describing the issuer of the cap table") – `Objects.Issuer.schema.json`
@@ -98,7 +100,7 @@
 
 *   [Type - TerminationWindow](./terminationwindow-1.md "Type representation of a termination window as an object") – `Types.TerminationWindow.schema.json`
 
-*   [Type - Vesting](./vesting.md "Type representing all aspects related to vesting securities") – `Types.Vesting.schema.json`
+*   [Type - Vesting](./vesting-1.md "Type representing all aspects related to vesting securities") – `Types.Vesting.schema.json`
 
 ## Other Schemas
 
@@ -114,7 +116,9 @@
 
 *   [CapTable - Objects.Stakeholder.schema.json Array](./captable-properties-captable---objectsstakeholderschemajson-array.md "List of stakeholders for the cap table") – `CapTable.schema.json#/properties/stakeholders`
 
-*   [CapTable - Objects.Stock.schema.json Array](./captable-properties-captable---objectsstockschemajson-array.md "List of stock issuances (Stock) for the cap table") – `CapTable.schema.json#/properties/stock_issuances`
+*   [CapTable - Objects.Stock.schema.json Array](./captable-properties-captable---objectsstockschemajson-array.md "List of stock issuances (Stock) for the cap table") – `CapTable.schema.json#/properties/stock`
+
+*   [CapTable - Objects.StockClass.schema.json Array](./captable-properties-captable---objectsstockclassschemajson-array.md "List of StockClasses authorized for the issuer") – `CapTable.schema.json#/properties/stockclasses`
 
 *   [CapTable - Objects.StockPlan.schema.json Array](./captable-properties-captable---objectsstockplanschemajson-array.md "List of issued stock plans for the cap table") – `CapTable.schema.json#/properties/stock_plans`
 
@@ -132,9 +136,9 @@
 
 *   [Convertible - Types.SecurityExemption.schema.json Array](./convertible-1-properties-convertible---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `Objects.Convertible.schema.json#/properties/security_law_exemptions`
 
-*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_conditions`
+*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 
-*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_conditions`
+*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 
 *   [Issuer - Comments](./issuer-properties-issuer---comments.md "Unstructured comments related to and stored for the issuer") – `Objects.Issuer.schema.json#/properties/comments`
 
@@ -170,23 +174,31 @@
 
 *   [StockClass - Comments](./stockclass-1-properties-stockclass---comments.md "List of comments for the stock class") – `Objects.StockClass.schema.json#/properties/comments`
 
+*   [StockClass - Comments](./stockclass-1-properties-stockclass---comments.md "List of comments for the stock class") – `Objects.StockClass.schema.json#/properties/comments`
+
+*   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
+
 *   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
 
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
 
 *   [StockPlan - Comments](./stockplan-properties-stockplan---comments.md "List of comments for the stock plan") – `Objects.StockPlan.schema.json#/properties/comments`
 
-*   [Valuation - Comments](./valuation-1-properties-valuation---comments.md "List of comments for the valuation") – `Objects.Valuation.schema.json#/properties/comments`
+*   [Untitled array in Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition-properties-dependent_vesting.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+
+*   [Untitled array in Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition-properties-dependent_vesting.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 
 *   [Valuation - Comments](./valuation-1-properties-valuation---comments.md "List of comments for the valuation") – `Objects.Valuation.schema.json#/properties/comments`
 
-*   [Vesting Type - CustomVestingTranche Array](./vesting-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
+*   [Valuation - Comments](./valuation-1-properties-valuation---comments.md "List of comments for the valuation") – `Objects.Valuation.schema.json#/properties/comments`
 
-*   [Vesting Type - CustomVestingTranche Array](./vesting-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
+*   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
 
-*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
+*   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
 
-*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
+*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
+
+*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
 
 *   [VestingSchedule - Comments](./vestingschedule-properties-vestingschedule---comments.md "List of comments for the vesting schedule") – `Objects.VestingSchedule.schema.json#/properties/comments`
 

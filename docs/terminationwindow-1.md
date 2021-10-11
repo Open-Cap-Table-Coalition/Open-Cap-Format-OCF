@@ -20,7 +20,7 @@ Type representation of a termination window as an object.
 | :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [reason](#reason)           | `string`  | Required | cannot be null | [Type - TerminationWindow](terminationwindow-1-properties-enum---terminationwindowschemajson.md "Enums.TerminationWindow.schema.json#/properties/reason") |
 | [period](#period)           | `integer` | Required | cannot be null | [Type - TerminationWindow](terminationwindow-1-properties-period.md "Types.TerminationWindow.schema.json#/properties/period")                             |
-| [period_type](#period_type) | `string`  | Required | cannot be null | [Type - TerminationWindow](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")                  |
+| [period_type](#period_type) | `string`  | Required | cannot be null | [Type - TerminationWindow](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")       |
 
 ## reason
 
@@ -79,15 +79,15 @@ Enumeration of time period types
 
 *   is required
 
-*   Type: `string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
+*   Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - TerminationWindow](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
+*   defined in: [Type - TerminationWindow](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
 
 ### period_type Type
 
-`string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
+`string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
 
 ### period_type Constraints
 

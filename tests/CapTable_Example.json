@@ -2,7 +2,7 @@
   "id": "7d597e5b-4dc7-43af-82f1-1633e23c2048",
   "issuer": {
     "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
-    "legal_name": "Vandelay Industries",
+    "legal_name": "ACME Industries",
     "formation_date": {
       "epoch_millis": 615614400
     },
@@ -12,16 +12,319 @@
     {
       "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
       "name": {
-        "legal_name": "Jerry Seinfeld",
-        "first_name": "Jerry",
-        "last_name": "Seinfeld"
+        "legal_name": "Person X",
+        "first_name": "Person",
+        "last_name": "X"
       },
       "stakeholder_type": "INDIVIDUAL",
-      "comments": [
-        "Exported from ABC123 Capitalization management system on 2021-10-05 09:56:07.477957"
+      "comments": []
+    },
+    {
+      "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
+      "name": {
+        "legal_name": "Person Y",
+        "first_name": "Person",
+        "last_name": "Y"
+      },
+      "stakeholder_type": "INDIVIDUAL",
+      "comments": []
+    }
+  ],
+  "stockclasses": [
+      {
+      "id":"8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "name": "Common Stock",
+      "class_type": "COMMON",
+      "default_id_prefix": "CS-",
+      "current_shares_authorized": {
+        "string_value": "1000000000.00"
+      },
+      "board_approval_date": {
+        "epoch_millis": 1633912211256704
+      },
+      "votes_per_share": {
+        "string_value": "1"
+      },
+      "par_value": {
+        "amount": {
+          "string_value": "0.0001000000"
+        },
+        "currency": "USD"
+      },
+      "price_per_share": {
+        "amount": {
+          "string_value": "0.0001000000"
+        },
+        "currency": "USD"
+      },
+      "seniority": {
+        "string_value": "1"
+      },
+      "conversion_rights": [],
+      "liquidation_preference_multiple": {
+        "string_value": "1"
+      },
+      "participation_cap_multiple": {
+        "string_value": "1"
+      },
+      "comments": []
+    },
+    {
+      "id":"cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
+      "name": "Series Seed Preferred",
+      "class_type": "PREFERRED",
+      "default_id_prefix": "PS-",
+      "current_shares_authorized": {
+        "string_value": "10000000.00"
+      },
+      "board_approval_date": {
+        "epoch_millis": 1633912211256704
+      },
+      "votes_per_share": {
+        "string_value": "1"
+      },
+      "par_value": {
+        "amount": {
+          "string_value": "0.0001000000"
+        },
+        "currency": "USD"
+      },
+      "price_per_share": {
+        "amount": {
+          "string_value": "2.4700000000"
+        },
+        "currency": "USD"
+      },
+      "seniority": {
+        "string_value": "2"
+      },
+      "conversion_rights": [{
+        "ratio": {
+          "antecedent": {
+            "string_value": "1"
+          },
+          "consequent": {
+            "string_value": "1"
+          }
+        },
+        "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+        "rounding_type": "NORMAL"
+      }],
+      "liquidation_preference_multiple": {
+        "string_value": "2"
+      },
+      "participation_cap_multiple": {
+        "string_value": "2"
+      },
+      "comments": []
+    }
+  ],
+  "stock": [],
+  "plan_securities": [
+    {
+      "id": "f0394889-5672-4d53-afc0-eb1a8a19dec5",
+      "stock_plan_id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "custom_id": "0",
+      "stakeholder_id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
+      "issue_date": {
+        "epoch_millis": 1633913282640977
+      },
+      "security_law_exemptions": [
+        {
+          "description": "Rule 701",
+          "jurisdiction": "USA"
+        }
+      ],
+      "compensation_type": "OPTION",
+      "option_grant_type": "ISO",
+      "shares": {
+        "string_value": "1000000"
+      },
+      "exercise_price": {
+         "amount": {
+            "string_value": "0.0100000000"
+          },
+          "currency": "USD"
+      },
+      "vesting": {
+        "vesting_type": "SCHEDULE_AND_EVENT_DRIVEN",
+        "vesting_start_date": {
+          "epoch_millis": 1633919902000
+        },
+        "event_driven_vesting_conditions": [
+          {
+            "event_description": "Change in Control - Single Trigger Acceleration",
+            "event_occurred": null,
+            "event_expiration": null,
+            "priority": 1,
+            "share_amount": {
+              "string_value": "1000000"
+            }
+          },
+          {
+            "amount_numerator": 12,
+            "amount_denominator": 48,
+            "period_length": 1,
+            "period_type": "YEARS",
+            "priority": 2,
+            "dependent_vesting:": [
+              {
+                "amount_numerator": 1,
+                "amount_denominator": 48,
+                "period_length": 1,
+                "period_type": "MONTHS",
+                "priority": 1
+              }
+            ]
+          }
+        ],
+        "custom_vesting_description": "4 Year / 1 Year Cliff + Single Trigger"
+      },
+      "expiration_date": {
+        "epoch_millis": 1949452702000
+      },
+      "termination_exercise_windows": [
+        {
+          "reason": "CAUSE",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "VOLUNTARY",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "INVOLUNTARY",
+          "period": 3,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "DEATH",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "DISABILITY",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "RETIREMENT",
+          "period": 30,
+          "period_type": "DAYS"
+        }
+      ]
+    },
+    {
+      "id": "f583ff92-1ba2-4eab-a769-32e19b4c8110",
+      "stock_plan_id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "custom_id": "1",
+      "stakeholder_id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
+      "issue_date": {
+        "epoch_millis": 1633913282640977
+      },
+      "security_law_exemptions": [
+        {
+          "description": "Rule 701",
+          "jurisdiction": "USA"
+        }
+      ],
+      "compensation_type": "OPTION",
+      "option_grant_type": "ISO",
+      "shares": {
+        "string_value": "10000"
+      },
+      "exercise_price": {
+         "amount": {
+            "string_value": "0.0100000000"
+          },
+          "currency": "USD"
+      },
+      "vesting": {
+        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
+        "vesting_schedule_id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
+        "vesting_start_date": {
+          "epoch_millis": 1633919902000
+        },
+        "custom_vesting_description": "4 Year / 1 Year Cliff + Single Trigger"
+      },
+      "expiration_date": {
+        "epoch_millis": 1949452702000
+      },
+      "termination_exercise_windows": [
+        {
+          "reason": "CAUSE",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "VOLUNTARY",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "INVOLUNTARY",
+          "period": 3,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "DEATH",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "DISABILITY",
+          "period": 30,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "RETIREMENT",
+          "period": 30,
+          "period_type": "DAYS"
+        }
       ]
     }
   ],
-  "stock_plans": [],
+  "warrants": [],
+  "convertibles": [],
+  "stock_plans": [{
+    "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+    "plan_name": "2021 Stock Incentive Plan",
+    "board_approval_date": {
+      "epoch_millis": 1633906514750837
+    },
+    "shares_reserved": {
+      "string_value": "10000000.00"
+    },
+    "comments": [
+      "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
+    ]
+  }],
+  "vesting_schedules": [
+    {
+      "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
+      "name": "Four Year / One Year Cliff",
+      "description": "25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.",
+      "allocation_type": "CUMULATIVE_ROUNDING",
+      "fractional_tranches_allowed": false,
+      "schedule_driven_vesting_conditions": [
+        {
+          "amount_numerator": 12,
+          "amount_denominator": 48,
+          "period_length": 1,
+          "period_type": "YEARS",
+          "dependent_vesting:": [
+            {
+              "amount_numerator": 1,
+              "amount_denominator": 48,
+              "period_length": 1,
+              "period_type": "MONTHS"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "valuations": []
 }

@@ -1,7 +1,7 @@
 # Object - Stock Schema
 
 ```txt
-Objects.Stock.schema.json#/properties/stock_issuances/items
+Objects.Stock.schema.json#/properties/stock/items
 ```
 
 Object describing stock issued by the issuer and held by a stakeholder

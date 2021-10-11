@@ -21,7 +21,7 @@ Data Schema and Specification for Open Cap Format (OCF)
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter" 
 
 ### Schema Organization
-- [Full documentation](docs/README.md) is available in the docs folder. Documentation is auto-generated and the toolchain is still under active development, so expect the layout to change and pardon any inconsistencies.
+- [Full documentation](docs/README.md) is available in the docs folder. Most of the documentation is auto-generated and our toolchain is still being refined, so expect the layout to change and pardon any inconsistencies.
 - Schemas divided into three folders
 
 1. `objects` describing the structure of OCF -- these contain the common object properties `id` and `comments`

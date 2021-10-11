@@ -1,15 +1,21 @@
-# EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array Schema
+# Untitled undefined type in Type - Event-driven Vesting Condition Schema
 
 ```txt
-Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting
+Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting/items
 ```
 
-Additional vesting conditions which become operative once this condition is met
+
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                          |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EventDrivenVestingCondition.schema.json*](../types/EventDrivenVestingCondition.schema.json "open original schema") |
 
-## dependent_vesting Type
+## items Type
 
-an array of merged types ([Details](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items.md))
+merged type ([Details](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items.md))
+
+any of
+
+*   [Type - Event-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---event-driven-vesting-condition.md "check type definition")
+
+*   [Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md "check type definition")

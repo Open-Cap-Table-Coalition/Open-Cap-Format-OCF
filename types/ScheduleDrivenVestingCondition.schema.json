@@ -20,6 +20,24 @@
       "period_type": {
         "description": "Type of period (days, months, years)",
         "$ref": "Enums.Period.schema.json"
+      },
+      "priority": {
+        "description": "What order should this period be calculated (1 is highest priority)",
+        "type": "integer"
+      },
+      "dependent_vesting": {
+        "description": "Vesting periods or conditions which become operative once this condition is met",
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "Types.EventDrivenVestingCondition.schema.json"
+            },
+            {
+              "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+            }
+          ]
+        }
       }
     },
     "required": [

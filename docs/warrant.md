@@ -28,7 +28,7 @@ Object describing warrants issued by the issuer and held by a stakeholder
 | [shares](#shares)                                   | `Types.Numeric.schema.json`  | Required | cannot be null | [Object - Warrant](warrant-properties-shares.md "Objects.Warrant.schema.json#/properties/shares")                                                |
 | [exercise_price](#exercise_price)                   | `Types.Money.schema.json`    | Required | cannot be null | [Object - Warrant](warrant-properties-exercise_price.md "Objects.Warrant.schema.json#/properties/exercise_price")                                |
 | [purchase_price](#purchase_price)                   | `Types.Money.schema.json`    | Required | cannot be null | [Object - Warrant](warrant-properties-purchase_price.md "Objects.Warrant.schema.json#/properties/purchase_price")                                |
-| [vesting](#vesting)                                 | `object`                     | Optional | cannot be null | [Object - Warrant](plansecurities-properties-vesting-oneof-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                    |
+| [vesting](#vesting)                                 | `object`                     | Optional | cannot be null | [Object - Warrant](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                  |
 | [expiration_date](#expiration_date)                 | `Types.DateTime.schema.json` | Optional | cannot be null | [Object - Warrant](warrant-properties-expiration_date.md "Objects.Warrant.schema.json#/properties/expiration_date")                              |
 | [comments](#comments)                               | `array`                      | Optional | cannot be null | [Object - Warrant](warrant-properties-warrant---comments.md "Objects.Warrant.schema.json#/properties/comments")                                  |
 
@@ -220,15 +220,15 @@ Type representing all aspects related to vesting securities
 
 *   is optional
 
-*   Type: `object` ([Type - Vesting](plansecurities-properties-vesting-oneof-type---vesting.md))
+*   Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant](plansecurities-properties-vesting-oneof-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+*   defined in: [Object - Warrant](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
 
 ### vesting Type
 
-`object` ([Type - Vesting](plansecurities-properties-vesting-oneof-type---vesting.md))
+`object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
 ## expiration_date
 

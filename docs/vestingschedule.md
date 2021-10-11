@@ -144,7 +144,7 @@ Schedule rows defining the vesting schedule tranches
 
 *   is required
 
-*   Type: `object[]` ([Type - Schedule-driven Vesting Condition](vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array-type---schedule-driven-vesting-condition.md))
+*   Type: `object[]` ([Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md))
 
 *   cannot be null
 
@@ -152,7 +152,7 @@ Schedule rows defining the vesting schedule tranches
 
 ### schedule_driven_vesting_conditions Type
 
-`object[]` ([Type - Schedule-driven Vesting Condition](vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array-type---schedule-driven-vesting-condition.md))
+`object[]` ([Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md))
 
 ## comments
 

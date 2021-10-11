@@ -42,7 +42,15 @@
         "$ref": "Objects.Warrant.schema.json"
       }
     },
-    "stock_issuances": {
+    "stockclasses": {
+      "title": "CapTable - Objects.StockClass.schema.json Array",
+      "description": "List of StockClasses authorized for the issuer",
+      "type": "array",
+      "items": {
+        "$ref": "Objects.StockClass.schema.json"
+      }
+    },
+    "stock": {
       "title": "CapTable - Objects.Stock.schema.json Array",
       "description": "List of stock issuances (Stock) for the cap table",
       "type": "array",
@@ -81,7 +89,7 @@
     "stock_plans",
     "plan_securities",
     "warrants",
-    "stock_issuances",
+    "stock",
     "convertibles",
     "vesting_schedules",
     "valuations"
