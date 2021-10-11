@@ -22,7 +22,7 @@ Object describing the issuer of the cap table. This is the company whsoe captabl
 | [legal_name](#legal_name)                     | `string` | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")                     |
 | [dba](#dba)                                   | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-doing-business-as-name.md "Objects.Issuer.schema.json#/properties/dba")                |
 | [formation_date](#formation_date)             | `object` | Required | cannot be null | [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")            |
-| [country_of_formation](#country_of_formation) | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation") |
+| [country_of_formation](#country_of_formation) | `string` | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation") |
 | [state_of_formation](#state_of_formation)     | `string` | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")     |
 | [tax_ids](#tax_ids)                           | `array`  | Optional | cannot be null | [Object - Issuer](issuer-properties-tax_ids.md "Objects.Issuer.schema.json#/properties/tax_ids")                           |
 | [email](#email)                               | `object` | Optional | cannot be null | [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")                           |
@@ -108,7 +108,7 @@ The country where the issuer company was legally formed (ISO-3166 - alpha-3)
 
 `country_of_formation`
 
-*   is optional
+*   is required
 
 *   Type: `string`
 

@@ -3,8 +3,34 @@
   "issuer": {
     "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
     "legal_name": "ACME Industries",
+    "dba": "ACME & Co",
     "formation_date": {
       "epoch_millis": 615614400
+    },
+    "country_of_formation": "USA",
+    "state_of_formation": "DE",
+    "tax_ids": [
+      {
+        "tax_id": "34-2345123",
+        "country": "USA"
+      }
+    ],
+    "email": {
+      "email_address": "ceo@acme.io",
+      "email_type": "BUSINESS"
+    },
+    "phone": {
+      "phone_number": "16122342345",
+      "phone_type": "MOBILE"
+    },
+    "address": {
+      "address_type": "LEGAL",
+      "street_suite": "1234 Main Street\nSuite 4",
+      "city": "Small Town",
+      "state_province": "DE",
+      "country": "USA",
+      "postal_code": "12345"
+
     },
     "comments": []
   },
