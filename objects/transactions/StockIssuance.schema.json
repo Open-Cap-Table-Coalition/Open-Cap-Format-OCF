@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Stock.schema.json",
+  "$id": "Objects.StockIssuance.schema.json",
   "title": "Object - Stock",
-  "description": "Object describing stock issued by the issuer and held by a stakeholder",
+  "description": "Object describing a stock issuance transaction",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the stock",
+      "description": "Identifier for the stock issuance",
       "type": "string"
     },
     "stock_class_id": {
@@ -18,16 +18,20 @@
       "type": "string"
     },
     "stakeholder_id": {
-      "description": "Id of stakeholder that owns this stock",
+      "description": "Identifier for the stakeholder that owns this stock",
       "type": "string"
     },
-    "issue_date": {
+    "issuance_date": {
       "description": "Issue date of the stock",
       "$ref": "Types.DateTime.schema.json"
     },
-    "canceled_at": {
-      "description": "Cancellation date of the stock, if applicable",
+    "board_approval_date": {
+      "description": "Board approval of the stock",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Stock consideration for the issuance",
+      "type": "string"
     },
     "security_law_exemptions": {
       "title": "Stock - Security Law Exemption Ids Array",
@@ -41,21 +45,21 @@
       "description": "The price per share paid for the stock by the holder",
       "$ref": "Types.Money.schema.json"
     },
-    "shares": {
-      "description": "Number of shares owned by stakeholder of the stock class",
+    "quantity": {
+      "description": "Number of shares issued to the stakeholder",
       "$ref": "Types.Numeric.schema.json"
     },
     "vesting": {
-      "description": "Vesting conditions applicable to this stock",
+      "description": "Vesting conditions applicable to this stock issuance",
       "type": "Types.Vesting.schema.json"
     },
     "cost_basis": {
-      "description": "The cost basis for this particular stock",
+      "description": "The cost basis for this particular stock issuance",
       "$ref": "Types.Money.schema.json"
     },
     "stock_legend_ids": {
       "title": "Stock - Stock Legend Id Array",
-      "description": "List of stock legend ids that apply to this stock",
+      "description": "List of stock legend ids that apply to this stock issuance",
       "type": "array",
       "items": {
         "type": "string"
@@ -66,8 +70,8 @@
       "$ref": "Types.StockParent.schema.json"
     },
     "comments": {
-      "title": "Stock - Comments",
-      "description": "List of comments for this stock",
+      "title": "Stock Issuance - Comments",
+      "description": "List of comments for this stock issuance",
       "type": "array",
       "items": {
         "type": "string"
@@ -78,9 +82,9 @@
     "id",
     "stock_class_id",
     "stakeholder_id",
-    "issue_date",
+    "issuance_date",
     "share_price",
-    "shares",
+    "quantity",
     "cost_basis",
     "stock_legend_ids",
     "issued_from_parent_object"
