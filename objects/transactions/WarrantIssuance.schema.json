@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Warrant.schema.json",
+  "$id": "Objects.Transactions.WarrantIssuance.schema.json",
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
@@ -51,15 +51,15 @@
     },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
-      "type": "Types.Numeric.schema.json"
+      "$ref": "Types.Numeric.schema.json"
     },
     "exercise_price": {
       "description": "The exercise price of the warrant",
-      "type": "Types.Money.schema.json"
+      "$ref": "Types.Money.schema.json"
     },
     "purchase_price": {
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
-      "type": "Types.Money.schema.json"
+      "$ref": "Types.Money.schema.json"
     },
     "vesting": {
       "description": "Vesting conditions applicable to the warrant",
@@ -67,7 +67,7 @@
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
-      "type": "Types.DateTime.schema.json"
+      "$ref": "Types.DateTime.schema.json"
     },
     "comments": {
       "title": "Warrant Issuance - Comments",
