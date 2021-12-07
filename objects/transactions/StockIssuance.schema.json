@@ -10,7 +10,7 @@
       "type": "string"
     },
     "security_id": {
-      "description": "Identifier for the security which was issued",
+      "description": "Identifier for the security",
       "type": "string"
     },
     "stock_class_id": {
