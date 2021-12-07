@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Convertible.schema.json",
-  "title": "Object - Convertible",
-  "description": "Object describing convertible instrument issued by the issuer and held by a stakeholder",
+  "$id": "Objects.Transactions.ConvertibleIssuance.schema.json",
+  "title": "Object - Convertible Issuance Transaction",
+  "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the convertible (must be unique within convertible objs)",
+      "description": "Identifier for the convertible issuance, referred to as convertible_id",
       "type": "string"
     },
     "convertible_type": {
@@ -25,13 +25,17 @@
       "description": "Id of the stakeholder that holds legal title to this convertible.",
       "type": "string"
     },
-    "issue_date": {
-      "description": "The issue date of this convertible",
+    "issuance_date": {
+      "description": "Date of issuance for the convertible",
       "$ref": "Types.DateTime.schema.json"
     },
-    "canceled_at": {
-      "description": "The cancellation date of this convertible (if applicable)",
+    "board_approval_date": {
+      "description": "Date of board approval for the convertible",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the convertible",
+      "type": "string"
     },
     "security_law_exemptions": {
       "title": "Convertible - Types.SecurityExemption.schema.json Array",
@@ -122,7 +126,7 @@
     "conversion_type",
     "convertible_type",
     "custom_id",
-    "issue_date",
+    "issuance_date",
     "original_principal_amount",
     "day_count_convention",
     "default_conversion_rights",

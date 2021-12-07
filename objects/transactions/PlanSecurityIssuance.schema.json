@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.PlanSecurities.schema.json",
-  "title": "Object - PlanSecurities",
-  "description": "Object describing securities issued from a plan by the issuer and held by a stakeholder",
+  "$id": "Objects.Transactions.PlanSecurityIssuance.schema.json",
+  "title": "Object - Plan Security Issuance Transaction",
+  "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the PlanSecurities",
+      "description": "Identifier for the plan security issuance, referred to as paln_security_id",
       "type": "string"
     },
     "stock_plan_id": {
@@ -21,13 +21,17 @@
       "description": "Id of stakeholder that is the legal owner of the PlanSecurities",
       "type": "string"
     },
-    "issue_date": {
-      "description": "Issue date of the PlanSecurities",
+    "issuance_date": {
+      "description": "Date of issuance for the plan security",
       "$ref": "Types.DateTime.schema.json"
     },
-    "canceled_at": {
-      "description": "Cancellation date of the PlanSecurities, if applicable",
+    "board_approval_date": {
+      "description": "Date of board approval for the plan security",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the plan security",
+      "type": "string"
     },
     "security_law_exemptions": {
       "title": "PlanSecurity - Types.SecurityExemption.schema.json Array",
@@ -45,7 +49,7 @@
       "description": "If the plan security is an option, what kind?",
       "$ref": "Enums.Option.schema.json"
     },
-    "shares": {
+    "quantity": {
       "description": "How many shares are subject to this plan security?",
       "$ref": "Types.Numeric.schema.json"
     },
@@ -108,9 +112,9 @@
     "id",
     "stock_plan_id",
     "stakeholder_id",
-    "issue_date",
+    "issuance_date",
     "compensation_type",
-    "shares",
+    "quantity",
     "exercise_price",
     "vesting",
     "expiration_date",

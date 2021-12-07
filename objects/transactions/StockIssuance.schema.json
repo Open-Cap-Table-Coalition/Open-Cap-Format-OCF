@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.StockIssuance.schema.json",
-  "title": "Object - Stock",
-  "description": "Object describing a stock issuance transaction",
+  "$id": "Objects.Transactions.StockIssuance.schema.json",
+  "title": "Object - Stock Issuance Transaction",
+  "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the stock issuance",
+      "description": "Identifier for the stock issuance, referred to as stock_id",
       "type": "string"
     },
     "stock_class_id": {
@@ -22,15 +22,15 @@
       "type": "string"
     },
     "issuance_date": {
-      "description": "Issue date of the stock",
+      "description": "Date of issuance for the stock",
       "$ref": "Types.DateTime.schema.json"
     },
     "board_approval_date": {
-      "description": "Board approval of the stock",
+      "description": "Date of board approval for the stock",
       "$ref": "Types.DateTime.schema.json"
     },
     "consideration": {
-      "description": "Stock consideration for the issuance",
+      "description": "Consideration for the stock",
       "type": "string"
     },
     "security_law_exemptions": {
