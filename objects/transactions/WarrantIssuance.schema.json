@@ -6,7 +6,11 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the warrant issuance, referred to as warrant_id",
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security which was issued",
       "type": "string"
     },
     "custom_id": {

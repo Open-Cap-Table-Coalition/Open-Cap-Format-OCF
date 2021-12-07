@@ -6,7 +6,11 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the convertible issuance, referred to as convertible_id",
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security which was issued",
       "type": "string"
     },
     "convertible_type": {

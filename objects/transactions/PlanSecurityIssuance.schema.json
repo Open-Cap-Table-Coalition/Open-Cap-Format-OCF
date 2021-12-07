@@ -6,7 +6,11 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the plan security issuance, referred to as plan_security_id",
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security which was issued",
       "type": "string"
     },
     "stock_plan_id": {
