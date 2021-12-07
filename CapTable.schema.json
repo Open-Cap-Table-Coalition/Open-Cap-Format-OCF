@@ -34,46 +34,26 @@
         "$ref": "Objects.StockLegendTemplate.schema.json"
       }
     },
-    "plan_securities": {
-      "title": "CapTable - Objects.PlanSecurities.schema.json Array",
-      "description": "List of plan securities for the cap table",
+    "transactions": {
+      "description": "List of transactions for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.PlanSecurities.schema.json"
+        "anyOf" : [
+          {"$ref": "Objects.Transactions.PlanSecurityIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.WarrantIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.StockIssuance.schema.json"}
+        ]
       }
     },
-    "warrants": {
-      "title": "CapTable - Objects.Warrant.schema.json Array",
-      "description": "List of warrants for the cap table",
-      "type": "array",
-      "items": {
-        "$ref": "Objects.Warrant.schema.json"
-      }
-    },
-    "stockclasses": {
-      "title": "CapTable - Objects.StockClass.schema.json Array",
+    "stock_classes": {
       "description": "List of StockClasses authorized for the issuer",
       "type": "array",
       "items": {
         "$ref": "Objects.StockClass.schema.json"
       }
     },
-    "stock": {
-      "title": "CapTable - Objects.Stock.schema.json Array",
-      "description": "List of stock issuances (Stock) for the cap table",
-      "type": "array",
-      "items": {
-        "$ref": "Objects.Stock.schema.json"
-      }
-    },
-    "convertibles": {
-      "title": "CapTable - Objects.Convertible.schema.json Array",
-      "description": "List of convertibles for the cap table",
-      "type": "array",
-      "items": {
-        "$ref": "Objects.Convertible.schema.json"
-      }
-    },
+  
     "vesting_schedules": {
       "title": "CapTable - Objects.VestingSchedule.schema.json Array",
       "description": "List of vesting schedules used by the issuer",
