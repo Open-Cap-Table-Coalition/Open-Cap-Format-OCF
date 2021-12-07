@@ -1,12 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Stock.schema.json",
-  "title": "Object - Stock",
-  "description": "Object describing stock issued by the issuer and held by a stakeholder",
+  "$id": "Objects.Transactions.StockIssuance.schema.json",
+  "title": "Object - Stock Issuance Transaction",
+  "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the stock",
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security",
       "type": "string"
     },
     "stock_class_id": {
@@ -18,16 +22,20 @@
       "type": "string"
     },
     "stakeholder_id": {
-      "description": "Id of stakeholder that owns this stock",
+      "description": "Identifier for the stakeholder that owns this stock",
       "type": "string"
     },
-    "issue_date": {
-      "description": "Issue date of the stock",
+    "issuance_date": {
+      "description": "Date of issuance for the stock",
       "$ref": "Types.DateTime.schema.json"
     },
-    "canceled_at": {
-      "description": "Cancellation date of the stock, if applicable",
+    "board_approval_date": {
+      "description": "Date of board approval for the stock",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "Stock - Security Law Exemption Ids Array",
@@ -41,8 +49,8 @@
       "description": "The price per share paid for the stock by the holder",
       "$ref": "Types.Money.schema.json"
     },
-    "shares": {
-      "description": "Number of shares owned by stakeholder of the stock class",
+    "quantity": {
+      "description": "Number of shares issued to the stakeholder",
       "$ref": "Types.Numeric.schema.json"
     },
     "vesting": {
@@ -66,8 +74,8 @@
       "$ref": "Types.StockParent.schema.json"
     },
     "comments": {
-      "title": "Stock - Comments",
-      "description": "List of comments for this stock",
+      "title": "Stock Issuance - Comments",
+      "description": "Unstructured text comments related to and stored for this stock",
       "type": "array",
       "items": {
         "type": "string"
@@ -78,9 +86,9 @@
     "id",
     "stock_class_id",
     "stakeholder_id",
-    "issue_date",
+    "issuance_date",
     "share_price",
-    "shares",
+    "quantity",
     "cost_basis",
     "stock_legend_ids",
     "issued_from_parent_object"

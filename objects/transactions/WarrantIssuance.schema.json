@@ -1,12 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Warrant.schema.json",
-  "title": "Object - Warrant",
-  "description": "Object describing warrants issued by the issuer and held by a stakeholder",
+  "$id": "Objects.Transactions.Warrant.schema.json",
+  "title": "Object - Warrant Issuance Transaction",
+  "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the warrant (must be unique within warrant objs)",
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security",
       "type": "string"
     },
     "custom_id": {
@@ -17,13 +21,17 @@
       "description": "Id of the stakeholder that holds legal title to this warrant.",
       "type": "string"
     },
-    "issue_date": {
-      "description": "The issue date of this warrant",
+    "issuance_date": {
+      "description": "Date of issuance for the warrant",
       "$ref": "Types.DateTime.schema.json"
     },
-    "canceled_at": {
-      "description": "The cancellation date of this warrant (if applicable)",
+    "board_approval_date": {
+      "description": "Date of board approval for the warrant",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "Warrant - SecurityExemption Array",
@@ -41,8 +49,8 @@
         "$ref": "Types.StockClassConversionRights.schema.json"
       }
     },
-    "shares": {
-      "description": "Shares the warrant is exercisable for",
+    "quantity": {
+      "description": "Quantity of shares the warrant is exercisable for",
       "type": "Types.Numeric.schema.json"
     },
     "exercise_price": {
@@ -62,8 +70,8 @@
       "type": "Types.DateTime.schema.json"
     },
     "comments": {
-      "title": "Warrant - Comments",
-      "description": "List of comments for this stock",
+      "title": "Warrant Issuance - Comments",
+      "description": "Unstructured text comments related to and stored for this warrant",
       "type": "array",
       "items": {
         "type": "string"
@@ -72,8 +80,8 @@
   },
   "required": [
     "id",
-    "issue_date",
-    "shares",
+    "issuance_date",
+    "quantity",
     "stakeholder_id",
     "conversion_rights",
     "purchase_price",
