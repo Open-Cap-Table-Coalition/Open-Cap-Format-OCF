@@ -38,8 +38,8 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "consideration": {
-      "description": "Consideration for the convertible",
-      "type": "string"
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "Convertible - Types.SecurityExemption.schema.json Array",

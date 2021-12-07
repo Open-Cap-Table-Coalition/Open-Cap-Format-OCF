@@ -30,8 +30,8 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "consideration": {
-      "description": "Consideration for the warrant",
-      "type": "string"
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "Warrant - SecurityExemption Array",

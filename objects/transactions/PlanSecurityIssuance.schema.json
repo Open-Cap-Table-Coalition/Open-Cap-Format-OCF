@@ -34,8 +34,8 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "consideration": {
-      "description": "Consideration for the plan security",
-      "type": "string"
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "PlanSecurity - Types.SecurityExemption.schema.json Array",

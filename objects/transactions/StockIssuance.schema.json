@@ -34,8 +34,8 @@
       "$ref": "Types.DateTime.schema.json"
     },
     "consideration": {
-      "description": "Consideration for the stock",
-      "type": "string"
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
     },
     "security_law_exemptions": {
       "title": "Stock - Security Law Exemption Ids Array",
