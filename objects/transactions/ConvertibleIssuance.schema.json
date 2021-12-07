@@ -113,7 +113,7 @@
       "type": "integer"
     },
     "comments": {
-      "title": "Convertible - Comments",
+      "title": "Convertible Issuance - Comments",
       "description": "Unstructured text comments related to and stored for this convertible",
       "type": "array",
       "items": {

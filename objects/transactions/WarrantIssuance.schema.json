@@ -66,8 +66,8 @@
       "type": "Types.DateTime.schema.json"
     },
     "comments": {
-      "title": "Warrant - Comments",
-      "description": "List of comments for this stock",
+      "title": "Warrant Issuance - Comments",
+      "description": "Unstructured text comments related to and stored for this warrant",
       "type": "array",
       "items": {
         "type": "string"

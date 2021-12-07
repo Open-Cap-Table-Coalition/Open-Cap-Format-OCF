@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the plan security issuance, referred to as paln_security_id",
+      "description": "Identifier for the plan security issuance, referred to as plan_security_id",
       "type": "string"
     },
     "stock_plan_id": {
@@ -81,8 +81,8 @@
       }
     },
     "comments": {
-      "title": "PlanSecurity - Comments",
-      "description": "Unstructured text comments related to and stored for this PlanSecurity",
+      "title": "Plan Security Issuance - Comments",
+      "description": "Unstructured text comments related to and stored for this plan security",
       "type": "array",
       "items": {
         "type": "string"

@@ -50,16 +50,16 @@
       "$ref": "Types.Numeric.schema.json"
     },
     "vesting": {
-      "description": "Vesting conditions applicable to this stock issuance",
+      "description": "Vesting conditions applicable to this stock",
       "type": "Types.Vesting.schema.json"
     },
     "cost_basis": {
-      "description": "The cost basis for this particular stock issuance",
+      "description": "The cost basis for this particular stock",
       "$ref": "Types.Money.schema.json"
     },
     "stock_legend_ids": {
       "title": "Stock - Stock Legend Id Array",
-      "description": "List of stock legend ids that apply to this stock issuance",
+      "description": "List of stock legend ids that apply to this stock",
       "type": "array",
       "items": {
         "type": "string"
@@ -71,7 +71,7 @@
     },
     "comments": {
       "title": "Stock Issuance - Comments",
-      "description": "List of comments for this stock issuance",
+      "description": "Unstructured text comments related to and stored for this stock",
       "type": "array",
       "items": {
         "type": "string"
