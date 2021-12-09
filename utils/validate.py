@@ -18,12 +18,14 @@ from jsonschema import Draft7Validator, RefResolver, ValidationError, SchemaErro
 parent_dir = Path.cwd().parent
 snapshot_schema = parent_dir / "CapTable.schema.json"
 object_schema_dir = parent_dir / "objects"
+transactions_schema_dir = object_schema_dir / "transactions"
 type_schema_dir = parent_dir / "types"
 enum_schema_dir = parent_dir / "enums"
 
 schema_search_paths = [
     parent_dir.absolute(),
     object_schema_dir.absolute(),
+    transactions_schema_dir.absolute(),
     type_schema_dir.absolute(),
     enum_schema_dir.absolute()
 ]
