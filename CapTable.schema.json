@@ -42,7 +42,8 @@
           {"$ref": "Objects.Transactions.PlanSecurityIssuance.schema.json"},
           {"$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"},
           {"$ref": "Objects.Transactions.WarrantIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.StockIssuance.schema.json"}
+          {"$ref": "Objects.Transactions.StockIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"}
         ]
       }
     },
@@ -75,10 +76,7 @@
     "issuer",
     "stakeholders",
     "stock_plans",
-    "plan_securities",
-    "warrants",
-    "stock",
-    "convertibles",
+    "transactions",
     "vesting_schedules",
     "valuations"
   ]

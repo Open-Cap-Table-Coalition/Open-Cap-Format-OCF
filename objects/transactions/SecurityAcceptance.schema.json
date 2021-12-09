@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.SecurityAcceptance.schema.json",
+  "title": "Object - Security Acceptance Transaction",
+  "description": "Object describing a security acceptance transaction",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security",
+      "type": "string"
+    },
+    "acceptance_date": {
+      "description": "Date of acceptance",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["id", "security_id", "acceptance_date"]
+}
