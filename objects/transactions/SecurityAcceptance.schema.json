@@ -13,8 +13,8 @@
       "description": "Identifier for the security",
       "type": "string"
     },
-    "acceptance_date": {
-      "description": "Date of acceptance",
+    "date": {
+      "description": "Date of transaction",
       "$ref": "Types.DateTime.schema.json"
     },
     "comments": {
@@ -25,5 +25,5 @@
       }
     }
   },
-  "required": ["id", "security_id", "acceptance_date"]
+  "required": ["id", "security_id", "date"]
 }
