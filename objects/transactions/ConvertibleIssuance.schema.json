@@ -9,6 +9,13 @@
       "description": "Identifier for the transaction",
       "type": "string"
     },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "security_id": {
       "description": "Identifier for the security",
       "type": "string"
@@ -115,14 +122,6 @@
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
       "type": "integer"
-    },
-    "comments": {
-      "title": "Convertible Issuance - Comments",
-      "description": "Unstructured text comments related to and stored for this convertible",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [

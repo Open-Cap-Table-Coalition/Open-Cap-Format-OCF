@@ -6,8 +6,15 @@
     "type": "object",
     "properties": {
         "id": {
-            "description": "Identifier for the stock legend template",
+            "description": "Identifier for the object",
             "type": "string"
+        },
+        "comments": {
+          "description": "Unstructured text comments",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "name": {
             "description": "Name for the stock legend template",
@@ -16,14 +23,6 @@
         "text": {
             "description": "The full text of the stock legend",
             "type": "string"
-        },
-        "comments": {
-            "title": "StockLegendTemplate - Comments",
-            "description": "Unstructured text comments related to and stored for this StockLegend",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
         }
     },
     "required": [

@@ -6,8 +6,15 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the vesting schedule",
+      "description": "Identifier for the object",
       "type": "string"
+    },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "name": {
       "description": "Concise name for the vesting schedule",
@@ -31,14 +38,6 @@
       "type": "array",
       "items": {
         "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
-      }
-    },
-    "comments": {
-      "title": "VestingSchedule - Comments",
-      "description": "List of comments for the vesting schedule",
-      "type": "array",
-      "items": {
-        "type": "string"
       }
     }
   },

@@ -36,14 +36,12 @@
   },
   "oneOf": [
     {
-      "title": "Converts to a future round of stock (boolean)",
       "description": "Some conversion triggers let holders convert into a future round/series of stock - e.g. at the next qualified financing or some similar formulation. If this is true, such a right applies to securities using this ConversionTrigger.",
       "required": [
         "converts_to_future_round"
       ]
     },
     {
-      "title": "Converts to known Id of StockClass (String Id)",
       "description": "Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' Id here.",
       "required": [
         "converts_to_stock_class_id"

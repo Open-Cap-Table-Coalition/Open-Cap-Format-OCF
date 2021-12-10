@@ -9,6 +9,13 @@
       "description": "Identifier for the transaction",
       "type": "string"
     },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "security_id": {
       "description": "Identifier for the security",
       "type": "string"
@@ -68,14 +75,6 @@
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
       "type": "Types.DateTime.schema.json"
-    },
-    "comments": {
-      "title": "Warrant Issuance - Comments",
-      "description": "Unstructured text comments related to and stored for this warrant",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [

@@ -6,8 +6,15 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the valuation",
+      "description": "Identifier for the object",
       "type": "string"
+    },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "provider": {
       "description": "Entity which provided the valuation",
@@ -24,14 +31,6 @@
     "valuation_type": {
       "description": "Seam for supporting different types of valuations in future versions",
       "$ref": "Enums.Valuation.schema.json"
-    },
-    "comments": {
-      "title": "Valuation - Comments",
-      "description": "List of comments for the valuation",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [

@@ -6,8 +6,15 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the stock plan",
+      "description": "Identifier for the object",
       "type": "string"
+    },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "plan_name": {
       "description": "Name for the stock plan",
@@ -24,14 +31,6 @@
     "stockclass_id": {
       "description": "Id of the StockClass object this plan is composed of",
       "type": "string"
-    },
-    "comments": {
-      "title": "StockPlan - Comments",
-      "description": "List of comments for the stock plan",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [

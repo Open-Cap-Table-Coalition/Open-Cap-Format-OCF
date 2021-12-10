@@ -24,13 +24,13 @@
   },
   "oneOf": [
     {
-      "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
+      "description": "Converts to not-yet-existing and/or not-yet-known StockClass",
       "required": [
         "converts_to_future_round"
       ]
     },
     {
-      "title": "Converts to existing, known StockClass Id",
+      "description": "Converts to existing, known StockClass Id",
       "required": [
         "converts_to_stock_class_id"
       ]

@@ -6,15 +6,22 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the issuer",
+      "description": "Identifier for the object",
       "type": "string"
+    },
+    "comments": {
+      "description": "Unstructured text comments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "legal_name": {
       "description": "Legal name of the issuer",
       "type": "string"
     },
     "dba": {
-      "title": "Doing Business As name",
+      "description": "Doing Business As name",
       "type": "string"
     },
     "formation_date": {
@@ -48,14 +55,6 @@
     "address": {
       "description": "The headquarters address of the issuing company",
       "$ref": "Types.Address.schema.json"
-    },
-    "comments": {
-      "title": "Issuer - Comments",
-      "description": "Unstructured comments related to and stored for the issuer",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
