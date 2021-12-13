@@ -148,6 +148,39 @@
     }
   ],
   "stock": [],
+  "transactions": [
+    {
+      "id": "test-partial-quantity-cancellation",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "quantity": { "string_value": "100" },
+      "resulting_security_id": "new-security"
+    },
+    {
+      "id": "test-partial-monetary-cancellation",
+      "resulting_security_id": "new-security",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "amount": {
+        "amount": {
+          "string_value": "53.09"
+        },
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "test-full-cancellation",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "reason_text": "testing"
+    }
+  ],
   "plan_securities": [
     {
       "id": "f0394889-5672-4d53-afc0-eb1a8a19dec5",

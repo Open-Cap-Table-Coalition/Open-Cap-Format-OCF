@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Cancellation.schema.json",
+  "title": "Object - Cancellation Transaction",
+  "description": "Object describing a security cancellation transaction",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifier for the transaction",
+      "type": "string"
+    },
+    "security_id": {
+      "description": "Identifier for the security",
+      "type": "string"
+    },
+    "date": {
+      "description": "Date of cancellation",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "reason_text": {
+      "description": "Reason for the cancellation",
+      "type": "string"
+    },
+    "comments": {
+      "title": "Cancellation - Comments",
+      "description": "Unstructured text comments related to and stored for this cancellation",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "security_id",
+    "date",
+    "reason_text"
+  ]
+}

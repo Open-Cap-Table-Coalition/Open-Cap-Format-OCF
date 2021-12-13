@@ -43,7 +43,10 @@
           {"$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"},
           {"$ref": "Objects.Transactions.WarrantIssuance.schema.json"},
           {"$ref": "Objects.Transactions.StockIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"}
+          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"},
+          {"$ref": "Objects.Transactions.Cancellation.schema.json"},
+          {"$ref": "Objects.Transactions.PartialQuantityCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.PartialMonetaryCancellation.schema.json"}
         ]
       }
     },
@@ -54,7 +57,7 @@
         "$ref": "Objects.StockClass.schema.json"
       }
     },
-  
+
     "vesting_schedules": {
       "title": "CapTable - Objects.VestingSchedule.schema.json Array",
       "description": "List of vesting schedules used by the issuer",
