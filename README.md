@@ -3,16 +3,6 @@ Data Schema and Specification for Open Cap Format (OCF)
 
 ## Schema Development Info
 
-### Editors
-- John Scrudato (Gunderson Dettmer)
-- Ray Shan (LTSE)
-- Caroline Taymor (LTSE)
-- Dan Owen (Carta)
-- Eric Vogl (Carta)
-- Chris Pasakarnis (Carta)
-- Ben Hutchings (Shareworks by Morgan Stanley)
-- Jacob Yavis (Shareworks by Morgan Stanley)
-
 ### Proposed Format
 - [JSON Schema Draft 7](https://json-schema.org/specification-links.html#draft-7) for maximum compatibility with 
   JSON Schema [implementations](https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org)
@@ -90,3 +80,17 @@ Data Schema and Specification for Open Cap Format (OCF)
     | [Vesting](docs/vesting.md)                                                  | `Types.Vesting.schema.json`                          | Type representing all aspects related to vesting securities                                                                                                          |
 
 *Documentation automatically generated with [jsonschema2md](https://github.com/adobe/jsonschema2md)*
+
+## Attributions 
+
+### Contributors (alphabetical)
+- Ben Hutchings
+- Patrick Johnmeyer
+- Dan Owen
+- Chris Pasakarnis
+- John Scrudato
+- Ray Shan
+- Caroline Taymor
+- Eric Vogl
+- Rob Wise
+- Jacob Yavis
