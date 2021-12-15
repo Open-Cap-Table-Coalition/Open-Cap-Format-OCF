@@ -150,17 +150,17 @@
   "stock": [],
   "transactions": [
     {
-      "id": "test-partial-quantity-cancellation",
+      "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
       "date": {
         "epoch_millis": 42
       },
       "quantity": { "string_value": "100" },
-      "resulting_security_id": "new-security"
+      "balance_security_id": "new-security"
     },
     {
-      "id": "test-partial-monetary-cancellation",
-      "resulting_security_id": "new-security",
+      "id": "test-monetary-cancellation",
+      "balance_security_id": "new-security",
       "security_id": "test-security-id",
       "date": {
         "epoch_millis": 42
@@ -171,14 +171,6 @@
         },
         "currency": "USD"
       }
-    },
-    {
-      "id": "test-full-cancellation",
-      "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
-      "reason_text": "testing"
     }
   ],
   "plan_securities": [

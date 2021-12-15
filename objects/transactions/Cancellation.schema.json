@@ -13,6 +13,10 @@
       "description": "Identifier for the security",
       "type": "string"
     },
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial cancellations)",
+      "type": "string"
+    },
     "date": {
       "description": "Date of cancellation",
       "$ref": "Types.DateTime.schema.json"

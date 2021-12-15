@@ -11,14 +11,9 @@
     "amount": {
       "description": "Amount of monetary value cancelled",
       "$ref": "Types.Money.schema.json"
-    },
-    "resulting_security_id": {
-      "description": "If the cancellation is partial",
-      "type": "string"
     }
   },
   "required": [
-    "amount",
-    "resulting_security_id"
+    "amount"
   ]
 }

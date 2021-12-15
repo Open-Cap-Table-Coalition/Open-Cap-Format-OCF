@@ -11,14 +11,9 @@
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
-    },
-    "resulting_security_id": {
-      "description": "If the cancellation is partial",
-      "type": "string"
     }
   },
   "required": [
-    "quantity",
-    "resulting_security_id"
+    "quantity"
   ]
 }
