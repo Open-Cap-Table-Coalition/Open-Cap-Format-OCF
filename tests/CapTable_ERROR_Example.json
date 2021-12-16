@@ -49,5 +49,9 @@
     }
   ],
   "stock_plans": [],
+  "stock_legend_templates": [],
+  "transactions": [],
+  "stock_classes": [],
+  "vesting_schedules": [],
   "valuations": []
 }
