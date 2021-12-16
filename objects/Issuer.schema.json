@@ -14,7 +14,7 @@
       "type": "string"
     },
     "dba": {
-      "title": "Doing Business As name",
+      "description": "Doing Business As name",
       "type": "string"
     },
     "formation_date": {
