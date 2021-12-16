@@ -66,5 +66,8 @@
       "resulting_security_id": "new-security"
     }
   ],
+  "stock_legend_templates": [],
+  "stock_classes": [],
+  "vesting_schedules": [],
   "valuations": []
 }

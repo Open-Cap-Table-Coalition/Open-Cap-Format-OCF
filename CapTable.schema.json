@@ -5,6 +5,10 @@
   "description": "Top-level object describing a capitalization table",
   "type": "object",
   "properties": {
+    "id": {
+      "description": "Identifier for the capitalization table",
+      "type": "string"
+    },
     "issuer": {
       "title": "Objects.Issuer.schema.json",
       "description": "Issuer for the cap table",
@@ -58,7 +62,6 @@
         "$ref": "Objects.StockClass.schema.json"
       }
     },
-
     "vesting_schedules": {
       "title": "CapTable - Objects.VestingSchedule.schema.json Array",
       "description": "List of vesting schedules used by the issuer",
@@ -80,8 +83,11 @@
     "issuer",
     "stakeholders",
     "stock_plans",
+    "stock_legend_templates",
     "transactions",
+    "stock_classes",
     "vesting_schedules",
     "valuations"
-  ]
+  ],
+  "additionalProperties": false
 }
