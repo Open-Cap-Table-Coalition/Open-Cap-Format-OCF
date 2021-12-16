@@ -49,8 +49,24 @@
     }
   ],
   "stock_plans": [],
+  "transactions": [
+    {
+      "id": "ambiguous-partial-cancellation",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "quantity": { "string_value": "100" },
+      "amount": {
+        "amount": {
+          "string_value": "53.09"
+        },
+        "currency": "USD"
+      },
+      "resulting_security_id": "new-security"
+    }
+  ],
   "stock_legend_templates": [],
-  "transactions": [],
   "stock_classes": [],
   "vesting_schedules": [],
   "valuations": []

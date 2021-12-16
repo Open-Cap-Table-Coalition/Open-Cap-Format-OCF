@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.ConvertibleCancellation.schema.json",
+  "title": "Object - Convertible Cancellation Transaction",
+  "description": "Object describing a cancellation of a convertible security",
+  "type": "object",
+  "allOf": [
+    { "$ref": "Objects.Transactions.Cancellation.schema.json" }
+  ],
+  "properties": {
+    "amount": {
+      "description": "Amount of monetary value cancelled",
+      "$ref": "Types.Money.schema.json"
+    }
+  },
+  "required": [
+    "amount"
+  ]
+}

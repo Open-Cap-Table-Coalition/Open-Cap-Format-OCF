@@ -47,7 +47,11 @@
           {"$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"},
           {"$ref": "Objects.Transactions.WarrantIssuance.schema.json"},
           {"$ref": "Objects.Transactions.StockIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"}
+          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"},
+          {"$ref": "Objects.Transactions.PlanSecurityCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.WarrantCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.StockCancellation.schema.json"}
         ]
       }
     },
