@@ -4,11 +4,8 @@
   "title": "Object - Valuation",
   "description": "Object describing a valuation used in the cap table",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the valuation",
-      "type": "string"
-    },
     "provider": {
       "description": "Entity which provided the valuation",
       "type": "string"
@@ -24,18 +21,9 @@
     "valuation_type": {
       "description": "Seam for supporting different types of valuations in future versions",
       "$ref": "Enums.Valuation.schema.json"
-    },
-    "comments": {
-      "title": "Valuation - Comments",
-      "description": "List of comments for the valuation",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "price_per_share",
     "valuation_date",
     "valuation_type"

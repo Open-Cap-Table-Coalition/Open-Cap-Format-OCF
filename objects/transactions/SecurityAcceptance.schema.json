@@ -4,26 +4,11 @@
   "title": "Object - Security Acceptance Transaction",
   "description": "Object describing a security acceptance transaction",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the transaction",
-      "type": "string"
-    },
-    "security_id": {
-      "description": "Identifier for the security",
-      "type": "string"
-    },
-    "date": {
-      "description": "Date of transaction",
-      "$ref": "Types.DateTime.schema.json"
-    },
-    "comments": {
-      "description": "Unstructured text comments",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "transaction_type": {
+      "const": "SECURITY_ACCEPTANCE"
     }
   },
-  "required": ["id", "security_id", "date"]
+  "required": ["transaction_type"]
 }

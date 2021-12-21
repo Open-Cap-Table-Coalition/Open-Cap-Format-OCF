@@ -4,11 +4,8 @@
   "title": "Object - StockClass",
   "description": "Object describing a type of stock class issued by the issuer",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the stock class",
-      "type": "string"
-    },
     "name": {
       "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
       "type": "string"
@@ -60,18 +57,9 @@
     "participation_cap_multiple": {
       "description": "The participation cap multiple per share for this StockClass",
       "$ref": "Types.Numeric.schema.json"
-    },
-    "comments": {
-      "title": "StockClass - Comments",
-      "description": "List of comments for the stock class",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "name",
     "class_type",
     "default_id_prefix",

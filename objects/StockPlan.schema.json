@@ -4,11 +4,8 @@
   "title": "Object - StockPlan",
   "description": "Object describing a plan which stock options are issued from",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the stock plan",
-      "type": "string"
-    },
     "plan_name": {
       "description": "Name for the stock plan",
       "type": "string"
@@ -24,20 +21,7 @@
     "stock_class_id": {
       "description": "Id of the StockClass object this plan is composed of",
       "type": "string"
-    },
-    "comments": {
-      "title": "StockPlan - Comments",
-      "description": "List of comments for the stock plan",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
-  "required": [
-    "id",
-    "plan_name",
-    "stock_class_id",
-    "current_shares_reserved"
-  ]
+  "required": ["plan_name", "stock_class_id", "current_shares_reserved"]
 }

@@ -4,15 +4,8 @@
   "title": "Object - Convertible Issuance Transaction",
   "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the transaction",
-      "type": "string"
-    },
-    "security_id": {
-      "description": "Identifier for the security",
-      "type": "string"
-    },
     "convertible_type": {
       "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
       "$ref": "Enums.Convertible.schema.json"
@@ -28,10 +21,6 @@
     "stakeholder_id": {
       "description": "Id of the stakeholder that holds legal title to this convertible.",
       "type": "string"
-    },
-    "issuance_date": {
-      "description": "Date of issuance for the convertible",
-      "$ref": "Types.DateTime.schema.json"
     },
     "board_approval_date": {
       "description": "Date of board approval for the convertible",
@@ -115,22 +104,12 @@
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
       "type": "integer"
-    },
-    "comments": {
-      "title": "Convertible Issuance - Comments",
-      "description": "Unstructured text comments related to and stored for this convertible",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "conversion_type",
     "convertible_type",
     "custom_id",
-    "issuance_date",
     "original_principal_amount",
     "day_count_convention",
     "default_conversion_rights",

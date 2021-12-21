@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.BaseTransaction.schema.json",
+  "title": "Object - BaseTransaction",
+  "description": "Abstract transaction object to be extended by all other transaction objects.",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "properties": {
+    "security_id": {
+      "description": "Identifier for the security which the transaction applies to",
+      "type": "string"
+    },
+    "date": {
+      "description": "Date which the transaction occurred",
+      "$ref": "Types.DateTime.schema.json"
+    }
+  },
+  "required": ["security_id", "date"]
+}

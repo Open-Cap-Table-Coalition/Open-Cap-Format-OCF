@@ -2,13 +2,10 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "Objects.Issuer.schema.json",
   "title": "Object - Issuer",
-  "description": "Object describing the issuer of the cap table. This is the company whsoe captable this is.",
+  "description": "Object describing the issuer of the cap table. This is the company whsoe cap table this is.",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the issuer",
-      "type": "string"
-    },
     "legal_name": {
       "description": "Legal name of the issuer",
       "type": "string"
@@ -48,20 +45,7 @@
     "address": {
       "description": "The headquarters address of the issuing company",
       "$ref": "Types.Address.schema.json"
-    },
-    "comments": {
-      "title": "Issuer - Comments",
-      "description": "Unstructured comments related to and stored for the issuer",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
-  "required": [
-    "id",
-    "legal_name",
-    "formation_date",
-    "country_of_formation"
-  ]
+  "required": ["legal_name", "formation_date", "country_of_formation"]
 }

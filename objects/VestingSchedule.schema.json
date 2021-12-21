@@ -4,11 +4,8 @@
   "title": "Object - VestingSchedule",
   "description": "Object describing a strictly time-based vesting schedule",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the vesting schedule",
-      "type": "string"
-    },
     "name": {
       "description": "Concise name for the vesting schedule",
       "type": "string"
@@ -32,18 +29,9 @@
       "items": {
         "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
       }
-    },
-    "comments": {
-      "title": "VestingSchedule - Comments",
-      "description": "List of comments for the vesting schedule",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "name",
     "description",
     "allocation_type",
