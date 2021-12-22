@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_STOCK_REPURCHASE"
+    },
     "price": {
       "description": "Repurchase price per share of the stock",
       "$ref": "Types.Money.schema.json"

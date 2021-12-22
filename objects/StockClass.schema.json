@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "STOCK_CLASS"
+    },
     "name": {
       "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
       "type": "string"

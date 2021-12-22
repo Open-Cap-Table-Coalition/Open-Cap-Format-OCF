@@ -4,8 +4,11 @@
   "title": "Object - Plan Security Cancellation Transaction",
   "description": "Object describing a cancellation of a plan security",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.Cancellation.schema.json" }],
+  "allOf": [{ "$ref": "Objects.Transactions.BaseCancellation.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_PLAN_SECURITY_CANCELLATION"
+    },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"

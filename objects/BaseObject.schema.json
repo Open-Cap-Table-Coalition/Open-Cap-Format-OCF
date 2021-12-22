@@ -9,6 +9,10 @@
       "description": "Identifier for the object",
       "type": "string"
     },
+    "object_type": {
+      "description": "Type of object",
+      "$ref": "Enums.Object.schema.json"
+    },
     "comments": {
       "description": "Unstructured text comments related to and stored for the object",
       "type": "array",
@@ -17,6 +21,6 @@
       }
     }
   },
-  "required": ["id"],
+  "required": ["id", "object_type"],
   "additionalProperties": false
 }

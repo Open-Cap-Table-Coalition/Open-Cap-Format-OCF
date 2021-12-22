@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "STAKEHOLDER"
+    },
     "name": {
       "description": "Name for the stakeholder",
       "$ref": "Types.Name.schema.json"

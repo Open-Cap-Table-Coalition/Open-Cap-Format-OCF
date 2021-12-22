@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Cancellation.schema.json",
+  "$id": "Objects.Transactions.BaseCancellation.schema.json",
   "title": "Object - Cancellation Transaction",
-  "description": "Object describing a security cancellation transaction",
+  "description": "Abstract object describing a security cancellation transaction",
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {

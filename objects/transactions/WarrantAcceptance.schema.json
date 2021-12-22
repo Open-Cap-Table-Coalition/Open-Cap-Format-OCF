@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.WarrantAcceptance.schema.json",
+  "title": "Object - Warrant Acceptance Transaction",
+  "description": "Object describing a warrant acceptance transaction",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "object_type": {
+      "const": "TX_WARRANT_ACCEPTANCE"
+    }
+  },
+  "required": []
+}

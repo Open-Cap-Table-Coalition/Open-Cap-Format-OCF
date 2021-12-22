@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_STOCK_ISSUANCE"
+    },
     "stock_class_id": {
       "description": "Id of StockClass of this stock issuance",
       "type": "string"

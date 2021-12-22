@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_PLAN_SECURITY_ISSUANCE"
+    },
     "stock_plan_id": {
       "description": "Id of StockPlan the PlanSecurities were issued from",
       "type": "string"

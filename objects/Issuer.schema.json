@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "ISSUER"
+    },
     "legal_name": {
       "description": "Legal name of the issuer",
       "type": "string"

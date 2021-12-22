@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "VALUATION"
+    },
     "provider": {
       "description": "Entity which provided the valuation",
       "type": "string"

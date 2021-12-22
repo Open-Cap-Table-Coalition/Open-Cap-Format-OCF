@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_CONVERTIBLE_ISSUANCE"
+    },
     "convertible_type": {
       "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
       "$ref": "Enums.Convertible.schema.json"

@@ -4,8 +4,11 @@
   "title": "Object - Warrant Cancellation Transaction",
   "description": "Object describing a cancellation of a warrant security",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.Cancellation.schema.json" }],
+  "allOf": [{ "$ref": "Objects.Transactions.BaseCancellation.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_WARRANT_CANCELLATION"
+    },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"

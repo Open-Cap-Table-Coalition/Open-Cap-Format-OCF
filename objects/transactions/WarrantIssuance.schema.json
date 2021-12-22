@@ -6,6 +6,9 @@
   "type": "object",
   "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "TX_WARRANT_ISSUANCE"
+    },
     "custom_id": {
       "description": "A custom ID for this warrant (e.g. W-1.)",
       "type": "string"
