@@ -190,6 +190,15 @@
       },
       "currency": "USD",
       "reason_text": "for testing"
+    },
+    {
+      "id": "test-quantity-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": [ "new-security-1", "new-security-2" ],
+      "quantity": { "string_value": "100" }
     }
   ],
   "stock_plans": [
