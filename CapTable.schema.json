@@ -51,7 +51,10 @@
           {"$ref": "Objects.Transactions.PlanSecurityCancellation.schema.json"},
           {"$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"},
           {"$ref": "Objects.Transactions.WarrantCancellation.schema.json"},
-          {"$ref": "Objects.Transactions.StockCancellation.schema.json"}
+          {"$ref": "Objects.Transactions.StockCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.PlanSecuritySplit.schema.json"},
+          {"$ref": "Objects.Transactions.WarrantSplit.schema.json"},
+          {"$ref": "Objects.Transactions.StockSplit.schema.json"}
         ]
       }
     },
