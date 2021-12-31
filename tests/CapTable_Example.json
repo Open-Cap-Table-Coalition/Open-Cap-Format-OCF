@@ -199,6 +199,15 @@
       },
       "resulting_security_ids": [ "new-security-1", "new-security-2" ],
       "quantity": { "string_value": "100" }
+    },
+    {
+      "id": "test-monetary-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": [ "new-security-1", "new-security-2" ],
+      "amount": { "amount": { "string_value": "867.53" } }
     }
   ],
   "stock_plans": [
