@@ -52,7 +52,9 @@
           {"$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"},
           {"$ref": "Objects.Transactions.WarrantCancellation.schema.json"},
           {"$ref": "Objects.Transactions.StockCancellation.schema.json"},
-          {"$ref": "Objects.Transactions.StockTransfer.schema.json"}
+          {"$ref": "Objects.Transactions.StockTransfer.schema.json"},
+          {"$ref": "Objects.Transactions.PlanSecurityTransfer.schema.json"},
+          {"$ref": "Objects.Transactions.WarrantTransfer.schema.json"}
         ]
       }
     },
