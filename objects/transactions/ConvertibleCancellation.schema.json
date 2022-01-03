@@ -4,16 +4,12 @@
   "title": "Object - Convertible Cancellation Transaction",
   "description": "Object describing a cancellation of a convertible security",
   "type": "object",
-  "allOf": [
-    { "$ref": "Objects.Transactions.Cancellation.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Objects.Transactions.Cancellation.schema.json" }],
   "properties": {
     "amount": {
       "description": "Amount of monetary value cancelled",
       "$ref": "Types.Money.schema.json"
     }
   },
-  "required": [
-    "amount"
-  ]
+  "required": ["amount"]
 }

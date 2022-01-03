@@ -4,16 +4,12 @@
   "title": "Object - Stock Cancellation Transaction",
   "description": "Object describing a cancellation of a stock security",
   "type": "object",
-  "allOf": [
-    { "$ref": "Objects.Transactions.Cancellation.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Objects.Transactions.Cancellation.schema.json" }],
   "properties": {
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
     }
   },
-  "required": [
-    "quantity"
-  ]
+  "required": ["quantity"]
 }

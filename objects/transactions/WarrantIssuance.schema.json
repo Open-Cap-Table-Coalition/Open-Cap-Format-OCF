@@ -4,15 +4,8 @@
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the transaction",
-      "type": "string"
-    },
-    "security_id": {
-      "description": "Identifier for the security",
-      "type": "string"
-    },
     "custom_id": {
       "description": "A custom ID for this warrant (e.g. W-1.)",
       "type": "string"
@@ -20,10 +13,6 @@
     "stakeholder_id": {
       "description": "Id of the stakeholder that holds legal title to this warrant.",
       "type": "string"
-    },
-    "issuance_date": {
-      "description": "Date of issuance for the warrant",
-      "$ref": "Types.DateTime.schema.json"
     },
     "board_approval_date": {
       "description": "Date of board approval for the warrant",
@@ -68,19 +57,9 @@
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
       "$ref": "Types.DateTime.schema.json"
-    },
-    "comments": {
-      "title": "Warrant Issuance - Comments",
-      "description": "Unstructured text comments related to and stored for this warrant",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
-    "issuance_date",
     "quantity",
     "stakeholder_id",
     "conversion_rights",

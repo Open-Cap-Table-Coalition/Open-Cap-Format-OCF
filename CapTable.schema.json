@@ -10,7 +10,6 @@
       "type": "string"
     },
     "issuer": {
-      "title": "Objects.Issuer.schema.json",
       "description": "Issuer for the cap table",
       "$ref": "Objects.Issuer.schema.json"
     },
@@ -39,6 +38,7 @@
       }
     },
     "transactions": {
+      "title": "CapTable - Objects.Transactions.*.schema.json Array",
       "description": "List of transactions for the cap table",
       "type": "array",
       "items": {

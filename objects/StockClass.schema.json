@@ -4,11 +4,8 @@
   "title": "Object - StockClass",
   "description": "Object describing a type of stock class issued by the issuer",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the stock class",
-      "type": "string"
-    },
     "name": {
       "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
       "type": "string"
@@ -42,8 +39,7 @@
       "$ref": "Types.Money.schema.json"
     },
     "seniority": {
-      "title": "Seniority of the stock - determines repayment priority",
-      "description": "Seniority is ordered by increasing number so that Stock classes with a higher Seniority have higher repayment priority. The following properties hold for all stock classes for a given company: \na) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, \nb) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order.\nIn practice, stock classes with same seniority may be created at different points in time and (for example, an extension of an existing preferred financing round), and also a new stock class can be created with seniority between two existing stock classes, in which case it is assigned some decimal number between the numbers representing Seniority of the respective classes.",
+      "description": "Seniority of the stock - determines repayment priority. Seniority is ordered by increasing number so that Stock classes with a higher Seniority have higher repayment priority. The following properties hold for all stock classes for a given company: \na) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, \nb) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order.\nIn practice, stock classes with same seniority may be created at different points in time and (for example, an extension of an existing preferred financing round), and also a new stock class can be created with seniority between two existing stock classes, in which case it is assigned some decimal number between the numbers representing Seniority of the respective classes.",
       "$ref": "Types.Numeric.schema.json"
     },
     "conversion_rights": {
@@ -61,18 +57,9 @@
     "participation_cap_multiple": {
       "description": "The participation cap multiple per share for this StockClass",
       "$ref": "Types.Numeric.schema.json"
-    },
-    "comments": {
-      "title": "StockClass - Comments",
-      "description": "List of comments for the stock class",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "name",
     "class_type",
     "default_id_prefix",

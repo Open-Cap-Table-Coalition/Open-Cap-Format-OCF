@@ -4,15 +4,8 @@
   "title": "Object - Stock Issuance Transaction",
   "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the transaction",
-      "type": "string"
-    },
-    "security_id": {
-      "description": "Identifier for the security",
-      "type": "string"
-    },
     "stock_class_id": {
       "description": "Id of StockClass of this stock issuance",
       "type": "string"
@@ -24,10 +17,6 @@
     "stakeholder_id": {
       "description": "Identifier for the stakeholder that owns this stock",
       "type": "string"
-    },
-    "issuance_date": {
-      "description": "Date of issuance for the stock",
-      "$ref": "Types.DateTime.schema.json"
     },
     "board_approval_date": {
       "description": "Date of board approval for the stock",
@@ -72,21 +61,11 @@
     "issued_from_parent_object": {
       "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
       "$ref": "Types.StockParent.schema.json"
-    },
-    "comments": {
-      "title": "Stock Issuance - Comments",
-      "description": "Unstructured text comments related to and stored for this stock",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
-    "id",
     "stock_class_id",
     "stakeholder_id",
-    "issuance_date",
     "share_price",
     "quantity",
     "cost_basis",

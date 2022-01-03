@@ -4,15 +4,8 @@
   "title": "Object - Stock Repurchase Transaction",
   "description": "Object describing a stock repurchase transaction",
   "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "id": {
-      "description": "Identifier for the transaction",
-      "type": "string"
-    },
-    "date": {
-      "description": "Date of repurchase",
-      "$ref": "Types.DateTime.schema.json"
-    },
     "price": {
       "description": "Repurchase price per share of the stock",
       "$ref": "Types.Money.schema.json"
@@ -32,21 +25,7 @@
       "items": {
         "type": "string"
       }
-    },
-    "comments": {
-      "title": "Repurchase - Comments",
-      "description": "Unstructured text comments related to and stored for this repurchase",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
-  "required": [
-    "id",
-    "date",
-    "price",
-    "quantity",
-    "consideration"
-  ]
+  "required": ["price", "quantity", "consideration"]
 }
