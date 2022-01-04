@@ -1,5 +1,10 @@
 {
   "name": "open-cap-format-ocf",
   "description": "Data Schema and Specification for Open Cap Format (OCF)",
-  "scripts": {}
+  "scripts": {
+    "format": "prettier ."
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
 }
