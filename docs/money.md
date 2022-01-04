@@ -27,13 +27,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `amount`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Money](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/amount")
+- defined in: [Type - Money](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/amount")
 
 ### amount Type
 
@@ -45,13 +45,13 @@ ISO-4217 currency code
 
 `currency`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency")
+- defined in: [Type - Money](money-properties-currency.md "Types.Money.schema.json#/properties/currency")
 
 ### currency Type
 

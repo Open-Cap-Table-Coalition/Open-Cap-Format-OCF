@@ -6,9 +6,9 @@ Types.StockClassConversionRights.schema.json#/properties/conversion_rights/items
 
 Type representation of a conversion right from one security into a StockClass.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                    |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json*](../objects/Warrant.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                     |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Warrant.schema.json\*](../objects/Warrant.schema.json "open original schema") |
 
 ## items Type
 
@@ -16,9 +16,9 @@ Type representation of a conversion right from one security into a StockClass.
 
 one (and only one) of
 
-*   [Converts to not-yet-existing and/or not-yet-known StockClass](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stockclass.md "check type definition")
+- [Converts to not-yet-existing and/or not-yet-known StockClass](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stockclass.md "check type definition")
 
-*   [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
+- [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
 
 # items Properties
 
@@ -35,13 +35,13 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 `ratio`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+- Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+- defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
 
 ### ratio Type
 
@@ -53,13 +53,13 @@ Is this StockClass potentially convertible into a future, as-yet undetermined St
 
 `converts_to_future_round`
 
-*   is optional
+- is optional
 
-*   Type: `boolean`
+- Type: `boolean`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")
+- defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")
 
 ### converts_to_future_round Type
 
@@ -71,13 +71,13 @@ What is the id of the existing, known StockClass this StockClass can convert int
 
 `converts_to_stock_class_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id")
+- defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id")
 
 ### converts_to_stock_class_id Type
 
@@ -89,13 +89,13 @@ Enumeration of rounding types
 
 `rounding_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
+- Type: `string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")
+- defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")
 
 ### rounding_type Type
 

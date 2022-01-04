@@ -14,8 +14,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "parent_object_type",
-    "parent_object_id"
-  ]
+  "required": ["parent_object_type", "parent_object_id"]
 }

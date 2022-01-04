@@ -6,9 +6,9 @@ Types.EventDrivenVestingCondition.schema.json#/properties/event_driven_vesting_c
 
 Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Vesting.schema.json*](../types/Vesting.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Vesting.schema.json\*](../types/Vesting.schema.json "open original schema") |
 
 ## 0 Type
 
@@ -31,13 +31,13 @@ Full detailed description of the vesting condition, whether it be milestone-base
 
 `event_description`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_description")
+- defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_description")
 
 ### event_description Type
 
@@ -49,13 +49,13 @@ Date of the event, if it has occurred already
 
 `event_occurred`
 
-*   is required
+- is required
 
-*   Type: merged type ([Details](eventdrivenvestingcondition-properties-event_occurred.md))
+- Type: merged type ([Details](eventdrivenvestingcondition-properties-event_occurred.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_occurred")
+- defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_occurred")
 
 ### event_occurred Type
 
@@ -63,9 +63,9 @@ merged type ([Details](eventdrivenvestingcondition-properties-event_occurred.md)
 
 one (and only one) of
 
-*   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
+- [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+- [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
 
 ## event_expiration
 
@@ -73,13 +73,13 @@ Date by which event must be met to qualify, given that the condition carries an 
 
 `event_expiration`
 
-*   is required
+- is required
 
-*   Type: merged type ([Details](eventdrivenvestingcondition-properties-event_expiration.md))
+- Type: merged type ([Details](eventdrivenvestingcondition-properties-event_expiration.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration")
+- defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration")
 
 ### event_expiration Type
 
@@ -87,9 +87,9 @@ merged type ([Details](eventdrivenvestingcondition-properties-event_expiration.m
 
 one (and only one) of
 
-*   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration-oneof-0.md "check type definition")
+- [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+- [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
 
 ## share_amount
 
@@ -97,13 +97,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `share_amount`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/share_amount")
+- defined in: [Type - Event-driven Vesting Condition](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/share_amount")
 
 ### share_amount Type
 
@@ -115,13 +115,13 @@ Given sibling conditions, this field determines the order by which conditions sh
 
 `priority`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "Types.EventDrivenVestingCondition.schema.json#/properties/priority")
+- defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "Types.EventDrivenVestingCondition.schema.json#/properties/priority")
 
 ### priority Type
 
@@ -133,13 +133,13 @@ Additional vesting conditions which become operative once this condition is met
 
 `dependent_vesting`
 
-*   is optional
+- is optional
 
-*   Type: an array of merged types ([Details](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items.md))
+- Type: an array of merged types ([Details](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting")
+- defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting")
 
 ### dependent_vesting Type
 

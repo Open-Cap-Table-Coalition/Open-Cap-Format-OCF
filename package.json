@@ -2,7 +2,8 @@
   "name": "open-cap-format-ocf",
   "description": "Data Schema and Specification for Open Cap Format (OCF)",
   "scripts": {
-    "format": "prettier ."
+    "lint": "prettier . --check",
+    "fix": "prettier . --check --write"
   },
   "devDependencies": {
     "prettier": "2.5.1"
