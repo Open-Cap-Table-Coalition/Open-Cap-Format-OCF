@@ -4,7 +4,7 @@
   "title": "Object - VestingSchedule",
   "description": "Object describing a strictly time-based vesting schedule",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
   "properties": {
     "name": {
       "description": "Concise name for the vesting schedule",
@@ -29,6 +29,9 @@
       "items": {
         "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
       }
+    },
+    "object_type": {
+      "const": "VESTING_SCHEDULE"
     }
   },
   "required": [

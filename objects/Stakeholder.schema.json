@@ -4,7 +4,7 @@
   "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
   "properties": {
     "name": {
       "description": "Name for the stakeholder",
@@ -41,6 +41,9 @@
       "items": {
         "$ref": "Types.TaxID.schema.json"
       }
+    },
+    "object_type": {
+      "const": "STAKEHOLDER"
     }
   },
   "required": ["name", "stakeholder_type"]

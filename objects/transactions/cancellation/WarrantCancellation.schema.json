@@ -1,14 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.WarrantCancellation.schema.json",
+  "$id": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json",
   "title": "Object - Warrant Cancellation Transaction",
   "description": "Object describing a cancellation of a warrant security",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.Cancellation.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.Cancellation.BaseCancellation.schema.json" }],
   "properties": {
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
+    },
+    "object_type": {
+      "const": "WARRANT_CANCELLATION"
     }
   },
   "required": ["quantity"]

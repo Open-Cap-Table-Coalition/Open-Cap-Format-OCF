@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.SecurityAcceptance.schema.json",
+  "$id": "Primitives.Objects.Transactions.Acceptance.BaseAcceptance.schema.json",
   "title": "Object - Security Acceptance Transaction",
   "description": "Object describing a security acceptance transaction",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json" }],
   "properties": {
-    "transaction_type": {
-      "const": "SECURITY_ACCEPTANCE"
+    "object_type": {
+      "const": "BASE_ACCEPTANCE"
     }
   },
   "required": ["transaction_type"]

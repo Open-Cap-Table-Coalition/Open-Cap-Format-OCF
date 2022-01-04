@@ -1,0 +1,2529 @@
+{
+    "https://json-schema.org/draft/2019-09/schema": {
+        "$schema": "https://json-schema.org/draft/2019-09/schema",
+        "$id": "https://json-schema.org/draft/2019-09/schema",
+        "$vocabulary": {
+            "https://json-schema.org/draft/2019-09/vocab/core": true,
+            "https://json-schema.org/draft/2019-09/vocab/applicator": true,
+            "https://json-schema.org/draft/2019-09/vocab/validation": true,
+            "https://json-schema.org/draft/2019-09/vocab/meta-data": true,
+            "https://json-schema.org/draft/2019-09/vocab/format": false,
+            "https://json-schema.org/draft/2019-09/vocab/content": true
+        },
+        "$recursiveAnchor": true,
+        "title": "Core and Validation specifications meta-schema",
+        "allOf": [
+            {
+                "$ref": "meta/core"
+            },
+            {
+                "$ref": "meta/applicator"
+            },
+            {
+                "$ref": "meta/validation"
+            },
+            {
+                "$ref": "meta/meta-data"
+            },
+            {
+                "$ref": "meta/format"
+            },
+            {
+                "$ref": "meta/content"
+            }
+        ],
+        "type": [
+            "object",
+            "boolean"
+        ],
+        "properties": {
+            "definitions": {
+                "$comment": "While no longer an official keyword as it is replaced by $defs, this keyword is retained in the meta-schema to prevent incompatible extensions as it remains in common use.",
+                "type": "object",
+                "additionalProperties": {
+                    "$recursiveRef": "#"
+                },
+                "default": {}
+            },
+            "dependencies": {
+                "$comment": "\"dependencies\" is no longer a keyword, but schema authors should avoid redefining it to facilitate a smooth transition to \"dependentSchemas\" and \"dependentRequired\"",
+                "type": "object",
+                "additionalProperties": {
+                    "anyOf": [
+                        {
+                            "$recursiveRef": "#"
+                        },
+                        {
+                            "$ref": "meta/validation#/$defs/stringArray"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "https://json-schema.org/draft/2020-12/schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://json-schema.org/draft/2020-12/schema",
+        "$vocabulary": {
+            "https://json-schema.org/draft/2020-12/vocab/core": true,
+            "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+            "https://json-schema.org/draft/2020-12/vocab/unevaluated": true,
+            "https://json-schema.org/draft/2020-12/vocab/validation": true,
+            "https://json-schema.org/draft/2020-12/vocab/meta-data": true,
+            "https://json-schema.org/draft/2020-12/vocab/format-annotation": true,
+            "https://json-schema.org/draft/2020-12/vocab/content": true
+        },
+        "$dynamicAnchor": "meta",
+        "title": "Core and Validation specifications meta-schema",
+        "allOf": [
+            {
+                "$ref": "meta/core"
+            },
+            {
+                "$ref": "meta/applicator"
+            },
+            {
+                "$ref": "meta/unevaluated"
+            },
+            {
+                "$ref": "meta/validation"
+            },
+            {
+                "$ref": "meta/meta-data"
+            },
+            {
+                "$ref": "meta/format-annotation"
+            },
+            {
+                "$ref": "meta/content"
+            }
+        ],
+        "type": [
+            "object",
+            "boolean"
+        ],
+        "$comment": "This meta-schema also defines keywords that have appeared in previous drafts in order to prevent incompatible extensions as they remain in common use.",
+        "properties": {
+            "definitions": {
+                "$comment": "\"definitions\" has been replaced by \"$defs\".",
+                "type": "object",
+                "additionalProperties": {
+                    "$dynamicRef": "#meta"
+                },
+                "deprecated": true,
+                "default": {}
+            },
+            "dependencies": {
+                "$comment": "\"dependencies\" has been split and replaced by \"dependentSchemas\" and \"dependentRequired\" in order to serve their differing semantics.",
+                "type": "object",
+                "additionalProperties": {
+                    "anyOf": [
+                        {
+                            "$dynamicRef": "#meta"
+                        },
+                        {
+                            "$ref": "meta/validation#/$defs/stringArray"
+                        }
+                    ]
+                },
+                "deprecated": true,
+                "default": {}
+            },
+            "$recursiveAnchor": {
+                "$comment": "\"$recursiveAnchor\" has been replaced by \"$dynamicAnchor\".",
+                "$ref": "meta/core#/$defs/anchorString",
+                "deprecated": true
+            },
+            "$recursiveRef": {
+                "$comment": "\"$recursiveRef\" has been replaced by \"$dynamicRef\".",
+                "$ref": "meta/core#/$defs/uriReferenceString",
+                "deprecated": true
+            }
+        }
+    },
+    "http://json-schema.org/draft-07/schema#": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$id": "http://json-schema.org/draft-07/schema#",
+        "title": "Core schema meta-schema",
+        "definitions": {
+            "schemaArray": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                    "$ref": "#"
+                }
+            },
+            "nonNegativeInteger": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "nonNegativeIntegerDefault0": {
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/nonNegativeInteger"
+                    },
+                    {
+                        "default": 0
+                    }
+                ]
+            },
+            "simpleTypes": {
+                "enum": [
+                    "array",
+                    "boolean",
+                    "integer",
+                    "null",
+                    "number",
+                    "object",
+                    "string"
+                ]
+            },
+            "stringArray": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "uniqueItems": true,
+                "default": []
+            }
+        },
+        "type": [
+            "object",
+            "boolean"
+        ],
+        "properties": {
+            "$id": {
+                "type": "string",
+                "format": "uri-reference"
+            },
+            "$schema": {
+                "type": "string",
+                "format": "uri"
+            },
+            "$ref": {
+                "type": "string",
+                "format": "uri-reference"
+            },
+            "$comment": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "default": true,
+            "readOnly": {
+                "type": "boolean",
+                "default": false
+            },
+            "examples": {
+                "type": "array",
+                "items": true
+            },
+            "multipleOf": {
+                "type": "number",
+                "exclusiveMinimum": 0
+            },
+            "maximum": {
+                "type": "number"
+            },
+            "exclusiveMaximum": {
+                "type": "number"
+            },
+            "minimum": {
+                "type": "number"
+            },
+            "exclusiveMinimum": {
+                "type": "number"
+            },
+            "maxLength": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minLength": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "pattern": {
+                "type": "string",
+                "format": "regex"
+            },
+            "additionalItems": {
+                "$ref": "#"
+            },
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#"
+                    },
+                    {
+                        "$ref": "#/definitions/schemaArray"
+                    }
+                ],
+                "default": true
+            },
+            "maxItems": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minItems": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "uniqueItems": {
+                "type": "boolean",
+                "default": false
+            },
+            "contains": {
+                "$ref": "#"
+            },
+            "maxProperties": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minProperties": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "required": {
+                "$ref": "#/definitions/stringArray"
+            },
+            "additionalProperties": {
+                "$ref": "#"
+            },
+            "definitions": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "default": {}
+            },
+            "properties": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "default": {}
+            },
+            "patternProperties": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "propertyNames": {
+                    "format": "regex"
+                },
+                "default": {}
+            },
+            "dependencies": {
+                "type": "object",
+                "additionalProperties": {
+                    "anyOf": [
+                        {
+                            "$ref": "#"
+                        },
+                        {
+                            "$ref": "#/definitions/stringArray"
+                        }
+                    ]
+                }
+            },
+            "propertyNames": {
+                "$ref": "#"
+            },
+            "const": true,
+            "enum": {
+                "type": "array",
+                "items": true
+            },
+            "type": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/simpleTypes"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/simpleTypes"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                ]
+            },
+            "format": {
+                "type": "string"
+            },
+            "contentMediaType": {
+                "type": "string"
+            },
+            "contentEncoding": {
+                "type": "string"
+            },
+            "if": {
+                "$ref": "#"
+            },
+            "then": {
+                "$ref": "#"
+            },
+            "else": {
+                "$ref": "#"
+            },
+            "allOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "anyOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "oneOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "not": {
+                "$ref": "#"
+            }
+        },
+        "default": true
+    },
+    "http://json-schema.org/draft-06/schema#": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$id": "http://json-schema.org/draft-06/schema#",
+        "title": "Core schema meta-schema",
+        "definitions": {
+            "schemaArray": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                    "$ref": "#"
+                }
+            },
+            "nonNegativeInteger": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "nonNegativeIntegerDefault0": {
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/nonNegativeInteger"
+                    },
+                    {
+                        "default": 0
+                    }
+                ]
+            },
+            "simpleTypes": {
+                "enum": [
+                    "array",
+                    "boolean",
+                    "integer",
+                    "null",
+                    "number",
+                    "object",
+                    "string"
+                ]
+            },
+            "stringArray": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "uniqueItems": true,
+                "default": []
+            }
+        },
+        "type": [
+            "object",
+            "boolean"
+        ],
+        "properties": {
+            "$id": {
+                "type": "string",
+                "format": "uri-reference"
+            },
+            "$schema": {
+                "type": "string",
+                "format": "uri"
+            },
+            "$ref": {
+                "type": "string",
+                "format": "uri-reference"
+            },
+            "title": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "default": {},
+            "examples": {
+                "type": "array",
+                "items": {}
+            },
+            "multipleOf": {
+                "type": "number",
+                "exclusiveMinimum": 0
+            },
+            "maximum": {
+                "type": "number"
+            },
+            "exclusiveMaximum": {
+                "type": "number"
+            },
+            "minimum": {
+                "type": "number"
+            },
+            "exclusiveMinimum": {
+                "type": "number"
+            },
+            "maxLength": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minLength": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "pattern": {
+                "type": "string",
+                "format": "regex"
+            },
+            "additionalItems": {
+                "$ref": "#"
+            },
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#"
+                    },
+                    {
+                        "$ref": "#/definitions/schemaArray"
+                    }
+                ],
+                "default": {}
+            },
+            "maxItems": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minItems": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "uniqueItems": {
+                "type": "boolean",
+                "default": false
+            },
+            "contains": {
+                "$ref": "#"
+            },
+            "maxProperties": {
+                "$ref": "#/definitions/nonNegativeInteger"
+            },
+            "minProperties": {
+                "$ref": "#/definitions/nonNegativeIntegerDefault0"
+            },
+            "required": {
+                "$ref": "#/definitions/stringArray"
+            },
+            "additionalProperties": {
+                "$ref": "#"
+            },
+            "definitions": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "default": {}
+            },
+            "properties": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "default": {}
+            },
+            "patternProperties": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#"
+                },
+                "propertyNames": {
+                    "format": "regex"
+                },
+                "default": {}
+            },
+            "dependencies": {
+                "type": "object",
+                "additionalProperties": {
+                    "anyOf": [
+                        {
+                            "$ref": "#"
+                        },
+                        {
+                            "$ref": "#/definitions/stringArray"
+                        }
+                    ]
+                }
+            },
+            "propertyNames": {
+                "$ref": "#"
+            },
+            "const": {},
+            "enum": {
+                "type": "array"
+            },
+            "type": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/simpleTypes"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/simpleTypes"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                ]
+            },
+            "format": {
+                "type": "string"
+            },
+            "allOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "anyOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "oneOf": {
+                "$ref": "#/definitions/schemaArray"
+            },
+            "not": {
+                "$ref": "#"
+            }
+        },
+        "default": {}
+    },
+    "Primitives.Objects.BaseObject.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Primitives.Objects.BaseObject.schema.json",
+        "title": "Object - BaseObject",
+        "description": "Abstract object to be extended by all other objects.",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Identifier for the object",
+                "type": "string"
+            },
+            "comments": {
+                "description": "Unstructured text comments related to and stored for the object",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "Primitives.Objects.Transactions.BaseTransaction.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Primitives.Objects.Transactions.BaseTransaction.schema.json",
+        "title": "Object - BaseTransaction",
+        "description": "Abstract transaction object to be extended by all other transaction objects.",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "security_id": {
+                "description": "Identifier for the security which the transaction applies to",
+                "type": "string"
+            },
+            "date": {
+                "description": "Date which the transaction occurred",
+                "$ref": "Types.DateTime.schema.json"
+            }
+        },
+        "required": [
+            "security_id",
+            "date"
+        ]
+    },
+    "Enums.Stakeholder.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Stakeholder.schema.json",
+        "title": "Enum - Stakeholder Type",
+        "description": "Enumeration of stakeholder types - individual (human) or institution (entity)",
+        "type": "string",
+        "enum": [
+            "INDIVIDUAL",
+            "INSTITUTION"
+        ]
+    },
+    "Enums.Compensation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Compensation.schema.json",
+        "title": "Enum - Compensation Type",
+        "description": "Enumeration of stock compensation types",
+        "type": "string",
+        "enum": [
+            "OPTION",
+            "RSU"
+        ]
+    },
+    "Enums.Rounding.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Rounding.schema.json",
+        "title": "Enum - Rounding Type",
+        "description": "Enumeration of rounding types",
+        "type": "string",
+        "enum": [
+            "CEILING",
+            "FLOOR",
+            "NORMAL"
+        ]
+    },
+    "Enums.Parent.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Parent.schema.json",
+        "title": "Enum - Parent Stock Type",
+        "description": "Enumeration of parent sources a stock can be issued or created from",
+        "type": "string",
+        "enum": [
+            "STOCK_PLAN",
+            "STOCK",
+            "WARRANT",
+            "CONVERTIBLE"
+        ]
+    },
+    "Enums.Option.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Option.schema.json",
+        "title": "Enum - Option Type",
+        "description": "Enumeration of option types",
+        "type": "string",
+        "enum": [
+            "NSO",
+            "ISO",
+            "INTL"
+        ]
+    },
+    "Enums.DayCount.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.DayCount.schema.json",
+        "title": "Enum - DayCount Type",
+        "description": "Enumeration of how the number of days are determined per period",
+        "type": "string",
+        "enum": [
+            "ACTUAL_365",
+            "30_360"
+        ]
+    },
+    "Enums.Period.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Period.schema.json",
+        "title": "Enum - Time Period Type",
+        "description": "Enumeration of time period types",
+        "type": "string",
+        "enum": [
+            "DAYS",
+            "MONTHS",
+            "YEARS"
+        ]
+    },
+    "Enums.Vesting.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Vesting.schema.json",
+        "title": "Enum - Vesting Type",
+        "description": "Enumeration of vesting types",
+        "type": "string",
+        "enum": [
+            "SCHEDULE_DRIVEN_ONLY",
+            "EVENT_DRIVEN_ONLY",
+            "SCHEDULE_AND_EVENT_DRIVEN"
+        ]
+    },
+    "Enums.Address.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Address.schema.json",
+        "title": "Enum - Address Type",
+        "description": "Enumeration of address types",
+        "type": "string",
+        "enum": [
+            "LEGAL",
+            "CONTACT",
+            "OTHER"
+        ]
+    },
+    "Enums.Compounding.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Compounding.schema.json",
+        "title": "Enum - Compounding Type",
+        "description": "Enumeration of interest compounding type",
+        "type": "string",
+        "enum": [
+            "COMPOUNDING",
+            "SIMPLE"
+        ]
+    },
+    "Enums.Conversion.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Conversion.schema.json",
+        "title": "Enum - Convertible Conversion Type",
+        "description": "Enumeration of convertible conversion type",
+        "type": "string",
+        "enum": [
+            "PRE_MONEY",
+            "POST_MONEY"
+        ]
+    },
+    "Enums.StakeholderRelationship.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.StakeholderRelationship.schema.json",
+        "title": "Enum - Relationships between stakeholder and issuer",
+        "description": "Enumeration of types of relationships",
+        "type": "string",
+        "enum": [
+            "ADVISOR",
+            "BOARD_MEMBER",
+            "CONSULTANT",
+            "EMPLOYEE",
+            "EX_ADVISOR",
+            "EX_CONSULTANT",
+            "EX_EMPLOYEE",
+            "EXECUTIVE",
+            "FOUNDER",
+            "INVESTOR",
+            "NON_US_EMPLOYEE",
+            "OFFICER",
+            "OTHER"
+        ]
+    },
+    "Enums.Valuation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Valuation.schema.json",
+        "title": "Enum - Valuation Type",
+        "description": "Enumeration of valuation types",
+        "type": "string",
+        "enum": [
+            "409A"
+        ]
+    },
+    "Enums.StockClass.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.StockClass.schema.json",
+        "title": "Enum - StockClass Type",
+        "description": "Enumeration of stockclass types",
+        "type": "string",
+        "enum": [
+            "COMMON",
+            "PREFERRED"
+        ]
+    },
+    "Enums.Convertible.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Convertible.schema.json",
+        "title": "Enum - Convertible Type",
+        "description": "Enumeration of convertible instrument types",
+        "type": "string",
+        "enum": [
+            "NOTE",
+            "SAFE",
+            "CONVERTIBLE_SECURITY"
+        ]
+    },
+    "Enums.TerminationWindow.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.TerminationWindow.schema.json",
+        "title": "Enum - TerminationWindow Type",
+        "description": "Enumeration of TerminationWindow types",
+        "type": "string",
+        "enum": [
+            "CAUSE",
+            "VOLUNTARY",
+            "INVOLUNTARY",
+            "DEATH",
+            "DISABILITY",
+            "RETIREMENT"
+        ]
+    },
+    "Enums.AllocationType.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.AllocationType.schema.json",
+        "title": "Enum - AllocationType",
+        "description": "Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: \n  1.  Cumulative Rounding (5 - 4 - 5 - 4)\n  2.  Cumulative Round Down (4 - 5 - 4 - 5)\n  3.  Front Loaded (5 - 5 - 4 - 4)\n  4.  Back Loaded (4 - 4 - 5 - 5)\n  5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)\n  6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)",
+        "type": "string",
+        "enum": [
+            "CUMULATIVE_ROUNDING",
+            "CUMULATIVE_ROUND_DOWN",
+            "FRONT_LOADED",
+            "BACK_LOADED",
+            "FRONT_LOADED_TO_SINGLE_TRANCHE",
+            "BACK_LOADED_TO_SINGLE_TRANCHE"
+        ]
+    },
+    "Enums.AccrualPeriod.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.AccrualPeriod.schema.json",
+        "title": "Enum - AccrualPeriod Type",
+        "description": "Enumeration of interest accrual period type",
+        "type": "string",
+        "enum": [
+            "DAILY",
+            "MONTHLY",
+            "QUARTERLY",
+            "SEMI_ANNUAL",
+            "ANNUAL"
+        ]
+    },
+    "Enums.PhoneNumber.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.PhoneNumber.schema.json",
+        "title": "Enum - PhoneNumber Type",
+        "description": "Enumeration of phone number types",
+        "type": "string",
+        "enum": [
+            "HOME",
+            "MOBILE",
+            "BUSINESS",
+            "OTHER"
+        ]
+    },
+    "Enums.Email.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.Email.schema.json",
+        "title": "Enum - Email Type",
+        "description": "Enumeration of email types",
+        "type": "string",
+        "enum": [
+            "PERSONAL",
+            "BUSINESS",
+            "OTHER"
+        ]
+    },
+    "Enums.InterestPayout.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Enums.InterestPayout.schema.json",
+        "title": "Enum - InterestPayout Type",
+        "description": "Enumeration of type of interest payout (e.g. deferred or cash payment)",
+        "type": "string",
+        "enum": [
+            "DEFERRED",
+            "CASH"
+        ]
+    },
+    "Objects.Stakeholder.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Stakeholder.schema.json",
+        "title": "Object - Stakeholder",
+        "description": "Object describing a stakeholder",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "name": {
+                "description": "Name for the stakeholder",
+                "$ref": "Types.Name.schema.json"
+            },
+            "stakeholder_type": {
+                "description": "Distinguish individuals from institutions",
+                "$ref": "Enums.Stakeholder.schema.json"
+            },
+            "issuer_assigned_id": {
+                "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
+                "type": "string"
+            },
+            "current_relationship": {
+                "description": "What is the current relationship of the stakeholder to the issuer?",
+                "$ref": "Enums.StakeholderRelationship.schema.json"
+            },
+            "primary_contact": {
+                "description": "The primary contact info for the stakeholder",
+                "$ref": "Types.ContactInfo.schema.json"
+            },
+            "addresses": {
+                "title": "Stakeholder - Address Array",
+                "description": "Addresses for the stakeholder",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.Address.schema.json"
+                }
+            },
+            "tax_ids": {
+                "title": "Stakeholder - TaxID Array",
+                "description": "The tax ids for this stakeholder",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.TaxID.schema.json"
+                }
+            }
+        },
+        "required": [
+            "name",
+            "stakeholder_type"
+        ]
+    },
+    "Objects.Issuer.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Issuer.schema.json",
+        "title": "Object - Issuer",
+        "description": "Object describing the issuer of the cap table. This is the company whsoe cap table this is.",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "legal_name": {
+                "description": "Legal name of the issuer",
+                "type": "string"
+            },
+            "dba": {
+                "description": "Doing Business As name",
+                "type": "string"
+            },
+            "formation_date": {
+                "description": "Date of formation",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "country_of_formation": {
+                "description": "The country where the issuer company was legally formed (ISO-3166 - alpha-3)",
+                "type": "string"
+            },
+            "state_of_formation": {
+                "description": "The state, province, or subdivision where the issuer company was legally formed (ISO-3166-2)",
+                "type": "string"
+            },
+            "tax_ids": {
+                "title": "Issuer - TaxID Array",
+                "description": "The tax ids for this issuer company",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.TaxID.schema.json"
+                }
+            },
+            "email": {
+                "description": "A work email that the issuer company can be reached at",
+                "$ref": "Types.Email.schema.json"
+            },
+            "phone": {
+                "description": "A phone number that the issuer company can be reached at",
+                "$ref": "Types.PhoneNumber.schema.json"
+            },
+            "address": {
+                "description": "The headquarters address of the issuing company",
+                "$ref": "Types.Address.schema.json"
+            }
+        },
+        "required": [
+            "legal_name",
+            "formation_date",
+            "country_of_formation"
+        ]
+    },
+    "Objects.StockLegendTemplate.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.StockLegendTemplate.schema.json",
+        "title": "Object - StockLegendTemplate",
+        "description": "Object describing a stock legend template",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "name": {
+                "description": "Name for the stock legend template",
+                "type": "string"
+            },
+            "text": {
+                "description": "The full text of the stock legend",
+                "type": "string"
+            }
+        },
+        "required": [
+            "name",
+            "text"
+        ]
+    },
+    "Objects.StockPlan.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.StockPlan.schema.json",
+        "title": "Object - StockPlan",
+        "description": "Object describing a plan which stock options are issued from",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "plan_name": {
+                "description": "Name for the stock plan",
+                "type": "string"
+            },
+            "board_approval_date": {
+                "description": "Date which board approved the plan",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "current_shares_reserved": {
+                "description": "The number of shares currently approved. The original number of shares can be determined from the event log",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "stock_class_id": {
+                "description": "Id of the StockClass object this plan is composed of",
+                "type": "string"
+            }
+        },
+        "required": [
+            "plan_name",
+            "stock_class_id",
+            "current_shares_reserved"
+        ]
+    },
+    "Objects.Valuation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Valuation.schema.json",
+        "title": "Object - Valuation",
+        "description": "Object describing a valuation used in the cap table",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "provider": {
+                "description": "Entity which provided the valuation",
+                "type": "string"
+            },
+            "price_per_share": {
+                "description": "Valued price per share",
+                "$ref": "Types.Money.schema.json"
+            },
+            "valuation_date": {
+                "description": "Date of the valuation",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "valuation_type": {
+                "description": "Seam for supporting different types of valuations in future versions",
+                "$ref": "Enums.Valuation.schema.json"
+            }
+        },
+        "required": [
+            "price_per_share",
+            "valuation_date",
+            "valuation_type"
+        ]
+    },
+    "Objects.StockClass.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.StockClass.schema.json",
+        "title": "Object - StockClass",
+        "description": "Object describing a type of stock class issued by the issuer",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "name": {
+                "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
+                "type": "string"
+            },
+            "class_type": {
+                "description": "The type of this StockClass (e.g. Preferred or Common)",
+                "$ref": "Enums.StockClass.schema.json"
+            },
+            "default_id_prefix": {
+                "description": "Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1). If certificate IDs have a dash, the prefix should end in the dash like CS-",
+                "type": "string"
+            },
+            "current_shares_authorized": {
+                "description": "The most current number of shares authorized for this StockClass",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "board_approval_date": {
+                "description": "Date which board approved the class",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "votes_per_share": {
+                "description": "The number of votes each share of this StockClass gets",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "par_value": {
+                "description": "Per-share par value of this StockClass",
+                "$ref": "Types.Money.schema.json"
+            },
+            "price_per_share": {
+                "description": "Per-share price this StockClass was issued for",
+                "$ref": "Types.Money.schema.json"
+            },
+            "seniority": {
+                "description": "Seniority of the stock - determines repayment priority. Seniority is ordered by increasing number so that Stock classes with a higher Seniority have higher repayment priority. The following properties hold for all stock classes for a given company: \na) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, \nb) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order.\nIn practice, stock classes with same seniority may be created at different points in time and (for example, an extension of an existing preferred financing round), and also a new stock class can be created with seniority between two existing stock classes, in which case it is assigned some decimal number between the numbers representing Seniority of the respective classes.",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "conversion_rights": {
+                "title": "StockClass - StockClassConversionRights Array",
+                "description": "List of StockClassConversionRights possible for this StockClass",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.StockClassConversionRights.schema.json"
+                }
+            },
+            "liquidation_preference_multiple": {
+                "description": "The liquidation preference per share for this StockClass",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "participation_cap_multiple": {
+                "description": "The participation cap multiple per share for this StockClass",
+                "$ref": "Types.Numeric.schema.json"
+            }
+        },
+        "required": [
+            "name",
+            "class_type",
+            "default_id_prefix",
+            "current_shares_authorized",
+            "board_approval_date",
+            "votes_per_share",
+            "par_value",
+            "price_per_share",
+            "seniority"
+        ]
+    },
+    "Objects.Transactions.Acceptance.SecurityAcceptance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.Acceptance.SecurityAcceptance.schema.json",
+        "title": "Object - Security Acceptance Transaction",
+        "description": "Object describing a security acceptance transaction",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "transaction_type": {
+                "const": "SECURITY_ACCEPTANCE"
+            }
+        },
+        "required": [
+            "transaction_type"
+        ]
+    },
+    "Objects.Transactions.ConvertibleCancellation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.ConvertibleCancellation.schema.json",
+        "title": "Object - Convertible Cancellation Transaction",
+        "description": "Object describing a cancellation of a convertible security",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "amount": {
+                "description": "Amount of monetary value cancelled",
+                "$ref": "Types.Money.schema.json"
+            }
+        },
+        "required": [
+            "amount"
+        ]
+    },
+    "Objects.Transactions.StockCancellation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.StockCancellation.schema.json",
+        "title": "Object - Stock Cancellation Transaction",
+        "description": "Object describing a cancellation of a stock security",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "quantity": {
+                "description": "Quantity of non-monetary security units cancelled",
+                "$ref": "Types.Numeric.schema.json"
+            }
+        },
+        "required": [
+            "quantity"
+        ]
+    },
+    "Objects.Transactions.Cancellation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.Cancellation.schema.json",
+        "title": "Object - Cancellation Transaction",
+        "description": "Object describing a security cancellation transaction",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "balance_security_id": {
+                "description": "Identifier for the security that holds the remainder balance (for partial cancellations)",
+                "type": "string"
+            },
+            "reason_text": {
+                "description": "Reason for the cancellation",
+                "type": "string"
+            }
+        },
+        "required": [
+            "reason_text"
+        ]
+    },
+    "Objects.Transactions.PlanSecurityCancellation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.PlanSecurityCancellation.schema.json",
+        "title": "Object - Plan Security Cancellation Transaction",
+        "description": "Object describing a cancellation of a plan security",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "quantity": {
+                "description": "Quantity of non-monetary security units cancelled",
+                "$ref": "Types.Numeric.schema.json"
+            }
+        },
+        "required": [
+            "quantity"
+        ]
+    },
+    "Objects.Transactions.WarrantCancellation.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.WarrantCancellation.schema.json",
+        "title": "Object - Warrant Cancellation Transaction",
+        "description": "Object describing a cancellation of a warrant security",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "quantity": {
+                "description": "Quantity of non-monetary security units cancelled",
+                "$ref": "Types.Numeric.schema.json"
+            }
+        },
+        "required": [
+            "quantity"
+        ]
+    },
+    "Objects.Transactions.WarrantIssuance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.WarrantIssuance.schema.json",
+        "title": "Object - Warrant Issuance Transaction",
+        "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "custom_id": {
+                "description": "A custom ID for this warrant (e.g. W-1.)",
+                "type": "string"
+            },
+            "stakeholder_id": {
+                "description": "Id of the stakeholder that holds legal title to this warrant.",
+                "type": "string"
+            },
+            "board_approval_date": {
+                "description": "Date of board approval for the warrant",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "consideration": {
+                "description": "Consideration for the security",
+                "$ref": "Types.Money.schema.json"
+            },
+            "security_law_exemptions": {
+                "title": "Warrant - SecurityExemption Array",
+                "description": "List of security law exemptions applicable to this warrant",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.SecurityExemption.schema.json"
+                }
+            },
+            "conversion_rights": {
+                "title": "Warrant - StockClassConversionRights Array",
+                "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.StockClassConversionRights.schema.json"
+                }
+            },
+            "quantity": {
+                "description": "Quantity of shares the warrant is exercisable for",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "exercise_price": {
+                "description": "The exercise price of the warrant",
+                "$ref": "Types.Money.schema.json"
+            },
+            "purchase_price": {
+                "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
+                "$ref": "Types.Money.schema.json"
+            },
+            "vesting": {
+                "description": "Vesting conditions applicable to the warrant",
+                "$ref": "Types.Vesting.schema.json"
+            },
+            "expiration_date": {
+                "description": "Expiration date of the warrant, if applicable",
+                "$ref": "Types.DateTime.schema.json"
+            }
+        },
+        "required": [
+            "quantity",
+            "stakeholder_id",
+            "conversion_rights",
+            "purchase_price",
+            "exercise_price"
+        ]
+    },
+    "Objects.Transactions.PlanSecurityIssuance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.PlanSecurityIssuance.schema.json",
+        "title": "Object - Plan Security Issuance Transaction",
+        "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "stock_plan_id": {
+                "description": "Id of StockPlan the PlanSecurities were issued from",
+                "type": "string"
+            },
+            "custom_id": {
+                "description": "Custom Id for the PlanSecurities (e.g. O-1.)",
+                "type": "string"
+            },
+            "stakeholder_id": {
+                "description": "Id of stakeholder that is the legal owner of the PlanSecurities",
+                "type": "string"
+            },
+            "board_approval_date": {
+                "description": "Date of board approval for the plan security",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "consideration": {
+                "description": "Consideration for the security",
+                "$ref": "Types.Money.schema.json"
+            },
+            "security_law_exemptions": {
+                "title": "PlanSecurity - Types.SecurityExemption.schema.json Array",
+                "description": "List of security law exemptions (and applicable jurisdictions) applicable to the PlanSecurities",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.SecurityExemption.schema.json"
+                }
+            },
+            "compensation_type": {
+                "description": "If the plan security is compensation, what kind?",
+                "$ref": "Enums.Compensation.schema.json"
+            },
+            "option_grant_type": {
+                "description": "If the plan security is an option, what kind?",
+                "$ref": "Enums.Option.schema.json"
+            },
+            "quantity": {
+                "description": "How many shares are subject to this plan security?",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "exercise_price": {
+                "description": "What is the exercise price?",
+                "$ref": "Types.Money.schema.json"
+            },
+            "vesting": {
+                "description": "What vesting applies to this plan security?",
+                "$ref": "Types.Vesting.schema.json"
+            },
+            "expiration_date": {
+                "description": "Expiration date of the plan security",
+                "oneOf": [
+                    {
+                        "type": "null"
+                    },
+                    {
+                        "$ref": "Types.DateTime.schema.json"
+                    }
+                ]
+            },
+            "termination_exercise_windows": {
+                "title": "PlanSecurity - Types.TerminationWindow.schema.json Array",
+                "description": "Exercise periods applicable to plan security after a termination for a given, enumerated reason",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.TerminationWindow.schema.json"
+                }
+            }
+        },
+        "anyOf": [
+            {
+                "properties": {
+                    "compensation_type": {
+                        "const": "OPTION"
+                    }
+                },
+                "required": [
+                    "option_grant_type"
+                ]
+            },
+            {
+                "properties": {
+                    "compensation_type": {
+                        "const": "RSU"
+                    }
+                }
+            }
+        ],
+        "required": [
+            "stock_plan_id",
+            "stakeholder_id",
+            "compensation_type",
+            "quantity",
+            "exercise_price",
+            "vesting",
+            "expiration_date",
+            "termination_exercise_windows"
+        ]
+    },
+    "Objects.Transactions.StockIssuance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.StockIssuance.schema.json",
+        "title": "Object - Stock Issuance Transaction",
+        "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "stock_class_id": {
+                "description": "Id of StockClass of this stock issuance",
+                "type": "string"
+            },
+            "custom_id": {
+                "description": "An override of the StockClass custom_id for this issuance (e.g. CS-1.). Also known as the certificate id",
+                "type": "string"
+            },
+            "stakeholder_id": {
+                "description": "Identifier for the stakeholder that owns this stock",
+                "type": "string"
+            },
+            "board_approval_date": {
+                "description": "Date of board approval for the stock",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "consideration": {
+                "description": "Consideration for the security",
+                "$ref": "Types.Money.schema.json"
+            },
+            "security_law_exemptions": {
+                "title": "Stock - Security Law Exemption Ids Array",
+                "description": "List of security law exemptions applicable to this stock and corresponding jurisdictions",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.SecurityExemption.schema.json"
+                }
+            },
+            "share_price": {
+                "description": "The price per share paid for the stock by the holder",
+                "$ref": "Types.Money.schema.json"
+            },
+            "quantity": {
+                "description": "Number of shares issued to the stakeholder",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "vesting": {
+                "description": "Vesting conditions applicable to this stock",
+                "type": "Types.Vesting.schema.json"
+            },
+            "cost_basis": {
+                "description": "The cost basis for this particular stock",
+                "$ref": "Types.Money.schema.json"
+            },
+            "stock_legend_ids": {
+                "title": "Stock - Stock Legend Id Array",
+                "description": "List of stock legend ids that apply to this stock",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "issued_from_parent_object": {
+                "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
+                "$ref": "Types.StockParent.schema.json"
+            }
+        },
+        "required": [
+            "stock_class_id",
+            "stakeholder_id",
+            "share_price",
+            "quantity",
+            "cost_basis",
+            "stock_legend_ids",
+            "issued_from_parent_object"
+        ]
+    },
+    "Objects.Transactions.ConvertibleIssuance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.ConvertibleIssuance.schema.json",
+        "title": "Object - Convertible Issuance Transaction",
+        "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "convertible_type": {
+                "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
+                "$ref": "Enums.Convertible.schema.json"
+            },
+            "conversion_type": {
+                "description": "Does this conversion happen pre or post money?",
+                "$ref": "Enums.Conversion.schema.json"
+            },
+            "custom_id": {
+                "description": "A custom ID for this convertible (e.g. CN-1.)",
+                "type": "string"
+            },
+            "stakeholder_id": {
+                "description": "Id of the stakeholder that holds legal title to this convertible.",
+                "type": "string"
+            },
+            "board_approval_date": {
+                "description": "Date of board approval for the convertible",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "consideration": {
+                "description": "Consideration for the security",
+                "$ref": "Types.Money.schema.json"
+            },
+            "security_law_exemptions": {
+                "title": "Convertible - Types.SecurityExemption.schema.json Array",
+                "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.SecurityExemption.schema.json"
+                }
+            },
+            "original_principal_amount": {
+                "description": "Principal at date of issuance of this convertible",
+                "$ref": "Types.Money.schema.json"
+            },
+            "interest_rate": {
+                "description": "Interest rate of the convertible (if applicable)",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "day_count_convention": {
+                "description": "How many days are there is a given period for calculation purposes?",
+                "$ref": "Enums.DayCount.schema.json"
+            },
+            "interest_payout": {
+                "description": "How is interest paid out (if at applicable)",
+                "$ref": "Enums.InterestPayout.schema.json"
+            },
+            "maturity_date": {
+                "description": "What is the maturity date (if applicable)",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "default_conversion_rights": {
+                "description": "What can this instrument convert into for a maturity or next equity financing conversion? Default, basic conversion ratio for this convertible expressed as a ratio of shares / unit principal.",
+                "$ref": "Types.StockClassConversionRights.schema.json"
+            },
+            "conversion_triggers": {
+                "title": "Convertible - Types.ConversionTrigger.schema.json Array",
+                "description": "In event the convertible can convert due to trigger events (e.g. Change of Control, at Election of Holder), what are the terms and has conversion been triggered? Conversion possibilities for this convertible more complex than a ratio of shares / unit principal.",
+                "type": [
+                    "array",
+                    "null"
+                ],
+                "items": {
+                    "$ref": "Types.ConversionTrigger.schema.json"
+                }
+            },
+            "exit_multiple": {
+                "description": "For cash proceeds calculation during a liquidity event.",
+                "$ref": "Types.Ratio.schema.json"
+            },
+            "interest_accrual_period": {
+                "description": "What is the period over which interest is calculated?",
+                "$ref": "Enums.AccrualPeriod.schema.json"
+            },
+            "compounding_type": {
+                "description": "What type of interest compounding?",
+                "$ref": "Enums.Compounding.schema.json"
+            },
+            "pro_rata": {
+                "description": "What pro-rata (if any) is the holder entitled to buy at the next round?",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "conversion_valuation_cap": {
+                "description": "What is the valuation cap (if applicable)?",
+                "$ref": "Types.Money.schema.json"
+            },
+            "conversion_discount": {
+                "description": "What is the discount available upon conversion (as decimal percent - e.g. .12 for 12%, - if applicable)",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "conversion_fixed_ownership": {
+                "description": "If the instrument purports to grant a percentage ownership of the Company, what is the percentage (as decimal percent - e.g. .12 for 12%, - if applicable)?",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "seniority": {
+                "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
+                "type": "integer"
+            }
+        },
+        "required": [
+            "conversion_type",
+            "convertible_type",
+            "custom_id",
+            "original_principal_amount",
+            "day_count_convention",
+            "default_conversion_rights",
+            "conversion_triggers",
+            "seniority",
+            "stakeholder_id"
+        ]
+    },
+    "Objects.Transactions.StockRepurchase.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.StockRepurchase.schema.json",
+        "title": "Object - Stock Repurchase Transaction",
+        "description": "Object describing a stock repurchase transaction",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "price": {
+                "description": "Repurchase price per share of the stock",
+                "$ref": "Types.Money.schema.json"
+            },
+            "quantity": {
+                "description": "Number of shares of stock repurchased",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "consideration": {
+                "description": "Consideration for the repurchase of the stock",
+                "$ref": "Types.Money.schema.json"
+            },
+            "resulting_stock_object_ids": {
+                "title": "StockRepurchase - Resulting Stock Object Id Array",
+                "description": "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "price",
+            "quantity",
+            "consideration"
+        ]
+    },
+    "Objects.Transactions.StockReissuance.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.Transactions.StockReissuance.schema.json",
+        "title": "Object - Stock Re-issuance Transaction",
+        "description": "Object describing a re-issuance of stock",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json"
+            }
+        ],
+        "properties": {
+            "resulting_security_id": {
+                "description": "Identifier of the new Stock issuance resulting from a re-issuance.",
+                "type": "string"
+            }
+        },
+        "required": [
+            "resulting_security_id"
+        ]
+    },
+    "Objects.VestingSchedule.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Objects.VestingSchedule.schema.json",
+        "title": "Object - VestingSchedule",
+        "description": "Object describing a strictly time-based vesting schedule",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "Primitives.Objects.BaseObject.schema.json"
+            }
+        ],
+        "properties": {
+            "name": {
+                "description": "Concise name for the vesting schedule",
+                "type": "string"
+            },
+            "description": {
+                "description": "Detailed description of the vesting schedule",
+                "type": "string"
+            },
+            "allocation_type": {
+                "description": "Allocation/rounding type for the vesting schedule",
+                "$ref": "Enums.AllocationType.schema.json"
+            },
+            "fractional_tranches_allowed": {
+                "description": "Whether or not fractional tranches are allowed. Note: if this is true, the allocation type is ignored",
+                "type": "boolean"
+            },
+            "schedule_driven_vesting_conditions": {
+                "title": "VestingSchedule - ScheduleDrivenVestingCondition Array",
+                "description": "Schedule rows defining the vesting schedule tranches",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+                }
+            }
+        },
+        "required": [
+            "name",
+            "description",
+            "allocation_type",
+            "fractional_tranches_allowed",
+            "schedule_driven_vesting_conditions"
+        ]
+    },
+    "CapTable.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "CapTable.schema.json",
+        "title": "Cap Table (\"Snapshot\")",
+        "description": "Top-level object describing a capitalization table",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Identifier for the capitalization table",
+                "type": "string"
+            },
+            "issuer": {
+                "description": "Issuer for the cap table",
+                "$ref": "Objects.Issuer.schema.json"
+            },
+            "stakeholders": {
+                "title": "CapTable - Objects.Stakeholder.schema.json Array",
+                "description": "List of stakeholders for the cap table",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.Stakeholder.schema.json"
+                }
+            },
+            "stock_plans": {
+                "title": "CapTable - Objects.StockPlan.schema.json Array",
+                "description": "List of issued stock plans for the cap table",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.StockPlan.schema.json"
+                }
+            },
+            "stock_legend_templates": {
+                "title": "CapTable - Objects.StockLegendTemplates.schema.json Array",
+                "description": "List of stock legend templates for the cap table",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.StockLegendTemplate.schema.json"
+                }
+            },
+            "transactions": {
+                "title": "CapTable - Objects.Transactions.*.schema.json Array",
+                "description": "List of transactions for the cap table",
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "$ref": "Objects.Transactions.PlanSecurityIssuance.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.WarrantIssuance.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.StockIssuance.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.SecurityAcceptance.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.PlanSecurityCancellation.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.WarrantCancellation.schema.json"
+                        },
+                        {
+                            "$ref": "Objects.Transactions.StockCancellation.schema.json"
+                        }
+                    ]
+                }
+            },
+            "stock_classes": {
+                "description": "List of StockClasses authorized for the issuer",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.StockClass.schema.json"
+                }
+            },
+            "vesting_schedules": {
+                "title": "CapTable - Objects.VestingSchedule.schema.json Array",
+                "description": "List of vesting schedules used by the issuer",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.VestingSchedule.schema.json"
+                }
+            },
+            "valuations": {
+                "title": "CapTable - Objects.Valuation.schema.json Array",
+                "description": "List of valuations for the cap table",
+                "type": "array",
+                "items": {
+                    "$ref": "Objects.Valuation.schema.json"
+                }
+            }
+        },
+        "required": [
+            "issuer",
+            "stakeholders",
+            "stock_plans",
+            "stock_legend_templates",
+            "transactions",
+            "stock_classes",
+            "vesting_schedules",
+            "valuations"
+        ],
+        "additionalProperties": false
+    },
+    "Types.Name.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Name.schema.json",
+        "title": "Type - Name",
+        "description": "Type comprising of multiple name components",
+        "type": "object",
+        "properties": {
+            "legal_name": {
+                "description": "Legal full name for the individual/institution",
+                "type": "string"
+            },
+            "first_name": {
+                "description": "First/given name for the individual",
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "last_name": {
+                "description": "Last/family name for the individual",
+                "type": [
+                    "string",
+                    "null"
+                ]
+            }
+        },
+        "required": [
+            "legal_name"
+        ]
+    },
+    "Types.SecurityExemption.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.SecurityExemption.schema.json",
+        "title": "Type - SecurityExemption",
+        "description": "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis",
+        "type": "object",
+        "properties": {
+            "description": {
+                "description": "Description of an applicable security law exemption governing the issuance",
+                "type": "string"
+            },
+            "jurisdiction": {
+                "description": "Country code of the jurisdiction of the applicable law (ISO-3166)",
+                "type": "string"
+            }
+        },
+        "required": [
+            "description",
+            "jurisdiction"
+        ]
+    },
+    "Types.StockParent.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.StockParent.schema.json",
+        "title": "Type - StockParent",
+        "description": "Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a Stock came from a previous Stock entry)",
+        "type": "object",
+        "properties": {
+            "parent_object_type": {
+                "description": "Parent object type for this Stock issuance (e.g. a Stock Plan or Warrant)",
+                "$ref": "Enums.Parent.schema.json"
+            },
+            "parent_object_id": {
+                "description": "Parent object's ID must be a valid ID pointing to an object of the type specified in parent_object_type",
+                "type": "string"
+            }
+        },
+        "required": [
+            "parent_object_type",
+            "parent_object_id"
+        ]
+    },
+    "Types.StockClassConversionRights.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.StockClassConversionRights.schema.json",
+        "title": "Type - StockClassConversionRights",
+        "description": "Type representation of a conversion right from one security into a StockClass.",
+        "type": "object",
+        "properties": {
+            "ratio": {
+                "description": "One share of this StockClass converts into this many target StockClass shares",
+                "$ref": "Types.Ratio.schema.json"
+            },
+            "converts_to_future_round": {
+                "description": "Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)",
+                "type": "boolean"
+            },
+            "converts_to_stock_class_id": {
+                "description": "What is the id of the existing, known StockClass this StockClass can convert into?",
+                "type": "string"
+            },
+            "rounding_type": {
+                "description": "How should fractional shares be rounded?",
+                "$ref": "Enums.Rounding.schema.json"
+            }
+        },
+        "oneOf": [
+            {
+                "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
+                "required": [
+                    "converts_to_future_round"
+                ]
+            },
+            {
+                "title": "Converts to existing, known StockClass Id",
+                "required": [
+                    "converts_to_stock_class_id"
+                ]
+            }
+        ],
+        "required": [
+            "ratio",
+            "rounding_type"
+        ]
+    },
+    "Types.ConversionTrigger.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.ConversionTrigger.schema.json",
+        "title": "Type - ConversionTrigger",
+        "description": "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)",
+        "type": "object",
+        "properties": {
+            "ratio": {
+                "description": "What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)",
+                "$ref": "Types.Ratio.schema.json"
+            },
+            "rounding_type": {
+                "description": "How should fractional shares be rounded?",
+                "$ref": "Enums.Rounding.schema.json"
+            },
+            "nickname": {
+                "description": "Human-friendly nickname to describe the conversion right",
+                "type": "string"
+            },
+            "description": {
+                "description": "Legal language describiing the conversion right (ideally, this should be excerpted from the instrument where possible)",
+                "type": "string"
+            },
+            "capitalization_definition": {
+                "description": "How is capitalization defined in the convertible for purposes of calculating company capitalization to calculate the conversion ratio?",
+                "type": "string"
+            },
+            "converts_to_future_round": {
+                "description": "Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)",
+                "type": "boolean"
+            },
+            "converts_to_stock_class_id": {
+                "description": "What is the id of the StockClass this StockClass can convert into?",
+                "type": "string"
+            }
+        },
+        "oneOf": [
+            {
+                "title": "Converts to a future round of stock (boolean)",
+                "description": "Some conversion triggers let holders convert into a future round/series of stock - e.g. at the next qualified financing or some similar formulation. If this is true, such a right applies to securities using this ConversionTrigger.",
+                "required": [
+                    "converts_to_future_round"
+                ]
+            },
+            {
+                "title": "Converts to known Id of StockClass (String Id)",
+                "description": "Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' Id here.",
+                "required": [
+                    "converts_to_stock_class_id"
+                ]
+            }
+        ],
+        "required": [
+            "rounding_type",
+            "description"
+        ]
+    },
+    "Types.Vesting.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Vesting.schema.json",
+        "title": "Type - Vesting",
+        "description": "Type representing all aspects related to vesting securities",
+        "type": "object",
+        "properties": {
+            "vesting_type": {
+                "description": "What kind of vesting is this",
+                "$ref": "Enums.Vesting.schema.json"
+            },
+            "vesting_schedule_id": {
+                "description": "Time-based vesting schedule applied to the securities",
+                "type": "string"
+            },
+            "vesting_start_date": {
+                "description": "Vesting commencement date",
+                "$ref": "Types.DateTime.schema.json"
+            },
+            "event_driven_vesting_conditions": {
+                "title": "Vesting Type - EventDrivenVestingCondition Array",
+                "description": "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration.\n\n**Note**: complex vesting rules which mix time-and event-based conditions should be modeled using this field, because human intervention will ultimately be required by the importing system due to the nature/complexity of the rules.",
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "$ref": "Types.EventDrivenVestingCondition.schema.json"
+                        },
+                        {
+                            "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+                        }
+                    ]
+                }
+            },
+            "custom_vesting_tranches": {
+                "title": "Vesting Type - CustomVestingTranche Array",
+                "description": "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.\n\n**Note**: custom vesting tranches override the applied vesting schedule if both are present.",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.CustomVestingTranche.schema.json"
+                }
+            },
+            "custom_vesting_description": {
+                "description": "Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches",
+                "type": "string"
+            }
+        },
+        "required": [
+            "vesting_type"
+        ]
+    },
+    "Types.CustomVestingTranche.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.CustomVestingTranche.schema.json",
+        "title": "Type - Custom Vesting Tranche",
+        "description": "Type representation of an vesting tranche by date and quantity",
+        "type": "object",
+        "properties": {
+            "vest_date": {
+                "description": "Date of vesting for the tranche",
+                "type": "string"
+            },
+            "vest_quantity": {
+                "description": "Quantity of shares for the tranche",
+                "type": "string"
+            }
+        },
+        "required": [
+            "vest_date",
+            "vest_quantity"
+        ]
+    },
+    "Types.Address.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Address.schema.json",
+        "title": "Type - Address",
+        "description": "Type representation of an address as an object.",
+        "type": "object",
+        "properties": {
+            "address_type": {
+                "description": "What type of address is this (e.g. legal address, contact address, etc.)",
+                "$ref": "Enums.Address.schema.json"
+            },
+            "street_suite": {
+                "description": "Street address (multi-line string)",
+                "type": "string"
+            },
+            "city": {
+                "description": "City",
+                "type": "string"
+            },
+            "state_province": {
+                "description": "State, province or equivalent identifier required for an address in this country (ISO-3166-2).",
+                "type": "string"
+            },
+            "country": {
+                "description": "Country code for this address (ISO-3166)",
+                "type": "string"
+            },
+            "postal_code": {
+                "description": "Address postal code",
+                "type": "string"
+            }
+        },
+        "required": [
+            "address_type",
+            "country"
+        ]
+    },
+    "Types.TaxID.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.TaxID.schema.json",
+        "title": "Type - TaxID",
+        "description": "Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)",
+        "type": "object",
+        "properties": {
+            "tax_id": {
+                "description": "Tax identifier as string",
+                "type": "string"
+            },
+            "country": {
+                "description": "Identifier's issuing country code (ISO-3166)",
+                "type": "string"
+            }
+        },
+        "required": [
+            "tax_id",
+            "country"
+        ]
+    },
+    "Types.EventDrivenVestingCondition.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.EventDrivenVestingCondition.schema.json",
+        "title": "Type - Event-driven Vesting Condition",
+        "description": "Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)",
+        "type": "object",
+        "properties": {
+            "event_description": {
+                "description": "Full detailed description of the vesting condition, whether it be milestone-based or some other specified event",
+                "type": "string"
+            },
+            "event_occurred": {
+                "description": "Date of the event, if it has occurred already",
+                "oneOf": [
+                    {
+                        "type": "null",
+                        "description": "Event has not occurred (null)"
+                    },
+                    {
+                        "$ref": "Types.DateTime.schema.json",
+                        "description": "Event has occurred at this datetime"
+                    }
+                ]
+            },
+            "event_expiration": {
+                "description": "Date by which event must be met to qualify, given that the condition carries an expiry",
+                "oneOf": [
+                    {
+                        "type": "null",
+                        "description": "No expiration date (null)"
+                    },
+                    {
+                        "$ref": "Types.DateTime.schema.json",
+                        "description": "Datetime @ which condition ceases to apply"
+                    }
+                ]
+            },
+            "share_amount": {
+                "description": "Number of shares which vest upon successfully meeting the condition",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "priority": {
+                "description": "Given sibling conditions, this field determines the order by which conditions shall be applied",
+                "type": "integer"
+            },
+            "dependent_vesting": {
+                "title": "EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array",
+                "description": "Additional vesting conditions which become operative once this condition is met",
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "$ref": "Types.EventDrivenVestingCondition.schema.json"
+                        },
+                        {
+                            "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": [
+            "event_description",
+            "share_amount",
+            "priority",
+            "event_expiration",
+            "event_occurred"
+        ]
+    },
+    "Types.Ratio.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Ratio.schema.json",
+        "title": "Type - Ratio",
+        "description": "Type representation of a ratio as antecedent and consequent numeric values.",
+        "type": "object",
+        "properties": {
+            "antecedent": {
+                "description": "Antecedent value of ratio (e.g. in a:b, a is the antecedent)",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "consequent": {
+                "description": "Consequent value of ratio (e.g. in a:b, b is the consequent)",
+                "$ref": "Types.Numeric.schema.json"
+            }
+        },
+        "required": [
+            "antecedent",
+            "consequent"
+        ]
+    },
+    "Types.DateTime.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.DateTime.schema.json",
+        "title": "Type - DateTime",
+        "description": "Type representing an instant in Universal Coordinated Time (UTC)",
+        "type": "object",
+        "properties": {
+            "epoch_millis": {
+                "description": "Number of milliseconds elapsed since Unix epoch",
+                "type": "integer",
+                "format": "int64"
+            }
+        },
+        "required": [
+            "epoch_millis"
+        ]
+    },
+    "Types.TerminationWindow.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.TerminationWindow.schema.json",
+        "title": "Type - TerminationWindow",
+        "description": "Type representation of a termination window as an object.",
+        "type": "object",
+        "properties": {
+            "reason": {
+                "description": "What cause of termination is this window for?",
+                "$ref": "Enums.TerminationWindow.schema.json"
+            },
+            "period": {
+                "description": "The length of the period in this termination window (in number of periods of type period_type)",
+                "type": "integer"
+            },
+            "period_type": {
+                "description": "The type of period being measured (e.g. days or month)",
+                "$ref": "Enums.Period.schema.json"
+            }
+        },
+        "required": [
+            "reason",
+            "period",
+            "period_type"
+        ]
+    },
+    "Types.Money.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Money.schema.json",
+        "title": "Type - Money",
+        "description": "Type representing a monetary value in a specified currency code",
+        "type": "object",
+        "properties": {
+            "amount": {
+                "description": "Numeric value",
+                "$ref": "Types.Numeric.schema.json"
+            },
+            "currency": {
+                "description": "ISO-4217 currency code",
+                "type": "string"
+            }
+        },
+        "required": [
+            "amount"
+        ]
+    },
+    "Types.Numeric.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Numeric.schema.json",
+        "title": "Type - Numeric",
+        "description": "Type representation of a number (up to 10 decimal places supported by the spec)",
+        "type": "object",
+        "properties": {
+            "string_value": {
+                "description": "Fixed-point numeric value as string",
+                "type": "string"
+            }
+        },
+        "required": [
+            "string_value"
+        ]
+    },
+    "Types.ScheduleDrivenVestingCondition.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.ScheduleDrivenVestingCondition.schema.json",
+        "title": "Type - Schedule-driven Vesting Condition",
+        "description": "Type representation of a row in a vesting schedule.",
+        "type": "object",
+        "properties": {
+            "amount_numerator": {
+                "description": "Numerator of the tranche amount (e.g. 1 in 1/48th)",
+                "type": "integer"
+            },
+            "amount_denominator": {
+                "description": "Denominator of the tranche amount (e.g. 48 in 1/48th)",
+                "type": "integer"
+            },
+            "period_length": {
+                "description": "Length of period following the vesting start date for this tranche",
+                "type": "integer"
+            },
+            "period_type": {
+                "description": "Type of period (days, months, years)",
+                "$ref": "Enums.Period.schema.json"
+            },
+            "priority": {
+                "description": "What order should this period be calculated (1 is highest priority)",
+                "type": "integer"
+            },
+            "dependent_vesting": {
+                "title": "ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array",
+                "description": "Vesting periods or conditions which become operative once this condition is met",
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "$ref": "Types.EventDrivenVestingCondition.schema.json"
+                        },
+                        {
+                            "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": [
+            "amount_numerator",
+            "amount_denominator",
+            "period_length",
+            "period_type"
+        ]
+    },
+    "Types.PhoneNumber.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.PhoneNumber.schema.json",
+        "title": "Type - PhoneNumber",
+        "description": "Type representation of a phone number.",
+        "type": "object",
+        "properties": {
+            "phone_type": {
+                "description": "Type of phone number (e.g. mobile, home or business)",
+                "$ref": "Enums.PhoneNumber.schema.json"
+            },
+            "phone_number": {
+                "description": "A valid phone number",
+                "type": "string"
+            }
+        },
+        "required": [
+            "phone_type",
+            "phone_number"
+        ]
+    },
+    "Types.ContactInfo.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.ContactInfo.schema.json",
+        "title": "Type - ContactInfo",
+        "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund).",
+        "type": "object",
+        "properties": {
+            "contact_first_name": {
+                "description": "Contact's first name",
+                "type": "string"
+            },
+            "contact_last_name": {
+                "description": "Contact's last name",
+                "type": "string"
+            },
+            "phone_numbers": {
+                "title": "ContactInfo - Phone Number Array",
+                "description": "Phone numbers to reach the contact at",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.PhoneNumber.schema.json"
+                }
+            },
+            "emails": {
+                "title": "ContactInfo - Email Array",
+                "description": "Emails to reach the contact at",
+                "type": "array",
+                "items": {
+                    "$ref": "Types.Email.schema.json"
+                }
+            }
+        },
+        "required": [
+            "contact_first_name",
+            "contact_last_name"
+        ]
+    },
+    "Types.Email.schema.json": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "Types.Email.schema.json",
+        "title": "Type - Email",
+        "description": "Type representation of an email address.",
+        "type": "object",
+        "properties": {
+            "email_type": {
+                "description": "Type of e-mail address (e.g. personal or business)",
+                "$ref": "Enums.Email.schema.json"
+            },
+            "email_address": {
+                "description": "A valid e-mail address",
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "required": [
+            "email_type",
+            "email_address"
+        ]
+    }
+}

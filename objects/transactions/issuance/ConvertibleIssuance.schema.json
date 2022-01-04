@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.ConvertibleIssuance.schema.json",
+  "$id": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json",
   "title": "Object - Convertible Issuance Transaction",
   "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json" }],
   "properties": {
     "convertible_type": {
       "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
@@ -13,30 +13,6 @@
     "conversion_type": {
       "description": "Does this conversion happen pre or post money?",
       "$ref": "Enums.Conversion.schema.json"
-    },
-    "custom_id": {
-      "description": "A custom ID for this convertible (e.g. CN-1.)",
-      "type": "string"
-    },
-    "stakeholder_id": {
-      "description": "Id of the stakeholder that holds legal title to this convertible.",
-      "type": "string"
-    },
-    "board_approval_date": {
-      "description": "Date of board approval for the convertible",
-      "$ref": "Types.DateTime.schema.json"
-    },
-    "consideration": {
-      "description": "Consideration for the security",
-      "$ref": "Types.Money.schema.json"
-    },
-    "security_law_exemptions": {
-      "title": "Convertible - Types.SecurityExemption.schema.json Array",
-      "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
-      "type": "array",
-      "items": {
-        "$ref": "Types.SecurityExemption.schema.json"
-      }
     },
     "original_principal_amount": {
       "description": "Principal at date of issuance of this convertible",
@@ -104,6 +80,9 @@
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
       "type": "integer"
+    },
+    "object_type": {
+      "const": "CONVERTIBLE_ISSUANCE"
     }
   },
   "required": [

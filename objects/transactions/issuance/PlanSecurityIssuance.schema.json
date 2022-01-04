@@ -1,38 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.PlanSecurityIssuance.schema.json",
+  "$id": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json",
   "title": "Object - Plan Security Issuance Transaction",
   "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json" }],
   "properties": {
     "stock_plan_id": {
       "description": "Id of StockPlan the PlanSecurities were issued from",
       "type": "string"
-    },
-    "custom_id": {
-      "description": "Custom Id for the PlanSecurities (e.g. O-1.)",
-      "type": "string"
-    },
-    "stakeholder_id": {
-      "description": "Id of stakeholder that is the legal owner of the PlanSecurities",
-      "type": "string"
-    },
-    "board_approval_date": {
-      "description": "Date of board approval for the plan security",
-      "$ref": "Types.DateTime.schema.json"
-    },
-    "consideration": {
-      "description": "Consideration for the security",
-      "$ref": "Types.Money.schema.json"
-    },
-    "security_law_exemptions": {
-      "title": "PlanSecurity - Types.SecurityExemption.schema.json Array",
-      "description": "List of security law exemptions (and applicable jurisdictions) applicable to the PlanSecurities",
-      "type": "array",
-      "items": {
-        "$ref": "Types.SecurityExemption.schema.json"
-      }
     },
     "compensation_type": {
       "description": "If the plan security is compensation, what kind?",
@@ -72,6 +48,9 @@
       "items": {
         "$ref": "Types.TerminationWindow.schema.json"
       }
+    },
+    "object_type": {
+      "const": "PLANSECURITY_ISSUANCE"
     }
   },
   "anyOf": [

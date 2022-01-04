@@ -4,7 +4,7 @@
   "title": "Object - StockLegendTemplate",
   "description": "Object describing a stock legend template",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
   "properties": {
     "name": {
       "description": "Name for the stock legend template",
@@ -13,6 +13,9 @@
     "text": {
       "description": "The full text of the stock legend",
       "type": "string"
+    },
+    "object_type": {
+      "const": "STOCK_LEGEND"
     }
   },
   "required": ["name", "text"]

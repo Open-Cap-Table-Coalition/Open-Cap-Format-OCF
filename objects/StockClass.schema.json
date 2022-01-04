@@ -4,7 +4,7 @@
   "title": "Object - StockClass",
   "description": "Object describing a type of stock class issued by the issuer",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
   "properties": {
     "name": {
       "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
@@ -57,6 +57,9 @@
     "participation_cap_multiple": {
       "description": "The participation cap multiple per share for this StockClass",
       "$ref": "Types.Numeric.schema.json"
+    },
+    "object_type": {
+      "const": "STOCK_CLASS"
     }
   },
   "required": [

@@ -1,35 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.WarrantIssuance.schema.json",
+  "$id": "Objects.Transactions.Issuance.WarrantIssuance.schema.json",
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json" }],
   "properties": {
-    "custom_id": {
-      "description": "A custom ID for this warrant (e.g. W-1.)",
-      "type": "string"
-    },
-    "stakeholder_id": {
-      "description": "Id of the stakeholder that holds legal title to this warrant.",
-      "type": "string"
-    },
-    "board_approval_date": {
-      "description": "Date of board approval for the warrant",
-      "$ref": "Types.DateTime.schema.json"
-    },
-    "consideration": {
-      "description": "Consideration for the security",
-      "$ref": "Types.Money.schema.json"
-    },
-    "security_law_exemptions": {
-      "title": "Warrant - SecurityExemption Array",
-      "description": "List of security law exemptions applicable to this warrant",
-      "type": "array",
-      "items": {
-        "$ref": "Types.SecurityExemption.schema.json"
-      }
-    },
     "conversion_rights": {
       "title": "Warrant - StockClassConversionRights Array",
       "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
@@ -57,6 +33,9 @@
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
       "$ref": "Types.DateTime.schema.json"
+    },
+    "object_type": {
+      "const": "WARRANT_ISSUANCE"
     }
   },
   "required": [

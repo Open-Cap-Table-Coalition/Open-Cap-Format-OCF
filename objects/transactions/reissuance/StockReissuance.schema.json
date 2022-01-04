@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Reissuance.StockReissuance.schema.json",
+  "title": "Object - Stock Re-issuance Transaction",
+  "description": "Object describing a re-issuance of stock",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.Reissuance.BaseReissuance.schema.json" }],
+  "properties": {
+    "object_type": {
+      "const": "STOCK_REISSUANCE"
+    }
+  },
+  "required": [
+    "resulting_security_id"
+  ]
+}

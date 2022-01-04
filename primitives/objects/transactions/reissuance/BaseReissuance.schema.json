@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Primitives.Objects.Transactions.Reissuance.BaseReissuance.schema.json",
+  "title": "Object - Base Re-issuance Transaction (Primitive)",
+  "description": "Object describing common properties to a re-issuance of a security",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "resulting_security_id": {
+      "description": "Identifier of the new security issuance resulting from a re-issuance.",
+      "type": "string"
+    },
+    "object_type": {
+      "const": "BASE_REISSUANCE"
+    }
+  },
+  "required": [
+    "resulting_security_id"
+  ]
+}

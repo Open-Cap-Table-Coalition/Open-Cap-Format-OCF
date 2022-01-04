@@ -17,18 +17,33 @@ from jsonschema import Draft7Validator, RefResolver, ValidationError, SchemaErro
 # Using pathlib to get proper paths to provide easier, cross-platform dir performance
 parent_dir = Path.cwd().parent
 snapshot_schema = parent_dir / "CapTable.schema.json"
-object_schema_dir = parent_dir / "objects"
-transactions_schema_dir = object_schema_dir / "transactions"
-type_schema_dir = parent_dir / "types"
-enum_schema_dir = parent_dir / "enums"
 
-schema_search_paths = [
-    parent_dir.absolute(),
-    object_schema_dir.absolute(),
-    transactions_schema_dir.absolute(),
-    type_schema_dir.absolute(),
-    enum_schema_dir.absolute()
+dirs = [
+    parent_dir / "primitives",
+    parent_dir / "objects",
+    parent_dir / "objects" / "transactions",
+    parent_dir / "types",
+    parent_dir / "enums"
 ]
+
+schema_search_paths = list(map(lambda d: d.absolute(), dirs))
+
+
+def load_schemas_from_dir(path):
+
+    loaded_schemas = {}
+
+    if path.is_dir():
+        child_schemas = list(map(lambda p: load_schemas_from_dir(p), path.iterdir()))
+        loaded_schemas = {**loaded_schemas, **{k: v for schema in child_schemas for k, v in schema.items()}}
+
+    elif path.suffix == ".json":
+        with open(path.resolve(), "r") as schema_fd:
+            schema = json.load(schema_fd)
+            if "$id" in schema:
+                loaded_schemas[schema["$id"]] = schema
+
+    return loaded_schemas
 
 
 def load_schemas():
@@ -36,19 +51,18 @@ def load_schemas():
     :return: Dict of schema ids to jsonschemas
     """
 
-    schemastore = {}
+    # for schema_search_path in schema_search_paths:
+    #     fnames = os.listdir(schema_search_path)
+    #     for fname in fnames:
+    #         fpath = os.path.join(schema_search_path, fname)
+    #         if fpath[-5:] == ".json":
+    #             with open(fpath, "r") as schema_fd:
+    #                 schema = json.load(schema_fd)
+    #                 if "$id" in schema:
+    #                     schemastore[schema["$id"]] = schema
 
-    for schema_search_path in schema_search_paths:
-        fnames = os.listdir(schema_search_path)
-        for fname in fnames:
-            fpath = os.path.join(schema_search_path, fname)
-            if fpath[-5:] == ".json":
-                with open(fpath, "r") as schema_fd:
-                    schema = json.load(schema_fd)
-                    if "$id" in schema:
-                        schemastore[schema["$id"]] = schema
+    return load_schemas_from_dir(parent_dir)
 
-    return schemastore
 
 def validate_snapshot(instance, parent_schema):
     """

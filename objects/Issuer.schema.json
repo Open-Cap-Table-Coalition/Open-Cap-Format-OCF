@@ -4,7 +4,7 @@
   "title": "Object - Issuer",
   "description": "Object describing the issuer of the cap table. This is the company whsoe cap table this is.",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
   "properties": {
     "legal_name": {
       "description": "Legal name of the issuer",
@@ -45,6 +45,9 @@
     "address": {
       "description": "The headquarters address of the issuing company",
       "$ref": "Types.Address.schema.json"
+    },
+    "object_type": {
+      "const": "ISSUER"
     }
   },
   "required": ["legal_name", "formation_date", "country_of_formation"]

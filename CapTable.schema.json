@@ -43,15 +43,15 @@
       "type": "array",
       "items": {
         "anyOf" : [
-          {"$ref": "Objects.Transactions.PlanSecurityIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.ConvertibleIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.WarrantIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.StockIssuance.schema.json"},
-          {"$ref": "Objects.Transactions.SecurityAcceptance.schema.json"},
-          {"$ref": "Objects.Transactions.PlanSecurityCancellation.schema.json"},
-          {"$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"},
-          {"$ref": "Objects.Transactions.WarrantCancellation.schema.json"},
-          {"$ref": "Objects.Transactions.StockCancellation.schema.json"}
+          {"$ref": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.Issuance.WarrantIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.Issuance.StockIssuance.schema.json"},
+          {"$ref": "Objects.Transactions.Acceptance.SecurityAcceptance.schema.json"},
+          {"$ref": "Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"},
+          {"$ref": "Objects.Transactions.Cancellation.StockCancellation.schema.json"}
         ]
       }
     },

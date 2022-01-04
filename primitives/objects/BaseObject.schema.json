@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.BaseObject.schema.json",
+  "$id": "Primitives.Objects.BaseObject.schema.json",
   "title": "Object - BaseObject",
   "description": "Abstract object to be extended by all other objects.",
   "type": "object",
@@ -15,7 +15,11 @@
       "items": {
         "type": "string"
       }
+    },
+    "object_type": {
+      "description": "Object type field",
+      "$ref": "Primitives.Enums.ObjectTypes.schema.json"
     }
   },
-  "required": ["id"]
+  "required": ["id", "object_type"]
 }
