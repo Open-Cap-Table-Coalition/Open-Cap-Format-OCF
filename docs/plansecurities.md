@@ -16,9 +16,9 @@ Object describing securities issued from a plan by the issuer and held by a stak
 
 any of
 
-*   [Untitled undefined type in Object - PlanSecurities](plansecurities-anyof-0.md "check type definition")
+- [Untitled undefined type in Object - PlanSecurities](plansecurities-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in Object - PlanSecurities](plansecurities-anyof-1.md "check type definition")
+- [Untitled undefined type in Object - PlanSecurities](plansecurities-anyof-1.md "check type definition")
 
 # Object - PlanSecurities Properties
 
@@ -46,13 +46,13 @@ Identifier for the PlanSecurities
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-id.md "Objects.PlanSecurities.schema.json#/properties/id")
+- defined in: [Object - PlanSecurities](plansecurities-properties-id.md "Objects.PlanSecurities.schema.json#/properties/id")
 
 ### id Type
 
@@ -64,13 +64,13 @@ Id of StockPlan the PlanSecurities were issued from
 
 `stock_plan_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-stock_plan_id.md "Objects.PlanSecurities.schema.json#/properties/stock_plan_id")
+- defined in: [Object - PlanSecurities](plansecurities-properties-stock_plan_id.md "Objects.PlanSecurities.schema.json#/properties/stock_plan_id")
 
 ### stock_plan_id Type
 
@@ -82,13 +82,13 @@ Custom Id for the PlanSecurities (e.g. O-1.)
 
 `custom_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-custom_id.md "Objects.PlanSecurities.schema.json#/properties/custom_id")
+- defined in: [Object - PlanSecurities](plansecurities-properties-custom_id.md "Objects.PlanSecurities.schema.json#/properties/custom_id")
 
 ### custom_id Type
 
@@ -100,13 +100,13 @@ Id of stakeholder that is the legal owner of the PlanSecurities
 
 `stakeholder_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-stakeholder_id.md "Objects.PlanSecurities.schema.json#/properties/stakeholder_id")
+- defined in: [Object - PlanSecurities](plansecurities-properties-stakeholder_id.md "Objects.PlanSecurities.schema.json#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -118,13 +118,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `issue_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
+- defined in: [Object - PlanSecurities](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
 
 ### issue_date Type
 
@@ -136,13 +136,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `canceled_at`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
+- defined in: [Object - PlanSecurities](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
 
 ### canceled_at Type
 
@@ -154,13 +154,13 @@ List of security law exemptions (and applicable jurisdictions) applicable to the
 
 `security_law_exemptions`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
+- Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array.md "Objects.PlanSecurities.schema.json#/properties/security_law_exemptions")
+- defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array.md "Objects.PlanSecurities.schema.json#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
@@ -172,13 +172,13 @@ Enumeration of stock compensation types
 
 `compensation_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Compensation Type](plansecurities-properties-enum---compensation-type.md))
+- Type: `string` ([Enum - Compensation Type](plansecurities-properties-enum---compensation-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-enum---compensation-type.md "Enums.Compensation.schema.json#/properties/compensation_type")
+- defined in: [Object - PlanSecurities](plansecurities-properties-enum---compensation-type.md "Enums.Compensation.schema.json#/properties/compensation_type")
 
 ### compensation_type Type
 
@@ -199,13 +199,13 @@ Enumeration of option types
 
 `option_grant_type`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Enum - Option Type](plansecurities-properties-enum---option-type.md))
+- Type: `string` ([Enum - Option Type](plansecurities-properties-enum---option-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")
+- defined in: [Object - PlanSecurities](plansecurities-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")
 
 ### option_grant_type Type
 
@@ -227,13 +227,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `shares`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")
+- defined in: [Object - PlanSecurities](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")
 
 ### shares Type
 
@@ -245,13 +245,13 @@ Type representing a monetary value in a specified currency code
 
 `exercise_price`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
+- defined in: [Object - PlanSecurities](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
 
 ### exercise_price Type
 
@@ -263,13 +263,13 @@ Type representing all aspects related to vesting securities
 
 `vesting`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
+- Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+- defined in: [Object - PlanSecurities](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
 
 ### vesting Type
 
@@ -281,13 +281,13 @@ Expiration date of the plan security
 
 `expiration_date`
 
-*   is required
+- is required
 
-*   Type: merged type ([Details](plansecurities-properties-expiration_date.md))
+- Type: merged type ([Details](plansecurities-properties-expiration_date.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-expiration_date.md "Objects.PlanSecurities.schema.json#/properties/expiration_date")
+- defined in: [Object - PlanSecurities](plansecurities-properties-expiration_date.md "Objects.PlanSecurities.schema.json#/properties/expiration_date")
 
 ### expiration_date Type
 
@@ -295,9 +295,9 @@ merged type ([Details](plansecurities-properties-expiration_date.md))
 
 one (and only one) of
 
-*   [Untitled null in Object - PlanSecurities](plansecurities-properties-expiration_date-oneof-0.md "check type definition")
+- [Untitled null in Object - PlanSecurities](plansecurities-properties-expiration_date-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+- [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
 
 ## termination_exercise_windows
 
@@ -305,13 +305,13 @@ Exercise periods applicable to plan security after a termination for a given, en
 
 `termination_exercise_windows`
 
-*   is required
+- is required
 
-*   Type: `object[]` ([Type - TerminationWindow](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md))
+- Type: `object[]` ([Type - TerminationWindow](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.PlanSecurities.schema.json#/properties/termination_exercise_windows")
+- defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.PlanSecurities.schema.json#/properties/termination_exercise_windows")
 
 ### termination_exercise_windows Type
 
@@ -323,13 +323,13 @@ Unstructured text comments related to and stored for this PlanSecurity
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---comments.md "Objects.PlanSecurities.schema.json#/properties/comments")
+- defined in: [Object - PlanSecurities](plansecurities-properties-plansecurity---comments.md "Objects.PlanSecurities.schema.json#/properties/comments")
 
 ### comments Type
 

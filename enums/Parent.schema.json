@@ -4,10 +4,5 @@
   "title": "Enum - Parent Stock Type",
   "description": "Enumeration of parent sources a stock can be issued or created from",
   "type": "string",
-  "enum": [
-    "STOCK_PLAN",
-    "STOCK",
-    "WARRANT",
-    "CONVERTIBLE"
-  ]
+  "enum": ["STOCK_PLAN", "STOCK", "WARRANT", "CONVERTIBLE"]
 }

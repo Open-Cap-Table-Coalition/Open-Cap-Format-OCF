@@ -18,9 +18,5 @@
       "$ref": "Enums.Period.schema.json"
     }
   },
-  "required": [
-    "reason",
-    "period",
-    "period_type"
-  ]
+  "required": ["reason", "period", "period_type"]
 }

@@ -38,13 +38,13 @@ Identifier for the warrant (must be unique within warrant objs)
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-id.md "Objects.Warrant.schema.json#/properties/id")
+- defined in: [Object - Warrant](warrant-properties-id.md "Objects.Warrant.schema.json#/properties/id")
 
 ### id Type
 
@@ -56,13 +56,13 @@ A custom ID for this warrant (e.g. W-1.)
 
 `custom_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-custom_id.md "Objects.Warrant.schema.json#/properties/custom_id")
+- defined in: [Object - Warrant](warrant-properties-custom_id.md "Objects.Warrant.schema.json#/properties/custom_id")
 
 ### custom_id Type
 
@@ -74,13 +74,13 @@ Id of the stakeholder that holds legal title to this warrant.
 
 `stakeholder_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-stakeholder_id.md "Objects.Warrant.schema.json#/properties/stakeholder_id")
+- defined in: [Object - Warrant](warrant-properties-stakeholder_id.md "Objects.Warrant.schema.json#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -92,13 +92,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `issue_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
+- defined in: [Object - Warrant](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
 
 ### issue_date Type
 
@@ -110,13 +110,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `canceled_at`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
+- defined in: [Object - Warrant](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
 
 ### canceled_at Type
 
@@ -128,13 +128,13 @@ List of security law exemptions applicable to this warrant
 
 `security_law_exemptions`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
+- Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-warrant---securityexemption-array.md "Objects.Warrant.schema.json#/properties/security_law_exemptions")
+- defined in: [Object - Warrant](warrant-properties-warrant---securityexemption-array.md "Objects.Warrant.schema.json#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
@@ -146,13 +146,13 @@ What can this instrument convert into for a maturity or next equity financing co
 
 `conversion_rights`
 
-*   is required
+- is required
 
-*   Type: `object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
+- Type: `object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-warrant---stockclassconversionrights-array.md "Objects.Warrant.schema.json#/properties/conversion_rights")
+- defined in: [Object - Warrant](warrant-properties-warrant---stockclassconversionrights-array.md "Objects.Warrant.schema.json#/properties/conversion_rights")
 
 ### conversion_rights Type
 
@@ -164,13 +164,13 @@ Shares the warrant is exercisable for
 
 `shares`
 
-*   is required
+- is required
 
-*   Type: `Types.Numeric.schema.json`
+- Type: `Types.Numeric.schema.json`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-shares.md "Objects.Warrant.schema.json#/properties/shares")
+- defined in: [Object - Warrant](warrant-properties-shares.md "Objects.Warrant.schema.json#/properties/shares")
 
 ### shares Type
 
@@ -182,13 +182,13 @@ The exercise price of the warrant
 
 `exercise_price`
 
-*   is required
+- is required
 
-*   Type: `Types.Money.schema.json`
+- Type: `Types.Money.schema.json`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-exercise_price.md "Objects.Warrant.schema.json#/properties/exercise_price")
+- defined in: [Object - Warrant](warrant-properties-exercise_price.md "Objects.Warrant.schema.json#/properties/exercise_price")
 
 ### exercise_price Type
 
@@ -200,13 +200,13 @@ Actual purchase price of the warrant (sum up purported value of all consideratio
 
 `purchase_price`
 
-*   is required
+- is required
 
-*   Type: `Types.Money.schema.json`
+- Type: `Types.Money.schema.json`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-purchase_price.md "Objects.Warrant.schema.json#/properties/purchase_price")
+- defined in: [Object - Warrant](warrant-properties-purchase_price.md "Objects.Warrant.schema.json#/properties/purchase_price")
 
 ### purchase_price Type
 
@@ -218,13 +218,13 @@ Type representing all aspects related to vesting securities
 
 `vesting`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
+- Type: `object` ([Type - Vesting](plansecurities-properties-type---vesting.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+- defined in: [Object - Warrant](plansecurities-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
 
 ### vesting Type
 
@@ -236,13 +236,13 @@ Expiration date of the warrant, if applicable
 
 `expiration_date`
 
-*   is optional
+- is optional
 
-*   Type: `Types.DateTime.schema.json`
+- Type: `Types.DateTime.schema.json`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-expiration_date.md "Objects.Warrant.schema.json#/properties/expiration_date")
+- defined in: [Object - Warrant](warrant-properties-expiration_date.md "Objects.Warrant.schema.json#/properties/expiration_date")
 
 ### expiration_date Type
 
@@ -254,13 +254,13 @@ List of comments for this stock
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Warrant](warrant-properties-warrant---comments.md "Objects.Warrant.schema.json#/properties/comments")
+- defined in: [Object - Warrant](warrant-properties-warrant---comments.md "Objects.Warrant.schema.json#/properties/comments")
 
 ### comments Type
 

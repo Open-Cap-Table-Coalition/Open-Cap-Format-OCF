@@ -45,7 +45,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "vesting_type"
-  ]
+  "required": ["vesting_type"]
 }

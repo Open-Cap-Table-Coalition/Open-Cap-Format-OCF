@@ -4,9 +4,5 @@
   "title": "Enum - Email Type",
   "description": "Enumeration of email types",
   "type": "string",
-  "enum": [
-    "PERSONAL",
-    "BUSINESS",
-    "OTHER"
-  ]
+  "enum": ["PERSONAL", "BUSINESS", "OTHER"]
 }

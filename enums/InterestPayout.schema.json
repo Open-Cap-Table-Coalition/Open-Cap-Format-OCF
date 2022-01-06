@@ -4,8 +4,5 @@
   "title": "Enum - InterestPayout Type",
   "description": "Enumeration of type of interest payout (e.g. deferred or cash payment)",
   "type": "string",
-  "enum": [
-    "DEFERRED",
-    "CASH"
-  ]
+  "enum": ["DEFERRED", "CASH"]
 }

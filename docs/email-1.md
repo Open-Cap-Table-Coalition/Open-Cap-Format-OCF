@@ -27,13 +27,13 @@ Enumeration of email types
 
 `email_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Email Type](email-1-properties-enum---email-type.md))
+- Type: `string` ([Enum - Email Type](email-1-properties-enum---email-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Email](email-1-properties-enum---email-type.md "Enums.Email.schema.json#/properties/email_type")
+- defined in: [Type - Email](email-1-properties-enum---email-type.md "Enums.Email.schema.json#/properties/email_type")
 
 ### email_type Type
 
@@ -55,13 +55,13 @@ A valid e-mail address
 
 `email_address`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Email](email-1-properties-email_address.md "Types.Email.schema.json#/properties/email_address")
+- defined in: [Type - Email](email-1-properties-email_address.md "Types.Email.schema.json#/properties/email_address")
 
 ### email_address Type
 
