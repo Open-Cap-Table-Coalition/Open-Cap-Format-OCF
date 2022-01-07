@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Repurchase.StockRepurchase.schema.json",
+  "title": "Object - Stock Repurchase Transaction",
+  "description": "Object describing a stock repurchase transaction",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_REPURCHASE"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "price": {},
+    "quantity": {},
+    "consideration": {},
+    "resulting_security_ids": {}
+  },
+  "additionalProperties": false,
+  "required": []
+}

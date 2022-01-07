@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json",
+  "title": "Object - Plan Security Transfer Transaction",
+  "description": "Object describing a transfer of a plan security",
+  "type": "object",
+  "allOf": [
+    { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
+  ],
+  "properties": {
+    "quantity": {
+      "description": "Quantity of non-monetary security units cancelled",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "consideration": {},
+    "balance_security_id": {},
+    "resulting_security_ids": {}
+  },
+  "additionalProperties": false,
+  "required": ["quantity"]
+}

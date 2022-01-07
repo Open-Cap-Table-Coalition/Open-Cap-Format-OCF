@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Primitives.Transactions.Issuance.BaseIssuance.schema.json",
+  "title": "Primitive - Security Issuance Transaction",
+  "description": "Abstract object describing fields common to all issuance objects",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "custom_id": {
+      "description": "A custom ID for this convertible (e.g. CN-1.)",
+      "type": "string"
+    },
+    "stakeholder_id": {
+      "description": "Id of the stakeholder that holds legal title to this convertible.",
+      "type": "string"
+    },
+    "board_approval_date": {
+      "description": "Date of board approval for the convertible",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
+    },
+    "security_law_exemptions": {
+      "title": "Convertible - Types.SecurityExemption.schema.json Array",
+      "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
+      "type": "array",
+      "items": {
+        "$ref": "Types.SecurityExemption.schema.json"
+      }
+    }
+  },
+  "required": [
+    "security_law_exemptions",
+    "board_approval_date",
+    "object_type",
+    "stakeholder_id",
+    "consideration",
+    "custom_id"
+  ]
+}

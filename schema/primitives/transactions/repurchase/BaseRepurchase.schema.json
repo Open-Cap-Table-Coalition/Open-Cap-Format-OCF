@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Repurchase.BaseRepurchase.schema.json",
+  "title": "Primitive - Security Repurchase Transaction",
+  "description": "Abstract object describing a repurchase transaction",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "price": {
+      "description": "Repurchase price per share of the stock",
+      "$ref": "Types.Money.schema.json"
+    },
+    "quantity": {
+      "description": "Number of shares of stock repurchased",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "consideration": {
+      "description": "Consideration for the repurchase of the stock",
+      "$ref": "Types.Money.schema.json"
+    },
+    "resulting_security_ids": {
+      "title": "Security Repurchase - Resulting Security Id Array",
+      "description": "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["price", "quantity", "consideration"]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Primitives.Transactions.Cancellation.BaseCancellation.schema.json",
+  "title": "Primitive - Security Cancellation Transaction",
+  "description": "Abstract object describing fields common to all cancellation transaction objects",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "balance_security_ids": {
+      "title": "Security Cancellation - Balance Security Id Array",
+      "description": "Identifier for the security (or securities) that holds the remainder balance (for partial cancellations)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason_text": {
+      "description": "Reason for the cancellation",
+      "type": "string"
+    }
+  },
+  "required": ["reason_text"]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Reissuance.StockReissuance.schema.json",
+  "title": "Object - Stock Re-issuance Transaction",
+  "description": "Object describing a re-issuance of stock",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Transactions.Reissuance.BaseReissuance.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_REISSUANCE"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "resulting_security_ids": {}
+  },
+  "additionalProperties": false,
+  "required": []
+}

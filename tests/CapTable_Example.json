@@ -2,6 +2,7 @@
   "id": "7d597e5b-4dc7-43af-82f1-1633e23c2048",
   "issuer": {
     "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
+    "object_type": "ISSUER",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
     "formation_date": {
@@ -36,6 +37,7 @@
   "stakeholders": [
     {
       "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
+      "object_type": "STAKEHOLDER",
       "name": {
         "legal_name": "Person X",
         "first_name": "Person",
@@ -46,6 +48,7 @@
     },
     {
       "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
+      "object_type": "STAKEHOLDER",
       "name": {
         "legal_name": "Person Y",
         "first_name": "Person",
@@ -58,6 +61,7 @@
   "stock_plans": [
     {
       "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "object_type": "STOCK_PLAN",
       "plan_name": "2021 Stock Incentive Plan",
       "board_approval_date": {
         "epoch_millis": 1633906514750837
@@ -75,6 +79,7 @@
   "stock_classes": [
     {
       "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "object_type": "STOCK_CLASS",
       "name": "Common Stock",
       "class_type": "COMMON",
       "default_id_prefix": "CS-",
@@ -113,6 +118,7 @@
     },
     {
       "id": "cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
+      "object_type": "STOCK_CLASS",
       "name": "Series Seed Preferred",
       "class_type": "PREFERRED",
       "default_id_prefix": "PS-",
@@ -163,64 +169,11 @@
       "comments": []
     }
   ],
-  "transactions": [
-    {
-      "id": "test-quantity-cancellation",
-      "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
-      "quantity": { "string_value": "100" },
-      "balance_security_id": "new-security",
-      "reason_text": "for testing"
-    },
-    {
-      "id": "test-monetary-cancellation",
-      "balance_security_id": "new-security",
-      "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
-      "amount": {
-        "amount": {
-          "string_value": "53.09"
-        }
-      },
-      "currency": "USD",
-      "reason_text": "for testing"
-    },
-    {
-      "id": "test-quantity-split",
-      "security_id": "test-security-id",
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "date": { "epoch_millis": 42 },
-      "split_ratio": {
-        "antecedent": { "string_value": "1" },
-        "consequent": { "string_value": "2" }
-      }
-    },
-    {
-      "id": "test-quantity-transfer",
-      "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "quantity": { "string_value": "100" }
-    },
-    {
-      "id": "test-monetary-transfer",
-      "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "amount": { "amount": { "string_value": "867.53" } }
-    }
-  ],
+  "transactions": [],
   "vesting_schedules": [
     {
       "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
+      "object_type": "VESTING_SCHEDULE",
       "name": "Four Year / One Year Cliff",
       "description": "25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.",
       "allocation_type": "CUMULATIVE_ROUNDING",
@@ -243,5 +196,6 @@
       ]
     }
   ],
-  "valuations": []
+  "valuations": [],
+  "comments": []
 }
