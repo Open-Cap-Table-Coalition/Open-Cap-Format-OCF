@@ -190,6 +190,15 @@
       "reason_text": "for testing"
     },
     {
+      "id": "test-quantity-split",
+      "security_id": "test-security-id",
+      "resulting_security_ids": [ "new-security-1", "new-security-2" ],
+      "date": { "epoch_millis": 42 },
+      "split_ratio": {
+        "antecedent": { "string_value": "1" },
+        "consequent": { "string_value": "2" }
+    },
+    {
       "id": "test-quantity-transfer",
       "security_id": "test-security-id",
       "date": {
