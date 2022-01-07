@@ -4,9 +4,7 @@
   "title": "Primitive - Security Acceptance Transaction",
   "description": "Abstract object describing a security acceptance transaction",
   "type": "object",
-  "allOf": [
-    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
   "properties": {},
   "required": []
 }

@@ -9,7 +9,6 @@
     "object_type": {
       "const": "STAKEHOLDER"
     },
-    "id": {},
     "name": {
       "description": "Name for the stakeholder",
       "$ref": "Types.Name.schema.json"
@@ -46,6 +45,7 @@
         "$ref": "Types.TaxID.schema.json"
       }
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

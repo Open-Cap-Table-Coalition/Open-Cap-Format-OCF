@@ -4,12 +4,15 @@
   "title": "Object - StockLegendTemplate",
   "description": "Object describing a stock legend template",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
+  "allOf": [
+    {
+      "$ref": "Primitives.BaseObject.schema.json"
+    }
+  ],
   "properties": {
     "object_type": {
       "const": "STOCK_LEGEND_TEMPLATE"
     },
-    "id": { },
     "name": {
       "description": "Name for the stock legend template",
       "type": "string"
@@ -18,6 +21,7 @@
       "description": "The full text of the stock legend",
       "type": "string"
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

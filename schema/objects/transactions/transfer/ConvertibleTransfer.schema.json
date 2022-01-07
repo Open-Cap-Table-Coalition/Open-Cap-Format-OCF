@@ -1,15 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.ConvertibleTransfer.schema.json",
+  "$id": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json",
   "title": "Object - Convertible Transfer Transaction",
   "description": "Object describing a transfer or secondary sale of a convertible security",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.Transfer.schema.json" }],
+  "allOf": [
+    { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
+  ],
   "properties": {
     "amount": {
       "description": "Amount of monetary value cancelled",
       "$ref": "Types.Money.schema.json"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "consideration": {},
+    "balance_security_id": {},
+    "resulting_security_ids": {}
   },
+  "additionalProperties": false,
   "required": ["amount"]
 }

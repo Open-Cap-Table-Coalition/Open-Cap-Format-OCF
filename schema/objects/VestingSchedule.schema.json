@@ -9,7 +9,6 @@
     "object_type": {
       "const": "VESTING_SCHEDULE"
     },
-    "id": {},
     "name": {
       "description": "Concise name for the vesting schedule",
       "type": "string"
@@ -34,6 +33,7 @@
         "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
       }
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

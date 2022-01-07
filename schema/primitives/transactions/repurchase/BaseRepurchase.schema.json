@@ -4,9 +4,7 @@
   "title": "Primitive - Security Repurchase Transaction",
   "description": "Abstract object describing a repurchase transaction",
   "type": "object",
-  "allOf": [
-    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
   "properties": {
     "price": {
       "description": "Repurchase price per share of the stock",

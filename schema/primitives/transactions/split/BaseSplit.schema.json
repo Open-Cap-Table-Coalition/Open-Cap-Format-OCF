@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Primitives.Transactions.Split.BaseSplit.schema.json",
+  "title": "Primitive - Security Split Transaction",
+  "description": "Abstract object describing a security split transaction",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "resulting_security_ids": {
+      "title": "Security Split - Resulting Security Id Array",
+      "description": "Array of identifiers for new security (or securities) created as a result of the transaction",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "split_ratio": {
+      "description": "Ratio of old shares to new shares",
+      "$ref": "Types.Ratio.schema.json"
+    }
+  },
+  "required": ["resulting_security_ids", "split_ratio"]
+}

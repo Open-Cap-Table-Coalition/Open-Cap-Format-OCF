@@ -4,9 +4,7 @@
   "title": "Primitive - Security Re-issuance Transaction",
   "description": "Abstract object describing common properties to a re-issuance of a security",
   "type": "object",
-  "allOf": [
-    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
   "properties": {
     "resulting_security_ids": {
       "title": "Security Reissuance - Resulting Security Id Array",

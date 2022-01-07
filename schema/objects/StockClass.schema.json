@@ -9,7 +9,6 @@
     "object_type": {
       "const": "STOCK_CLASS"
     },
-    "id": {},
     "name": {
       "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
       "type": "string"
@@ -62,6 +61,7 @@
       "description": "The participation cap multiple per share for this StockClass",
       "$ref": "Types.Numeric.schema.json"
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

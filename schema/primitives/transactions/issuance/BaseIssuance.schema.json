@@ -4,9 +4,7 @@
   "title": "Primitive - Security Issuance Transaction",
   "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
-  "allOf": [
-    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
-  ],
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
   "properties": {
     "custom_id": {
       "description": "A custom ID for this convertible (e.g. CN-1.)",

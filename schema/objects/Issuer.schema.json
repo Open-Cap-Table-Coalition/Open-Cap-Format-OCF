@@ -9,7 +9,6 @@
     "object_type": {
       "const": "ISSUER"
     },
-    "id": {},
     "legal_name": {
       "description": "Legal name of the issuer",
       "type": "string"
@@ -50,6 +49,7 @@
       "description": "The headquarters address of the issuing company",
       "$ref": "Types.Address.schema.json"
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

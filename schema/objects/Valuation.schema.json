@@ -9,7 +9,6 @@
     "object_type": {
       "const": "VALUATION"
     },
-    "id": { },
     "provider": {
       "description": "Entity which provided the valuation",
       "type": "string"
@@ -26,6 +25,7 @@
       "description": "Seam for supporting different types of valuations in future versions",
       "$ref": "Enums.Valuation.schema.json"
     },
+    "id": {},
     "comments": {}
   },
   "additionalProperties": false,

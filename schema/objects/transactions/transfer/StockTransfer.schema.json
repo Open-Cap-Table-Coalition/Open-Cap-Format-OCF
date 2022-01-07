@@ -1,15 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.StockTransfer.schema.json",
+  "$id": "Objects.Transactions.Transfer.StockTransfer.schema.json",
   "title": "Object - Stock Transfer Transaction",
   "description": "Object describing a transfer or secondary sale of a stock security",
   "type": "object",
-  "allOf": [{ "$ref": "Objects.Transactions.Transfer.schema.json" }],
+  "allOf": [
+    { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
+  ],
   "properties": {
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "consideration": {},
+    "balance_security_id": {},
+    "resulting_security_ids": {}
   },
+  "additionalProperties": false,
   "required": ["quantity"]
 }
