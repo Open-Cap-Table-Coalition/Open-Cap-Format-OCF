@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.StockTransfer.schema.json",
+  "title": "Object - Stock Transfer Transaction",
+  "description": "Object describing a transfer or secondary sale of a stock security",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.Transfer.schema.json" }],
+  "properties": {
+    "quantity": {
+      "description": "Quantity of non-monetary security units cancelled",
+      "$ref": "Types.Numeric.schema.json"
+    }
+  },
+  "required": ["quantity"]
+}
