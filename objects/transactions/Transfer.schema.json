@@ -24,7 +24,5 @@
       "uniqueItems": true
     }
   },
-  "required": [
-    "resulting_security_ids"
-  ]
+  "required": ["resulting_security_ids"]
 }
