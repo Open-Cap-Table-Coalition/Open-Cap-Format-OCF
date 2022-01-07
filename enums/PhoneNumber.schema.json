@@ -4,10 +4,5 @@
   "title": "Enum - PhoneNumber Type",
   "description": "Enumeration of phone number types",
   "type": "string",
-  "enum": [
-    "HOME",
-    "MOBILE",
-    "BUSINESS",
-    "OTHER"
-  ]
+  "enum": ["HOME", "MOBILE", "BUSINESS", "OTHER"]
 }

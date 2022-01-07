@@ -4,8 +4,5 @@
   "title": "Enum - Convertible Conversion Type",
   "description": "Enumeration of convertible conversion type",
   "type": "string",
-  "enum": [
-    "PRE_MONEY",
-    "POST_MONEY"
-  ]
+  "enum": ["PRE_MONEY", "POST_MONEY"]
 }

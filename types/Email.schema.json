@@ -15,8 +15,5 @@
       "format": "email"
     }
   },
-  "required": [
-    "email_type",
-    "email_address"
-  ]
+  "required": ["email_type", "email_address"]
 }

@@ -4,11 +4,9 @@
 Objects.PlanSecurities.schema.json#/anyOf/1
 ```
 
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json*](../objects/PlanSecurities.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                   |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json\*](../objects/PlanSecurities.schema.json "open original schema") |
 
 ## 1 Type
 
@@ -22,17 +20,15 @@ unknown
 
 ## compensation_type
 
-
-
 `compensation_type`
 
-*   is optional
+- is optional
 
-*   Type: unknown
+- Type: unknown
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - PlanSecurities](plansecurities-anyof-1-properties-compensation_type.md "Objects.PlanSecurities.schema.json#/anyOf/1/properties/compensation_type")
+- defined in: [Object - PlanSecurities](plansecurities-anyof-1-properties-compensation_type.md "Objects.PlanSecurities.schema.json#/anyOf/1/properties/compensation_type")
 
 ### compensation_type Type
 

@@ -26,13 +26,13 @@ Number of milliseconds elapsed since Unix epoch
 
 `epoch_millis`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - DateTime](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
+- defined in: [Type - DateTime](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
 
 ### epoch_millis Type
 

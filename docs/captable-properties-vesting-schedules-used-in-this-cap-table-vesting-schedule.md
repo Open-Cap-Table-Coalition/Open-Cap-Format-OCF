@@ -6,9 +6,9 @@ Objects.VestingSchedule.schema.json#/properties/vesting_schedules/items
 
 Object describing a strictly time-based vesting schedule
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -32,13 +32,13 @@ Identifier for the vesting schedule
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-id.md "Objects.VestingSchedule.schema.json#/properties/id")
+- defined in: [Vesting Schedule](vestingschedule-properties-id.md "Objects.VestingSchedule.schema.json#/properties/id")
 
 ### id Type
 
@@ -50,13 +50,13 @@ Concise name for the vesting schedule
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-name.md "Objects.VestingSchedule.schema.json#/properties/name")
+- defined in: [Vesting Schedule](vestingschedule-properties-name.md "Objects.VestingSchedule.schema.json#/properties/name")
 
 ### name Type
 
@@ -68,13 +68,13 @@ Detailed description of the vesting schedule
 
 `description`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-description.md "Objects.VestingSchedule.schema.json#/properties/description")
+- defined in: [Vesting Schedule](vestingschedule-properties-description.md "Objects.VestingSchedule.schema.json#/properties/description")
 
 ### description Type
 
@@ -92,13 +92,13 @@ Enumeration of allocation types for vesting schedules. Using an example of 18 sh
 
 `allocation_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Allocation Type](vestingschedule-properties-allocation-type.md))
+- Type: `string` ([Allocation Type](vestingschedule-properties-allocation-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-allocation-type.md "Enums.AllocationType.schema.json#/properties/allocation_type")
+- defined in: [Vesting Schedule](vestingschedule-properties-allocation-type.md "Enums.AllocationType.schema.json#/properties/allocation_type")
 
 ### allocation_type Type
 
@@ -123,13 +123,13 @@ Whether or not fractional tranches are allowed. Note: if this is true, the alloc
 
 `fractional_tranches_allowed`
 
-*   is required
+- is required
 
-*   Type: `boolean`
+- Type: `boolean`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-fractional_tranches_allowed.md "Objects.VestingSchedule.schema.json#/properties/fractional_tranches_allowed")
+- defined in: [Vesting Schedule](vestingschedule-properties-fractional_tranches_allowed.md "Objects.VestingSchedule.schema.json#/properties/fractional_tranches_allowed")
 
 ### fractional_tranches_allowed Type
 
@@ -141,13 +141,13 @@ Schedule rows defining the vesting schedule tranches
 
 `schedule_driven_vesting_conditions`
 
-*   is required
+- is required
 
-*   Type: `object[]` ([Schedule-driven Vesting Condition](vestingschedule-properties-schedule_driven_vesting_conditions-schedule-driven-vesting-condition.md))
+- Type: `object[]` ([Schedule-driven Vesting Condition](vestingschedule-properties-schedule_driven_vesting_conditions-schedule-driven-vesting-condition.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-schedule_driven_vesting_conditions.md "Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions")
+- defined in: [Vesting Schedule](vestingschedule-properties-schedule_driven_vesting_conditions.md "Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions")
 
 ### schedule_driven_vesting_conditions Type
 
@@ -159,13 +159,13 @@ List of comments for the vesting schedule
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Vesting Schedule](vestingschedule-properties-comments.md "Objects.VestingSchedule.schema.json#/properties/comments")
+- defined in: [Vesting Schedule](vestingschedule-properties-comments.md "Objects.VestingSchedule.schema.json#/properties/comments")
 
 ### comments Type
 
