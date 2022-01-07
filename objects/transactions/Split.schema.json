@@ -20,8 +20,5 @@
       "$ref": "Types.Ratio.schema.json"
     }
   },
-  "required": [
-    "resulting_security_ids",
-    "split_ratio"
-  ]
+  "required": ["resulting_security_ids", "split_ratio"]
 }
