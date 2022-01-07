@@ -11,20 +11,12 @@
     },
     "first_name": {
       "description": "First/given name for the individual",
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "last_name": {
       "description": "Last/family name for the individual",
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     }
   },
-  "required": [
-    "legal_name"
-  ]
+  "required": ["legal_name"]
 }

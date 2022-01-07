@@ -6,9 +6,9 @@ Types.Address.schema.json#/properties/address
 
 Type representation of an address as an object.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json*](../objects/Issuer.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json\*](../objects/Issuer.schema.json "open original schema") |
 
 ## address Type
 
@@ -31,13 +31,13 @@ Enumeration of address types
 
 `address_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Address Types](address-1-properties-enum---address-types.md))
+- Type: `string` ([Enum - Address Types](address-1-properties-enum---address-types.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-enum---address-types.md "Enums.Address.schema.json#/properties/address_type")
+- defined in: [Type - Address](address-1-properties-enum---address-types.md "Enums.Address.schema.json#/properties/address_type")
 
 ### address_type Type
 
@@ -59,13 +59,13 @@ Street address (multi-line string)
 
 `street_suite`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-street_suite.md "Types.Address.schema.json#/properties/street_suite")
+- defined in: [Type - Address](address-1-properties-street_suite.md "Types.Address.schema.json#/properties/street_suite")
 
 ### street_suite Type
 
@@ -77,13 +77,13 @@ City
 
 `city`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-city.md "Types.Address.schema.json#/properties/city")
+- defined in: [Type - Address](address-1-properties-city.md "Types.Address.schema.json#/properties/city")
 
 ### city Type
 
@@ -95,13 +95,13 @@ State, province or equivalent identifier required for an address in this country
 
 `state_province`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-state_province.md "Types.Address.schema.json#/properties/state_province")
+- defined in: [Type - Address](address-1-properties-state_province.md "Types.Address.schema.json#/properties/state_province")
 
 ### state_province Type
 
@@ -113,13 +113,13 @@ Country code for this address (ISO-3166)
 
 `country`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-country.md "Types.Address.schema.json#/properties/country")
+- defined in: [Type - Address](address-1-properties-country.md "Types.Address.schema.json#/properties/country")
 
 ### country Type
 
@@ -131,13 +131,13 @@ Address postal code
 
 `postal_code`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Address](address-1-properties-postal_code.md "Types.Address.schema.json#/properties/postal_code")
+- defined in: [Type - Address](address-1-properties-postal_code.md "Types.Address.schema.json#/properties/postal_code")
 
 ### postal_code Type
 

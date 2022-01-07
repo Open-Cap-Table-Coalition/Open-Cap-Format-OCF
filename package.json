@@ -1,0 +1,17 @@
+{
+  "name": "open-cap-format-ocf",
+  "description": "Data Schema and Specification for Open Cap Format (OCF)",
+  "scripts": {
+    "lint": "prettier . --check --ignore-unknown",
+    "fix": "prettier . --check --write --ignore-unknown",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
+    "prettier": "2.5.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --check --ignore-unknown"
+  }
+}

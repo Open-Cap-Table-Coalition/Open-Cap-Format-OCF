@@ -10,7 +10,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "string_value"
-  ]
+  "required": ["string_value"]
 }

@@ -6,9 +6,9 @@ Types.ConversionTrigger.schema.json#/properties/conversion_triggers/items
 
 Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json*](../objects/Convertible.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Convertible.schema.json\*](../objects/Convertible.schema.json "open original schema") |
 
 ## items Type
 
@@ -16,9 +16,9 @@ Type representation of a convertibles conversion rights into stock upon an event
 
 one (and only one) of
 
-*   [Converts to a future round of stock (boolean)](conversiontrigger-oneof-converts-to-a-future-round-of-stock-boolean.md "check type definition")
+- [Converts to a future round of stock (boolean)](conversiontrigger-oneof-converts-to-a-future-round-of-stock-boolean.md "check type definition")
 
-*   [Converts to known Id of StockClass (String Id)](conversiontrigger-oneof-converts-to-known-id-of-stockclass-string-id.md "check type definition")
+- [Converts to known Id of StockClass (String Id)](conversiontrigger-oneof-converts-to-known-id-of-stockclass-string-id.md "check type definition")
 
 # items Properties
 
@@ -38,13 +38,13 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 `ratio`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+- Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+- defined in: [Type - ConversionTrigger](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
 
 ### ratio Type
 
@@ -56,13 +56,13 @@ Enumeration of rounding types
 
 `rounding_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
+- Type: `string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")
+- defined in: [Type - ConversionTrigger](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")
 
 ### rounding_type Type
 
@@ -84,13 +84,13 @@ Human-friendly nickname to describe the conversion right
 
 `nickname`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](conversiontrigger-properties-nickname.md "Types.ConversionTrigger.schema.json#/properties/nickname")
+- defined in: [Type - ConversionTrigger](conversiontrigger-properties-nickname.md "Types.ConversionTrigger.schema.json#/properties/nickname")
 
 ### nickname Type
 
@@ -102,13 +102,13 @@ Legal language describiing the conversion right (ideally, this should be excerpt
 
 `description`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](conversiontrigger-properties-description.md "Types.ConversionTrigger.schema.json#/properties/description")
+- defined in: [Type - ConversionTrigger](conversiontrigger-properties-description.md "Types.ConversionTrigger.schema.json#/properties/description")
 
 ### description Type
 
@@ -120,13 +120,13 @@ How is capitalization defined in the convertible for purposes of calculating com
 
 `capitalization_definition`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](conversiontrigger-properties-capitalization_definition.md "Types.ConversionTrigger.schema.json#/properties/capitalization_definition")
+- defined in: [Type - ConversionTrigger](conversiontrigger-properties-capitalization_definition.md "Types.ConversionTrigger.schema.json#/properties/capitalization_definition")
 
 ### capitalization_definition Type
 
@@ -138,13 +138,13 @@ Is this StockClass potentially convertible into a future, as-yet undetermined St
 
 `converts_to_future_round`
 
-*   is optional
+- is optional
 
-*   Type: `boolean`
+- Type: `boolean`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](conversiontrigger-properties-converts_to_future_round.md "Types.ConversionTrigger.schema.json#/properties/converts_to_future_round")
+- defined in: [Type - ConversionTrigger](conversiontrigger-properties-converts_to_future_round.md "Types.ConversionTrigger.schema.json#/properties/converts_to_future_round")
 
 ### converts_to_future_round Type
 
@@ -156,13 +156,13 @@ What is the id of the StockClass this StockClass can convert into?
 
 `converts_to_stock_class_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - ConversionTrigger](conversiontrigger-properties-converts_to_stock_class_id.md "Types.ConversionTrigger.schema.json#/properties/converts_to_stock_class_id")
+- defined in: [Type - ConversionTrigger](conversiontrigger-properties-converts_to_stock_class_id.md "Types.ConversionTrigger.schema.json#/properties/converts_to_stock_class_id")
 
 ### converts_to_stock_class_id Type
 

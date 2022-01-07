@@ -4,9 +4,5 @@
   "title": "Enum - Option Type",
   "description": "Enumeration of option types",
   "type": "string",
-  "enum": [
-    "NSO",
-    "ISO",
-    "INTL"
-  ]
+  "enum": ["NSO", "ISO", "INTL"]
 }

@@ -30,8 +30,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "address_type",
-    "country"
-  ]
+  "required": ["address_type", "country"]
 }

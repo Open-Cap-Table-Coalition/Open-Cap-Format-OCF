@@ -27,13 +27,13 @@ Date of vesting for the tranche
 
 `vest_date`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "Types.CustomVestingTranche.schema.json#/properties/vest_date")
+- defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "Types.CustomVestingTranche.schema.json#/properties/vest_date")
 
 ### vest_date Type
 
@@ -45,13 +45,13 @@ Quantity of shares for the tranche
 
 `vest_quantity`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_quantity.md "Types.CustomVestingTranche.schema.json#/properties/vest_quantity")
+- defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_quantity.md "Types.CustomVestingTranche.schema.json#/properties/vest_quantity")
 
 ### vest_quantity Type
 

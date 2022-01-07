@@ -28,13 +28,13 @@ Enumeration of TerminationWindow types
 
 `reason`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - TerminationWindow.schema.json](terminationwindow-1-properties-enum---terminationwindowschemajson.md))
+- Type: `string` ([Enum - TerminationWindow.schema.json](terminationwindow-1-properties-enum---terminationwindowschemajson.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - TerminationWindow](terminationwindow-1-properties-enum---terminationwindowschemajson.md "Enums.TerminationWindow.schema.json#/properties/reason")
+- defined in: [Type - TerminationWindow](terminationwindow-1-properties-enum---terminationwindowschemajson.md "Enums.TerminationWindow.schema.json#/properties/reason")
 
 ### reason Type
 
@@ -59,13 +59,13 @@ The length of the period in this termination window (in number of periods of typ
 
 `period`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - TerminationWindow](terminationwindow-1-properties-period.md "Types.TerminationWindow.schema.json#/properties/period")
+- defined in: [Type - TerminationWindow](terminationwindow-1-properties-period.md "Types.TerminationWindow.schema.json#/properties/period")
 
 ### period Type
 
@@ -77,13 +77,13 @@ Enumeration of time period types
 
 `period_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
+- Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - TerminationWindow](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
+- defined in: [Type - TerminationWindow](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
 
 ### period_type Type
 
