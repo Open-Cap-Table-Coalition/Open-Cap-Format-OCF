@@ -8,10 +8,8 @@
   "properties": {
     "object_type": {
       "const": "VESTING_SCHEDULE"
-    },"id": {
-      "description": "Identifier for the object",
-      "type": "string"
     },
+    "id": {},
     "name": {
       "description": "Concise name for the vesting schedule",
       "type": "string"
@@ -36,13 +34,7 @@
         "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
       }
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": [

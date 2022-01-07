@@ -9,10 +9,7 @@
     "object_type": {
       "const": "STOCK_PLAN"
     },
-    "id": {
-      "description": "Identifier for the object",
-      "type": "string"
-    },
+    "id": {},
     "plan_name": {
       "description": "Name for the stock plan",
       "type": "string"
@@ -29,13 +26,7 @@
       "description": "Id of the StockClass object this plan is composed of",
       "type": "string"
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": ["plan_name", "stock_class_id", "current_shares_reserved"]

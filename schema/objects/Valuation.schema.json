@@ -9,10 +9,7 @@
     "object_type": {
       "const": "VALUATION"
     },
-    "id": {
-      "description": "Identifier for the object",
-      "type": "string"
-    },
+    "id": { },
     "provider": {
       "description": "Entity which provided the valuation",
       "type": "string"
@@ -29,13 +26,7 @@
       "description": "Seam for supporting different types of valuations in future versions",
       "$ref": "Enums.Valuation.schema.json"
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": ["price_per_share", "valuation_date", "valuation_type"]

@@ -9,10 +9,7 @@
     "object_type": {
       "const": "STAKEHOLDER"
     },
-    "id": {
-      "description": "Identifier for the object",
-      "type": "string"
-    },
+    "id": {},
     "name": {
       "description": "Name for the stakeholder",
       "$ref": "Types.Name.schema.json"
@@ -49,13 +46,7 @@
         "$ref": "Types.TaxID.schema.json"
       }
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": ["name", "stakeholder_type"]

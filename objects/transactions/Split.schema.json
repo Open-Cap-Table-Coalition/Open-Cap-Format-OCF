@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Split.schema.json",
+  "title": "Object - Split Transaction",
+  "description": "Object describing a security split transaction",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "resulting_security_ids": {
+      "description": "Array of identifiers for new securities created as a result of the transaction",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "split_ratio": {
+      "description": "Date which the transaction occurred",
+      "$ref": "Types.Ratio.schema.json"
+    }
+  },
+  "required": ["resulting_security_ids", "split_ratio"]
+}

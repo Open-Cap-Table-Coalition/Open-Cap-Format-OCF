@@ -9,10 +9,7 @@
     "object_type": {
       "const": "ISSUER"
     },
-    "id": {
-      "description": "Identifier for the issuer",
-      "type": "string"
-    },
+    "id": {},
     "legal_name": {
       "description": "Legal name of the issuer",
       "type": "string"
@@ -53,13 +50,7 @@
       "description": "The headquarters address of the issuing company",
       "$ref": "Types.Address.schema.json"
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": ["legal_name", "formation_date", "country_of_formation"]

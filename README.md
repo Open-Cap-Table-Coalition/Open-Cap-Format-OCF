@@ -13,6 +13,10 @@ Data Schema and Specification for Open Cap Format (OCF)
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 
+### Developing
+
+This repo requires Prettier to be run on all files. Run `npm install` to install dev dependencies and Prettier will automatically run pre-commit.
+
 ### Schema Organization
 
 - [Full documentation](docs/README.md) is available in the docs folder. Most of the documentation is auto-generated and our toolchain is still being refined, so expect the layout to change and pardon any inconsistencies.

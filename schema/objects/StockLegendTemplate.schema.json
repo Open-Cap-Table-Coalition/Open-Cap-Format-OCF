@@ -9,10 +9,7 @@
     "object_type": {
       "const": "STOCK_LEGEND_TEMPLATE"
     },
-    "id": {
-      "description": "Identifier for the object",
-      "type": "string"
-    },
+    "id": { },
     "name": {
       "description": "Name for the stock legend template",
       "type": "string"
@@ -21,13 +18,7 @@
       "description": "The full text of the stock legend",
       "type": "string"
     },
-    "comments": {
-      "description": "Unstructured text comments related to and stored for the object",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
+    "comments": {}
   },
   "additionalProperties": false,
   "required": ["name", "text"]

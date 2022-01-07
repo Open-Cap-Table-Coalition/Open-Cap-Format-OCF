@@ -76,7 +76,6 @@
     }
   ],
   "stock_legend_templates": [],
-  "transactions": [],
   "stock_classes": [
     {
       "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
@@ -170,6 +169,7 @@
       "comments": []
     }
   ],
+  "transactions": [],
   "vesting_schedules": [
     {
       "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
