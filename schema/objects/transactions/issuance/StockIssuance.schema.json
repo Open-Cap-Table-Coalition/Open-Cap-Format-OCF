@@ -58,7 +58,6 @@
   "additionalProperties": false,
   "required": [
     "stock_class_id",
-    "stakeholder_id",
     "share_price",
     "quantity",
     "cost_basis",

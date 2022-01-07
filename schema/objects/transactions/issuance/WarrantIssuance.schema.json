@@ -54,7 +54,7 @@
   "additionalProperties": false,
   "required": [
     "quantity",
-    "stakeholder_id",
+
     "conversion_rights",
     "purchase_price",
     "exercise_price"

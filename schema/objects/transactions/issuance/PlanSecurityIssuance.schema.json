@@ -86,7 +86,6 @@
   "additionalProperties": false,
   "required": [
     "stock_plan_id",
-    "stakeholder_id",
     "compensation_type",
     "quantity",
     "exercise_price",

@@ -20,5 +20,5 @@
     "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["resulting_security_ids"]
+  "required": []
 }

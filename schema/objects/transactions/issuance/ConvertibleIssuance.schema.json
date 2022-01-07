@@ -99,12 +99,10 @@
   "required": [
     "conversion_type",
     "convertible_type",
-    "custom_id",
     "original_principal_amount",
     "day_count_convention",
     "default_conversion_rights",
     "conversion_triggers",
-    "seniority",
-    "stakeholder_id"
+    "seniority"
   ]
 }

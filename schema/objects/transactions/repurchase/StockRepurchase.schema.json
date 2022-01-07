@@ -23,5 +23,5 @@
     "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["price", "quantity", "consideration"]
+  "required": []
 }
