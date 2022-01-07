@@ -8,9 +8,13 @@
     { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
   ],
   "properties": {
-    "balance_security_id": {
-      "description": "Identifier for the security that holds the remainder balance (for partial cancellations)",
-      "type": "string"
+    "balance_security_ids": {
+      "title": "Security Cancellation - Balance Security Id Array",
+      "description": "Identifier for the security (or securities) that holds the remainder balance (for partial cancellations)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "reason_text": {
       "description": "Reason for the cancellation",

@@ -84,7 +84,16 @@
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
       "type": "integer"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "custom_id": {},
+    "stakeholder_id": {},
+    "board_approval_date": {},
+    "consideration": {},
+    "security_law_exemptions": {}
   },
   "additionalProperties": false,
   "required": [

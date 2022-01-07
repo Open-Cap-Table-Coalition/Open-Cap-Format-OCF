@@ -55,7 +55,16 @@
       "items": {
         "$ref": "Types.TerminationWindow.schema.json"
       }
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "custom_id": {},
+    "stakeholder_id": {},
+    "board_approval_date": {},
+    "consideration": {},
+    "security_law_exemptions": {}
   },
   "anyOf": [
     {

@@ -16,7 +16,13 @@
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "balance_security_ids": {},
+    "reason_text": {}
   },
   "additionalProperties": false,
   "required": ["quantity"]

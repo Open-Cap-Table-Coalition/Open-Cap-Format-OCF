@@ -16,7 +16,13 @@
     "amount": {
       "description": "Amount of monetary value cancelled",
       "$ref": "Types.Money.schema.json"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "balance_security_ids": {},
+    "reason_text": {}
   },
   "additionalProperties": false,
   "required": ["amount"]

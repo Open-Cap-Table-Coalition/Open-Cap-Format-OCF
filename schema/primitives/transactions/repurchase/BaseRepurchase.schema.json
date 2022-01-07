@@ -20,8 +20,8 @@
       "description": "Consideration for the repurchase of the stock",
       "$ref": "Types.Money.schema.json"
     },
-    "resulting_stock_object_ids": {
-      "title": "StockRepurchase - Resulting Stock Object Id Array",
+    "resulting_security_ids": {
+      "title": "Security Repurchase - Resulting Security Id Array",
       "description": "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.",
       "type": "array",
       "items": {

@@ -12,8 +12,13 @@
   "properties": {
     "object_type": {
       "const": "TX_STOCK_REISSUANCE"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["resulting_security_id"]
+  "required": ["resulting_security_ids"]
 }

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "CapTable.schema.json",
   "title": "Cap Table (\"Snapshot\")",
-  "description": "Top-level object describing a capitalization table",
+  "description": "Top-level schema describing a capitalization table",
   "type": "object",
   "properties": {
     "id": {

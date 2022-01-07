@@ -8,9 +8,13 @@
     { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
   ],
   "properties": {
-    "resulting_security_id": {
-      "description": "Identifier of the new security issuance resulting from a re-issuance.",
-      "type": "string"
+    "resulting_security_ids": {
+      "title": "Security Reissuance - Resulting Security Id Array",
+      "description": "Identifier of the new security (or securities) issuance resulting from a re-issuance.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": ["resulting_security_id"]

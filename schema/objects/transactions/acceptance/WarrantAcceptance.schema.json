@@ -12,7 +12,12 @@
   "properties": {
     "object_type": {
       "const": "TX_WARRANT_ACCEPTANCE"
-    }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {}
   },
+  "additionalProperties": false,
   "required": []
 }
