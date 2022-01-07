@@ -6,9 +6,9 @@ Objects.StockPlan.schema.json#/properties/stock_plans/items
 
 Object describing a plan which stock options are issued from
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../schema/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -30,13 +30,13 @@ Identifier for the stock plan
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stock Plan](stockplan-properties-id.md "Objects.StockPlan.schema.json#/properties/id")
+- defined in: [Stock Plan](stockplan-properties-id.md "Objects.StockPlan.schema.json#/properties/id")
 
 ### id Type
 
@@ -48,13 +48,13 @@ Name for the stock plan
 
 `plan_name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stock Plan](stockplan-properties-plan_name.md "Objects.StockPlan.schema.json#/properties/plan_name")
+- defined in: [Stock Plan](stockplan-properties-plan_name.md "Objects.StockPlan.schema.json#/properties/plan_name")
 
 ### plan_name Type
 
@@ -66,13 +66,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `board_approval_date`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+- Type: `object` ([Date-Time](issuer-properties-date-time.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stock Plan](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/board_approval_date")
+- defined in: [Stock Plan](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -84,13 +84,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `shares_reserved`
 
-*   is required
+- is required
 
-*   Type: `object` ([Name](stockplan-properties-name.md))
+- Type: `object` ([Name](stockplan-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stock Plan](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/shares_reserved")
+- defined in: [Stock Plan](stockplan-properties-name.md "Types.Numeric.schema.json#/properties/shares_reserved")
 
 ### shares_reserved Type
 
@@ -102,13 +102,13 @@ List of comments for the stock plan
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stock Plan](stockplan-properties-comments.md "Objects.StockPlan.schema.json#/properties/comments")
+- defined in: [Stock Plan](stockplan-properties-comments.md "Objects.StockPlan.schema.json#/properties/comments")
 
 ### comments Type
 

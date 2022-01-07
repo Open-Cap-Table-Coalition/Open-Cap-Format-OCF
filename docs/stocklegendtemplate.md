@@ -6,9 +6,9 @@ Objects.StockLegendTemplate.schema.json
 
 Object describing a stock legend template
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockLegendTemplate.schema.json](../objects/StockLegendTemplate.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockLegendTemplate.schema.json](../schema/objects/StockLegendTemplate.schema.json "open original schema") |
 
 ## Object - StockLegendTemplate Type
 
@@ -29,13 +29,13 @@ Identifier for the stock legend template
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-id.md "Objects.StockLegendTemplate.schema.json#/properties/id")
+- defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-id.md "Objects.StockLegendTemplate.schema.json#/properties/id")
 
 ### id Type
 
@@ -47,13 +47,13 @@ Name for the stock legend template
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-name.md "Objects.StockLegendTemplate.schema.json#/properties/name")
+- defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-name.md "Objects.StockLegendTemplate.schema.json#/properties/name")
 
 ### name Type
 
@@ -65,13 +65,13 @@ The full text of the stock legend
 
 `text`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-text.md "Objects.StockLegendTemplate.schema.json#/properties/text")
+- defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-text.md "Objects.StockLegendTemplate.schema.json#/properties/text")
 
 ### text Type
 
@@ -83,13 +83,13 @@ Unstructured text comments related to and stored for this StockLegend
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-stocklegendtemplate---comments.md "Objects.StockLegendTemplate.schema.json#/properties/comments")
+- defined in: [Object - StockLegendTemplate](stocklegendtemplate-properties-stocklegendtemplate---comments.md "Objects.StockLegendTemplate.schema.json#/properties/comments")
 
 ### comments Type
 

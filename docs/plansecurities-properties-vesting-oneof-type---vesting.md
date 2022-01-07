@@ -6,9 +6,9 @@ Types.Vesting.schema.json#/properties/vesting/oneOf/1
 
 Type representing all aspects related to vesting securities
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json*](../objects/PlanSecurities.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                          |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [PlanSecurities.schema.json\*](../schema/objects/PlanSecurities.schema.json "open original schema") |
 
 ## 1 Type
 
@@ -30,13 +30,13 @@ Time-based vesting schedule applied to the securities
 
 `vesting_schedule_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-properties-vesting_schedule_id.md "Types.Vesting.schema.json#/properties/vesting_schedule_id")
+- defined in: [Type - Vesting](vesting-properties-vesting_schedule_id.md "Types.Vesting.schema.json#/properties/vesting_schedule_id")
 
 ### vesting_schedule_id Type
 
@@ -48,13 +48,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `vesting_schedule_start_date`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_schedule_start_date")
+- defined in: [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_schedule_start_date")
 
 ### vesting_schedule_start_date Type
 
@@ -68,13 +68,13 @@ Tree-structured event-driven vesting conditions for the securities, including si
 
 `event_driven_vesting_conditions`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - Event-driven Vesting Condition](vesting-properties-vesting-type---eventdrivenvestingcondition-array-type---event-driven-vesting-condition.md))
+- Type: `object[]` ([Type - Event-driven Vesting Condition](vesting-properties-vesting-type---eventdrivenvestingcondition-array-type---event-driven-vesting-condition.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-properties-vesting-type---eventdrivenvestingcondition-array.md "Types.Vesting.schema.json#/properties/event_driven_vesting_conditions")
+- defined in: [Type - Vesting](vesting-properties-vesting-type---eventdrivenvestingcondition-array.md "Types.Vesting.schema.json#/properties/event_driven_vesting_conditions")
 
 ### event_driven_vesting_conditions Type
 
@@ -88,13 +88,13 @@ Explicitly-defined vesting tranches for the securities which can be used in plac
 
 `custom_vesting_tranches`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - Custom Vesting Tranche](vesting-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md))
+- Type: `object[]` ([Type - Custom Vesting Tranche](vesting-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-properties-vesting-type---customvestingtranche-array.md "Types.Vesting.schema.json#/properties/custom_vesting_tranches")
+- defined in: [Type - Vesting](vesting-properties-vesting-type---customvestingtranche-array.md "Types.Vesting.schema.json#/properties/custom_vesting_tranches")
 
 ### custom_vesting_tranches Type
 
@@ -106,13 +106,13 @@ Description field to allow explanation of the vesting conditions which resulted 
 
 `custom_vesting_description`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-properties-custom_vesting_description.md "Types.Vesting.schema.json#/properties/custom_vesting_description")
+- defined in: [Type - Vesting](vesting-properties-custom_vesting_description.md "Types.Vesting.schema.json#/properties/custom_vesting_description")
 
 ### custom_vesting_description Type
 

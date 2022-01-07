@@ -6,9 +6,9 @@ Objects.Valuation.schema.json#/properties/valuations/items
 
 Object describing a valuation
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../schema/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -31,13 +31,13 @@ Identifier for the valuation
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](valuation-properties-id.md "Objects.Valuation.schema.json#/properties/id")
+- defined in: [Valuation](valuation-properties-id.md "Objects.Valuation.schema.json#/properties/id")
 
 ### id Type
 
@@ -49,13 +49,13 @@ Entity which provided the valuation
 
 `provider`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](valuation-properties-provider.md "Objects.Valuation.schema.json#/properties/provider")
+- defined in: [Valuation](valuation-properties-provider.md "Objects.Valuation.schema.json#/properties/provider")
 
 ### provider Type
 
@@ -67,13 +67,13 @@ Type representing a monetary value in a specified currency code
 
 `price_per_share`
 
-*   is required
+- is required
 
-*   Type: `object` ([Money](valuation-properties-money.md))
+- Type: `object` ([Money](valuation-properties-money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](valuation-properties-money.md "Types.Money.schema.json#/properties/price_per_share")
+- defined in: [Valuation](valuation-properties-money.md "Types.Money.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
@@ -85,13 +85,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `valuation_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Date-Time](issuer-properties-date-time.md))
+- Type: `object` ([Date-Time](issuer-properties-date-time.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/valuation_date")
+- defined in: [Valuation](issuer-properties-date-time.md "Types.DateTime.schema.json#/properties/valuation_date")
 
 ### valuation_date Type
 
@@ -103,13 +103,13 @@ Enumeration of valuation types
 
 `valuation_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Valuation Type](valuation-properties-valuation-type.md))
+- Type: `string` ([Valuation Type](valuation-properties-valuation-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](valuation-properties-valuation-type.md "Enums.Valuation.schema.json#/properties/valuation_type")
+- defined in: [Valuation](valuation-properties-valuation-type.md "Enums.Valuation.schema.json#/properties/valuation_type")
 
 ### valuation_type Type
 
@@ -129,13 +129,13 @@ List of comments for the valuation
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Valuation](valuation-properties-comments.md "Objects.Valuation.schema.json#/properties/comments")
+- defined in: [Valuation](valuation-properties-comments.md "Objects.Valuation.schema.json#/properties/comments")
 
 ### comments Type
 

@@ -31,7 +31,6 @@
       "state_province": "DE",
       "country": "USA",
       "postal_code": "12345"
-
     },
     "comments": []
   },
@@ -171,24 +170,6 @@
       "comments": []
     }
   ],
-  "transactions": [],
-  "stock_plans": [
-    {
-      "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
-      "object_type": "STOCK_PLAN",
-      "plan_name": "2021 Stock Incentive Plan",
-      "board_approval_date": {
-        "epoch_millis": 1633906514750837
-      },
-      "current_shares_reserved": {
-        "string_value": "10000000.00"
-      },
-      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-      "comments": [
-        "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
-      ]
-    }
-  ],
   "vesting_schedules": [
     {
       "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
@@ -215,5 +196,6 @@
       ]
     }
   ],
-  "valuations": []
+  "valuations": [],
+  "comments": []
 }

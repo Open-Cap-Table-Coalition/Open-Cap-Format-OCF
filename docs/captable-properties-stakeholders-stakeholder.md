@@ -6,9 +6,9 @@ Objects.Stakeholder.schema.json#/properties/stakeholders/items
 
 Object describing a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../schema/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -29,13 +29,13 @@ Identifier for the stakeholder
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stakeholder](stakeholder-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")
+- defined in: [Stakeholder](stakeholder-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")
 
 ### id Type
 
@@ -47,13 +47,13 @@ Type comprising of multiple name components
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `object` ([Name](stakeholder-properties-name.md))
+- Type: `object` ([Name](stakeholder-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stakeholder](stakeholder-properties-name.md "Types.Name.schema.json#/properties/name")
+- defined in: [Stakeholder](stakeholder-properties-name.md "Types.Name.schema.json#/properties/name")
 
 ### name Type
 
@@ -65,13 +65,13 @@ Enumeration of stakeholder types
 
 `stakeholder_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Stakeholder Type](stakeholder-properties-stakeholder-type.md))
+- Type: `string` ([Stakeholder Type](stakeholder-properties-stakeholder-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stakeholder](stakeholder-properties-stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type")
+- defined in: [Stakeholder](stakeholder-properties-stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type")
 
 ### stakeholder_type Type
 
@@ -92,13 +92,13 @@ List of comments for the stakeholder
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Stakeholder](stakeholder-properties-comments.md "Objects.Stakeholder.schema.json#/properties/comments")
+- defined in: [Stakeholder](stakeholder-properties-comments.md "Objects.Stakeholder.schema.json#/properties/comments")
 
 ### comments Type
 

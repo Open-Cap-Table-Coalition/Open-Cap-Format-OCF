@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.StockClassConversionRights.schema.json",
+  "title": "Type - StockClassConversionRights",
+  "description": "Type representation of a conversion right from one security into a StockClass.",
+  "type": "object",
+  "properties": {
+    "ratio": {
+      "description": "One share of this StockClass converts into this many target StockClass shares",
+      "$ref": "Types.Ratio.schema.json"
+    },
+    "converts_to_future_round": {
+      "description": "Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)",
+      "type": "boolean"
+    },
+    "converts_to_stock_class_id": {
+      "description": "What is the id of the existing, known StockClass this StockClass can convert into?",
+      "type": "string"
+    },
+    "rounding_type": {
+      "description": "How should fractional shares be rounded?",
+      "$ref": "Enums.Rounding.schema.json"
+    }
+  },
+  "oneOf": [
+    {
+      "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
+      "required": ["converts_to_future_round"]
+    },
+    {
+      "title": "Converts to existing, known StockClass Id",
+      "required": ["converts_to_stock_class_id"]
+    }
+  ],
+  "required": ["ratio", "rounding_type"]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.VestingSchedule.schema.json",
+  "title": "Object - VestingSchedule",
+  "description": "Object describing a strictly time-based vesting schedule",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "properties": {
+    "id": {
+      "description": "Identifier for the object",
+      "type": "string"
+    },
+    "name": {
+      "description": "Concise name for the vesting schedule",
+      "type": "string"
+    },
+    "description": {
+      "description": "Detailed description of the vesting schedule",
+      "type": "string"
+    },
+    "allocation_type": {
+      "description": "Allocation/rounding type for the vesting schedule",
+      "$ref": "Enums.AllocationType.schema.json"
+    },
+    "fractional_tranches_allowed": {
+      "description": "Whether or not fractional tranches are allowed. Note: if this is true, the allocation type is ignored",
+      "type": "boolean"
+    },
+    "schedule_driven_vesting_conditions": {
+      "title": "VestingSchedule - ScheduleDrivenVestingCondition Array",
+      "description": "Schedule rows defining the vesting schedule tranches",
+      "type": "array",
+      "items": {
+        "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+      }
+    },
+    "comments": {
+      "description": "Unstructured text comments related to and stored for the object",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "object_type": {
+      "const": "VESTING_SCHEDULE"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "description",
+    "allocation_type",
+    "fractional_tranches_allowed",
+    "schedule_driven_vesting_conditions"
+  ]
+}

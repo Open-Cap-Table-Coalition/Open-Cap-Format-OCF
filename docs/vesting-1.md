@@ -6,9 +6,9 @@ Types.Vesting.schema.json
 
 Type representing all aspects related to vesting securities
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Vesting.schema.json](../types/Vesting.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Vesting.schema.json](../schema/types/Vesting.schema.json "open original schema") |
 
 ## Type - Vesting Type
 
@@ -31,13 +31,13 @@ Enumeration of vesting types
 
 `vesting_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Vesting Type](vesting-1-properties-enum---vesting-type.md))
+- Type: `string` ([Enum - Vesting Type](vesting-1-properties-enum---vesting-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-1-properties-enum---vesting-type.md "Enums.Vesting.schema.json#/properties/vesting_type")
+- defined in: [Type - Vesting](vesting-1-properties-enum---vesting-type.md "Enums.Vesting.schema.json#/properties/vesting_type")
 
 ### vesting_type Type
 
@@ -59,13 +59,13 @@ Time-based vesting schedule applied to the securities
 
 `vesting_schedule_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-1-properties-vesting_schedule_id.md "Types.Vesting.schema.json#/properties/vesting_schedule_id")
+- defined in: [Type - Vesting](vesting-1-properties-vesting_schedule_id.md "Types.Vesting.schema.json#/properties/vesting_schedule_id")
 
 ### vesting_schedule_id Type
 
@@ -77,13 +77,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `vesting_start_date`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_start_date")
+- defined in: [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_start_date")
 
 ### vesting_start_date Type
 
@@ -97,13 +97,13 @@ Tree-structured event-driven vesting conditions for the securities, including si
 
 `event_driven_vesting_conditions`
 
-*   is optional
+- is optional
 
-*   Type: an array of merged types ([Details](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items.md))
+- Type: an array of merged types ([Details](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Types.Vesting.schema.json#/properties/event_driven_vesting_conditions")
+- defined in: [Type - Vesting](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Types.Vesting.schema.json#/properties/event_driven_vesting_conditions")
 
 ### event_driven_vesting_conditions Type
 
@@ -117,13 +117,13 @@ Explicitly-defined vesting tranches for the securities which can be used in plac
 
 `custom_vesting_tranches`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - Custom Vesting Tranche](vesting-1-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md))
+- Type: `object[]` ([Type - Custom Vesting Tranche](vesting-1-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-1-properties-vesting-type---customvestingtranche-array.md "Types.Vesting.schema.json#/properties/custom_vesting_tranches")
+- defined in: [Type - Vesting](vesting-1-properties-vesting-type---customvestingtranche-array.md "Types.Vesting.schema.json#/properties/custom_vesting_tranches")
 
 ### custom_vesting_tranches Type
 
@@ -135,13 +135,13 @@ Description field to allow explanation of the vesting conditions which resulted 
 
 `custom_vesting_description`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Vesting](vesting-1-properties-custom_vesting_description.md "Types.Vesting.schema.json#/properties/custom_vesting_description")
+- defined in: [Type - Vesting](vesting-1-properties-custom_vesting_description.md "Types.Vesting.schema.json#/properties/custom_vesting_description")
 
 ### custom_vesting_description Type
 

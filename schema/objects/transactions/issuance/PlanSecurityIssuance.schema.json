@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json",
+  "title": "Object - Plan Security Issuance Transaction",
+  "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json"
+    }
+  ],
+  "properties": {
+    "stock_plan_id": {
+      "description": "Id of StockPlan the PlanSecurities were issued from",
+      "type": "string"
+    },
+    "compensation_type": {
+      "description": "If the plan security is compensation, what kind?",
+      "$ref": "Enums.Compensation.schema.json"
+    },
+    "option_grant_type": {
+      "description": "If the plan security is an option, what kind?",
+      "$ref": "Enums.Option.schema.json"
+    },
+    "quantity": {
+      "description": "How many shares are subject to this plan security?",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "exercise_price": {
+      "description": "What is the exercise price?",
+      "$ref": "Types.Money.schema.json"
+    },
+    "vesting": {
+      "description": "What vesting applies to this plan security?",
+      "$ref": "Types.Vesting.schema.json"
+    },
+    "expiration_date": {
+      "description": "Expiration date of the plan security",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "Types.DateTime.schema.json"
+        }
+      ]
+    },
+    "termination_exercise_windows": {
+      "title": "PlanSecurity - Types.TerminationWindow.schema.json Array",
+      "description": "Exercise periods applicable to plan security after a termination for a given, enumerated reason",
+      "type": "array",
+      "items": {
+        "$ref": "Types.TerminationWindow.schema.json"
+      }
+    },
+    "object_type": {
+      "const": "PLANSECURITY_ISSUANCE"
+    }
+  },
+  "anyOf": [
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "OPTION"
+        }
+      },
+      "required": ["option_grant_type"]
+    },
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "RSU"
+        }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "required": [
+    "stock_plan_id",
+    "stakeholder_id",
+    "compensation_type",
+    "quantity",
+    "exercise_price",
+    "vesting",
+    "expiration_date",
+    "termination_exercise_windows"
+  ]
+}

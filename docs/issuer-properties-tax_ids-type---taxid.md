@@ -6,9 +6,9 @@ Types.TaxID.schema.json#/properties/tax_ids/items
 
 Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json*](../objects/Issuer.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                          |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json\*](../schema/objects/Issuer.schema.json "open original schema") |
 
 ## items Type
 
@@ -27,13 +27,13 @@ Tax identifier as string
 
 `tax_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")
+- defined in: [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")
 
 ### tax_id Type
 
@@ -45,13 +45,13 @@ Identifier's issuing country code (ISO-3166)
 
 `country`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country")
+- defined in: [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country")
 
 ### country Type
 

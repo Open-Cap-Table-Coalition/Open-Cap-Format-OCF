@@ -6,9 +6,9 @@ Types.ScheduleDrivenVestingCondition.schema.json
 
 Type representation of a row in a vesting schedule.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json](../types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json](../schema/types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
 
 ## Type - Schedule-driven Vesting Condition Type
 
@@ -31,13 +31,13 @@ Numerator of the tranche amount (e.g. 1 in 1/48th)
 
 `amount_numerator`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")
 
 ### amount_numerator Type
 
@@ -49,13 +49,13 @@ Denominator of the tranche amount (e.g. 48 in 1/48th)
 
 `amount_denominator`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")
 
 ### amount_denominator Type
 
@@ -67,13 +67,13 @@ Length of period following the vesting start date for this tranche
 
 `period_length`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")
 
 ### period_length Type
 
@@ -85,13 +85,13 @@ Enumeration of time period types
 
 `period_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
+- Type: `string` ([Enum - Time Period Type](scheduledrivenvestingcondition-properties-enum---time-period-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
 
 ### period_type Type
 
@@ -113,13 +113,13 @@ What order should this period be calculated (1 is highest priority)
 
 `priority`
 
-*   is optional
+- is optional
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/priority")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/priority")
 
 ### priority Type
 
@@ -131,13 +131,13 @@ Vesting periods or conditions which become operative once this condition is met
 
 `dependent_vesting`
 
-*   is optional
+- is optional
 
-*   Type: an array of merged types ([Details](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array-items.md))
+- Type: an array of merged types ([Details](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array-items.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")
 
 ### dependent_vesting Type
 

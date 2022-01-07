@@ -6,9 +6,9 @@ Types.Name.schema.json#/properties/name
 
 Type comprising of multiple name components
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stakeholder.schema.json*](../objects/Stakeholder.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                    |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stakeholder.schema.json\*](../schema/objects/Stakeholder.schema.json "open original schema") |
 
 ## name Type
 
@@ -28,13 +28,13 @@ Legal full name for the individual/institution
 
 `legal_name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name")
+- defined in: [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -46,13 +46,13 @@ First/given name for the individual
 
 `first_name`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   can be null
+- can be null
 
-*   defined in: [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name")
+- defined in: [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name")
 
 ### first_name Type
 
@@ -64,13 +64,13 @@ Last/family name for the individual
 
 `last_name`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   can be null
+- can be null
 
-*   defined in: [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")
+- defined in: [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")
 
 ### last_name Type
 

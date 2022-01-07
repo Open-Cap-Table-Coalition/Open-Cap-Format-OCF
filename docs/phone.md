@@ -6,9 +6,9 @@ Types.PhoneNumber.schema.json
 
 Type representation of a phone number.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                             |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Phone.schema.json](../types/Phone.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                    |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Phone.schema.json](../schema/types/Phone.schema.json "open original schema") |
 
 ## Type - PhoneNumber Type
 
@@ -27,13 +27,13 @@ Enumeration of phone number types
 
 `phone_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - PhoneNumber Type](phone-properties-enum---phonenumber-type.md))
+- Type: `string` ([Enum - PhoneNumber Type](phone-properties-enum---phonenumber-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - PhoneNumber](phone-properties-enum---phonenumber-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type")
+- defined in: [Type - PhoneNumber](phone-properties-enum---phonenumber-type.md "Enums.PhoneNumber.schema.json#/properties/phone_type")
 
 ### phone_type Type
 
@@ -56,13 +56,13 @@ A valid phone number
 
 `phone_number`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")
+- defined in: [Type - PhoneNumber](phone-properties-phone_number.md "Types.PhoneNumber.schema.json#/properties/phone_number")
 
 ### phone_number Type
 

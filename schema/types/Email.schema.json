@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.Email.schema.json",
+  "title": "Type - Email",
+  "description": "Type representation of an email address.",
+  "type": "object",
+  "properties": {
+    "email_type": {
+      "description": "Type of e-mail address (e.g. personal or business)",
+      "$ref": "Enums.Email.schema.json"
+    },
+    "email_address": {
+      "description": "A valid e-mail address",
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "required": ["email_type", "email_address"]
+}

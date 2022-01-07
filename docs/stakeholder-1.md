@@ -6,9 +6,9 @@ Objects.Stakeholder.schema.json
 
 Object describing a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stakeholder.schema.json](../objects/Stakeholder.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stakeholder.schema.json](../schema/objects/Stakeholder.schema.json "open original schema") |
 
 ## Object - Stakeholder Type
 
@@ -34,13 +34,13 @@ Identifier for the stakeholder
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-id.md "Objects.Stakeholder.schema.json#/properties/id")
 
 ### id Type
 
@@ -52,13 +52,13 @@ Type comprising of multiple name components
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Name](stakeholder-1-properties-type---name.md))
+- Type: `object` ([Type - Name](stakeholder-1-properties-type---name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-type---name.md "Types.Name.schema.json#/properties/name")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-type---name.md "Types.Name.schema.json#/properties/name")
 
 ### name Type
 
@@ -70,13 +70,13 @@ Enumeration of stakeholder types - individual (human) or institution (entity)
 
 `stakeholder_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Stakeholder Type](stakeholder-1-properties-enum---stakeholder-type.md))
+- Type: `string` ([Enum - Stakeholder Type](stakeholder-1-properties-enum---stakeholder-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-enum---stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-enum---stakeholder-type.md "Enums.Stakeholder.schema.json#/properties/stakeholder_type")
 
 ### stakeholder_type Type
 
@@ -97,13 +97,13 @@ This might be any sort of id assigned to the stakeholder by the issuer, such as 
 
 `issuer_assigned_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-issuer_assigned_id.md "Objects.Stakeholder.schema.json#/properties/issuer_assigned_id")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-issuer_assigned_id.md "Objects.Stakeholder.schema.json#/properties/issuer_assigned_id")
 
 ### issuer_assigned_id Type
 
@@ -115,13 +115,13 @@ Enumeration of types of relationships
 
 `current_relationship`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Enum - Relationships between stakeholder and issuer](stakeholder-1-properties-enum---relationships-between-stakeholder-and-issuer.md))
+- Type: `string` ([Enum - Relationships between stakeholder and issuer](stakeholder-1-properties-enum---relationships-between-stakeholder-and-issuer.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-enum---relationships-between-stakeholder-and-issuer.md "Enums.StakeholderRelationship.schema.json#/properties/current_relationship")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-enum---relationships-between-stakeholder-and-issuer.md "Enums.StakeholderRelationship.schema.json#/properties/current_relationship")
 
 ### current_relationship Type
 
@@ -153,13 +153,13 @@ Type representation of a primary contact person for a stakeholder (e.g. a fund).
 
 `primary_contact`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - ContactInfo](stakeholder-1-properties-type---contactinfo.md))
+- Type: `object` ([Type - ContactInfo](stakeholder-1-properties-type---contactinfo.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-type---contactinfo.md "Types.ContactInfo.schema.json#/properties/primary_contact")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-type---contactinfo.md "Types.ContactInfo.schema.json#/properties/primary_contact")
 
 ### primary_contact Type
 
@@ -171,13 +171,13 @@ Addresses for the stakeholder
 
 `addresses`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - Address](issuer-properties-type---address.md))
+- Type: `object[]` ([Type - Address](issuer-properties-type---address.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---address-array.md "Objects.Stakeholder.schema.json#/properties/addresses")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---address-array.md "Objects.Stakeholder.schema.json#/properties/addresses")
 
 ### addresses Type
 
@@ -189,13 +189,13 @@ The tax ids for this stakeholder
 
 `tax_ids`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
+- Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---taxid-array.md "Objects.Stakeholder.schema.json#/properties/tax_ids")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---taxid-array.md "Objects.Stakeholder.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
@@ -207,13 +207,13 @@ Unstructured text comments related to and stored for this Stakeholder
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---comments.md "Objects.Stakeholder.schema.json#/properties/comments")
+- defined in: [Object - Stakeholder](stakeholder-1-properties-stakeholder---comments.md "Objects.Stakeholder.schema.json#/properties/comments")
 
 ### comments Type
 

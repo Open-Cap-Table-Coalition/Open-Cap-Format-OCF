@@ -6,9 +6,9 @@ Objects.StockClass.schema.json
 
 Object describing a type of stock class issued by the issuer
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClass.schema.json](../objects/StockClass.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClass.schema.json](../schema/objects/StockClass.schema.json "open original schema") |
 
 ## Object - StockClass Type
 
@@ -39,13 +39,13 @@ Identifier for the stock class
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-id.md "Objects.StockClass.schema.json#/properties/id")
+- defined in: [Object - StockClass](stockclass-1-properties-id.md "Objects.StockClass.schema.json#/properties/id")
 
 ### id Type
 
@@ -57,13 +57,13 @@ Name for the stock type (e.g. Series A Preferred or Class A Common)
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-name.md "Objects.StockClass.schema.json#/properties/name")
+- defined in: [Object - StockClass](stockclass-1-properties-name.md "Objects.StockClass.schema.json#/properties/name")
 
 ### name Type
 
@@ -75,13 +75,13 @@ Enumeration of stockclass types
 
 `class_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - StockClass Type](stockclass-1-properties-enum---stockclass-type.md))
+- Type: `string` ([Enum - StockClass Type](stockclass-1-properties-enum---stockclass-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-enum---stockclass-type.md "Enums.StockClass.schema.json#/properties/class_type")
+- defined in: [Object - StockClass](stockclass-1-properties-enum---stockclass-type.md "Enums.StockClass.schema.json#/properties/class_type")
 
 ### class_type Type
 
@@ -102,13 +102,13 @@ Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1)
 
 `default_id_prefix`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-default_id_prefix.md "Objects.StockClass.schema.json#/properties/default_id_prefix")
+- defined in: [Object - StockClass](stockclass-1-properties-default_id_prefix.md "Objects.StockClass.schema.json#/properties/default_id_prefix")
 
 ### default_id_prefix Type
 
@@ -120,13 +120,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `current_shares_authorized`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_authorized")
+- defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_authorized")
 
 ### current_shares_authorized Type
 
@@ -138,13 +138,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `board_approval_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")
+- defined in: [Object - StockClass](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -156,13 +156,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `votes_per_share`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/votes_per_share")
+- defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/votes_per_share")
 
 ### votes_per_share Type
 
@@ -174,13 +174,13 @@ Type representing a monetary value in a specified currency code
 
 `par_value`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/par_value")
+- defined in: [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/par_value")
 
 ### par_value Type
 
@@ -192,13 +192,13 @@ Type representing a monetary value in a specified currency code
 
 `price_per_share`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
+- defined in: [Object - StockClass](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
@@ -210,13 +210,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `seniority`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/seniority")
+- defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/seniority")
 
 ### seniority Type
 
@@ -228,13 +228,13 @@ List of StockClassConversionRights possible for this StockClass
 
 `conversion_rights`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
+- Type: `object[]` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-stockclass---stockclassconversionrights-array.md "Objects.StockClass.schema.json#/properties/conversion_rights")
+- defined in: [Object - StockClass](stockclass-1-properties-stockclass---stockclassconversionrights-array.md "Objects.StockClass.schema.json#/properties/conversion_rights")
 
 ### conversion_rights Type
 
@@ -246,13 +246,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `liquidation_preference_multiple`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/liquidation_preference_multiple")
+- defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/liquidation_preference_multiple")
 
 ### liquidation_preference_multiple Type
 
@@ -264,13 +264,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `participation_cap_multiple`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/participation_cap_multiple")
+- defined in: [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/participation_cap_multiple")
 
 ### participation_cap_multiple Type
 
@@ -282,13 +282,13 @@ List of comments for the stock class
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-stockclass---comments.md "Objects.StockClass.schema.json#/properties/comments")
+- defined in: [Object - StockClass](stockclass-1-properties-stockclass---comments.md "Objects.StockClass.schema.json#/properties/comments")
 
 ### comments Type
 

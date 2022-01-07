@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.CustomVestingTranche.schema.json",
+  "title": "Type - Custom Vesting Tranche",
+  "description": "Type representation of an vesting tranche by date and quantity",
+  "type": "object",
+  "properties": {
+    "vest_date": {
+      "description": "Date of vesting for the tranche",
+      "type": "string"
+    },
+    "vest_quantity": {
+      "description": "Quantity of shares for the tranche",
+      "type": "string"
+    }
+  },
+  "required": ["vest_date", "vest_quantity"]
+}

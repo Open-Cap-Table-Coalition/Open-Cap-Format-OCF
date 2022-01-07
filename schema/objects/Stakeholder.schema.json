@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Stakeholder.schema.json",
+  "title": "Object - Stakeholder",
+  "description": "Object describing a stakeholder",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "properties": {
+    "id": {
+      "description": "Identifier for the object",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name for the stakeholder",
+      "$ref": "Types.Name.schema.json"
+    },
+    "stakeholder_type": {
+      "description": "Distinguish individuals from institutions",
+      "$ref": "Enums.Stakeholder.schema.json"
+    },
+    "issuer_assigned_id": {
+      "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
+      "type": "string"
+    },
+    "current_relationship": {
+      "description": "What is the current relationship of the stakeholder to the issuer?",
+      "$ref": "Enums.StakeholderRelationship.schema.json"
+    },
+    "primary_contact": {
+      "description": "The primary contact info for the stakeholder",
+      "$ref": "Types.ContactInfo.schema.json"
+    },
+    "addresses": {
+      "title": "Stakeholder - Address Array",
+      "description": "Addresses for the stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "Types.Address.schema.json"
+      }
+    },
+    "tax_ids": {
+      "title": "Stakeholder - TaxID Array",
+      "description": "The tax ids for this stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "Types.TaxID.schema.json"
+      }
+    },
+    "comments": {
+      "description": "Unstructured text comments related to and stored for the object",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "object_type": {
+      "const": "STAKEHOLDER"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "stakeholder_type"]
+}

@@ -6,9 +6,9 @@ Types.ScheduleDrivenVestingCondition.schema.json#/properties/schedule_driven_ves
 
 Type representation of a row in a vesting schedule.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                    |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [VestingSchedule.schema.json*](../objects/VestingSchedule.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                            |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [VestingSchedule.schema.json\*](../schema/objects/VestingSchedule.schema.json "open original schema") |
 
 ## items Type
 
@@ -29,13 +29,13 @@ Numerator of the tranche amount (e.g. 1 in 1/48th)
 
 `amount_numerator`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")
 
 ### amount_numerator Type
 
@@ -47,13 +47,13 @@ Denominator of the tranche amount (e.g. 48 in 1/48th)
 
 `amount_denominator`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")
 
 ### amount_denominator Type
 
@@ -65,13 +65,13 @@ Length of period following the vesting start date for this tranche
 
 `period_length`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")
+- defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "Types.ScheduleDrivenVestingCondition.schema.json#/properties/period_length")
 
 ### period_length Type
 
@@ -83,13 +83,13 @@ Enumeration of time period types
 
 `period_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
+- Type: `string` ([Enum - Time Period Type](terminationwindow-1-properties-enum---time-period-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
+- defined in: [Type - Schedule-driven Vesting Condition](terminationwindow-1-properties-enum---time-period-type.md "Enums.Period.schema.json#/properties/period_type")
 
 ### period_type Type
 

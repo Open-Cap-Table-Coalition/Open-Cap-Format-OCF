@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.Address.schema.json",
+  "title": "Type - Address",
+  "description": "Type representation of an address as an object.",
+  "type": "object",
+  "properties": {
+    "address_type": {
+      "description": "What type of address is this (e.g. legal address, contact address, etc.)",
+      "$ref": "Enums.Address.schema.json"
+    },
+    "street_suite": {
+      "description": "Street address (multi-line string)",
+      "type": "string"
+    },
+    "city": {
+      "description": "City",
+      "type": "string"
+    },
+    "state_province": {
+      "description": "State, province or equivalent identifier required for an address in this country (ISO-3166-2).",
+      "type": "string"
+    },
+    "country": {
+      "description": "Country code for this address (ISO-3166)",
+      "type": "string"
+    },
+    "postal_code": {
+      "description": "Address postal code",
+      "type": "string"
+    }
+  },
+  "required": ["address_type", "country"]
+}

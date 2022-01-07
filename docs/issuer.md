@@ -6,9 +6,9 @@ Objects.Issuer.schema.json
 
 Object describing the issuer of the cap table. This is the company whsoe captable this is.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json](../objects/Issuer.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json](../schema/objects/Issuer.schema.json "open original schema") |
 
 ## Object - Issuer Type
 
@@ -36,13 +36,13 @@ Identifier for the issuer
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
+- defined in: [Object - Issuer](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
 
 ### id Type
 
@@ -54,13 +54,13 @@ Legal name of the issuer
 
 `legal_name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
+- defined in: [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -68,17 +68,15 @@ Legal name of the issuer
 
 ## dba
 
-
-
 `dba`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Doing Business As name](issuer-properties-doing-business-as-name.md))
+- Type: `string` ([Doing Business As name](issuer-properties-doing-business-as-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-doing-business-as-name.md "Objects.Issuer.schema.json#/properties/dba")
+- defined in: [Object - Issuer](issuer-properties-doing-business-as-name.md "Objects.Issuer.schema.json#/properties/dba")
 
 ### dba Type
 
@@ -90,13 +88,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `formation_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")
+- defined in: [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")
 
 ### formation_date Type
 
@@ -108,13 +106,13 @@ The country where the issuer company was legally formed (ISO-3166 - alpha-3)
 
 `country_of_formation`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation")
+- defined in: [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation")
 
 ### country_of_formation Type
 
@@ -126,13 +124,13 @@ The state, province, or subdivision where the issuer company was legally formed 
 
 `state_of_formation`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")
+- defined in: [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")
 
 ### state_of_formation Type
 
@@ -144,13 +142,13 @@ The tax ids for this issuer company
 
 `tax_ids`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
+- Type: `object[]` ([Type - TaxID](issuer-properties-issuer---taxid-array-type---taxid.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-issuer---taxid-array.md "Objects.Issuer.schema.json#/properties/tax_ids")
+- defined in: [Object - Issuer](issuer-properties-issuer---taxid-array.md "Objects.Issuer.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
@@ -162,13 +160,13 @@ Type representation of an email address.
 
 `email`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Email](issuer-properties-type---email.md))
+- Type: `object` ([Type - Email](issuer-properties-type---email.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")
+- defined in: [Object - Issuer](issuer-properties-type---email.md "Types.Email.schema.json#/properties/email")
 
 ### email Type
 
@@ -180,13 +178,13 @@ Type representation of a phone number.
 
 `phone`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - PhoneNumber](issuer-properties-type---phonenumber.md))
+- Type: `object` ([Type - PhoneNumber](issuer-properties-type---phonenumber.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---phonenumber.md "Types.PhoneNumber.schema.json#/properties/phone")
+- defined in: [Object - Issuer](issuer-properties-type---phonenumber.md "Types.PhoneNumber.schema.json#/properties/phone")
 
 ### phone Type
 
@@ -198,13 +196,13 @@ Type representation of an address as an object.
 
 `address`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Address](issuer-properties-type---address.md))
+- Type: `object` ([Type - Address](issuer-properties-type---address.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---address.md "Types.Address.schema.json#/properties/address")
+- defined in: [Object - Issuer](issuer-properties-type---address.md "Types.Address.schema.json#/properties/address")
 
 ### address Type
 
@@ -216,13 +214,13 @@ Unstructured comments related to and stored for the issuer
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-issuer---comments.md "Objects.Issuer.schema.json#/properties/comments")
+- defined in: [Object - Issuer](issuer-properties-issuer---comments.md "Objects.Issuer.schema.json#/properties/comments")
 
 ### comments Type
 

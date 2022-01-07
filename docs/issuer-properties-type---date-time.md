@@ -6,9 +6,9 @@ Types.DateTime.schema.json#/properties/formation_date
 
 Type representing an instant in Universal Coordinated Time (UTC)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json*](../objects/Issuer.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                          |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Issuer.schema.json\*](../schema/objects/Issuer.schema.json "open original schema") |
 
 ## formation_date Type
 
@@ -26,13 +26,13 @@ Number of milliseconds elapsed since Unix epoch
 
 `epoch_millis`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Date-Time](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
+- defined in: [Type - Date-Time](datetime-properties-epoch_millis.md "Types.DateTime.schema.json#/properties/epoch_millis")
 
 ### epoch_millis Type
 

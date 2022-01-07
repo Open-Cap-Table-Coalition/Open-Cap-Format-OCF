@@ -6,9 +6,9 @@ Objects.Convertible.schema.json#/properties/convertibles/items
 
 Object describing convertible instrument issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../schema/CapTable.schema.json "open original schema") |
 
 ## items Type
 
@@ -49,13 +49,13 @@ Identifier for the convertible (must be unique within convertible objs)
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-id.md "Objects.Convertible.schema.json#/properties/id")
+- defined in: [Object - Convertible](convertible-1-properties-id.md "Objects.Convertible.schema.json#/properties/id")
 
 ### id Type
 
@@ -67,13 +67,13 @@ Enumeration of convertible instrument types
 
 `convertible_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Convertible Type](convertible-1-properties-enum---convertible-type.md))
+- Type: `string` ([Enum - Convertible Type](convertible-1-properties-enum---convertible-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---convertible-type.md "Enums.Convertible.schema.json#/properties/convertible_type")
+- defined in: [Object - Convertible](convertible-1-properties-enum---convertible-type.md "Enums.Convertible.schema.json#/properties/convertible_type")
 
 ### convertible_type Type
 
@@ -95,13 +95,13 @@ Enumeration of convertible conversion type
 
 `conversion_type`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - Convertible Conversion Type](convertible-1-properties-enum---convertible-conversion-type.md))
+- Type: `string` ([Enum - Convertible Conversion Type](convertible-1-properties-enum---convertible-conversion-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---convertible-conversion-type.md "Enums.Conversion.schema.json#/properties/conversion_type")
+- defined in: [Object - Convertible](convertible-1-properties-enum---convertible-conversion-type.md "Enums.Conversion.schema.json#/properties/conversion_type")
 
 ### conversion_type Type
 
@@ -122,13 +122,13 @@ A custom ID for this convertible (e.g. CN-1.)
 
 `custom_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-custom_id.md "Objects.Convertible.schema.json#/properties/custom_id")
+- defined in: [Object - Convertible](convertible-1-properties-custom_id.md "Objects.Convertible.schema.json#/properties/custom_id")
 
 ### custom_id Type
 
@@ -140,13 +140,13 @@ Id of the stakeholder that holds legal title to this convertible.
 
 `stakeholder_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-stakeholder_id.md "Objects.Convertible.schema.json#/properties/stakeholder_id")
+- defined in: [Object - Convertible](convertible-1-properties-stakeholder_id.md "Objects.Convertible.schema.json#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -158,13 +158,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `issue_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
+- defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
 
 ### issue_date Type
 
@@ -176,13 +176,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `canceled_at`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
+- defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
 
 ### canceled_at Type
 
@@ -194,13 +194,13 @@ List of security law exemptions (and applicable jurisdictions) for this converti
 
 `security_law_exemptions`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
+- Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-convertible---typessecurityexemptionschemajson-array.md "Objects.Convertible.schema.json#/properties/security_law_exemptions")
+- defined in: [Object - Convertible](convertible-1-properties-convertible---typessecurityexemptionschemajson-array.md "Objects.Convertible.schema.json#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
@@ -212,13 +212,13 @@ Type representing a monetary value in a specified currency code
 
 `original_principal_amount`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")
+- defined in: [Object - Convertible](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")
 
 ### original_principal_amount Type
 
@@ -230,13 +230,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `interest_rate`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/interest_rate")
+- defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/interest_rate")
 
 ### interest_rate Type
 
@@ -248,13 +248,13 @@ Enumeration of how the number of days are determined per period
 
 `day_count_convention`
 
-*   is required
+- is required
 
-*   Type: `string` ([Enum - DayCount Type](convertible-1-properties-enum---daycount-type.md))
+- Type: `string` ([Enum - DayCount Type](convertible-1-properties-enum---daycount-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---daycount-type.md "Enums.DayCount.schema.json#/properties/day_count_convention")
+- defined in: [Object - Convertible](convertible-1-properties-enum---daycount-type.md "Enums.DayCount.schema.json#/properties/day_count_convention")
 
 ### day_count_convention Type
 
@@ -275,13 +275,13 @@ Enumeration of type of interest payout (e.g. deferred or cash payment)
 
 `interest_payout`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Enum - InterestPayout Type](convertible-1-properties-enum---interestpayout-type.md))
+- Type: `string` ([Enum - InterestPayout Type](convertible-1-properties-enum---interestpayout-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---interestpayout-type.md "Enums.InterestPayout.schema.json#/properties/interest_payout")
+- defined in: [Object - Convertible](convertible-1-properties-enum---interestpayout-type.md "Enums.InterestPayout.schema.json#/properties/interest_payout")
 
 ### interest_payout Type
 
@@ -302,13 +302,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `maturity_date`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")
+- defined in: [Object - Convertible](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")
 
 ### maturity_date Type
 
@@ -320,13 +320,13 @@ Type representation of a conversion right from one security into a StockClass.
 
 `default_conversion_rights`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
+- Type: `object` ([Type - StockClassConversionRights](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")
+- defined in: [Object - Convertible](warrant-properties-warrant---stockclassconversionrights-array-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")
 
 ### default_conversion_rights Type
 
@@ -334,9 +334,9 @@ Type representation of a conversion right from one security into a StockClass.
 
 one (and only one) of
 
-*   [Converts to not-yet-existing and/or not-yet-known StockClass](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stockclass.md "check type definition")
+- [Converts to not-yet-existing and/or not-yet-known StockClass](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stockclass.md "check type definition")
 
-*   [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
+- [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
 
 ## conversion_triggers
 
@@ -344,13 +344,13 @@ In event the convertible can convert due to trigger events (e.g. Change of Contr
 
 `conversion_triggers`
 
-*   is required
+- is required
 
-*   Type: `object[]` ([Type - ConversionTrigger](convertible-1-properties-convertible---typesconversiontriggerschemajson-array-type---conversiontrigger.md))
+- Type: `object[]` ([Type - ConversionTrigger](convertible-1-properties-convertible---typesconversiontriggerschemajson-array-type---conversiontrigger.md))
 
-*   can be null
+- can be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-convertible---typesconversiontriggerschemajson-array.md "Objects.Convertible.schema.json#/properties/conversion_triggers")
+- defined in: [Object - Convertible](convertible-1-properties-convertible---typesconversiontriggerschemajson-array.md "Objects.Convertible.schema.json#/properties/conversion_triggers")
 
 ### conversion_triggers Type
 
@@ -362,13 +362,13 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 `exit_multiple`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+- Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")
+- defined in: [Object - Convertible](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")
 
 ### exit_multiple Type
 
@@ -380,13 +380,13 @@ Enumeration of interest accrual period type
 
 `interest_accrual_period`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Enum - AccrualPeriod Types](convertible-1-properties-enum---accrualperiod-types.md))
+- Type: `string` ([Enum - AccrualPeriod Types](convertible-1-properties-enum---accrualperiod-types.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---accrualperiod-types.md "Enums.AccrualPeriod.schema.json#/properties/interest_accrual_period")
+- defined in: [Object - Convertible](convertible-1-properties-enum---accrualperiod-types.md "Enums.AccrualPeriod.schema.json#/properties/interest_accrual_period")
 
 ### interest_accrual_period Type
 
@@ -410,13 +410,13 @@ Enumeration of interest compounding type
 
 `compounding_type`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Enum - Compounding Type](convertible-1-properties-enum---compounding-type.md))
+- Type: `string` ([Enum - Compounding Type](convertible-1-properties-enum---compounding-type.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-enum---compounding-type.md "Enums.Compounding.schema.json#/properties/compounding_type")
+- defined in: [Object - Convertible](convertible-1-properties-enum---compounding-type.md "Enums.Compounding.schema.json#/properties/compounding_type")
 
 ### compounding_type Type
 
@@ -437,13 +437,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `pro_rata`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")
+- defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")
 
 ### pro_rata Type
 
@@ -455,13 +455,13 @@ Type representing a monetary value in a specified currency code
 
 `conversion_valuation_cap`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")
+- defined in: [Object - Convertible](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")
 
 ### conversion_valuation_cap Type
 
@@ -473,13 +473,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `conversion_discount`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_discount")
+- defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_discount")
 
 ### conversion_discount Type
 
@@ -491,13 +491,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `conversion_fixed_ownership`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_fixed_ownership")
+- defined in: [Object - Convertible](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_fixed_ownership")
 
 ### conversion_fixed_ownership Type
 
@@ -509,13 +509,13 @@ If different convertible instruments have seniorty over one another, use this va
 
 `seniority`
 
-*   is required
+- is required
 
-*   Type: `integer`
+- Type: `integer`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-seniority.md "Objects.Convertible.schema.json#/properties/seniority")
+- defined in: [Object - Convertible](convertible-1-properties-seniority.md "Objects.Convertible.schema.json#/properties/seniority")
 
 ### seniority Type
 
@@ -527,13 +527,13 @@ Unstructured text comments related to and stored for this convertible
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Convertible](convertible-1-properties-convertible---comments.md "Objects.Convertible.schema.json#/properties/comments")
+- defined in: [Object - Convertible](convertible-1-properties-convertible---comments.md "Objects.Convertible.schema.json#/properties/comments")
 
 ### comments Type
 

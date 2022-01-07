@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Issuance.WarrantIssuance.schema.json",
+  "title": "Object - Warrant Issuance Transaction",
+  "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json"
+    }
+  ],
+  "properties": {
+    "conversion_rights": {
+      "title": "Warrant - StockClassConversionRights Array",
+      "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
+      "type": "array",
+      "items": {
+        "$ref": "Types.StockClassConversionRights.schema.json"
+      }
+    },
+    "quantity": {
+      "description": "Quantity of shares the warrant is exercisable for",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "exercise_price": {
+      "description": "The exercise price of the warrant",
+      "$ref": "Types.Money.schema.json"
+    },
+    "purchase_price": {
+      "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
+      "$ref": "Types.Money.schema.json"
+    },
+    "vesting": {
+      "description": "Vesting conditions applicable to the warrant",
+      "$ref": "Types.Vesting.schema.json"
+    },
+    "expiration_date": {
+      "description": "Expiration date of the warrant, if applicable",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "object_type": {
+      "const": "WARRANT_ISSUANCE"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "quantity",
+    "stakeholder_id",
+    "conversion_rights",
+    "purchase_price",
+    "exercise_price"
+  ]
+}

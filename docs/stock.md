@@ -6,9 +6,9 @@ Objects.Stock.schema.json
 
 Object describing stock issued by the issuer and held by a stakeholder
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stock.schema.json](../objects/Stock.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Stock.schema.json](../schema/objects/Stock.schema.json "open original schema") |
 
 ## Object - Stock Type
 
@@ -39,13 +39,13 @@ Identifier for the stock
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")
+- defined in: [Object - Stock](stock-properties-id.md "Objects.Stock.schema.json#/properties/id")
 
 ### id Type
 
@@ -57,13 +57,13 @@ Id of StockClass of this stock issuance
 
 `stock_class_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")
+- defined in: [Object - Stock](stock-properties-stock_class_id.md "Objects.Stock.schema.json#/properties/stock_class_id")
 
 ### stock_class_id Type
 
@@ -75,13 +75,13 @@ An override of the StockClass custom_id for this issuance (e.g. CS-1.). Also kno
 
 `custom_id`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-custom_id.md "Objects.Stock.schema.json#/properties/custom_id")
+- defined in: [Object - Stock](stock-properties-custom_id.md "Objects.Stock.schema.json#/properties/custom_id")
 
 ### custom_id Type
 
@@ -93,13 +93,13 @@ Id of stakeholder that owns this stock
 
 `stakeholder_id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")
+- defined in: [Object - Stock](stock-properties-stakeholder_id.md "Objects.Stock.schema.json#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -111,13 +111,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `issue_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
+- defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/issue_date")
 
 ### issue_date Type
 
@@ -129,13 +129,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `canceled_at`
 
-*   is optional
+- is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+- Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
+- defined in: [Object - Stock](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/canceled_at")
 
 ### canceled_at Type
 
@@ -147,13 +147,13 @@ List of security law exemptions applicable to this stock and corresponding juris
 
 `security_law_exemptions`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
+- Type: `object[]` ([Type - SecurityExemption](plansecurities-properties-plansecurity---typessecurityexemptionschemajson-array-type---securityexemption.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-stock---security-law-exemption-ids-array.md "Objects.Stock.schema.json#/properties/security_law_exemptions")
+- defined in: [Object - Stock](stock-properties-stock---security-law-exemption-ids-array.md "Objects.Stock.schema.json#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
@@ -165,13 +165,13 @@ Type representing a monetary value in a specified currency code
 
 `share_price`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
+- defined in: [Object - Stock](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
 
 ### share_price Type
 
@@ -183,13 +183,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `shares`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")
+- defined in: [Object - Stock](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/shares")
 
 ### shares Type
 
@@ -201,13 +201,13 @@ Vesting conditions applicable to this stock
 
 `vesting`
 
-*   is optional
+- is optional
 
-*   Type: `Types.Vesting.schema.json`
+- Type: `Types.Vesting.schema.json`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-vesting.md "Objects.Stock.schema.json#/properties/vesting")
+- defined in: [Object - Stock](stock-properties-vesting.md "Objects.Stock.schema.json#/properties/vesting")
 
 ### vesting Type
 
@@ -219,13 +219,13 @@ Type representing a monetary value in a specified currency code
 
 `cost_basis`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
+- Type: `object` ([Type - Money](plansecurities-properties-type---money.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
+- defined in: [Object - Stock](plansecurities-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
 
 ### cost_basis Type
 
@@ -237,13 +237,13 @@ List of stock legend ids that apply to this stock
 
 `stock_legend_ids`
 
-*   is required
+- is required
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-stock---stock-legend-id-array.md "Objects.Stock.schema.json#/properties/stock_legend_ids")
+- defined in: [Object - Stock](stock-properties-stock---stock-legend-id-array.md "Objects.Stock.schema.json#/properties/stock_legend_ids")
 
 ### stock_legend_ids Type
 
@@ -255,13 +255,13 @@ Type representation of the parent security of a given stock issuance (e.g. if a 
 
 `issued_from_parent_object`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - StockParent](stock-properties-type---stockparent.md))
+- Type: `object` ([Type - StockParent](stock-properties-type---stockparent.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")
+- defined in: [Object - Stock](stock-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")
 
 ### issued_from_parent_object Type
 
@@ -273,13 +273,13 @@ List of comments for this stock
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Object - Stock](stock-properties-stock---comments.md "Objects.Stock.schema.json#/properties/comments")
+- defined in: [Object - Stock](stock-properties-stock---comments.md "Objects.Stock.schema.json#/properties/comments")
 
 ### comments Type
 

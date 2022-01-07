@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.Name.schema.json",
+  "title": "Type - Name",
+  "description": "Type comprising of multiple name components",
+  "type": "object",
+  "properties": {
+    "legal_name": {
+      "description": "Legal full name for the individual/institution",
+      "type": "string"
+    },
+    "first_name": {
+      "description": "First/given name for the individual",
+      "type": ["string", "null"]
+    },
+    "last_name": {
+      "description": "Last/family name for the individual",
+      "type": ["string", "null"]
+    }
+  },
+  "required": ["legal_name"]
+}

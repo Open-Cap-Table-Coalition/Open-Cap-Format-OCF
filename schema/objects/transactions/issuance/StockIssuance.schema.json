@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Issuance.StockIssuance.schema.json",
+  "title": "Object - Stock Issuance Transaction",
+  "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json"
+    }
+  ],
+  "properties": {
+    "stock_class_id": {
+      "description": "Id of StockClass of this stock issuance",
+      "type": "string"
+    },
+    "share_price": {
+      "description": "The price per share paid for the stock by the holder",
+      "$ref": "Types.Money.schema.json"
+    },
+    "quantity": {
+      "description": "Number of shares issued to the stakeholder",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "vesting": {
+      "description": "Vesting conditions applicable to this stock",
+      "$ref": "Types.Vesting.schema.json"
+    },
+    "cost_basis": {
+      "description": "The cost basis for this particular stock",
+      "$ref": "Types.Money.schema.json"
+    },
+    "stock_legend_ids": {
+      "title": "Stock - Stock Legend Id Array",
+      "description": "List of stock legend ids that apply to this stock",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issued_from_parent_object": {
+      "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
+      "$ref": "Types.StockParent.schema.json"
+    },
+    "object_type": {
+      "const": "STOCK_ISSUANCE"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "stock_class_id",
+    "stakeholder_id",
+    "share_price",
+    "quantity",
+    "cost_basis",
+    "stock_legend_ids",
+    "issued_from_parent_object"
+  ]
+}
