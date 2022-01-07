@@ -4,8 +4,11 @@
   "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "STAKEHOLDER"
+    },
     "id": {
       "description": "Identifier for the object",
       "type": "string"
@@ -52,9 +55,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "object_type": {
-      "const": "STAKEHOLDER"
     }
   },
   "additionalProperties": false,

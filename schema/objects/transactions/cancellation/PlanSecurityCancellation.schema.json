@@ -6,16 +6,16 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Objects.Transactions.Cancellation.BaseCancellation.schema.json"
+      "$ref": "Primitives.Transactions.Cancellation.BaseCancellation.schema.json"
     }
   ],
   "properties": {
+    "object_type": {
+      "const": "TX_PLAN_SECURITY_CANCELLATION"
+    },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"
-    },
-    "object_type": {
-      "const": "PLANSECURITY_CANCELLATION"
     }
   },
   "additionalProperties": false,

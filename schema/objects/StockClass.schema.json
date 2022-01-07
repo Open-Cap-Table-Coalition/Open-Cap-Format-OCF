@@ -4,8 +4,11 @@
   "title": "Object - StockClass",
   "description": "Object describing a type of stock class issued by the issuer",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "STOCK_CLASS"
+    },
     "id": {
       "description": "Identifier for the object",
       "type": "string"
@@ -68,9 +71,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "object_type": {
-      "const": "STOCK_CLASS"
     }
   },
   "additionalProperties": false,

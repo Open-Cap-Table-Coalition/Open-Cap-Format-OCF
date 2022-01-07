@@ -4,8 +4,11 @@
   "title": "Object - StockPlan",
   "description": "Object describing a plan which stock options are issued from",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "STOCK_PLAN"
+    },
     "id": {
       "description": "Identifier for the object",
       "type": "string"
@@ -32,9 +35,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "object_type": {
-      "const": "STOCK_PLAN"
     }
   },
   "additionalProperties": false,

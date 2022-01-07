@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json",
-  "title": "Object - Base Issuance Transaction",
-  "description": "Object describing fields common to all issuance objects",
+  "$id": "Primitives.Transactions.Issuance.BaseIssuance.schema.json",
+  "title": "Primitive - Security Issuance Transaction",
+  "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
   "allOf": [
-    { "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json" }
+    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
   ],
   "properties": {
     "custom_id": {
@@ -31,9 +31,6 @@
       "items": {
         "$ref": "Types.SecurityExemption.schema.json"
       }
-    },
-    "object_type": {
-      "const": "BASE_ISSUANCE"
     }
   },
   "required": [

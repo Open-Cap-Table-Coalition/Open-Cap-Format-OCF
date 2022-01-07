@@ -5,31 +5,13 @@
   "description": "Object describing a stock repurchase transaction",
   "type": "object",
   "allOf": [
-    { "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json" }
+    {
+      "$ref": "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json"
+    }
   ],
   "properties": {
-    "price": {
-      "description": "Repurchase price per share of the stock",
-      "$ref": "Types.Money.schema.json"
-    },
-    "quantity": {
-      "description": "Number of shares of stock repurchased",
-      "$ref": "Types.Numeric.schema.json"
-    },
-    "consideration": {
-      "description": "Consideration for the repurchase of the stock",
-      "$ref": "Types.Money.schema.json"
-    },
-    "resulting_stock_object_ids": {
-      "title": "StockRepurchase - Resulting Stock Object Id Array",
-      "description": "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
     "object_type": {
-      "const": "STOCK_REPURCHASE"
+      "const": "TX_STOCK_REPURCHASE"
     }
   },
   "additionalProperties": false,

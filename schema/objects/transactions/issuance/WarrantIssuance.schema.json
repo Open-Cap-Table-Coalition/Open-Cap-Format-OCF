@@ -6,10 +6,13 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json"
+      "$ref": "Primitives.Transactions.Issuance.BaseIssuance.schema.json"
     }
   ],
   "properties": {
+    "object_type": {
+      "const": "TX_WARRANT_ISSUANCE"
+    },
     "conversion_rights": {
       "title": "Warrant - StockClassConversionRights Array",
       "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
@@ -37,9 +40,6 @@
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
       "$ref": "Types.DateTime.schema.json"
-    },
-    "object_type": {
-      "const": "WARRANT_ISSUANCE"
     }
   },
   "additionalProperties": false,

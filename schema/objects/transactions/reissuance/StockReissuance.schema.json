@@ -6,12 +6,12 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Objects.Transactions.Reissuance.BaseReissuance.schema.json"
+      "$ref": "Primitives.Transactions.Reissuance.BaseReissuance.schema.json"
     }
   ],
   "properties": {
     "object_type": {
-      "const": "STOCK_REISSUANCE"
+      "const": "TX_STOCK_REISSUANCE"
     }
   },
   "additionalProperties": false,

@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Repurchase.StockRepurchase.schema.json",
-  "title": "Object - Stock Repurchase Transaction",
-  "description": "Object describing a stock repurchase transaction",
+  "$id": "Objects.Transactions.Repurchase.BaseRepurchase.schema.json",
+  "title": "Primitive - Security Repurchase Transaction",
+  "description": "Abstract object describing a repurchase transaction",
   "type": "object",
   "allOf": [
-    { "$ref": "Primitives.Objects.Transactions.BaseTransaction.schema.json" }
+    { "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }
   ],
   "properties": {
     "price": {
@@ -27,9 +27,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "object_type": {
-      "const": "BASE_REPURCHASE"
     }
   },
   "required": ["price", "quantity", "consideration"]

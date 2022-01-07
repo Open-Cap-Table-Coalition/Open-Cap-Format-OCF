@@ -4,8 +4,11 @@
   "title": "Object - Issuer",
   "description": "Object describing the issuer of the cap table. This is the company whsoe cap table this is.",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Objects.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
   "properties": {
+    "object_type": {
+      "const": "ISSUER"
+    },
     "id": {
       "description": "Identifier for the issuer",
       "type": "string"
@@ -56,9 +59,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "object_type": {
-      "const": "ISSUER"
     }
   },
   "additionalProperties": false,

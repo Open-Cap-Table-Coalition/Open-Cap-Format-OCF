@@ -6,10 +6,13 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Objects.Transactions.Issuance.BaseIssuance.schema.json"
+      "$ref": "Primitives.Transactions.Issuance.BaseIssuance.schema.json"
     }
   ],
   "properties": {
+    "object_type": {
+      "const": "TX_CONVERTIBLE_ISSUANCE"
+    },
     "convertible_type": {
       "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
       "$ref": "Enums.Convertible.schema.json"
@@ -81,9 +84,6 @@
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
       "type": "integer"
-    },
-    "object_type": {
-      "const": "CONVERTIBLE_ISSUANCE"
     }
   },
   "additionalProperties": false,
