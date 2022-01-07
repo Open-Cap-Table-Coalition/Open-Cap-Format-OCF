@@ -30,7 +30,6 @@
       "state_province": "DE",
       "country": "USA",
       "postal_code": "12345"
-
     },
     "comments": []
   },
@@ -66,7 +65,7 @@
       "current_shares_reserved": {
         "string_value": "10000000.00"
       },
-      "stockclass_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "comments": [
         "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
       ]
@@ -165,7 +164,6 @@
       "comments": []
     }
   ],
-  "stock": [],
   "transactions": [
     {
       "id": "test-quantity-cancellation",
@@ -174,7 +172,8 @@
         "epoch_millis": 42
       },
       "quantity": { "string_value": "100" },
-      "balance_security_id": "new-security"
+      "balance_security_id": "new-security",
+      "reason_text": "for testing"
     },
     {
       "id": "test-monetary-cancellation",
@@ -186,14 +185,30 @@
       "amount": {
         "amount": {
           "string_value": "53.09"
-        },
-        "currency": "USD"
-      }
+        }
+      },
+      "currency": "USD",
+      "reason_text": "for testing"
+    },
+    {
+      "id": "test-quantity-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "quantity": { "string_value": "100" }
+    },
+    {
+      "id": "test-monetary-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "amount": { "amount": { "string_value": "867.53" } }
     }
   ],
-  "plan_securities": [],
-  "warrants": [],
-  "convertibles": [],
   "stock_plans": [
     {
       "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
@@ -204,7 +219,7 @@
       "current_shares_reserved": {
         "string_value": "10000000.00"
       },
-      "stockclass_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "comments": [
         "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
       ]

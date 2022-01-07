@@ -1,6 +1,6 @@
 ---
 template: reference
-hide-nav: 'true'
+hide-nav: "true"
 ---
 
 # Untitled string in Cap Table Schema
@@ -9,11 +9,9 @@ hide-nav: 'true'
 Objects.Issuer.schema.json#/properties/comments/items
 ```
 
-
-
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Issuer.schema.json*](../objects/Issuer.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Issuer.schema.json\*](../objects/Issuer.schema.json "open original schema") |
 
 ## items Type
 

@@ -30,8 +30,5 @@
       }
     }
   },
-  "required": [
-    "contact_first_name",
-    "contact_last_name"
-  ]
+  "required": ["contact_first_name", "contact_last_name"]
 }

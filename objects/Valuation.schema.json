@@ -26,9 +26,5 @@
       "$ref": "Enums.Valuation.schema.json"
     }
   },
-  "required": [
-    "price_per_share",
-    "valuation_date",
-    "valuation_type"
-  ]
+  "required": ["price_per_share", "valuation_date", "valuation_type"]
 }

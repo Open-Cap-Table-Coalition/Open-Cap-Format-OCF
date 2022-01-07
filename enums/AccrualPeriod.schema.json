@@ -4,11 +4,5 @@
   "title": "Enum - AccrualPeriod Type",
   "description": "Enumeration of interest accrual period type",
   "type": "string",
-  "enum": [
-    "DAILY",
-    "MONTHLY",
-    "QUARTERLY",
-    "SEMI_ANNUAL",
-    "ANNUAL"
-  ]
+  "enum": ["DAILY", "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL"]
 }

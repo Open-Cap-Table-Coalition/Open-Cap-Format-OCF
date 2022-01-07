@@ -6,9 +6,9 @@ Objects.Issuer.schema.json#/properties/issuer
 
 Object describing the issuer of the cap table
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json*](../CapTable.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [CapTable.schema.json\*](../CapTable.schema.json "open original schema") |
 
 ## issuer Type
 
@@ -29,13 +29,13 @@ Identifier for the issuer
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Objects.Issuer.schema.json](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
+- defined in: [Objects.Issuer.schema.json](issuer-properties-id.md "Objects.Issuer.schema.json#/properties/id")
 
 ### id Type
 
@@ -47,13 +47,13 @@ Legal name of the issuer
 
 `legal_name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Objects.Issuer.schema.json](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
+- defined in: [Objects.Issuer.schema.json](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -65,13 +65,13 @@ Type representing an instant in Universal Coordinated Time (UTC)
 
 `formation_date`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Date-Time](issuer-properties-type---date-time.md))
+- Type: `object` ([Type - Date-Time](issuer-properties-type---date-time.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Objects.Issuer.schema.json](issuer-properties-type---date-time.md "Types.DateTime.schema.json#/properties/formation_date")
+- defined in: [Objects.Issuer.schema.json](issuer-properties-type---date-time.md "Types.DateTime.schema.json#/properties/formation_date")
 
 ### formation_date Type
 
@@ -83,13 +83,13 @@ Unstructured comments related to and stored for the issuer
 
 `comments`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Objects.Issuer.schema.json](issuer-properties-system-comments-for-issuer-obj.md "Objects.Issuer.schema.json#/properties/comments")
+- defined in: [Objects.Issuer.schema.json](issuer-properties-system-comments-for-issuer-obj.md "Objects.Issuer.schema.json#/properties/comments")
 
 ### comments Type
 

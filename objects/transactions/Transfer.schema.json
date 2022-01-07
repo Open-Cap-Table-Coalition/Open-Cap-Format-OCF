@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Transfer.schema.json",
+  "title": "Object - Transfer Transaction",
+  "description": "Object describing a security transfer or secondary sale transaction",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "consideration": {
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
+    },
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial transfers)",
+      "type": "string"
+    },
+    "resulting_security_ids": {
+      "description": "Array of identifiers for new securities created as a result of the transaction",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["resulting_security_ids"]
+}

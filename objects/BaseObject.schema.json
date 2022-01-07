@@ -21,6 +21,5 @@
       }
     }
   },
-  "required": ["id", "object_type"],
-  "additionalProperties": false
+  "required": ["id", "object_type"]
 }

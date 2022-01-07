@@ -27,13 +27,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `antecedent`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent")
+- defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent")
 
 ### antecedent Type
 
@@ -45,13 +45,13 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 `consequent`
 
-*   is required
+- is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+- Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent")
+- defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent")
 
 ### consequent Type
 

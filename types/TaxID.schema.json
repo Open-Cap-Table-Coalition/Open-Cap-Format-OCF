@@ -14,8 +14,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "tax_id",
-    "country"
-  ]
+  "required": ["tax_id", "country"]
 }

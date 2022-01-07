@@ -4,8 +4,5 @@
   "title": "Enum - Compounding Type",
   "description": "Enumeration of interest compounding type",
   "type": "string",
-  "enum": [
-    "COMPOUNDING",
-    "SIMPLE"
-  ]
+  "enum": ["COMPOUNDING", "SIMPLE"]
 }

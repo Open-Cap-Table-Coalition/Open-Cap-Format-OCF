@@ -27,13 +27,13 @@ Description of an applicable security law exemption governing the issuance
 
 `description`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")
+- defined in: [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")
 
 ### description Type
 
@@ -45,13 +45,13 @@ Country code of the jurisdiction of the applicable law (ISO-3166)
 
 `jurisdiction`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction")
+- defined in: [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction")
 
 ### jurisdiction Type
 
