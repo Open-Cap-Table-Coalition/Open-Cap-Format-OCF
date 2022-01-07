@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.WarrantSplit.schema.json",
+  "title": "Object - Warrant Split Transaction",
+  "description": "Object describing a split of a warrant security",
+  "type": "object",
+  "allOf": [{ "$ref": "Objects.Transactions.Split.schema.json" }]
+}

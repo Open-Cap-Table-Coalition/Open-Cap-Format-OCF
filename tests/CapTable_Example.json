@@ -72,7 +72,6 @@
     }
   ],
   "stock_legend_templates": [],
-  "transactions": [],
   "stock_classes": [
     {
       "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
@@ -191,6 +190,16 @@
       "reason_text": "for testing"
     },
     {
+      "id": "test-quantity-split",
+      "security_id": "test-security-id",
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "date": { "epoch_millis": 42 },
+      "split_ratio": {
+        "antecedent": { "string_value": "1" },
+        "consequent": { "string_value": "2" }
+      }
+    },
+    {
       "id": "test-quantity-transfer",
       "security_id": "test-security-id",
       "date": {
@@ -207,22 +216,6 @@
       },
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "amount": { "amount": { "string_value": "867.53" } }
-    }
-  ],
-  "stock_plans": [
-    {
-      "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
-      "plan_name": "2021 Stock Incentive Plan",
-      "board_approval_date": {
-        "epoch_millis": 1633906514750837
-      },
-      "current_shares_reserved": {
-        "string_value": "10000000.00"
-      },
-      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-      "comments": [
-        "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
-      ]
     }
   ],
   "vesting_schedules": [
