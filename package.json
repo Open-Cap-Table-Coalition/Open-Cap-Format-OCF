@@ -7,6 +7,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^6.0.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.5",
     "prettier": "2.5.1"
