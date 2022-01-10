@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json",
+    "title": "Object - Plan Security Repurchase Release Transaction",
+    "description": "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)",
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "Primitives.Transactions.RepurchaseRelease.BaseRepurchaseRelease.schema.json"
+      }
+    ],
+    "properties": {
+      "object_type": {
+        "const": "TX_PLAN_SECURITY_REPURCHASE_RELEASE"
+      },
+      "id": {},
+      "comments": {},
+      "security_id": {},
+      "date": {},
+      "settlement_date": {},
+      "release_price": {},
+      "net_quantity": {},
+      "method": {},
+      "stock_swap": {},
+      "cash_paid": {},
+      "quantity_sold": {},
+      "sale_price_per_unit": {},
+      "withheld_quantity": {}
+    },
+    "additionalProperties": false,
+    "required": []
+  }
+  

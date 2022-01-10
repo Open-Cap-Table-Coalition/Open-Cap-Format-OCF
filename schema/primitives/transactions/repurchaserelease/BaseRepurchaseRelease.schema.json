@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Primitives.Transactions.RepurchaseRelease.BaseRepurchaseRelease.schema.json",
+  "title": "Primitive - Security Repurchase Release Transaction",
+  "description": "Abstract object describing fields common to all repurchase release transaction objects",
+  "type": "object",
+  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "properties": {
+    "settlement_date": {
+      "description": "Date of settlement",
+      "$ref": "Types.DateTime.schema.json"
+    },
+    "release_price": {
+      "description": "Consideration for the security",
+      "$ref": "Types.Money.schema.json"
+    },
+    "net_quantity": {
+      "description": "Net quantity of security units",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "method": {
+      "description": "Method of repurchase release",
+      "type": "string"
+    },
+    "stock_swap": {
+      "description": "Whether this is a stock swap or not?",
+      "type": "boolean"
+    },
+    "cash_paid": {
+      "description": "Cash paid for the security",
+      "$ref": "Types.Money.schema.json"
+    },
+    "quantity_sold": {
+      "description": "Quantity of security units sold",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "sale_price_per_unit": {
+      "description": "Cash paid for the security",
+      "$ref": "Types.Money.schema.json"
+    },
+    "withheld_quantity": {
+      "description": "Quantity of security units withheld",
+      "$ref": "Types.Numeric.schema.json"
+    }
+  },
+  "required": ["settlement_date", "release_price"]
+}
