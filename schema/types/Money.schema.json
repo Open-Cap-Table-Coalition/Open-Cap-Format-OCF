@@ -5,14 +5,14 @@
   "description": "Type representing a monetary value in a specified currency code",
   "type": "object",
   "properties": {
-    "amount": {
-      "description": "Numeric value",
-      "$ref": "Types.Numeric.schema.json"
+    "string_value": {
+      "description": "Fixed-point numeric value as string",
+      "type": "string"
     },
     "currency": {
       "description": "ISO-4217 currency code",
       "type": "string"
     }
   },
-  "required": ["amount"]
+  "required": ["string_value", "currency"]
 }

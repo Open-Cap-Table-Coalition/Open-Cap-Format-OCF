@@ -93,15 +93,11 @@
         "string_value": "1"
       },
       "par_value": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "string_value": "0.0001000000",
         "currency": "USD"
       },
       "price_per_share": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "string_value": "0.0001000000",
         "currency": "USD"
       },
       "seniority": {
@@ -132,15 +128,11 @@
         "string_value": "1"
       },
       "par_value": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "string_value": "0.0001000000",
         "currency": "USD"
       },
       "price_per_share": {
-        "amount": {
-          "string_value": "2.4700000000"
-        },
+        "string_value": "2.4700000000",
         "currency": "USD"
       },
       "seniority": {
