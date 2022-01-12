@@ -7,5 +7,5 @@ This package is included as a dependency in the [`package.json`](../package.json
 Once installed, the `@adobe/jsonschema2md` package can by executing the following command:
 
 ```sh
-npx jsonschema2md -d schema -o gen/docs -x -
+npm run generate-docs
 ```
