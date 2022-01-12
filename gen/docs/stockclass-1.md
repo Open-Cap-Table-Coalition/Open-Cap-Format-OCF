@@ -29,8 +29,8 @@ all of
 | [current_shares_authorized](#current_shares_authorized)             | `object`      | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_authorized")                                |
 | [board_approval_date](#board_approval_date)                         | `object`      | Required | cannot be null | [Object - StockClass](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")                                       |
 | [votes_per_share](#votes_per_share)                                 | `object`      | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/votes_per_share")                                          |
-| [par_value](#par_value)                                             | `object`      | Required | cannot be null | [Object - StockClass](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/par_value")                                                 |
-| [price_per_share](#price_per_share)                                 | `object`      | Required | cannot be null | [Object - StockClass](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")                                           |
+| [par_value](#par_value)                                             | `object`      | Required | cannot be null | [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/par_value")                                         |
+| [price_per_share](#price_per_share)                                 | `object`      | Required | cannot be null | [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")                                   |
 | [seniority](#seniority)                                             | `object`      | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/seniority")                                                |
 | [conversion_rights](#conversion_rights)                             | `array`       | Optional | cannot be null | [Object - StockClass](stockclass-1-properties-stockclass---stockclassconversionrights-array.md "Objects.StockClass.schema.json#/properties/conversion_rights") |
 | [liquidation_preference_multiple](#liquidation_preference_multiple) | `object`      | Optional | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/liquidation_preference_multiple")                          |
@@ -189,15 +189,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/par_value")
+*   defined in: [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/par_value")
 
 ### par_value Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## price_per_share
 
@@ -207,15 +207,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - StockClass](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
+*   defined in: [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## seniority
 
@@ -243,7 +243,7 @@ List of StockClassConversionRights possible for this StockClass
 
 *   is optional
 
-*   Type: `object[]` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+*   Type: `object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 *   cannot be null
 
@@ -251,7 +251,7 @@ List of StockClassConversionRights possible for this StockClass
 
 ### conversion_rights Type
 
-`object[]` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+`object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 ## liquidation_preference_multiple
 

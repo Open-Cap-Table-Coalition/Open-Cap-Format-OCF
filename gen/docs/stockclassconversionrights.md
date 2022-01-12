@@ -24,7 +24,7 @@ one (and only one) of
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ratio](#ratio)                                           | `object`  | Required | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                                         |
+| [ratio](#ratio)                                           | `object`  | Required | cannot be null | [Type - StockClassConversionRights](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                                                |
 | [converts_to_future_round](#converts_to_future_round)     | `boolean` | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")     |
 | [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`  | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id") |
 | [rounding_type](#rounding_type)                           | `string`  | Required | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")                                      |
@@ -37,15 +37,15 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 *   is required
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+*   Type: `object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+*   defined in: [Type - StockClassConversionRights](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
 
 ### ratio Type
 
-`object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+`object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 ## converts_to_future_round
 

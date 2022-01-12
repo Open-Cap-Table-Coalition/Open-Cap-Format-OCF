@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Repurchase Transaction Schema
 
 ```txt
-Objects.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids/items
+Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids/items
 ```
 
 

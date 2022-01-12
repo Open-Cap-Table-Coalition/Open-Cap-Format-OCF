@@ -24,7 +24,7 @@ all of
 | :---------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)         | Not specified | Optional | cannot be null | [Object - Valuation](valuation-1-properties-object_type.md "Objects.Valuation.schema.json#/properties/object_type")            |
 | [provider](#provider)               | `string`      | Optional | cannot be null | [Object - Valuation](valuation-1-properties-provider.md "Objects.Valuation.schema.json#/properties/provider")                  |
-| [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")            |
+| [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")    |
 | [valuation_date](#valuation_date)   | `object`      | Required | cannot be null | [Object - Valuation](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/valuation_date")             |
 | [valuation_type](#valuation_type)   | `string`      | Required | cannot be null | [Object - Valuation](valuation-1-properties-enum---valuation-type.md "Enums.Valuation.schema.json#/properties/valuation_type") |
 | [id](#id)                           | Not specified | Optional | cannot be null | [Object - Valuation](valuation-1-properties-id.md "Objects.Valuation.schema.json#/properties/id")                              |
@@ -82,15 +82,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
+*   defined in: [Object - Valuation](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## valuation_date
 

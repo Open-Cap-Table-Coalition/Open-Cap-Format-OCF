@@ -27,7 +27,7 @@ all of
 | [custom_id](#custom_id)                             | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/custom_id")                                                          |
 | [stakeholder_id](#stakeholder_id)                   | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/stakeholder_id")                                                |
 | [board_approval_date](#board_approval_date)         | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")                                                                               |
-| [consideration](#consideration)                     | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                                     |
+| [consideration](#consideration)                     | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                             |
 | [security_law_exemptions](#security_law_exemptions) | `array`  | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions") |
 
 ## custom_id
@@ -92,15 +92,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## security_law_exemptions
 

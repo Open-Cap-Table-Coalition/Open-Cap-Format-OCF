@@ -25,7 +25,7 @@ all of
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                              |
 | :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "Primitives.Transactions.Split.BaseSplit.schema.json#/properties/resulting_security_ids") |
-| [split_ratio](#split_ratio)                       | `object` | Required | cannot be null | [Primitive - Security Split Transaction](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/split_ratio")                                                       |
+| [split_ratio](#split_ratio)                       | `object` | Required | cannot be null | [Primitive - Security Split Transaction](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/split_ratio")                                                              |
 
 ## resulting_security_ids
 
@@ -59,12 +59,12 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 *   is required
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+*   Type: `object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Split Transaction](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/split_ratio")
+*   defined in: [Primitive - Security Split Transaction](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/split_ratio")
 
 ### split_ratio Type
 
-`object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+`object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))

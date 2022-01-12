@@ -28,10 +28,10 @@ all of
 | :------------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-object_type.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/object_type")                         |
 | [stock_class_id](#stock_class_id)                       | `string`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock_class_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_class_id")                   |
-| [share_price](#share_price)                             | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/share_price")                                                         |
+| [share_price](#share_price)                             | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/share_price")                                                 |
 | [quantity](#quantity)                                   | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                           |
 | [vesting](#vesting)                                     | `object`      | Optional | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                 |
-| [cost_basis](#cost_basis)                               | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")                                                          |
+| [cost_basis](#cost_basis)                               | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")                                                  |
 | [stock_legend_ids](#stock_legend_ids)                   | `array`       | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock---stock-legend-id-array.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_legend_ids")  |
 | [issued_from_parent_object](#issued_from_parent_object) | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")                              |
 | [id](#id)                                               | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/id")                                           |
@@ -96,15 +96,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
+*   defined in: [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
 
 ### share_price Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## quantity
 
@@ -150,15 +150,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
+*   defined in: [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
 
 ### cost_basis Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## stock_legend_ids
 

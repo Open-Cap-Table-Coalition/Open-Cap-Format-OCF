@@ -24,7 +24,7 @@ one (and only one) of
 
 | Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                          |
 | :-------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ratio](#ratio)                                           | `object`  | Optional | cannot be null | [Type - ConversionTrigger](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                       |
+| [ratio](#ratio)                                           | `object`  | Optional | cannot be null | [Type - ConversionTrigger](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                              |
 | [rounding_type](#rounding_type)                           | `string`  | Required | cannot be null | [Type - ConversionTrigger](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")                    |
 | [nickname](#nickname)                                     | `string`  | Optional | cannot be null | [Type - ConversionTrigger](conversiontrigger-properties-nickname.md "Types.ConversionTrigger.schema.json#/properties/nickname")                                     |
 | [description](#description)                               | `string`  | Required | cannot be null | [Type - ConversionTrigger](conversiontrigger-properties-description.md "Types.ConversionTrigger.schema.json#/properties/description")                               |
@@ -40,15 +40,15 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 *   is optional
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+*   Type: `object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Type - ConversionTrigger](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+*   defined in: [Type - ConversionTrigger](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
 
 ### ratio Type
 
-`object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+`object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 ## rounding_type
 

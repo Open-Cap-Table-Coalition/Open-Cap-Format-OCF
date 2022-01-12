@@ -24,7 +24,7 @@ all of
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
 | :------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Transfer Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                               |
+| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                       |
 | [balance_security_id](#balance_security_id)       | `string` | Optional | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-balance_security_id.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/balance_security_id")                                |
 | [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-security-transfer---resulting-security-id-array.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/resulting_security_ids") |
 
@@ -36,15 +36,15 @@ Type representing a monetary value in a specified currency code
 
 *   is optional
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transfer Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## balance_security_id
 

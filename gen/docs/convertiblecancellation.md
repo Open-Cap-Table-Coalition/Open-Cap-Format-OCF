@@ -27,7 +27,7 @@ all of
 | Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                           |
 | :-------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/object_type")                   |
-| [amount](#amount)                             | `object`      | Required | cannot be null | [Object - Convertible Cancellation Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                                |
+| [amount](#amount)                             | `object`      | Required | cannot be null | [Object - Convertible Cancellation Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                        |
 | [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/id")                                     |
 | [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/comments")                         |
 | [security_id](#security_id)                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/security_id")                   |
@@ -69,15 +69,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/amount")
+*   defined in: [Object - Convertible Cancellation Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")
 
 ### amount Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## id
 

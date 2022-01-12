@@ -1,7 +1,7 @@
 # Security Repurchase - Resulting Security Id Array Schema
 
 ```txt
-Objects.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids
+Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids
 ```
 
 For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.

@@ -1,7 +1,7 @@
 # Primitive - Security Repurchase Transaction Schema
 
 ```txt
-Objects.Transactions.Repurchase.BaseRepurchase.schema.json
+Primitives.Transactions.Repurchase.BaseRepurchase.schema.json
 ```
 
 Abstract object describing a repurchase transaction
@@ -22,12 +22,12 @@ all of
 
 # Primitive - Security Repurchase Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
-| :------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price")                                                                                            |
-| [quantity](#quantity)                             | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                                        |
-| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                                    |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Objects.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                       |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price")                                                                                       |
+| [quantity](#quantity)                             | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                                           |
+| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                               |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids") |
 
 ## price
 
@@ -37,15 +37,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/price")
+*   defined in: [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price")
 
 ### price Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## quantity
 
@@ -73,15 +73,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## resulting_security_ids
 
@@ -95,7 +95,7 @@ For partial repurchases, list of security id(s) of the resulting stock objects h
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Objects.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

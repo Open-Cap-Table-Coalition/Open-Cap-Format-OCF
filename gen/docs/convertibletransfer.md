@@ -26,7 +26,7 @@ all of
 
 | Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                               |
 | :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [amount](#amount)                                 | `object`      | Required | cannot be null | [Object - Convertible Transfer Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                        |
+| [amount](#amount)                                 | `object`      | Required | cannot be null | [Object - Convertible Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                |
 | [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/id")                                         |
 | [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-comments.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/comments")                             |
 | [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-security_id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/security_id")                       |
@@ -43,15 +43,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/amount")
+*   defined in: [Object - Convertible Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")
 
 ### amount Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## id
 

@@ -24,35 +24,35 @@ all of
 
 # Object - Convertible Issuance Transaction Properties
 
-| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
-| :-------------------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-object_type.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/object_type")                                                           |
-| [convertible_type](#convertible_type)                     | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-type.md "Enums.Convertible.schema.json#/properties/convertible_type")                                                                          |
-| [conversion_type](#conversion_type)                       | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-conversion-type.md "Enums.Conversion.schema.json#/properties/conversion_type")                                                                 |
-| [original_principal_amount](#original_principal_amount)   | `object`      | Required | cannot be null | [Object - Convertible Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")                                                                                         |
-| [interest_rate](#interest_rate)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/interest_rate")                                                                                                    |
-| [day_count_convention](#day_count_convention)             | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---daycount-type.md "Enums.DayCount.schema.json#/properties/day_count_convention")                                                                            |
-| [interest_payout](#interest_payout)                       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---interestpayout-type.md "Enums.InterestPayout.schema.json#/properties/interest_payout")                                                                     |
-| [maturity_date](#maturity_date)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")                                                                                                     |
-| [default_conversion_rights](#default_conversion_rights)   | Merged        | Required | cannot be null | [Object - Convertible Issuance Transaction](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights") |
-| [conversion_triggers](#conversion_triggers)               | `array`       | Required | can be null    | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible---typesconversiontriggerschemajson-array.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/conversion_triggers")          |
-| [exit_multiple](#exit_multiple)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")                                                                                       |
-| [interest_accrual_period](#interest_accrual_period)       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---accrualperiod-type.md "Enums.AccrualPeriod.schema.json#/properties/interest_accrual_period")                                                               |
-| [compounding_type](#compounding_type)                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---compounding-type.md "Enums.Compounding.schema.json#/properties/compounding_type")                                                                          |
-| [pro_rata](#pro_rata)                                     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")                                                                                                         |
-| [conversion_valuation_cap](#conversion_valuation_cap)     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")                                                                                          |
-| [conversion_discount](#conversion_discount)               | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_discount")                                                                                              |
-| [conversion_fixed_ownership](#conversion_fixed_ownership) | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_fixed_ownership")                                                                                       |
-| [seniority](#seniority)                                   | `integer`     | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-seniority.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/seniority")                                                               |
-| [id](#id)                                                 | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/id")                                                                             |
-| [comments](#comments)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-comments.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/comments")                                                                 |
-| [security_id](#security_id)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/security_id")                                                           |
-| [date](#date)                                             | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-date.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/date")                                                                         |
-| [custom_id](#custom_id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-custom_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/custom_id")                                                               |
-| [stakeholder_id](#stakeholder_id)                         | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/stakeholder_id")                                                     |
-| [board_approval_date](#board_approval_date)               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/board_approval_date")                                           |
-| [consideration](#consideration)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-consideration.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/consideration")                                                       |
-| [security_law_exemptions](#security_law_exemptions)       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/security_law_exemptions")                                   |
+| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                          |
+| :-------------------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-object_type.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/object_type")                                                  |
+| [convertible_type](#convertible_type)                     | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-type.md "Enums.Convertible.schema.json#/properties/convertible_type")                                                                 |
+| [conversion_type](#conversion_type)                       | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-conversion-type.md "Enums.Conversion.schema.json#/properties/conversion_type")                                                        |
+| [original_principal_amount](#original_principal_amount)   | `object`      | Required | cannot be null | [Object - Convertible Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")                                                                        |
+| [interest_rate](#interest_rate)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/interest_rate")                                                                                           |
+| [day_count_convention](#day_count_convention)             | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---daycount-type.md "Enums.DayCount.schema.json#/properties/day_count_convention")                                                                   |
+| [interest_payout](#interest_payout)                       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---interestpayout-type.md "Enums.InterestPayout.schema.json#/properties/interest_payout")                                                            |
+| [maturity_date](#maturity_date)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")                                                                                            |
+| [default_conversion_rights](#default_conversion_rights)   | Merged        | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")                               |
+| [conversion_triggers](#conversion_triggers)               | `array`       | Required | can be null    | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible---typesconversiontriggerschemajson-array.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/conversion_triggers") |
+| [exit_multiple](#exit_multiple)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")                                                                                     |
+| [interest_accrual_period](#interest_accrual_period)       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---accrualperiod-type.md "Enums.AccrualPeriod.schema.json#/properties/interest_accrual_period")                                                      |
+| [compounding_type](#compounding_type)                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---compounding-type.md "Enums.Compounding.schema.json#/properties/compounding_type")                                                                 |
+| [pro_rata](#pro_rata)                                     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/pro_rata")                                                                                                |
+| [conversion_valuation_cap](#conversion_valuation_cap)     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")                                                                         |
+| [conversion_discount](#conversion_discount)               | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_discount")                                                                                     |
+| [conversion_fixed_ownership](#conversion_fixed_ownership) | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/conversion_fixed_ownership")                                                                              |
+| [seniority](#seniority)                                   | `integer`     | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-seniority.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/seniority")                                                      |
+| [id](#id)                                                 | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/id")                                                                    |
+| [comments](#comments)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-comments.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/comments")                                                        |
+| [security_id](#security_id)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/security_id")                                                  |
+| [date](#date)                                             | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-date.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/date")                                                                |
+| [custom_id](#custom_id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-custom_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/custom_id")                                                      |
+| [stakeholder_id](#stakeholder_id)                         | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/stakeholder_id")                                            |
+| [board_approval_date](#board_approval_date)               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/board_approval_date")                                  |
+| [consideration](#consideration)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-consideration.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/consideration")                                              |
+| [security_law_exemptions](#security_law_exemptions)       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/security_law_exemptions")                          |
 
 ## object_type
 
@@ -143,15 +143,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")
+*   defined in: [Object - Convertible Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/original_principal_amount")
 
 ### original_principal_amount Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## interest_rate
 
@@ -251,15 +251,15 @@ Type representation of a conversion right from one security into a StockClass.
 
 *   is required
 
-*   Type: `object` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+*   Type: `object` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")
 
 ### default_conversion_rights Type
 
-`object` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+`object` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 one (and only one) of
 
@@ -293,15 +293,15 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 *   is optional
 
-*   Type: `object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+*   Type: `object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](stockclassconversionrights-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")
 
 ### exit_multiple Type
 
-`object` ([Type - Ratio](stockclassconversionrights-properties-type---ratio.md))
+`object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
 
 ## interest_accrual_period
 
@@ -386,15 +386,15 @@ Type representing a monetary value in a specified currency code
 
 *   is optional
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")
+*   defined in: [Object - Convertible Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/conversion_valuation_cap")
 
 ### conversion_valuation_cap Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## conversion_discount
 

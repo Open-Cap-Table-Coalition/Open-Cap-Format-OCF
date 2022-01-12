@@ -29,8 +29,8 @@ all of
 | [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/object_type")                                      |
 | [conversion_rights](#conversion_rights)             | `array`       | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant---stockclassconversionrights-array.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/conversion_rights") |
 | [quantity](#quantity)                               | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                            |
-| [exercise_price](#exercise_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                                       |
-| [purchase_price](#purchase_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")                                                                       |
+| [exercise_price](#exercise_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                               |
+| [purchase_price](#purchase_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")                                                               |
 | [vesting](#vesting)                                 | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                  |
 | [expiration_date](#expiration_date)                 | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/expiration_date")                                                                      |
 | [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/id")                                                        |
@@ -77,7 +77,7 @@ What can this instrument convert into for a maturity or next equity financing co
 
 *   is required
 
-*   Type: `object[]` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+*   Type: `object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 *   cannot be null
 
@@ -85,7 +85,7 @@ What can this instrument convert into for a maturity or next equity financing co
 
 ### conversion_rights Type
 
-`object[]` ([Type - StockClassConversionRights](stockclass-1-properties-stockclass---stockclassconversionrights-array-type---stockclassconversionrights.md))
+`object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
 
 ## quantity
 
@@ -113,15 +113,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
+*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
 
 ### exercise_price Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## purchase_price
 
@@ -131,15 +131,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")
+*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")
 
 ### purchase_price Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## vesting
 

@@ -29,7 +29,7 @@ any of
 | [compensation_type](#compensation_type)                       | `string`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---compensation-type.md "Enums.Compensation.schema.json#/properties/compensation_type")                                                                         |
 | [option_grant_type](#option_grant_type)                       | `string`      | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")                                                                                     |
 | [quantity](#quantity)                                         | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                                                            |
-| [exercise_price](#exercise_price)                             | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                                                                       |
+| [exercise_price](#exercise_price)                             | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                                                               |
 | [vesting](#vesting)                                           | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                                                  |
 | [expiration_date](#expiration_date)                           | Merged        | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/expiration_date")                                                    |
 | [termination_exercise_windows](#termination_exercise_windows) | `array`       | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows") |
@@ -168,15 +168,15 @@ Type representing a monetary value in a specified currency code
 
 *   is required
 
-*   Type: `object` ([Type - Money](stockclass-1-properties-type---money.md))
+*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](stockclass-1-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
 
 ### exercise_price Type
 
-`object` ([Type - Money](stockclass-1-properties-type---money.md))
+`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
 
 ## vesting
 

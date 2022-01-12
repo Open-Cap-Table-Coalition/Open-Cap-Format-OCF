@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Repurchase.BaseRepurchase.schema.json",
+  "$id": "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json",
   "title": "Primitive - Security Repurchase Transaction",
   "description": "Abstract object describing a repurchase transaction",
   "type": "object",
