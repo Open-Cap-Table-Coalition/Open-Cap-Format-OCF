@@ -82,6 +82,18 @@
           },
           {
             "$ref": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.ConvertibleRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.StockRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.WarrantRetraction.schema.json"
           }
         ]
       }
