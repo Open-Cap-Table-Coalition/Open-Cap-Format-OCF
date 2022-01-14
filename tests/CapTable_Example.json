@@ -5,9 +5,7 @@
     "object_type": "ISSUER",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
-    "formation_date": {
-      "epoch_millis": 615614400
-    },
+    "formation_date": "2010-01-01",
     "country_of_formation": "USA",
     "state_of_formation": "DE",
     "tax_ids": [
@@ -174,7 +172,7 @@
       "id": "convertible-retraction",
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "security_id": "test-convertible-retraction",
-      "date": { "epoch_millis": 42 },
+      "date": "2021-01-14T08:50Z",
       "reason_text": "oops"
     }
   ],

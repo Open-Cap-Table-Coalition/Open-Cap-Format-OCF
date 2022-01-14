@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.DateTimeString.schema.json",
+  "title": "Type - DateTimeString",
+  "description": "Type representing an ISO-8601 date & time, e.g. 2021-01-28T13:00:39+00:00. Sub-second precision to milliseconds should be supported, but is not required.",
+  "type": "string",
+  "format": "date-time"
+}
