@@ -64,7 +64,7 @@
         },
         "currency": "USD"
       },
-      "resulting_security_id": "new-security"
+      "resulting_security_ids": ["new-security"]
     }
   ],
   "stock_legend_templates": [],
