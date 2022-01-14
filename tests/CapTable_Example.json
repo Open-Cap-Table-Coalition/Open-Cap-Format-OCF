@@ -169,7 +169,15 @@
       "comments": []
     }
   ],
-  "transactions": [],
+  "transactions": [
+    {
+      "id": "convertible-retraction",
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "security_id": "test-convertible-retraction",
+      "date": { "epoch_millis": 42 },
+      "reason_text": "oops"
+    }
+  ],
   "vesting_schedules": [
     {
       "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",

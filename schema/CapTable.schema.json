@@ -42,27 +42,59 @@
       "description": "List of transactions for the cap table",
       "type": "array",
       "items": {
-        "anyOf": [
-          { "$ref": "Objects.Transactions.PlanSecurityIssuance.schema.json" },
-          { "$ref": "Objects.Transactions.ConvertibleIssuance.schema.json" },
-          { "$ref": "Objects.Transactions.WarrantIssuance.schema.json" },
-          { "$ref": "Objects.Transactions.StockIssuance.schema.json" },
-          { "$ref": "Objects.Transactions.SecurityAcceptance.schema.json" },
+        "oneOf": [
           {
-            "$ref": "Objects.Transactions.PlanSecurityCancellation.schema.json"
+            "$ref": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.ConvertibleCancellation.schema.json"
+            "$ref": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json"
           },
-          { "$ref": "Objects.Transactions.WarrantCancellation.schema.json" },
-          { "$ref": "Objects.Transactions.StockCancellation.schema.json" },
-          { "$ref": "Objects.Transactions.PlanSecuritySplit.schema.json" },
-          { "$ref": "Objects.Transactions.WarrantSplit.schema.json" },
-          { "$ref": "Objects.Transactions.StockSplit.schema.json" },
-          { "$ref": "Objects.Transactions.StockTransfer.schema.json" },
-          { "$ref": "Objects.Transactions.PlanSecurityTransfer.schema.json" },
-          { "$ref": "Objects.Transactions.WarrantTransfer.schema.json" },
-          { "$ref": "Objects.Transactions.ConvertibleTransfer.schema.json" }
+          {
+            "$ref": "Objects.Transactions.Issuance.WarrantIssuance.schema.json"
+          },
+          { "$ref": "Objects.Transactions.Issuance.StockIssuance.schema.json" },
+          {
+            "$ref": "Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Cancellation.StockCancellation.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Split.PlanSecuritySplit.schema.json"
+          },
+          { "$ref": "Objects.Transactions.Split.WarrantSplit.schema.json" },
+          { "$ref": "Objects.Transactions.Split.StockSplit.schema.json" },
+          { "$ref": "Objects.Transactions.Transfer.StockTransfer.schema.json" },
+          {
+            "$ref": "Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.WarrantTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.ConvertibleRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.StockRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Retraction.WarrantRetraction.schema.json"
+          }
         ]
       }
     },
