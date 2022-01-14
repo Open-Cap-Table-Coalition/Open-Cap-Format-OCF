@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "prettier . --check --ignore-unknown",
     "fix": "prettier . --check --write --ignore-unknown",
-    "generate-docs": "jsonschema2md -d schema -o gen/docs -x -",
+    "generate-docs": "jsonschema2md --input schema --out gen/docs -x -",
     "prepare": "husky install"
   },
   "devDependencies": {
