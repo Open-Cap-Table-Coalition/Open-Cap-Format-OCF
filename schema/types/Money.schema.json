@@ -7,7 +7,8 @@
   "properties": {
     "string_value": {
       "description": "Fixed-point numeric value as string",
-      "type": "string"
+      "type": "string",
+      "pattern": "^[+-]?[0-9]+(\.[0-9]{1,10})?$"
     },
     "currency": {
       "description": "ISO-4217 currency code",
