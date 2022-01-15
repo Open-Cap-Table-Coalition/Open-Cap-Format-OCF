@@ -8,7 +8,7 @@
   "properties": {
     "settlement_date": {
       "description": "Date of settlement",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "release_price": {
       "description": "Consideration for the security",

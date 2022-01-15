@@ -27,7 +27,7 @@ all of
 | [class_type](#class_type)                                           | `string`      | Required | cannot be null | [Object - StockClass](stockclass-1-properties-enum---stockclass-type.md "Enums.StockClass.schema.json#/properties/class_type")                                 |
 | [default_id_prefix](#default_id_prefix)                             | `string`      | Required | cannot be null | [Object - StockClass](stockclass-1-properties-default_id_prefix.md "Objects.StockClass.schema.json#/properties/default_id_prefix")                             |
 | [current_shares_authorized](#current_shares_authorized)             | `object`      | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_authorized")                                |
-| [board_approval_date](#board_approval_date)                         | `object`      | Required | cannot be null | [Object - StockClass](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")                                       |
+| [board_approval_date](#board_approval_date)                         | `string`      | Required | cannot be null | [Object - StockClass](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")                                   |
 | [votes_per_share](#votes_per_share)                                 | `object`      | Required | cannot be null | [Object - StockClass](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/votes_per_share")                                          |
 | [par_value](#par_value)                                             | `object`      | Required | cannot be null | [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/par_value")                                         |
 | [price_per_share](#price_per_share)                                 | `object`      | Required | cannot be null | [Object - StockClass](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")                                   |
@@ -147,21 +147,25 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 ## board_approval_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `board_approval_date`
 
 *   is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - StockClass](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")
+*   defined in: [Object - StockClass](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### board_approval_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## votes_per_share
 

@@ -24,7 +24,7 @@ all of
 
 | Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
 | :------------------------------------------------ | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [resulting_security_ids](#resulting_security_ids) | `array` | Optional | cannot be null | [Primitive - Security Re-issuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids") |
+| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Re-issuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids") |
 
 ## resulting_security_ids
 
@@ -32,7 +32,7 @@ Identifier of the new security (or securities) issuance resulting from a re-issu
 
 `resulting_security_ids`
 
-*   is optional
+*   is required
 
 *   Type: `string[]`
 

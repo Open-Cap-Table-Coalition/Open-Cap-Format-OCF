@@ -44,7 +44,7 @@
           "type": "null"
         },
         {
-          "$ref": "Types.DateTime.schema.json"
+          "$ref": "Types.DateString.schema.json"
         }
       ]
     },

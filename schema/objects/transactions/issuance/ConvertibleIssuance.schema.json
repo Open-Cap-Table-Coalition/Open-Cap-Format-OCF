@@ -39,7 +39,7 @@
     },
     "maturity_date": {
       "description": "What is the maturity date (if applicable)",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "default_conversion_rights": {
       "description": "What can this instrument convert into for a maturity or next equity financing conversion? Default, basic conversion ratio for this convertible expressed as a ratio of shares / unit principal.",

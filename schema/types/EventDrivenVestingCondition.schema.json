@@ -17,7 +17,7 @@
           "description": "Event has not occurred (null)"
         },
         {
-          "$ref": "Types.DateTime.schema.json",
+          "$ref": "Types.DateString.schema.json",
           "description": "Event has occurred at this datetime"
         }
       ]
@@ -30,7 +30,7 @@
           "description": "No expiration date (null)"
         },
         {
-          "$ref": "Types.DateTime.schema.json",
+          "$ref": "Types.DateString.schema.json",
           "description": "Datetime @ which condition ceases to apply"
         }
       ]

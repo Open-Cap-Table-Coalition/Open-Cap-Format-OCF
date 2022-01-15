@@ -26,8 +26,8 @@
       "$ref": "Types.Numeric.schema.json"
     },
     "board_approval_date": {
-      "description": "Date which board approved the class",
-      "$ref": "Types.DateTime.schema.json"
+      "description": "Date on which board approved the class",
+      "$ref": "Types.DateString.schema.json"
     },
     "votes_per_share": {
       "description": "The number of votes each share of this StockClass gets",

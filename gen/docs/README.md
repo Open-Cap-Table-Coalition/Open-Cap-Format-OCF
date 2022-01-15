@@ -56,6 +56,8 @@
 
 *   [Object - Convertible Issuance Transaction](./convertibleissuance.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.ConvertibleIssuance.schema.json`
 
+*   [Object - Convertible Retraction Transaction](./convertibleretraction.md "Object describing a retraction of a convertible security") – `Objects.Transactions.Retraction.ConvertibleRetraction.schema.json`
+
 *   [Object - Convertible Transfer Transaction](./convertibletransfer.md "Object describing a transfer or secondary sale of a convertible security") – `Objects.Transactions.Transfer.ConvertibleTransfer.schema.json`
 
 *   [Object - Issuer](./issuer.md "Object describing the issuer of the cap table") – `Objects.Issuer.schema.json`
@@ -64,7 +66,13 @@
 
 *   [Object - Plan Security Cancellation Transaction](./plansecuritycancellation.md "Object describing a cancellation of a plan security") – `Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json`
 
+*   [Object - Plan Security Exercise Transaction](./plansecurityexercise.md "Object describing a plan security exercise transaction") – `Objects.Transactions.Exercise.PlanSecurityExercise.schema.json`
+
 *   [Object - Plan Security Issuance Transaction](./plansecurityissuance.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json`
+
+*   [Object - Plan Security Repurchase Release Transaction](./plansecurityrepurchaserelease.md "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)") – `Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json`
+
+*   [Object - Plan Security Retraction Transaction](./plansecurityretraction.md "Object describing a retraction of a plan security") – `Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json`
 
 *   [Object - Plan Security Split Transaction](./plansecuritysplit.md "Object describing a split of a plan security") – `Objects.Transactions.Split.PlanSecuritySplit.schema.json`
 
@@ -81,6 +89,8 @@
 *   [Object - Stock Re-issuance Transaction](./stockreissuance.md "Object describing a re-issuance of stock") – `Objects.Transactions.Reissuance.StockReissuance.schema.json`
 
 *   [Object - Stock Repurchase Transaction](./stockrepurchase.md "Object describing a stock repurchase transaction") – `Objects.Transactions.Repurchase.StockRepurchase.schema.json`
+
+*   [Object - Stock Retraction Transaction](./stockretraction.md "Object describing a retraction of a stock security") – `Objects.Transactions.Retraction.StockRetraction.schema.json`
 
 *   [Object - Stock Split Transaction](./stocksplit.md "Object describing a split of a stock security") – `Objects.Transactions.Split.StockSplit.schema.json`
 
@@ -100,7 +110,11 @@
 
 *   [Object - Warrant Cancellation Transaction](./warrantcancellation.md "Object describing a cancellation of a warrant security") – `Objects.Transactions.Cancellation.WarrantCancellation.schema.json`
 
+*   [Object - Warrant Exercise Transaction](./warrantexercise.md "Object describing a warrant exercise transaction") – `Objects.Transactions.Exercise.WarrantExercise.schema.json`
+
 *   [Object - Warrant Issuance Transaction](./warrantissuance.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json`
+
+*   [Object - Warrant Retraction Transaction](./warrantretraction.md "Object describing a retraction of a warrant security") – `Objects.Transactions.Retraction.WarrantRetraction.schema.json`
 
 *   [Object - Warrant Split Transaction](./warrantsplit.md "Object describing a split of a warrant security") – `Objects.Transactions.Split.WarrantSplit.schema.json`
 
@@ -110,11 +124,17 @@
 
 *   [Primitive - Security Cancellation Transaction](./basecancellation.md "Abstract object describing fields common to all cancellation transaction objects") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json`
 
+*   [Primitive - Security Exercise Transaction](./baseexercise.md "Abstract object describing fields common to all exercise transaction objects") – `Primitives.Transactions.Exercise.BaseExercise.schema.json`
+
 *   [Primitive - Security Issuance Transaction](./baseissuance.md "Abstract object describing fields common to all issuance objects") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json`
 
 *   [Primitive - Security Re-issuance Transaction](./basereissuance.md "Abstract object describing common properties to a re-issuance of a security") – `Primitives.Transactions.Reissuance.BaseReissuance.schema.json`
 
+*   [Primitive - Security Repurchase Release Transaction](./baserepurchaserelease.md "Abstract object describing fields common to all repurchase release transaction objects") – `Primitives.Transactions.RepurchaseRelease.BaseRepurchaseRelease.schema.json`
+
 *   [Primitive - Security Repurchase Transaction](./baserepurchase.md "Abstract object describing a repurchase transaction") – `Primitives.Transactions.Repurchase.BaseRepurchase.schema.json`
+
+*   [Primitive - Security Retraction Transaction](./baseretraction.md "Abstract object describing a security retraction transaction") – `Primitives.Transactions.Retraction.BaseRetraction.schema.json`
 
 *   [Primitive - Security Split Transaction](./basesplit.md "Abstract object describing a security split transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json`
 
@@ -130,7 +150,11 @@
 
 *   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of an vesting tranche by date and quantity") – `Types.CustomVestingTranche.schema.json`
 
+*   [Type - DateString](./datestring.md "Type representing an ISO-8601 date, e") – `Types.DateString.schema.json`
+
 *   [Type - DateTime](./datetime.md "Type representing an instant in Universal Coordinated Time (UTC)") – `Types.DateTime.schema.json`
+
+*   [Type - DateTimeString](./datetimestring.md "Type representing an ISO-8601 date & time, e") – `Types.DateTimeString.schema.json`
 
 *   [Type - Email](./email-1.md "Type representation of an email address") – `Types.Email.schema.json`
 
@@ -166,33 +190,39 @@
 
 *   [Object - BaseObject](./issuer-allof-object---baseobject.md "Abstract object to be extended by all other objects") – `Primitives.BaseObject.schema.json#/allOf/0`
 
-*   [Object - Convertible Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---convertible-cancellation-transaction.md "Object describing a cancellation of a convertible security") – `Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/transactions/items/anyOf/6`
+*   [Object - Convertible Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-cancellation-transaction.md "Object describing a cancellation of a convertible security") – `Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/transactions/items/oneOf/6`
 
-*   [Object - Convertible Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---convertible-issuance-transaction.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/transactions/items/anyOf/1`
+*   [Object - Convertible Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-issuance-transaction.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/transactions/items/oneOf/1`
 
-*   [Object - Convertible Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---convertible-transfer-transaction.md "Object describing a transfer or secondary sale of a convertible security") – `Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/transactions/items/anyOf/15`
+*   [Object - Convertible Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-retraction-transaction.md "Object describing a retraction of a convertible security") – `Objects.Transactions.Retraction.ConvertibleRetraction.schema.json#/properties/transactions/items/oneOf/16`
+
+*   [Object - Convertible Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-transfer-transaction.md "Object describing a transfer or secondary sale of a convertible security") – `Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/transactions/items/oneOf/15`
 
 *   [Object - Issuer](./captable-properties-object---issuer.md "Object describing the issuer of the cap table") – `Objects.Issuer.schema.json#/properties/issuer`
 
-*   [Object - Plan Security Acceptance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---plan-security-acceptance-transaction.md "Object describing a plan security acceptance transaction") – `Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json#/properties/transactions/items/anyOf/4`
+*   [Object - Plan Security Acceptance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-acceptance-transaction.md "Object describing a plan security acceptance transaction") – `Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json#/properties/transactions/items/oneOf/4`
 
-*   [Object - Plan Security Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---plan-security-cancellation-transaction.md "Object describing a cancellation of a plan security") – `Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json#/properties/transactions/items/anyOf/5`
+*   [Object - Plan Security Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-cancellation-transaction.md "Object describing a cancellation of a plan security") – `Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json#/properties/transactions/items/oneOf/5`
 
-*   [Object - Plan Security Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---plan-security-issuance-transaction.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/transactions/items/anyOf/0`
+*   [Object - Plan Security Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-issuance-transaction.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/transactions/items/oneOf/0`
 
-*   [Object - Plan Security Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---plan-security-split-transaction.md "Object describing a split of a plan security") – `Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/transactions/items/anyOf/9`
+*   [Object - Plan Security Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-retraction-transaction.md "Object describing a retraction of a plan security") – `Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json#/properties/transactions/items/oneOf/17`
 
-*   [Object - Plan Security Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---plan-security-transfer-transaction.md "Object describing a transfer of a plan security") – `Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json#/properties/transactions/items/anyOf/13`
+*   [Object - Plan Security Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-split-transaction.md "Object describing a split of a plan security") – `Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/transactions/items/oneOf/9`
+
+*   [Object - Plan Security Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-transfer-transaction.md "Object describing a transfer of a plan security") – `Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json#/properties/transactions/items/oneOf/13`
 
 *   [Object - Stakeholder](./captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md "Object describing a stakeholder") – `Objects.Stakeholder.schema.json#/properties/stakeholders/items`
 
-*   [Object - Stock Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---stock-cancellation-transaction.md "Object describing a cancellation of a stock security") – `Objects.Transactions.Cancellation.StockCancellation.schema.json#/properties/transactions/items/anyOf/8`
+*   [Object - Stock Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-cancellation-transaction.md "Object describing a cancellation of a stock security") – `Objects.Transactions.Cancellation.StockCancellation.schema.json#/properties/transactions/items/oneOf/8`
 
-*   [Object - Stock Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---stock-issuance-transaction.md "Object describing a stock issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/transactions/items/anyOf/3`
+*   [Object - Stock Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-issuance-transaction.md "Object describing a stock issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/transactions/items/oneOf/3`
 
-*   [Object - Stock Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---stock-split-transaction.md "Object describing a split of a stock security") – `Objects.Transactions.Split.StockSplit.schema.json#/properties/transactions/items/anyOf/11`
+*   [Object - Stock Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-retraction-transaction.md "Object describing a retraction of a stock security") – `Objects.Transactions.Retraction.StockRetraction.schema.json#/properties/transactions/items/oneOf/18`
 
-*   [Object - Stock Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---stock-transfer-transaction.md "Object describing a transfer or secondary sale of a stock security") – `Objects.Transactions.Transfer.StockTransfer.schema.json#/properties/transactions/items/anyOf/12`
+*   [Object - Stock Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-split-transaction.md "Object describing a split of a stock security") – `Objects.Transactions.Split.StockSplit.schema.json#/properties/transactions/items/oneOf/11`
+
+*   [Object - Stock Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-transfer-transaction.md "Object describing a transfer or secondary sale of a stock security") – `Objects.Transactions.Transfer.StockTransfer.schema.json#/properties/transactions/items/oneOf/12`
 
 *   [Object - StockClass](./captable-properties-stock_classes-object---stockclass.md "Object describing a type of stock class issued by the issuer") – `Objects.StockClass.schema.json#/properties/stock_classes/items`
 
@@ -204,19 +234,23 @@
 
 *   [Object - VestingSchedule](./captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md "Object describing a strictly time-based vesting schedule") – `Objects.VestingSchedule.schema.json#/properties/vesting_schedules/items`
 
-*   [Object - Warrant Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---warrant-cancellation-transaction.md "Object describing a cancellation of a warrant security") – `Objects.Transactions.Cancellation.WarrantCancellation.schema.json#/properties/transactions/items/anyOf/7`
+*   [Object - Warrant Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-cancellation-transaction.md "Object describing a cancellation of a warrant security") – `Objects.Transactions.Cancellation.WarrantCancellation.schema.json#/properties/transactions/items/oneOf/7`
 
-*   [Object - Warrant Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---warrant-issuance-transaction.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/transactions/items/anyOf/2`
+*   [Object - Warrant Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-issuance-transaction.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/transactions/items/oneOf/2`
 
-*   [Object - Warrant Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---warrant-split-transaction.md "Object describing a split of a warrant security") – `Objects.Transactions.Split.WarrantSplit.schema.json#/properties/transactions/items/anyOf/10`
+*   [Object - Warrant Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-retraction-transaction.md "Object describing a retraction of a warrant security") – `Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/transactions/items/oneOf/19`
 
-*   [Object - Warrant Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-anyof-object---warrant-transfer-transaction.md "Object describing a transfer or secondary sale of a warrant security") – `Objects.Transactions.Transfer.WarrantTransfer.schema.json#/properties/transactions/items/anyOf/14`
+*   [Object - Warrant Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-split-transaction.md "Object describing a split of a warrant security") – `Objects.Transactions.Split.WarrantSplit.schema.json#/properties/transactions/items/oneOf/10`
+
+*   [Object - Warrant Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-transfer-transaction.md "Object describing a transfer or secondary sale of a warrant security") – `Objects.Transactions.Transfer.WarrantTransfer.schema.json#/properties/transactions/items/oneOf/14`
 
 *   [Primitive - Security Acceptance Transaction](./plansecurityacceptance-allof-primitive---security-acceptance-transaction.md "Abstract object describing a security acceptance transaction") – `Primitives.Transactions.Acceptance.BaseAcceptance.schema.json#/allOf/0`
 
 *   [Primitive - Security Cancellation Transaction](./plansecuritycancellation-allof-primitive---security-cancellation-transaction.md "Abstract object describing fields common to all cancellation transaction objects") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/allOf/0`
 
 *   [Primitive - Security Issuance Transaction](./plansecurityissuance-allof-primitive---security-issuance-transaction.md "Abstract object describing fields common to all issuance objects") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json#/allOf/0`
+
+*   [Primitive - Security Retraction Transaction](./convertibleretraction-allof-primitive---security-retraction-transaction.md "Abstract object describing a security retraction transaction") – `Primitives.Transactions.Retraction.BaseRetraction.schema.json#/allOf/0`
 
 *   [Primitive - Security Split Transaction](./plansecuritysplit-allof-primitive---security-split-transaction.md "Abstract object describing a security split transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json#/allOf/0`
 
@@ -231,8 +265,6 @@
 *   [Type - ConversionTrigger](./convertibleissuance-properties-convertible---typesconversiontriggerschemajson-array-type---conversiontrigger.md "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)") – `Types.ConversionTrigger.schema.json#/properties/conversion_triggers/items`
 
 *   [Type - Custom Vesting Tranche](./vesting-1-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md "Type representation of an vesting tranche by date and quantity") – `Types.CustomVestingTranche.schema.json#/properties/custom_vesting_tranches/items`
-
-*   [Type - DateTime](./issuer-properties-type---datetime.md "Type representing an instant in Universal Coordinated Time (UTC)") – `Types.DateTime.schema.json#/properties/formation_date`
 
 *   [Type - Email](./issuer-properties-type---email.md "Type representation of an email address") – `Types.Email.schema.json#/properties/email`
 
@@ -304,9 +336,7 @@
 
 *   [ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
 
-*   [Security Cancellation - Balance Security Id Array](./basecancellation-properties-security-cancellation---balance-security-id-array.md "Identifier for the security (or securities) that holds the remainder balance (for partial cancellations)") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/balance_security_ids`
-
-*   [Security Cancellation - Balance Security Id Array](./basecancellation-properties-security-cancellation---balance-security-id-array.md "Identifier for the security (or securities) that holds the remainder balance (for partial cancellations)") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/balance_security_ids`
+*   [Security Exercise - Resulting Security Id Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `Primitives.Transactions.Exercise.BaseExercise.schema.json#/properties/resulting_security_ids`
 
 *   [Security Reissuance - Resulting Security Id Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a re-issuance") – `Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids`
 

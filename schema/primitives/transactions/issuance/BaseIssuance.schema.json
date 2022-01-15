@@ -16,7 +16,7 @@
     },
     "board_approval_date": {
       "description": "Date of board approval for the convertible",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "consideration": {
       "description": "Consideration for the security",
