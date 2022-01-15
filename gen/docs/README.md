@@ -152,10 +152,6 @@
 
 *   [Type - DateString](./datestring.md "Type representing an ISO-8601 date, e") – `Types.DateString.schema.json`
 
-*   [Type - DateTime](./datetime.md "Type representing an instant in Universal Coordinated Time (UTC)") – `Types.DateTime.schema.json`
-
-*   [Type - DateTimeString](./datetimestring.md "Type representing an ISO-8601 date & time, e") – `Types.DateTimeString.schema.json`
-
 *   [Type - Email](./email-1.md "Type representation of an email address") – `Types.Email.schema.json`
 
 *   [Type - Event-driven Vesting Condition](./eventdrivenvestingcondition.md "Type representation of complex event-driven vesting criteria") – `Types.EventDrivenVestingCondition.schema.json`
