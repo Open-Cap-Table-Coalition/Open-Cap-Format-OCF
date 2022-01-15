@@ -93,6 +93,7 @@ _Documentation automatically generated with [jsonschema2md](https://github.com/a
 
 - Ben Hutchings
 - Patrick Johnmeyer
+- Tyler McConnell
 - Dan Owen
 - Chris Pasakarnis
 - John Scrudato

@@ -4,9 +4,11 @@
   "scripts": {
     "lint": "prettier . --check --ignore-unknown",
     "fix": "prettier . --check --write --ignore-unknown",
+    "generate-docs": "jsonschema2md --input schema --out gen/docs -x -",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^6.0.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.5",
     "prettier": "2.5.1"

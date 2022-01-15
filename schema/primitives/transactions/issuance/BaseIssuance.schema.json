@@ -34,7 +34,6 @@
   "required": [
     "security_law_exemptions",
     "board_approval_date",
-    "object_type",
     "stakeholder_id",
     "consideration",
     "custom_id"
