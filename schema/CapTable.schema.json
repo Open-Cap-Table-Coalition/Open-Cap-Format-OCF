@@ -68,6 +68,12 @@
             "$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"
           },
           {
+            "$ref": "Objects.Transactions.Conversion.ConvertibleConversion.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Conversion.StockConversion.schema.json"
+          },
+          {
             "$ref": "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json"
           },
           {
