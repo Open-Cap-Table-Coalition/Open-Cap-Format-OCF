@@ -21,7 +21,7 @@
     "comments": {},
     "security_id": {},
     "date": {},
-    "balance_security_ids": {},
+    "balance_security_id": {},
     "reason_text": {}
   },
   "additionalProperties": false,

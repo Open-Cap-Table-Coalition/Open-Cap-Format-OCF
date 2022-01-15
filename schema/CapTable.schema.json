@@ -44,44 +44,55 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json"
+            "$ref": "Objects.Transactions.Acceptance.ConvertibleAcceptance.schema.json"
           },
-          {
-            "$ref": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json"
-          },
-          {
-            "$ref": "Objects.Transactions.Issuance.WarrantIssuance.schema.json"
-          },
-          { "$ref": "Objects.Transactions.Issuance.StockIssuance.schema.json" },
           {
             "$ref": "Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json"
+            "$ref": "Objects.Transactions.Acceptance.StockAcceptance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Acceptance.WarrantAcceptance.schema.json"
           },
           {
             "$ref": "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"
+            "$ref": "Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json"
           },
           {
             "$ref": "Objects.Transactions.Cancellation.StockCancellation.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.Split.PlanSecuritySplit.schema.json"
-          },
-          { "$ref": "Objects.Transactions.Split.WarrantSplit.schema.json" },
-          { "$ref": "Objects.Transactions.Split.StockSplit.schema.json" },
-          { "$ref": "Objects.Transactions.Transfer.StockTransfer.schema.json" },
-          {
-            "$ref": "Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json"
+            "$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.WarrantTransfer.schema.json"
+            "$ref": "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json"
+            "$ref": "Objects.Transactions.Exercise.WarrantExercise.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Issuance.StockIssuance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Issuance.WarrantIssuance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Reissuance.StockReissuance.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Repurchase.StockRepurchase.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json"
           },
           {
             "$ref": "Objects.Transactions.Retraction.ConvertibleRetraction.schema.json"
@@ -94,6 +105,27 @@
           },
           {
             "$ref": "Objects.Transactions.Retraction.WarrantRetraction.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Split.PlanSecuritySplit.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Split.StockSplit.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Split.WarrantSplit.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.StockTransfer.schema.json"
+          },
+          {
+            "$ref": "Objects.Transactions.Transfer.WarrantTransfer.schema.json"
           }
         ]
       }

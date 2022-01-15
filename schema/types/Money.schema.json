@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "amount": {
-      "description": "Numeric value",
+      "description": "Numeric amount of money",
       "$ref": "Types.Numeric.schema.json"
     },
     "currency": {
@@ -14,5 +14,5 @@
       "type": "string"
     }
   },
-  "required": ["amount"]
+  "required": ["amount", "currency"]
 }

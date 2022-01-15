@@ -8,6 +8,9 @@
     { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
   ],
   "properties": {
+    "object_type": {
+      "const": "TX_WARRANT_TRANSFER"
+    },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
       "$ref": "Types.Numeric.schema.json"

@@ -1,8 +1,8 @@
 {
   "id": "7d597e5b-4dc7-43af-82f1-1633e23c2048",
   "issuer": {
-    "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
     "object_type": "ISSUER",
+    "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
     "formation_date": {
@@ -36,8 +36,8 @@
   },
   "stakeholders": [
     {
-      "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
       "object_type": "STAKEHOLDER",
+      "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
       "name": {
         "legal_name": "Person X",
         "first_name": "Person",
@@ -47,8 +47,8 @@
       "comments": []
     },
     {
-      "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
       "object_type": "STAKEHOLDER",
+      "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
       "name": {
         "legal_name": "Person Y",
         "first_name": "Person",
@@ -60,15 +60,13 @@
   ],
   "stock_plans": [
     {
-      "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
       "object_type": "STOCK_PLAN",
+      "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
       "plan_name": "2021 Stock Incentive Plan",
       "board_approval_date": {
         "epoch_millis": 1633906514750837
       },
-      "current_shares_reserved": {
-        "string_value": "10000000.00"
-      },
+      "current_shares_reserved": "+10000000.00",
       "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "comments": [
         "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
@@ -78,101 +76,129 @@
   "stock_legend_templates": [],
   "stock_classes": [
     {
-      "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "object_type": "STOCK_CLASS",
+      "id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "name": "Common Stock",
       "class_type": "COMMON",
       "default_id_prefix": "CS-",
-      "current_shares_authorized": {
-        "string_value": "1000000000.00"
-      },
+      "current_shares_authorized": "1000000000.00",
       "board_approval_date": {
         "epoch_millis": 1633912211256704
       },
-      "votes_per_share": {
-        "string_value": "1"
-      },
+      "votes_per_share": "1",
       "par_value": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "amount": "0.0001000000",
         "currency": "USD"
       },
       "price_per_share": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "amount": "0.0001000000",
         "currency": "USD"
       },
-      "seniority": {
-        "string_value": "1"
-      },
+      "seniority": "1",
       "conversion_rights": [],
-      "liquidation_preference_multiple": {
-        "string_value": "1"
-      },
-      "participation_cap_multiple": {
-        "string_value": "1"
-      },
+      "liquidation_preference_multiple": "1",
+      "participation_cap_multiple": "1",
       "comments": []
     },
     {
-      "id": "cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
       "object_type": "STOCK_CLASS",
+      "id": "cc775778-7d6e-4f8a-93cf-4df2242d7d6d",
       "name": "Series Seed Preferred",
       "class_type": "PREFERRED",
       "default_id_prefix": "PS-",
-      "current_shares_authorized": {
-        "string_value": "10000000.00"
-      },
+      "current_shares_authorized": "10000000.00",
       "board_approval_date": {
         "epoch_millis": 1633912211256704
       },
-      "votes_per_share": {
-        "string_value": "1"
-      },
+      "votes_per_share": "1",
       "par_value": {
-        "amount": {
-          "string_value": "0.0001000000"
-        },
+        "amount": "0.0001000000",
         "currency": "USD"
       },
       "price_per_share": {
-        "amount": {
-          "string_value": "2.4700000000"
-        },
+        "amount": "2.4700000000",
         "currency": "USD"
       },
-      "seniority": {
-        "string_value": "2"
-      },
+      "seniority": "2",
       "conversion_rights": [
         {
           "ratio": {
-            "antecedent": {
-              "string_value": "1"
-            },
-            "consequent": {
-              "string_value": "1"
-            }
+            "antecedent": "1",
+            "consequent": "1"
           },
           "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
           "rounding_type": "NORMAL"
         }
       ],
-      "liquidation_preference_multiple": {
-        "string_value": "2"
-      },
-      "participation_cap_multiple": {
-        "string_value": "2"
-      },
+      "liquidation_preference_multiple": "2",
+      "participation_cap_multiple": "2",
       "comments": []
     }
   ],
   "transactions": [
     {
-      "id": "convertible-retraction",
+      "object_type": "TX_STOCK_CANCELLATION",
+      "id": "test-quantity-cancellation",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "quantity": "100",
+      "balance_security_id": "new-security",
+      "reason_text": "for testing"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CANCELLATION",
+      "id": "test-monetary-cancellation",
+      "balance_security_id": "new-security",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "amount": {
+        "amount": "53.09",
+        "currency": "USD"
+      },
+      "reason_text": "for testing",
+      "comments": ["just a comment"]
+    },
+    {
+      "object_type": "TX_STOCK_SPLIT",
+      "id": "test-quantity-split",
+      "security_id": "test-security-id",
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "date": { "epoch_millis": 42 },
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      }
+    },
+    {
+      "object_type": "TX_STOCK_TRANSFER",
+      "id": "test-quantity-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "quantity": "100"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-monetary-transfer",
+      "security_id": "test-security-id",
+      "date": {
+        "epoch_millis": 42
+      },
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "amount": {
+        "amount": "-867.53",
+        "currency": "USD"
+      }
+    },
+    {
       "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "convertible-retraction",
       "security_id": "test-convertible-retraction",
       "date": { "epoch_millis": 42 },
       "reason_text": "oops"

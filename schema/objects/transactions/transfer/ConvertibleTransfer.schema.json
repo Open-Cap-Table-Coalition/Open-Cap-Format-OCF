@@ -8,6 +8,9 @@
     { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
   ],
   "properties": {
+    "object_type": {
+      "const": "TX_CONVERTIBLE_TRANSFER"
+    },
     "amount": {
       "description": "Amount of monetary value cancelled",
       "$ref": "Types.Money.schema.json"
