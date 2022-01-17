@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Conversion.ConvertibleConversion.schema.json",
+  "title": "Object - Convertible Conversion Transaction",
+  "description": "Object describing a conversion of a convertible security",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Transactions.Cancellation.BaseConversion.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_CONVERTIBLE_CONVERSION"
+    },
+    "reason_text": {
+      "description": "Reason for the conversion",
+      "type": "string"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "resulting_security_ids": {}
+  },
+  "additionalProperties": false,
+  "required": ["reason_text"]
+}

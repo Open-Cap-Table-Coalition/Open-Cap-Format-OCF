@@ -24,7 +24,7 @@ all of
 | :-------------------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - StockPlan](stockplan-properties-object_type.md "Objects.StockPlan.schema.json#/properties/object_type")            |
 | [plan_name](#plan_name)                             | `string`      | Required | cannot be null | [Object - StockPlan](stockplan-properties-plan_name.md "Objects.StockPlan.schema.json#/properties/plan_name")                |
-| [board_approval_date](#board_approval_date)         | `object`      | Optional | cannot be null | [Object - StockPlan](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")      |
+| [board_approval_date](#board_approval_date)         | `string`      | Optional | cannot be null | [Object - StockPlan](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")  |
 | [current_shares_reserved](#current_shares_reserved) | `object`      | Required | cannot be null | [Object - StockPlan](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/current_shares_reserved") |
 | [stock_class_id](#stock_class_id)                   | `string`      | Required | cannot be null | [Object - StockPlan](stockplan-properties-stock_class_id.md "Objects.StockPlan.schema.json#/properties/stock_class_id")      |
 | [id](#id)                                           | Not specified | Optional | cannot be null | [Object - StockPlan](stockplan-properties-id.md "Objects.StockPlan.schema.json#/properties/id")                              |
@@ -76,21 +76,25 @@ Name for the stock plan
 
 ## board_approval_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `board_approval_date`
 
 *   is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - StockPlan](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")
+*   defined in: [Object - StockPlan](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### board_approval_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## current_shares_reserved
 

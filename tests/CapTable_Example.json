@@ -5,9 +5,7 @@
     "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
-    "formation_date": {
-      "epoch_millis": 615614400
-    },
+    "formation_date": "2010-01-01",
     "country_of_formation": "USA",
     "state_of_formation": "DE",
     "tax_ids": [
@@ -63,9 +61,7 @@
       "object_type": "STOCK_PLAN",
       "id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
       "plan_name": "2021 Stock Incentive Plan",
-      "board_approval_date": {
-        "epoch_millis": 1633906514750837
-      },
+      "board_approval_date": "1983-12-31",
       "current_shares_reserved": "+10000000.00",
       "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "comments": [
@@ -82,9 +78,7 @@
       "class_type": "COMMON",
       "default_id_prefix": "CS-",
       "current_shares_authorized": "1000000000.00",
-      "board_approval_date": {
-        "epoch_millis": 1633912211256704
-      },
+      "board_approval_date": "2001-02-28",
       "votes_per_share": "1",
       "par_value": {
         "amount": "0.0001000000",
@@ -107,9 +101,7 @@
       "class_type": "PREFERRED",
       "default_id_prefix": "PS-",
       "current_shares_authorized": "10000000.00",
-      "board_approval_date": {
-        "epoch_millis": 1633912211256704
-      },
+      "board_approval_date": "2021-01-28",
       "votes_per_share": "1",
       "par_value": {
         "amount": "0.0001000000",
@@ -140,9 +132,7 @@
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
+      "date": "2021-03-15",
       "quantity": "100",
       "balance_security_id": "new-security",
       "reason_text": "for testing"
@@ -152,9 +142,7 @@
       "id": "test-monetary-cancellation",
       "balance_security_id": "new-security",
       "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
+      "date": "2019-01-31",
       "amount": {
         "amount": "53.09",
         "currency": "USD"
@@ -167,7 +155,7 @@
       "id": "test-quantity-split",
       "security_id": "test-security-id",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "date": { "epoch_millis": 42 },
+      "date": "2022-01-17",
       "split_ratio": {
         "antecedent": "1",
         "consequent": "2"
@@ -177,9 +165,7 @@
       "object_type": "TX_STOCK_TRANSFER",
       "id": "test-quantity-transfer",
       "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
+      "date": "2020-11-24",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "quantity": "100"
     },
@@ -187,9 +173,7 @@
       "object_type": "TX_CONVERTIBLE_TRANSFER",
       "id": "test-monetary-transfer",
       "security_id": "test-security-id",
-      "date": {
-        "epoch_millis": 42
-      },
+      "date": "2018-06-07",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "amount": {
         "amount": "-867.53",
@@ -200,7 +184,7 @@
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "id": "convertible-retraction",
       "security_id": "test-convertible-retraction",
-      "date": { "epoch_millis": 42 },
+      "date": "2021-01-14T08:50Z",
       "reason_text": "oops"
     }
   ],

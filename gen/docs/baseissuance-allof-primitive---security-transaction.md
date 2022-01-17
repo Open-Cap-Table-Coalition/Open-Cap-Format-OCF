@@ -23,7 +23,7 @@ all of
 | Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                  |
 | :-------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [security_id](#security_id) | `string` | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "Primitives.Transactions.BaseTransaction.schema.json#/properties/security_id") |
-| [date](#date)               | `object` | Required | cannot be null | [Primitive - Security Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/date")                                      |
+| [date](#date)               | `string` | Required | cannot be null | [Primitive - Security Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/date")                                  |
 
 ## security_id
 
@@ -45,18 +45,22 @@ Identifier for the security which the transaction applies to
 
 ## date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `date`
 
 *   is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/date")
+*   defined in: [Primitive - Security Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/date")
 
 ### date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")

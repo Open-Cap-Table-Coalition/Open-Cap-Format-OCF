@@ -19,7 +19,7 @@
     },
     "formation_date": {
       "description": "Date of formation",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "country_of_formation": {
       "description": "The country where the issuer company was legally formed (ISO-3166 - alpha-3)",

@@ -14,13 +14,45 @@ CapTable.schema.json#/properties/transactions/items
 
 merged type ([Details](captable-properties-captable---objectstransactionsschemajson-array-items.md))
 
-any of
+one (and only one) of
 
 *   any of
 
     *   [Untitled undefined type in Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-0.md "check type definition")
 
     *   [Untitled undefined type in Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-1.md "check type definition")
+
+*   all of
+
+    *   all of
+
+        *   all of
+
+            *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+*   all of
+
+    *   all of
+
+        *   all of
+
+            *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+*   all of
+
+    *   all of
+
+        *   all of
+
+            *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+*   all of
+
+    *   all of
+
+        *   all of
+
+            *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 *   all of
 

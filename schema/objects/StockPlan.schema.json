@@ -14,8 +14,8 @@
       "type": "string"
     },
     "board_approval_date": {
-      "description": "Date which board approved the plan",
-      "$ref": "Types.DateTime.schema.json"
+      "description": "Date on which board approved the plan",
+      "$ref": "Types.DateString.schema.json"
     },
     "current_shares_reserved": {
       "description": "The number of shares currently approved. The original number of shares can be determined from the event log",

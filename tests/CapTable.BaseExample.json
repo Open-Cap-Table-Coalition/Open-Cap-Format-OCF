@@ -5,9 +5,7 @@
     "object_type": "ISSUER",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
-    "formation_date": {
-      "epoch_millis": 615614400
-    },
+    "formation_date": "1989-07-04",
     "country_of_formation": "USA",
     "state_of_formation": "DE",
     "tax_ids": [
@@ -48,9 +46,7 @@
       "current_shares_authorized": {
         "string_value": "1000000000.00"
       },
-      "board_approval_date": {
-        "epoch_millis": 1633912211256704
-      },
+      "board_approval_date": "2021-01-28",
       "votes_per_share": {
         "string_value": "1"
       },

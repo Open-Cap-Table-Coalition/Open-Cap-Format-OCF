@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Types.DateString.schema.json",
+  "title": "Type - DateString",
+  "description": "Type representing an ISO-8601 date, e.g. 2022-01-28",
+  "type": "string",
+  "format": "date"
+}

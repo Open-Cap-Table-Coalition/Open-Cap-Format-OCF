@@ -15,7 +15,7 @@
     },
     "vesting_start_date": {
       "description": "Vesting commencement date",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "event_driven_vesting_conditions": {
       "title": "Vesting Type - EventDrivenVestingCondition Array",

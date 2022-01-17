@@ -11,8 +11,8 @@
       "type": "string"
     },
     "date": {
-      "description": "Date which the transaction occurred",
-      "$ref": "Types.DateTime.schema.json"
+      "description": "Date on which the transaction occurred",
+      "$ref": "Types.DateString.schema.json"
     }
   },
   "required": ["security_id", "date"]
