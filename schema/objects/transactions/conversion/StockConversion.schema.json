@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "Objects.Transactions.Conversion.StockConversion.schema.json",
+  "title": "Object - Stock Conversion Transaction",
+  "description": "Object describing a conversion of stock",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "Primitives.Transactions.Cancellation.BaseConversion.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_CONVERSION"
+    },
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial conversions)",
+      "type": "string"
+    },
+    "quantity_converted": {
+      "description": "Quantity of non-monetary security units converted",
+      "$ref": "Types.Numeric.schema.json"
+    },
+    "conversion_ratio": {
+      "description": "Quantity of non-monetary security units converted",
+      "$ref": "Types.Ratio.schema.json"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "resulting_security_ids": {}
+  },
+  "additionalProperties": false,
+  "required": ["quantity_converted", "conversion_ratio"]
+}
