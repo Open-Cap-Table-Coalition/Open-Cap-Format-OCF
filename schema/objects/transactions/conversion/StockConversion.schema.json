@@ -15,10 +15,7 @@
     },
     "balance_security_id": {
       "description": "Identifier for the security that holds the remainder balance (for partial conversions)",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "type": "string"
     },
     "quantity_converted": {
       "description": "Quantity of non-monetary security units converted",
