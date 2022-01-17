@@ -33,7 +33,7 @@
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
       "$ref": "/schema/types/monetary"
     },
-    "vesting": {
+    "vesting_rules": {
       "description": "Vesting conditions applicable to the warrant",
       "$ref": "/schema/types/vesting_rules"
     },

@@ -25,7 +25,7 @@
       "description": "Number of shares issued to the stakeholder",
       "$ref": "/schema/types/numeric"
     },
-    "vesting": {
+    "vesting_rules": {
       "description": "Vesting conditions applicable to this stock",
       "$ref": "/schema/types/vesting_rules"
     },

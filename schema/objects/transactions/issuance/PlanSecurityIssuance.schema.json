@@ -33,7 +33,7 @@
       "description": "What is the exercise price?",
       "$ref": "/schema/types/monetary"
     },
-    "vesting": {
+    "vesting_rules": {
       "description": "What vesting applies to this plan security?",
       "$ref": "/schema/types/vesting_rules"
     },
@@ -89,7 +89,7 @@
     "compensation_type",
     "quantity",
     "exercise_price",
-    "vesting",
+    "vesting_rules",
     "expiration_date",
     "termination_exercise_windows"
   ]
