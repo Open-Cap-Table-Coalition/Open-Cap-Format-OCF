@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.SecurityExemption.schema.json",
-  "title": "Type - SecurityExemption",
+  "$id": "https://opencaptablecoalition.com/schema/types/security_exemption",
+  "title": "Type - Security Exemption",
   "description": "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis",
   "type": "object",
   "properties": {

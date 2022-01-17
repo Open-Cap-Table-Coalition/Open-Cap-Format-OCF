@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Primitives.Transactions.Split.BaseSplit.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split",
   "title": "Primitive - Security Split Transaction",
   "description": "Abstract object describing a security split transaction",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
   "properties": {
     "resulting_security_ids": {
-      "title": "Security Split - Resulting Security Id Array",
+      "title": "Security Split - Resulting Security ID Array",
       "description": "Array of identifiers for new security (or securities) created as a result of the transaction",
       "type": "array",
       "items": {
@@ -18,7 +18,7 @@
     },
     "split_ratio": {
       "description": "Ratio of old shares to new shares",
-      "$ref": "Types.Ratio.schema.json"
+      "$ref": "/schema/types/ratio"
     }
   },
   "required": ["resulting_security_ids", "split_ratio"]

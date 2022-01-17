@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.VestingSchedule.schema.json",
-  "title": "Object - VestingSchedule",
+  "$id": "https://opencaptablecoalition.com/schema/objects/vesting_schedule",
+  "title": "Object - Vesting Schedule",
   "description": "Object describing a strictly time-based vesting schedule",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
   "properties": {
     "object_type": {
       "const": "VESTING_SCHEDULE"
@@ -19,18 +19,18 @@
     },
     "allocation_type": {
       "description": "Allocation/rounding type for the vesting schedule",
-      "$ref": "Enums.AllocationType.schema.json"
+      "$ref": "/schema/enums/allocation_type"
     },
     "fractional_tranches_allowed": {
       "description": "Whether or not fractional tranches are allowed. Note: if this is true, the allocation type is ignored",
       "type": "boolean"
     },
     "schedule_driven_vesting_conditions": {
-      "title": "VestingSchedule - ScheduleDrivenVestingCondition Array",
+      "title": "Vesting Schedule - Schedule-driven Vesting Condition Array",
       "description": "Schedule rows defining the vesting schedule tranches",
       "type": "array",
       "items": {
-        "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+        "$ref": "/schema/types/schedule_driven_vesting_condition"
       }
     },
     "id": {},

@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.Address.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/types/address",
   "title": "Type - Address",
-  "description": "Type representation of an address as an object.",
+  "description": "Type representation of an address",
   "type": "object",
   "properties": {
     "address_type": {
       "description": "What type of address is this (e.g. legal address, contact address, etc.)",
-      "$ref": "Enums.Address.schema.json"
+      "$ref": "/schema/enums/address_type"
     },
     "street_suite": {
       "description": "Street address (multi-line string)",
@@ -18,7 +18,7 @@
       "type": "string"
     },
     "state_province": {
-      "description": "State, province or equivalent identifier required for an address in this country (ISO-3166-2).",
+      "description": "State, province or equivalent identifier required for an address in this country (ISO-3166-2)",
       "type": "string"
     },
     "country": {

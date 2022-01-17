@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Retraction.StockRetraction.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/stock_retraction",
   "title": "Object - Stock Retraction Transaction",
   "description": "Object describing a retraction of a stock security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Retraction.BaseRetraction.schema.json"
+      "$ref": "/schema/primitives/transactions/retraction/base_retraction"
     }
   ],
   "properties": {

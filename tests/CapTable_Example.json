@@ -48,9 +48,7 @@
       "object_type": "STAKEHOLDER",
       "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
       "name": {
-        "legal_name": "Person Y",
-        "first_name": "Person",
-        "last_name": "Y"
+        "legal_name": "Person Y"
       },
       "stakeholder_type": "INDIVIDUAL",
       "comments": []

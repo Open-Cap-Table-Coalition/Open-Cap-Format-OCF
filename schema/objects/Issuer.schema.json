@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Issuer.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/issuer",
   "title": "Object - Issuer",
-  "description": "Object describing the issuer of the cap table. This is the company whsoe cap table this is.",
+  "description": "Object describing the issuer of the cap table (the company whose cap table this is)",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
   "properties": {
     "object_type": {
       "const": "ISSUER"
@@ -19,7 +19,7 @@
     },
     "formation_date": {
       "description": "Date of formation",
-      "$ref": "Types.DateString.schema.json"
+      "$ref": "/schema/types/date"
     },
     "country_of_formation": {
       "description": "The country where the issuer company was legally formed (ISO-3166 - alpha-3)",
@@ -30,24 +30,24 @@
       "type": "string"
     },
     "tax_ids": {
-      "title": "Issuer - TaxID Array",
+      "title": "Issuer - Tax ID Array",
       "description": "The tax ids for this issuer company",
       "type": "array",
       "items": {
-        "$ref": "Types.TaxID.schema.json"
+        "$ref": "/schema/types/tax_identifier"
       }
     },
     "email": {
       "description": "A work email that the issuer company can be reached at",
-      "$ref": "Types.Email.schema.json"
+      "$ref": "/schema/types/email"
     },
     "phone": {
       "description": "A phone number that the issuer company can be reached at",
-      "$ref": "Types.PhoneNumber.schema.json"
+      "$ref": "/schema/types/phone"
     },
     "address": {
       "description": "The headquarters address of the issuing company",
-      "$ref": "Types.Address.schema.json"
+      "$ref": "/schema/types/address"
     },
     "id": {},
     "comments": {}

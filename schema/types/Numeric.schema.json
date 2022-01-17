@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.Numeric.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/types/numeric",
   "title": "Type - Numeric",
-  "description": "Fixed-point representation of a number (up to 10 decimal places supported)",
+  "description": "Fixed-point string representation of a number (up to 10 decimal places supported)",
   "type": "string",
   "pattern": "^[+-]?[0-9]+(\\.[0-9]{1,10})?$"
 }

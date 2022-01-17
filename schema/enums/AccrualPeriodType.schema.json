@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/accrual_period_type",
+  "title": "Enum - Accrual Period Type",
+  "description": "Enumeration of interest accrual period types",
+  "type": "string",
+  "enum": ["DAILY", "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL"]
+}

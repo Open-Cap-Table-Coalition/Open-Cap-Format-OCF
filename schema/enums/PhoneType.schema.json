@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Enums.PhoneNumber.schema.json",
-  "title": "Enum - PhoneNumber Type",
+  "$id": "https://opencaptablecoalition.com/schema/enums/phone_type",
+  "title": "Enum - Phone Type",
   "description": "Enumeration of phone number types",
   "type": "string",
   "enum": ["HOME", "MOBILE", "BUSINESS", "OTHER"]

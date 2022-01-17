@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Issuance.WarrantIssuance.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance",
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Issuance.BaseIssuance.schema.json"
+      "$ref": "/schema/primitives/transactions/issuance/base_issuance"
     }
   ],
   "properties": {
@@ -14,32 +14,32 @@
       "const": "TX_WARRANT_ISSUANCE"
     },
     "conversion_rights": {
-      "title": "Warrant - StockClassConversionRights Array",
+      "title": "Warrant Issuance - Stock Class Conversion Rights Array",
       "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
       "type": "array",
       "items": {
-        "$ref": "Types.StockClassConversionRights.schema.json"
+        "$ref": "/schema/types/stock_class_conversion_rights"
       }
     },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     },
     "exercise_price": {
       "description": "The exercise price of the warrant",
-      "$ref": "Types.Money.schema.json"
+      "$ref": "/schema/types/monetary"
     },
     "purchase_price": {
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
-      "$ref": "Types.Money.schema.json"
+      "$ref": "/schema/types/monetary"
     },
     "vesting": {
       "description": "Vesting conditions applicable to the warrant",
-      "$ref": "Types.Vesting.schema.json"
+      "$ref": "/schema/types/vesting_rules"
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
-      "$ref": "Types.DateString.schema.json"
+      "$ref": "/schema/types/date"
     },
     "id": {},
     "comments": {},

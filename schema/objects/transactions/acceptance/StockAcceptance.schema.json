@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Acceptance.StockAcceptance.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance",
   "title": "Object - Stock Acceptance Transaction",
   "description": "Object describing a stock acceptance transaction",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Acceptance.BaseAcceptance.schema.json"
+      "$ref": "/schema/primitives/transactions/acceptance/base_acceptance"
     }
   ],
   "properties": {

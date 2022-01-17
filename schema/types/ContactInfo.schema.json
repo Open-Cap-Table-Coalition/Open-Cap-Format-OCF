@@ -1,34 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.ContactInfo.schema.json",
-  "title": "Type - ContactInfo",
-  "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund).",
+  "$id": "https://opencaptablecoalition.com/schema/types/contact_info",
+  "title": "Type - Contact Info",
+  "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund)",
   "type": "object",
   "properties": {
-    "contact_first_name": {
-      "description": "Contact's first name",
-      "type": "string"
-    },
-    "contact_last_name": {
-      "description": "Contact's last name",
-      "type": "string"
+    "name": {
+      "description": "Contact's name",
+      "$ref": "/schema/types/name"
     },
     "phone_numbers": {
-      "title": "ContactInfo - Phone Number Array",
+      "title": "Contact Info - Phone Number Array",
       "description": "Phone numbers to reach the contact at",
       "type": "array",
       "items": {
-        "$ref": "Types.PhoneNumber.schema.json"
+        "$ref": "/schema/types/phone"
       }
     },
     "emails": {
-      "title": "ContactInfo - Email Array",
+      "title": "Contact Info - Email Address Array",
       "description": "Emails to reach the contact at",
       "type": "array",
       "items": {
-        "$ref": "Types.Email.schema.json"
+        "$ref": "/schema/types/email"
       }
     }
   },
-  "required": ["contact_first_name", "contact_last_name"]
+  "required": ["name", "phone_numbers", "emails"]
 }
