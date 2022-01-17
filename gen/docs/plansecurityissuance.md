@@ -218,7 +218,7 @@ one (and only one) of
 
 *   [Untitled null in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
 
 ## termination_exercise_windows
 

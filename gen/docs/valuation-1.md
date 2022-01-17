@@ -25,7 +25,7 @@ all of
 | [object_type](#object_type)         | Not specified | Optional | cannot be null | [Object - Valuation](valuation-1-properties-object_type.md "Objects.Valuation.schema.json#/properties/object_type")            |
 | [provider](#provider)               | `string`      | Optional | cannot be null | [Object - Valuation](valuation-1-properties-provider.md "Objects.Valuation.schema.json#/properties/provider")                  |
 | [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price_per_share")    |
-| [valuation_date](#valuation_date)   | `object`      | Required | cannot be null | [Object - Valuation](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/valuation_date")             |
+| [valuation_date](#valuation_date)   | `string`      | Required | cannot be null | [Object - Valuation](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/valuation_date")         |
 | [valuation_type](#valuation_type)   | `string`      | Required | cannot be null | [Object - Valuation](valuation-1-properties-enum---valuation-type.md "Enums.Valuation.schema.json#/properties/valuation_type") |
 | [id](#id)                           | Not specified | Optional | cannot be null | [Object - Valuation](valuation-1-properties-id.md "Objects.Valuation.schema.json#/properties/id")                              |
 | [comments](#comments)               | Not specified | Optional | cannot be null | [Object - Valuation](valuation-1-properties-comments.md "Objects.Valuation.schema.json#/properties/comments")                  |
@@ -94,21 +94,25 @@ Type representing a monetary value in a specified currency code
 
 ## valuation_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `valuation_date`
 
 *   is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/valuation_date")
+*   defined in: [Object - Valuation](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/valuation_date")
 
 ### valuation_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### valuation_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## valuation_type
 

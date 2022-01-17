@@ -33,7 +33,7 @@ all of
 | [interest_rate](#interest_rate)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/interest_rate")                                                                                           |
 | [day_count_convention](#day_count_convention)             | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---daycount-type.md "Enums.DayCount.schema.json#/properties/day_count_convention")                                                                   |
 | [interest_payout](#interest_payout)                       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---interestpayout-type.md "Enums.InterestPayout.schema.json#/properties/interest_payout")                                                            |
-| [maturity_date](#maturity_date)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")                                                                                            |
+| [maturity_date](#maturity_date)                           | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/maturity_date")                                                                                        |
 | [default_conversion_rights](#default_conversion_rights)   | Merged        | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---stockclassconversionrights.md "Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights")                               |
 | [conversion_triggers](#conversion_triggers)               | `array`       | Required | can be null    | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible---typesconversiontriggerschemajson-array.md "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/conversion_triggers") |
 | [exit_multiple](#exit_multiple)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/exit_multiple")                                                                                     |
@@ -227,21 +227,25 @@ Enumeration of type of interest payout (e.g. deferred or cash payment)
 
 ## maturity_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `maturity_date`
 
 *   is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/maturity_date")
+*   defined in: [Object - Convertible Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/maturity_date")
 
 ### maturity_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### maturity_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## default_conversion_rights
 

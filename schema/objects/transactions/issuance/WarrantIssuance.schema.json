@@ -39,7 +39,7 @@
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
-      "$ref": "Types.DateTime.schema.json"
+      "$ref": "Types.DateString.schema.json"
     },
     "id": {},
     "comments": {},

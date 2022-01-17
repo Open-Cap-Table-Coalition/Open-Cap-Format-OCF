@@ -25,7 +25,7 @@ all of
 | [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-object_type.md "Objects.Issuer.schema.json#/properties/object_type")                   |
 | [legal_name](#legal_name)                     | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "Objects.Issuer.schema.json#/properties/legal_name")                     |
 | [dba](#dba)                                   | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-dba.md "Objects.Issuer.schema.json#/properties/dba")                                   |
-| [formation_date](#formation_date)             | `object`      | Required | cannot be null | [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")            |
+| [formation_date](#formation_date)             | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/formation_date")        |
 | [country_of_formation](#country_of_formation) | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "Objects.Issuer.schema.json#/properties/country_of_formation") |
 | [state_of_formation](#state_of_formation)     | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "Objects.Issuer.schema.json#/properties/state_of_formation")     |
 | [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---taxid-array.md "Objects.Issuer.schema.json#/properties/tax_ids")              |
@@ -99,21 +99,25 @@ Doing Business As name
 
 ## formation_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `formation_date`
 
 *   is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/formation_date")
+*   defined in: [Object - Issuer](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/formation_date")
 
 ### formation_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### formation_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## country_of_formation
 

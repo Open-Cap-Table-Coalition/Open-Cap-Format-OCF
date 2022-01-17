@@ -65,7 +65,7 @@ one (and only one) of
 
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
 
 ## event_expiration
 
@@ -89,7 +89,7 @@ one (and only one) of
 
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration-oneof-0.md "check type definition")
 
-*   [Type - DateTime](issuer-properties-type---datetime.md "check type definition")
+*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
 
 ## share_amount
 

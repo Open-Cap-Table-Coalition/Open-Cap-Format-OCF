@@ -20,7 +20,7 @@ Type representing all aspects related to vesting securities
 | :------------------------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [vesting_type](#vesting_type)                                       | `string` | Required | cannot be null | [Type - Vesting](vesting-1-properties-enum---vesting-type.md "Enums.Vesting.schema.json#/properties/vesting_type")                                                 |
 | [vesting_schedule_id](#vesting_schedule_id)                         | `string` | Optional | cannot be null | [Type - Vesting](vesting-1-properties-vesting_schedule_id.md "Types.Vesting.schema.json#/properties/vesting_schedule_id")                                          |
-| [vesting_start_date](#vesting_start_date)                           | `object` | Optional | cannot be null | [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_start_date")                                                 |
+| [vesting_start_date](#vesting_start_date)                           | `string` | Optional | cannot be null | [Type - Vesting](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/vesting_start_date")                                             |
 | [event_driven_vesting_conditions](#event_driven_vesting_conditions) | `array`  | Optional | cannot be null | [Type - Vesting](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Types.Vesting.schema.json#/properties/event_driven_vesting_conditions") |
 | [custom_vesting_tranches](#custom_vesting_tranches)                 | `array`  | Optional | cannot be null | [Type - Vesting](vesting-1-properties-vesting-type---customvestingtranche-array.md "Types.Vesting.schema.json#/properties/custom_vesting_tranches")                |
 | [custom_vesting_description](#custom_vesting_description)           | `string` | Optional | cannot be null | [Type - Vesting](vesting-1-properties-custom_vesting_description.md "Types.Vesting.schema.json#/properties/custom_vesting_description")                            |
@@ -73,21 +73,25 @@ Time-based vesting schedule applied to the securities
 
 ## vesting_start_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `vesting_start_date`
 
 *   is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Type - Vesting](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/vesting_start_date")
+*   defined in: [Type - Vesting](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/vesting_start_date")
 
 ### vesting_start_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### vesting_start_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## event_driven_vesting_conditions
 

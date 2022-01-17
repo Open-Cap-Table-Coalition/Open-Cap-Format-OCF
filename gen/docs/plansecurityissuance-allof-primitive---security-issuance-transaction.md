@@ -26,7 +26,7 @@ all of
 | :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [custom_id](#custom_id)                             | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/custom_id")                                                          |
 | [stakeholder_id](#stakeholder_id)                   | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/stakeholder_id")                                                |
-| [board_approval_date](#board_approval_date)         | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")                                                                               |
+| [board_approval_date](#board_approval_date)         | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")                                                                           |
 | [consideration](#consideration)                     | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                             |
 | [security_law_exemptions](#security_law_exemptions) | `array`  | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions") |
 
@@ -68,21 +68,25 @@ Id of the stakeholder that holds legal title to this convertible.
 
 ## board_approval_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `board_approval_date`
 
 *   is required
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/board_approval_date")
+*   defined in: [Primitive - Security Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### board_approval_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## consideration
 

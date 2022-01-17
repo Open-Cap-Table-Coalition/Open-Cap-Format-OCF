@@ -32,7 +32,7 @@ all of
 | [exercise_price](#exercise_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                               |
 | [purchase_price](#purchase_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")                                                               |
 | [vesting](#vesting)                                 | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                  |
-| [expiration_date](#expiration_date)                 | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/expiration_date")                                                                      |
+| [expiration_date](#expiration_date)                 | `string`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/expiration_date")                                                                  |
 | [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/id")                                                        |
 | [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/comments")                                            |
 | [security_id](#security_id)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_id")                                      |
@@ -161,21 +161,25 @@ Type representing all aspects related to vesting securities
 
 ## expiration_date
 
-Type representing an instant in Universal Coordinated Time (UTC)
+Type representing an ISO-8601 date, e.g. 2022-01-28
 
 `expiration_date`
 
 *   is optional
 
-*   Type: `object` ([Type - DateTime](issuer-properties-type---datetime.md))
+*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](issuer-properties-type---datetime.md "Types.DateTime.schema.json#/properties/expiration_date")
+*   defined in: [Object - Warrant Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/expiration_date")
 
 ### expiration_date Type
 
-`object` ([Type - DateTime](issuer-properties-type---datetime.md))
+`string` ([Type - DateString](issuer-properties-type---datestring.md))
+
+### expiration_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## id
 
