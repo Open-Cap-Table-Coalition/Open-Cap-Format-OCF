@@ -5,7 +5,7 @@
     "object_type": "ISSUER",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
-    "formation_date": 615614400,
+    "formation_date": "2021-01-01",
     "country_of_formation": "USA",
     "state_of_formation": "DE",
     "tax_ids": [
