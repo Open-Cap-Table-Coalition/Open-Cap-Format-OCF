@@ -26,7 +26,7 @@
       "$ref": "/schema/types/numeric"
     },
     "board_approval_date": {
-      "description": "Date on which board approved the stock class",
+      "description": "Date on which the board approved the stock class",
       "$ref": "/schema/types/date"
     },
     "votes_per_share": {
