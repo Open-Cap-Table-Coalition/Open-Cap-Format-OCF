@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.EventDrivenVestingCondition.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition",
   "title": "Type - Event-driven Vesting Condition",
   "description": "Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)",
   "type": "object",
@@ -17,7 +17,7 @@
           "description": "Event has not occurred (null)"
         },
         {
-          "$ref": "Types.DateString.schema.json",
+          "$ref": "/schema/types/date",
           "description": "Event has occurred at this datetime"
         }
       ]
@@ -30,30 +30,30 @@
           "description": "No expiration date (null)"
         },
         {
-          "$ref": "Types.DateString.schema.json",
+          "$ref": "/schema/types/date",
           "description": "Datetime @ which condition ceases to apply"
         }
       ]
     },
     "share_amount": {
       "description": "Number of shares which vest upon successfully meeting the condition",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     },
     "priority": {
       "description": "Given sibling conditions, this field determines the order by which conditions shall be applied",
       "type": "integer"
     },
     "dependent_vesting": {
-      "title": "EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array",
+      "title": "Event-driven Vesting Condition - Event-driven Vesting Condition Array",
       "description": "Additional vesting conditions which become operative once this condition is met",
       "type": "array",
       "items": {
         "anyOf": [
           {
-            "$ref": "Types.EventDrivenVestingCondition.schema.json"
+            "$ref": "/schema/types/event_driven_vesting_condition"
           },
           {
-            "$ref": "Types.ScheduleDrivenVestingCondition.schema.json"
+            "$ref": "/schema/types/schedule_driven_vesting_condition"
           }
         ]
       }

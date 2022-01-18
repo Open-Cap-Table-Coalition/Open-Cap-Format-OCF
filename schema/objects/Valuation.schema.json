@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Valuation.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/valuation",
   "title": "Object - Valuation",
   "description": "Object describing a valuation used in the cap table",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
   "properties": {
     "object_type": {
       "const": "VALUATION"
@@ -15,15 +15,15 @@
     },
     "price_per_share": {
       "description": "Valued price per share",
-      "$ref": "Types.Money.schema.json"
+      "$ref": "/schema/types/monetary"
     },
     "valuation_date": {
       "description": "Date of the valuation",
-      "$ref": "Types.DateString.schema.json"
+      "$ref": "/schema/types/date"
     },
     "valuation_type": {
       "description": "Seam for supporting different types of valuations in future versions",
-      "$ref": "Enums.Valuation.schema.json"
+      "$ref": "/schema/enums/valuation_type"
     },
     "id": {},
     "comments": {}

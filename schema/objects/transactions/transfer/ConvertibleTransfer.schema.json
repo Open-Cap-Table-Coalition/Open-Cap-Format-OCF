@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer",
   "title": "Object - Convertible Transfer Transaction",
   "description": "Object describing a transfer or secondary sale of a convertible security",
   "type": "object",
   "allOf": [
-    { "$ref": "Primitives.Transactions.Transfer.BaseTransfer.schema.json" }
+    { "$ref": "/schema/primitives/transactions/transfer/base_transfer" }
   ],
   "properties": {
     "object_type": {
@@ -13,7 +13,7 @@
     },
     "amount": {
       "description": "Amount of monetary value cancelled",
-      "$ref": "Types.Money.schema.json"
+      "$ref": "/schema/types/monetary"
     },
     "id": {},
     "comments": {},

@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Conversion.StockConversion.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion",
   "title": "Object - Stock Conversion Transaction",
   "description": "Object describing a conversion of stock",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Conversion.BaseConversion.schema.json"
+      "$ref": "/schema/primitives/transactions/conversion/base_conversion"
     }
   ],
   "properties": {
@@ -19,11 +19,11 @@
     },
     "quantity_converted": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     },
     "conversion_ratio": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "Types.Ratio.schema.json"
+      "$ref": "/schema/types/ratio"
     },
     "id": {},
     "comments": {},

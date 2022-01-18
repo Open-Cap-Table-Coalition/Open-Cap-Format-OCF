@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/plan_security_acceptance",
   "title": "Object - Plan Security Acceptance Transaction",
   "description": "Object describing a plan security acceptance transaction",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Acceptance.BaseAcceptance.schema.json"
+      "$ref": "/schema/primitives/transactions/acceptance/base_acceptance"
     }
   ],
   "properties": {

@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Stakeholder.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/stakeholder",
   "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.BaseObject.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
   "properties": {
     "object_type": {
       "const": "STAKEHOLDER"
     },
     "name": {
       "description": "Name for the stakeholder",
-      "$ref": "Types.Name.schema.json"
+      "$ref": "/schema/types/name"
     },
     "stakeholder_type": {
       "description": "Distinguish individuals from institutions",
-      "$ref": "Enums.Stakeholder.schema.json"
+      "$ref": "/schema/enums/stakeholder_type"
     },
     "issuer_assigned_id": {
       "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
@@ -23,26 +23,26 @@
     },
     "current_relationship": {
       "description": "What is the current relationship of the stakeholder to the issuer?",
-      "$ref": "Enums.StakeholderRelationship.schema.json"
+      "$ref": "/schema/enums/stakeholder_relationship_type"
     },
     "primary_contact": {
       "description": "The primary contact info for the stakeholder",
-      "$ref": "Types.ContactInfo.schema.json"
+      "$ref": "/schema/types/contact_info"
     },
     "addresses": {
       "title": "Stakeholder - Address Array",
       "description": "Addresses for the stakeholder",
       "type": "array",
       "items": {
-        "$ref": "Types.Address.schema.json"
+        "$ref": "/schema/types/address"
       }
     },
     "tax_ids": {
-      "title": "Stakeholder - TaxID Array",
+      "title": "Stakeholder - Tax ID Array",
       "description": "The tax ids for this stakeholder",
       "type": "array",
       "items": {
-        "$ref": "Types.TaxID.schema.json"
+        "$ref": "/schema/types/tax_identifier"
       }
     },
     "id": {},

@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Conversion.ConvertibleConversion.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion",
   "title": "Object - Convertible Conversion Transaction",
   "description": "Object describing a conversion of a convertible security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Conversion.BaseConversion.schema.json"
+      "$ref": "/schema/primitives/transactions/conversion/base_conversion"
     }
   ],
   "properties": {

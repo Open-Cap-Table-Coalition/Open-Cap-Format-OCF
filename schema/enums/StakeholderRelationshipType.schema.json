@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Enums.StakeholderRelationship.schema.json",
-  "title": "Enum - Relationships between stakeholder and issuer",
-  "description": "Enumeration of types of relationships",
+  "$id": "https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type",
+  "title": "Enum - Stakeholder Relationship Type",
+  "description": "Enumeration of types of relationships between stakeholder and issuer",
   "type": "string",
   "enum": [
     "ADVISOR",

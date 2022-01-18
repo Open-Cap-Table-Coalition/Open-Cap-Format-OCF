@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.Money.schema.json",
-  "title": "Type - Money",
-  "description": "Type representing a monetary value in a specified currency code",
+  "$id": "https://opencaptablecoalition.com/schema/types/monetary",
+  "title": "Type - Monetary",
+  "description": "Type represention of an amount of money in the specified currency",
   "type": "object",
   "properties": {
     "amount": {
       "description": "Numeric amount of money",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     },
     "currency": {
       "description": "ISO-4217 currency code",

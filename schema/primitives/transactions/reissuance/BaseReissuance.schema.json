@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Primitives.Transactions.Reissuance.BaseReissuance.schema.json",
-  "title": "Primitive - Security Re-issuance Transaction",
-  "description": "Abstract object describing common properties to a re-issuance of a security",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance",
+  "title": "Primitive - Security Reissuance Transaction",
+  "description": "Abstract object describing common properties to a reissuance of a security",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
   "properties": {
     "resulting_security_ids": {
-      "title": "Security Reissuance - Resulting Security Id Array",
-      "description": "Identifier of the new security (or securities) issuance resulting from a re-issuance.",
+      "title": "Security Reissuance - Resulting Security ID Array",
+      "description": "Identifier of the new security (or securities) issuance resulting from a reissuance",
       "type": "array",
       "items": {
         "type": "string"

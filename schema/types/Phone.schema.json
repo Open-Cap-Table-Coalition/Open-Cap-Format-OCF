@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.PhoneNumber.schema.json",
-  "title": "Type - PhoneNumber",
-  "description": "Type representation of a phone number.",
+  "$id": "https://opencaptablecoalition.com/schema/types/phone",
+  "title": "Type - Phone",
+  "description": "Type representation of a phone number",
   "type": "object",
   "properties": {
     "phone_type": {
       "description": "Type of phone number (e.g. mobile, home or business)",
-      "$ref": "Enums.PhoneNumber.schema.json"
+      "$ref": "/schema/enums/phone_type"
     },
     "phone_number": {
       "description": "A valid phone number",

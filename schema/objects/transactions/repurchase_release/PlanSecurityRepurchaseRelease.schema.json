@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release",
   "title": "Object - Plan Security Repurchase Release Transaction",
   "description": "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.RepurchaseRelease.BaseRepurchaseRelease.schema.json"
+      "$ref": "/schema/primitives/transactions/repurchase_release/base_repurchase_release"
     }
   ],
   "properties": {
