@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Cancellation.BaseConversion.schema.json"
+      "$ref": "Primitives.Transactions.Conversion.BaseConversion.schema.json"
     }
   ],
   "properties": {

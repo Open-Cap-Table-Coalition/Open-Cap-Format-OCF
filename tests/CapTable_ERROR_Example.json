@@ -5,7 +5,7 @@
     "object_type": "ISSUER",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",
-    "formation_date": 615614400,
+    "formation_date": "2021-01-01",
     "country_of_formation": "USA",
     "state_of_formation": "DE",
     "tax_ids": [
@@ -53,11 +53,9 @@
       "id": "ambiguous-partial-cancellation",
       "security_id": "test-security-id",
       "date": "2021-01-28",
-      "quantity": { "string_value": "100" },
+      "quantity": "100",
       "amount": {
-        "amount": {
-          "string_value": "53.09"
-        },
+        "amount": "53.09",
         "currency": "USD"
       },
       "resulting_security_ids": ["new-security"]
