@@ -1,7 +1,7 @@
-# Security Exercise - Resulting Security Id Array Schema
+# Security Exercise - Resulting Security ID Array Schema
 
 ```txt
-Primitives.Transactions.Exercise.BaseExercise.schema.json#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids
 ```
 
 Identifier for the security (or securities) that resulted from the exercise

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Exercise Transaction Schema
 
 ```txt
-Objects.Transactions.Exercise.WarrantExercise.schema.json#/properties/consideration
+https://opencaptablecoalition.com/schema/objects/transactions/exercise/warrant_exercise#/properties/consideration
 ```
 
 

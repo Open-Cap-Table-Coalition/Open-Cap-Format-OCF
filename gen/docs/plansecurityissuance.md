@@ -1,7 +1,7 @@
 # Object - Plan Security Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance
 ```
 
 Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder
@@ -22,26 +22,26 @@ any of
 
 # Object - Plan Security Issuance Transaction Properties
 
-| Property                                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
-| :------------------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [object_type](#object_type)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-object_type.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/object_type")                                                            |
-| [stock_plan_id](#stock_plan_id)                               | `string`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stock_plan_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/stock_plan_id")                                                        |
-| [compensation_type](#compensation_type)                       | `string`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---compensation-type.md "Enums.Compensation.schema.json#/properties/compensation_type")                                                                         |
-| [option_grant_type](#option_grant_type)                       | `string`      | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")                                                                                     |
-| [quantity](#quantity)                                         | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                                                            |
-| [exercise_price](#exercise_price)                             | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                                                               |
-| [vesting](#vesting)                                           | `object`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                                                  |
-| [expiration_date](#expiration_date)                           | Merged        | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/expiration_date")                                                    |
-| [termination_exercise_windows](#termination_exercise_windows) | `array`       | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows") |
-| [id](#id)                                                     | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/id")                                                                              |
-| [comments](#comments)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-comments.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/comments")                                                                  |
-| [security_id](#security_id)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/security_id")                                                            |
-| [date](#date)                                                 | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/date")                                                                          |
-| [custom_id](#custom_id)                                       | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-custom_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/custom_id")                                                                |
-| [stakeholder_id](#stakeholder_id)                             | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/stakeholder_id")                                                      |
-| [board_approval_date](#board_approval_date)                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/board_approval_date")                                            |
-| [consideration](#consideration)                               | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-consideration.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/consideration")                                                        |
-| [security_law_exemptions](#security_law_exemptions)           | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/security_law_exemptions")                                    |
+| Property                                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
+| :------------------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_type](#object_type)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/object_type")                                               |
+| [stock_plan_id](#stock_plan_id)                               | `string`      | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stock_plan_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/stock_plan_id")                                           |
+| [compensation_type](#compensation_type)                       | Not specified | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-compensation_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/compensation_type")                                   |
+| [option_grant_type](#option_grant_type)                       | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-option_grant_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/option_grant_type")                                   |
+| [quantity](#quantity)                                         | Not specified | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/quantity")                                                     |
+| [exercise_price](#exercise_price)                             | Not specified | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/exercise_price")                                         |
+| [vesting_rules](#vesting_rules)                               | Not specified | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/vesting_rules")                                           |
+| [expiration_date](#expiration_date)                           | Merged        | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/expiration_date")                                       |
+| [termination_exercise_windows](#termination_exercise_windows) | `array`       | Required | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-plan-security---termination-window-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/termination_exercise_windows") |
+| [id](#id)                                                     | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/id")                                                                 |
+| [comments](#comments)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/comments")                                                     |
+| [security_id](#security_id)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/security_id")                                               |
+| [date](#date)                                                 | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/date")                                                             |
+| [custom_id](#custom_id)                                       | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/custom_id")                                                   |
+| [stakeholder_id](#stakeholder_id)                             | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/stakeholder_id")                                         |
+| [board_approval_date](#board_approval_date)                   | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/board_approval_date")                               |
+| [consideration](#consideration)                               | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/consideration")                                           |
+| [security_law_exemptions](#security_law_exemptions)           | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/security_law_exemptions")                       |
 
 ## object_type
 
@@ -55,7 +55,7 @@ any of
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-object_type.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/object_type")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/object_type")
 
 ### object_type Type
 
@@ -71,7 +71,7 @@ unknown
 
 ## stock_plan_id
 
-Id of StockPlan the PlanSecurities were issued from
+Identifier of StockPlan the PlanSecurities were issued from
 
 `stock_plan_id`
 
@@ -81,7 +81,7 @@ Id of StockPlan the PlanSecurities were issued from
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stock_plan_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/stock_plan_id")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stock_plan_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/stock_plan_id")
 
 ### stock_plan_id Type
 
@@ -89,112 +89,93 @@ Id of StockPlan the PlanSecurities were issued from
 
 ## compensation_type
 
-Enumeration of stock compensation types
+If the plan security is compensation, what kind?
 
 `compensation_type`
 
 *   is required
 
-*   Type: `string` ([Enum - Compensation Type](plansecurityissuance-properties-enum---compensation-type.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---compensation-type.md "Enums.Compensation.schema.json#/properties/compensation_type")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-compensation_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/compensation_type")
 
 ### compensation_type Type
 
-`string` ([Enum - Compensation Type](plansecurityissuance-properties-enum---compensation-type.md))
-
-### compensation_type Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value      | Explanation |
-| :--------- | :---------- |
-| `"OPTION"` |             |
-| `"RSU"`    |             |
+unknown
 
 ## option_grant_type
 
-Enumeration of option types
+If the plan security is an option, what kind?
 
 `option_grant_type`
 
 *   is optional
 
-*   Type: `string` ([Enum - Option Type](plansecurityissuance-properties-enum---option-type.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-enum---option-type.md "Enums.Option.schema.json#/properties/option_grant_type")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-option_grant_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/option_grant_type")
 
 ### option_grant_type Type
 
-`string` ([Enum - Option Type](plansecurityissuance-properties-enum---option-type.md))
-
-### option_grant_type Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value    | Explanation |
-| :------- | :---------- |
-| `"NSO"`  |             |
-| `"ISO"`  |             |
-| `"INTL"` |             |
+unknown
 
 ## quantity
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+How many shares are subject to this plan security?
 
 `quantity`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/quantity")
 
 ### quantity Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
 ## exercise_price
 
-Type representing a monetary value in a specified currency code
+What is the exercise price?
 
 `exercise_price`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/exercise_price")
 
 ### exercise_price Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
-## vesting
+## vesting_rules
 
-Type representing all aspects related to vesting securities
+What vesting applies to this plan security?
 
-`vesting`
+`vesting_rules`
 
 *   is required
 
-*   Type: `object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/vesting_rules")
 
-### vesting Type
+### vesting_rules Type
 
-`object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+unknown
 
 ## expiration_date
 
@@ -208,7 +189,7 @@ Expiration date of the plan security
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/expiration_date")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/expiration_date")
 
 ### expiration_date Type
 
@@ -218,7 +199,7 @@ one (and only one) of
 
 *   [Untitled null in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-0.md "check type definition")
 
-*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
+*   [Untitled undefined type in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-1.md "check type definition")
 
 ## termination_exercise_windows
 
@@ -228,15 +209,15 @@ Exercise periods applicable to plan security after a termination for a given, en
 
 *   is required
 
-*   Type: `object[]` ([Type - TerminationWindow](plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-plan-security---termination-window-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/termination_exercise_windows")
 
 ### termination_exercise_windows Type
 
-`object[]` ([Type - TerminationWindow](plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md))
+unknown\[]
 
 ## id
 
@@ -250,7 +231,7 @@ Exercise periods applicable to plan security after a termination for a given, en
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/id")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/id")
 
 ### id Type
 
@@ -268,7 +249,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-comments.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/comments")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/comments")
 
 ### comments Type
 
@@ -286,7 +267,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/security_id")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/security_id")
 
 ### security_id Type
 
@@ -304,7 +285,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/date")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/date")
 
 ### date Type
 
@@ -322,7 +303,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-custom_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/custom_id")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/custom_id")
 
 ### custom_id Type
 
@@ -340,7 +321,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/stakeholder_id")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -358,7 +339,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/board_approval_date")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -376,7 +357,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-consideration.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/consideration")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/consideration")
 
 ### consideration Type
 
@@ -394,7 +375,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/security_law_exemptions")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 

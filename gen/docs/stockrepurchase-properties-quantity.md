@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Repurchase Transaction Schema
 
 ```txt
-Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/quantity
+https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/quantity
 ```
 
 

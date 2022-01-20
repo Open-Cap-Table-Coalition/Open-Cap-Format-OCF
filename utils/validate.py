@@ -1,4 +1,3 @@
-import os
 import json
 import logging
 from pathlib import Path
@@ -74,6 +73,13 @@ def validate_ocf(ocf_instance):
     ocf_schema = json.loads(open(ocf_schema_path.absolute(), 'r').read())
     logger.info(f"Loaded parent ocf schema: {ocf_schema}")
     return __validate_against_schemastore(ocf_instance, ocf_schema)
+
+
+def __get_ocf_refresolver(target_schema=json.loads(open(ocf_schema_path.absolute(), 'r').read())):
+    target_ocf_schema = target_schema
+    schemastore = load_ocf_schemastore()
+    logger.debug(json.dumps(schemastore, indent=4))
+    return RefResolver.from_schema(target_ocf_schema, store=schemastore)
 
 
 def __validate_against_schemastore(ocf_instance, parent_schema):

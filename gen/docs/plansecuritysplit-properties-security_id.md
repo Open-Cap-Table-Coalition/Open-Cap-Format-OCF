@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Split Transaction Schema
 
 ```txt
-Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/security_id
+https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/security_id
 ```
 
 

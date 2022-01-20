@@ -1,7 +1,7 @@
-# Enum - AllocationType Schema
+# Enum - Allocation Type Schema
 
 ```txt
-Enums.AllocationType.schema.json
+https://opencaptablecoalition.com/schema/enums/allocation_type
 ```
 
 Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
@@ -17,11 +17,11 @@ Enumeration of allocation types for vesting schedules. Using an example of 18 sh
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [AllocationType.schema.json](../../schema/enums/AllocationType.schema.json "open original schema") |
 
-## Enum - AllocationType Type
+## Enum - Allocation Type Type
 
-`string` ([Enum - AllocationType](allocationtype.md))
+`string` ([Enum - Allocation Type](allocationtype.md))
 
-## Enum - AllocationType Constraints
+## Enum - Allocation Type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

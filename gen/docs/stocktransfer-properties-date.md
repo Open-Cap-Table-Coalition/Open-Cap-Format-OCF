@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Transfer Transaction Schema
 
 ```txt
-Objects.Transactions.Transfer.StockTransfer.schema.json#/properties/date
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/stock_transfer#/properties/date
 ```
 
 

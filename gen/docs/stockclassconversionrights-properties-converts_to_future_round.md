@@ -1,10 +1,10 @@
-# Untitled boolean in Type - StockClassConversionRights Schema
+# Untitled boolean in Type - Stock Class Conversion Rights Schema
 
 ```txt
-Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round
+https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_future_round
 ```
 
-Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)
+Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                  |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |

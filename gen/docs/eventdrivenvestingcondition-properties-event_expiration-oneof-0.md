@@ -1,7 +1,7 @@
 # Untitled null in Type - Event-driven Vesting Condition Schema
 
 ```txt
-Types.EventDrivenVestingCondition.schema.json#/properties/event_expiration/oneOf/0
+https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_expiration/oneOf/0
 ```
 
 No expiration date (null)

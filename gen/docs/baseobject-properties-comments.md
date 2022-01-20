@@ -1,7 +1,7 @@
 # Untitled array in Object - BaseObject Schema
 
 ```txt
-Primitives.BaseObject.schema.json#/properties/comments
+https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments
 ```
 
 Unstructured text comments related to and stored for the object

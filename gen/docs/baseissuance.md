@@ -1,7 +1,7 @@
 # Primitive - Security Issuance Transaction Schema
 
 ```txt
-Primitives.Transactions.Issuance.BaseIssuance.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance
 ```
 
 Abstract object describing fields common to all issuance objects
@@ -16,19 +16,17 @@ Abstract object describing fields common to all issuance objects
 
 all of
 
-*   all of
-
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Issuance Transaction](baseissuance-allof-0.md "check type definition")
 
 # Primitive - Security Issuance Transaction Properties
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [custom_id](#custom_id)                             | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/custom_id")                                                          |
-| [stakeholder_id](#stakeholder_id)                   | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/stakeholder_id")                                                |
-| [board_approval_date](#board_approval_date)         | `string` | Required | cannot be null | [Primitive - Security Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")                                                                           |
-| [consideration](#consideration)                     | `object` | Required | cannot be null | [Primitive - Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                             |
-| [security_law_exemptions](#security_law_exemptions) | `array`  | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions") |
+| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [custom_id](#custom_id)                             | `string`      | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/custom_id")                                                  |
+| [stakeholder_id](#stakeholder_id)                   | `string`      | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/stakeholder_id")                                        |
+| [board_approval_date](#board_approval_date)         | Not specified | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/board_approval_date")                              |
+| [consideration](#consideration)                     | Not specified | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/consideration")                                          |
+| [security_law_exemptions](#security_law_exemptions) | `array`       | Required | cannot be null | [Primitive - Security Issuance Transaction](baseissuance-properties-security-issuance---security-exemption-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions") |
 
 ## custom_id
 
@@ -42,7 +40,7 @@ A custom ID for this convertible (e.g. CN-1.)
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/custom_id")
+*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/custom_id")
 
 ### custom_id Type
 
@@ -50,7 +48,7 @@ A custom ID for this convertible (e.g. CN-1.)
 
 ## stakeholder_id
 
-Id of the stakeholder that holds legal title to this convertible.
+Identifer for the stakeholder that holds legal title to this convertible
 
 `stakeholder_id`
 
@@ -60,7 +58,7 @@ Id of the stakeholder that holds legal title to this convertible.
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/stakeholder_id")
+*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -68,43 +66,39 @@ Id of the stakeholder that holds legal title to this convertible.
 
 ## board_approval_date
 
-Type representing an ISO-8601 date, e.g. 2022-01-28
+Date of board approval for the convertible
 
 `board_approval_date`
 
 *   is required
 
-*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/board_approval_date")
+*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/board_approval_date")
 
 ### board_approval_date Type
 
-`string` ([Type - DateString](issuer-properties-type---datestring.md))
-
-### board_approval_date Constraints
-
-**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+unknown
 
 ## consideration
 
-Type representing a monetary value in a specified currency code
+Consideration for the security
 
 `consideration`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## security_law_exemptions
 
@@ -114,12 +108,12 @@ List of security law exemptions (and applicable jurisdictions) for this converti
 
 *   is required
 
-*   Type: `object[]` ([Type - SecurityExemption](baseissuance-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions")
+*   defined in: [Primitive - Security Issuance Transaction](baseissuance-properties-security-issuance---security-exemption-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 
-`object[]` ([Type - SecurityExemption](baseissuance-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md))
+unknown\[]

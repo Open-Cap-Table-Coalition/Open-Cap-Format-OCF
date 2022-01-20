@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/anyOf/0
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/anyOf/0
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # 0 Properties
 
-| Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                         |
-| :-------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [compensation_type](#compensation_type) | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-0-properties-compensation_type.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/anyOf/0/properties/compensation_type") |
+| Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
+| :-------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [compensation_type](#compensation_type) | Not specified | Optional | cannot be null | [Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-0-properties-compensation_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/anyOf/0/properties/compensation_type") |
 
 ## compensation_type
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-0-properties-compensation_type.md "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/anyOf/0/properties/compensation_type")
+*   defined in: [Object - Plan Security Issuance Transaction](plansecurityissuance-anyof-0-properties-compensation_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/anyOf/0/properties/compensation_type")
 
 ### compensation_type Type
 

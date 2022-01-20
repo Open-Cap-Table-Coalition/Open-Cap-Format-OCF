@@ -1,10 +1,10 @@
 # Untitled string in Object - Stock Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_class_id
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_class_id
 ```
 
-Id of StockClass of this stock issuance
+Identifier of the stock class for this stock issuance
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------ |

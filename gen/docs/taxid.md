@@ -1,7 +1,7 @@
-# Type - TaxID Schema
+# Type - Tax Identifier Schema
 
 ```txt
-Types.TaxID.schema.json
+https://opencaptablecoalition.com/schema/types/tax_identifier
 ```
 
 Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)
@@ -10,16 +10,16 @@ Type representation of a government identifier for tax purposes (e.g. EIN) and c
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [TaxID.schema.json](../../schema/types/TaxID.schema.json "open original schema") |
 
-## Type - TaxID Type
+## Type - Tax Identifier Type
 
-`object` ([Type - TaxID](taxid.md))
+`object` ([Type - Tax Identifier](taxid.md))
 
-# Type - TaxID Properties
+# Type - Tax Identifier Properties
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                |
-| :------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------- |
-| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")   |
-| [country](#country) | `string` | Required | cannot be null | [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                               |
+| :------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")   |
+| [country](#country) | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-country.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country") |
 
 ## tax_id
 
@@ -33,7 +33,7 @@ Tax identifier as string
 
 *   cannot be null
 
-*   defined in: [Type - TaxID](taxid-properties-tax_id.md "Types.TaxID.schema.json#/properties/tax_id")
+*   defined in: [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")
 
 ### tax_id Type
 
@@ -41,7 +41,7 @@ Tax identifier as string
 
 ## country
 
-Identifier's issuing country code (ISO-3166)
+Issuing country code (ISO-3166) for the tax identifier
 
 `country`
 
@@ -51,7 +51,7 @@ Identifier's issuing country code (ISO-3166)
 
 *   cannot be null
 
-*   defined in: [Type - TaxID](taxid-properties-country.md "Types.TaxID.schema.json#/properties/country")
+*   defined in: [Type - Tax Identifier](taxid-properties-country.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country")
 
 ### country Type
 

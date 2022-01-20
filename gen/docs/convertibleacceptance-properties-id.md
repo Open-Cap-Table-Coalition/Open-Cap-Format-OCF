@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Acceptance Transaction Schema
 
 ```txt
-Objects.Transactions.Acceptance.ConvertibleAcceptance.schema.json#/properties/id
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/id
 ```
 
 

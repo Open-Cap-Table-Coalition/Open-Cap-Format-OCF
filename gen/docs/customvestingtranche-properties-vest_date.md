@@ -1,7 +1,7 @@
 # Untitled string in Type - Custom Vesting Tranche Schema
 
 ```txt
-Types.CustomVestingTranche.schema.json#/properties/vest_date
+https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_date
 ```
 
 Date of vesting for the tranche

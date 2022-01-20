@@ -1,10 +1,10 @@
 # Untitled string in Object - Plan Security Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/stock_plan_id
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/stock_plan_id
 ```
 
-Id of StockPlan the PlanSecurities were issued from
+Identifier of StockPlan the PlanSecurities were issued from
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------- |

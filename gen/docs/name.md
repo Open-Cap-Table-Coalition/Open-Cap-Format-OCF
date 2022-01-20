@@ -1,7 +1,7 @@
 # Type - Name Schema
 
 ```txt
-Types.Name.schema.json
+https://opencaptablecoalition.com/schema/types/name
 ```
 
 Type comprising of multiple name components
@@ -16,11 +16,11 @@ Type comprising of multiple name components
 
 # Type - Name Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                   |
-| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------- |
-| [legal_name](#legal_name) | `string` | Required | cannot be null | [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name") |
-| [first_name](#first_name) | `string` | Optional | can be null    | [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name") |
-| [last_name](#last_name)   | `string` | Optional | can be null    | [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")   |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                |
+| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------ |
+| [legal_name](#legal_name) | `string` | Required | cannot be null | [Type - Name](name-properties-legal_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/legal_name") |
+| [first_name](#first_name) | `string` | Optional | cannot be null | [Type - Name](name-properties-first_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/first_name") |
+| [last_name](#last_name)   | `string` | Optional | cannot be null | [Type - Name](name-properties-last_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/last_name")   |
 
 ## legal_name
 
@@ -34,7 +34,7 @@ Legal full name for the individual/institution
 
 *   cannot be null
 
-*   defined in: [Type - Name](name-properties-legal_name.md "Types.Name.schema.json#/properties/legal_name")
+*   defined in: [Type - Name](name-properties-legal_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/legal_name")
 
 ### legal_name Type
 
@@ -50,9 +50,9 @@ First/given name for the individual
 
 *   Type: `string`
 
-*   can be null
+*   cannot be null
 
-*   defined in: [Type - Name](name-properties-first_name.md "Types.Name.schema.json#/properties/first_name")
+*   defined in: [Type - Name](name-properties-first_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/first_name")
 
 ### first_name Type
 
@@ -68,9 +68,9 @@ Last/family name for the individual
 
 *   Type: `string`
 
-*   can be null
+*   cannot be null
 
-*   defined in: [Type - Name](name-properties-last_name.md "Types.Name.schema.json#/properties/last_name")
+*   defined in: [Type - Name](name-properties-last_name.md "https://opencaptablecoalition.com/schema/types/name#/properties/last_name")
 
 ### last_name Type
 

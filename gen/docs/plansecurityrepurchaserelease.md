@@ -1,14 +1,14 @@
 # Object - Plan Security Repurchase Release Transaction Schema
 
 ```txt
-Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release
 ```
 
 Object describing a plan security repurchase release transaction (when the right to repurchase is removed)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [PlanSecurityRepurchaseRelease.schema.json](../../schema/objects/transactions/repurchaserelease/PlanSecurityRepurchaseRelease.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                         |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [PlanSecurityRepurchaseRelease.schema.json](../../schema/objects/transactions/repurchase_release/PlanSecurityRepurchaseRelease.schema.json "open original schema") |
 
 ## Object - Plan Security Repurchase Release Transaction Type
 
@@ -16,30 +16,26 @@ Object describing a plan security repurchase release transaction (when the right
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-allof-0.md "check type definition")
 
 # Object - Plan Security Repurchase Release Transaction Properties
 
-| Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
-| :------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-object_type.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/object_type")                 |
-| [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-id.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/id")                                   |
-| [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-comments.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/comments")                       |
-| [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-security_id.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/security_id")                 |
-| [date](#date)                               | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-date.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/date")                               |
-| [settlement_date](#settlement_date)         | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-settlement_date.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/settlement_date")         |
-| [release_price](#release_price)             | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-release_price.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/release_price")             |
-| [net_quantity](#net_quantity)               | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-net_quantity.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/net_quantity")               |
-| [method](#method)                           | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-method.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/method")                           |
-| [stock_swap](#stock_swap)                   | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-stock_swap.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/stock_swap")                   |
-| [cash_paid](#cash_paid)                     | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-cash_paid.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/cash_paid")                     |
-| [quantity_sold](#quantity_sold)             | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-quantity_sold.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/quantity_sold")             |
-| [sale_price_per_unit](#sale_price_per_unit) | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-sale_price_per_unit.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/sale_price_per_unit") |
-| [withheld_quantity](#withheld_quantity)     | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-withheld_quantity.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/withheld_quantity")     |
+| Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
+| :------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/object_type")                 |
+| [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/id")                                   |
+| [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/comments")                       |
+| [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/security_id")                 |
+| [date](#date)                               | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/date")                               |
+| [settlement_date](#settlement_date)         | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-settlement_date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/settlement_date")         |
+| [release_price](#release_price)             | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-release_price.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/release_price")             |
+| [net_quantity](#net_quantity)               | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-net_quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/net_quantity")               |
+| [method](#method)                           | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-method.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/method")                           |
+| [stock_swap](#stock_swap)                   | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/stock_swap")                   |
+| [cash_paid](#cash_paid)                     | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-cash_paid.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/cash_paid")                     |
+| [quantity_sold](#quantity_sold)             | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-quantity_sold.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/quantity_sold")             |
+| [sale_price_per_unit](#sale_price_per_unit) | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-sale_price_per_unit.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/sale_price_per_unit") |
+| [withheld_quantity](#withheld_quantity)     | Not specified | Optional | cannot be null | [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-withheld_quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/withheld_quantity")     |
 
 ## object_type
 
@@ -53,7 +49,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-object_type.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/object_type")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/object_type")
 
 ### object_type Type
 
@@ -79,7 +75,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-id.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/id")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/id")
 
 ### id Type
 
@@ -97,7 +93,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-comments.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/comments")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/comments")
 
 ### comments Type
 
@@ -115,7 +111,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-security_id.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/security_id")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/security_id")
 
 ### security_id Type
 
@@ -133,7 +129,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-date.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/date")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/date")
 
 ### date Type
 
@@ -151,7 +147,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-settlement_date.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/settlement_date")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-settlement_date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/settlement_date")
 
 ### settlement_date Type
 
@@ -169,7 +165,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-release_price.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/release_price")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-release_price.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/release_price")
 
 ### release_price Type
 
@@ -187,7 +183,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-net_quantity.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/net_quantity")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-net_quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/net_quantity")
 
 ### net_quantity Type
 
@@ -205,7 +201,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-method.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/method")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-method.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/method")
 
 ### method Type
 
@@ -223,7 +219,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-stock_swap.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/stock_swap")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/stock_swap")
 
 ### stock_swap Type
 
@@ -241,7 +237,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-cash_paid.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/cash_paid")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-cash_paid.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/cash_paid")
 
 ### cash_paid Type
 
@@ -259,7 +255,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-quantity_sold.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/quantity_sold")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-quantity_sold.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/quantity_sold")
 
 ### quantity_sold Type
 
@@ -277,7 +273,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-sale_price_per_unit.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/sale_price_per_unit")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-sale_price_per_unit.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/sale_price_per_unit")
 
 ### sale_price_per_unit Type
 
@@ -295,7 +291,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-withheld_quantity.md "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/withheld_quantity")
+*   defined in: [Object - Plan Security Repurchase Release Transaction](plansecurityrepurchaserelease-properties-withheld_quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/withheld_quantity")
 
 ### withheld_quantity Type
 

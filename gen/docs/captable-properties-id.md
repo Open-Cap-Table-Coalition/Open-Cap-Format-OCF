@@ -1,10 +1,10 @@
 # Untitled string in Cap Table ("Snapshot") Schema
 
 ```txt
-CapTable.schema.json#/properties/id
+https://opencaptablecoalition.com/schema/cap_table#/properties/id
 ```
 
-Identifier for the capitalization table
+Identifier for the cap table
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |

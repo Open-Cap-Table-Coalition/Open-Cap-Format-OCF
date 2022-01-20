@@ -1,7 +1,7 @@
 # Object - Plan Security Split Transaction Schema
 
 ```txt
-Objects.Transactions.Split.PlanSecuritySplit.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split
 ```
 
 Object describing a split of a plan security
@@ -16,23 +16,19 @@ Object describing a split of a plan security
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Plan Security Split Transaction](plansecuritysplit-allof-0.md "check type definition")
 
 # Object - Plan Security Split Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                       |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-object_type.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/object_type")                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-id.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-comments.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-security_id.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-date.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/date")                                     |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-resulting_security_ids.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/resulting_security_ids") |
-| [split_ratio](#split_ratio)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-split_ratio.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/split_ratio")                       |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                      |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/object_type")                       |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/date")                                     |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/resulting_security_ids") |
+| [split_ratio](#split_ratio)                       | Not specified | Optional | cannot be null | [Object - Plan Security Split Transaction](plansecuritysplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/split_ratio")                       |
 
 ## object_type
 
@@ -46,7 +42,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-object_type.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/object_type")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/object_type")
 
 ### object_type Type
 
@@ -72,7 +68,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-id.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/id")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/id")
 
 ### id Type
 
@@ -90,7 +86,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-comments.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/comments")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/comments")
 
 ### comments Type
 
@@ -108,7 +104,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-security_id.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/security_id")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/security_id")
 
 ### security_id Type
 
@@ -126,7 +122,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-date.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/date")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/date")
 
 ### date Type
 
@@ -144,7 +140,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-resulting_security_ids.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/resulting_security_ids")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 
@@ -162,7 +158,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-split_ratio.md "Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/split_ratio")
+*   defined in: [Object - Plan Security Split Transaction](plansecuritysplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split#/properties/split_ratio")
 
 ### split_ratio Type
 

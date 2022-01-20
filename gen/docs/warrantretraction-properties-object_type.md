@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Retraction Transaction Schema
 
 ```txt
-Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/object_type
 ```
 
 

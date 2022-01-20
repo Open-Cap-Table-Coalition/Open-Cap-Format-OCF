@@ -1,7 +1,7 @@
 # Object - Stock Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.StockIssuance.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance
 ```
 
 Object describing a stock issuance transaction by the issuer and held by a stakeholder
@@ -16,33 +16,29 @@ Object describing a stock issuance transaction by the issuer and held by a stake
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Stock Issuance Transaction](stockissuance-allof-0.md "check type definition")
 
 # Object - Stock Issuance Transaction Properties
 
-| Property                                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                               |
-| :------------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-object_type.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/object_type")                         |
-| [stock_class_id](#stock_class_id)                       | `string`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock_class_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_class_id")                   |
-| [share_price](#share_price)                             | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/share_price")                                                 |
-| [quantity](#quantity)                                   | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                           |
-| [vesting](#vesting)                                     | `object`      | Optional | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                 |
-| [cost_basis](#cost_basis)                               | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")                                                  |
-| [stock_legend_ids](#stock_legend_ids)                   | `array`       | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock---stock-legend-id-array.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_legend_ids")  |
-| [issued_from_parent_object](#issued_from_parent_object) | `object`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")                              |
-| [id](#id)                                               | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/id")                                           |
-| [comments](#comments)                                   | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-comments.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/comments")                               |
-| [security_id](#security_id)                             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-security_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/security_id")                         |
-| [date](#date)                                           | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-date.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/date")                                       |
-| [custom_id](#custom_id)                                 | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-custom_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/custom_id")                             |
-| [stakeholder_id](#stakeholder_id)                       | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stakeholder_id")                   |
-| [board_approval_date](#board_approval_date)             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/board_approval_date")         |
-| [consideration](#consideration)                         | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-consideration.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/consideration")                     |
-| [security_law_exemptions](#security_law_exemptions)     | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/security_law_exemptions") |
+| Property                                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
+| :------------------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/object_type")                                 |
+| [stock_class_id](#stock_class_id)                       | `string`      | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_class_id")                           |
+| [share_price](#share_price)                             | Not specified | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-share_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/share_price")                                 |
+| [quantity](#quantity)                                   | Not specified | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/quantity")                                       |
+| [vesting_rules](#vesting_rules)                         | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/vesting_rules")                             |
+| [cost_basis](#cost_basis)                               | Not specified | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-cost_basis.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/cost_basis")                                   |
+| [stock_legend_ids](#stock_legend_ids)                   | `array`       | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stock-issuance---stock-legend-id-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids") |
+| [issued_from_parent_object](#issued_from_parent_object) | Not specified | Required | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-issued_from_parent_object.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/issued_from_parent_object")     |
+| [id](#id)                                               | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/id")                                                   |
+| [comments](#comments)                                   | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/comments")                                       |
+| [security_id](#security_id)                             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/security_id")                                 |
+| [date](#date)                                           | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/date")                                               |
+| [custom_id](#custom_id)                                 | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/custom_id")                                     |
+| [stakeholder_id](#stakeholder_id)                       | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stakeholder_id")                           |
+| [board_approval_date](#board_approval_date)             | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/board_approval_date")                 |
+| [consideration](#consideration)                         | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/consideration")                             |
+| [security_law_exemptions](#security_law_exemptions)     | Not specified | Optional | cannot be null | [Object - Stock Issuance Transaction](stockissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/security_law_exemptions")         |
 
 ## object_type
 
@@ -56,7 +52,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-object_type.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/object_type")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/object_type")
 
 ### object_type Type
 
@@ -72,7 +68,7 @@ unknown
 
 ## stock_class_id
 
-Id of StockClass of this stock issuance
+Identifier of the stock class for this stock issuance
 
 `stock_class_id`
 
@@ -82,7 +78,7 @@ Id of StockClass of this stock issuance
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stock_class_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_class_id")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_class_id")
 
 ### stock_class_id Type
 
@@ -90,75 +86,75 @@ Id of StockClass of this stock issuance
 
 ## share_price
 
-Type representing a monetary value in a specified currency code
+The price per share paid for the stock by the holder
 
 `share_price`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/share_price")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-share_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/share_price")
 
 ### share_price Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## quantity
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Number of shares issued to the stakeholder
 
 `quantity`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/quantity")
 
 ### quantity Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
-## vesting
+## vesting_rules
 
-Type representing all aspects related to vesting securities
+Vesting conditions applicable to this stock
 
-`vesting`
+`vesting_rules`
 
 *   is optional
 
-*   Type: `object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/vesting_rules")
 
-### vesting Type
+### vesting_rules Type
 
-`object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+unknown
 
 ## cost_basis
 
-Type representing a monetary value in a specified currency code
+The cost basis for this particular stock
 
 `cost_basis`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/cost_basis")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-cost_basis.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/cost_basis")
 
 ### cost_basis Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## stock_legend_ids
 
@@ -172,7 +168,7 @@ List of stock legend ids that apply to this stock
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stock---stock-legend-id-array.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_legend_ids")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stock-issuance---stock-legend-id-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids")
 
 ### stock_legend_ids Type
 
@@ -180,21 +176,21 @@ List of stock legend ids that apply to this stock
 
 ## issued_from_parent_object
 
-Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a Stock came from a previous Stock entry)
+Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?
 
 `issued_from_parent_object`
 
 *   is required
 
-*   Type: `object` ([Type - StockParent](stockissuance-properties-type---stockparent.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-type---stockparent.md "Types.StockParent.schema.json#/properties/issued_from_parent_object")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-issued_from_parent_object.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/issued_from_parent_object")
 
 ### issued_from_parent_object Type
 
-`object` ([Type - StockParent](stockissuance-properties-type---stockparent.md))
+unknown
 
 ## id
 
@@ -208,7 +204,7 @@ Type representation of the parent security of a given stock issuance (e.g. if a 
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/id")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/id")
 
 ### id Type
 
@@ -226,7 +222,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-comments.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/comments")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/comments")
 
 ### comments Type
 
@@ -244,7 +240,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-security_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/security_id")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/security_id")
 
 ### security_id Type
 
@@ -262,7 +258,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-date.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/date")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/date")
 
 ### date Type
 
@@ -280,7 +276,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-custom_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/custom_id")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/custom_id")
 
 ### custom_id Type
 
@@ -298,7 +294,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stakeholder_id")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -316,7 +312,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/board_approval_date")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -334,7 +330,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-consideration.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/consideration")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/consideration")
 
 ### consideration Type
 
@@ -352,7 +348,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/security_law_exemptions")
+*   defined in: [Object - Stock Issuance Transaction](stockissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 

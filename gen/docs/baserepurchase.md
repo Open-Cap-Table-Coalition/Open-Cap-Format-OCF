@@ -1,10 +1,10 @@
 # Primitive - Security Repurchase Transaction Schema
 
 ```txt
-Primitives.Transactions.Repurchase.BaseRepurchase.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase
 ```
 
-Abstract object describing a repurchase transaction
+Abstract object describing common properties to a repurchase transaction
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                      |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
@@ -16,76 +16,74 @@ Abstract object describing a repurchase transaction
 
 all of
 
-*   all of
-
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Repurchase Transaction](baserepurchase-allof-0.md "check type definition")
 
 # Primitive - Security Repurchase Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                       |
-| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price")                                                                                       |
-| [quantity](#quantity)                             | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                                           |
-| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                               |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [price](#price)                                   | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-price.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/price")                                                              |
+| [quantity](#quantity)                             | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/quantity")                                                        |
+| [consideration](#consideration)                   | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/consideration")                                              |
+| [resulting_security_ids](#resulting_security_ids) | `array`       | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids") |
 
 ## price
 
-Type representing a monetary value in a specified currency code
+Repurchase price per share of the stock
 
 `price`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/price")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-price.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/price")
 
 ### price Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## quantity
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Number of shares of stock repurchased
 
 `quantity`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/quantity")
 
 ### quantity Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
 ## consideration
 
-Type representing a monetary value in a specified currency code
+Consideration for the repurchase of the stock
 
 `consideration`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## resulting_security_ids
 
-For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.
+For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares
 
 `resulting_security_ids`
 
@@ -95,7 +93,7 @@ For partial repurchases, list of security id(s) of the resulting stock objects h
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

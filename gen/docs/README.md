@@ -2,389 +2,257 @@
 
 ## Top-level Schemas
 
-*   [Cap Table ("Snapshot")](./captable.md "Top-level schema describing a capitalization table") – `CapTable.schema.json`
+*   [Cap Table ("Snapshot")](./captable.md "Top-level schema describing a capitalization table") – `https://opencaptablecoalition.com/schema/cap_table`
 
-*   [Enum - AccrualPeriod Type](./accrualperiod.md "Enumeration of interest accrual period type") – `Enums.AccrualPeriod.schema.json`
+*   [Enum - Accrual Period Type](./accrualperiodtype.md "Enumeration of interest accrual period types") – `https://opencaptablecoalition.com/schema/enums/accrual_period_type`
 
-*   [Enum - Address Type](./address.md "Enumeration of address types") – `Enums.Address.schema.json`
+*   [Enum - Address Type](./addresstype.md "Enumeration of address types") – `https://opencaptablecoalition.com/schema/enums/address_type`
 
-*   [Enum - AllocationType](./allocationtype.md "Enumeration of allocation types for vesting schedules") – `Enums.AllocationType.schema.json`
+*   [Enum - Allocation Type](./allocationtype.md "Enumeration of allocation types for vesting schedules") – `https://opencaptablecoalition.com/schema/enums/allocation_type`
 
-*   [Enum - Compensation Type](./compensation.md "Enumeration of stock compensation types") – `Enums.Compensation.schema.json`
+*   [Enum - Compensation Type](./compensationtype.md "Enumeration of stock compensation types") – `https://opencaptablecoalition.com/schema/enums/compensation_type`
 
-*   [Enum - Compounding Type](./compounding.md "Enumeration of interest compounding type") – `Enums.Compounding.schema.json`
+*   [Enum - Compounding Type](./compoundingtype.md "Enumeration of interest compounding types") – `https://opencaptablecoalition.com/schema/enums/compounding_type`
 
-*   [Enum - Convertible Conversion Type](./conversion.md "Enumeration of convertible conversion type") – `Enums.Conversion.schema.json`
+*   [Enum - Conversion Type](./conversiontype.md "Enumeration of convertible conversion types") – `https://opencaptablecoalition.com/schema/enums/conversion_type`
 
-*   [Enum - Convertible Type](./convertible.md "Enumeration of convertible instrument types") – `Enums.Convertible.schema.json`
+*   [Enum - Convertible Type](./convertibletype.md "Enumeration of convertible instrument types") – `https://opencaptablecoalition.com/schema/enums/convertible_type`
 
-*   [Enum - DayCount Type](./daycount.md "Enumeration of how the number of days are determined per period") – `Enums.DayCount.schema.json`
+*   [Enum - Day Count Type](./daycounttype.md "Enumeration of how the number of days are determined per period") – `https://opencaptablecoalition.com/schema/enums/day_count_type`
 
-*   [Enum - Email Type](./email.md "Enumeration of email types") – `Enums.Email.schema.json`
+*   [Enum - Email Type](./emailtype.md "Enumeration of email types") – `https://opencaptablecoalition.com/schema/enums/email_type`
 
-*   [Enum - InterestPayout Type](./interestpayout.md "Enumeration of type of interest payout (e") – `Enums.InterestPayout.schema.json`
+*   [Enum - Interest Payout Type](./interestpayouttype.md "Enumeration of interest payout types (e") – `https://opencaptablecoalition.com/schema/enums/interest_payout_type`
 
-*   [Enum - Object Type](./object.md "Enumeration of object types") – `Enums.Object.schema.json`
+*   [Enum - Object Type](./objecttype.md "Enumeration of object types") – `https://opencaptablecoalition.com/schema/enums/object_type`
 
-*   [Enum - Option Type](./option.md "Enumeration of option types") – `Enums.Option.schema.json`
+*   [Enum - Option Type](./optiontype.md "Enumeration of option types") – `https://opencaptablecoalition.com/schema/enums/option_type`
 
-*   [Enum - Parent Stock Type](./parent.md "Enumeration of parent sources a stock can be issued or created from") – `Enums.Parent.schema.json`
+*   [Enum - Parent Security Type](./parentsecuritytype.md "Enumeration of parent sources a stock can be issued or created from") – `https://opencaptablecoalition.com/schema/enums/parent_security_type`
 
-*   [Enum - PhoneNumber Type](./phonenumber.md "Enumeration of phone number types") – `Enums.PhoneNumber.schema.json`
+*   [Enum - Period Type](./periodtype.md "Enumeration of time period types") – `https://opencaptablecoalition.com/schema/enums/period_type`
 
-*   [Enum - Relationships between stakeholder and issuer](./stakeholderrelationship.md "Enumeration of types of relationships") – `Enums.StakeholderRelationship.schema.json`
+*   [Enum - Phone Type](./phonetype.md "Enumeration of phone number types") – `https://opencaptablecoalition.com/schema/enums/phone_type`
 
-*   [Enum - Rounding Type](./rounding.md "Enumeration of rounding types") – `Enums.Rounding.schema.json`
+*   [Enum - Rounding Type](./roundingtype.md "Enumeration of rounding types") – `https://opencaptablecoalition.com/schema/enums/rounding_type`
 
-*   [Enum - Stakeholder Type](./stakeholder.md "Enumeration of stakeholder types - individual (human) or institution (entity)") – `Enums.Stakeholder.schema.json`
+*   [Enum - Stakeholder Relationship Type](./stakeholderrelationshiptype.md "Enumeration of types of relationships between stakeholder and issuer") – `https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type`
 
-*   [Enum - StockClass Type](./stockclass.md "Enumeration of stockclass types") – `Enums.StockClass.schema.json`
+*   [Enum - Stakeholder Type](./stakeholdertype.md "Enumeration of stakeholder types - individual (human) or institution (entity)") – `https://opencaptablecoalition.com/schema/enums/stakeholder_type`
 
-*   [Enum - TerminationWindow Type](./terminationwindow.md "Enumeration of TerminationWindow types") – `Enums.TerminationWindow.schema.json`
+*   [Enum - Stock Class Type](./stockclasstype.md "Enumeration of stock class types") – `https://opencaptablecoalition.com/schema/enums/stock_class_type`
 
-*   [Enum - Time Period Type](./period.md "Enumeration of time period types") – `Enums.Period.schema.json`
+*   [Enum - Termination Window Type](./terminationwindowtype.md "Enumeration of termination window types") – `https://opencaptablecoalition.com/schema/enums/termination_window_type`
 
-*   [Enum - Valuation Type](./valuation.md "Enumeration of valuation types") – `Enums.Valuation.schema.json`
+*   [Enum - Valuation Type](./valuationtype.md "Enumeration of valuation types") – `https://opencaptablecoalition.com/schema/enums/valuation_type`
 
-*   [Enum - Vesting Type](./vesting.md "Enumeration of vesting types") – `Enums.Vesting.schema.json`
+*   [Enum - Vesting Type](./vestingtype.md "Enumeration of vesting types") – `https://opencaptablecoalition.com/schema/enums/vesting_type`
 
-*   [Object - BaseObject](./baseobject.md "Abstract object to be extended by all other objects") – `Primitives.BaseObject.schema.json`
+*   [Object - BaseObject](./baseobject.md "Abstract object to be extended by all other objects") – `https://opencaptablecoalition.com/schema/primitives/base_object`
 
-*   [Object - Convertible Acceptance Transaction](./convertibleacceptance.md "Object describing a convertible acceptance transaction") – `Objects.Transactions.Acceptance.ConvertibleAcceptance.schema.json`
+*   [Object - Convertible Acceptance Transaction](./convertibleacceptance.md "Object describing a convertible acceptance transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance`
 
-*   [Object - Convertible Cancellation Transaction](./convertiblecancellation.md "Object describing a cancellation of a convertible security") – `Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json`
+*   [Object - Convertible Cancellation Transaction](./convertiblecancellation.md "Object describing a cancellation of a convertible security") – `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation`
 
-*   [Object - Convertible Issuance Transaction](./convertibleissuance.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.ConvertibleIssuance.schema.json`
+*   [Object - Convertible Conversion Transaction](./convertibleconversion.md "Object describing a conversion of a convertible security") – `https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion`
 
-*   [Object - Convertible Retraction Transaction](./convertibleretraction.md "Object describing a retraction of a convertible security") – `Objects.Transactions.Retraction.ConvertibleRetraction.schema.json`
+*   [Object - Convertible Issuance Transaction](./convertibleissuance.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance`
 
-*   [Object - Convertible Transfer Transaction](./convertibletransfer.md "Object describing a transfer or secondary sale of a convertible security") – `Objects.Transactions.Transfer.ConvertibleTransfer.schema.json`
+*   [Object - Convertible Retraction Transaction](./convertibleretraction.md "Object describing a retraction of a convertible security") – `https://opencaptablecoalition.com/schema/objects/transactions/retraction/convertible_retraction`
 
-*   [Object - Issuer](./issuer.md "Object describing the issuer of the cap table") – `Objects.Issuer.schema.json`
+*   [Object - Convertible Transfer Transaction](./convertibletransfer.md "Object describing a transfer or secondary sale of a convertible security") – `https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer`
 
-*   [Object - Plan Security Acceptance Transaction](./plansecurityacceptance.md "Object describing a plan security acceptance transaction") – `Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json`
+*   [Object - Issuer](./issuer.md "Object describing the issuer of the cap table (the company whose cap table this is)") – `https://opencaptablecoalition.com/schema/objects/issuer`
 
-*   [Object - Plan Security Cancellation Transaction](./plansecuritycancellation.md "Object describing a cancellation of a plan security") – `Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json`
+*   [Object - Plan Security Acceptance Transaction](./plansecurityacceptance.md "Object describing a plan security acceptance transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/plan_security_acceptance`
 
-*   [Object - Plan Security Exercise Transaction](./plansecurityexercise.md "Object describing a plan security exercise transaction") – `Objects.Transactions.Exercise.PlanSecurityExercise.schema.json`
+*   [Object - Plan Security Cancellation Transaction](./plansecuritycancellation.md "Object describing a cancellation of a plan security") – `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation`
 
-*   [Object - Plan Security Issuance Transaction](./plansecurityissuance.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json`
+*   [Object - Plan Security Exercise Transaction](./plansecurityexercise.md "Object describing a plan security exercise transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise`
 
-*   [Object - Plan Security Repurchase Release Transaction](./plansecurityrepurchaserelease.md "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)") – `Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json`
+*   [Object - Plan Security Issuance Transaction](./plansecurityissuance.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance`
 
-*   [Object - Plan Security Retraction Transaction](./plansecurityretraction.md "Object describing a retraction of a plan security") – `Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json`
+*   [Object - Plan Security Repurchase Release Transaction](./plansecurityrepurchaserelease.md "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)") – `https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release`
 
-*   [Object - Plan Security Split Transaction](./plansecuritysplit.md "Object describing a split of a plan security") – `Objects.Transactions.Split.PlanSecuritySplit.schema.json`
+*   [Object - Plan Security Retraction Transaction](./plansecurityretraction.md "Object describing a retraction of a plan security") – `https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction`
 
-*   [Object - Plan Security Transfer Transaction](./plansecuritytransfer.md "Object describing a transfer of a plan security") – `Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json`
+*   [Object - Plan Security Split Transaction](./plansecuritysplit.md "Object describing a split of a plan security") – `https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split`
 
-*   [Object - Stakeholder](./stakeholder-1.md "Object describing a stakeholder") – `Objects.Stakeholder.schema.json`
+*   [Object - Plan Security Transfer Transaction](./plansecuritytransfer.md "Object describing a transfer of a plan security") – `https://opencaptablecoalition.com/schema/objects/transactions/transfer/plan_security_transfer`
 
-*   [Object - Stock Acceptance Transaction](./stockacceptance.md "Object describing a stock acceptance transaction") – `Objects.Transactions.Acceptance.StockAcceptance.schema.json`
+*   [Object - Stakeholder](./stakeholder.md "Object describing a stakeholder") – `https://opencaptablecoalition.com/schema/objects/stakeholder`
 
-*   [Object - Stock Cancellation Transaction](./stockcancellation.md "Object describing a cancellation of a stock security") – `Objects.Transactions.Cancellation.StockCancellation.schema.json`
+*   [Object - Stock Acceptance Transaction](./stockacceptance.md "Object describing a stock acceptance transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance`
 
-*   [Object - Stock Issuance Transaction](./stockissuance.md "Object describing a stock issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.StockIssuance.schema.json`
+*   [Object - Stock Cancellation Transaction](./stockcancellation.md "Object describing a cancellation of a stock security") – `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation`
 
-*   [Object - Stock Re-issuance Transaction](./stockreissuance.md "Object describing a re-issuance of stock") – `Objects.Transactions.Reissuance.StockReissuance.schema.json`
+*   [Object - Stock Class](./stockclass.md "Object describing a class of stock issued by the issuer") – `https://opencaptablecoalition.com/schema/objects/stock_class`
 
-*   [Object - Stock Repurchase Transaction](./stockrepurchase.md "Object describing a stock repurchase transaction") – `Objects.Transactions.Repurchase.StockRepurchase.schema.json`
+*   [Object - Stock Conversion Transaction](./stockconversion.md "Object describing a conversion of stock") – `https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion`
 
-*   [Object - Stock Retraction Transaction](./stockretraction.md "Object describing a retraction of a stock security") – `Objects.Transactions.Retraction.StockRetraction.schema.json`
+*   [Object - Stock Issuance Transaction](./stockissuance.md "Object describing a stock issuance transaction by the issuer and held by a stakeholder") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance`
 
-*   [Object - Stock Split Transaction](./stocksplit.md "Object describing a split of a stock security") – `Objects.Transactions.Split.StockSplit.schema.json`
+*   [Object - Stock Legend Template](./stocklegendtemplate.md "Object describing a stock legend template") – `https://opencaptablecoalition.com/schema/objects/stock_legend_template`
 
-*   [Object - Stock Transfer Transaction](./stocktransfer.md "Object describing a transfer or secondary sale of a stock security") – `Objects.Transactions.Transfer.StockTransfer.schema.json`
+*   [Object - Stock Plan](./stockplan.md "Object describing a plan which stock options are issued from") – `https://opencaptablecoalition.com/schema/objects/stock_plan`
 
-*   [Object - StockClass](./stockclass-1.md "Object describing a type of stock class issued by the issuer") – `Objects.StockClass.schema.json`
+*   [Object - Stock Re-issuance Transaction](./stockreissuance.md "Object describing a re-issuance of stock") – `https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance`
 
-*   [Object - StockLegendTemplate](./stocklegendtemplate.md "Object describing a stock legend template") – `Objects.StockLegendTemplate.schema.json`
+*   [Object - Stock Repurchase Transaction](./stockrepurchase.md "Object describing a stock repurchase transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase`
 
-*   [Object - StockPlan](./stockplan.md "Object describing a plan which stock options are issued from") – `Objects.StockPlan.schema.json`
+*   [Object - Stock Retraction Transaction](./stockretraction.md "Object describing a retraction of a stock security") – `https://opencaptablecoalition.com/schema/objects/transactions/retraction/stock_retraction`
 
-*   [Object - Valuation](./valuation-1.md "Object describing a valuation used in the cap table") – `Objects.Valuation.schema.json`
+*   [Object - Stock Split Transaction](./stocksplit.md "Object describing a split of a stock security") – `https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split`
 
-*   [Object - VestingSchedule](./vestingschedule.md "Object describing a strictly time-based vesting schedule") – `Objects.VestingSchedule.schema.json`
+*   [Object - Stock Transfer Transaction](./stocktransfer.md "Object describing a transfer or secondary sale of a stock security") – `https://opencaptablecoalition.com/schema/objects/transactions/transfer/stock_transfer`
 
-*   [Object - Warrant Acceptance Transaction](./warrantacceptance.md "Object describing a warrant acceptance transaction") – `Objects.Transactions.Acceptance.WarrantAcceptance.schema.json`
+*   [Object - Valuation](./valuation.md "Object describing a valuation used in the cap table") – `https://opencaptablecoalition.com/schema/objects/valuation`
 
-*   [Object - Warrant Cancellation Transaction](./warrantcancellation.md "Object describing a cancellation of a warrant security") – `Objects.Transactions.Cancellation.WarrantCancellation.schema.json`
+*   [Object - Vesting Schedule](./vestingschedule.md "Object describing a strictly time-based vesting schedule") – `https://opencaptablecoalition.com/schema/objects/vesting_schedule`
 
-*   [Object - Warrant Exercise Transaction](./warrantexercise.md "Object describing a warrant exercise transaction") – `Objects.Transactions.Exercise.WarrantExercise.schema.json`
+*   [Object - Warrant Acceptance Transaction](./warrantacceptance.md "Object describing a warrant acceptance transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/warrant_acceptance`
 
-*   [Object - Warrant Issuance Transaction](./warrantissuance.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json`
+*   [Object - Warrant Cancellation Transaction](./warrantcancellation.md "Object describing a cancellation of a warrant security") – `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation`
 
-*   [Object - Warrant Retraction Transaction](./warrantretraction.md "Object describing a retraction of a warrant security") – `Objects.Transactions.Retraction.WarrantRetraction.schema.json`
+*   [Object - Warrant Exercise Transaction](./warrantexercise.md "Object describing a warrant exercise transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/exercise/warrant_exercise`
 
-*   [Object - Warrant Split Transaction](./warrantsplit.md "Object describing a split of a warrant security") – `Objects.Transactions.Split.WarrantSplit.schema.json`
+*   [Object - Warrant Issuance Transaction](./warrantissuance.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance`
 
-*   [Object - Warrant Transfer Transaction](./warranttransfer.md "Object describing a transfer or secondary sale of a warrant security") – `Objects.Transactions.Transfer.WarrantTransfer.schema.json`
+*   [Object - Warrant Retraction Transaction](./warrantretraction.md "Object describing a retraction of a warrant security") – `https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction`
 
-*   [Primitive - Security Acceptance Transaction](./baseacceptance.md "Abstract object describing a security acceptance transaction") – `Primitives.Transactions.Acceptance.BaseAcceptance.schema.json`
+*   [Object - Warrant Split Transaction](./warrantsplit.md "Object describing a split of a warrant security") – `https://opencaptablecoalition.com/schema/objects/transactions/split/warrant_split`
 
-*   [Primitive - Security Cancellation Transaction](./basecancellation.md "Abstract object describing fields common to all cancellation transaction objects") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json`
+*   [Object - Warrant Transfer Transaction](./warranttransfer.md "Object describing a transfer or secondary sale of a warrant security") – `https://opencaptablecoalition.com/schema/objects/transactions/transfer/warrant_transfer`
 
-*   [Primitive - Security Exercise Transaction](./baseexercise.md "Abstract object describing fields common to all exercise transaction objects") – `Primitives.Transactions.Exercise.BaseExercise.schema.json`
+*   [Primitive - Security Acceptance Transaction](./baseacceptance.md "Abstract object describing a security acceptance transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/base_acceptance`
 
-*   [Primitive - Security Issuance Transaction](./baseissuance.md "Abstract object describing fields common to all issuance objects") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json`
+*   [Primitive - Security Cancellation Transaction](./basecancellation.md "Abstract object describing fields common to all cancellation transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation`
 
-*   [Primitive - Security Re-issuance Transaction](./basereissuance.md "Abstract object describing common properties to a re-issuance of a security") – `Primitives.Transactions.Reissuance.BaseReissuance.schema.json`
+*   [Primitive - Security Conversion Transaction](./baseconversion.md "Abstract object describing fields common to all conversion transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion`
 
-*   [Primitive - Security Repurchase Release Transaction](./baserepurchaserelease.md "Abstract object describing fields common to all repurchase release transaction objects") – `Primitives.Transactions.RepurchaseRelease.BaseRepurchaseRelease.schema.json`
+*   [Primitive - Security Exercise Transaction](./baseexercise.md "Abstract object describing fields common to all exercise transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise`
 
-*   [Primitive - Security Repurchase Transaction](./baserepurchase.md "Abstract object describing a repurchase transaction") – `Primitives.Transactions.Repurchase.BaseRepurchase.schema.json`
+*   [Primitive - Security Issuance Transaction](./baseissuance.md "Abstract object describing fields common to all issuance objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance`
 
-*   [Primitive - Security Retraction Transaction](./baseretraction.md "Abstract object describing a security retraction transaction") – `Primitives.Transactions.Retraction.BaseRetraction.schema.json`
+*   [Primitive - Security Reissuance Transaction](./basereissuance.md "Abstract object describing common properties to a reissuance of a security") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance`
 
-*   [Primitive - Security Split Transaction](./basesplit.md "Abstract object describing a security split transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json`
+*   [Primitive - Security Repurchase Release Transaction](./baserepurchaserelease.md "Abstract object describing fields common to all repurchase release transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase_release/base_repurchase_release`
 
-*   [Primitive - Security Transaction](./basetransaction.md "Abstract transaction object to be extended by all other transaction objects") – `Primitives.Transactions.BaseTransaction.schema.json`
+*   [Primitive - Security Repurchase Transaction](./baserepurchase.md "Abstract object describing common properties to a repurchase transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase`
 
-*   [Primitive - Security Transfer Transaction](./basetransfer.md "Abstract object describing a security transfer or secondary sale transaction") – `Primitives.Transactions.Transfer.BaseTransfer.schema.json`
+*   [Primitive - Security Retraction Transaction](./baseretraction.md "Abstract object describing a security retraction transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction`
 
-*   [Type - Address](./address-1.md "Type representation of an address as an object") – `Types.Address.schema.json`
+*   [Primitive - Security Split Transaction](./basesplit.md "Abstract object describing a security split transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split`
 
-*   [Type - ContactInfo](./contactinfo.md "Type representation of a primary contact person for a stakeholder (e") – `Types.ContactInfo.schema.json`
+*   [Primitive - Security Transaction](./basetransaction.md "Abstract transaction object to be extended by all other transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction`
 
-*   [Type - ConversionTrigger](./conversiontrigger.md "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)") – `Types.ConversionTrigger.schema.json`
+*   [Primitive - Security Transfer Transaction](./basetransfer.md "Abstract object describing a security transfer or secondary sale transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer`
 
-*   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of an vesting tranche by date and quantity") – `Types.CustomVestingTranche.schema.json`
+*   [Type - Address](./address.md "Type representation of an address") – `https://opencaptablecoalition.com/schema/types/address`
 
-*   [Type - DateString](./datestring.md "Type representing an ISO-8601 date, e") – `Types.DateString.schema.json`
+*   [Type - Contact Info](./contactinfo.md "Type representation of a primary contact person for a stakeholder (e") – `https://opencaptablecoalition.com/schema/types/contact_info`
 
-*   [Type - Email](./email-1.md "Type representation of an email address") – `Types.Email.schema.json`
+*   [Type - Conversion Trigger](./conversiontrigger.md "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)") – `https://opencaptablecoalition.com/schema/types/conversion_trigger`
 
-*   [Type - Event-driven Vesting Condition](./eventdrivenvestingcondition.md "Type representation of complex event-driven vesting criteria") – `Types.EventDrivenVestingCondition.schema.json`
+*   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of a vesting tranche by date and quantity") – `https://opencaptablecoalition.com/schema/types/custom_vesting_tranche`
 
-*   [Type - Money](./money.md "Type representing a monetary value in a specified currency code") – `Types.Money.schema.json`
+*   [Type - Date](./date.md "Type represention of an ISO-8601 date, e") – `https://opencaptablecoalition.com/schema/types/date`
 
-*   [Type - Name](./name.md "Type comprising of multiple name components") – `Types.Name.schema.json`
+*   [Type - Email](./email.md "Type representation of an email address") – `https://opencaptablecoalition.com/schema/types/email`
 
-*   [Type - Numeric](./numeric.md "Type representation of a number (up to 10 decimal places supported by the spec)") – `Types.Numeric.schema.json`
+*   [Type - Event-driven Vesting Condition](./eventdrivenvestingcondition.md "Type representation of complex event-driven vesting criteria") – `https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition`
 
-*   [Type - PhoneNumber](./phonenumber-1.md "Type representation of a phone number") – `Types.PhoneNumber.schema.json`
+*   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/monetary`
 
-*   [Type - Ratio](./ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `Types.Ratio.schema.json`
+*   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/name`
 
-*   [Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition.md "Type representation of a row in a vesting schedule") – `Types.ScheduleDrivenVestingCondition.schema.json`
+*   [Type - Numeric](./numeric.md "Fixed-point string representation of a number (up to 10 decimal places supported)") – `https://opencaptablecoalition.com/schema/types/numeric`
 
-*   [Type - SecurityExemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `Types.SecurityExemption.schema.json`
+*   [Type - Phone](./phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/phone`
 
-*   [Type - StockClassConversionRights](./stockclassconversionrights.md "Type representation of a conversion right from one security into a StockClass") – `Types.StockClassConversionRights.schema.json`
+*   [Type - Ratio](./ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/ratio`
 
-*   [Type - StockParent](./stockparent.md "Type representation of the parent security of a given stock issuance (e") – `Types.StockParent.schema.json`
+*   [Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition.md "Type representation of a row in a vesting schedule") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition`
 
-*   [Type - TaxID](./taxid.md "Type representation of a government identifier for tax purposes (e") – `Types.TaxID.schema.json`
+*   [Type - Security Exemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `https://opencaptablecoalition.com/schema/types/security_exemption`
 
-*   [Type - TerminationWindow](./terminationwindow-1.md "Type representation of a termination window as an object") – `Types.TerminationWindow.schema.json`
+*   [Type - Stock Class Conversion Rights](./stockclassconversionrights.md "Type representation of a conversion right from one security into a stock class") – `https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights`
 
-*   [Type - Vesting](./vesting-1.md "Type representing all aspects related to vesting securities") – `Types.Vesting.schema.json`
+*   [Type - Stock Parent](./stockparent.md "Type representation of the parent security of a given stock issuance (e") – `https://opencaptablecoalition.com/schema/types/stock_parent`
+
+*   [Type - Tax Identifier](./taxid.md "Type representation of a government identifier for tax purposes (e") – `https://opencaptablecoalition.com/schema/types/tax_identifier`
+
+*   [Type - Termination Window](./terminationwindow.md "Type representation of a termination window") – `https://opencaptablecoalition.com/schema/types/termination_window`
+
+*   [Type - Vesting Rules](./vestingrules.md "Type representing all aspects related to vesting securities") – `https://opencaptablecoalition.com/schema/types/vesting_rules`
 
 ## Other Schemas
 
 ### Objects
 
-*   [Object - BaseObject](./issuer-allof-object---baseobject.md "Abstract object to be extended by all other objects") – `Primitives.BaseObject.schema.json#/allOf/0`
 
-*   [Object - Convertible Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-cancellation-transaction.md "Object describing a cancellation of a convertible security") – `Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/transactions/items/oneOf/6`
-
-*   [Object - Convertible Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-issuance-transaction.md "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/transactions/items/oneOf/1`
-
-*   [Object - Convertible Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-retraction-transaction.md "Object describing a retraction of a convertible security") – `Objects.Transactions.Retraction.ConvertibleRetraction.schema.json#/properties/transactions/items/oneOf/16`
-
-*   [Object - Convertible Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---convertible-transfer-transaction.md "Object describing a transfer or secondary sale of a convertible security") – `Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/transactions/items/oneOf/15`
-
-*   [Object - Issuer](./captable-properties-object---issuer.md "Object describing the issuer of the cap table") – `Objects.Issuer.schema.json#/properties/issuer`
-
-*   [Object - Plan Security Acceptance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-acceptance-transaction.md "Object describing a plan security acceptance transaction") – `Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json#/properties/transactions/items/oneOf/4`
-
-*   [Object - Plan Security Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-cancellation-transaction.md "Object describing a cancellation of a plan security") – `Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json#/properties/transactions/items/oneOf/5`
-
-*   [Object - Plan Security Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-issuance-transaction.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/transactions/items/oneOf/0`
-
-*   [Object - Plan Security Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-retraction-transaction.md "Object describing a retraction of a plan security") – `Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json#/properties/transactions/items/oneOf/17`
-
-*   [Object - Plan Security Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-split-transaction.md "Object describing a split of a plan security") – `Objects.Transactions.Split.PlanSecuritySplit.schema.json#/properties/transactions/items/oneOf/9`
-
-*   [Object - Plan Security Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---plan-security-transfer-transaction.md "Object describing a transfer of a plan security") – `Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json#/properties/transactions/items/oneOf/13`
-
-*   [Object - Stakeholder](./captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md "Object describing a stakeholder") – `Objects.Stakeholder.schema.json#/properties/stakeholders/items`
-
-*   [Object - Stock Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-cancellation-transaction.md "Object describing a cancellation of a stock security") – `Objects.Transactions.Cancellation.StockCancellation.schema.json#/properties/transactions/items/oneOf/8`
-
-*   [Object - Stock Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-issuance-transaction.md "Object describing a stock issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/transactions/items/oneOf/3`
-
-*   [Object - Stock Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-retraction-transaction.md "Object describing a retraction of a stock security") – `Objects.Transactions.Retraction.StockRetraction.schema.json#/properties/transactions/items/oneOf/18`
-
-*   [Object - Stock Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-split-transaction.md "Object describing a split of a stock security") – `Objects.Transactions.Split.StockSplit.schema.json#/properties/transactions/items/oneOf/11`
-
-*   [Object - Stock Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---stock-transfer-transaction.md "Object describing a transfer or secondary sale of a stock security") – `Objects.Transactions.Transfer.StockTransfer.schema.json#/properties/transactions/items/oneOf/12`
-
-*   [Object - StockClass](./captable-properties-stock_classes-object---stockclass.md "Object describing a type of stock class issued by the issuer") – `Objects.StockClass.schema.json#/properties/stock_classes/items`
-
-*   [Object - StockLegendTemplate](./captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md "Object describing a stock legend template") – `Objects.StockLegendTemplate.schema.json#/properties/stock_legend_templates/items`
-
-*   [Object - StockPlan](./captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md "Object describing a plan which stock options are issued from") – `Objects.StockPlan.schema.json#/properties/stock_plans/items`
-
-*   [Object - Valuation](./captable-properties-captable---objectsvaluationschemajson-array-object---valuation.md "Object describing a valuation used in the cap table") – `Objects.Valuation.schema.json#/properties/valuations/items`
-
-*   [Object - VestingSchedule](./captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md "Object describing a strictly time-based vesting schedule") – `Objects.VestingSchedule.schema.json#/properties/vesting_schedules/items`
-
-*   [Object - Warrant Cancellation Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-cancellation-transaction.md "Object describing a cancellation of a warrant security") – `Objects.Transactions.Cancellation.WarrantCancellation.schema.json#/properties/transactions/items/oneOf/7`
-
-*   [Object - Warrant Issuance Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-issuance-transaction.md "Object describing warrant issuance transaction by the issuer and held by a stakeholder") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/transactions/items/oneOf/2`
-
-*   [Object - Warrant Retraction Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-retraction-transaction.md "Object describing a retraction of a warrant security") – `Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/transactions/items/oneOf/19`
-
-*   [Object - Warrant Split Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-split-transaction.md "Object describing a split of a warrant security") – `Objects.Transactions.Split.WarrantSplit.schema.json#/properties/transactions/items/oneOf/10`
-
-*   [Object - Warrant Transfer Transaction](./captable-properties-captable---objectstransactionsschemajson-array-items-oneof-object---warrant-transfer-transaction.md "Object describing a transfer or secondary sale of a warrant security") – `Objects.Transactions.Transfer.WarrantTransfer.schema.json#/properties/transactions/items/oneOf/14`
-
-*   [Primitive - Security Acceptance Transaction](./plansecurityacceptance-allof-primitive---security-acceptance-transaction.md "Abstract object describing a security acceptance transaction") – `Primitives.Transactions.Acceptance.BaseAcceptance.schema.json#/allOf/0`
-
-*   [Primitive - Security Cancellation Transaction](./plansecuritycancellation-allof-primitive---security-cancellation-transaction.md "Abstract object describing fields common to all cancellation transaction objects") – `Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/allOf/0`
-
-*   [Primitive - Security Issuance Transaction](./plansecurityissuance-allof-primitive---security-issuance-transaction.md "Abstract object describing fields common to all issuance objects") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json#/allOf/0`
-
-*   [Primitive - Security Retraction Transaction](./convertibleretraction-allof-primitive---security-retraction-transaction.md "Abstract object describing a security retraction transaction") – `Primitives.Transactions.Retraction.BaseRetraction.schema.json#/allOf/0`
-
-*   [Primitive - Security Split Transaction](./plansecuritysplit-allof-primitive---security-split-transaction.md "Abstract object describing a security split transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json#/allOf/0`
-
-*   [Primitive - Security Transaction](./baseissuance-allof-primitive---security-transaction.md "Abstract transaction object to be extended by all other transaction objects") – `Primitives.Transactions.BaseTransaction.schema.json#/allOf/0`
-
-*   [Primitive - Security Transfer Transaction](./stocktransfer-allof-primitive---security-transfer-transaction.md "Abstract object describing a security transfer or secondary sale transaction") – `Primitives.Transactions.Transfer.BaseTransfer.schema.json#/allOf/0`
-
-*   [Type - Address](./issuer-properties-type---address.md "Type representation of an address as an object") – `Types.Address.schema.json#/properties/address`
-
-*   [Type - ContactInfo](./stakeholder-1-properties-type---contactinfo.md "Type representation of a primary contact person for a stakeholder (e") – `Types.ContactInfo.schema.json#/properties/primary_contact`
-
-*   [Type - ConversionTrigger](./convertibleissuance-properties-convertible---typesconversiontriggerschemajson-array-type---conversiontrigger.md "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)") – `Types.ConversionTrigger.schema.json#/properties/conversion_triggers/items`
-
-*   [Type - Custom Vesting Tranche](./vesting-1-properties-vesting-type---customvestingtranche-array-type---custom-vesting-tranche.md "Type representation of an vesting tranche by date and quantity") – `Types.CustomVestingTranche.schema.json#/properties/custom_vesting_tranches/items`
-
-*   [Type - Email](./issuer-properties-type---email.md "Type representation of an email address") – `Types.Email.schema.json#/properties/email`
-
-*   [Type - Event-driven Vesting Condition](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---event-driven-vesting-condition.md "Type representation of complex event-driven vesting criteria") – `Types.EventDrivenVestingCondition.schema.json#/properties/event_driven_vesting_conditions/items/anyOf/0`
-
-*   [Type - Money](./baseissuance-properties-type---money.md "Type representing a monetary value in a specified currency code") – `Types.Money.schema.json#/properties/consideration`
-
-*   [Type - Name](./stakeholder-1-properties-type---name.md "Type comprising of multiple name components") – `Types.Name.schema.json#/properties/name`
-
-*   [Type - Numeric](./stockplan-properties-type---numeric.md "Type representation of a number (up to 10 decimal places supported by the spec)") – `Types.Numeric.schema.json#/properties/current_shares_reserved`
-
-*   [Type - PhoneNumber](./issuer-properties-type---phonenumber.md "Type representation of a phone number") – `Types.PhoneNumber.schema.json#/properties/phone`
-
-*   [Type - Ratio](./stockclassconversionrights-properties-type---ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `Types.Ratio.schema.json#/properties/ratio`
-
-*   [Type - Schedule-driven Vesting Condition](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array-items-anyof-type---schedule-driven-vesting-condition.md "Type representation of a row in a vesting schedule") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items/anyOf/1`
-
-*   [Type - SecurityExemption](./baseissuance-properties-convertible---typessecurityexemptionschemajson-array-type---securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `Types.SecurityExemption.schema.json#/properties/security_law_exemptions/items`
-
-*   [Type - StockClassConversionRights](./convertibleissuance-properties-type---stockclassconversionrights.md "Type representation of a conversion right from one security into a StockClass") – `Types.StockClassConversionRights.schema.json#/properties/default_conversion_rights`
-
-*   [Type - StockParent](./stockissuance-properties-type---stockparent.md "Type representation of the parent security of a given stock issuance (e") – `Types.StockParent.schema.json#/properties/issued_from_parent_object`
-
-*   [Type - TaxID](./issuer-properties-issuer---taxid-array-type---taxid.md "Type representation of a government identifier for tax purposes (e") – `Types.TaxID.schema.json#/properties/tax_ids/items`
-
-*   [Type - TerminationWindow](./plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array-type---terminationwindow.md "Type representation of a termination window as an object") – `Types.TerminationWindow.schema.json#/properties/termination_exercise_windows/items`
-
-*   [Type - Vesting](./plansecurityissuance-properties-type---vesting.md "Type representing all aspects related to vesting securities") – `Types.Vesting.schema.json#/properties/vesting`
 
 ### Arrays
 
-*   [CapTable - Objects.Stakeholder.schema.json Array](./captable-properties-captable---objectsstakeholderschemajson-array.md "List of stakeholders for the cap table") – `CapTable.schema.json#/properties/stakeholders`
+*   [Cap Table - Comment Array](./captable-properties-cap-table---comment-array.md "Unstructured text comments related to and stored for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/comments`
 
-*   [CapTable - Objects.StockLegendTemplates.schema.json Array](./captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "List of stock legend templates for the cap table") – `CapTable.schema.json#/properties/stock_legend_templates`
+*   [Cap Table - Stakeholder Array](./captable-properties-cap-table---stakeholder-array.md "List of stakeholders for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholders`
 
-*   [CapTable - Objects.StockPlan.schema.json Array](./captable-properties-captable---objectsstockplanschemajson-array.md "List of issued stock plans for the cap table") – `CapTable.schema.json#/properties/stock_plans`
+*   [Cap Table - Stock Class Array](./captable-properties-cap-table---stock-class-array.md "List of stock classes for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes`
 
-*   [CapTable - Objects.Transactions.\*.schema.json Array](./captable-properties-captable---objectstransactionsschemajson-array.md "List of transactions for the cap table") – `CapTable.schema.json#/properties/transactions`
+*   [Cap Table - Stock Legend Template Array](./captable-properties-cap-table---stock-legend-template-array.md "List of stock legend templates for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates`
 
-*   [CapTable - Objects.Valuation.schema.json Array](./captable-properties-captable---objectsvaluationschemajson-array.md "List of valuations for the cap table") – `CapTable.schema.json#/properties/valuations`
+*   [Cap Table - Stock Plan Array](./captable-properties-cap-table---stock-plan-array.md "List of issued stock plans for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans`
 
-*   [CapTable - Objects.VestingSchedule.schema.json Array](./captable-properties-captable---objectsvestingscheduleschemajson-array.md "List of vesting schedules used by the issuer") – `CapTable.schema.json#/properties/vesting_schedules`
+*   [Cap Table - Transaction Array](./captable-properties-cap-table---transaction-array.md "List of transactions for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/transactions`
 
-*   [ContactInfo - Email Array](./contactinfo-properties-contactinfo---email-array.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
+*   [Cap Table - Valuation Array](./captable-properties-cap-table---valuation-array.md "List of valuations for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/valuations`
 
-*   [ContactInfo - Email Array](./contactinfo-properties-contactinfo---email-array.md "Emails to reach the contact at") – `Types.ContactInfo.schema.json#/properties/emails`
+*   [Cap Table - Vesting Schedule Array](./captable-properties-cap-table---vesting-schedule-array.md "List of vesting schedules for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules`
 
-*   [ContactInfo - Phone Number Array](./contactinfo-properties-contactinfo---phone-number-array.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
+*   [Contact Info - Email Address Array](./contactinfo-properties-contact-info---email-address-array.md "Emails to reach the contact at") – `https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails`
 
-*   [ContactInfo - Phone Number Array](./contactinfo-properties-contactinfo---phone-number-array.md "Phone numbers to reach the contact at") – `Types.ContactInfo.schema.json#/properties/phone_numbers`
+*   [Contact Info - Phone Number Array](./contactinfo-properties-contact-info---phone-number-array.md "Phone numbers to reach the contact at") – `https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers`
 
-*   [Convertible - Types.SecurityExemption.schema.json Array](./baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions`
+*   [Event-driven Vesting Condition - Event-driven Vesting Condition Array](./eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array.md "Additional vesting conditions which become operative once this condition is met") – `https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/dependent_vesting`
 
-*   [Convertible - Types.SecurityExemption.schema.json Array](./baseissuance-properties-convertible---typessecurityexemptionschemajson-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/security_law_exemptions`
+*   [Issuer - Tax ID Array](./issuer-properties-issuer---tax-id-array.md "The tax ids for this issuer company") – `https://opencaptablecoalition.com/schema/objects/issuer#/properties/tax_ids`
 
-*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+*   [Plan Security - Termination Window Array](./plansecurityissuance-properties-plan-security---termination-window-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/termination_exercise_windows`
 
-*   [EventDrivenVestingCondition - Types.EventDrivenVestingCondition.schema.json Array](./eventdrivenvestingcondition-properties-eventdrivenvestingcondition---typeseventdrivenvestingconditionschemajson-array.md "Additional vesting conditions which become operative once this condition is met") – `Types.EventDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+*   [Schedule-driven Vesting Condition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting`
 
-*   [Issuer - TaxID Array](./issuer-properties-issuer---taxid-array.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
+*   [Security Conversion - Resulting Security ID Array](./baseconversion-properties-security-conversion---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the conversion") – `https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion#/properties/resulting_security_ids`
 
-*   [Issuer - TaxID Array](./issuer-properties-issuer---taxid-array.md "The tax ids for this issuer company") – `Objects.Issuer.schema.json#/properties/tax_ids`
+*   [Security Exercise - Resulting Security ID Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids`
 
-*   [PlanSecurity - Types.TerminationWindow.schema.json Array](./plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows`
+*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions`
 
-*   [PlanSecurity - Types.TerminationWindow.schema.json Array](./plansecurityissuance-properties-plansecurity---typesterminationwindowschemajson-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows`
+*   [Security Reissuance - Resulting Security ID Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a reissuance") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids`
 
-*   [ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+*   [Security Repurchase - Resulting Security ID Array](./baserepurchase-properties-security-repurchase---resulting-security-id-array.md "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares") – `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids`
 
-*   [ScheduleDrivenVestingCondition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-scheduledrivenvestingcondition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `Types.ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting`
+*   [Security Split - Resulting Security ID Array](./basesplit-properties-security-split---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids`
 
-*   [Security Exercise - Resulting Security Id Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `Primitives.Transactions.Exercise.BaseExercise.schema.json#/properties/resulting_security_ids`
+*   [Security Transfer - Resulting Security ID Array](./basetransfer-properties-security-transfer---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/resulting_security_ids`
 
-*   [Security Reissuance - Resulting Security Id Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a re-issuance") – `Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids`
+*   [Stakeholder - Address Array](./stakeholder-properties-stakeholder---address-array.md "Addresses for the stakeholder") – `https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/addresses`
 
-*   [Security Repurchase - Resulting Security Id Array](./baserepurchase-properties-security-repurchase---resulting-security-id-array.md "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares") – `Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids`
+*   [Stakeholder - Tax ID Array](./stakeholder-properties-stakeholder---tax-id-array.md "The tax ids for this stakeholder") – `https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/tax_ids`
 
-*   [Security Split - Resulting Security Id Array](./basesplit-properties-security-split---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json#/properties/resulting_security_ids`
+*   [Stock Class - Stock Class Conversion Rights Array](./stockclass-properties-stock-class---stock-class-conversion-rights-array.md "List of stock class conversion rights possible for this stock class") – `https://opencaptablecoalition.com/schema/objects/stock_class#/properties/conversion_rights`
 
-*   [Security Split - Resulting Security Id Array](./basesplit-properties-security-split---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `Primitives.Transactions.Split.BaseSplit.schema.json#/properties/resulting_security_ids`
+*   [Stock Issuance - Stock Legend ID Array](./stockissuance-properties-stock-issuance---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids`
 
-*   [Security Transfer - Resulting Security Id Array](./basetransfer-properties-security-transfer---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/resulting_security_ids`
+*   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments`
 
-*   [Security Transfer - Resulting Security Id Array](./basetransfer-properties-security-transfer---resulting-security-id-array.md "Array of identifiers for new security (or securities) created as a result of the transaction") – `Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/resulting_security_ids`
+*   [Vesting Rules - Custom Vesting Tranche Array](./vestingrules-properties-vesting-rules---custom-vesting-tranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_tranches`
 
-*   [Stakeholder - Address Array](./stakeholder-1-properties-stakeholder---address-array.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
+*   [Vesting Rules - Vesting Condition Array](./vestingrules-properties-vesting-rules---vesting-condition-array.md "Tree-structured schedule- and/or event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_conditions`
 
-*   [Stakeholder - Address Array](./stakeholder-1-properties-stakeholder---address-array.md "Addresses for the stakeholder") – `Objects.Stakeholder.schema.json#/properties/addresses`
+*   [Vesting Schedule - Schedule-driven Vesting Condition Array](./vestingschedule-properties-vesting-schedule---schedule-driven-vesting-condition-array.md "Schedule rows defining the vesting schedule tranches") – `https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/schedule_driven_vesting_conditions`
 
-*   [Stakeholder - TaxID Array](./stakeholder-1-properties-stakeholder---taxid-array.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
-
-*   [Stakeholder - TaxID Array](./stakeholder-1-properties-stakeholder---taxid-array.md "The tax ids for this stakeholder") – `Objects.Stakeholder.schema.json#/properties/tax_ids`
-
-*   [Stock - Stock Legend Id Array](./stockissuance-properties-stock---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_legend_ids`
-
-*   [Stock - Stock Legend Id Array](./stockissuance-properties-stock---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `Objects.Transactions.Issuance.StockIssuance.schema.json#/properties/stock_legend_ids`
-
-*   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
-
-*   [StockClass - StockClassConversionRights Array](./stockclass-1-properties-stockclass---stockclassconversionrights-array.md "List of StockClassConversionRights possible for this StockClass") – `Objects.StockClass.schema.json#/properties/conversion_rights`
-
-*   [Untitled array in Cap Table ("Snapshot")](./captable-properties-stock_classes.md "List of StockClasses authorized for the issuer") – `CapTable.schema.json#/properties/stock_classes`
-
-*   [Untitled array in Cap Table ("Snapshot")](./captable-properties-comments.md "Unstructured text comments related to and stored for the cap table") – `CapTable.schema.json#/properties/comments`
-
-*   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `Primitives.BaseObject.schema.json#/properties/comments`
-
-*   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `Primitives.BaseObject.schema.json#/properties/comments`
-
-*   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
-
-*   [Vesting Type - CustomVestingTranche Array](./vesting-1-properties-vesting-type---customvestingtranche-array.md "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule") – `Types.Vesting.schema.json#/properties/custom_vesting_tranches`
-
-*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
-
-*   [Vesting Type - EventDrivenVestingCondition Array](./vesting-1-properties-vesting-type---eventdrivenvestingcondition-array.md "Tree-structured event-driven vesting conditions for the securities, including single- or double-trigger acceleration") – `Types.Vesting.schema.json#/properties/event_driven_vesting_conditions`
-
-*   [VestingSchedule - ScheduleDrivenVestingCondition Array](./vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Schedule rows defining the vesting schedule tranches") – `Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions`
-
-*   [VestingSchedule - ScheduleDrivenVestingCondition Array](./vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Schedule rows defining the vesting schedule tranches") – `Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions`
-
-*   [Warrant - StockClassConversionRights Array](./warrantissuance-properties-warrant---stockclassconversionrights-array.md "What can this instrument convert into for a maturity or next equity financing conversion?") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/conversion_rights`
-
-*   [Warrant - StockClassConversionRights Array](./warrantissuance-properties-warrant---stockclassconversionrights-array.md "What can this instrument convert into for a maturity or next equity financing conversion?") – `Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/conversion_rights`
+*   [Warrant Issuance - Stock Class Conversion Rights Array](./warrantissuance-properties-warrant-issuance---stock-class-conversion-rights-array.md "What can this instrument convert into for a maturity or next equity financing conversion?") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/conversion_rights`
 
 ## Version Note
 
