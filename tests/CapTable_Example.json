@@ -182,7 +182,7 @@
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "id": "convertible-retraction",
       "security_id": "test-convertible-retraction",
-      "date": "2021-01-14T08:50Z",
+      "date": "2021-01-14",
       "reason_text": "oops"
     }
   ],
