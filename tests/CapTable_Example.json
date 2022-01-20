@@ -181,6 +181,72 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "id": "test-convertible-issuance-minimal",
+      "security_id": "con_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "custom_id": "CN-1",
+      "conversion_type": "PRE_MONEY",
+      "convertible_type": "NOTE",
+      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
+      "day_count_convention": "ACTUAL_365",
+      "default_conversion_rights": {
+        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "rounding_type": "CEILING",
+        "converts_to_future_round": true
+      },
+      "conversion_triggers": [],
+      "seniority": 1
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "id": "test-convertible-issuance-all-fields",
+      "security_id": "con_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "US"
+        }
+      ],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "custom_id": "CN-1",
+      "conversion_type": "POST_MONEY",
+      "convertible_type": "SAFE",
+      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
+      "day_count_convention": "30_360",
+      "default_conversion_rights": {
+        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "rounding_type": "FLOOR",
+        "converts_to_stock_class_id": "cls_86"
+      },
+      "conversion_triggers": [
+        {
+          "rounding_type": "NORMAL",
+          "description": "Trigger",
+          "converts_to_future_round": false
+        }
+      ],
+      "seniority": 1,
+      "comments": ["comment-one", "comment-two", "..."],
+      "interest_rate": "3.11",
+      "interest_payout": "CASH",
+      "maturity_date": "2034-01-01",
+      "exit_multiple": { "antecedent": "1", "consequent": "3.0" },
+      "interest_accrual_period": "MONTHLY",
+      "compounding_type": "SIMPLE",
+      "pro_rata": "2500",
+      "conversion_valuation_cap": { "amount": "8000000", "currency": "USD" },
+      "conversion_discount": "0.1",
+      "conversion_fixed_ownership": "0.05"
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
