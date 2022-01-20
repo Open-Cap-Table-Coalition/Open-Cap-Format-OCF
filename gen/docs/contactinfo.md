@@ -1,63 +1,44 @@
-# Type - ContactInfo Schema
+# Type - Contact Info Schema
 
 ```txt
-Types.ContactInfo.schema.json
+https://opencaptablecoalition.com/schema/types/contact_info
 ```
 
-Type representation of a primary contact person for a stakeholder (e.g. a fund).
+Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                   |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [ContactInfo.schema.json](../../schema/types/ContactInfo.schema.json "open original schema") |
 
-## Type - ContactInfo Type
+## Type - Contact Info Type
 
-`object` ([Type - ContactInfo](contactinfo.md))
+`object` ([Type - Contact Info](contactinfo.md))
 
-# Type - ContactInfo Properties
+# Type - Contact Info Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                 |
-| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| [contact_first_name](#contact_first_name) | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_first_name.md "Types.ContactInfo.schema.json#/properties/contact_first_name")          |
-| [contact_last_name](#contact_last_name)   | `string` | Required | cannot be null | [Type - ContactInfo](contactinfo-properties-contact_last_name.md "Types.ContactInfo.schema.json#/properties/contact_last_name")            |
-| [phone_numbers](#phone_numbers)           | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-contactinfo---phone-number-array.md "Types.ContactInfo.schema.json#/properties/phone_numbers") |
-| [emails](#emails)                         | `array`  | Optional | cannot be null | [Type - ContactInfo](contactinfo-properties-contactinfo---email-array.md "Types.ContactInfo.schema.json#/properties/emails")               |
+| Property                        | Type          | Required | Nullable       | Defined by                                                                                                                                                                 |
+| :------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name)                   | Not specified | Required | cannot be null | [Type - Contact Info](contactinfo-properties-name.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/name")                                       |
+| [phone_numbers](#phone_numbers) | `array`       | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers") |
+| [emails](#emails)               | `array`       | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")       |
 
-## contact_first_name
+## name
 
-Contact's first name
+Contact's name
 
-`contact_first_name`
-
-*   is required
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Type - ContactInfo](contactinfo-properties-contact_first_name.md "Types.ContactInfo.schema.json#/properties/contact_first_name")
-
-### contact_first_name Type
-
-`string`
-
-## contact_last_name
-
-Contact's last name
-
-`contact_last_name`
+`name`
 
 *   is required
 
-*   Type: `string`
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Type - ContactInfo](contactinfo-properties-contact_last_name.md "Types.ContactInfo.schema.json#/properties/contact_last_name")
+*   defined in: [Type - Contact Info](contactinfo-properties-name.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/name")
 
-### contact_last_name Type
+### name Type
 
-`string`
+unknown
 
 ## phone_numbers
 
@@ -65,17 +46,17 @@ Phone numbers to reach the contact at
 
 `phone_numbers`
 
-*   is optional
+*   is required
 
-*   Type: `object[]` ([Type - PhoneNumber](issuer-properties-type---phonenumber.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Type - ContactInfo](contactinfo-properties-contactinfo---phone-number-array.md "Types.ContactInfo.schema.json#/properties/phone_numbers")
+*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers")
 
 ### phone_numbers Type
 
-`object[]` ([Type - PhoneNumber](issuer-properties-type---phonenumber.md))
+unknown\[]
 
 ## emails
 
@@ -83,14 +64,14 @@ Emails to reach the contact at
 
 `emails`
 
-*   is optional
+*   is required
 
-*   Type: `object[]` ([Type - Email](issuer-properties-type---email.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Type - ContactInfo](contactinfo-properties-contactinfo---email-array.md "Types.ContactInfo.schema.json#/properties/emails")
+*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")
 
 ### emails Type
 
-`object[]` ([Type - Email](issuer-properties-type---email.md))
+unknown\[]

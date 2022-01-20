@@ -1,7 +1,7 @@
-# Untitled string in Primitive - Security Re-issuance Transaction Schema
+# Untitled string in Primitive - Security Reissuance Transaction Schema
 
 ```txt
-Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids/items
 ```
 
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_law_exemptions
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_law_exemptions
 ```
 
 

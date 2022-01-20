@@ -1,7 +1,7 @@
 # Untitled undefined type in Type - Event-driven Vesting Condition Schema
 
 ```txt
-Types.EventDrivenVestingCondition.schema.json#/properties/event_occurred
+https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_occurred
 ```
 
 Date of the event, if it has occurred already
@@ -18,4 +18,4 @@ one (and only one) of
 
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
 
-*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
+*   [Untitled undefined type in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-1.md "check type definition")

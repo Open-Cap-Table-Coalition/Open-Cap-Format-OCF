@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Exercise Transaction Schema
 
 ```txt
-Primitives.Transactions.Exercise.BaseExercise.schema.json#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids/items
 ```
 
 

@@ -1,7 +1,7 @@
-# Untitled string in Type - SecurityExemption Schema
+# Untitled string in Type - Security Exemption Schema
 
 ```txt
-Types.SecurityExemption.schema.json#/properties/jurisdiction
+https://opencaptablecoalition.com/schema/types/security_exemption#/properties/jurisdiction
 ```
 
 Country code of the jurisdiction of the applicable law (ISO-3166)

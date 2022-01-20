@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Retraction Transaction Schema
 
 ```txt
-Objects.Transactions.Retraction.ConvertibleRetraction.schema.json#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/retraction/convertible_retraction#/properties/object_type
 ```
 
 

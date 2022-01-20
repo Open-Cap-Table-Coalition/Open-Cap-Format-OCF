@@ -1,7 +1,7 @@
-# Object - VestingSchedule Schema
+# Object - Vesting Schedule Schema
 
 ```txt
-Objects.VestingSchedule.schema.json
+https://opencaptablecoalition.com/schema/objects/vesting_schedule
 ```
 
 Object describing a strictly time-based vesting schedule
@@ -10,26 +10,26 @@ Object describing a strictly time-based vesting schedule
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [VestingSchedule.schema.json](../../schema/objects/VestingSchedule.schema.json "open original schema") |
 
-## Object - VestingSchedule Type
+## Object - Vesting Schedule Type
 
-`object` ([Object - VestingSchedule](vestingschedule.md))
+`object` ([Object - Vesting Schedule](vestingschedule.md))
 
 all of
 
-*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Vesting Schedule](vestingschedule-allof-0.md "check type definition")
 
-# Object - VestingSchedule Properties
+# Object - Vesting Schedule Properties
 
-| Property                                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                            |
-| :------------------------------------------------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                                               | Not specified | Optional | cannot be null | [Object - VestingSchedule](vestingschedule-properties-object_type.md "Objects.VestingSchedule.schema.json#/properties/object_type")                                                                   |
-| [name](#name)                                                             | `string`      | Required | cannot be null | [Object - VestingSchedule](vestingschedule-properties-name.md "Objects.VestingSchedule.schema.json#/properties/name")                                                                                 |
-| [description](#description)                                               | `string`      | Required | cannot be null | [Object - VestingSchedule](vestingschedule-properties-description.md "Objects.VestingSchedule.schema.json#/properties/description")                                                                   |
-| [allocation_type](#allocation_type)                                       | `string`      | Required | cannot be null | [Object - VestingSchedule](vestingschedule-properties-enum---allocationtype.md "Enums.AllocationType.schema.json#/properties/allocation_type")                                                        |
-| [fractional_tranches_allowed](#fractional_tranches_allowed)               | `boolean`     | Required | cannot be null | [Object - VestingSchedule](vestingschedule-properties-fractional_tranches_allowed.md "Objects.VestingSchedule.schema.json#/properties/fractional_tranches_allowed")                                   |
-| [schedule_driven_vesting_conditions](#schedule_driven_vesting_conditions) | `array`       | Required | cannot be null | [Object - VestingSchedule](vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions") |
-| [id](#id)                                                                 | Not specified | Optional | cannot be null | [Object - VestingSchedule](vestingschedule-properties-id.md "Objects.VestingSchedule.schema.json#/properties/id")                                                                                     |
-| [comments](#comments)                                                     | Not specified | Optional | cannot be null | [Object - VestingSchedule](vestingschedule-properties-comments.md "Objects.VestingSchedule.schema.json#/properties/comments")                                                                         |
+| Property                                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :------------------------------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                                               | Not specified | Optional | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/object_type")                                                                       |
+| [name](#name)                                                             | `string`      | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-name.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/name")                                                                                     |
+| [description](#description)                                               | `string`      | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-description.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/description")                                                                       |
+| [allocation_type](#allocation_type)                                       | Not specified | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-allocation_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/allocation_type")                                                               |
+| [fractional_tranches_allowed](#fractional_tranches_allowed)               | `boolean`     | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-fractional_tranches_allowed.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/fractional_tranches_allowed")                                       |
+| [schedule_driven_vesting_conditions](#schedule_driven_vesting_conditions) | `array`       | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-vesting-schedule---schedule-driven-vesting-condition-array.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/schedule_driven_vesting_conditions") |
+| [id](#id)                                                                 | Not specified | Optional | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-id.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/id")                                                                                         |
+| [comments](#comments)                                                     | Not specified | Optional | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-comments.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/comments")                                                                             |
 
 ## object_type
 
@@ -43,7 +43,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-object_type.md "Objects.VestingSchedule.schema.json#/properties/object_type")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/object_type")
 
 ### object_type Type
 
@@ -69,7 +69,7 @@ Concise name for the vesting schedule
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-name.md "Objects.VestingSchedule.schema.json#/properties/name")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-name.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/name")
 
 ### name Type
 
@@ -87,7 +87,7 @@ Detailed description of the vesting schedule
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-description.md "Objects.VestingSchedule.schema.json#/properties/description")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-description.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/description")
 
 ### description Type
 
@@ -95,41 +95,21 @@ Detailed description of the vesting schedule
 
 ## allocation_type
 
-Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
-
-1.  Cumulative Rounding (5 - 4 - 5 - 4)
-2.  Cumulative Round Down (4 - 5 - 4 - 5)
-3.  Front Loaded (5 - 5 - 4 - 4)
-4.  Back Loaded (4 - 4 - 5 - 5)
-5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
-6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
+Allocation/rounding type for the vesting schedule
 
 `allocation_type`
 
 *   is required
 
-*   Type: `string` ([Enum - AllocationType](vestingschedule-properties-enum---allocationtype.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-enum---allocationtype.md "Enums.AllocationType.schema.json#/properties/allocation_type")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-allocation_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/allocation_type")
 
 ### allocation_type Type
 
-`string` ([Enum - AllocationType](vestingschedule-properties-enum---allocationtype.md))
-
-### allocation_type Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value                              | Explanation |
-| :--------------------------------- | :---------- |
-| `"CUMULATIVE_ROUNDING"`            |             |
-| `"CUMULATIVE_ROUND_DOWN"`          |             |
-| `"FRONT_LOADED"`                   |             |
-| `"BACK_LOADED"`                    |             |
-| `"FRONT_LOADED_TO_SINGLE_TRANCHE"` |             |
-| `"BACK_LOADED_TO_SINGLE_TRANCHE"`  |             |
+unknown
 
 ## fractional_tranches_allowed
 
@@ -143,7 +123,7 @@ Whether or not fractional tranches are allowed. Note: if this is true, the alloc
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-fractional_tranches_allowed.md "Objects.VestingSchedule.schema.json#/properties/fractional_tranches_allowed")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-fractional_tranches_allowed.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/fractional_tranches_allowed")
 
 ### fractional_tranches_allowed Type
 
@@ -157,15 +137,15 @@ Schedule rows defining the vesting schedule tranches
 
 *   is required
 
-*   Type: `object[]` ([Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-vestingschedule---scheduledrivenvestingcondition-array.md "Objects.VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-vesting-schedule---schedule-driven-vesting-condition-array.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/schedule_driven_vesting_conditions")
 
 ### schedule_driven_vesting_conditions Type
 
-`object[]` ([Type - Schedule-driven Vesting Condition](vesting-1-properties-vesting-type---eventdrivenvestingcondition-array-items-anyof-type---schedule-driven-vesting-condition.md))
+unknown\[]
 
 ## id
 
@@ -179,7 +159,7 @@ Schedule rows defining the vesting schedule tranches
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-id.md "Objects.VestingSchedule.schema.json#/properties/id")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-id.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/id")
 
 ### id Type
 
@@ -197,7 +177,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - VestingSchedule](vestingschedule-properties-comments.md "Objects.VestingSchedule.schema.json#/properties/comments")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-comments.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/comments")
 
 ### comments Type
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Exercise Transaction Schema
 
 ```txt
-Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/date
+https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/date
 ```
 
 

@@ -1,7 +1,7 @@
 # Object - Plan Security Exercise Transaction Schema
 
 ```txt
-Objects.Transactions.Exercise.PlanSecurityExercise.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise
 ```
 
 Object describing a plan security exercise transaction
@@ -16,24 +16,20 @@ Object describing a plan security exercise transaction
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Plan Security Exercise Transaction](plansecurityexercise-allof-0.md "check type definition")
 
 # Object - Plan Security Exercise Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                   |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-object_type.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/object_type")                       |
-| [quantity](#quantity)                             | `object`      | Required | cannot be null | [Object - Plan Security Exercise Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-id.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-comments.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-security_id.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-date.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/date")                                     |
-| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-consideration.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/consideration")                   |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-resulting_security_ids.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/object_type")                       |
+| [quantity](#quantity)                             | Not specified | Required | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/quantity")                             |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/date")                                     |
+| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/consideration")                   |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/resulting_security_ids") |
 
 ## object_type
 
@@ -47,7 +43,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-object_type.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/object_type")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/object_type")
 
 ### object_type Type
 
@@ -63,21 +59,21 @@ unknown
 
 ## quantity
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Quantity of shares exercised
 
 `quantity`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/quantity")
 
 ### quantity Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
 ## id
 
@@ -91,7 +87,7 @@ Type representation of a number (up to 10 decimal places supported by the spec)
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-id.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/id")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/id")
 
 ### id Type
 
@@ -109,7 +105,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-comments.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/comments")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/comments")
 
 ### comments Type
 
@@ -127,7 +123,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-security_id.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/security_id")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/security_id")
 
 ### security_id Type
 
@@ -145,7 +141,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-date.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/date")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/date")
 
 ### date Type
 
@@ -163,7 +159,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-consideration.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/consideration")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/consideration")
 
 ### consideration Type
 
@@ -181,7 +177,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-resulting_security_ids.md "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json#/properties/resulting_security_ids")
+*   defined in: [Object - Plan Security Exercise Transaction](plansecurityexercise-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

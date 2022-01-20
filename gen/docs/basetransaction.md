@@ -1,10 +1,10 @@
 # Primitive - Security Transaction Schema
 
 ```txt
-Primitives.Transactions.BaseTransaction.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction
 ```
 
-Abstract transaction object to be extended by all other transaction objects.
+Abstract transaction object to be extended by all other transaction objects
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------- |
@@ -16,14 +16,14 @@ Abstract transaction object to be extended by all other transaction objects.
 
 all of
 
-*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Transaction](basetransaction-allof-0.md "check type definition")
 
 # Primitive - Security Transaction Properties
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                  |
-| :-------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [security_id](#security_id) | `string` | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "Primitives.Transactions.BaseTransaction.schema.json#/properties/security_id") |
-| [date](#date)               | `string` | Required | cannot be null | [Primitive - Security Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/date")                                  |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                |
+| :-------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [security_id](#security_id) | `string`      | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id") |
+| [date](#date)               | Not specified | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-date.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/date")               |
 
 ## security_id
 
@@ -37,7 +37,7 @@ Identifier for the security which the transaction applies to
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](basetransaction-properties-security_id.md "Primitives.Transactions.BaseTransaction.schema.json#/properties/security_id")
+*   defined in: [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id")
 
 ### security_id Type
 
@@ -45,22 +45,18 @@ Identifier for the security which the transaction applies to
 
 ## date
 
-Type representing an ISO-8601 date, e.g. 2022-01-28
+Date on which the transaction occurred
 
 `date`
 
 *   is required
 
-*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/date")
+*   defined in: [Primitive - Security Transaction](basetransaction-properties-date.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/date")
 
 ### date Type
 
-`string` ([Type - DateString](issuer-properties-type---datestring.md))
-
-### date Constraints
-
-**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+unknown

@@ -1,7 +1,7 @@
 # Untitled string in Object - BaseObject Schema
 
 ```txt
-Primitives.BaseObject.schema.json#/properties/comments/items
+https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments/items
 ```
 
 

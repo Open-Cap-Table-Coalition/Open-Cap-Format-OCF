@@ -1,10 +1,10 @@
-# Security Reissuance - Resulting Security Id Array Schema
+# Security Reissuance - Resulting Security ID Array Schema
 
 ```txt
-Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids
 ```
 
-Identifier of the new security (or securities) issuance resulting from a re-issuance.
+Identifier of the new security (or securities) issuance resulting from a reissuance
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                       |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------- |

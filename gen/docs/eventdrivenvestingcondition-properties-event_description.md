@@ -1,7 +1,7 @@
 # Untitled string in Type - Event-driven Vesting Condition Schema
 
 ```txt
-Types.EventDrivenVestingCondition.schema.json#/properties/event_description
+https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_description
 ```
 
 Full detailed description of the vesting condition, whether it be milestone-based or some other specified event

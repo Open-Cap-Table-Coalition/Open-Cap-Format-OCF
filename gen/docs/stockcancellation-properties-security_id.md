@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Cancellation Transaction Schema
 
 ```txt
-Objects.Transactions.Cancellation.StockCancellation.schema.json#/properties/security_id
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation#/properties/security_id
 ```
 
 

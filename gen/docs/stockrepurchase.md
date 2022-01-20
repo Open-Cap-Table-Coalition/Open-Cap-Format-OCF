@@ -1,7 +1,7 @@
 # Object - Stock Repurchase Transaction Schema
 
 ```txt
-Objects.Transactions.Repurchase.StockRepurchase.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase
 ```
 
 Object describing a stock repurchase transaction
@@ -16,25 +16,21 @@ Object describing a stock repurchase transaction
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Stock Repurchase Transaction](stockrepurchase-allof-0.md "check type definition")
 
 # Object - Stock Repurchase Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                     |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-object_type.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/object_type")                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-id.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-comments.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-security_id.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-date.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/date")                                     |
-| [price](#price)                                   | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-price.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/price")                                   |
-| [quantity](#quantity)                             | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-quantity.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/quantity")                             |
-| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-consideration.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/consideration")                   |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-resulting_security_ids.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/object_type")                       |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/date")                                     |
+| [price](#price)                                   | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-price.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/price")                                   |
+| [quantity](#quantity)                             | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/quantity")                             |
+| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/consideration")                   |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Repurchase Transaction](stockrepurchase-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/resulting_security_ids") |
 
 ## object_type
 
@@ -48,7 +44,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-object_type.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/object_type")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/object_type")
 
 ### object_type Type
 
@@ -74,7 +70,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-id.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/id")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/id")
 
 ### id Type
 
@@ -92,7 +88,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-comments.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/comments")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/comments")
 
 ### comments Type
 
@@ -110,7 +106,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-security_id.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/security_id")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/security_id")
 
 ### security_id Type
 
@@ -128,7 +124,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-date.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/date")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/date")
 
 ### date Type
 
@@ -146,7 +142,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-price.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/price")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-price.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/price")
 
 ### price Type
 
@@ -164,7 +160,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-quantity.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/quantity")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/quantity")
 
 ### quantity Type
 
@@ -182,7 +178,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-consideration.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/consideration")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/consideration")
 
 ### consideration Type
 
@@ -200,7 +196,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-resulting_security_ids.md "Objects.Transactions.Repurchase.StockRepurchase.schema.json#/properties/resulting_security_ids")
+*   defined in: [Object - Stock Repurchase Transaction](stockrepurchase-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

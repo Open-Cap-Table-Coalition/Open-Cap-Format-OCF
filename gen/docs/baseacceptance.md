@@ -1,7 +1,7 @@
 # Primitive - Security Acceptance Transaction Schema
 
 ```txt
-Primitives.Transactions.Acceptance.BaseAcceptance.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/base_acceptance
 ```
 
 Abstract object describing a security acceptance transaction
@@ -16,9 +16,7 @@ Abstract object describing a security acceptance transaction
 
 all of
 
-*   all of
-
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Acceptance Transaction](baseacceptance-allof-0.md "check type definition")
 
 # Primitive - Security Acceptance Transaction Properties
 

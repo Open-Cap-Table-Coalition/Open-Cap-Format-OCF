@@ -1,10 +1,10 @@
-# Untitled string in Type - TaxID Schema
+# Untitled string in Type - Tax Identifier Schema
 
 ```txt
-Types.TaxID.schema.json#/properties/country
+https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country
 ```
 
-Identifier's issuing country code (ISO-3166)
+Issuing country code (ISO-3166) for the tax identifier
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |

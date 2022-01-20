@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/properties/expiration_date
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/expiration_date
 ```
 
 Expiration date of the plan security
@@ -18,4 +18,4 @@ one (and only one) of
 
 *   [Untitled null in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-0.md "check type definition")
 
-*   [Type - DateString](issuer-properties-type---datestring.md "check type definition")
+*   [Untitled undefined type in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-1.md "check type definition")

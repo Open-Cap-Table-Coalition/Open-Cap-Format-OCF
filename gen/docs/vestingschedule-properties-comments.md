@@ -1,7 +1,7 @@
-# Untitled undefined type in Object - VestingSchedule Schema
+# Untitled undefined type in Object - Vesting Schedule Schema
 
 ```txt
-Objects.VestingSchedule.schema.json#/properties/comments
+https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/comments
 ```
 
 

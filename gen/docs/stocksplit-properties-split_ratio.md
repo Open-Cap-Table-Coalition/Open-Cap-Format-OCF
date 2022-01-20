@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Split Transaction Schema
 
 ```txt
-Objects.Transactions.Split.StockSplit.schema.json#/properties/split_ratio
+https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/split_ratio
 ```
 
 

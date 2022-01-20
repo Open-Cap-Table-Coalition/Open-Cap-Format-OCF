@@ -1,7 +1,7 @@
 # Untitled integer in Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-Types.ScheduleDrivenVestingCondition.schema.json#/properties/priority
+https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/priority
 ```
 
 What order should this period be calculated (1 is highest priority)

@@ -1,7 +1,7 @@
-# Untitled undefined type in Type - Name Schema
+# Untitled string in Type - Name Schema
 
 ```txt
-Types.Name.schema.json#/properties/last_name
+https://opencaptablecoalition.com/schema/types/name#/properties/last_name
 ```
 
 Last/family name for the individual

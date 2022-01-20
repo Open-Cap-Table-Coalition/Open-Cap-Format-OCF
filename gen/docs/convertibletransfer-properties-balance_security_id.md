@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Transfer Transaction Schema
 
 ```txt
-Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/balance_security_id
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/balance_security_id
 ```
 
 

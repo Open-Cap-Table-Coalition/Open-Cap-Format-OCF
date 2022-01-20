@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Re-issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Reissuance.StockReissuance.schema.json#/properties/date
+https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/date
 ```
 
 

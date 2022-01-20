@@ -1,10 +1,10 @@
-# Untitled string in Type - StockClassConversionRights Schema
+# Untitled string in Type - Stock Class Conversion Rights Schema
 
 ```txt
-Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id
+https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_stock_class_id
 ```
 
-What is the id of the existing, known StockClass this StockClass can convert into?
+The identifier of the existing, known stock class this stock class can convert into
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                  |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
