@@ -133,13 +133,7 @@
           {
             "$ref": "/schema/objects/transactions/transfer/warrant_transfer"
           }
-        ],
-        "discriminator": {
-          "propertyName": "object_type",
-          "mapping": {
-            "TX_CONVERTIBLE_ACCEPTANCE": "/schema/objects/transactions/acceptance/convertible_acceptance"
-          }
-        }
+        ]
       }
     },
     "stock_classes": {

@@ -137,7 +137,31 @@
       "id": "test-convertible-acceptance-all-fields",
       "security_id": "2936wa8yefhdsvcn",
       "date": "2022-01-20",
-      "comments": ["comment-one", "comment-two"]
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CANCELLATION",
+      "id": "test-convertible-cancellation-minimal",
+      "security_id": "asdf962w3hfsdad",
+      "date": "2019-01-31",
+      "amount": {
+        "amount": "53.09",
+        "currency": "USD"
+      },
+      "reason_text": "for testing"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CANCELLATION",
+      "id": "test-convertible-cancellation-all-fields",
+      "balance_security_id": "new-security",
+      "security_id": "test-security-id",
+      "date": "2019-01-31",
+      "amount": {
+        "amount": "53.09",
+        "currency": "USD"
+      },
+      "reason_text": "for testing",
+      "comments": ["comment-one", "comment-two", "..."]
     },
     {
       "object_type": "TX_STOCK_CANCELLATION",
@@ -147,19 +171,6 @@
       "quantity": "100",
       "balance_security_id": "new-security",
       "reason_text": "for testing"
-    },
-    {
-      "object_type": "TX_CONVERTIBLE_CANCELLATION",
-      "id": "test-monetary-cancellation",
-      "balance_security_id": "new-security",
-      "security_id": "test-security-id",
-      "date": "2019-01-31",
-      "amount": {
-        "amount": "53.09",
-        "currency": "USD"
-      },
-      "reason_text": "for testing",
-      "comments": ["just a comment"]
     },
     {
       "object_type": "TX_STOCK_SPLIT",
