@@ -1,7 +1,7 @@
 # Untitled integer in Object - Convertible Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.ConvertibleIssuance.schema.json#/properties/seniority
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/seniority
 ```
 
 If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority

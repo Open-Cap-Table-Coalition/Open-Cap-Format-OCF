@@ -1,39 +1,25 @@
 # Type - Numeric Schema
 
 ```txt
-Types.Numeric.schema.json
+https://opencaptablecoalition.com/schema/types/numeric
 ```
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [Numeric.schema.json](../../schema/types/Numeric.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [Numeric.schema.json](../../schema/types/Numeric.schema.json "open original schema") |
 
 ## Type - Numeric Type
 
-`object` ([Type - Numeric](numeric.md))
+`string` ([Type - Numeric](numeric.md))
 
-# Type - Numeric Properties
+## Type - Numeric Constraints
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                |
-| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------- |
-| [string_value](#string_value) | `string` | Required | cannot be null | [Type - Numeric](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value") |
+**pattern**: the string must match the following regular expression: 
 
-## string_value
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
 
-Fixed-point numeric value as string
-
-`string_value`
-
-*   is required
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Type - Numeric](numeric-properties-string_value.md "Types.Numeric.schema.json#/properties/string_value")
-
-### string_value Type
-
-`string`
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")

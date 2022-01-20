@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release",
+  "title": "Object - Plan Security Repurchase Release Transaction",
+  "description": "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "/schema/primitives/transactions/repurchase_release/base_repurchase_release"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_PLAN_SECURITY_REPURCHASE_RELEASE"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "settlement_date": {},
+    "release_price": {},
+    "net_quantity": {},
+    "method": {},
+    "stock_swap": {},
+    "cash_paid": {},
+    "quantity_sold": {},
+    "sale_price_per_unit": {},
+    "withheld_quantity": {}
+  },
+  "additionalProperties": false,
+  "required": []
+}

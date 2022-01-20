@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Issuance Transaction Schema
 
 ```txt
-Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/custom_id
+https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/custom_id
 ```
 
 A custom ID for this convertible (e.g. CN-1.)

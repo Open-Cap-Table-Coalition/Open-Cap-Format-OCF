@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Cancellation Transaction Schema
 
 ```txt
-Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/reason_text
+https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/reason_text
 ```
 
 Reason for the cancellation

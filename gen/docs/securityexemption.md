@@ -1,7 +1,7 @@
-# Type - SecurityExemption Schema
+# Type - Security Exemption Schema
 
 ```txt
-Types.SecurityExemption.schema.json
+https://opencaptablecoalition.com/schema/types/security_exemption
 ```
 
 Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis
@@ -10,16 +10,16 @@ Type representation of a securities issuance exemption that includes an unstruct
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [SecurityExemption.schema.json](../../schema/types/SecurityExemption.schema.json "open original schema") |
 
-## Type - SecurityExemption Type
+## Type - Security Exemption Type
 
-`object` ([Type - SecurityExemption](securityexemption.md))
+`object` ([Type - Security Exemption](securityexemption.md))
 
-# Type - SecurityExemption Properties
+# Type - Security Exemption Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                              |
-| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| [description](#description)   | `string` | Required | cannot be null | [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")   |
-| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                             |
+| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [description](#description)   | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/description")   |
+| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-jurisdiction.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/jurisdiction") |
 
 ## description
 
@@ -33,7 +33,7 @@ Description of an applicable security law exemption governing the issuance
 
 *   cannot be null
 
-*   defined in: [Type - SecurityExemption](securityexemption-properties-description.md "Types.SecurityExemption.schema.json#/properties/description")
+*   defined in: [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/description")
 
 ### description Type
 
@@ -51,7 +51,7 @@ Country code of the jurisdiction of the applicable law (ISO-3166)
 
 *   cannot be null
 
-*   defined in: [Type - SecurityExemption](securityexemption-properties-jurisdiction.md "Types.SecurityExemption.schema.json#/properties/jurisdiction")
+*   defined in: [Type - Security Exemption](securityexemption-properties-jurisdiction.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/jurisdiction")
 
 ### jurisdiction Type
 

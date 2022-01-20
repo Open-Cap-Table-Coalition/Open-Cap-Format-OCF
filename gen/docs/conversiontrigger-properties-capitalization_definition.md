@@ -1,7 +1,7 @@
-# Untitled string in Type - ConversionTrigger Schema
+# Untitled string in Type - Conversion Trigger Schema
 
 ```txt
-Types.ConversionTrigger.schema.json#/properties/capitalization_definition
+https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/capitalization_definition
 ```
 
 How is capitalization defined in the convertible for purposes of calculating company capitalization to calculate the conversion ratio?

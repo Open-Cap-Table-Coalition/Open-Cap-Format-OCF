@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/valuation_type",
+  "title": "Enum - Valuation Type",
+  "description": "Enumeration of valuation types",
+  "type": "string",
+  "enum": ["409A"]
+}

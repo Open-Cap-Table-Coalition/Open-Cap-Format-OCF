@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/stock_class_type",
+  "title": "Enum - Stock Class Type",
+  "description": "Enumeration of stock class types",
+  "type": "string",
+  "enum": ["COMMON", "PREFERRED"]
+}

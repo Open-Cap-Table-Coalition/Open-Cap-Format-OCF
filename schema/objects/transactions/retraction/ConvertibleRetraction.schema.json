@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Retraction.ConvertibleRetraction.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/convertible_retraction",
   "title": "Object - Convertible Retraction Transaction",
   "description": "Object describing a retraction of a convertible security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "Primitives.Transactions.Retraction.BaseRetraction.schema.json"
+      "$ref": "/schema/primitives/transactions/retraction/base_retraction"
     }
   ],
   "properties": {

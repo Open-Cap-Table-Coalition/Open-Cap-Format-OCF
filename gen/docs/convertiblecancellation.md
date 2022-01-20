@@ -1,7 +1,7 @@
 # Object - Convertible Cancellation Transaction Schema
 
 ```txt
-Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation
 ```
 
 Object describing a cancellation of a convertible security
@@ -16,24 +16,20 @@ Object describing a cancellation of a convertible security
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Convertible Cancellation Transaction](convertiblecancellation-allof-0.md "check type definition")
 
 # Object - Convertible Cancellation Transaction Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                           |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/object_type")                   |
-| [amount](#amount)                             | `object`      | Required | cannot be null | [Object - Convertible Cancellation Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                        |
-| [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/id")                                     |
-| [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/comments")                         |
-| [security_id](#security_id)                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/security_id")                   |
-| [date](#date)                                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-date.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/date")                                 |
-| [balance_security_ids](#balance_security_ids) | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-balance_security_ids.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/balance_security_ids") |
-| [reason_text](#reason_text)                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-reason_text.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/reason_text")                   |
+| Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/object_type")                 |
+| [amount](#amount)                           | Not specified | Required | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/amount")                           |
+| [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/id")                                   |
+| [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/comments")                       |
+| [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/security_id")                 |
+| [date](#date)                               | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/date")                               |
+| [balance_security_id](#balance_security_id) | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/balance_security_id") |
+| [reason_text](#reason_text)                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/reason_text")                 |
 
 ## object_type
 
@@ -47,7 +43,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/object_type")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/object_type")
 
 ### object_type Type
 
@@ -63,21 +59,21 @@ unknown
 
 ## amount
 
-Type representing a monetary value in a specified currency code
+Amount of monetary value cancelled
 
 `amount`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/amount")
 
 ### amount Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## id
 
@@ -91,7 +87,7 @@ Type representing a monetary value in a specified currency code
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/id")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/id")
 
 ### id Type
 
@@ -109,7 +105,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/comments")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/comments")
 
 ### comments Type
 
@@ -127,7 +123,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/security_id")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/security_id")
 
 ### security_id Type
 
@@ -145,17 +141,17 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-date.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/date")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/date")
 
 ### date Type
 
 unknown
 
-## balance_security_ids
+## balance_security_id
 
 
 
-`balance_security_ids`
+`balance_security_id`
 
 *   is optional
 
@@ -163,9 +159,9 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-balance_security_ids.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/balance_security_ids")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/balance_security_id")
 
-### balance_security_ids Type
+### balance_security_id Type
 
 unknown
 
@@ -181,7 +177,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-reason_text.md "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/reason_text")
+*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/reason_text")
 
 ### reason_text Type
 

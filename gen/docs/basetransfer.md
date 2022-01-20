@@ -1,7 +1,7 @@
 # Primitive - Security Transfer Transaction Schema
 
 ```txt
-Primitives.Transactions.Transfer.BaseTransfer.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer
 ```
 
 Abstract object describing a security transfer or secondary sale transaction
@@ -16,35 +16,33 @@ Abstract object describing a security transfer or secondary sale transaction
 
 all of
 
-*   all of
-
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Transfer Transaction](basetransfer-allof-0.md "check type definition")
 
 # Primitive - Security Transfer Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
-| :------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")                                                                       |
-| [balance_security_id](#balance_security_id)       | `string` | Optional | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-balance_security_id.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/balance_security_id")                                |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-security-transfer---resulting-security-id-array.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/consideration")                                            |
+| [balance_security_id](#balance_security_id)       | `string`      | Optional | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/balance_security_id")                                |
+| [resulting_security_ids](#resulting_security_ids) | `array`       | Required | cannot be null | [Primitive - Security Transfer Transaction](basetransfer-properties-security-transfer---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/resulting_security_ids") |
 
 ## consideration
 
-Type representing a monetary value in a specified currency code
+Consideration for the security
 
 `consideration`
 
 *   is optional
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/consideration")
+*   defined in: [Primitive - Security Transfer Transaction](basetransfer-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/consideration")
 
 ### consideration Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## balance_security_id
 
@@ -58,7 +56,7 @@ Identifier for the security that holds the remainder balance (for partial transf
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transfer Transaction](basetransfer-properties-balance_security_id.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/balance_security_id")
+*   defined in: [Primitive - Security Transfer Transaction](basetransfer-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/balance_security_id")
 
 ### balance_security_id Type
 
@@ -76,7 +74,7 @@ Array of identifiers for new security (or securities) created as a result of the
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transfer Transaction](basetransfer-properties-security-transfer---resulting-security-id-array.md "Primitives.Transactions.Transfer.BaseTransfer.schema.json#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Transfer Transaction](basetransfer-properties-security-transfer---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

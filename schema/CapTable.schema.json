@@ -1,166 +1,168 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "CapTable.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/cap_table",
   "title": "Cap Table (\"Snapshot\")",
-  "description": "Top-level schema describing a capitalization table",
+  "description": "Top-level schema describing a capitalization table.",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Identifier for the capitalization table",
+      "description": "Identifier for the cap table",
       "type": "string"
     },
     "issuer": {
       "description": "Issuer for the cap table",
-      "$ref": "Objects.Issuer.schema.json"
+      "$ref": "/schema/objects/issuer"
     },
     "stakeholders": {
-      "title": "CapTable - Objects.Stakeholder.schema.json Array",
+      "title": "Cap Table - Stakeholder Array",
       "description": "List of stakeholders for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.Stakeholder.schema.json"
+        "$ref": "/schema/objects/stakeholder"
       }
     },
     "stock_plans": {
-      "title": "CapTable - Objects.StockPlan.schema.json Array",
+      "title": "Cap Table - Stock Plan Array",
       "description": "List of issued stock plans for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.StockPlan.schema.json"
+        "$ref": "/schema/objects/stock_plan"
       }
     },
     "stock_legend_templates": {
-      "title": "CapTable - Objects.StockLegendTemplates.schema.json Array",
+      "title": "Cap Table - Stock Legend Template Array",
       "description": "List of stock legend templates for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.StockLegendTemplate.schema.json"
+        "$ref": "/schema/objects/stock_legend_template"
       }
     },
     "transactions": {
-      "title": "CapTable - Objects.Transactions.*.schema.json Array",
+      "title": "Cap Table - Transaction Array",
       "description": "List of transactions for the cap table",
       "type": "array",
       "items": {
         "oneOf": [
           {
-            "$ref": "Objects.Transactions.Acceptance.ConvertibleAcceptance.schema.json"
+            "$ref": "/schema/objects/transactions/acceptance/convertible_acceptance"
           },
           {
-            "$ref": "Objects.Transactions.Acceptance.PlanSecurityAcceptance.schema.json"
+            "$ref": "/schema/objects/transactions/acceptance/plan_security_acceptance"
           },
           {
-            "$ref": "Objects.Transactions.Acceptance.StockAcceptance.schema.json"
+            "$ref": "/schema/objects/transactions/acceptance/stock_acceptance"
           },
           {
-            "$ref": "Objects.Transactions.Acceptance.WarrantAcceptance.schema.json"
+            "$ref": "/schema/objects/transactions/acceptance/warrant_acceptance"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json"
+            "$ref": "/schema/objects/transactions/cancellation/convertible_cancellation"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.PlanSecurityCancellation.schema.json"
+            "$ref": "/schema/objects/transactions/cancellation/plan_security_cancellation"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.StockCancellation.schema.json"
+            "$ref": "/schema/objects/transactions/cancellation/stock_cancellation"
           },
           {
-            "$ref": "Objects.Transactions.Cancellation.WarrantCancellation.schema.json"
+            "$ref": "/schema/objects/transactions/cancellation/warrant_cancellation"
           },
           {
-            "$ref": "Objects.Transactions.Conversion.ConvertibleConversion.schema.json"
+            "$ref": "/schema/objects/transactions/conversion/convertible_conversion"
           },
           {
-            "$ref": "Objects.Transactions.Conversion.StockConversion.schema.json"
+            "$ref": "/schema/objects/transactions/conversion/stock_conversion"
           },
           {
-            "$ref": "Objects.Transactions.Exercise.PlanSecurityExercise.schema.json"
+            "$ref": "/schema/objects/transactions/exercise/plan_security_exercise"
           },
           {
-            "$ref": "Objects.Transactions.Exercise.WarrantExercise.schema.json"
+            "$ref": "/schema/objects/transactions/exercise/warrant_exercise"
           },
           {
-            "$ref": "Objects.Transactions.Issuance.ConvertibleIssuance.schema.json"
+            "$ref": "/schema/objects/transactions/issuance/convertible_issuance"
           },
           {
-            "$ref": "Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json"
+            "$ref": "/schema/objects/transactions/issuance/plan_security_issuance"
           },
           {
-            "$ref": "Objects.Transactions.Issuance.StockIssuance.schema.json"
+            "$ref": "/schema/objects/transactions/issuance/stock_issuance"
           },
           {
-            "$ref": "Objects.Transactions.Issuance.WarrantIssuance.schema.json"
+            "$ref": "/schema/objects/transactions/issuance/warrant_issuance"
           },
           {
-            "$ref": "Objects.Transactions.Reissuance.StockReissuance.schema.json"
+            "$ref": "/schema/objects/transactions/reissuance/stock_reissuance"
           },
           {
-            "$ref": "Objects.Transactions.Repurchase.StockRepurchase.schema.json"
+            "$ref": "/schema/objects/transactions/repurchase/stock_repurchase"
           },
           {
-            "$ref": "Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json"
+            "$ref": "/schema/objects/transactions/repurchase_release/plan_security_repurchase_release"
           },
           {
-            "$ref": "Objects.Transactions.Retraction.ConvertibleRetraction.schema.json"
+            "$ref": "/schema/objects/transactions/retraction/convertible_retraction"
           },
           {
-            "$ref": "Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json"
+            "$ref": "/schema/objects/transactions/retraction/plan_security_retraction"
           },
           {
-            "$ref": "Objects.Transactions.Retraction.StockRetraction.schema.json"
+            "$ref": "/schema/objects/transactions/retraction/stock_retraction"
           },
           {
-            "$ref": "Objects.Transactions.Retraction.WarrantRetraction.schema.json"
+            "$ref": "/schema/objects/transactions/retraction/warrant_retraction"
           },
           {
-            "$ref": "Objects.Transactions.Split.PlanSecuritySplit.schema.json"
+            "$ref": "/schema/objects/transactions/split/plan_security_split"
           },
           {
-            "$ref": "Objects.Transactions.Split.StockSplit.schema.json"
+            "$ref": "/schema/objects/transactions/split/stock_split"
           },
           {
-            "$ref": "Objects.Transactions.Split.WarrantSplit.schema.json"
+            "$ref": "/schema/objects/transactions/split/warrant_split"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json"
+            "$ref": "/schema/objects/transactions/transfer/convertible_transfer"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.PlanSecurityTransfer.schema.json"
+            "$ref": "/schema/objects/transactions/transfer/plan_security_transfer"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.StockTransfer.schema.json"
+            "$ref": "/schema/objects/transactions/transfer/stock_transfer"
           },
           {
-            "$ref": "Objects.Transactions.Transfer.WarrantTransfer.schema.json"
+            "$ref": "/schema/objects/transactions/transfer/warrant_transfer"
           }
         ]
       }
     },
     "stock_classes": {
-      "description": "List of StockClasses authorized for the issuer",
+      "title": "Cap Table - Stock Class Array",
+      "description": "List of stock classes for the cap table",
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "Objects.StockClass.schema.json"
+        "$ref": "/schema/objects/stock_class"
       }
     },
     "vesting_schedules": {
-      "title": "CapTable - Objects.VestingSchedule.schema.json Array",
-      "description": "List of vesting schedules used by the issuer",
+      "title": "Cap Table - Vesting Schedule Array",
+      "description": "List of vesting schedules for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.VestingSchedule.schema.json"
+        "$ref": "/schema/objects/vesting_schedule"
       }
     },
     "valuations": {
-      "title": "CapTable - Objects.Valuation.schema.json Array",
+      "title": "Cap Table - Valuation Array",
       "description": "List of valuations for the cap table",
       "type": "array",
       "items": {
-        "$ref": "Objects.Valuation.schema.json"
+        "$ref": "/schema/objects/valuation"
       }
     },
     "comments": {
+      "title": "Cap Table - Comment Array",
       "description": "Unstructured text comments related to and stored for the cap table",
       "type": "array",
       "items": {

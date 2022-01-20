@@ -1,8 +1,0 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Enums.DayCount.schema.json",
-  "title": "Enum - DayCount Type",
-  "description": "Enumeration of how the number of days are determined per period",
-  "type": "string",
-  "enum": ["ACTUAL_365", "30_360"]
-}

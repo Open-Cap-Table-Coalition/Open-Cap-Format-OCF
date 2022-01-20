@@ -1,7 +1,7 @@
 # Object - Warrant Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.WarrantIssuance.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance
 ```
 
 Object describing warrant issuance transaction by the issuer and held by a stakeholder
@@ -16,32 +16,28 @@ Object describing warrant issuance transaction by the issuer and held by a stake
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Warrant Issuance Transaction](warrantissuance-allof-0.md "check type definition")
 
 # Object - Warrant Issuance Transaction Properties
 
-| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                  |
-| :-------------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/object_type")                                      |
-| [conversion_rights](#conversion_rights)             | `array`       | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant---stockclassconversionrights-array.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/conversion_rights") |
-| [quantity](#quantity)                               | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")                                                                            |
-| [exercise_price](#exercise_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")                                                               |
-| [purchase_price](#purchase_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")                                                               |
-| [vesting](#vesting)                                 | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")                                                                  |
-| [expiration_date](#expiration_date)                 | `string`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/expiration_date")                                                                  |
-| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/id")                                                        |
-| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/comments")                                            |
-| [security_id](#security_id)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_id")                                      |
-| [date](#date)                                       | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-date.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/date")                                                    |
-| [custom_id](#custom_id)                             | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-custom_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/custom_id")                                          |
-| [stakeholder_id](#stakeholder_id)                   | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/stakeholder_id")                                |
-| [board_approval_date](#board_approval_date)         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/board_approval_date")                      |
-| [consideration](#consideration)                     | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-consideration.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/consideration")                                  |
-| [security_law_exemptions](#security_law_exemptions) | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_law_exemptions")              |
+| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
+| :-------------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/object_type")                                                  |
+| [conversion_rights](#conversion_rights)             | `array`       | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant-issuance---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/conversion_rights") |
+| [quantity](#quantity)                               | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/quantity")                                                        |
+| [exercise_price](#exercise_price)                   | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/exercise_price")                                            |
+| [purchase_price](#purchase_price)                   | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-purchase_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/purchase_price")                                            |
+| [vesting_rules](#vesting_rules)                     | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/vesting_rules")                                              |
+| [expiration_date](#expiration_date)                 | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/expiration_date")                                          |
+| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/id")                                                                    |
+| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/comments")                                                        |
+| [security_id](#security_id)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_id")                                                  |
+| [date](#date)                                       | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/date")                                                                |
+| [custom_id](#custom_id)                             | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/custom_id")                                                      |
+| [stakeholder_id](#stakeholder_id)                   | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/stakeholder_id")                                            |
+| [board_approval_date](#board_approval_date)         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/board_approval_date")                                  |
+| [consideration](#consideration)                     | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/consideration")                                              |
+| [security_law_exemptions](#security_law_exemptions) | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_law_exemptions")                          |
 
 ## object_type
 
@@ -55,7 +51,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/object_type")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/object_type")
 
 ### object_type Type
 
@@ -77,109 +73,105 @@ What can this instrument convert into for a maturity or next equity financing co
 
 *   is required
 
-*   Type: `object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant---stockclassconversionrights-array.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/conversion_rights")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant-issuance---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/conversion_rights")
 
 ### conversion_rights Type
 
-`object[]` ([Type - StockClassConversionRights](convertibleissuance-properties-type---stockclassconversionrights.md))
+unknown\[]
 
 ## quantity
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Quantity of shares the warrant is exercisable for
 
 `quantity`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/quantity")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/quantity")
 
 ### quantity Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
 ## exercise_price
 
-Type representing a monetary value in a specified currency code
+The exercise price of the warrant
 
 `exercise_price`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/exercise_price")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/exercise_price")
 
 ### exercise_price Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## purchase_price
 
-Type representing a monetary value in a specified currency code
+Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)
 
 `purchase_price`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/purchase_price")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-purchase_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/purchase_price")
 
 ### purchase_price Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
-## vesting
+## vesting_rules
 
-Type representing all aspects related to vesting securities
+Vesting conditions applicable to the warrant
 
-`vesting`
+`vesting_rules`
 
 *   is optional
 
-*   Type: `object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting.md "Types.Vesting.schema.json#/properties/vesting")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/vesting_rules")
 
-### vesting Type
+### vesting_rules Type
 
-`object` ([Type - Vesting](plansecurityissuance-properties-type---vesting.md))
+unknown
 
 ## expiration_date
 
-Type representing an ISO-8601 date, e.g. 2022-01-28
+Expiration date of the warrant, if applicable
 
 `expiration_date`
 
 *   is optional
 
-*   Type: `string` ([Type - DateString](issuer-properties-type---datestring.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](issuer-properties-type---datestring.md "Types.DateString.schema.json#/properties/expiration_date")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/expiration_date")
 
 ### expiration_date Type
 
-`string` ([Type - DateString](issuer-properties-type---datestring.md))
-
-### expiration_date Constraints
-
-**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+unknown
 
 ## id
 
@@ -193,7 +185,7 @@ Type representing an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/id")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/id")
 
 ### id Type
 
@@ -211,7 +203,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/comments")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/comments")
 
 ### comments Type
 
@@ -229,7 +221,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_id")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_id")
 
 ### security_id Type
 
@@ -247,7 +239,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-date.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/date")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/date")
 
 ### date Type
 
@@ -265,7 +257,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-custom_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/custom_id")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/custom_id")
 
 ### custom_id Type
 
@@ -283,7 +275,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-stakeholder_id.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/stakeholder_id")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/stakeholder_id")
 
 ### stakeholder_id Type
 
@@ -301,7 +293,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-board_approval_date.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/board_approval_date")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -319,7 +311,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-consideration.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/consideration")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/consideration")
 
 ### consideration Type
 
@@ -337,7 +329,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-security_law_exemptions.md "Objects.Transactions.Issuance.WarrantIssuance.schema.json#/properties/security_law_exemptions")
+*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_law_exemptions")
 
 ### security_law_exemptions Type
 

@@ -1,7 +1,7 @@
-# Untitled string in Type - ConversionTrigger Schema
+# Untitled string in Type - Conversion Trigger Schema
 
 ```txt
-Types.ConversionTrigger.schema.json#/properties/nickname
+https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/nickname
 ```
 
 Human-friendly nickname to describe the conversion right

@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.Ratio.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/types/ratio",
   "title": "Type - Ratio",
-  "description": "Type representation of a ratio as antecedent and consequent numeric values.",
+  "description": "Type representation of a ratio as antecedent and consequent numeric values",
   "type": "object",
   "properties": {
     "antecedent": {
       "description": "Antecedent value of ratio (e.g. in a:b, a is the antecedent)",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     },
     "consequent": {
       "description": "Consequent value of ratio (e.g. in a:b, b is the consequent)",
-      "$ref": "Types.Numeric.schema.json"
+      "$ref": "/schema/types/numeric"
     }
   },
   "required": ["antecedent", "consequent"]

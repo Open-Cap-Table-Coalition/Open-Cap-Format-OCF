@@ -1,10 +1,10 @@
 # Untitled string in Primitive - Security Issuance Transaction Schema
 
 ```txt
-Primitives.Transactions.Issuance.BaseIssuance.schema.json#/properties/stakeholder_id
+https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/stakeholder_id
 ```
 
-Id of the stakeholder that holds legal title to this convertible.
+Identifer for the stakeholder that holds legal title to this convertible
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                 |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------- |

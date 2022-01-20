@@ -1,7 +1,7 @@
-# Untitled string in Object - StockLegendTemplate Schema
+# Untitled string in Object - Stock Legend Template Schema
 
 ```txt
-Objects.StockLegendTemplate.schema.json#/properties/text
+https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/text
 ```
 
 The full text of the stock legend

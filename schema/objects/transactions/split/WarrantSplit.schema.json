@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Objects.Transactions.Split.WarrantSplit.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/split/warrant_split",
   "title": "Object - Warrant Split Transaction",
   "description": "Object describing a split of a warrant security",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Transactions.Split.BaseSplit.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/transactions/split/base_split" }],
   "properties": {
     "object_type": {
       "const": "TX_WARRANT_SPLIT"

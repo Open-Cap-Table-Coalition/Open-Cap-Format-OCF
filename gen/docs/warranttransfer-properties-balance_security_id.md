@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Transfer Transaction Schema
 
 ```txt
-Objects.Transactions.Transfer.WarrantTransfer.schema.json#/properties/balance_security_id
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/warrant_transfer#/properties/balance_security_id
 ```
 
 

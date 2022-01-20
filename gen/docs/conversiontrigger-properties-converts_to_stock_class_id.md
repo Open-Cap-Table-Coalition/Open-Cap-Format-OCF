@@ -1,7 +1,7 @@
-# Untitled string in Type - ConversionTrigger Schema
+# Untitled string in Type - Conversion Trigger Schema
 
 ```txt
-Types.ConversionTrigger.schema.json#/properties/converts_to_stock_class_id
+https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_stock_class_id
 ```
 
 What is the id of the StockClass this StockClass can convert into?

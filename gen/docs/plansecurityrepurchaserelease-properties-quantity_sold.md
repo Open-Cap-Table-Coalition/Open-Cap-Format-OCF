@@ -1,14 +1,14 @@
 # Untitled undefined type in Object - Plan Security Repurchase Release Transaction Schema
 
 ```txt
-Objects.Transactions.RepurchaseRelease.PlanSecurityRepurchaseRelease.schema.json#/properties/quantity_sold
+https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release#/properties/quantity_sold
 ```
 
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                         |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [PlanSecurityRepurchaseRelease.schema.json*](../../schema/objects/transactions/repurchaserelease/PlanSecurityRepurchaseRelease.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                          |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [PlanSecurityRepurchaseRelease.schema.json*](../../schema/objects/transactions/repurchase_release/PlanSecurityRepurchaseRelease.schema.json "open original schema") |
 
 ## quantity_sold Type
 

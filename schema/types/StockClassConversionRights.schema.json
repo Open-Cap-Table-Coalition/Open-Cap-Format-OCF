@@ -1,34 +1,34 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.StockClassConversionRights.schema.json",
-  "title": "Type - StockClassConversionRights",
-  "description": "Type representation of a conversion right from one security into a StockClass.",
+  "$id": "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights",
+  "title": "Type - Stock Class Conversion Rights",
+  "description": "Type representation of a conversion right from one security into a stock class",
   "type": "object",
   "properties": {
     "ratio": {
-      "description": "One share of this StockClass converts into this many target StockClass shares",
-      "$ref": "Types.Ratio.schema.json"
+      "description": "One share of this stock class converts into this many target stock class shares",
+      "$ref": "/schema/types/ratio"
     },
     "converts_to_future_round": {
-      "description": "Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)",
+      "description": "Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)",
       "type": "boolean"
     },
     "converts_to_stock_class_id": {
-      "description": "What is the id of the existing, known StockClass this StockClass can convert into?",
+      "description": "The identifier of the existing, known stock class this stock class can convert into",
       "type": "string"
     },
     "rounding_type": {
       "description": "How should fractional shares be rounded?",
-      "$ref": "Enums.Rounding.schema.json"
+      "$ref": "/schema/enums/rounding_type"
     }
   },
   "oneOf": [
     {
-      "title": "Converts to not-yet-existing and/or not-yet-known StockClass",
+      "title": "Converts to not-yet-existing and/or not-yet-known stock class",
       "required": ["converts_to_future_round"]
     },
     {
-      "title": "Converts to existing, known StockClass Id",
+      "title": "Converts to existing, known stock class",
       "required": ["converts_to_stock_class_id"]
     }
   ],

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Primitives.BaseObject.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/base_object",
   "title": "Object - BaseObject",
-  "description": "Abstract object to be extended by all other objects.",
+  "description": "Abstract object to be extended by all other objects",
   "type": "object",
   "properties": {
     "id": {
@@ -18,7 +18,7 @@
     },
     "object_type": {
       "description": "Object type field",
-      "$ref": "Enums.Object.schema.json"
+      "$ref": "/schema/enums/object_type"
     }
   },
   "required": ["id", "object_type"]

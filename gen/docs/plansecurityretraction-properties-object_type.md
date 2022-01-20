@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Retraction Transaction Schema
 
 ```txt
-Objects.Transactions.Retraction.PlanSecurityRetraction.schema.json#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction#/properties/object_type
 ```
 
 

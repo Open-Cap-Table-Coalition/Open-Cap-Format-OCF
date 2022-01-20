@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Primitives.Transactions.Conversion.BaseConversion.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion",
   "title": "Primitive - Security Conversion Transaction",
   "description": "Abstract object describing fields common to all conversion transaction objects",
   "type": "object",
-  "allOf": [{ "$ref": "Primitives.Transactions.BaseTransaction.schema.json" }],
+  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
   "properties": {
     "resulting_security_ids": {
-      "title": "Security Conversion - Resulting Security Id Array",
+      "title": "Security Conversion - Resulting Security ID Array",
       "description": "Identifier for the security (or securities) that resulted from the conversion",
       "type": "array",
       "items": {

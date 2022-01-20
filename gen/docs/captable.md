@@ -1,10 +1,10 @@
 # Cap Table ("Snapshot") Schema
 
 ```txt
-CapTable.schema.json
+https://opencaptablecoalition.com/schema/cap_table
 ```
 
-Top-level schema describing a capitalization table
+Top-level schema describing a capitalization table.
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
@@ -16,22 +16,22 @@ Top-level schema describing a capitalization table
 
 # Cap Table ("Snapshot") Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                         | `string` | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-id.md "CapTable.schema.json#/properties/id")                                                                         |
-| [issuer](#issuer)                                 | Merged   | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")                                                  |
-| [stakeholders](#stakeholders)                     | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")                    |
-| [stock_plans](#stock_plans)                       | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")                       |
-| [stock_legend_templates](#stock_legend_templates) | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "CapTable.schema.json#/properties/stock_legend_templates") |
-| [transactions](#transactions)                     | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectstransactionsschemajson-array.md "CapTable.schema.json#/properties/transactions")                   |
-| [stock_classes](#stock_classes)                   | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-stock_classes.md "CapTable.schema.json#/properties/stock_classes")                                                   |
-| [vesting_schedules](#vesting_schedules)           | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules")           |
-| [valuations](#valuations)                         | `array`  | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")                        |
-| [comments](#comments)                             | `array`  | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-comments.md "CapTable.schema.json#/properties/comments")                                                             |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                       |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                         | `string`      | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-id.md "https://opencaptablecoalition.com/schema/cap_table#/properties/id")                                                          |
+| [issuer](#issuer)                                 | Not specified | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-issuer.md "https://opencaptablecoalition.com/schema/cap_table#/properties/issuer")                                                  |
+| [stakeholders](#stakeholders)                     | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---stakeholder-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholders")                     |
+| [stock_plans](#stock_plans)                       | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---stock-plan-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans")                       |
+| [stock_legend_templates](#stock_legend_templates) | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---stock-legend-template-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates") |
+| [transactions](#transactions)                     | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---transaction-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/transactions")                     |
+| [stock_classes](#stock_classes)                   | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---stock-class-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes")                    |
+| [vesting_schedules](#vesting_schedules)           | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---vesting-schedule-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules")           |
+| [valuations](#valuations)                         | `array`       | Required | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---valuation-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/valuations")                         |
+| [comments](#comments)                             | `array`       | Optional | cannot be null | [Cap Table ("Snapshot")](captable-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/comments")                             |
 
 ## id
 
-Identifier for the capitalization table
+Identifier for the cap table
 
 `id`
 
@@ -41,7 +41,7 @@ Identifier for the capitalization table
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-id.md "CapTable.schema.json#/properties/id")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-id.md "https://opencaptablecoalition.com/schema/cap_table#/properties/id")
 
 ### id Type
 
@@ -49,25 +49,21 @@ Identifier for the capitalization table
 
 ## issuer
 
-Object describing the issuer of the cap table. This is the company whsoe cap table this is.
+Issuer for the cap table
 
 `issuer`
 
 *   is required
 
-*   Type: `object` ([Object - Issuer](captable-properties-object---issuer.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-object---issuer.md "Objects.Issuer.schema.json#/properties/issuer")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-issuer.md "https://opencaptablecoalition.com/schema/cap_table#/properties/issuer")
 
 ### issuer Type
 
-`object` ([Object - Issuer](captable-properties-object---issuer.md))
-
-all of
-
-*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+unknown
 
 ## stakeholders
 
@@ -77,15 +73,15 @@ List of stakeholders for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Object - Stakeholder](captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstakeholderschemajson-array.md "CapTable.schema.json#/properties/stakeholders")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---stakeholder-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholders")
 
 ### stakeholders Type
 
-`object[]` ([Object - Stakeholder](captable-properties-captable---objectsstakeholderschemajson-array-object---stakeholder.md))
+unknown\[]
 
 ## stock_plans
 
@@ -95,15 +91,15 @@ List of issued stock plans for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Object - StockPlan](captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstockplanschemajson-array.md "CapTable.schema.json#/properties/stock_plans")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---stock-plan-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans")
 
 ### stock_plans Type
 
-`object[]` ([Object - StockPlan](captable-properties-captable---objectsstockplanschemajson-array-object---stockplan.md))
+unknown\[]
 
 ## stock_legend_templates
 
@@ -113,15 +109,15 @@ List of stock legend templates for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Object - StockLegendTemplate](captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsstocklegendtemplatesschemajson-array.md "CapTable.schema.json#/properties/stock_legend_templates")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---stock-legend-template-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates")
 
 ### stock_legend_templates Type
 
-`object[]` ([Object - StockLegendTemplate](captable-properties-captable---objectsstocklegendtemplatesschemajson-array-object---stocklegendtemplate.md))
+unknown\[]
 
 ## transactions
 
@@ -131,33 +127,33 @@ List of transactions for the cap table
 
 *   is required
 
-*   Type: an array of merged types ([Details](captable-properties-captable---objectstransactionsschemajson-array-items.md))
+*   Type: an array of merged types ([Details](captable-properties-cap-table---transaction-array-items.md))
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectstransactionsschemajson-array.md "CapTable.schema.json#/properties/transactions")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---transaction-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/transactions")
 
 ### transactions Type
 
-an array of merged types ([Details](captable-properties-captable---objectstransactionsschemajson-array-items.md))
+an array of merged types ([Details](captable-properties-cap-table---transaction-array-items.md))
 
 ## stock_classes
 
-List of StockClasses authorized for the issuer
+List of stock classes for the cap table
 
 `stock_classes`
 
 *   is required
 
-*   Type: `object[]` ([Object - StockClass](captable-properties-stock_classes-object---stockclass.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-stock_classes.md "CapTable.schema.json#/properties/stock_classes")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---stock-class-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes")
 
 ### stock_classes Type
 
-`object[]` ([Object - StockClass](captable-properties-stock_classes-object---stockclass.md))
+unknown\[]
 
 ### stock_classes Constraints
 
@@ -165,21 +161,21 @@ List of StockClasses authorized for the issuer
 
 ## vesting_schedules
 
-List of vesting schedules used by the issuer
+List of vesting schedules for the cap table
 
 `vesting_schedules`
 
 *   is required
 
-*   Type: `object[]` ([Object - VestingSchedule](captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsvestingscheduleschemajson-array.md "CapTable.schema.json#/properties/vesting_schedules")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---vesting-schedule-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules")
 
 ### vesting_schedules Type
 
-`object[]` ([Object - VestingSchedule](captable-properties-captable---objectsvestingscheduleschemajson-array-object---vestingschedule.md))
+unknown\[]
 
 ## valuations
 
@@ -189,15 +185,15 @@ List of valuations for the cap table
 
 *   is required
 
-*   Type: `object[]` ([Object - Valuation](captable-properties-captable---objectsvaluationschemajson-array-object---valuation.md))
+*   Type: unknown\[]
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-captable---objectsvaluationschemajson-array.md "CapTable.schema.json#/properties/valuations")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---valuation-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/valuations")
 
 ### valuations Type
 
-`object[]` ([Object - Valuation](captable-properties-captable---objectsvaluationschemajson-array-object---valuation.md))
+unknown\[]
 
 ## comments
 
@@ -211,7 +207,7 @@ Unstructured text comments related to and stored for the cap table
 
 *   cannot be null
 
-*   defined in: [Cap Table ("Snapshot")](captable-properties-comments.md "CapTable.schema.json#/properties/comments")
+*   defined in: [Cap Table ("Snapshot")](captable-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/cap_table#/properties/comments")
 
 ### comments Type
 

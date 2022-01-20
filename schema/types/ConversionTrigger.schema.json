@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "Types.ConversionTrigger.schema.json",
-  "title": "Type - ConversionTrigger",
+  "$id": "https://opencaptablecoalition.com/schema/types/conversion_trigger",
+  "title": "Type - Conversion Trigger",
   "description": "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)",
   "type": "object",
   "properties": {
     "ratio": {
       "description": "What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)",
-      "$ref": "Types.Ratio.schema.json"
+      "$ref": "/schema/types/ratio"
     },
     "rounding_type": {
       "description": "How should fractional shares be rounded?",
-      "$ref": "Enums.Rounding.schema.json"
+      "$ref": "/schema/enums/rounding_type"
     },
     "nickname": {
       "description": "Human-friendly nickname to describe the conversion right",
@@ -41,8 +41,8 @@
       "required": ["converts_to_future_round"]
     },
     {
-      "title": "Converts to known Id of StockClass (String Id)",
-      "description": "Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' Id here.",
+      "title": "Converts to known stock class (String ID)",
+      "description": "Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' ID here.",
       "required": ["converts_to_stock_class_id"]
     }
   ],

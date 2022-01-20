@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/convertible_type",
+  "title": "Enum - Convertible Type",
+  "description": "Enumeration of convertible instrument types",
+  "type": "string",
+  "enum": ["NOTE", "SAFE", "CONVERTIBLE_SECURITY"]
+}
