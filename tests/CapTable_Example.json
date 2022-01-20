@@ -234,7 +234,6 @@
         }
       ],
       "seniority": 1,
-      "comments": ["comment-one", "comment-two", "..."],
       "interest_rate": "3.11",
       "interest_payout": "CASH",
       "maturity_date": "2034-01-01",
@@ -244,7 +243,8 @@
       "pro_rata": "2500",
       "conversion_valuation_cap": { "amount": "8000000", "currency": "USD" },
       "conversion_discount": "0.1",
-      "conversion_fixed_ownership": "0.05"
+      "conversion_fixed_ownership": "0.05",
+      "comments": ["comment-one", "comment-two", "..."]
     },
     {
       "object_type": "TX_CONVERTIBLE_RETRACTION",
@@ -259,6 +259,31 @@
       "security_id": "test-convertible-retraction",
       "date": "2021-01-14T08:50Z",
       "reason_text": "oops",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-convertible-transfer-minimal",
+      "security_id": "test-security-id",
+      "date": "2018-06-07",
+      "resulting_security_ids": ["new-security-1", "..."],
+      "amount": {
+        "amount": "-867.53",
+        "currency": "USD"
+      }
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-convertible-transfer-all-fields",
+      "security_id": "test-security-id",
+      "date": "2018-06-07",
+      "resulting_security_ids": ["new-security-1", "..."],
+      "amount": {
+        "amount": "-867.53",
+        "currency": "USD"
+      },
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "balance_security_id": "test-security-id-2",
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
@@ -288,17 +313,6 @@
       "date": "2020-11-24",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "quantity": "100"
-    },
-    {
-      "object_type": "TX_CONVERTIBLE_TRANSFER",
-      "id": "test-monetary-transfer",
-      "security_id": "test-security-id",
-      "date": "2018-06-07",
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "amount": {
-        "amount": "-867.53",
-        "currency": "USD"
-      }
     }
   ],
   "vesting_schedules": [
