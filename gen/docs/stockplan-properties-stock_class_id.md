@@ -1,10 +1,10 @@
-# Untitled string in Object - StockPlan Schema
+# Untitled string in Object - Stock Plan Schema
 
 ```txt
-Objects.StockPlan.schema.json#/properties/stock_class_id
+https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id
 ```
 
-Id of the StockClass object this plan is composed of
+Identifier of the StockClass object this plan is composed of
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |

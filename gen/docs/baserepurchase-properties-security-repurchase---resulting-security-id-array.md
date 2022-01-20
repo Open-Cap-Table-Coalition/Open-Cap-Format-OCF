@@ -1,10 +1,10 @@
-# Security Repurchase - Resulting Security Id Array Schema
+# Security Repurchase - Resulting Security ID Array Schema
 
 ```txt
-Primitives.Transactions.Repurchase.BaseRepurchase.schema.json#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids
 ```
 
-For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares.
+For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                       |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------- |

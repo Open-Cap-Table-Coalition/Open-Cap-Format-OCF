@@ -1,34 +1,32 @@
-# Primitive - Security Re-issuance Transaction Schema
+# Primitive - Security Reissuance Transaction Schema
 
 ```txt
-Primitives.Transactions.Reissuance.BaseReissuance.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance
 ```
 
-Abstract object describing common properties to a re-issuance of a security
+Abstract object describing common properties to a reissuance of a security
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                      |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [BaseReissuance.schema.json](../../schema/primitives/transactions/reissuance/BaseReissuance.schema.json "open original schema") |
 
-## Primitive - Security Re-issuance Transaction Type
+## Primitive - Security Reissuance Transaction Type
 
-`object` ([Primitive - Security Re-issuance Transaction](basereissuance.md))
+`object` ([Primitive - Security Reissuance Transaction](basereissuance.md))
 
 all of
 
-*   all of
+*   [Untitled undefined type in Primitive - Security Reissuance Transaction](basereissuance-allof-0.md "check type definition")
 
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+# Primitive - Security Reissuance Transaction Properties
 
-# Primitive - Security Re-issuance Transaction Properties
-
-| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
-| :------------------------------------------------ | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Re-issuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
+| :------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids") |
 
 ## resulting_security_ids
 
-Identifier of the new security (or securities) issuance resulting from a re-issuance.
+Identifier of the new security (or securities) issuance resulting from a reissuance
 
 `resulting_security_ids`
 
@@ -38,7 +36,7 @@ Identifier of the new security (or securities) issuance resulting from a re-issu
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Re-issuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "Primitives.Transactions.Reissuance.BaseReissuance.schema.json#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

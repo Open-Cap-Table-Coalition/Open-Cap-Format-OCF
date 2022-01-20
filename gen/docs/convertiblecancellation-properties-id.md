@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Cancellation Transaction Schema
 
 ```txt
-Objects.Transactions.Cancellation.ConvertibleCancellation.schema.json#/properties/id
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/id
 ```
 
 

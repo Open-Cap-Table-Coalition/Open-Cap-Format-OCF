@@ -1,7 +1,7 @@
 # Untitled integer in Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-Types.ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator
+https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/amount_numerator
 ```
 
 Numerator of the tranche amount (e.g. 1 in 1/48th)

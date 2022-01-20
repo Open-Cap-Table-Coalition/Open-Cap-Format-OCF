@@ -1,7 +1,7 @@
 # Untitled string in Type - Custom Vesting Tranche Schema
 
 ```txt
-Types.CustomVestingTranche.schema.json#/properties/vest_quantity
+https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_quantity
 ```
 
 Quantity of shares for the tranche

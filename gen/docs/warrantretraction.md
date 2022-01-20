@@ -1,7 +1,7 @@
 # Object - Warrant Retraction Transaction Schema
 
 ```txt
-Objects.Transactions.Retraction.WarrantRetraction.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction
 ```
 
 Object describing a retraction of a warrant security
@@ -16,22 +16,18 @@ Object describing a retraction of a warrant security
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Warrant Retraction Transaction](warrantretraction-allof-0.md "check type definition")
 
 # Object - Warrant Retraction Transaction Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                     |
-| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-object_type.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/object_type") |
-| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-id.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/id")                   |
-| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-comments.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/comments")       |
-| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-security_id.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/security_id") |
-| [date](#date)               | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-date.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/date")               |
-| [reason_text](#reason_text) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-reason_text.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/reason_text") |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                   |
+| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/object_type") |
+| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/id")                   |
+| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/comments")       |
+| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/security_id") |
+| [date](#date)               | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/date")               |
+| [reason_text](#reason_text) | Not specified | Optional | cannot be null | [Object - Warrant Retraction Transaction](warrantretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/reason_text") |
 
 ## object_type
 
@@ -45,7 +41,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-object_type.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/object_type")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/object_type")
 
 ### object_type Type
 
@@ -71,7 +67,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-id.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/id")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/id")
 
 ### id Type
 
@@ -89,7 +85,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-comments.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/comments")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/comments")
 
 ### comments Type
 
@@ -107,7 +103,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-security_id.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/security_id")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/security_id")
 
 ### security_id Type
 
@@ -125,7 +121,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-date.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/date")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/date")
 
 ### date Type
 
@@ -143,7 +139,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-reason_text.md "Objects.Transactions.Retraction.WarrantRetraction.schema.json#/properties/reason_text")
+*   defined in: [Object - Warrant Retraction Transaction](warrantretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction#/properties/reason_text")
 
 ### reason_text Type
 

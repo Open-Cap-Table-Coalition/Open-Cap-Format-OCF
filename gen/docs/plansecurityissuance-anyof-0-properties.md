@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Issuance Transaction Schema
 
 ```txt
-Objects.Transactions.Issuance.PlanSecurityIssuance.schema.json#/anyOf/0/properties
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/anyOf/0/properties
 ```
 
 

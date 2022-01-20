@@ -1,7 +1,7 @@
 # Primitive - Security Cancellation Transaction Schema
 
 ```txt
-Primitives.Transactions.Cancellation.BaseCancellation.schema.json
+https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation
 ```
 
 Abstract object describing fields common to all cancellation transaction objects
@@ -16,16 +16,14 @@ Abstract object describing fields common to all cancellation transaction objects
 
 all of
 
-*   all of
-
-    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Primitive - Security Cancellation Transaction](basecancellation-allof-0.md "check type definition")
 
 # Primitive - Security Cancellation Transaction Properties
 
 | Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
 | :------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [balance_security_id](#balance_security_id) | `string` | Optional | cannot be null | [Primitive - Security Cancellation Transaction](basecancellation-properties-security-cancellation---balance-security-id-array.md "Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/balance_security_id") |
-| [reason_text](#reason_text)                 | `string` | Required | cannot be null | [Primitive - Security Cancellation Transaction](basecancellation-properties-reason_text.md "Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/reason_text")                                               |
+| [balance_security_id](#balance_security_id) | `string` | Optional | cannot be null | [Primitive - Security Cancellation Transaction](basecancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/balance_security_id") |
+| [reason_text](#reason_text)                 | `string` | Required | cannot be null | [Primitive - Security Cancellation Transaction](basecancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/reason_text")                 |
 
 ## balance_security_id
 
@@ -35,15 +33,15 @@ Identifier for the security that holds the remainder balance (for partial cancel
 
 *   is optional
 
-*   Type: `string` ([Security Cancellation - Balance Security Id Array](basecancellation-properties-security-cancellation---balance-security-id-array.md))
+*   Type: `string`
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Cancellation Transaction](basecancellation-properties-security-cancellation---balance-security-id-array.md "Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/balance_security_id")
+*   defined in: [Primitive - Security Cancellation Transaction](basecancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/balance_security_id")
 
 ### balance_security_id Type
 
-`string` ([Security Cancellation - Balance Security Id Array](basecancellation-properties-security-cancellation---balance-security-id-array.md))
+`string`
 
 ## reason_text
 
@@ -57,7 +55,7 @@ Reason for the cancellation
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Cancellation Transaction](basecancellation-properties-reason_text.md "Primitives.Transactions.Cancellation.BaseCancellation.schema.json#/properties/reason_text")
+*   defined in: [Primitive - Security Cancellation Transaction](basecancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/reason_text")
 
 ### reason_text Type
 

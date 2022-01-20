@@ -1,55 +1,55 @@
-# Type - StockClassConversionRights Schema
+# Type - Stock Class Conversion Rights Schema
 
 ```txt
-Types.StockClassConversionRights.schema.json
+https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights
 ```
 
-Type representation of a conversion right from one security into a StockClass.
+Type representation of a conversion right from one security into a stock class
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                 |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [StockClassConversionRights.schema.json](../../schema/types/StockClassConversionRights.schema.json "open original schema") |
 
-## Type - StockClassConversionRights Type
+## Type - Stock Class Conversion Rights Type
 
-`object` ([Type - StockClassConversionRights](stockclassconversionrights.md))
+`object` ([Type - Stock Class Conversion Rights](stockclassconversionrights.md))
 
 one (and only one) of
 
-*   [Converts to not-yet-existing and/or not-yet-known StockClass](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stockclass.md "check type definition")
+*   [Converts to not-yet-existing and/or not-yet-known stock class](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stock-class.md "check type definition")
 
-*   [Converts to existing, known StockClass Id](stockclassconversionrights-oneof-converts-to-existing-known-stockclass-id.md "check type definition")
+*   [Converts to existing, known stock class](stockclassconversionrights-oneof-converts-to-existing-known-stock-class.md "check type definition")
 
-# Type - StockClassConversionRights Properties
+# Type - Stock Class Conversion Rights Properties
 
-| Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                     |
-| :-------------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ratio](#ratio)                                           | `object`  | Required | cannot be null | [Type - StockClassConversionRights](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")                                                                |
-| [converts_to_future_round](#converts_to_future_round)     | `boolean` | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")     |
-| [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`  | Optional | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id") |
-| [rounding_type](#rounding_type)                           | `string`  | Required | cannot be null | [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")                                      |
+| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
+| :-------------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ratio](#ratio)                                           | Not specified | Required | cannot be null | [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-ratio.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/ratio")                                           |
+| [converts_to_future_round](#converts_to_future_round)     | `boolean`     | Optional | cannot be null | [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-converts_to_future_round.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_future_round")     |
+| [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`      | Optional | cannot be null | [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-converts_to_stock_class_id.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_stock_class_id") |
+| [rounding_type](#rounding_type)                           | Not specified | Required | cannot be null | [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-rounding_type.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/rounding_type")                           |
 
 ## ratio
 
-Type representation of a ratio as antecedent and consequent numeric values.
+One share of this stock class converts into this many target stock class shares
 
 `ratio`
 
 *   is required
 
-*   Type: `object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](convertibleissuance-properties-type---ratio.md "Types.Ratio.schema.json#/properties/ratio")
+*   defined in: [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-ratio.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/ratio")
 
 ### ratio Type
 
-`object` ([Type - Ratio](convertibleissuance-properties-type---ratio.md))
+unknown
 
 ## converts_to_future_round
 
-Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)
+Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)
 
 `converts_to_future_round`
 
@@ -59,7 +59,7 @@ Is this StockClass potentially convertible into a future, as-yet undetermined St
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_future_round.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_future_round")
+*   defined in: [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-converts_to_future_round.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_future_round")
 
 ### converts_to_future_round Type
 
@@ -67,7 +67,7 @@ Is this StockClass potentially convertible into a future, as-yet undetermined St
 
 ## converts_to_stock_class_id
 
-What is the id of the existing, known StockClass this StockClass can convert into?
+The identifier of the existing, known stock class this stock class can convert into
 
 `converts_to_stock_class_id`
 
@@ -77,7 +77,7 @@ What is the id of the existing, known StockClass this StockClass can convert int
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-converts_to_stock_class_id.md "Types.StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id")
+*   defined in: [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-converts_to_stock_class_id.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_stock_class_id")
 
 ### converts_to_stock_class_id Type
 
@@ -85,28 +85,18 @@ What is the id of the existing, known StockClass this StockClass can convert int
 
 ## rounding_type
 
-Enumeration of rounding types
+How should fractional shares be rounded?
 
 `rounding_type`
 
 *   is required
 
-*   Type: `string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Type - StockClassConversionRights](stockclassconversionrights-properties-enum---rounding-type.md "Enums.Rounding.schema.json#/properties/rounding_type")
+*   defined in: [Type - Stock Class Conversion Rights](stockclassconversionrights-properties-rounding_type.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/rounding_type")
 
 ### rounding_type Type
 
-`string` ([Enum - Rounding Type](stockclassconversionrights-properties-enum---rounding-type.md))
-
-### rounding_type Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value       | Explanation |
-| :---------- | :---------- |
-| `"CEILING"` |             |
-| `"FLOOR"`   |             |
-| `"NORMAL"`  |             |
+unknown

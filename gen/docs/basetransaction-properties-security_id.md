@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Transaction Schema
 
 ```txt
-Primitives.Transactions.BaseTransaction.schema.json#/properties/security_id
+https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id
 ```
 
 Identifier for the security which the transaction applies to

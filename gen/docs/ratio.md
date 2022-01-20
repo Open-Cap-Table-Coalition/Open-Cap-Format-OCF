@@ -1,10 +1,10 @@
 # Type - Ratio Schema
 
 ```txt
-Types.Ratio.schema.json
+https://opencaptablecoalition.com/schema/types/ratio
 ```
 
-Type representation of a ratio as antecedent and consequent numeric values.
+Type representation of a ratio as antecedent and consequent numeric values
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
@@ -16,43 +16,43 @@ Type representation of a ratio as antecedent and consequent numeric values.
 
 # Type - Ratio Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                |
-| :------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------- |
-| [antecedent](#antecedent) | `object` | Required | cannot be null | [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent") |
-| [consequent](#consequent) | `object` | Required | cannot be null | [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent") |
+| Property                  | Type          | Required | Nullable       | Defined by                                                                                                                   |
+| :------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| [antecedent](#antecedent) | Not specified | Required | cannot be null | [Type - Ratio](ratio-properties-antecedent.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/antecedent") |
+| [consequent](#consequent) | Not specified | Required | cannot be null | [Type - Ratio](ratio-properties-consequent.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/consequent") |
 
 ## antecedent
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Antecedent value of ratio (e.g. in a:b, a is the antecedent)
 
 `antecedent`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/antecedent")
+*   defined in: [Type - Ratio](ratio-properties-antecedent.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/antecedent")
 
 ### antecedent Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown
 
 ## consequent
 
-Type representation of a number (up to 10 decimal places supported by the spec)
+Consequent value of ratio (e.g. in a:b, b is the consequent)
 
 `consequent`
 
 *   is required
 
-*   Type: `object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Type - Ratio](stockplan-properties-type---numeric.md "Types.Numeric.schema.json#/properties/consequent")
+*   defined in: [Type - Ratio](ratio-properties-consequent.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/consequent")
 
 ### consequent Type
 
-`object` ([Type - Numeric](stockplan-properties-type---numeric.md))
+unknown

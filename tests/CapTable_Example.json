@@ -127,6 +127,19 @@
   ],
   "transactions": [
     {
+      "object_type": "TX_CONVERTIBLE_ACCEPTANCE",
+      "id": "test-convertible-acceptance-minimal",
+      "security_id": "2936wa8yefhdsvcn",
+      "date": "2022-01-20"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_ACCEPTANCE",
+      "id": "test-convertible-acceptance-all-fields",
+      "security_id": "2936wa8yefhdsvcn",
+      "date": "2022-01-20",
+      "comments": ["comment-one", "comment-two"]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",

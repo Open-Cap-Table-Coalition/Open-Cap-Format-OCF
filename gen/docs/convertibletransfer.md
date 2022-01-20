@@ -1,7 +1,7 @@
 # Object - Convertible Transfer Transaction Schema
 
 ```txt
-Objects.Transactions.Transfer.ConvertibleTransfer.schema.json
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer
 ```
 
 Object describing a transfer or secondary sale of a convertible security
@@ -16,42 +16,65 @@ Object describing a transfer or secondary sale of a convertible security
 
 all of
 
-*   all of
-
-    *   all of
-
-        *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+*   [Untitled undefined type in Object - Convertible Transfer Transaction](convertibletransfer-allof-0.md "check type definition")
 
 # Object - Convertible Transfer Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                               |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [amount](#amount)                                 | `object`      | Required | cannot be null | [Object - Convertible Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")                                                                |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-comments.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-security_id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-date.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/date")                                     |
-| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-consideration.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/consideration")                   |
-| [balance_security_id](#balance_security_id)       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-balance_security_id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/balance_security_id")       |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-resulting_security_ids.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                             |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/object_type")                       |
+| [amount](#amount)                                 | Not specified | Required | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/amount")                                 |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/date")                                     |
+| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/consideration")                   |
+| [balance_security_id](#balance_security_id)       | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/balance_security_id")       |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Convertible Transfer Transaction](convertibletransfer-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/resulting_security_ids") |
+
+## object_type
+
+
+
+`object_type`
+
+*   is optional
+
+*   Type: unknown
+
+*   cannot be null
+
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/object_type")
+
+### object_type Type
+
+unknown
+
+### object_type Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"TX_CONVERTIBLE_TRANSFER"
+```
 
 ## amount
 
-Type representing a monetary value in a specified currency code
+Amount of monetary value cancelled
 
 `amount`
 
 *   is required
 
-*   Type: `object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+*   Type: unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](plansecurityissuance-properties-type---money.md "Types.Money.schema.json#/properties/amount")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/amount")
 
 ### amount Type
 
-`object` ([Type - Money](plansecurityissuance-properties-type---money.md))
+unknown
 
 ## id
 
@@ -65,7 +88,7 @@ Type representing a monetary value in a specified currency code
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/id")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/id")
 
 ### id Type
 
@@ -83,7 +106,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-comments.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/comments")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/comments")
 
 ### comments Type
 
@@ -101,7 +124,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-security_id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/security_id")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/security_id")
 
 ### security_id Type
 
@@ -119,7 +142,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-date.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/date")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/date")
 
 ### date Type
 
@@ -137,7 +160,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-consideration.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/consideration")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/consideration")
 
 ### consideration Type
 
@@ -155,7 +178,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-balance_security_id.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/balance_security_id")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/balance_security_id")
 
 ### balance_security_id Type
 
@@ -173,7 +196,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-resulting_security_ids.md "Objects.Transactions.Transfer.ConvertibleTransfer.schema.json#/properties/resulting_security_ids")
+*   defined in: [Object - Convertible Transfer Transaction](convertibletransfer-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 
