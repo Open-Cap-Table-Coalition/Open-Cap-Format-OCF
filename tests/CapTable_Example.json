@@ -247,6 +247,21 @@
       "conversion_fixed_ownership": "0.05"
     },
     {
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "test-convertible-retraction-minimal",
+      "security_id": "test-convertible-retraction",
+      "date": "2021-01-14T08:50Z",
+      "reason_text": "oops"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "test-convertible-retraction-all-fields",
+      "security_id": "test-convertible-retraction",
+      "date": "2021-01-14T08:50Z",
+      "reason_text": "oops",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
@@ -284,13 +299,6 @@
         "amount": "-867.53",
         "currency": "USD"
       }
-    },
-    {
-      "object_type": "TX_CONVERTIBLE_RETRACTION",
-      "id": "convertible-retraction",
-      "security_id": "test-convertible-retraction",
-      "date": "2021-01-14T08:50Z",
-      "reason_text": "oops"
     }
   ],
   "vesting_schedules": [
