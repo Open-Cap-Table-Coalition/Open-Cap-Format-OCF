@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_expiration/oneOf/1
 ```
 
-Datetime @ which condition ceases to apply
+Date at which condition ceases to apply
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                    |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |

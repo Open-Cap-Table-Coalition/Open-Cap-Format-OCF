@@ -342,6 +342,117 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "id": "test-plan-security-issuance-minimal",
+      "security_id": "test-security-id",
+      "date": "2019-12-12",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "CA"
+        }
+      ],
+      "board_approval_date": "2021-01-21",
+      "stakeholder_id": "test-stakeholder-id",
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "custom_id": "CA-1",
+      "stock_plan_id": "test-stock-plan-id",
+      "compensation_type": "RSU",
+      "quantity": "50",
+      "exercise_price": { "amount": "50.00", "currency": "USD" },
+      "vesting_rules": {
+        "vesting_type": "SCHEDULE_DRIVEN_ONLY"
+      },
+      "expiration_date": "2031-01-20",
+      "termination_exercise_windows": [
+        {
+          "reason": "CAUSE",
+          "period": 1,
+          "period_type": "DAYS"
+        }
+      ]
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "id": "test-plan-security-issuance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2019-12-12",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "CA"
+        },
+        {
+          "description": "Extra special exemption",
+          "jurisdiction": "CA"
+        }
+      ],
+      "board_approval_date": "2021-01-21",
+      "stakeholder_id": "test-stakeholder-id",
+      "consideration": { "amount": "1.00", "currency": "CAD" },
+      "custom_id": "CA-1",
+      "stock_plan_id": "test-stock-plan-id",
+      "compensation_type": "RSU",
+      "quantity": "100",
+      "exercise_price": { "amount": "50.00", "currency": "CAD" },
+      "vesting_rules": {
+        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
+        "vesting_schedule_id": "test-vesting-schedule-id",
+        "vesting_start_date": "2021-01-10",
+        "vesting_conditions": [
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 4,
+            "period_length": 1,
+            "period_type": "YEARS",
+            "priority": 1,
+            "dependent_vesting": []
+          }
+        ],
+        "custom_vesting_tranches": [
+          {
+            "vest_date": "2021-01-11",
+            "vest_quantity": "100"
+          }
+        ],
+        "custom_vesting_description": "100% up front due to custom vesting tranche"
+      },
+      "expiration_date": "2031-01-20",
+      "termination_exercise_windows": [
+        {
+          "reason": "CAUSE",
+          "period": 0,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "VOLUNTARY",
+          "period": 3,
+          "period_type": "MONTHS"
+        },
+        {
+          "reason": "INVOLUNTARY",
+          "period": 14,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "DEATH",
+          "period": 3,
+          "period_type": "YEARS"
+        },
+        {
+          "reason": "DISABILITY",
+          "period": 3,
+          "period_type": "YEARS"
+        },
+        {
+          "reason": "RETIREMENT",
+          "period": 1,
+          "period_type": "MONTHS"
+        }
+      ],
+      "comments": ["comment 1", "comment 2", "a third comment"]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",

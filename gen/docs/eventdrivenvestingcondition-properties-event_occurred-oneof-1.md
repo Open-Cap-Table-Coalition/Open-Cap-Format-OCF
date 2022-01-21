@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_occurred/oneOf/1
 ```
 
-Event has occurred at this datetime
+Event has occurred at this date
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                    |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |

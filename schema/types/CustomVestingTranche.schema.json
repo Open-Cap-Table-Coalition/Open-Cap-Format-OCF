@@ -11,7 +11,7 @@
     },
     "vest_quantity": {
       "description": "Quantity of shares for the tranche",
-      "type": "string"
+      "$ref": "/schema/types/numeric"
     }
   },
   "required": ["vest_date", "vest_quantity"]
