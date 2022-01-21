@@ -25,8 +25,10 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 # Using pathlib to get proper paths to provide easier, cross-platform dir performance
-parent_dir = Path.cwd().parent
-schema_dir = Path.cwd().parent / "schema"
+# Finding root directory of project based on this module's location
+# TODO: Make this less brittle
+parent_dir = Path(__file__).parent.parent.resolve()
+schema_dir = parent_dir / "schema"
 ocf_schema_path = schema_dir / "CapTable.schema.json"
 
 
@@ -70,9 +72,10 @@ def __load_subschemas_from_path(path):
 
 def validate_ocf(ocf_instance):
     logger.info(f"Load ocf schema from file path: {ocf_schema_path.resolve()}")
-    ocf_schema = json.loads(open(ocf_schema_path.absolute(), 'r').read())
-    logger.info(f"Loaded parent ocf schema: {ocf_schema}")
-    return __validate_against_schemastore(ocf_instance, ocf_schema)
+    with open(ocf_schema_path.absolute(), 'r') as file:
+        ocf_schema = json.load(file)
+        logger.debug(f"Loaded parent ocf schema: {ocf_schema}")
+        return __validate_against_schemastore(ocf_instance, ocf_schema)
 
 
 def __get_ocf_refresolver(target_schema=json.loads(open(ocf_schema_path.absolute(), 'r').read())):
@@ -101,10 +104,10 @@ def __validate_against_schemastore(ocf_instance, parent_schema):
         logger.info("Validation passed")
         return True
 
-    except ValidationError as error:
-        logger.error(f"ValidationError: {error}")
+    except ValidationError:
+        logger.error("ValidationError", exc_info=True)
         pass
-    except SchemaError as error:
-        logger.error(f"SchemaError: {error}")
+    except SchemaError:
+        logger.error("SchemaError", exc_info=True)
         pass
     return False
