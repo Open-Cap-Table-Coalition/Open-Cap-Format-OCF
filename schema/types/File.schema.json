@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/file",
+  "title": "Type - File",
+  "description": "Type representation of a file",
+  "type": "object",
+  "properties": {
+    "filepath": {
+      "description": "Path to the file within the OCF container",
+      "type": "string"
+    },
+    "md5": {
+      "description": "File checksum",
+      "type": "string"
+    }
+  },
+  "required": ["filepath", "md5"]
+}

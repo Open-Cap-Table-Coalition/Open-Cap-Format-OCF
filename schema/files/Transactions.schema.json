@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/files/transactions",
+  "title": "File - Transactions",
+  "description": "List of OCF Transactions (meant for use in validating transactions loaded into an array from a JSONL)",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "$ref": "/schema/objects/transactions/acceptance/convertible_acceptance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/acceptance/plan_security_acceptance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/acceptance/stock_acceptance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/acceptance/warrant_acceptance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/cancellation/convertible_cancellation"
+      },
+      {
+        "$ref": "/schema/objects/transactions/cancellation/plan_security_cancellation"
+      },
+      {
+        "$ref": "/schema/objects/transactions/cancellation/stock_cancellation"
+      },
+      {
+        "$ref": "/schema/objects/transactions/cancellation/warrant_cancellation"
+      },
+      {
+        "$ref": "/schema/objects/transactions/conversion/convertible_conversion"
+      },
+      {
+        "$ref": "/schema/objects/transactions/conversion/stock_conversion"
+      },
+      {
+        "$ref": "/schema/objects/transactions/exercise/plan_security_exercise"
+      },
+      {
+        "$ref": "/schema/objects/transactions/exercise/warrant_exercise"
+      },
+      {
+        "$ref": "/schema/objects/transactions/issuance/convertible_issuance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/issuance/plan_security_issuance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/issuance/stock_issuance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/issuance/warrant_issuance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/reissuance/stock_reissuance"
+      },
+      {
+        "$ref": "/schema/objects/transactions/repurchase/stock_repurchase"
+      },
+      {
+        "$ref": "/schema/objects/transactions/repurchase_release/plan_security_repurchase_release"
+      },
+      {
+        "$ref": "/schema/objects/transactions/retraction/convertible_retraction"
+      },
+      {
+        "$ref": "/schema/objects/transactions/retraction/plan_security_retraction"
+      },
+      {
+        "$ref": "/schema/objects/transactions/retraction/stock_retraction"
+      },
+      {
+        "$ref": "/schema/objects/transactions/retraction/warrant_retraction"
+      },
+      {
+        "$ref": "/schema/objects/transactions/split/plan_security_split"
+      },
+      {
+        "$ref": "/schema/objects/transactions/split/stock_split"
+      },
+      {
+        "$ref": "/schema/objects/transactions/split/warrant_split"
+      },
+      {
+        "$ref": "/schema/objects/transactions/transfer/convertible_transfer"
+      },
+      {
+        "$ref": "/schema/objects/transactions/transfer/plan_security_transfer"
+      },
+      {
+        "$ref": "/schema/objects/transactions/transfer/stock_transfer"
+      },
+      {
+        "$ref": "/schema/objects/transactions/transfer/warrant_transfer"
+      }
+    ]
+  }
+}

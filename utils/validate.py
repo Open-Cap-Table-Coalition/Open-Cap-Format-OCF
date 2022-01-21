@@ -27,7 +27,17 @@ logger.addHandler(ch)
 # Using pathlib to get proper paths to provide easier, cross-platform dir performance
 parent_dir = Path.cwd().parent
 schema_dir = Path.cwd().parent / "schema"
-ocf_schema_path = schema_dir / "CapTable.schema.json"
+
+MANIFEST = schema_dir / "files" / "Manifest.schema.json"
+TRANSACTION = schema_dir / "files" / "Transactions.schema.json"
+STAKEHOLDER = schema_dir / "files" / "Stakeholders.schema.json"
+
+
+def validate_ocf_file(obj, type=MANIFEST):
+    logger.info(f"Load ocf schema from file path: {type.resolve()}")
+    manifest_schema = json.loads(open(type.absolute(), 'r').read())
+    logger.info(f"Loaded parent ocf schema: {manifest_schema}")
+    return __validate_against_schemastore(obj, manifest_schema)
 
 
 def load_ocf_schemastore():
@@ -39,7 +49,7 @@ def dump_full_ocf_schemastore(save_to_path=None):
     with open(save_to_path if save_to_path else 'schema_store.json', 'w') as outfile:
         json.dump(schemastore, outfile)
 
-
+        
 def __load_subschemas_from_path(path):
 
     logger.debug(f"\t__load_subschemas_from_path() - path: {path}")
@@ -66,20 +76,6 @@ def __load_subschemas_from_path(path):
     logger.debug(f"__load_subschemas_from_path - DONE for path: {path}")
 
     return loaded_schemas
-
-
-def validate_ocf(ocf_instance):
-    logger.info(f"Load ocf schema from file path: {ocf_schema_path.resolve()}")
-    ocf_schema = json.loads(open(ocf_schema_path.absolute(), 'r').read())
-    logger.info(f"Loaded parent ocf schema: {ocf_schema}")
-    return __validate_against_schemastore(ocf_instance, ocf_schema)
-
-
-def __get_ocf_refresolver(target_schema=json.loads(open(ocf_schema_path.absolute(), 'r').read())):
-    target_ocf_schema = target_schema
-    schemastore = load_ocf_schemastore()
-    logger.debug(json.dumps(schemastore, indent=4))
-    return RefResolver.from_schema(target_ocf_schema, store=schemastore)
 
 
 def __validate_against_schemastore(ocf_instance, parent_schema):

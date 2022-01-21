@@ -14,6 +14,16 @@ import core from "@actions/core";
 export const OCF_FILE_SCHEMA_URI =
   "https://opencaptablecoalition.com/schema/cap_table";
 
+// Changes in progoress for jsonl-style validations
+export const OCF_MANIFEST_SCHEMA_URI =
+  "https://opencaptablecoalition.com/schema/files/manifest";
+
+export const OCF_TRANSACTION_SCHEMA_URI =
+  "https://opencaptablecoalition.com/schema/files/transactions";
+
+export const OCF_STAKEHOLDER_SCHEMA_URI =
+  "https://opencaptablecoalition.com/schema/files/stakehoders";
+
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 async function* getFiles(dir) {
   const dirents = await readdir(dir, { withFileTypes: true });
@@ -103,7 +113,19 @@ export async function validate_ocf_schemas(verbose = false, test = false) {
   if (verbose) console.log("\n--- RESULTS ---------------");
   try {
     const validator = await get_ocf_validator((verbose = verbose));
-    const valid = validator.getSchema(OCF_FILE_SCHEMA_URI);
+
+    if (verbose) console.log("Check Manifest Schema...");
+    validator.getSchema(OCF_MANIFEST_SCHEMA_URI);
+    if (verbose) console.log("\tDone!");
+
+    if (verbose) console.log("Check Stakeholder Schema...");
+    validator.getSchema(OCF_STAKEHOLDER_SCHEMA_URI);
+    if (verbose) console.log("\tDone!");
+
+    if (verbose) console.log("Check Transaction Schema...");
+    validator.getSchema(OCF_TRANSACTION_SCHEMA_URI);
+    if (verbose) console.log("\tDone!");
+
     if (verbose) console.log("VALID SCHEMA");
     return true;
   } catch (e) {

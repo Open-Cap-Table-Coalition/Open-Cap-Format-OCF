@@ -2,8 +2,6 @@
 
 ## Top-level Schemas
 
-*   [Cap Table ("Snapshot")](./captable.md "Top-level schema describing a capitalization table") – `https://opencaptablecoalition.com/schema/cap_table`
-
 *   [Enum - Accrual Period Type](./accrualperiodtype.md "Enumeration of interest accrual period types") – `https://opencaptablecoalition.com/schema/enums/accrual_period_type`
 
 *   [Enum - Address Type](./addresstype.md "Enumeration of address types") – `https://opencaptablecoalition.com/schema/enums/address_type`
@@ -47,6 +45,12 @@
 *   [Enum - Valuation Type](./valuationtype.md "Enumeration of valuation types") – `https://opencaptablecoalition.com/schema/enums/valuation_type`
 
 *   [Enum - Vesting Type](./vestingtype.md "Enumeration of vesting types") – `https://opencaptablecoalition.com/schema/enums/vesting_type`
+
+*   [File - Stakeholders](./stakeholders.md "List of OCF Stakeholders (meant for use in validating transactions loaded into an array from a JSONL)") – `https://opencaptablecoalition.com/schema/files/stakeholders`
+
+*   [File - Transactions](./transactions.md "List of OCF Transactions (meant for use in validating transactions loaded into an array from a JSONL)") – `https://opencaptablecoalition.com/schema/files/transactions`
+
+*   [OCF File Manifest](./manifest.md "Top-level schema describing the OCF Manifest, which holds issuer information and references to transaction and stakeholder files") – `https://opencaptablecoalition.com/schema/cap_table`
 
 *   [Object - BaseObject](./baseobject.md "Abstract object to be extended by all other objects") – `https://opencaptablecoalition.com/schema/primitives/base_object`
 
@@ -162,6 +166,8 @@
 
 *   [Type - Event-driven Vesting Condition](./eventdrivenvestingcondition.md "Type representation of complex event-driven vesting criteria") – `https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition`
 
+*   [Type - File](./file.md "Type representation of a file") – `https://opencaptablecoalition.com/schema/types/file`
+
 *   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/monetary`
 
 *   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/name`
@@ -194,21 +200,21 @@
 
 ### Arrays
 
-*   [Cap Table - Comment Array](./captable-properties-cap-table---comment-array.md "Unstructured text comments related to and stored for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/comments`
+*   [Cap Table - Comment Array](./manifest-properties-cap-table---comment-array.md "Unstructured text comments related to and stored for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/comments`
 
-*   [Cap Table - Stakeholder Array](./captable-properties-cap-table---stakeholder-array.md "List of stakeholders for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholders`
+*   [Cap Table - Stakeholder Array](./manifest-properties-cap-table---stakeholder-array.md "List of stakeholders for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholder_files`
 
-*   [Cap Table - Stock Class Array](./captable-properties-cap-table---stock-class-array.md "List of stock classes for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes`
+*   [Cap Table - Stock Class Array](./manifest-properties-cap-table---stock-class-array.md "List of stock classes for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes`
 
-*   [Cap Table - Stock Legend Template Array](./captable-properties-cap-table---stock-legend-template-array.md "List of stock legend templates for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates`
+*   [Cap Table - Stock Legend Template Array](./manifest-properties-cap-table---stock-legend-template-array.md "List of stock legend templates for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates`
 
-*   [Cap Table - Stock Plan Array](./captable-properties-cap-table---stock-plan-array.md "List of issued stock plans for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans`
+*   [Cap Table - Stock Plan Array](./manifest-properties-cap-table---stock-plan-array.md "List of issued stock plans for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans`
 
-*   [Cap Table - Transaction Array](./captable-properties-cap-table---transaction-array.md "List of transactions for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/transactions`
+*   [Cap Table - Transaction Array](./manifest-properties-cap-table---transaction-array.md "List of transactions for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/transaction_files`
 
-*   [Cap Table - Valuation Array](./captable-properties-cap-table---valuation-array.md "List of valuations for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/valuations`
+*   [Cap Table - Valuation Array](./manifest-properties-cap-table---valuation-array.md "List of valuations for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/valuations`
 
-*   [Cap Table - Vesting Schedule Array](./captable-properties-cap-table---vesting-schedule-array.md "List of vesting schedules for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules`
+*   [Cap Table - Vesting Schedule Array](./manifest-properties-cap-table---vesting-schedule-array.md "List of vesting schedules for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules`
 
 *   [Contact Info - Email Address Array](./contactinfo-properties-contact-info---email-address-array.md "Emails to reach the contact at") – `https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails`
 
