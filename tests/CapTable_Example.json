@@ -318,6 +318,30 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_EXERCISE",
+      "id": "test-plan-security-exercise-minimal",
+      "security_id": "test-security-id",
+      "date": "2019-12-12",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "quantity": "100"
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_EXERCISE",
+      "id": "test-plan-security-exercise-full-fields",
+      "security_id": "test-security-id",
+      "date": "2019-12-12",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "quantity": "100",
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
