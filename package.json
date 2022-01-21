@@ -6,9 +6,11 @@
     "fix": "prettier . --check --write --ignore-unknown",
     "generate-docs": "jsonschema2md --input schema --out gen/docs -x -",
     "prepare": "husky install",
-    "validate-schemas": "node ./utils/validate.mjs"
+    "validate-schema": "node ./utils/validate.mjs schema -v -t"
   },
   "devDependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
     "@adobe/jsonschema2md": "^6.0.3",
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",

@@ -1,0 +1,26 @@
+name: Check Schema Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-gen-docs:
+    name: Check Schema Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.5.1
+        with:
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Validation Script
+        run: npm run validate-schema

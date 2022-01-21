@@ -8,6 +8,9 @@ import fs from "fs";
 import { readFile, readdir } from "fs/promises";
 import { resolve } from "path";
 
+// For GitHub actions
+import core from "@actions/core";
+
 export const OCF_FILE_SCHEMA_URI =
   "https://opencaptablecoalition.com/schema/cap_table";
 
@@ -78,30 +81,34 @@ export async function validate_ocf_instance(ocf_instance, verbose = false) {
   const ajv = await get_ocf_validator(verbose);
   const validator = ajv.getSchema(OCF_FILE_SCHEMA_URI);
   const valid = validator(ocf_instance);
+  if (verbose) console.log("\n--- RESULTS ---------------");
   if (!valid) {
     if (verbose) {
-      console.log("\n--- ERRORS ---------------");
+      console.log("FAILURE DUE TO ERRORS:");
       console.log(validator.errors);
     }
     return false;
   } else {
     if (verbose) console.log("VALID OCF");
+    core.setFailed(error.message);
     return true;
   }
 }
 
-export async function validate_ocf_schemas(verbose = false) {
-  const validator = await get_ocf_validator();
-  const valid = validator.getSchema(OCF_FILE_SCHEMA_URI);
-  if (!valid) {
-    if (verbose) {
-      console.log("\n--- ERRORS ---------------");
-      console.log(validator.errors);
-    }
-    return false;
-  } else {
-    if (verbose) console.log("VALID OCF");
+export async function validate_ocf_schemas(verbose = false, test = false) {
+  if (verbose) console.log("\n--- RESULTS ---------------");
+  try {
+    const validator = await get_ocf_validator((verbose = verbose));
+    const valid = validator.getSchema(OCF_FILE_SCHEMA_URI);
+    if (verbose) console.log("VALID SCHEMA");
     return true;
+  } catch (e) {
+    if (verbose) {
+      console.log("FAILURE DUE TO ERRORS:");
+      console.log(`OCF Validation failed:\n${e.message}`);
+    }
+    if (test) core.setFailed(`OCF Validation failed:\n${e.message}`);
+    return false;
   }
 }
 
@@ -123,8 +130,23 @@ yargs(hideBin(process.argv))
   .command({
     command: "schema",
     describe: "Instructs validator to just analyze the schema",
+    builder: {
+      verbose: {
+        describe: "Verbose outputs show detailed steps and errors",
+        alias: "v",
+        demandOption: false,
+        type: "boolean",
+      },
+      test: {
+        describe:
+          "Run as a test and trigger GitHub action failures accordingly",
+        alias: "t",
+        demandOption: false,
+        type: "boolean",
+      },
+    },
     handler(argv) {
-      validate_ocf_schemas();
+      validate_ocf_schemas(Boolean(argv.verbose), Boolean(argv.test));
     },
   })
   .command({
