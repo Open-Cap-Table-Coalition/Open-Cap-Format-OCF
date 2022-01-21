@@ -11,29 +11,20 @@ base_ocf_example = json.loads(open(base_example_path.resolve(), 'r').read())
 broken_ocf_example = json.loads(open(broken_example_path.resolve(), 'r').read())
 expanded_ocf_example = json.loads(open(expanded_example_path.resolve(), 'r').read())
 
-logger.info(f"-------------- Check Base Valid Example File")
+logger.info("Check Base Valid Example File")
 logger.info(f"File: {base_example_path.resolve()}")
-valid_base = validate_ocf(
-    base_ocf_example,
-)
+valid_base = validate_ocf(base_ocf_example)
 logger.info(f"Input file is valid OCF: {valid_base}")
-logger.info("-----------------------------------------")
 
-logger.info(f"-------------- Check Full Example Cap For Schema Integrity")
+logger.info("Check Full Example Cap For Schema Integrity")
 logger.info(f"File: {expanded_example_path.resolve()}")
-valid_example = validate_ocf(
-    expanded_ocf_example,
-)
+valid_example = validate_ocf(expanded_ocf_example)
 logger.info(f"Input file is valid OCF: {valid_example}")
-logger.info("-----------------------------------------")
 
-logger.info(f"\n\n-------------- Check Invalid Example File")
+logger.info("Check Invalid Example File")
 logger.info(f"File: {broken_example_path.resolve()}")
-valid_bad_file = validate_ocf(
-    broken_ocf_example,
-)
+valid_bad_file = validate_ocf(broken_ocf_example)
 logger.info(f"Input file is valid OCF: {valid_bad_file}")
-logger.info("-----------------------------------------")
 
 if valid_base and valid_example and (not valid_bad_file):
     logger.info("All tests passed")

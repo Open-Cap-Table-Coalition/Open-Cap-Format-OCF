@@ -300,6 +300,24 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+      "id": "test-plan-security-cancellation-minimal",
+      "security_id": "test-security-id",
+      "date": "2019-12-11",
+      "reason_text": "need to cancel",
+      "quantity": "100"
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+      "id": "test-plan-security-cancellation-all-fields",
+      "security_id": "test-security-id",
+      "date": "2019-12-11",
+      "reason_text": "need to cancel",
+      "quantity": "100",
+      "balance_security_id": "test-balance-security-id",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
