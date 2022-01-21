@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  check-gen-docs:
+  check-schema-files:
     name: Check Schema Files
     runs-on: ubuntu-latest
     steps:
