@@ -127,18 +127,32 @@
   ],
   "transactions": [
     {
-      "object_type": "TX_STOCK_CANCELLATION",
-      "id": "test-quantity-cancellation",
-      "security_id": "test-security-id",
-      "date": "2021-03-15",
-      "quantity": "100",
-      "balance_security_id": "new-security",
+      "object_type": "TX_CONVERTIBLE_ACCEPTANCE",
+      "id": "test-convertible-acceptance-minimal",
+      "security_id": "2936wa8yefhdsvcn",
+      "date": "2022-01-20"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_ACCEPTANCE",
+      "id": "test-convertible-acceptance-all-fields",
+      "security_id": "2936wa8yefhdsvcn",
+      "date": "2022-01-20",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CANCELLATION",
+      "id": "test-convertible-cancellation-minimal",
+      "security_id": "asdf962w3hfsdad",
+      "date": "2019-01-31",
+      "amount": {
+        "amount": "53.09",
+        "currency": "USD"
+      },
       "reason_text": "for testing"
     },
     {
       "object_type": "TX_CONVERTIBLE_CANCELLATION",
-      "id": "test-monetary-cancellation",
-      "balance_security_id": "new-security",
+      "id": "test-convertible-cancellation-all-fields",
       "security_id": "test-security-id",
       "date": "2019-01-31",
       "amount": {
@@ -146,7 +160,140 @@
         "currency": "USD"
       },
       "reason_text": "for testing",
-      "comments": ["just a comment"]
+      "balance_security_id": "new-security",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CONVERSION",
+      "id": "test-convertible-conversion-minimal",
+      "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+      "date": "2006-11-09",
+      "reason_text": "for testing",
+      "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CONVERSION",
+      "id": "test-convertible-conversion-all-fields",
+      "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+      "date": "2006-11-09",
+      "reason_text": "for testing",
+      "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "id": "test-convertible-issuance-minimal",
+      "security_id": "con_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "custom_id": "CN-1",
+      "conversion_type": "PRE_MONEY",
+      "convertible_type": "NOTE",
+      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
+      "day_count_convention": "ACTUAL_365",
+      "default_conversion_rights": {
+        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "rounding_type": "CEILING",
+        "converts_to_future_round": true
+      },
+      "conversion_triggers": [],
+      "seniority": 1
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "id": "test-convertible-issuance-all-fields",
+      "security_id": "con_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "US"
+        }
+      ],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "custom_id": "CN-1",
+      "conversion_type": "POST_MONEY",
+      "convertible_type": "SAFE",
+      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
+      "day_count_convention": "30_360",
+      "default_conversion_rights": {
+        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "rounding_type": "FLOOR",
+        "converts_to_stock_class_id": "cls_86"
+      },
+      "conversion_triggers": [
+        {
+          "rounding_type": "NORMAL",
+          "description": "Trigger",
+          "converts_to_future_round": false
+        }
+      ],
+      "seniority": 1,
+      "interest_rate": "3.11",
+      "interest_payout": "CASH",
+      "maturity_date": "2034-01-01",
+      "exit_multiple": { "antecedent": "1", "consequent": "3.0" },
+      "interest_accrual_period": "MONTHLY",
+      "compounding_type": "SIMPLE",
+      "pro_rata": "2500",
+      "conversion_valuation_cap": { "amount": "8000000", "currency": "USD" },
+      "conversion_discount": "0.1",
+      "conversion_fixed_ownership": "0.05",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "test-convertible-retraction-minimal",
+      "security_id": "test-convertible-retraction",
+      "date": "2021-01-14",
+      "reason_text": "oops"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "test-convertible-retraction-all-fields",
+      "security_id": "test-convertible-retraction",
+      "date": "2021-01-14",
+      "reason_text": "oops",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-convertible-transfer-minimal",
+      "security_id": "test-security-id",
+      "date": "2018-06-07",
+      "resulting_security_ids": ["new-security-1", "..."],
+      "amount": {
+        "amount": "-867.53",
+        "currency": "USD"
+      }
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-convertible-transfer-all-fields",
+      "security_id": "test-security-id",
+      "date": "2018-06-07",
+      "resulting_security_ids": ["new-security-1", "..."],
+      "amount": {
+        "amount": "-867.53",
+        "currency": "USD"
+      },
+      "consideration": { "amount": "3.50", "currency": "USD" },
+      "balance_security_id": "test-security-id-2",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_STOCK_CANCELLATION",
+      "id": "test-quantity-cancellation",
+      "security_id": "test-security-id",
+      "date": "2021-03-15",
+      "quantity": "100",
+      "balance_security_id": "new-security",
+      "reason_text": "for testing"
     },
     {
       "object_type": "TX_STOCK_SPLIT",
@@ -166,24 +313,6 @@
       "date": "2020-11-24",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "quantity": "100"
-    },
-    {
-      "object_type": "TX_CONVERTIBLE_TRANSFER",
-      "id": "test-monetary-transfer",
-      "security_id": "test-security-id",
-      "date": "2018-06-07",
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "amount": {
-        "amount": "-867.53",
-        "currency": "USD"
-      }
-    },
-    {
-      "object_type": "TX_CONVERTIBLE_RETRACTION",
-      "id": "convertible-retraction",
-      "security_id": "test-convertible-retraction",
-      "date": "2021-01-14",
-      "reason_text": "oops"
     }
   ],
   "vesting_schedules": [
