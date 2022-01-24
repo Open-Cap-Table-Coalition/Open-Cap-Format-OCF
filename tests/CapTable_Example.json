@@ -250,14 +250,14 @@
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "id": "test-convertible-retraction-minimal",
       "security_id": "test-convertible-retraction",
-      "date": "2021-01-14T08:50Z",
+      "date": "2021-01-14",
       "reason_text": "oops"
     },
     {
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "id": "test-convertible-retraction-all-fields",
       "security_id": "test-convertible-retraction",
-      "date": "2021-01-14T08:50Z",
+      "date": "2021-01-14",
       "reason_text": "oops",
       "comments": ["comment-one", "comment-two", "..."]
     },
