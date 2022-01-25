@@ -548,12 +548,21 @@
     },
     {
       "object_type": "TX_STOCK_CANCELLATION",
-      "id": "test-quantity-cancellation",
+      "id": "test-stock-cancellation-minimal",
       "security_id": "test-security-id",
-      "date": "2021-03-15",
-      "quantity": "100",
-      "balance_security_id": "new-security",
-      "reason_text": "for testing"
+      "date": "2022-02-01",
+      "reason_text": "Cancel the securities",
+      "quantity": "37"
+    },
+    {
+      "object_type": "TX_STOCK_CANCELLATION",
+      "id": "test-stock-cancellation-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Cancel the securities",
+      "quantity": "37",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "balance_security_id": "test-balance-security-id"
     },
     {
       "object_type": "TX_STOCK_SPLIT",
