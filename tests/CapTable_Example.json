@@ -565,6 +565,36 @@
       "balance_security_id": "test-balance-security-id"
     },
     {
+      "object_type": "TX_STOCK_CONVERSION",
+      "id": "test-stock-conversion-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": ["resultant-security-id-1"],
+      "quantity_converted": "1",
+      "conversion_ratio": {
+        "antecedent": "1",
+        "consequent": "1"
+      }
+    },
+    {
+      "object_type": "TX_STOCK_CONVERSION",
+      "id": "test-stock-conversion-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2",
+        "resultant-security-id-3"
+      ],
+      "quantity_converted": "10",
+      "conversion_ratio": {
+        "antecedent": "1",
+        "consequent": "3"
+      },
+      "comments": ["Here is a comment", "Here is another comment"],
+      "balance_security_id": "balance-security-id"
+    },
+    {
       "object_type": "TX_STOCK_SPLIT",
       "id": "test-quantity-split",
       "security_id": "test-security-id",
