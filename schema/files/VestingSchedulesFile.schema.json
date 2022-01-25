@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/files/vesting_schedules_file",
+  "title": "File - Vesting Schedules",
+  "description": "List of vesting schedules for the cap table (meant for use in validating vesting schedules loaded into an array from JSON or JSONL)",
+  "type": "object",
+  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "/schema/objects/vesting_schedule"
+      }
+    },
+    "file_type": {
+      "const": "OCF_VESTING_SCHEDULES_FILE"
+    }
+  },
+  "required": ["items", "file_type"]
+}

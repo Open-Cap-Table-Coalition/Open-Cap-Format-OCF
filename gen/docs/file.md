@@ -16,10 +16,10 @@ Type representation of a file
 
 # Type - File Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                            |
-| :-------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| [filepath](#filepath) | `string` | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath") |
-| [md5](#md5)           | `string` | Required | cannot be null | [Type - File](file-properties-md5.md "https://opencaptablecoalition.com/schema/types/file#/properties/md5")           |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                            |
+| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| [filepath](#filepath) | `string`      | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath") |
+| [md5](#md5)           | Not specified | Required | cannot be null | [Type - File](file-properties-md5.md "https://opencaptablecoalition.com/schema/types/file#/properties/md5")           |
 
 ## filepath
 
@@ -41,13 +41,13 @@ Path to the file within the OCF container
 
 ## md5
 
-File checksum
+MD5 file checksum
 
 `md5`
 
 *   is required
 
-*   Type: `string`
+*   Type: unknown
 
 *   cannot be null
 
@@ -55,4 +55,4 @@ File checksum
 
 ### md5 Type
 
-`string`
+unknown

@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/files/stakeholders_file",
+  "title": "File - Stakeholders",
+  "description": "List of OCF Stakeholders (meant for use in validating transactions loaded into an array from a JSONL)",
+  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "/schema/objects/stakeholder"
+      }
+    },
+    "file_type": {
+      "const": "OCF_STAKEHOLDERS_FILE"
+    }
+  },
+  "required": ["items", "file_type"]
+}

@@ -1,0 +1,79 @@
+{
+  "ocf_version": "1.0.0-a3",
+  "file_type": "OCF_MANIFEST_FILE",
+  "issuer": {
+    "object_type": "MALICE",
+    "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
+    "legal_name": "ACME Industries",
+    "dba": "ACME & Co",
+    "formation_date": "2010-01-01",
+    "country_of_formation": "USA",
+    "state_of_formation": "DE",
+    "tax_ids": [
+      {
+        "tax_id": "34-2345123",
+        "country": "USA"
+      }
+    ],
+    "email": {
+      "email_address": "ceo@acme.io",
+      "email_type": "BUSINESS"
+    },
+    "phone": {
+      "phone_number": "16122342345",
+      "phone_type": "MOBILE"
+    },
+    "address": {
+      "address_type": "LEGAL",
+      "street_suite": "1234 Main Street\nSuite 4",
+      "city": "Small Town",
+      "state_province": "DE",
+      "country": "USA",
+      "postal_code": "12345"
+    },
+    "comments": []
+  },
+  "stock_plans_files": [
+    {
+      "filepath": "./StockPlans.json",
+      "md5": "c3e68dd645c6ab810f036923706355c8"
+    }
+  ],
+  "stock_legend_templates_files": [
+    {
+      "filepath": "./StockLegends.json",
+      "md5": "931d44dbd132cc09aef64ae4bab61987"
+    }
+  ],
+  "stock_classes_files": [
+    {
+      "filepath": "./StockClasses.json",
+      "md5": "45bbd5a565154f8c4a762c3d4fd711f1"
+    }
+  ],
+  "transactions_files": [
+    {
+      "filepath": "./Transactions.json",
+      "md5": "0e7757913b508d5cd8b06a578ac28848"
+    }
+  ],
+  "stakeholders_files": [
+    {
+      "filepath": "./Stakeholders.json",
+      "md5": "12c14ee9ac8e71a120cee15d075ecea6"
+    }
+  ],
+  "vesting_schedules_files": [
+    {
+      "filepath": "./VestingSchedules.json",
+      "md5": "a940c11797d285408a47b3a66535e090"
+    }
+  ],
+  "valuations_files": [
+    {
+      "filepath": "./Valuations.json",
+      "md5": "2a284a50fed8a0d07f10ed36edb14fc5"
+    }
+  ],
+  "comments": []
+}

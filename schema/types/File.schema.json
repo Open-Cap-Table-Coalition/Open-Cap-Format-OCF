@@ -10,8 +10,8 @@
       "type": "string"
     },
     "md5": {
-      "description": "File checksum",
-      "type": "string"
+      "description": "MD5 file checksum",
+      "$ref": "/schema/types/md5"
     }
   },
   "required": ["filepath", "md5"]

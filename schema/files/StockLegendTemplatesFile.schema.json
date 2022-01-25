@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/files/stock_legend_templates_file",
+  "title": "File - Stock Legend Templates",
+  "description": "List of Stock Legend Templates (meant for use in validating transactions loaded into an array from JSON or JSONL)",
+  "type": "object",
+  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "/schema/objects/stock_legend_template"
+      }
+    },
+    "file_type": {
+      "const": "OCF_STOCK_LEGEND_TEMPLATES_FILE"
+    }
+  },
+  "required": ["items", "file_type"]
+}

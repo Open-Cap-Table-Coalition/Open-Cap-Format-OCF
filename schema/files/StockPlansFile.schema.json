@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/files/stock_plans_file",
+  "title": "File - Stock Plans",
+  "description": "List of stock plans for the issuer (meant for use in validating stock plans loaded into an array from JSON or JSONL)",
+  "type": "object",
+  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "/schema/objects/stock_plan"
+      }
+    },
+    "file_type": {
+      "const": "OCF_STOCK_PLANS_FILE"
+    }
+  },
+  "required": ["items", "file_type"]
+}

@@ -1,0 +1,23 @@
+{
+  "file_type": "OCF_STAKEHOLDERS_FILE",
+  "items": [
+    {
+      "object_type": "STAKEHOLDER",
+      "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
+      "name": {
+        "legal_name": "Person X",
+        "first_name": "Person",
+        "last_name": "X"
+      },
+      "stakeholder_type": "INDIVIDUAL",
+      "comments": []
+    },
+    {
+      "object_type": "STAKEHOLDER",
+      "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
+      "name": { "legal_name": "Person Y" },
+      "stakeholder_type": "INDIVIDUAL",
+      "comments": []
+    }
+  ]
+}

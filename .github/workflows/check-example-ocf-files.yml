@@ -1,4 +1,4 @@
-name: Check Schema Files
+name: Check Example OCF Files
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  check-schema-files:
-    name: Check Schema Files
+  check-example-ocf-files:
+    name: Check Example OCF Files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,9 +16,11 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v2.5.1
+        with:
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm install
 
       - name: Run Validation Script
-        run: npm run validate-ocf-file-schemas
+        run: npm run validate-example-ocf-files

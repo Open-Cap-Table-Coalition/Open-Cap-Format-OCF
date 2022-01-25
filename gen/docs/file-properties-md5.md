@@ -1,10 +1,10 @@
-# Untitled string in Type - File Schema
+# Untitled undefined type in Type - File Schema
 
 ```txt
 https://opencaptablecoalition.com/schema/types/file#/properties/md5
 ```
 
-File checksum
+MD5 file checksum
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
@@ -12,4 +12,4 @@ File checksum
 
 ## md5 Type
 
-`string`
+unknown
