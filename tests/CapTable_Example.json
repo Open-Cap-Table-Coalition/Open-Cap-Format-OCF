@@ -814,6 +814,28 @@
       "quantity": "1000",
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
+    },
+    {
+      "object_type": "TX_WARRANT_EXERCISE",
+      "id": "test-warrant-exercise-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ]
+    },
+    {
+      "object_type": "TX_WARRANT_EXERCISE",
+      "id": "test-warrant-exercise-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "comments": ["Here is a comment", "Here is another comment"],
+      "consideration": { "amount": "1.23", "currency": "USD" }
     }
   ],
   "vesting_schedules": [
