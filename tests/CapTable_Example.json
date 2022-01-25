@@ -515,6 +515,25 @@
       "comments": ["One comment", "A second comment"]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_TRANSFER",
+      "id": "test-plan-security-transfer-minimal",
+      "security_id": "0zHLfmI9G0",
+      "date": "2001-01-01",
+      "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
+      "quantity": "11"
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_TRANSFER",
+      "id": "test-plan-security-transfer-full-fields",
+      "security_id": "0zHLfmI9G0",
+      "date": "2001-01-01",
+      "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
+      "quantity": "11",
+      "comments": ["Comment"],
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "balance_security_id": "fyLFexlMGV"
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
