@@ -667,6 +667,29 @@
       }
     },
     {
+      "object_type": "TX_STOCK_REISSUANCE",
+      "id": "test-stock-reissuance-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2",
+        "resultant-security-id-3"
+      ]
+    },
+    {
+      "object_type": "TX_STOCK_REISSUANCE",
+      "id": "test-stock-reissuance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2",
+        "resultant-security-id-3"
+      ],
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
       "object_type": "TX_STOCK_TRANSFER",
       "id": "test-quantity-transfer",
       "security_id": "test-security-id",
