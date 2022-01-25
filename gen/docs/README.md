@@ -72,7 +72,7 @@
 
 *   [Object - Plan Security Issuance Transaction](./plansecurityissuance.md "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance`
 
-*   [Object - Plan Security Repurchase Release Transaction](./plansecurityrepurchaserelease.md "Object describing a plan security repurchase release transaction (when the right to repurchase is removed)") – `https://opencaptablecoalition.com/schema/objects/transactions/repurchase_release/plan_security_repurchase_release`
+*   [Object - Plan Security Release Transaction](./plansecurityrelease.md "Object describing a plan security release transaction") – `https://opencaptablecoalition.com/schema/objects/transactions/release/plan_security_release`
 
 *   [Object - Plan Security Retraction Transaction](./plansecurityretraction.md "Object describing a retraction of a plan security") – `https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction`
 
@@ -136,7 +136,7 @@
 
 *   [Primitive - Security Reissuance Transaction](./basereissuance.md "Abstract object describing common properties to a reissuance of a security") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance`
 
-*   [Primitive - Security Repurchase Release Transaction](./baserepurchaserelease.md "Abstract object describing fields common to all repurchase release transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase_release/base_repurchase_release`
+*   [Primitive - Security Release Transaction](./baserelease.md "Abstract object describing fields common to all release transaction objects") – `https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release`
 
 *   [Primitive - Security Repurchase Transaction](./baserepurchase.md "Abstract object describing common properties to a repurchase transaction") – `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase`
 

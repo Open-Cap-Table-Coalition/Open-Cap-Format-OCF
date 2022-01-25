@@ -8,7 +8,7 @@ Object describing a plan security repurchase release transaction (when the right
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                         |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [PlanSecurityRepurchaseRelease.schema.json](../../schema/objects/transactions/repurchase_release/PlanSecurityRepurchaseRelease.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [PlanSecurityRepurchaseRelease.schema.json](schema/objects/transactions/release/PlanSecurityRelease.schema.json "open original schema") |
 
 ## Object - Plan Security Repurchase Release Transaction Type
 
