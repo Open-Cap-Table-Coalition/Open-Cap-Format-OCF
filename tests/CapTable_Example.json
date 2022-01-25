@@ -714,6 +714,21 @@
       ]
     },
     {
+      "object_type": "TX_STOCK_RETRACTION",
+      "id": "test-stock-retraction-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Retract the stocks"
+    },
+    {
+      "object_type": "TX_STOCK_RETRACTION",
+      "id": "test-stock-retraction-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Retract the stocks",
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
       "object_type": "TX_STOCK_TRANSFER",
       "id": "test-quantity-transfer",
       "security_id": "test-security-id",
