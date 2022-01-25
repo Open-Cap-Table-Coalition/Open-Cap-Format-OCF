@@ -492,6 +492,29 @@
       "comments": ["A", "Series", "Of", "Comments"]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_SPLIT",
+      "id": "test-plan-security-split-minimal",
+      "security_id": "1",
+      "date": "2022-01-01",
+      "resulting_security_ids": ["2", "3"],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      }
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_SPLIT",
+      "id": "test-plan-security-split-full-fields",
+      "security_id": "1",
+      "date": "2022-01-01",
+      "resulting_security_ids": ["2", "3"],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      },
+      "comments": ["One comment", "A second comment"]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
