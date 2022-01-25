@@ -912,6 +912,35 @@
       "date": "2022-02-01",
       "reason_text": "Need to retract",
       "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_SPLIT",
+      "id": "test-warrant-split-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      }
+    },
+    {
+      "object_type": "TX_WARRANT_SPLIT",
+      "id": "test-warrant-split-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      },
+      "comments": ["Here is a comment", "Here is another comment"]
     }
   ],
   "vesting_schedules": [
