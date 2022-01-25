@@ -759,11 +759,30 @@
     },
     {
       "object_type": "TX_STOCK_TRANSFER",
-      "id": "test-quantity-transfer",
+      "id": "test-stock-transfer-minimal",
       "security_id": "test-security-id",
-      "date": "2020-11-24",
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "quantity": "100"
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2",
+        "resultant-security-id-3"
+      ],
+      "quantity": "10"
+    },
+    {
+      "object_type": "TX_STOCK_TRANSFER",
+      "id": "test-stock-transfer-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2",
+        "resultant-security-id-3"
+      ],
+      "quantity": "10",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "balance_security_id": "balance-security-id"
     }
   ],
   "vesting_schedules": [
