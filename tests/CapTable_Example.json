@@ -534,6 +534,19 @@
       "balance_security_id": "fyLFexlMGV"
     },
     {
+      "object_type": "TX_STOCK_ACCEPTANCE",
+      "id": "test-stock-acceptance-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01"
+    },
+    {
+      "object_type": "TX_STOCK_ACCEPTANCE",
+      "id": "test-stock-acceptance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
       "object_type": "TX_STOCK_CANCELLATION",
       "id": "test-quantity-cancellation",
       "security_id": "test-security-id",
