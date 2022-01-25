@@ -783,6 +783,19 @@
       "comments": ["Here is a comment", "Here is another comment"],
       "consideration": { "amount": "1.00", "currency": "USD" },
       "balance_security_id": "balance-security-id"
+    },
+    {
+      "object_type": "TX_WARRANT_ACCEPTANCE",
+      "id": "test-warrant-acceptance-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01"
+    },
+    {
+      "object_type": "TX_WARRANT_ACCEPTANCE",
+      "id": "test-warrant-acceptance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "comments": ["Here is a comment", "Here is another comment"]
     }
   ],
   "vesting_schedules": [
