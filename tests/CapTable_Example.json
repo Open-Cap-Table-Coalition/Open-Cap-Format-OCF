@@ -941,6 +941,28 @@
         "consequent": "2"
       },
       "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_TRANSFER",
+      "id": "test-warrant-transfer-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": ["resultant-security-id-1"],
+      "quantity": "10000"
+    },
+    {
+      "object_type": "TX_WARRANT_TRANSFER",
+      "id": "test-warrant-transfer-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "quantity": "10000",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "consideration": { "amount": "0.50", "currency": "USD" },
+      "balance_security_id": "balance-security-id"
     }
   ],
   "vesting_schedules": [
