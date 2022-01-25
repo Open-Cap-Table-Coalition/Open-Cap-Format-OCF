@@ -897,6 +897,21 @@
         ]
       },
       "expiration_date": "2032-02-01"
+    },
+    {
+      "object_type": "TX_WARRANT_RETRACTION",
+      "id": "test-warrant-retraction-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Need to retract"
+    },
+    {
+      "object_type": "TX_WARRANT_RETRACTION",
+      "id": "test-warrant-retraction-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Need to retract",
+      "comments": ["Here is a comment", "Here is another comment"]
     }
   ],
   "vesting_schedules": [
