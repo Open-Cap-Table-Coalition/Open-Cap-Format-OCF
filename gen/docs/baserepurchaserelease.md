@@ -8,7 +8,7 @@ Abstract object describing fields common to all repurchase release transaction o
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                            |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [BaseRepurchaseRelease.schema.json](../../schema/primitives/transactions/repurchase_release/BaseRepurchaseRelease.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [BaseRepurchaseRelease.schema.json](schema/primitives/transactions/release/BaseRelease.schema.json "open original schema") |
 
 ## Primitive - Security Repurchase Release Transaction Type
 

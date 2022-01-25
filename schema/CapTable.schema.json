@@ -98,7 +98,7 @@
             "$ref": "/schema/objects/transactions/repurchase/stock_repurchase"
           },
           {
-            "$ref": "/schema/objects/transactions/repurchase_release/plan_security_repurchase_release"
+            "$ref": "/schema/objects/transactions/release/plan_security_release"
           },
           {
             "$ref": "/schema/objects/transactions/retraction/convertible_retraction"
