@@ -796,6 +796,24 @@
       "security_id": "test-security-id",
       "date": "2022-02-01",
       "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_CANCELLATION",
+      "id": "test-warrant-cancellation-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Warrant needs to be cancelled",
+      "quantity": "1000"
+    },
+    {
+      "object_type": "TX_WARRANT_CANCELLATION",
+      "id": "test-warrant-cancellation-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Warrant needs to be cancelled",
+      "quantity": "1000",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "balance_security_id": "balance-security-id"
     }
   ],
   "vesting_schedules": [
