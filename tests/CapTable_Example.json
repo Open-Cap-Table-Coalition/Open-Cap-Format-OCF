@@ -783,6 +783,186 @@
       "comments": ["Here is a comment", "Here is another comment"],
       "consideration": { "amount": "1.00", "currency": "USD" },
       "balance_security_id": "balance-security-id"
+    },
+    {
+      "object_type": "TX_WARRANT_ACCEPTANCE",
+      "id": "test-warrant-acceptance-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01"
+    },
+    {
+      "object_type": "TX_WARRANT_ACCEPTANCE",
+      "id": "test-warrant-acceptance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_CANCELLATION",
+      "id": "test-warrant-cancellation-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Warrant needs to be cancelled",
+      "quantity": "1000"
+    },
+    {
+      "object_type": "TX_WARRANT_CANCELLATION",
+      "id": "test-warrant-cancellation-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Warrant needs to be cancelled",
+      "quantity": "1000",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "balance_security_id": "balance-security-id"
+    },
+    {
+      "object_type": "TX_WARRANT_EXERCISE",
+      "id": "test-warrant-exercise-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ]
+    },
+    {
+      "object_type": "TX_WARRANT_EXERCISE",
+      "id": "test-warrant-exercise-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "comments": ["Here is a comment", "Here is another comment"],
+      "consideration": { "amount": "1.23", "currency": "USD" }
+    },
+    {
+      "object_type": "TX_WARRANT_ISSUANCE",
+      "id": "test-warrant-issuance-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "security_law_exemptions": [],
+      "board_approval_date": "2022-02-01",
+      "stakeholder_id": "stakeholder-id",
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "custom_id": "S-1",
+      "quantity": "1000",
+      "conversion_rights": [],
+      "purchase_price": { "amount": "1.00", "currency": "USD" },
+      "exercise_price": { "amount": "1.00", "currency": "USD" }
+    },
+    {
+      "object_type": "TX_WARRANT_ISSUANCE",
+      "id": "test-warrant-issuance-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "USA"
+        }
+      ],
+      "board_approval_date": "2022-02-01",
+      "stakeholder_id": "stakeholder-id",
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "custom_id": "S-1",
+      "quantity": "1000",
+      "conversion_rights": [
+        {
+          "converts_to_stock_class_id": "stock-class-id",
+          "ratio": {
+            "antecedent": "1",
+            "consequent": "10"
+          },
+          "rounding_type": "CEILING"
+        }
+      ],
+      "purchase_price": { "amount": "1.00", "currency": "USD" },
+      "exercise_price": { "amount": "1.00", "currency": "USD" },
+      "comments": ["Here is a comment", "Here is another comment"],
+      "vesting_rules": {
+        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
+        "vesting_schedule_id": "test-vesting-schedule-id",
+        "vesting_start_date": "2021-01-10",
+        "vesting_conditions": [
+          {
+            "amount_numerator": 1,
+            "amount_denominator": 4,
+            "period_length": 1,
+            "period_type": "YEARS",
+            "priority": 1,
+            "dependent_vesting": []
+          }
+        ]
+      },
+      "expiration_date": "2032-02-01"
+    },
+    {
+      "object_type": "TX_WARRANT_RETRACTION",
+      "id": "test-warrant-retraction-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Need to retract"
+    },
+    {
+      "object_type": "TX_WARRANT_RETRACTION",
+      "id": "test-warrant-retraction-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "reason_text": "Need to retract",
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_SPLIT",
+      "id": "test-warrant-split-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      }
+    },
+    {
+      "object_type": "TX_WARRANT_SPLIT",
+      "id": "test-warrant-split-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "split_ratio": {
+        "antecedent": "1",
+        "consequent": "2"
+      },
+      "comments": ["Here is a comment", "Here is another comment"]
+    },
+    {
+      "object_type": "TX_WARRANT_TRANSFER",
+      "id": "test-warrant-transfer-minimal",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": ["resultant-security-id-1"],
+      "quantity": "10000"
+    },
+    {
+      "object_type": "TX_WARRANT_TRANSFER",
+      "id": "test-warrant-transfer-full-fields",
+      "security_id": "test-security-id",
+      "date": "2022-02-01",
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ],
+      "quantity": "10000",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "consideration": { "amount": "0.50", "currency": "USD" },
+      "balance_security_id": "balance-security-id"
     }
   ],
   "vesting_schedules": [
