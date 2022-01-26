@@ -4,11 +4,6 @@
   "title": "Primitive - Security Transaction",
   "description": "Abstract transaction object to be extended by all other transaction objects",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
-    }
-  ],
   "properties": {
     "security_id": {
       "description": "Identifier for the security which the transaction applies to",
