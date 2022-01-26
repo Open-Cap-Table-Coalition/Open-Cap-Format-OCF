@@ -1,0 +1,55 @@
+{
+  "file_type": "OCF_TRANSACTIONS_FILE",
+  "items": [
+    {
+      "object_type": "TX_CONVERTIBLE_TRANSFER",
+      "id": "test-monetary-transfer",
+      "security_id": "test-security-id",
+      "date": "2018-06-07",
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "amount": { "amount": "-867.53", "currency": "USD" }
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_RETRACTION",
+      "id": "convertible-retraction",
+      "security_id": "test-convertible-retraction",
+      "date": "2021-01-14",
+      "reason_text": "oops"
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CANCELLATION",
+      "id": "test-monetary-cancellation",
+      "balance_security_id": "new-security",
+      "security_id": "test-security-id",
+      "date": "2019-01-31",
+      "amount": { "amount": "53.09", "currency": "USD" },
+      "reason_text": "for testing",
+      "comments": ["just a comment"]
+    },
+    {
+      "object_type": "TX_STOCK_CANCELLATION",
+      "id": "test-quantity-cancellation",
+      "security_id": "test-security-id",
+      "date": "2021-03-15",
+      "quantity": "100",
+      "balance_security_id": "new-security",
+      "reason_text": "for testing"
+    },
+    {
+      "object_type": "TX_STOCK_SPLIT",
+      "id": "test-quantity-split",
+      "security_id": "test-security-id",
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "date": "2022-01-17",
+      "split_ratio": { "antecedent": "1", "consequent": "2" }
+    },
+    {
+      "object_type": "TX_STOCK_TRANSFER",
+      "id": "test-quantity-transfer",
+      "security_id": "test-security-id",
+      "date": "2020-11-24",
+      "resulting_security_ids": ["new-security-1", "new-security-2"],
+      "quantity": "100"
+    }
+  ]
+}

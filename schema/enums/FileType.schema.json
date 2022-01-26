@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/file_type",
+  "title": "Enum - OCF File Type",
+  "description": "Enumeration of different OCF file types which are used to load proper schemas for validation",
+  "type": "string",
+  "enum": [
+    "OCF_MANIFEST_FILE",
+    "OCF_STAKEHOLDERS_FILE",
+    "OCF_STOCK_CLASSES_FILE",
+    "OCF_STOCK_LEGEND_TEMPLATES_FILE",
+    "OCF_STOCK_PLANS_FILE",
+    "OCF_TRANSACTIONS_FILE",
+    "OCF_VALUATIONS_FILE",
+    "OCF_VESTING_SCHEDULES_FILE"
+  ]
+}

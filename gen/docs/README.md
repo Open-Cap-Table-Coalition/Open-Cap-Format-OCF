@@ -2,8 +2,6 @@
 
 ## Top-level Schemas
 
-*   [Cap Table ("Snapshot")](./captable.md "Top-level schema describing a capitalization table") – `https://opencaptablecoalition.com/schema/cap_table`
-
 *   [Enum - Accrual Period Type](./accrualperiodtype.md "Enumeration of interest accrual period types") – `https://opencaptablecoalition.com/schema/enums/accrual_period_type`
 
 *   [Enum - Address Type](./addresstype.md "Enumeration of address types") – `https://opencaptablecoalition.com/schema/enums/address_type`
@@ -23,6 +21,10 @@
 *   [Enum - Email Type](./emailtype.md "Enumeration of email types") – `https://opencaptablecoalition.com/schema/enums/email_type`
 
 *   [Enum - Interest Payout Type](./interestpayouttype.md "Enumeration of interest payout types (e") – `https://opencaptablecoalition.com/schema/enums/interest_payout_type`
+
+*   [Enum - OCF File Type](./filetype.md "Enumeration of different OCF file types which are used to load proper schemas for validation") – `https://opencaptablecoalition.com/schema/enums/file_type`
+
+*   [Enum - OCF Version Type](./ocfversiontype.md "Enumeration of recognized OCF versions") – `https://opencaptablecoalition.com/schema/enums/ocf_version_type`
 
 *   [Enum - Object Type](./objecttype.md "Enumeration of object types") – `https://opencaptablecoalition.com/schema/enums/object_type`
 
@@ -47,6 +49,24 @@
 *   [Enum - Valuation Type](./valuationtype.md "Enumeration of valuation types") – `https://opencaptablecoalition.com/schema/enums/valuation_type`
 
 *   [Enum - Vesting Type](./vestingtype.md "Enumeration of vesting types") – `https://opencaptablecoalition.com/schema/enums/vesting_type`
+
+*   [File - Stakeholders](./stakeholdersfile.md "JSON containing file type identifier and list of stakeholders") – `https://opencaptablecoalition.com/schema/files/stakeholders_file`
+
+*   [File - Stock Classes](./stockclassesfile.md "JSON containing file type identifier and list of stock classes") – `https://opencaptablecoalition.com/schema/files/stock_classes_file`
+
+*   [File - Stock Legend Templates](./stocklegendtemplatesfile.md "JSON containing file type identifier and list of stock legend templates") – `https://opencaptablecoalition.com/schema/files/stock_legend_templates_file`
+
+*   [File - Stock Plans](./stockplansfile.md "JSON containing file type identifier and list of stock plans") – `https://opencaptablecoalition.com/schema/files/stock_plans_file`
+
+*   [File - Transactions](./transactionsfile.md "JSON containing file type identifier and list transactions") – `https://opencaptablecoalition.com/schema/files/transactions_file`
+
+*   [File - Valuations](./valuationsfile.md "JSON containing file type identifier and list of valuations") – `https://opencaptablecoalition.com/schema/files/valuations_file`
+
+*   [File - Vesting Schedules](./vestingschedulesfile.md "JSON containing file type identifier and list of vesting schedules") – `https://opencaptablecoalition.com/schema/files/vesting_schedules_file`
+
+*   [OCF Manifest File](./ocfmanifestfile.md "Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file`
+
+*   [Object - BaseFile](./basefile.md "Abstract file to be extended by all other files") – `https://opencaptablecoalition.com/schema/primitives/base_file`
 
 *   [Object - BaseObject](./baseobject.md "Abstract object to be extended by all other objects") – `https://opencaptablecoalition.com/schema/primitives/base_object`
 
@@ -162,6 +182,8 @@
 
 *   [Type - Event-driven Vesting Condition](./eventdrivenvestingcondition.md "Type representation of complex event-driven vesting criteria") – `https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition`
 
+*   [Type - File](./file.md "Type representation of a file") – `https://opencaptablecoalition.com/schema/types/file`
+
 *   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/monetary`
 
 *   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/name`
@@ -194,21 +216,21 @@
 
 ### Arrays
 
-*   [Cap Table - Comment Array](./captable-properties-cap-table---comment-array.md "Unstructured text comments related to and stored for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/comments`
+*   [Cap Table - Comment Array](./ocfmanifestfile-properties-cap-table---comment-array.md "Unstructured text comments related to and stored for the cap table") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/comments`
 
-*   [Cap Table - Stakeholder Array](./captable-properties-cap-table---stakeholder-array.md "List of stakeholders for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stakeholders`
+*   [Cap Table - Stakeholder File(s) Array](./ocfmanifestfile-properties-cap-table---stakeholder-files-array.md "List of files containing lists of issuer stakeholders, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stakeholders_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stakeholders_files`
 
-*   [Cap Table - Stock Class Array](./captable-properties-cap-table---stock-class-array.md "List of stock classes for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_classes`
+*   [Cap Table - Stock Classes File(s) Array](./ocfmanifestfile-properties-cap-table---stock-classes-files-array.md "List of files containing lists of issuer stock classes, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_classes_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_classes_files`
 
-*   [Cap Table - Stock Legend Template Array](./captable-properties-cap-table---stock-legend-template-array.md "List of stock legend templates for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_legend_templates`
+*   [Cap Table - Stock Legend Templates File(s) Array](./ocfmanifestfile-properties-cap-table---stock-legend-templates-files-array.md "List of files containing lists of issuer stock legend templates, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_legend_templates_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_legend_templates_files`
 
-*   [Cap Table - Stock Plan Array](./captable-properties-cap-table---stock-plan-array.md "List of issued stock plans for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/stock_plans`
+*   [Cap Table - Stock Plans File(s) Array](./ocfmanifestfile-properties-cap-table---stock-plans-files-array.md "List of files containing lists of issuer stock plans, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_plans_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_plans_files`
 
-*   [Cap Table - Transaction Array](./captable-properties-cap-table---transaction-array.md "List of transactions for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/transactions`
+*   [Cap Table - Transaction File(s) Array](./ocfmanifestfile-properties-cap-table---transaction-files-array.md "List of files containing lists of issuer transactions, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/transactions_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/transactions_files`
 
-*   [Cap Table - Valuation Array](./captable-properties-cap-table---valuation-array.md "List of valuations for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/valuations`
+*   [Cap Table - Valuation File(s) Array](./ocfmanifestfile-properties-cap-table---valuation-files-array.md "List of files containing lists of issuer valuations, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/valuations_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/valuations_files`
 
-*   [Cap Table - Vesting Schedule Array](./captable-properties-cap-table---vesting-schedule-array.md "List of vesting schedules for the cap table") – `https://opencaptablecoalition.com/schema/cap_table#/properties/vesting_schedules`
+*   [Cap Table - Vesting Schedules File(s) Array](./ocfmanifestfile-properties-cap-table---vesting-schedules-files-array.md "List of files containing lists of issuer vesting schedules, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/vesting_schedules_file schema to validate loaded files)") – `https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/vesting_schedules_files`
 
 *   [Contact Info - Email Address Array](./contactinfo-properties-contact-info---email-address-array.md "Emails to reach the contact at") – `https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails`
 
@@ -243,6 +265,20 @@
 *   [Stock Class - Stock Class Conversion Rights Array](./stockclass-properties-stock-class---stock-class-conversion-rights-array.md "List of stock class conversion rights possible for this stock class") – `https://opencaptablecoalition.com/schema/objects/stock_class#/properties/conversion_rights`
 
 *   [Stock Issuance - Stock Legend ID Array](./stockissuance-properties-stock-issuance---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids`
+
+*   [Untitled array in File - Stakeholders](./stakeholdersfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items`
+
+*   [Untitled array in File - Stock Classes](./stockclassesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items`
+
+*   [Untitled array in File - Stock Legend Templates](./stocklegendtemplatesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/properties/items`
+
+*   [Untitled array in File - Stock Plans](./stockplansfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/items`
+
+*   [Untitled array in File - Transactions](./transactionsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items`
+
+*   [Untitled array in File - Valuations](./valuationsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/valuations_file#/properties/items`
+
+*   [Untitled array in File - Vesting Schedules](./vestingschedulesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items`
 
 *   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments`
 

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/base_file",
+  "title": "Object - BaseFile",
+  "description": "Abstract file to be extended by all other files",
+  "type": "object",
+  "properties": {
+    "file_type": {
+      "description": "File type field (used to select proper schema for validation)",
+      "$ref": "/schema/enums/file_type"
+    }
+  },
+  "required": ["file_type"]
+}
