@@ -87,10 +87,9 @@ This repo requires Prettier to be run on all files. Run `npm install` to install
 
 _Documentation automatically generated with [jsonschema2md](https://github.com/adobe/jsonschema2md)_
 
-## Attributions
+## Contributors (alphabetical)
 
-### Contributors (alphabetical)
-
+- Ryan Carpenter
 - Ben Hutchings
 - Patrick Johnmeyer
 - Tyler McConnell
