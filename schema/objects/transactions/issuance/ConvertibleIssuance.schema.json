@@ -74,12 +74,12 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "conversion_discount": {
-      "description": "What is the discount available upon conversion (as decimal percent - e.g. .12 for 12%, - if applicable)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/percentage"
     },
     "conversion_fixed_ownership": {
-      "description": "If the instrument purports to grant a percentage ownership of the Company, what is the percentage (as decimal percent - e.g. .12 for 12%, - if applicable)?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "description": "If the instrument purports to grant a percentage ownership of the Company, what is the percentage, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/percentage"
     },
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",
