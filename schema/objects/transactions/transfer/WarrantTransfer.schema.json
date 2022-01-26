@@ -5,7 +5,9 @@
   "description": "Object describing a transfer or secondary sale of a warrant security",
   "type": "object",
   "allOf": [
-    { "$ref": "/schema/primitives/transactions/transfer/base_transfer" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer"
+    }
   ],
   "properties": {
     "object_type": {
@@ -13,7 +15,7 @@
     },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "id": {},
     "comments": {},

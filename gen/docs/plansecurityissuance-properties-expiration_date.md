@@ -18,4 +18,4 @@ one (and only one) of
 
 *   [Untitled null in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Object - Plan Security Issuance Transaction](plansecurityissuance-properties-expiration_date-oneof-1.md "check type definition")
+*   [Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "check type definition")

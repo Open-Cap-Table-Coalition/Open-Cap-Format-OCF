@@ -16,7 +16,7 @@ JSON containing file type identifier and list of stock classes
 
 all of
 
-*   [Untitled undefined type in File - Stock Classes](stockclassesfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Stock Classes Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Stock Class](stockclassesfile-properties-items-object---stock-class.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Stock Class](stockclassesfile-properties-items-object---stock-class.md))
 
 ## file_type
 

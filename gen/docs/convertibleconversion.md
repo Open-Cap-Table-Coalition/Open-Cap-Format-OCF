@@ -16,7 +16,11 @@ Object describing a conversion of a convertible security
 
 all of
 
-*   [Untitled undefined type in Object - Convertible Conversion Transaction](convertibleconversion-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Convertible Conversion Transaction Properties
 

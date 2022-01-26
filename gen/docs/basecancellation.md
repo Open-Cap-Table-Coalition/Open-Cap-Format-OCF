@@ -16,7 +16,9 @@ Abstract object describing fields common to all cancellation transaction objects
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Cancellation Transaction](basecancellation-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Cancellation Transaction Properties
 

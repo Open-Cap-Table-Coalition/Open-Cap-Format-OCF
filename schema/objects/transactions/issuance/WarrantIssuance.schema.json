@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/issuance/base_issuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance"
     }
   ],
   "properties": {
@@ -18,28 +18,28 @@
       "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/stock_class_conversion_rights"
+        "$ref": "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights"
       }
     },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "exercise_price": {
       "description": "The exercise price of the warrant",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "purchase_price": {
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "vesting_rules": {
       "description": "Vesting conditions applicable to the warrant",
-      "$ref": "/schema/types/vesting_rules"
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting_rules"
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
-      "$ref": "/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "id": {},
     "comments": {},

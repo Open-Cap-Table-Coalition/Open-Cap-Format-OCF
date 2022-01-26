@@ -8,7 +8,7 @@ https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/sc
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [VestingSchedule.schema.json*](../../schema/objects/VestingSchedule.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [VestingSchedule.schema.json*](../flattened_schemas/VestingSchedule.schema.json "open original schema") |
 
 ## items Type
 

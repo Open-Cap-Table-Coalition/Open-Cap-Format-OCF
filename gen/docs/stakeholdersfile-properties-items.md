@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/ite
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Stakeholder](stakeholdersfile-properties-items-object---stakeholder.md))

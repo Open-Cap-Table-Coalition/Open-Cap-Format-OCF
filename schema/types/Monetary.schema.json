@@ -7,7 +7,7 @@
   "properties": {
     "amount": {
       "description": "Numeric amount of money",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "currency": {
       "description": "ISO-4217 currency code",

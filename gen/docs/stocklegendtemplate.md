@@ -16,7 +16,7 @@ Object describing a stock legend template
 
 all of
 
-*   [Untitled undefined type in Object - Stock Legend Template](stocklegendtemplate-allof-0.md "check type definition")
+*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Legend Template Properties
 

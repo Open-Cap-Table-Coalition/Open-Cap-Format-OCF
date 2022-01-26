@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/retraction/base_retraction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction"
     }
   ],
   "properties": {

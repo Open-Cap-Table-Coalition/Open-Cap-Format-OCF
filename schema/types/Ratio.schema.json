@@ -7,11 +7,11 @@
   "properties": {
     "antecedent": {
       "description": "Antecedent value of ratio (e.g. in a:b, a is the antecedent)",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "consequent": {
       "description": "Consequent value of ratio (e.g. in a:b, b is the consequent)",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     }
   },
   "required": ["antecedent", "consequent"]

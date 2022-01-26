@@ -8,7 +8,7 @@ Date on which board approved the plan
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../../schema/objects/StockPlan.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../flattened_schemas/StockPlan.schema.json "open original schema") |
 
 ## board_approval_date Type
 

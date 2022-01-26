@@ -12,4 +12,4 @@ List of security law exemptions (and applicable jurisdictions) for this converti
 
 ## security_law_exemptions Type
 
-unknown\[]
+`object[]` ([Type - Security Exemption](baseissuance-properties-security-issuance---security-exemption-array-type---security-exemption.md))

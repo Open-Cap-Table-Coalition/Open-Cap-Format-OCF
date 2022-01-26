@@ -16,7 +16,11 @@ Object describing a plan security release transaction
 
 all of
 
-*   [Untitled undefined type in Object - Plan Security Release Transaction](plansecurityrelease-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Plan Security Release Transaction Properties
 

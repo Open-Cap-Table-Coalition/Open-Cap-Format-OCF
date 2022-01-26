@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/repurchase/base_repurchase"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase"
     }
   ],
   "properties": {

@@ -16,7 +16,9 @@ Abstract object describing common properties to a reissuance of a security
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Reissuance Transaction](basereissuance-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Reissuance Transaction Properties
 

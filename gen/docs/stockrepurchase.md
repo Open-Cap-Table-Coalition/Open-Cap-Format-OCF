@@ -16,7 +16,11 @@ Object describing a stock repurchase transaction
 
 all of
 
-*   [Untitled undefined type in Object - Stock Repurchase Transaction](stockrepurchase-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Repurchase Transaction Properties
 

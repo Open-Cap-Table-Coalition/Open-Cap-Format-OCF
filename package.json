@@ -12,7 +12,7 @@
   "devDependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "@adobe/jsonschema2md": "^6.0.3",
+    "@adobe/jsonschema2md": "^6.1.4",
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
     "husky": "^7.0.4",

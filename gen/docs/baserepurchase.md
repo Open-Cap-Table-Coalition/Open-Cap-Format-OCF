@@ -16,70 +16,82 @@ Abstract object describing common properties to a repurchase transaction
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Repurchase Transaction](baserepurchase-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Repurchase Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [price](#price)                                   | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-price.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/price")                                                              |
-| [quantity](#quantity)                             | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/quantity")                                                        |
-| [consideration](#consideration)                   | Not specified | Required | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/consideration")                                              |
-| [resulting_security_ids](#resulting_security_ids) | `array`       | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price")                                                                                          |
+| [quantity](#quantity)                             | `string` | Required | cannot be null | [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")                                                                                              |
+| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")                                                                                  |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids") |
 
 ## price
 
-Repurchase price per share of the stock
+Type represention of an amount of money in the specified currency
 
 `price`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-price.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/price")
+*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price")
 
 ### price Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## quantity
 
-Number of shares of stock repurchased
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `quantity`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-quantity.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/quantity")
+*   defined in: [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")
 
 ### quantity Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### quantity Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## consideration
 
-Consideration for the repurchase of the stock
+Type represention of an amount of money in the specified currency
 
 `consideration`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/consideration")
+*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")
 
 ### consideration Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## resulting_security_ids
 

@@ -16,7 +16,7 @@ Object describing a strictly time-based vesting schedule
 
 all of
 
-*   [Untitled undefined type in Object - Vesting Schedule](vestingschedule-allof-0.md "check type definition")
+*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Vesting Schedule Properties
 
@@ -25,7 +25,7 @@ all of
 | [object_type](#object_type)                                               | Not specified | Optional | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/object_type")                                                                       |
 | [name](#name)                                                             | `string`      | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-name.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/name")                                                                                     |
 | [description](#description)                                               | `string`      | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-description.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/description")                                                                       |
-| [allocation_type](#allocation_type)                                       | Not specified | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-allocation_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/allocation_type")                                                               |
+| [allocation_type](#allocation_type)                                       | `string`      | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-enum---allocation-type.md "https://opencaptablecoalition.com/schema/enums/allocation_type#/properties/allocation_type")                                                           |
 | [fractional_tranches_allowed](#fractional_tranches_allowed)               | `boolean`     | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-fractional_tranches_allowed.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/fractional_tranches_allowed")                                       |
 | [schedule_driven_vesting_conditions](#schedule_driven_vesting_conditions) | `array`       | Required | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-vesting-schedule---schedule-driven-vesting-condition-array.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/schedule_driven_vesting_conditions") |
 | [id](#id)                                                                 | Not specified | Optional | cannot be null | [Object - Vesting Schedule](vestingschedule-properties-id.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/id")                                                                                         |
@@ -95,21 +95,41 @@ Detailed description of the vesting schedule
 
 ## allocation_type
 
-Allocation/rounding type for the vesting schedule
+Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
+
+1.  Cumulative Rounding (5 - 4 - 5 - 4)
+2.  Cumulative Round Down (4 - 5 - 4 - 5)
+3.  Front Loaded (5 - 5 - 4 - 4)
+4.  Back Loaded (4 - 4 - 5 - 5)
+5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
+6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
 
 `allocation_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Allocation Type](vestingschedule-properties-enum---allocation-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Vesting Schedule](vestingschedule-properties-allocation_type.md "https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/allocation_type")
+*   defined in: [Object - Vesting Schedule](vestingschedule-properties-enum---allocation-type.md "https://opencaptablecoalition.com/schema/enums/allocation_type#/properties/allocation_type")
 
 ### allocation_type Type
 
-unknown
+`string` ([Enum - Allocation Type](vestingschedule-properties-enum---allocation-type.md))
+
+### allocation_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value                              | Explanation |
+| :--------------------------------- | :---------- |
+| `"CUMULATIVE_ROUNDING"`            |             |
+| `"CUMULATIVE_ROUND_DOWN"`          |             |
+| `"FRONT_LOADED"`                   |             |
+| `"BACK_LOADED"`                    |             |
+| `"FRONT_LOADED_TO_SINGLE_TRANCHE"` |             |
+| `"BACK_LOADED_TO_SINGLE_TRANCHE"`  |             |
 
 ## fractional_tranches_allowed
 
@@ -137,7 +157,7 @@ Schedule rows defining the vesting schedule tranches
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - Schedule-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md))
 
 *   cannot be null
 
@@ -145,7 +165,7 @@ Schedule rows defining the vesting schedule tranches
 
 ### schedule_driven_vesting_conditions Type
 
-unknown\[]
+`object[]` ([Type - Schedule-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md))
 
 ## id
 

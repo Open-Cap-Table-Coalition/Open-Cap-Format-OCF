@@ -16,14 +16,16 @@ Abstract object describing a security split transaction
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Split Transaction](basesplit-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Split Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [resulting_security_ids](#resulting_security_ids) | `array`       | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids") |
-| [split_ratio](#split_ratio)                       | Not specified | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/split_ratio")                                             |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids") |
+| [split_ratio](#split_ratio)                       | `object` | Required | cannot be null | [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/split_ratio")                                                                 |
 
 ## resulting_security_ids
 
@@ -51,18 +53,18 @@ Array of identifiers for new security (or securities) created as a result of the
 
 ## split_ratio
 
-Ratio of old shares to new shares
+Type representation of a ratio as antecedent and consequent numeric values
 
 `split_ratio`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Split Transaction](basesplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/split_ratio")
+*   defined in: [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/split_ratio")
 
 ### split_ratio Type
 
-unknown
+`object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))

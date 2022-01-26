@@ -3,13 +3,15 @@
   "$id": "https://opencaptablecoalition.com/schema/files/stakeholders_file",
   "title": "File - Stakeholders",
   "description": "JSON containing file type identifier and list of stakeholders",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "type": "object",
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/stakeholder"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/stakeholder"
       }
     },
     "file_type": {

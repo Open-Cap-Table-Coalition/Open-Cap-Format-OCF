@@ -7,7 +7,7 @@
   "properties": {
     "vesting_type": {
       "description": "Whether the vesting rules are schedule-driven, event-driven, or a combination of both",
-      "$ref": "/schema/enums/vesting_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/vesting_type"
     },
     "vesting_schedule_id": {
       "description": "Time-based vesting schedule applied to the securities",
@@ -15,7 +15,7 @@
     },
     "vesting_start_date": {
       "description": "Vesting commencement date to pair with the time-based vesting schedule",
-      "$ref": "/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "vesting_conditions": {
       "title": "Vesting Rules - Vesting Condition Array",
@@ -24,10 +24,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "/schema/types/event_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition"
           },
           {
-            "$ref": "/schema/types/schedule_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
           }
         ]
       }
@@ -37,7 +37,7 @@
       "description": "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.\n\n**Note**: custom vesting tranches override the applied vesting schedule if both are present.",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/custom_vesting_tranche"
+        "$ref": "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche"
       }
     },
     "custom_vesting_description": {

@@ -4,7 +4,11 @@
   "title": "Object - Vesting Schedule",
   "description": "Object describing a strictly time-based vesting schedule",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+    }
+  ],
   "properties": {
     "object_type": {
       "const": "VESTING_SCHEDULE"
@@ -19,7 +23,7 @@
     },
     "allocation_type": {
       "description": "Allocation/rounding type for the vesting schedule",
-      "$ref": "/schema/enums/allocation_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/allocation_type"
     },
     "fractional_tranches_allowed": {
       "description": "Whether or not fractional tranches are allowed. Note: if this is true, the allocation type is ignored",
@@ -30,7 +34,7 @@
       "description": "Schedule rows defining the vesting schedule tranches",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/schedule_driven_vesting_condition"
+        "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
       }
     },
     "id": {},

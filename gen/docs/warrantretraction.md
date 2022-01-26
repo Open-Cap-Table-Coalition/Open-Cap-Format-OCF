@@ -16,7 +16,11 @@ Object describing a retraction of a warrant security
 
 all of
 
-*   [Untitled undefined type in Object - Warrant Retraction Transaction](warrantretraction-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Warrant Retraction Transaction Properties
 

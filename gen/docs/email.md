@@ -16,28 +16,38 @@ Type representation of an email address
 
 # Type - Email Properties
 
-| Property                        | Type          | Required | Nullable       | Defined by                                                                                                                         |
-| :------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [email_type](#email_type)       | Not specified | Required | cannot be null | [Type - Email](email-properties-email_type.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_type")       |
-| [email_address](#email_address) | `string`      | Required | cannot be null | [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_address") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                               |
+| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| [email_type](#email_type)       | `string` | Required | cannot be null | [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/email_type#/properties/email_type") |
+| [email_address](#email_address) | `string` | Required | cannot be null | [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_address")       |
 
 ## email_type
 
-Type of e-mail address (e.g. personal or business)
+Enumeration of email types
 
 `email_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Email Type](email-properties-enum---email-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Email](email-properties-email_type.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_type")
+*   defined in: [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/email_type#/properties/email_type")
 
 ### email_type Type
 
-unknown
+`string` ([Enum - Email Type](email-properties-enum---email-type.md))
+
+### email_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value        | Explanation |
+| :----------- | :---------- |
+| `"PERSONAL"` |             |
+| `"BUSINESS"` |             |
+| `"OTHER"`    |             |
 
 ## email_address
 

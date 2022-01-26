@@ -14,4 +14,4 @@ Explicitly-defined vesting tranches for the securities which can be used in plac
 
 ## custom_vesting_tranches Type
 
-unknown\[]
+`object[]` ([Type - Custom Vesting Tranche](vestingrules-properties-vesting-rules---custom-vesting-tranche-array-type---custom-vesting-tranche.md))

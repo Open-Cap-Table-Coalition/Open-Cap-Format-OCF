@@ -12,4 +12,4 @@ Exercise periods applicable to plan security after a termination for a given, en
 
 ## termination_exercise_windows Type
 
-unknown\[]
+`object[]` ([Type - Termination Window](plansecurityissuance-properties-plan-security---termination-window-array-type---termination-window.md))

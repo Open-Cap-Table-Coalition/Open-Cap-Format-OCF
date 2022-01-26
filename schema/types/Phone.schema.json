@@ -7,7 +7,7 @@
   "properties": {
     "phone_type": {
       "description": "Type of phone number (e.g. mobile, home or business)",
-      "$ref": "/schema/enums/phone_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/phone_type"
     },
     "phone_number": {
       "description": "A valid phone number",

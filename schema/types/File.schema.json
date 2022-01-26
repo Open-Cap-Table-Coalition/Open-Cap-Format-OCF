@@ -11,7 +11,7 @@
     },
     "md5": {
       "description": "MD5 file checksum",
-      "$ref": "/schema/types/md5"
+      "$ref": "https://opencaptablecoalition.com/schema/types/md5"
     }
   },
   "required": ["filepath", "md5"]

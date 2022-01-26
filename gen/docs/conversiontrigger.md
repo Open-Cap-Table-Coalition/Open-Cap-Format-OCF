@@ -22,51 +22,61 @@ one (and only one) of
 
 # Type - Conversion Trigger Properties
 
-| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                         |
-| :-------------------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ratio](#ratio)                                           | Not specified | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-ratio.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/ratio")                                           |
-| [rounding_type](#rounding_type)                           | Not specified | Required | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-rounding_type.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/rounding_type")                           |
-| [nickname](#nickname)                                     | `string`      | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-nickname.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/nickname")                                     |
-| [description](#description)                               | `string`      | Required | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-description.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/description")                               |
-| [capitalization_definition](#capitalization_definition)   | `string`      | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-capitalization_definition.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/capitalization_definition")   |
-| [converts_to_future_round](#converts_to_future_round)     | `boolean`     | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-converts_to_future_round.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_future_round")     |
-| [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`      | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-converts_to_stock_class_id.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_stock_class_id") |
+| Property                                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                         |
+| :-------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ratio](#ratio)                                           | `object`  | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/ratio")                                                 |
+| [rounding_type](#rounding_type)                           | `string`  | Required | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-enum---rounding-type.md "https://opencaptablecoalition.com/schema/enums/rounding_type#/properties/rounding_type")                         |
+| [nickname](#nickname)                                     | `string`  | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-nickname.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/nickname")                                     |
+| [description](#description)                               | `string`  | Required | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-description.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/description")                               |
+| [capitalization_definition](#capitalization_definition)   | `string`  | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-capitalization_definition.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/capitalization_definition")   |
+| [converts_to_future_round](#converts_to_future_round)     | `boolean` | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-converts_to_future_round.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_future_round")     |
+| [converts_to_stock_class_id](#converts_to_stock_class_id) | `string`  | Optional | cannot be null | [Type - Conversion Trigger](conversiontrigger-properties-converts_to_stock_class_id.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_stock_class_id") |
 
 ## ratio
 
-What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)
+Type representation of a ratio as antecedent and consequent numeric values
 
 `ratio`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Type - Conversion Trigger](conversiontrigger-properties-ratio.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/ratio")
+*   defined in: [Type - Conversion Trigger](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/ratio")
 
 ### ratio Type
 
-unknown
+`object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 ## rounding_type
 
-How should fractional shares be rounded?
+Enumeration of rounding types
 
 `rounding_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Rounding Type](conversiontrigger-properties-enum---rounding-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Conversion Trigger](conversiontrigger-properties-rounding_type.md "https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/rounding_type")
+*   defined in: [Type - Conversion Trigger](conversiontrigger-properties-enum---rounding-type.md "https://opencaptablecoalition.com/schema/enums/rounding_type#/properties/rounding_type")
 
 ### rounding_type Type
 
-unknown
+`string` ([Enum - Rounding Type](conversiontrigger-properties-enum---rounding-type.md))
+
+### rounding_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value       | Explanation |
+| :---------- | :---------- |
+| `"CEILING"` |             |
+| `"FLOOR"`   |             |
+| `"NORMAL"`  |             |
 
 ## nickname
 

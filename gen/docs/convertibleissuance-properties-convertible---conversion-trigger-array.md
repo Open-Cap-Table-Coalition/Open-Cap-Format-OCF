@@ -12,4 +12,4 @@ In event the convertible can convert due to trigger events (e.g. Change of Contr
 
 ## conversion_triggers Type
 
-unknown\[]
+`object[]` ([Type - Conversion Trigger](convertibleissuance-properties-convertible---conversion-trigger-array-type---conversion-trigger.md))

@@ -16,32 +16,34 @@ Abstract object describing fields common to all exercise transaction objects
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Exercise Transaction](baseexercise-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Exercise Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [consideration](#consideration)                   | Not specified | Optional | cannot be null | [Primitive - Security Exercise Transaction](baseexercise-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/consideration")                                            |
-| [resulting_security_ids](#resulting_security_ids) | `array`       | Required | cannot be null | [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")                                                                          |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids") |
 
 ## consideration
 
-Consideration for the security
+Type represention of an amount of money in the specified currency
 
 `consideration`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Exercise Transaction](baseexercise-properties-consideration.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/consideration")
+*   defined in: [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")
 
 ### consideration Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## resulting_security_ids
 

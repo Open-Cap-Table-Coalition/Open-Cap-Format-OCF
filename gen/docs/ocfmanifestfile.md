@@ -16,15 +16,15 @@ Top-level schema describing the OCF Manifest, which holds issuer information and
 
 all of
 
-*   [Untitled undefined type in OCF Manifest File](ocfmanifestfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # OCF Manifest File Properties
 
 | Property                                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                    |
 | :------------------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ocf_version](#ocf_version)                                   | Not specified | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-ocf_version.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/ocf_version")                                                     |
+| [ocf_version](#ocf_version)                                   | `string`      | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-enum---ocf-version-type.md "https://opencaptablecoalition.com/schema/enums/ocf_version_type#/properties/ocf_version")                                          |
 | [file_type](#file_type)                                       | Not specified | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/file_type")                                                         |
-| [issuer](#issuer)                                             | Not specified | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-issuer.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/issuer")                                                               |
+| [issuer](#issuer)                                             | Merged        | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-object---issuer.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/issuer")                                                               |
 | [comments](#comments)                                         | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/comments")                                          |
 | [stock_plans_files](#stock_plans_files)                       | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-plans-files-array.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_plans_files")                       |
 | [stock_legend_templates_files](#stock_legend_templates_files) | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-legend-templates-files-array.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_legend_templates_files") |
@@ -36,21 +36,29 @@ all of
 
 ## ocf_version
 
-OCF Version Identifier
+Enumeration of recognized OCF versions
 
 `ocf_version`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - OCF Version Type](ocfmanifestfile-properties-enum---ocf-version-type.md))
 
 *   cannot be null
 
-*   defined in: [OCF Manifest File](ocfmanifestfile-properties-ocf_version.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/ocf_version")
+*   defined in: [OCF Manifest File](ocfmanifestfile-properties-enum---ocf-version-type.md "https://opencaptablecoalition.com/schema/enums/ocf_version_type#/properties/ocf_version")
 
 ### ocf_version Type
 
-unknown
+`string` ([Enum - OCF Version Type](ocfmanifestfile-properties-enum---ocf-version-type.md))
+
+### ocf_version Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value        | Explanation |
+| :----------- | :---------- |
+| `"1.0.0-a3"` |             |
 
 ## file_type
 
@@ -80,21 +88,25 @@ unknown
 
 ## issuer
 
-Issuer for the cap table
+Object describing the issuer of the cap table (the company whose cap table this is)
 
 `issuer`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Object - Issuer](ocfmanifestfile-properties-object---issuer.md))
 
 *   cannot be null
 
-*   defined in: [OCF Manifest File](ocfmanifestfile-properties-issuer.md "https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/issuer")
+*   defined in: [OCF Manifest File](ocfmanifestfile-properties-object---issuer.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/issuer")
 
 ### issuer Type
 
-unknown
+`object` ([Object - Issuer](ocfmanifestfile-properties-object---issuer.md))
+
+all of
+
+*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 ## comments
 
@@ -122,7 +134,7 @@ List of files containing lists of issuer stock plans, indexed from the file cont
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -130,7 +142,7 @@ List of files containing lists of issuer stock plans, indexed from the file cont
 
 ### stock_plans_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## stock_legend_templates_files
 
@@ -140,7 +152,7 @@ List of files containing lists of issuer stock legend templates, indexed from th
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -148,7 +160,7 @@ List of files containing lists of issuer stock legend templates, indexed from th
 
 ### stock_legend_templates_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## stock_classes_files
 
@@ -158,7 +170,7 @@ List of files containing lists of issuer stock classes, indexed from the file co
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -166,7 +178,7 @@ List of files containing lists of issuer stock classes, indexed from the file co
 
 ### stock_classes_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## vesting_schedules_files
 
@@ -176,7 +188,7 @@ List of files containing lists of issuer vesting schedules, indexed from the fil
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -184,7 +196,7 @@ List of files containing lists of issuer vesting schedules, indexed from the fil
 
 ### vesting_schedules_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## valuations_files
 
@@ -194,7 +206,7 @@ List of files containing lists of issuer valuations, indexed from the file conta
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -202,7 +214,7 @@ List of files containing lists of issuer valuations, indexed from the file conta
 
 ### valuations_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## transactions_files
 
@@ -212,7 +224,7 @@ List of files containing lists of issuer transactions, indexed from the file con
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -220,7 +232,7 @@ List of files containing lists of issuer transactions, indexed from the file con
 
 ### transactions_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ### transactions_files Constraints
 
@@ -234,7 +246,7 @@ List of files containing lists of issuer stakeholders, indexed from the file con
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 *   cannot be null
 
@@ -242,7 +254,7 @@ List of files containing lists of issuer stakeholders, indexed from the file con
 
 ### stakeholders_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ### stakeholders_files Constraints
 

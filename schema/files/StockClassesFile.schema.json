@@ -4,12 +4,14 @@
   "title": "File - Stock Classes",
   "description": "JSON containing file type identifier and list of stock classes",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/stock_class"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/stock_class"
       }
     },
     "file_type": {

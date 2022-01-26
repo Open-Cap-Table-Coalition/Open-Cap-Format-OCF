@@ -16,7 +16,7 @@ JSON containing file type identifier and list of stock legend templates
 
 all of
 
-*   [Untitled undefined type in File - Stock Legend Templates](stocklegendtemplatesfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Stock Legend Templates Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Stock Legend Template](stocklegendtemplatesfile-properties-items-object---stock-legend-template.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Stock Legend Template](stocklegendtemplatesfile-properties-items-object---stock-legend-template.md))
 
 ## file_type
 

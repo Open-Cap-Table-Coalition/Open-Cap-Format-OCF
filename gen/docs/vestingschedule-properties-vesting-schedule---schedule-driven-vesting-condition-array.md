@@ -12,4 +12,4 @@ Schedule rows defining the vesting schedule tranches
 
 ## schedule_driven_vesting_conditions Type
 
-unknown\[]
+`object[]` ([Type - Schedule-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md))

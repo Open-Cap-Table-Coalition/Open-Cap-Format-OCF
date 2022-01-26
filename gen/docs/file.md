@@ -16,10 +16,10 @@ Type representation of a file
 
 # Type - File Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                            |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| [filepath](#filepath) | `string`      | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath") |
-| [md5](#md5)           | Not specified | Required | cannot be null | [Type - File](file-properties-md5.md "https://opencaptablecoalition.com/schema/types/file#/properties/md5")           |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                             |
+| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| [filepath](#filepath) | `string` | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath")  |
+| [md5](#md5)           | `string` | Required | cannot be null | [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/md5#/properties/md5") |
 
 ## filepath
 
@@ -41,18 +41,28 @@ Path to the file within the OCF container
 
 ## md5
 
-MD5 file checksum
+String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers
 
 `md5`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - MD5 Hash](file-properties-type---md5-hash.md))
 
 *   cannot be null
 
-*   defined in: [Type - File](file-properties-md5.md "https://opencaptablecoalition.com/schema/types/file#/properties/md5")
+*   defined in: [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/md5#/properties/md5")
 
 ### md5 Type
 
-unknown
+`string` ([Type - MD5 Hash](file-properties-type---md5-hash.md))
+
+### md5 Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[a-fA-F0-9]{32}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5Ba-fA-F0-9%5D%7B32%7D%24 "try regular expression with regexr.com")

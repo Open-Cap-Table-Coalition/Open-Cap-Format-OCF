@@ -16,7 +16,7 @@ JSON containing file type identifier and list of vesting schedules
 
 all of
 
-*   [Untitled undefined type in File - Vesting Schedules](vestingschedulesfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Vesting Schedules Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Vesting Schedule](vestingschedulesfile-properties-items-object---vesting-schedule.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Vesting Schedule](vestingschedulesfile-properties-items-object---vesting-schedule.md))
 
 ## file_type
 

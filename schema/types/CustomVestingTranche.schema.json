@@ -11,7 +11,7 @@
     },
     "vest_quantity": {
       "description": "Quantity of shares for the tranche",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     }
   },
   "required": ["vest_date", "vest_quantity"]

@@ -12,7 +12,7 @@ List of files containing lists of issuer stakeholders, indexed from the file con
 
 ## stakeholders_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## stakeholders_files Constraints
 

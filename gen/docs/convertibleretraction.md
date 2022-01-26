@@ -16,7 +16,11 @@ Object describing a retraction of a convertible security
 
 all of
 
-*   [Untitled undefined type in Object - Convertible Retraction Transaction](convertibleretraction-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Convertible Retraction Transaction Properties
 

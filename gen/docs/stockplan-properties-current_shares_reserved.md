@@ -8,7 +8,7 @@ The number of shares currently approved. The original number of shares can be de
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../../schema/objects/StockPlan.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockPlan.schema.json*](../flattened_schemas/StockPlan.schema.json "open original schema") |
 
 ## current_shares_reserved Type
 

@@ -16,32 +16,42 @@ Type representation of an address
 
 # Type - Address Properties
 
-| Property                          | Type          | Required | Nullable       | Defined by                                                                                                                                 |
-| :-------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| [address_type](#address_type)     | Not specified | Required | cannot be null | [Type - Address](address-properties-address_type.md "https://opencaptablecoalition.com/schema/types/address#/properties/address_type")     |
-| [street_suite](#street_suite)     | `string`      | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")     |
-| [city](#city)                     | `string`      | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                     |
-| [state_province](#state_province) | `string`      | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province") |
-| [country](#country)               | `string`      | Required | cannot be null | [Type - Address](address-properties-country.md "https://opencaptablecoalition.com/schema/types/address#/properties/country")               |
-| [postal_code](#postal_code)       | `string`      | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")       |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                         |
+| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [address_type](#address_type)     | `string` | Required | cannot be null | [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type") |
+| [street_suite](#street_suite)     | `string` | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")             |
+| [city](#city)                     | `string` | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                             |
+| [state_province](#state_province) | `string` | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province")         |
+| [country](#country)               | `string` | Required | cannot be null | [Type - Address](address-properties-country.md "https://opencaptablecoalition.com/schema/types/address#/properties/country")                       |
+| [postal_code](#postal_code)       | `string` | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")               |
 
 ## address_type
 
-What type of address is this (e.g. legal address, contact address, etc.)
+Enumeration of address types
 
 `address_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Address Type](address-properties-enum---address-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Address](address-properties-address_type.md "https://opencaptablecoalition.com/schema/types/address#/properties/address_type")
+*   defined in: [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type")
 
 ### address_type Type
 
-unknown
+`string` ([Enum - Address Type](address-properties-enum---address-type.md))
+
+### address_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value       | Explanation |
+| :---------- | :---------- |
+| `"LEGAL"`   |             |
+| `"CONTACT"` |             |
+| `"OTHER"`   |             |
 
 ## street_suite
 

@@ -16,7 +16,11 @@ Object describing a stock acceptance transaction
 
 all of
 
-*   [Untitled undefined type in Object - Stock Acceptance Transaction](stockacceptance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Acceptance Transaction Properties
 

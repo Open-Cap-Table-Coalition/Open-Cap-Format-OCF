@@ -16,7 +16,11 @@ Object describing a warrant acceptance transaction
 
 all of
 
-*   [Untitled undefined type in Object - Warrant Acceptance Transaction](warrantacceptance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Warrant Acceptance Transaction Properties
 

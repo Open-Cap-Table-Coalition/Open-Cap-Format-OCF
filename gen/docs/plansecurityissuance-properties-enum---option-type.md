@@ -1,7 +1,7 @@
 # Enum - Option Type Schema
 
 ```txt
-Enums.Option.schema.json#/properties/option_grant_type
+https://opencaptablecoalition.com/schema/enums/option_type#/properties/option_grant_type
 ```
 
 Enumeration of option types

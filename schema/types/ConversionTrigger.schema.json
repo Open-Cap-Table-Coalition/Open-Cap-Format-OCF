@@ -7,11 +7,11 @@
   "properties": {
     "ratio": {
       "description": "What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)",
-      "$ref": "/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
     },
     "rounding_type": {
       "description": "How should fractional shares be rounded?",
-      "$ref": "/schema/enums/rounding_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/rounding_type"
     },
     "nickname": {
       "description": "Human-friendly nickname to describe the conversion right",

@@ -16,7 +16,9 @@ Abstract object describing a security acceptance transaction
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Acceptance Transaction](baseacceptance-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Acceptance Transaction Properties
 

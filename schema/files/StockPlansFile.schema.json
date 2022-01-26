@@ -4,12 +4,14 @@
   "title": "File - Stock Plans",
   "description": "JSON containing file type identifier and list of stock plans",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/stock_plan"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/stock_plan"
       }
     },
     "file_type": {

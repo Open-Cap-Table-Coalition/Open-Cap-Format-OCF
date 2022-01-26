@@ -4,7 +4,11 @@
   "title": "Primitive - Security Issuance Transaction",
   "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "custom_id": {
       "description": "A custom ID for this convertible (e.g. CN-1.)",
@@ -16,18 +20,18 @@
     },
     "board_approval_date": {
       "description": "Date of board approval for the convertible",
-      "$ref": "/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "consideration": {
       "description": "Consideration for the security",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "security_law_exemptions": {
       "title": "Security Issuance - Security Exemption Array",
       "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/security_exemption"
+        "$ref": "https://opencaptablecoalition.com/schema/types/security_exemption"
       }
     }
   },

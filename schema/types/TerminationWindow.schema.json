@@ -7,7 +7,7 @@
   "properties": {
     "reason": {
       "description": "What cause of termination is this window for?",
-      "$ref": "/schema/enums/termination_window_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/termination_window_type"
     },
     "period": {
       "description": "The length of the period in this termination window (in number of periods of type period_type)",
@@ -15,7 +15,7 @@
     },
     "period_type": {
       "description": "The type of period being measured (e.g. days or month)",
-      "$ref": "/schema/enums/period_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/period_type"
     }
   },
   "required": ["reason", "period", "period_type"]

@@ -16,7 +16,11 @@ Object describing a conversion of stock
 
 all of
 
-*   [Untitled undefined type in Object - Stock Conversion Transaction](stockconversion-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Conversion Transaction Properties
 
@@ -24,8 +28,8 @@ all of
 | :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/object_type")                       |
 | [balance_security_id](#balance_security_id)       | `string`      | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/balance_security_id")       |
-| [quantity_converted](#quantity_converted)         | Not specified | Required | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-quantity_converted.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/quantity_converted")         |
-| [conversion_ratio](#conversion_ratio)             | Not specified | Required | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-conversion_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/conversion_ratio")             |
+| [quantity_converted](#quantity_converted)         | `string`      | Required | cannot be null | [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_converted")                                                        |
+| [conversion_ratio](#conversion_ratio)             | `object`      | Required | cannot be null | [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/conversion_ratio")                                                    |
 | [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/id")                                         |
 | [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/comments")                             |
 | [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/security_id")                       |
@@ -78,39 +82,49 @@ Identifier for the security that holds the remainder balance (for partial conver
 
 ## quantity_converted
 
-Quantity of non-monetary security units converted
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `quantity_converted`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-quantity_converted.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/quantity_converted")
+*   defined in: [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_converted")
 
 ### quantity_converted Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### quantity_converted Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## conversion_ratio
 
-Quantity of non-monetary security units converted
+Type representation of a ratio as antecedent and consequent numeric values
 
 `conversion_ratio`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-conversion_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/conversion_ratio")
+*   defined in: [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/conversion_ratio")
 
 ### conversion_ratio Type
 
-unknown
+`object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 ## id
 

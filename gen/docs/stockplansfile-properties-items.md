@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/item
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Stock Plan](stockplansfile-properties-items-object---stock-plan.md))

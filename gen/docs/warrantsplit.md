@@ -16,7 +16,11 @@ Object describing a split of a warrant security
 
 all of
 
-*   [Untitled undefined type in Object - Warrant Split Transaction](warrantsplit-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Warrant Split Transaction Properties
 

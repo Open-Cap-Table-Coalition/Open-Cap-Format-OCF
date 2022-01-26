@@ -12,4 +12,4 @@ List of files containing lists of issuer stock plans, indexed from the file cont
 
 ## stock_plans_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))

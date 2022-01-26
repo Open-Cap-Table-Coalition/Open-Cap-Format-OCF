@@ -16,7 +16,7 @@ JSON containing file type identifier and list of valuations
 
 all of
 
-*   [Untitled undefined type in File - Valuations](valuationsfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Valuations Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Valuation](valuationsfile-properties-items-object---valuation.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Valuation](valuationsfile-properties-items-object---valuation.md))
 
 ## file_type
 

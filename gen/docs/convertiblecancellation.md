@@ -16,14 +16,18 @@ Object describing a cancellation of a convertible security
 
 all of
 
-*   [Untitled undefined type in Object - Convertible Cancellation Transaction](convertiblecancellation-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Convertible Cancellation Transaction Properties
 
 | Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
 | :------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/object_type")                 |
-| [amount](#amount)                           | Not specified | Required | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/amount")                           |
+| [amount](#amount)                           | `object`      | Required | cannot be null | [Object - Convertible Cancellation Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/amount")                                                                         |
 | [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/id")                                   |
 | [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/comments")                       |
 | [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/security_id")                 |
@@ -59,21 +63,21 @@ unknown
 
 ## amount
 
-Amount of monetary value cancelled
+Type represention of an amount of money in the specified currency
 
 `amount`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Cancellation Transaction](convertiblecancellation-properties-amount.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation#/properties/amount")
+*   defined in: [Object - Convertible Cancellation Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/amount")
 
 ### amount Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## id
 
