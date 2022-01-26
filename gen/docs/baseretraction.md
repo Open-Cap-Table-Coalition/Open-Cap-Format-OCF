@@ -16,7 +16,9 @@ Abstract object describing a security retraction transaction
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Retraction Transaction](baseretraction-allof-0.md "check type definition")
+*   all of
+
+    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Retraction Transaction Properties
 

@@ -4,18 +4,22 @@
   "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+    }
+  ],
   "properties": {
     "object_type": {
       "const": "STAKEHOLDER"
     },
     "name": {
       "description": "Name for the stakeholder",
-      "$ref": "/schema/types/name"
+      "$ref": "https://opencaptablecoalition.com/schema/types/name"
     },
     "stakeholder_type": {
       "description": "Distinguish individuals from institutions",
-      "$ref": "/schema/enums/stakeholder_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/stakeholder_type"
     },
     "issuer_assigned_id": {
       "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
@@ -23,18 +27,18 @@
     },
     "current_relationship": {
       "description": "What is the current relationship of the stakeholder to the issuer?",
-      "$ref": "/schema/enums/stakeholder_relationship_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type"
     },
     "primary_contact": {
       "description": "The primary contact info for the stakeholder",
-      "$ref": "/schema/types/contact_info"
+      "$ref": "https://opencaptablecoalition.com/schema/types/contact_info"
     },
     "addresses": {
       "title": "Stakeholder - Address Array",
       "description": "Addresses for the stakeholder",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/address"
+        "$ref": "https://opencaptablecoalition.com/schema/types/address"
       }
     },
     "tax_ids": {
@@ -42,7 +46,7 @@
       "description": "The tax ids for this stakeholder",
       "type": "array",
       "items": {
-        "$ref": "/schema/types/tax_identifier"
+        "$ref": "https://opencaptablecoalition.com/schema/types/tax_identifier"
       }
     },
     "id": {},

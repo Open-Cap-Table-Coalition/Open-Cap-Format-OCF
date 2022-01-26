@@ -12,7 +12,7 @@ List of files containing lists of issuer transactions, indexed from the file con
 
 ## transactions_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))
 
 ## transactions_files Constraints
 

@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/conversion/base_conversion"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion"
     }
   ],
   "properties": {

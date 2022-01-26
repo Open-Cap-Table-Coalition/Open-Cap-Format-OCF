@@ -16,7 +16,11 @@ Object describing a warrant exercise transaction
 
 all of
 
-*   [Untitled undefined type in Object - Warrant Exercise Transaction](warrantexercise-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Warrant Exercise Transaction Properties
 

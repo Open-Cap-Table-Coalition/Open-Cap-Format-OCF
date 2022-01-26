@@ -16,24 +16,39 @@ Abstract file to be extended by all other files
 
 # Object - BaseFile Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                  |
-| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [file_type](#file_type) | Not specified | Required | cannot be null | [Object - BaseFile](basefile-properties-file_type.md "https://opencaptablecoalition.com/schema/primitives/base_file#/properties/file_type") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                        |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [file_type](#file_type) | `string` | Required | cannot be null | [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/file_type#/properties/file_type") |
 
 ## file_type
 
-File type field (used to select proper schema for validation)
+Enumeration of different OCF file types which are used to load proper schemas for validation
 
 `file_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - OCF File Type](basefile-properties-enum---ocf-file-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - BaseFile](basefile-properties-file_type.md "https://opencaptablecoalition.com/schema/primitives/base_file#/properties/file_type")
+*   defined in: [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/file_type#/properties/file_type")
 
 ### file_type Type
 
-unknown
+`string` ([Enum - OCF File Type](basefile-properties-enum---ocf-file-type.md))
+
+### file_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value                               | Explanation |
+| :---------------------------------- | :---------- |
+| `"OCF_MANIFEST_FILE"`               |             |
+| `"OCF_STAKEHOLDERS_FILE"`           |             |
+| `"OCF_STOCK_CLASSES_FILE"`          |             |
+| `"OCF_STOCK_LEGEND_TEMPLATES_FILE"` |             |
+| `"OCF_STOCK_PLANS_FILE"`            |             |
+| `"OCF_TRANSACTIONS_FILE"`           |             |
+| `"OCF_VALUATIONS_FILE"`             |             |
+| `"OCF_VESTING_SCHEDULES_FILE"`      |             |

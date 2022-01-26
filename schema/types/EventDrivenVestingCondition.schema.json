@@ -17,7 +17,7 @@
           "description": "Event has not occurred (null)"
         },
         {
-          "$ref": "/schema/types/date",
+          "$ref": "https://opencaptablecoalition.com/schema/types/date",
           "description": "Event has occurred at this date"
         }
       ]
@@ -30,14 +30,14 @@
           "description": "No expiration date (null)"
         },
         {
-          "$ref": "/schema/types/date",
+          "$ref": "https://opencaptablecoalition.com/schema/types/date",
           "description": "Date at which condition ceases to apply"
         }
       ]
     },
     "share_amount": {
       "description": "Number of shares which vest upon successfully meeting the condition",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "priority": {
       "description": "Given sibling conditions, this field determines the order by which conditions shall be applied",
@@ -50,10 +50,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "/schema/types/event_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition"
           },
           {
-            "$ref": "/schema/types/schedule_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
           }
         ]
       }

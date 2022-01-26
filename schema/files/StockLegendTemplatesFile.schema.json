@@ -4,12 +4,14 @@
   "title": "File - Stock Legend Templates",
   "description": "JSON containing file type identifier and list of stock legend templates",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/stock_legend_template"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/stock_legend_template"
       }
     },
     "file_type": {

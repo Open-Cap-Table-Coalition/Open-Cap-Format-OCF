@@ -7,7 +7,7 @@
   "properties": {
     "file_type": {
       "description": "File type field (used to select proper schema for validation)",
-      "$ref": "/schema/enums/file_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/file_type"
     }
   },
   "required": ["file_type"]

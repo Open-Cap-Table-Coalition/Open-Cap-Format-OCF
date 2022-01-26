@@ -16,7 +16,11 @@ Object describing a split of a plan security
 
 all of
 
-*   [Untitled undefined type in Object - Plan Security Split Transaction](plansecuritysplit-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Plan Security Split Transaction Properties
 

@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/conversion/base_conversion"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion"
     }
   ],
   "properties": {
@@ -19,11 +19,11 @@
     },
     "quantity_converted": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "conversion_ratio": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
     },
     "id": {},
     "comments": {},

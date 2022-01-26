@@ -12,4 +12,4 @@ List of files containing lists of issuer vesting schedules, indexed from the fil
 
 ## vesting_schedules_files Type
 
-unknown\[]
+`object[]` ([Type - File](ocfmanifestfile-properties-cap-table---stock-plans-files-array-type---file.md))

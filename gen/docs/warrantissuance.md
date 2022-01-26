@@ -16,7 +16,11 @@ Object describing warrant issuance transaction by the issuer and held by a stake
 
 all of
 
-*   [Untitled undefined type in Object - Warrant Issuance Transaction](warrantissuance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Warrant Issuance Transaction Properties
 
@@ -24,11 +28,11 @@ all of
 | :-------------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/object_type")                                                  |
 | [conversion_rights](#conversion_rights)             | `array`       | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-warrant-issuance---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/conversion_rights") |
-| [quantity](#quantity)                               | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/quantity")                                                        |
-| [exercise_price](#exercise_price)                   | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/exercise_price")                                            |
-| [purchase_price](#purchase_price)                   | Not specified | Required | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-purchase_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/purchase_price")                                            |
-| [vesting_rules](#vesting_rules)                     | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/vesting_rules")                                              |
-| [expiration_date](#expiration_date)                 | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/expiration_date")                                          |
+| [quantity](#quantity)                               | `string`      | Required | cannot be null | [Object - Warrant Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")                                                                                           |
+| [exercise_price](#exercise_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/exercise_price")                                                                              |
+| [purchase_price](#purchase_price)                   | `object`      | Required | cannot be null | [Object - Warrant Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/purchase_price")                                                                              |
+| [vesting_rules](#vesting_rules)                     | `object`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting-rules.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_rules")                                                             |
+| [expiration_date](#expiration_date)                 | `string`      | Optional | cannot be null | [Object - Warrant Issuance Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/expiration_date")                                                 |
 | [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/id")                                                                    |
 | [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/comments")                                                        |
 | [security_id](#security_id)                         | Not specified | Optional | cannot be null | [Object - Warrant Issuance Transaction](warrantissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/security_id")                                                  |
@@ -73,7 +77,7 @@ What can this instrument convert into for a maturity or next equity financing co
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))
 
 *   cannot be null
 
@@ -81,97 +85,111 @@ What can this instrument convert into for a maturity or next equity financing co
 
 ### conversion_rights Type
 
-unknown\[]
+`object[]` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))
 
 ## quantity
 
-Quantity of shares the warrant is exercisable for
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `quantity`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/quantity")
+*   defined in: [Object - Warrant Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")
 
 ### quantity Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### quantity Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## exercise_price
 
-The exercise price of the warrant
+Type represention of an amount of money in the specified currency
 
 `exercise_price`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-exercise_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/exercise_price")
+*   defined in: [Object - Warrant Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/exercise_price")
 
 ### exercise_price Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## purchase_price
 
-Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)
+Type represention of an amount of money in the specified currency
 
 `purchase_price`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-purchase_price.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/purchase_price")
+*   defined in: [Object - Warrant Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/purchase_price")
 
 ### purchase_price Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## vesting_rules
 
-Vesting conditions applicable to the warrant
+Type representing all aspects related to vesting securities
 
 `vesting_rules`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `object` ([Type - Vesting Rules](plansecurityissuance-properties-type---vesting-rules.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-vesting_rules.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/vesting_rules")
+*   defined in: [Object - Warrant Issuance Transaction](plansecurityissuance-properties-type---vesting-rules.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_rules")
 
 ### vesting_rules Type
 
-unknown
+`object` ([Type - Vesting Rules](plansecurityissuance-properties-type---vesting-rules.md))
 
 ## expiration_date
 
-Expiration date of the warrant, if applicable
+Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 `expiration_date`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Issuance Transaction](warrantissuance-properties-expiration_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/expiration_date")
+*   defined in: [Object - Warrant Issuance Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/expiration_date")
 
 ### expiration_date Type
 
-unknown
+`string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+### expiration_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## id
 

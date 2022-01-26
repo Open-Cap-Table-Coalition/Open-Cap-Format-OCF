@@ -19,7 +19,7 @@
     },
     "period_type": {
       "description": "Type of period (days, months, years)",
-      "$ref": "/schema/enums/period_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/period_type"
     },
     "priority": {
       "description": "What order should this period be calculated (1 is highest priority)",
@@ -32,10 +32,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "/schema/types/event_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition"
           },
           {
-            "$ref": "/schema/types/schedule_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
           }
         ]
       }

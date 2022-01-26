@@ -4,12 +4,14 @@
   "title": "File - Vesting Schedules",
   "description": "JSON containing file type identifier and list of vesting schedules",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/vesting_schedule"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/vesting_schedule"
       }
     },
     "file_type": {

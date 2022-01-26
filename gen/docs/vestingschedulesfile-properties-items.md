@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/propertie
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Vesting Schedule](vestingschedulesfile-properties-items-object---vesting-schedule.md))

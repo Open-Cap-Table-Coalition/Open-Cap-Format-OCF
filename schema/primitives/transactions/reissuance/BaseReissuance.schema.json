@@ -4,7 +4,11 @@
   "title": "Primitive - Security Reissuance Transaction",
   "description": "Abstract object describing common properties to a reissuance of a security",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "resulting_security_ids": {
       "title": "Security Reissuance - Resulting Security ID Array",

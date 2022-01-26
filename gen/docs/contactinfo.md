@@ -16,29 +16,29 @@ Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 # Type - Contact Info Properties
 
-| Property                        | Type          | Required | Nullable       | Defined by                                                                                                                                                                 |
-| :------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name)                   | Not specified | Required | cannot be null | [Type - Contact Info](contactinfo-properties-name.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/name")                                       |
-| [phone_numbers](#phone_numbers) | `array`       | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers") |
-| [emails](#emails)               | `array`       | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")       |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                 |
+| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name)                   | `object` | Required | cannot be null | [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")                                        |
+| [phone_numbers](#phone_numbers) | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers") |
+| [emails](#emails)               | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")       |
 
 ## name
 
-Contact's name
+Type comprising of multiple name components
 
 `name`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Name](contactinfo-properties-type---name.md))
 
 *   cannot be null
 
-*   defined in: [Type - Contact Info](contactinfo-properties-name.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/name")
+*   defined in: [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")
 
 ### name Type
 
-unknown
+`object` ([Type - Name](contactinfo-properties-type---name.md))
 
 ## phone_numbers
 
@@ -48,7 +48,7 @@ Phone numbers to reach the contact at
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - Phone](contactinfo-properties-contact-info---phone-number-array-type---phone.md))
 
 *   cannot be null
 
@@ -56,7 +56,7 @@ Phone numbers to reach the contact at
 
 ### phone_numbers Type
 
-unknown\[]
+`object[]` ([Type - Phone](contactinfo-properties-contact-info---phone-number-array-type---phone.md))
 
 ## emails
 
@@ -66,7 +66,7 @@ Emails to reach the contact at
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - Email](contactinfo-properties-contact-info---email-address-array-type---email.md))
 
 *   cannot be null
 
@@ -74,4 +74,4 @@ Emails to reach the contact at
 
 ### emails Type
 
-unknown\[]
+`object[]` ([Type - Email](contactinfo-properties-contact-info---email-address-array-type---email.md))

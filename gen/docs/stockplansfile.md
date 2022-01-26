@@ -16,7 +16,7 @@ JSON containing file type identifier and list of stock plans
 
 all of
 
-*   [Untitled undefined type in File - Stock Plans](stockplansfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Stock Plans Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Stock Plan](stockplansfile-properties-items-object---stock-plan.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Stock Plan](stockplansfile-properties-items-object---stock-plan.md))
 
 ## file_type
 

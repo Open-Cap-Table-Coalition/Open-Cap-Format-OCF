@@ -16,14 +16,18 @@ Object describing a cancellation of a plan security
 
 all of
 
-*   [Untitled undefined type in Object - Plan Security Cancellation Transaction](plansecuritycancellation-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Plan Security Cancellation Transaction Properties
 
 | Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
 | :------------------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/object_type")                 |
-| [quantity](#quantity)                       | Not specified | Required | cannot be null | [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/quantity")                       |
+| [quantity](#quantity)                       | `string`      | Required | cannot be null | [Object - Plan Security Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")                                                                                 |
 | [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/id")                                   |
 | [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/comments")                       |
 | [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/security_id")                 |
@@ -59,21 +63,31 @@ unknown
 
 ## quantity
 
-Quantity of non-monetary security units cancelled
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `quantity`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Plan Security Cancellation Transaction](plansecuritycancellation-properties-quantity.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/quantity")
+*   defined in: [Object - Plan Security Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")
 
 ### quantity Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### quantity Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## id
 

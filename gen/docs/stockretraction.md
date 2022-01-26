@@ -16,7 +16,11 @@ Object describing a retraction of a stock security
 
 all of
 
-*   [Untitled undefined type in Object - Stock Retraction Transaction](stockretraction-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Retraction Transaction Properties
 

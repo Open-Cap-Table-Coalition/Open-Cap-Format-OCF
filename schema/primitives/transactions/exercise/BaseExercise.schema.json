@@ -4,11 +4,15 @@
   "title": "Primitive - Security Exercise Transaction",
   "description": "Abstract object describing fields common to all exercise transaction objects",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "consideration": {
       "description": "Consideration for the security",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "resulting_security_ids": {
       "title": "Security Exercise - Resulting Security ID Array",

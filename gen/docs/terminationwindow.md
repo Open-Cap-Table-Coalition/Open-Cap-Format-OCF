@@ -16,29 +16,42 @@ Type representation of a termination window
 
 # Type - Termination Window Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                           |
-| :-------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [reason](#reason)           | Not specified | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-reason.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/reason")           |
-| [period](#period)           | `integer`     | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period")           |
-| [period_type](#period_type) | Not specified | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-period_type.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period_type") |
+| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                              |
+| :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [reason](#reason)           | `string`  | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/termination_window_type#/properties/reason") |
+| [period](#period)           | `integer` | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period")                              |
+| [period_type](#period_type) | `string`  | Required | cannot be null | [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")       |
 
 ## reason
 
-What cause of termination is this window for?
+Enumeration of termination window types
 
 `reason`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Termination Window Type](terminationwindow-properties-enum---termination-window-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Termination Window](terminationwindow-properties-reason.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/reason")
+*   defined in: [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/termination_window_type#/properties/reason")
 
 ### reason Type
 
-unknown
+`string` ([Enum - Termination Window Type](terminationwindow-properties-enum---termination-window-type.md))
+
+### reason Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value           | Explanation |
+| :-------------- | :---------- |
+| `"CAUSE"`       |             |
+| `"VOLUNTARY"`   |             |
+| `"INVOLUNTARY"` |             |
+| `"DEATH"`       |             |
+| `"DISABILITY"`  |             |
+| `"RETIREMENT"`  |             |
 
 ## period
 
@@ -60,18 +73,28 @@ The length of the period in this termination window (in number of periods of typ
 
 ## period_type
 
-The type of period being measured (e.g. days or month)
+Enumeration of time period types
 
 `period_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Period Type](scheduledrivenvestingcondition-properties-enum---period-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Termination Window](terminationwindow-properties-period_type.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period_type")
+*   defined in: [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")
 
 ### period_type Type
 
-unknown
+`string` ([Enum - Period Type](scheduledrivenvestingcondition-properties-enum---period-type.md))
+
+### period_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value      | Explanation |
+| :--------- | :---------- |
+| `"DAYS"`   |             |
+| `"MONTHS"` |             |
+| `"YEARS"`  |             |

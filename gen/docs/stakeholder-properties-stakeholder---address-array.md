@@ -12,4 +12,4 @@ Addresses for the stakeholder
 
 ## addresses Type
 
-unknown\[]
+`object[]` ([Type - Address](issuer-properties-type---address.md))

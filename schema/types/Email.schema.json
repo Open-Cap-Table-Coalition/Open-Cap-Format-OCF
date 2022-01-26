@@ -7,7 +7,7 @@
   "properties": {
     "email_type": {
       "description": "Type of e-mail address (e.g. personal or business)",
-      "$ref": "/schema/enums/email_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/email_type"
     },
     "email_address": {
       "description": "A valid e-mail address",

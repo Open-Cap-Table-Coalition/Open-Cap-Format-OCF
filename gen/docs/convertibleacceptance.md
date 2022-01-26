@@ -16,7 +16,11 @@ Object describing a convertible acceptance transaction
 
 all of
 
-*   [Untitled undefined type in Object - Convertible Acceptance Transaction](convertibleacceptance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Convertible Acceptance Transaction Properties
 

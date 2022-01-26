@@ -12,4 +12,4 @@ Emails to reach the contact at
 
 ## emails Type
 
-unknown\[]
+`object[]` ([Type - Email](contactinfo-properties-contact-info---email-address-array-type---email.md))

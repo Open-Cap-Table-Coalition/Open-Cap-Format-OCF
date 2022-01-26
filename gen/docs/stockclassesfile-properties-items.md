@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/it
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Stock Class](stockclassesfile-properties-items-object---stock-class.md))

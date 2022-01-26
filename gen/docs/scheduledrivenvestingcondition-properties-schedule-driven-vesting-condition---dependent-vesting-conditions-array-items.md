@@ -16,6 +16,6 @@ merged type ([Details](scheduledrivenvestingcondition-properties-schedule-driven
 
 any of
 
-*   [Untitled undefined type in Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array-items-anyof-0.md "check type definition")
+*   [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---event-driven-vesting-condition.md "check type definition")
 
-*   [Untitled undefined type in Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array-items-anyof-1.md "check type definition")
+*   [Type - Schedule-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md "check type definition")

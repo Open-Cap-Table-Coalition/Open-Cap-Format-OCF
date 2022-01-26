@@ -4,7 +4,11 @@
   "title": "Object - Valuation",
   "description": "Object describing a valuation used in the cap table",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_object" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+    }
+  ],
   "properties": {
     "object_type": {
       "const": "VALUATION"
@@ -15,15 +19,15 @@
     },
     "price_per_share": {
       "description": "Valued price per share",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "valuation_date": {
       "description": "Date of the valuation",
-      "$ref": "/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "valuation_type": {
       "description": "Seam for supporting different types of valuations in future versions",
-      "$ref": "/schema/enums/valuation_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/valuation_type"
     },
     "id": {},
     "comments": {}

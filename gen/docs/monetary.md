@@ -16,28 +16,38 @@ Type represention of an amount of money in the specified currency
 
 # Type - Monetary Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                        |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| [amount](#amount)     | Not specified | Required | cannot be null | [Type - Monetary](monetary-properties-amount.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/amount")     |
-| [currency](#currency) | `string`      | Required | cannot be null | [Type - Monetary](monetary-properties-currency.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/currency") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                          |
+| :-------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount") |
+| [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-currency.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/currency")   |
 
 ## amount
 
-Numeric amount of money
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `amount`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Type - Monetary](monetary-properties-amount.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/amount")
+*   defined in: [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")
 
 ### amount Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### amount Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## currency
 

@@ -18,7 +18,7 @@
     },
     "object_type": {
       "description": "Object type field",
-      "$ref": "/schema/enums/object_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/object_type"
     }
   },
   "required": ["id", "object_type"]

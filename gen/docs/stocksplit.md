@@ -16,7 +16,11 @@ Object describing a split of a stock security
 
 all of
 
-*   [Untitled undefined type in Object - Stock Split Transaction](stocksplit-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Split Transaction Properties
 

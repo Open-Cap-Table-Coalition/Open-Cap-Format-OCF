@@ -16,7 +16,11 @@ Object describing a plan security acceptance transaction
 
 all of
 
-*   [Untitled undefined type in Object - Plan Security Acceptance Transaction](plansecurityacceptance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Plan Security Acceptance Transaction Properties
 

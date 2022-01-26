@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/acceptance/base_acceptance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/base_acceptance"
     }
   ],
   "properties": {

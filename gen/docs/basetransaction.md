@@ -16,14 +16,14 @@ Abstract transaction object to be extended by all other transaction objects
 
 all of
 
-*   [Untitled undefined type in Primitive - Security Transaction](basetransaction-allof-0.md "check type definition")
+*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Primitive - Security Transaction Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                |
-| :-------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [security_id](#security_id) | `string`      | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id") |
-| [date](#date)               | Not specified | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-date.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/date")               |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                |
+| :-------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [security_id](#security_id) | `string` | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id") |
+| [date](#date)               | `string` | Required | cannot be null | [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/date")     |
 
 ## security_id
 
@@ -45,18 +45,22 @@ Identifier for the security which the transaction applies to
 
 ## date
 
-Date on which the transaction occurred
+Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 `date`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](basetransaction-properties-date.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/date")
+*   defined in: [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/date")
 
 ### date Type
 
-unknown
+`string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+### date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")

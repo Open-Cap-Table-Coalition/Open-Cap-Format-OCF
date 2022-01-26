@@ -16,19 +16,19 @@ Object describing a plan which stock options are issued from
 
 all of
 
-*   [Untitled undefined type in Object - Stock Plan](stockplan-allof-0.md "check type definition")
+*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Plan Properties
 
-| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                               |
-| :-------------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/object_type")                         |
-| [plan_name](#plan_name)                             | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/plan_name")                             |
-| [board_approval_date](#board_approval_date)         | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/board_approval_date")         |
-| [current_shares_reserved](#current_shares_reserved) | Not specified | Required | cannot be null | [Object - Stock Plan](stockplan-properties-current_shares_reserved.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/current_shares_reserved") |
-| [stock_class_id](#stock_class_id)                   | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id")                   |
-| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/id")                                           |
-| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/comments")                               |
+| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                              |
+| :-------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/object_type")                                        |
+| [plan_name](#plan_name)                             | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/plan_name")                                            |
+| [board_approval_date](#board_approval_date)         | `string`      | Optional | cannot be null | [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date") |
+| [current_shares_reserved](#current_shares_reserved) | `string`      | Required | cannot be null | [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_reserved")                                |
+| [stock_class_id](#stock_class_id)                   | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id")                                  |
+| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/id")                                                          |
+| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/comments")                                              |
 
 ## object_type
 
@@ -76,39 +76,53 @@ Name for the stock plan
 
 ## board_approval_date
 
-Date on which board approved the plan
+Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 `board_approval_date`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/board_approval_date")
+*   defined in: [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date")
 
 ### board_approval_date Type
 
-unknown
+`string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+### board_approval_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## current_shares_reserved
 
-The number of shares currently approved. The original number of shares can be determined from the event log
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `current_shares_reserved`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-current_shares_reserved.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/current_shares_reserved")
+*   defined in: [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_reserved")
 
 ### current_shares_reserved Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### current_shares_reserved Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## stock_class_id
 

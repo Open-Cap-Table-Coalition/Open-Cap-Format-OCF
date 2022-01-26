@@ -5,7 +5,9 @@
   "description": "Object describing a transfer or secondary sale of a convertible security",
   "type": "object",
   "allOf": [
-    { "$ref": "/schema/primitives/transactions/transfer/base_transfer" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer"
+    }
   ],
   "properties": {
     "object_type": {
@@ -13,7 +15,7 @@
     },
     "amount": {
       "description": "Amount of monetary value cancelled",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "id": {},
     "comments": {},

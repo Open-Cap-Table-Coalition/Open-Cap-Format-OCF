@@ -12,4 +12,4 @@ List of stock class conversion rights possible for this stock class
 
 ## conversion_rights Type
 
-unknown\[]
+`object[]` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))

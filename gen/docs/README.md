@@ -184,6 +184,8 @@
 
 *   [Type - File](./file.md "Type representation of a file") – `https://opencaptablecoalition.com/schema/types/file`
 
+*   [Type - MD5 Hash](./md5.md "String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers") – `https://opencaptablecoalition.com/schema/types/md5`
+
 *   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/monetary`
 
 *   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/name`
@@ -241,6 +243,8 @@
 *   [Issuer - Tax ID Array](./issuer-properties-issuer---tax-id-array.md "The tax ids for this issuer company") – `https://opencaptablecoalition.com/schema/objects/issuer#/properties/tax_ids`
 
 *   [Plan Security - Termination Window Array](./plansecurityissuance-properties-plan-security---termination-window-array.md "Exercise periods applicable to plan security after a termination for a given, enumerated reason") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/termination_exercise_windows`
+
+*   [Schedule-driven Vesting Condition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting`
 
 *   [Schedule-driven Vesting Condition - Dependent Vesting Conditions Array](./scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "Vesting periods or conditions which become operative once this condition is met") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting`
 

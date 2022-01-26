@@ -16,7 +16,11 @@ Object describing a re-issuance of stock
 
 all of
 
-*   [Untitled undefined type in Object - Stock Re-issuance Transaction](stockreissuance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Re-issuance Transaction Properties
 

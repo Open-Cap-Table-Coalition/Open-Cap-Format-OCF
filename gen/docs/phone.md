@@ -16,28 +16,39 @@ Type representation of a phone number
 
 # Type - Phone Properties
 
-| Property                      | Type          | Required | Nullable       | Defined by                                                                                                                       |
-| :---------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| [phone_type](#phone_type)     | Not specified | Required | cannot be null | [Type - Phone](phone-properties-phone_type.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_type")     |
-| [phone_number](#phone_number) | `string`      | Required | cannot be null | [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_number") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                               |
+| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| [phone_type](#phone_type)     | `string` | Required | cannot be null | [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/phone_type#/properties/phone_type") |
+| [phone_number](#phone_number) | `string` | Required | cannot be null | [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_number")         |
 
 ## phone_type
 
-Type of phone number (e.g. mobile, home or business)
+Enumeration of phone number types
 
 `phone_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Phone Type](phone-properties-enum---phone-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Phone](phone-properties-phone_type.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_type")
+*   defined in: [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/phone_type#/properties/phone_type")
 
 ### phone_type Type
 
-unknown
+`string` ([Enum - Phone Type](phone-properties-enum---phone-type.md))
+
+### phone_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value        | Explanation |
+| :----------- | :---------- |
+| `"HOME"`     |             |
+| `"MOBILE"`   |             |
+| `"BUSINESS"` |             |
+| `"OTHER"`    |             |
 
 ## phone_number
 

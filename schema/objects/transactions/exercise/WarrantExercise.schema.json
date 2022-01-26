@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/exercise/base_exercise"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise"
     }
   ],
   "properties": {

@@ -16,28 +16,39 @@ Type representation of the parent security of a given stock issuance (e.g. if a 
 
 # Type - Stock Parent Properties
 
-| Property                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                       |
-| :---------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [parent_object_type](#parent_object_type) | Not specified | Required | cannot be null | [Type - Stock Parent](stockparent-properties-parent_object_type.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_type") |
-| [parent_object_id](#parent_object_id)     | `string`      | Required | cannot be null | [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_id")     |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                        |
+| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [parent_object_type](#parent_object_type) | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/parent_security_type#/properties/parent_object_type") |
+| [parent_object_id](#parent_object_id)     | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_id")                      |
 
 ## parent_object_type
 
-Parent object type for this stock issuance (e.g. a stock plan or warrant)
+Enumeration of parent sources a stock can be issued or created from
 
 `parent_object_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Parent Security Type](stockparent-properties-enum---parent-security-type.md))
 
 *   cannot be null
 
-*   defined in: [Type - Stock Parent](stockparent-properties-parent_object_type.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_type")
+*   defined in: [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/parent_security_type#/properties/parent_object_type")
 
 ### parent_object_type Type
 
-unknown
+`string` ([Enum - Parent Security Type](stockparent-properties-enum---parent-security-type.md))
+
+### parent_object_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value           | Explanation |
+| :-------------- | :---------- |
+| `"STOCK_PLAN"`  |             |
+| `"STOCK"`       |             |
+| `"WARRANT"`     |             |
+| `"CONVERTIBLE"` |             |
 
 ## parent_object_id
 

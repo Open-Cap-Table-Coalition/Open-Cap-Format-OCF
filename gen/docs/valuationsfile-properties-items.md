@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/valuations_file#/properties/items
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Valuation](valuationsfile-properties-items-object---valuation.md))

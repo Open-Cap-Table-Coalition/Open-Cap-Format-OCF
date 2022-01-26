@@ -16,39 +16,43 @@ Object describing convertible instrument issuance transaction by the issuer and 
 
 all of
 
-*   [Untitled undefined type in Object - Convertible Issuance Transaction](convertibleissuance-allof-0.md "check type definition")
+*   all of
+
+    *   all of
+
+        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
 
 # Object - Convertible Issuance Transaction Properties
 
-| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
-| :-------------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/object_type")                                    |
-| [convertible_type](#convertible_type)                     | Not specified | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/convertible_type")                          |
-| [conversion_type](#conversion_type)                       | Not specified | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_type")                            |
-| [original_principal_amount](#original_principal_amount)   | Not specified | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-original_principal_amount.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/original_principal_amount")        |
-| [interest_rate](#interest_rate)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_rate.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_rate")                                |
-| [day_count_convention](#day_count_convention)             | Not specified | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-day_count_convention.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/day_count_convention")                  |
-| [interest_payout](#interest_payout)                       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_payout.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_payout")                            |
-| [maturity_date](#maturity_date)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-maturity_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/maturity_date")                                |
-| [default_conversion_rights](#default_conversion_rights)   | Not specified | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-default_conversion_rights.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/default_conversion_rights")        |
-| [conversion_triggers](#conversion_triggers)               | `array`       | Required | can be null    | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible---conversion-trigger-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_triggers") |
-| [exit_multiple](#exit_multiple)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-exit_multiple.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/exit_multiple")                                |
-| [interest_accrual_period](#interest_accrual_period)       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_accrual_period.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_accrual_period")            |
-| [compounding_type](#compounding_type)                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-compounding_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/compounding_type")                          |
-| [pro_rata](#pro_rata)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-pro_rata.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/pro_rata")                                          |
-| [conversion_valuation_cap](#conversion_valuation_cap)     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_valuation_cap.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_valuation_cap")          |
-| [conversion_discount](#conversion_discount)               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_discount.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_discount")                    |
-| [conversion_fixed_ownership](#conversion_fixed_ownership) | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_fixed_ownership.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_fixed_ownership")      |
-| [seniority](#seniority)                                   | `integer`     | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-seniority.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/seniority")                                        |
-| [id](#id)                                                 | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/id")                                                      |
-| [comments](#comments)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/comments")                                          |
-| [security_id](#security_id)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/security_id")                                    |
-| [date](#date)                                             | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/date")                                                  |
-| [custom_id](#custom_id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/custom_id")                                        |
-| [stakeholder_id](#stakeholder_id)                         | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/stakeholder_id")                              |
-| [board_approval_date](#board_approval_date)               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/board_approval_date")                    |
-| [consideration](#consideration)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/consideration")                                |
-| [security_law_exemptions](#security_law_exemptions)       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/security_law_exemptions")            |
+| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
+| :-------------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/object_type")                                                                  |
+| [convertible_type](#convertible_type)                     | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-type.md "https://opencaptablecoalition.com/schema/enums/convertible_type#/properties/convertible_type")                                                                             |
+| [conversion_type](#conversion_type)                       | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---conversion-type.md "https://opencaptablecoalition.com/schema/enums/conversion_type#/properties/conversion_type")                                                                                |
+| [original_principal_amount](#original_principal_amount)   | `object`      | Required | cannot be null | [Object - Convertible Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/original_principal_amount")                                                                                           |
+| [interest_rate](#interest_rate)                           | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/interest_rate")                                                                                                              |
+| [day_count_convention](#day_count_convention)             | `string`      | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---day-count-type.md "https://opencaptablecoalition.com/schema/enums/day_count_type#/properties/day_count_convention")                                                                             |
+| [interest_payout](#interest_payout)                       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---interest-payout-type.md "https://opencaptablecoalition.com/schema/enums/interest_payout_type#/properties/interest_payout")                                                                      |
+| [maturity_date](#maturity_date)                           | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/maturity_date")                                                                           |
+| [default_conversion_rights](#default_conversion_rights)   | Merged        | Required | cannot be null | [Object - Convertible Issuance Transaction](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/default_conversion_rights") |
+| [conversion_triggers](#conversion_triggers)               | `array`       | Required | can be null    | [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible---conversion-trigger-array.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_triggers")                               |
+| [exit_multiple](#exit_multiple)                           | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/exit_multiple")                                                                                                        |
+| [interest_accrual_period](#interest_accrual_period)       | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---accrual-period-type.md "https://opencaptablecoalition.com/schema/enums/accrual_period_type#/properties/interest_accrual_period")                                                                |
+| [compounding_type](#compounding_type)                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---compounding-type.md "https://opencaptablecoalition.com/schema/enums/compounding_type#/properties/compounding_type")                                                                             |
+| [pro_rata](#pro_rata)                                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/pro_rata")                                                                                                                   |
+| [conversion_valuation_cap](#conversion_valuation_cap)     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/conversion_valuation_cap")                                                                                            |
+| [conversion_discount](#conversion_discount)               | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_discount")                                                                                                        |
+| [conversion_fixed_ownership](#conversion_fixed_ownership) | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_fixed_ownership")                                                                                                 |
+| [seniority](#seniority)                                   | `integer`     | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-seniority.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/seniority")                                                                      |
+| [id](#id)                                                 | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/id")                                                                                    |
+| [comments](#comments)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/comments")                                                                        |
+| [security_id](#security_id)                               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/security_id")                                                                  |
+| [date](#date)                                             | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/date")                                                                                |
+| [custom_id](#custom_id)                                   | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-custom_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/custom_id")                                                                      |
+| [stakeholder_id](#stakeholder_id)                         | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-stakeholder_id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/stakeholder_id")                                                            |
+| [board_approval_date](#board_approval_date)               | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-board_approval_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/board_approval_date")                                                  |
+| [consideration](#consideration)                           | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-consideration.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/consideration")                                                              |
+| [security_law_exemptions](#security_law_exemptions)       | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-security_law_exemptions.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/security_law_exemptions")                                          |
 
 ## object_type
 
@@ -78,147 +82,204 @@ unknown
 
 ## convertible_type
 
-What kind of convertible instrument is this (of the supported, enumerated types)
+Enumeration of convertible instrument types
 
 `convertible_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Convertible Type](convertibleissuance-properties-enum---convertible-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-convertible_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/convertible_type")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---convertible-type.md "https://opencaptablecoalition.com/schema/enums/convertible_type#/properties/convertible_type")
 
 ### convertible_type Type
 
-unknown
+`string` ([Enum - Convertible Type](convertibleissuance-properties-enum---convertible-type.md))
+
+### convertible_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value                    | Explanation |
+| :----------------------- | :---------- |
+| `"NOTE"`                 |             |
+| `"SAFE"`                 |             |
+| `"CONVERTIBLE_SECURITY"` |             |
 
 ## conversion_type
 
-Does this conversion happen pre or post money?
+Enumeration of convertible conversion types
 
 `conversion_type`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Conversion Type](convertibleissuance-properties-enum---conversion-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_type")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---conversion-type.md "https://opencaptablecoalition.com/schema/enums/conversion_type#/properties/conversion_type")
 
 ### conversion_type Type
 
-unknown
+`string` ([Enum - Conversion Type](convertibleissuance-properties-enum---conversion-type.md))
+
+### conversion_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value          | Explanation |
+| :------------- | :---------- |
+| `"PRE_MONEY"`  |             |
+| `"POST_MONEY"` |             |
 
 ## original_principal_amount
 
-Principal at date of issuance of this convertible
+Type represention of an amount of money in the specified currency
 
 `original_principal_amount`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-original_principal_amount.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/original_principal_amount")
+*   defined in: [Object - Convertible Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/original_principal_amount")
 
 ### original_principal_amount Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## interest_rate
 
-Interest rate of the convertible (if applicable)
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `interest_rate`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_rate.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_rate")
+*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/interest_rate")
 
 ### interest_rate Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### interest_rate Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## day_count_convention
 
-How many days are there is a given period for calculation purposes?
+Enumeration of how the number of days are determined per period
 
 `day_count_convention`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Enum - Day Count Type](convertibleissuance-properties-enum---day-count-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-day_count_convention.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/day_count_convention")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---day-count-type.md "https://opencaptablecoalition.com/schema/enums/day_count_type#/properties/day_count_convention")
 
 ### day_count_convention Type
 
-unknown
+`string` ([Enum - Day Count Type](convertibleissuance-properties-enum---day-count-type.md))
+
+### day_count_convention Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value          | Explanation |
+| :------------- | :---------- |
+| `"ACTUAL_365"` |             |
+| `"30_360"`     |             |
 
 ## interest_payout
 
-How is interest paid out (if at applicable)
+Enumeration of interest payout types (e.g. deferred or cash payment)
 
 `interest_payout`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Enum - Interest Payout Type](convertibleissuance-properties-enum---interest-payout-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_payout.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_payout")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---interest-payout-type.md "https://opencaptablecoalition.com/schema/enums/interest_payout_type#/properties/interest_payout")
 
 ### interest_payout Type
 
-unknown
+`string` ([Enum - Interest Payout Type](convertibleissuance-properties-enum---interest-payout-type.md))
+
+### interest_payout Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value        | Explanation |
+| :----------- | :---------- |
+| `"DEFERRED"` |             |
+| `"CASH"`     |             |
 
 ## maturity_date
 
-What is the maturity date (if applicable)
+Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 `maturity_date`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-maturity_date.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/maturity_date")
+*   defined in: [Object - Convertible Issuance Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/maturity_date")
 
 ### maturity_date Type
 
-unknown
+`string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+### maturity_date Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## default_conversion_rights
 
-What can this instrument convert into for a maturity or next equity financing conversion? Default, basic conversion ratio for this convertible expressed as a ratio of shares / unit principal.
+Type representation of a conversion right from one security into a stock class
 
 `default_conversion_rights`
 
 *   is required
 
-*   Type: unknown
+*   Type: `object` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-default_conversion_rights.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/default_conversion_rights")
+*   defined in: [Object - Convertible Issuance Transaction](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/default_conversion_rights")
 
 ### default_conversion_rights Type
 
-unknown
+`object` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))
+
+one (and only one) of
+
+*   [Converts to not-yet-existing and/or not-yet-known stock class](stockclassconversionrights-oneof-converts-to-not-yet-existing-andor-not-yet-known-stock-class.md "check type definition")
+
+*   [Converts to existing, known stock class](stockclassconversionrights-oneof-converts-to-existing-known-stock-class.md "check type definition")
 
 ## conversion_triggers
 
@@ -228,7 +289,7 @@ In event the convertible can convert due to trigger events (e.g. Change of Contr
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Type - Conversion Trigger](convertibleissuance-properties-convertible---conversion-trigger-array-type---conversion-trigger.md))
 
 *   can be null
 
@@ -236,133 +297,184 @@ In event the convertible can convert due to trigger events (e.g. Change of Contr
 
 ### conversion_triggers Type
 
-unknown\[]
+`object[]` ([Type - Conversion Trigger](convertibleissuance-properties-convertible---conversion-trigger-array-type---conversion-trigger.md))
 
 ## exit_multiple
 
-For cash proceeds calculation during a liquidity event.
+Type representation of a ratio as antecedent and consequent numeric values
 
 `exit_multiple`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-exit_multiple.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/exit_multiple")
+*   defined in: [Object - Convertible Issuance Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/exit_multiple")
 
 ### exit_multiple Type
 
-unknown
+`object` ([Type - Ratio](conversiontrigger-properties-type---ratio.md))
 
 ## interest_accrual_period
 
-What is the period over which interest is calculated?
+Enumeration of interest accrual period types
 
 `interest_accrual_period`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Enum - Accrual Period Type](convertibleissuance-properties-enum---accrual-period-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-interest_accrual_period.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/interest_accrual_period")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---accrual-period-type.md "https://opencaptablecoalition.com/schema/enums/accrual_period_type#/properties/interest_accrual_period")
 
 ### interest_accrual_period Type
 
-unknown
+`string` ([Enum - Accrual Period Type](convertibleissuance-properties-enum---accrual-period-type.md))
+
+### interest_accrual_period Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value           | Explanation |
+| :-------------- | :---------- |
+| `"DAILY"`       |             |
+| `"MONTHLY"`     |             |
+| `"QUARTERLY"`   |             |
+| `"SEMI_ANNUAL"` |             |
+| `"ANNUAL"`      |             |
 
 ## compounding_type
 
-What type of interest compounding?
+Enumeration of interest compounding types
 
 `compounding_type`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Enum - Compounding Type](convertibleissuance-properties-enum---compounding-type.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-compounding_type.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/compounding_type")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---compounding-type.md "https://opencaptablecoalition.com/schema/enums/compounding_type#/properties/compounding_type")
 
 ### compounding_type Type
 
-unknown
+`string` ([Enum - Compounding Type](convertibleissuance-properties-enum---compounding-type.md))
+
+### compounding_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value           | Explanation |
+| :-------------- | :---------- |
+| `"COMPOUNDING"` |             |
+| `"SIMPLE"`      |             |
 
 ## pro_rata
 
-What pro-rata (if any) is the holder entitled to buy at the next round?
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `pro_rata`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-pro_rata.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/pro_rata")
+*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/pro_rata")
 
 ### pro_rata Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### pro_rata Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## conversion_valuation_cap
 
-What is the valuation cap (if applicable)?
+Type represention of an amount of money in the specified currency
 
 `conversion_valuation_cap`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_valuation_cap.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_valuation_cap")
+*   defined in: [Object - Convertible Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/conversion_valuation_cap")
 
 ### conversion_valuation_cap Type
 
-unknown
+`object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
 ## conversion_discount
 
-What is the discount available upon conversion (as decimal percent - e.g. .12 for 12%, - if applicable)
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `conversion_discount`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_discount.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_discount")
+*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_discount")
 
 ### conversion_discount Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### conversion_discount Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## conversion_fixed_ownership
 
-If the instrument purports to grant a percentage ownership of the Company, what is the percentage (as decimal percent - e.g. .12 for 12%, - if applicable)?
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `conversion_fixed_ownership`
 
 *   is optional
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-conversion_fixed_ownership.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/conversion_fixed_ownership")
+*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_fixed_ownership")
 
 ### conversion_fixed_ownership Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### conversion_fixed_ownership Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## seniority
 

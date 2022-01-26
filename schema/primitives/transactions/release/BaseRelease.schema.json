@@ -4,19 +4,23 @@
   "title": "Primitive - Security Release Transaction",
   "description": "Abstract object describing fields common to all release transaction objects",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "settlement_date": {
       "description": "Date of settlement",
-      "$ref": "/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "release_price": {
       "description": "Consideration for the security",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "net_quantity": {
       "description": "Net quantity of security units",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "method": {
       "description": "Method of release",
@@ -28,19 +32,19 @@
     },
     "cash_paid": {
       "description": "Cash paid for the security",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "quantity_sold": {
       "description": "Quantity of security units sold",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "sale_price_per_unit": {
       "description": "Cash paid for the security",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "withheld_quantity": {
       "description": "Quantity of security units withheld",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     }
   },
   "required": ["settlement_date", "release_price"]

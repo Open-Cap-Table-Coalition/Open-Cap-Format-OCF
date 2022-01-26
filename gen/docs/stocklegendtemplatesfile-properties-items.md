@@ -12,4 +12,4 @@ https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/prop
 
 ## items Type
 
-unknown\[]
+`object[]` ([Object - Stock Legend Template](stocklegendtemplatesfile-properties-items-object---stock-legend-template.md))

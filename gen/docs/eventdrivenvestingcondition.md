@@ -16,14 +16,14 @@ Type representation of complex event-driven vesting criteria. These conditions m
 
 # Type - Event-driven Vesting Condition Properties
 
-| Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
-| :-------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [event_description](#event_description) | `string`      | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_description")                                                     |
-| [event_occurred](#event_occurred)       | Merged        | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_occurred")                                                           |
-| [event_expiration](#event_expiration)   | Merged        | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_expiration")                                                       |
-| [share_amount](#share_amount)           | Not specified | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-share_amount.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/share_amount")                                                               |
-| [priority](#priority)                   | `integer`     | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/priority")                                                                       |
-| [dependent_vesting](#dependent_vesting) | `array`       | Optional | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/dependent_vesting") |
+| Property                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
+| :-------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [event_description](#event_description) | `string`  | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_description.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_description")                                                     |
+| [event_occurred](#event_occurred)       | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_occurred")                                                           |
+| [event_expiration](#event_expiration)   | Merged    | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_expiration")                                                       |
+| [share_amount](#share_amount)           | `string`  | Required | cannot be null | [Type - Event-driven Vesting Condition](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/share_amount")                                                                                                        |
+| [priority](#priority)                   | `integer` | Required | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/priority")                                                                       |
+| [dependent_vesting](#dependent_vesting) | `array`   | Optional | cannot be null | [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/dependent_vesting") |
 
 ## event_description
 
@@ -65,7 +65,7 @@ one (and only one) of
 
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_occurred-oneof-1.md "check type definition")
+*   [Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "check type definition")
 
 ## event_expiration
 
@@ -89,25 +89,35 @@ one (and only one) of
 
 *   [Untitled null in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-event_expiration-oneof-1.md "check type definition")
+*   [Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "check type definition")
 
 ## share_amount
 
-Number of shares which vest upon successfully meeting the condition
+Fixed-point string representation of a number (up to 10 decimal places supported)
 
 `share_amount`
 
 *   is required
 
-*   Type: unknown
+*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
 
 *   cannot be null
 
-*   defined in: [Type - Event-driven Vesting Condition](eventdrivenvestingcondition-properties-share_amount.md "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/share_amount")
+*   defined in: [Type - Event-driven Vesting Condition](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/share_amount")
 
 ### share_amount Type
 
-unknown
+`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+
+### share_amount Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[+-]?[0-9]+(\.[0-9]{1,10})?$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## priority
 

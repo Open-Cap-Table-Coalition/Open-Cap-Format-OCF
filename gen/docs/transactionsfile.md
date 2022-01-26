@@ -16,7 +16,7 @@ JSON containing file type identifier and list transactions
 
 all of
 
-*   [Untitled undefined type in File - Transactions](transactionsfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Transactions Properties
 

@@ -4,12 +4,14 @@
   "title": "File - Valuations",
   "description": "JSON containing file type identifier and list of valuations",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/base_file" }],
+  "allOf": [
+    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "/schema/objects/valuation"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/valuation"
       }
     },
     "file_type": {

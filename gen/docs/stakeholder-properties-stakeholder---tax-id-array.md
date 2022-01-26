@@ -12,4 +12,4 @@ The tax ids for this stakeholder
 
 ## tax_ids Type
 
-unknown\[]
+`object[]` ([Type - Tax Identifier](issuer-properties-issuer---tax-id-array-type---tax-identifier.md))

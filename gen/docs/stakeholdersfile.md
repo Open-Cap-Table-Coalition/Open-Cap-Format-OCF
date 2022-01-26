@@ -16,7 +16,7 @@ JSON containing file type identifier and list of stakeholders
 
 all of
 
-*   [Untitled undefined type in File - Stakeholders](stakeholdersfile-allof-0.md "check type definition")
+*   [Object - BaseFile](ocfmanifestfile-allof-object---basefile.md "check type definition")
 
 # File - Stakeholders Properties
 
@@ -33,7 +33,7 @@ all of
 
 *   is required
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Object - Stakeholder](stakeholdersfile-properties-items-object---stakeholder.md))
 
 *   cannot be null
 
@@ -41,7 +41,7 @@ all of
 
 ### items Type
 
-unknown\[]
+`object[]` ([Object - Stakeholder](stakeholdersfile-properties-items-object---stakeholder.md))
 
 ## file_type
 

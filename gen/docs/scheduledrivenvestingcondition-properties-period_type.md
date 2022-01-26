@@ -6,9 +6,9 @@ https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition
 
 Type of period (days, months, years)
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                          |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json*](../../schema/types/ScheduleDrivenVestingCondition.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                            |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [ScheduleDrivenVestingCondition.schema.json*](../flattened_schemas/ScheduleDrivenVestingCondition.schema.json "open original schema") |
 
 ## period_type Type
 

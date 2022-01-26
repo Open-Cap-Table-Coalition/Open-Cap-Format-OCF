@@ -1,10 +1,10 @@
 # Enum - Compounding Type Schema
 
 ```txt
-Enums.Compounding.schema.json#/properties/compounding_type
+https://opencaptablecoalition.com/schema/enums/compounding_type#/properties/compounding_type
 ```
 
-Enumeration of interest compounding type
+Enumeration of interest compounding types
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------ |

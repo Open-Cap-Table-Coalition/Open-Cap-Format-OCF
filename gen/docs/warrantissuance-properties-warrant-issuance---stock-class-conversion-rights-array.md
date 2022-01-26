@@ -12,4 +12,4 @@ What can this instrument convert into for a maturity or next equity financing co
 
 ## conversion_rights Type
 
-unknown\[]
+`object[]` ([Type - Stock Class Conversion Rights](stockclass-properties-stock-class---stock-class-conversion-rights-array-type---stock-class-conversion-rights.md))

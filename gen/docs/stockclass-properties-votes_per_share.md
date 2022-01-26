@@ -8,7 +8,7 @@ The number of votes each share of this stock class gets
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                    |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockClass.schema.json*](../../schema/objects/StockClass.schema.json "open original schema") |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [StockClass.schema.json*](../flattened_schemas/StockClass.schema.json "open original schema") |
 
 ## votes_per_share Type
 

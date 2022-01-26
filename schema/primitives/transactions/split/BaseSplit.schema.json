@@ -4,7 +4,11 @@
   "title": "Primitive - Security Split Transaction",
   "description": "Abstract object describing a security split transaction",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "resulting_security_ids": {
       "title": "Security Split - Resulting Security ID Array",
@@ -18,7 +22,7 @@
     },
     "split_ratio": {
       "description": "Ratio of old shares to new shares",
-      "$ref": "/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
     }
   },
   "required": ["resulting_security_ids", "split_ratio"]

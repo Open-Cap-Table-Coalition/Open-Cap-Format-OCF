@@ -4,7 +4,11 @@
   "title": "Object - Warrant Split Transaction",
   "description": "Object describing a split of a warrant security",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/split/base_split" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split"
+    }
+  ],
   "properties": {
     "object_type": {
       "const": "TX_WARRANT_SPLIT"

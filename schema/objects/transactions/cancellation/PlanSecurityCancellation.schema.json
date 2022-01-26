@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/cancellation/base_cancellation"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation"
     }
   ],
   "properties": {
@@ -15,7 +15,7 @@
     },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "id": {},
     "comments": {},

@@ -4,7 +4,11 @@
   "title": "Primitive - Security Cancellation Transaction",
   "description": "Abstract object describing fields common to all cancellation transaction objects",
   "type": "object",
-  "allOf": [{ "$ref": "/schema/primitives/transactions/base_transaction" }],
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    }
+  ],
   "properties": {
     "balance_security_id": {
       "description": "Identifier for the security that holds the remainder balance (for partial cancellations)",

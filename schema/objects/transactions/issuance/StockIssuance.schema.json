@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/issuance/base_issuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance"
     }
   ],
   "properties": {
@@ -19,19 +19,19 @@
     },
     "share_price": {
       "description": "The price per share paid for the stock by the holder",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "quantity": {
       "description": "Number of shares issued to the stakeholder",
-      "$ref": "/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "vesting_rules": {
       "description": "Vesting conditions applicable to this stock",
-      "$ref": "/schema/types/vesting_rules"
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting_rules"
     },
     "cost_basis": {
       "description": "The cost basis for this particular stock",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "stock_legend_ids": {
       "title": "Stock Issuance - Stock Legend ID Array",
@@ -43,7 +43,7 @@
     },
     "issued_from_parent_object": {
       "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
-      "$ref": "/schema/types/stock_parent"
+      "$ref": "https://opencaptablecoalition.com/schema/types/stock_parent"
     },
     "id": {},
     "comments": {},

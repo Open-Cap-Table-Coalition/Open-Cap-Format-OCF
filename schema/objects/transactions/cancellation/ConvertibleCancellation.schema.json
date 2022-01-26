@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "/schema/primitives/transactions/cancellation/base_cancellation"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation"
     }
   ],
   "properties": {
@@ -15,7 +15,7 @@
     },
     "amount": {
       "description": "Amount of monetary value cancelled",
-      "$ref": "/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
     },
     "id": {},
     "comments": {},

@@ -12,4 +12,4 @@ Phone numbers to reach the contact at
 
 ## phone_numbers Type
 
-unknown\[]
+`object[]` ([Type - Phone](contactinfo-properties-contact-info---phone-number-array-type---phone.md))

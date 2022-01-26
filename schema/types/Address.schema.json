@@ -7,7 +7,7 @@
   "properties": {
     "address_type": {
       "description": "What type of address is this (e.g. legal address, contact address, etc.)",
-      "$ref": "/schema/enums/address_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/address_type"
     },
     "street_suite": {
       "description": "Street address (multi-line string)",
