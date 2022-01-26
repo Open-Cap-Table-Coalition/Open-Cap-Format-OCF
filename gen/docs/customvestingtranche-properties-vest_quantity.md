@@ -1,4 +1,4 @@
-# Untitled string in Type - Custom Vesting Tranche Schema
+# Untitled undefined type in Type - Custom Vesting Tranche Schema
 
 ```txt
 https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_quantity
@@ -12,4 +12,4 @@ Quantity of shares for the tranche
 
 ## vest_quantity Type
 
-`string`
+unknown

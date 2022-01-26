@@ -18,7 +18,7 @@
         },
         {
           "$ref": "/schema/types/date",
-          "description": "Event has occurred at this datetime"
+          "description": "Event has occurred at this date"
         }
       ]
     },
@@ -31,7 +31,7 @@
         },
         {
           "$ref": "/schema/types/date",
-          "description": "Datetime @ which condition ceases to apply"
+          "description": "Date at which condition ceases to apply"
         }
       ]
     },

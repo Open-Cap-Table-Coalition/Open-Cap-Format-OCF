@@ -11,7 +11,7 @@
       "type": "string"
     },
     "stakeholder_id": {
-      "description": "Identifer for the stakeholder that holds legal title to this convertible",
+      "description": "Identifier for the stakeholder that holds legal title to this convertible",
       "type": "string"
     },
     "board_approval_date": {

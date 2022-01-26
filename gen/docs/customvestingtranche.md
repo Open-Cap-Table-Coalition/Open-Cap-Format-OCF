@@ -16,10 +16,10 @@ Type representation of a vesting tranche by date and quantity
 
 # Type - Custom Vesting Tranche Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [vest_date](#vest_date)         | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_date")         |
-| [vest_quantity](#vest_quantity) | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_quantity.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_quantity") |
+| Property                        | Type          | Required | Nullable       | Defined by                                                                                                                                                                          |
+| :------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [vest_date](#vest_date)         | `string`      | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_date")         |
+| [vest_quantity](#vest_quantity) | Not specified | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_quantity.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_quantity") |
 
 ## vest_date
 
@@ -47,7 +47,7 @@ Quantity of shares for the tranche
 
 *   is required
 
-*   Type: `string`
+*   Type: unknown
 
 *   cannot be null
 
@@ -55,4 +55,4 @@ Quantity of shares for the tranche
 
 ### vest_quantity Type
 
-`string`
+unknown
