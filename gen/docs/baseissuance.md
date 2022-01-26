@@ -48,7 +48,7 @@ A custom ID for this convertible (e.g. CN-1.)
 
 ## stakeholder_id
 
-Identifer for the stakeholder that holds legal title to this convertible
+Identifier for the stakeholder that holds legal title to this convertible
 
 `stakeholder_id`
 
