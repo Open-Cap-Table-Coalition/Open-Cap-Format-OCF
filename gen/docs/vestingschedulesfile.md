@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/vesting_schedules_file
 ```
 
-List of vesting schedules for the cap table (meant for use in validating vesting schedules loaded into an array from JSON or JSONL)
+JSON containing file type identifier and list of vesting schedules
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                     |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------- |

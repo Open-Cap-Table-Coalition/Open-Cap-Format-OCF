@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/files/vesting_schedules_file",
   "title": "File - Vesting Schedules",
-  "description": "List of vesting schedules for the cap table (meant for use in validating vesting schedules loaded into an array from JSON or JSONL)",
+  "description": "JSON containing file type identifier and list of vesting schedules",
   "type": "object",
   "allOf": [{ "$ref": "/schema/primitives/base_file" }],
   "properties": {

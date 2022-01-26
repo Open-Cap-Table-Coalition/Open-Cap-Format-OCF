@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/files/stakeholders_file",
   "title": "File - Stakeholders",
-  "description": "List of OCF Stakeholders (meant for use in validating transactions loaded into an array from a JSONL)",
+  "description": "JSON containing file type identifier and list of stakeholders",
   "allOf": [{ "$ref": "/schema/primitives/base_file" }],
   "type": "object",
   "properties": {

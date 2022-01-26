@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/transactions_file
 ```
 
-List of OCF Transactions (meant for use in validating transactions loaded into an array from a JSONL)
+JSON containing file type identifier and list transactions
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------- |

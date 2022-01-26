@@ -2,7 +2,7 @@
   "ocf_version": "1.0.0-a3",
   "file_type": "OCF_MANIFEST_FILE",
   "issuer": {
-    "object_type": "MALICE",
+    "object_type": "ISSUER",
     "id": "d3373e0a-4dd9-430f-8a56-3281f2800ede",
     "legal_name": "ACME Industries",
     "dba": "ACME & Co",

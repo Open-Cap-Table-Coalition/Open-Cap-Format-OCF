@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/stakeholders_file
 ```
 
-List of OCF Stakeholders (meant for use in validating transactions loaded into an array from a JSONL)
+JSON containing file type identifier and list of stakeholders
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------- |

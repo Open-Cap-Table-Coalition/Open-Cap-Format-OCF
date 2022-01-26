@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/stock_classes_file
 ```
 
-List of stock classes for the cap table (meant for use in validating stock classes loaded into an array from JSON or JSONL)
+JSON containing file type identifier and list of stock classes
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------- |

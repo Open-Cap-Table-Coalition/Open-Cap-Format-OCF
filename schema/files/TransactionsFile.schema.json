@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/files/transactions_file",
   "title": "File - Transactions",
-  "description": "List of OCF Transactions (meant for use in validating transactions loaded into an array from a JSONL)",
+  "description": "JSON containing file type identifier and list transactions",
   "type": "object",
   "allOf": [{ "$ref": "/schema/primitives/base_file" }],
   "properties": {
@@ -65,7 +65,7 @@
             "$ref": "/schema/objects/transactions/repurchase/stock_repurchase"
           },
           {
-            "$ref": "/schema/objects/transactions/repurchase_release/plan_security_repurchase_release"
+            "$ref": "/schema/objects/transactions/release/plan_security_release"
           },
           {
             "$ref": "/schema/objects/transactions/retraction/convertible_retraction"

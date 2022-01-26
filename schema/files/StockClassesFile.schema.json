@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/files/stock_classes_file",
   "title": "File - Stock Classes",
-  "description": "List of stock classes for the cap table (meant for use in validating stock classes loaded into an array from JSON or JSONL)",
+  "description": "JSON containing file type identifier and list of stock classes",
   "type": "object",
   "allOf": [{ "$ref": "/schema/primitives/base_file" }],
   "properties": {

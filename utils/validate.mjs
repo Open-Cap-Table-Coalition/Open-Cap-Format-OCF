@@ -107,7 +107,7 @@ async function getOcfFilesFromDir(path, verbose = false) {
  * with ocf file jsons, and it will first identify all files with .ocf.json
  * extensions, then load each one, then check for a file_type and then
  * validate against the file type's schema.
- * @param {*} path - path to the root directory to start search from
+ * @param {string} path - path to the root directory to start search from
  * @param {boolean} verbose - if true, will output status to console
  * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
  * @returns true if validations pass, false if otherwise
@@ -117,45 +117,57 @@ export async function validateOcfDirectory(
   verbose = false,
   test = false
 ) {
-  let results = true;
-  const ajv = await getOcfValidator(verbose);
-  const ocf_paths = await getOcfFilesFromDir(path, verbose);
+  try {
+    let results = true;
+    const ajv = await getOcfValidator(verbose);
+    const ocf_paths = await getOcfFilesFromDir(path, verbose);
 
-  if (verbose) console.log("\n--- Loading OCF File Buffers... ---------------");
-  const ocf_file_buffers = await Promise.all(
-    ocf_paths.map((path) => readFile(path))
-  );
-  if (verbose) console.log("Buffers loaded");
+    if (verbose)
+      console.log("\n--- Loading OCF File Buffers... ---------------");
+    const ocf_file_buffers = await Promise.all(
+      ocf_paths.map((path) => readFile(path))
+    );
 
-  if (verbose) console.log("\n--- Validate OCF Files ---------------");
-  for (let i = 0; i < ocf_file_buffers.length; i++) {
-    if (verbose) console.log(`\n${i + 1})\tAnalyze File: ${ocf_paths[i]}`);
-    const obj = JSON.parse(ocf_file_buffers[i].toString());
-    if (verbose) {
-      console.log(`\tOCF File Type: ${obj.file_type}`);
+    if (verbose) console.log("\n--- Validate OCF Files ---------------");
+    for (let i = 0; i < ocf_file_buffers.length; i++) {
+      if (verbose) console.log(`\n${i + 1})\tAnalyze File: ${ocf_paths[i]}`);
+      const obj = JSON.parse(ocf_file_buffers[i].toString());
+      if (verbose) {
+        console.log(`\tOCF File Type: ${obj.file_type}`);
+        console.log(
+          `\tFile Type URI: ${URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]}`
+        );
+      }
+      const validator = ajv.getSchema(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
+      const valid = validator(obj);
+
+      if (!valid) {
+        if (test)
+          core.setFailed(
+            `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
+            validator.errors
+          );
+        if (verbose) {
+          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+          console.log(validator.errors);
+        }
+        return false;
+      } else {
+        if (verbose) console.log("\n\t** VALID OCF **");
+      }
+    }
+    return true;
+  } catch (e) {
+    if (test) {
+      core.setFailed(`\t\tOCF Validation failed due to error: ${e.message}`);
+    } else if (verbose) {
+      console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
       console.log(
-        `\tFile Type URI: ${URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]}`
+        `\t\tOCF Schema Validations failed due to error: ${e.message}`
       );
     }
-    const validator = ajv.getSchema(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
-    const valid = validator(obj);
-
-    if (!valid) {
-      if (test)
-        core.setFailed(
-          `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
-          validator.errors
-        );
-      if (verbose) {
-        console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-        console.log(validator.errors);
-      }
-      results = false;
-    } else {
-      if (verbose) console.log("\n\t** VALID OCF **");
-    }
+    return false;
   }
-  return results;
 }
 
 /**
@@ -170,7 +182,8 @@ export async function validateOcfDirectory(
  * If you switch the validation mode to log, you will get a better validation error when
  * you try to use the validator. This may not give you behavior you want, however.
  * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
- * @returns Ajv object which can be used to validate against the schema
+ * @returns Ajv object which can be used to validate against the schema or
+ *          undefined if schemas fail to load.
  */
 export async function getOcfValidator(
   verbose = false,
@@ -213,21 +226,38 @@ export async function getOcfValidator(
   }
 }
 
+/**
+ *
+ * Given the path of an ocf file of specified type,
+ * check that it is valid by loading appropriate validator.
+ *
+ * @param {string} filepath - path to the ocf file to test
+ * @param {boolean} verbose - if true, will output status to console
+ * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
+ * @returns - true if file is valid ocf, false otherwise
+ */
 export async function validateOcfFileAtPath(
   filepath,
   verbose = false,
   test = false
 ) {
-  /**
-   * Given the path of an ocf file of specified type,
-   * check that it is valid by loading appropriate validator.
-   */
-  if (verbose) console.log(`\nEvaluate OCF instance @ ${filepath}`);
-  const ocf_instance_str = fs.readFileSync(filepath);
-  const ocf_instance = JSON.parse(ocf_instance_str);
-  if (verbose)
-    console.log("\n\n--- OCF Instance ---------------\n", ocf_instance);
-  await ValidateOcfFile(ocf_instance, verbose, test);
+  try {
+    if (verbose) console.log(`\nEvaluate OCF instance @ ${filepath}`);
+    const ocf_instance_str = fs.readFileSync(filepath);
+    const ocf_instance = JSON.parse(ocf_instance_str);
+    if (verbose)
+      console.log("\n\n--- OCF Instance ---------------\n", ocf_instance);
+    await ValidateOcfFile(ocf_instance, verbose, test);
+  } catch (e) {
+    if (test) {
+      core.setFailed(`\t\tFailed to validate OCF file at path: ${e.message}`);
+    } else if (verbose) {
+      console.log("\t\tXX\tFAILURE DUE TO ERRORS:");
+      console.log(`\t\tFailed to validate OCF file at path: ${ele.message}`);
+    }
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -255,7 +285,7 @@ export async function ValidateOcfFile(
     if (!valid) {
       if (test) {
         core.setFailed(
-          `\t\tOCF OCF file obj validation failed: ${validator.errors}`
+          `\t\tOCF file obj validation failed: ${validator.errors}`
         );
       } else if (verbose) {
         console.log("\t\tXX FAILURE DUE TO ERRORS:");
@@ -267,10 +297,10 @@ export async function ValidateOcfFile(
     }
   } catch (e) {
     if (test) {
-      core.setFailed(`\t\tOCF OCF file obj validation failed: ${e.message}`);
+      core.setFailed(`\t\tOCF file obj validation failed: ${e.message}`);
     } else if (verbose) {
       console.log("\t\tXX\tFAILURE DUE TO ERRORS:");
-      console.log(`\t\tOCF OCF file obj validation failed: ${e.message}`);
+      console.log(`\t\tOCF file obj validation failed: ${e.message}`);
     }
     return false;
   }

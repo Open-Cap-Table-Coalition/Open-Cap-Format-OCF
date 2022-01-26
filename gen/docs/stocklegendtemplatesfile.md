@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/stock_legend_templates_file
 ```
 
-List of Stock Legend Templates (meant for use in validating transactions loaded into an array from JSON or JSONL)
+JSON containing file type identifier and list of stock legend templates
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------- |

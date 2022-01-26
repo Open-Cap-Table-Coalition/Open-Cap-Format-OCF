@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/files/valuations_file",
   "title": "File - Valuations",
-  "description": "List of valuations for the issuer (meant for use in validating valuations loaded into an array from JSON or JSONL)",
+  "description": "JSON containing file type identifier and list of valuations",
   "type": "object",
   "allOf": [{ "$ref": "/schema/primitives/base_file" }],
   "properties": {

@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/stock_plans_file
 ```
 
-List of stock plans for the issuer (meant for use in validating stock plans loaded into an array from JSON or JSONL)
+JSON containing file type identifier and list of stock plans
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                         |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |

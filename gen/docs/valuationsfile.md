@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/valuations_file
 ```
 
-List of valuations for the issuer (meant for use in validating valuations loaded into an array from JSON or JSONL)
+JSON containing file type identifier and list of valuations
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                         |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |
