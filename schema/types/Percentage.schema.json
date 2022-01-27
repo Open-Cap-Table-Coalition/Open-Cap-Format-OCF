@@ -4,5 +4,5 @@
   "title": "Type - Percentage",
   "description": "Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)",
   "type": "string",
-  "pattern": "^(0+)?(\\.[0-9]{1,10})?$|^(0+)?1(\\.0{1,10})?$"
+  "pattern": "^0?(\\.[0-9]{1,10})?$|^1(\\.0{1,10})?$"
 }
