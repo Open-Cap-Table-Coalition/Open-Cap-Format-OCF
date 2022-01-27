@@ -4,11 +4,6 @@
   "title": "Primitive - Security Issuance Transaction",
   "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {
     "custom_id": {
       "description": "A custom ID for this convertible (e.g. CN-1.)",

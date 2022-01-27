@@ -4,11 +4,6 @@
   "title": "Primitive - Security Acceptance Transaction",
   "description": "Abstract object describing a security acceptance transaction",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {},
   "required": []
 }

@@ -4,11 +4,6 @@
   "title": "Primitive - Security Release Transaction",
   "description": "Abstract object describing fields common to all release transaction objects",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {
     "settlement_date": {
       "description": "Date of settlement",
