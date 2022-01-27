@@ -7,7 +7,7 @@
     "generate-docs": "jsonschema2md --input schema --out gen/docs -x -",
     "prepare": "husky install",
     "validate-ocf-file-schemas": "node ./utils/validate.mjs validate-ocf-schema -v -t",
-    "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -p ./tests/examples/files -v -t"
+    "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -p ./samples -v -t"
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
