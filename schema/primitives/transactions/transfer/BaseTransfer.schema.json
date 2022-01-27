@@ -4,11 +4,6 @@
   "title": "Primitive - Security Transfer Transaction",
   "description": "Abstract object describing a security transfer or secondary sale transaction",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {
     "consideration": {
       "description": "Consideration for the security",

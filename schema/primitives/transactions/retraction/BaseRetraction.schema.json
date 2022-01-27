@@ -4,11 +4,6 @@
   "title": "Primitive - Security Retraction Transaction",
   "description": "Abstract object describing a security retraction transaction",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {
     "reason_text": {
       "description": "Reason for the retraction",

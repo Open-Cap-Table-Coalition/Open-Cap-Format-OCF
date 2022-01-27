@@ -4,11 +4,6 @@
   "title": "Primitive - Security Split Transaction",
   "description": "Abstract object describing a security split transaction",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
-    }
-  ],
   "properties": {
     "resulting_security_ids": {
       "title": "Security Split - Resulting Security ID Array",
