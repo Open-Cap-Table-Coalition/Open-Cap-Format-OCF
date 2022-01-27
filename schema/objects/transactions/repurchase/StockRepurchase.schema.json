@@ -6,6 +6,12 @@
   "type": "object",
   "allOf": [
     {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+    },
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+    },
+    {
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase"
     }
   ],
