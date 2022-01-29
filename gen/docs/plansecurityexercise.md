@@ -16,11 +16,11 @@ Object describing a plan security exercise transaction
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Exercise Transaction](plansecurityexercise-allof-primitive---security-exercise-transaction.md "check type definition")
 
 # Object - Plan Security Exercise Transaction Properties
 

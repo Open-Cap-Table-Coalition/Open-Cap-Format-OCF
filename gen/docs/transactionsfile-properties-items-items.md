@@ -18,107 +18,107 @@ one (and only one) of
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Acceptance Transaction](convertibleacceptance-allof-primitive---security-acceptance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Acceptance Transaction](convertibleacceptance-allof-primitive---security-acceptance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Acceptance Transaction](convertibleacceptance-allof-primitive---security-acceptance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Acceptance Transaction](convertibleacceptance-allof-primitive---security-acceptance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Cancellation Transaction](convertiblecancellation-allof-primitive---security-cancellation-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Cancellation Transaction](convertiblecancellation-allof-primitive---security-cancellation-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Cancellation Transaction](convertiblecancellation-allof-primitive---security-cancellation-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Cancellation Transaction](convertiblecancellation-allof-primitive---security-cancellation-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Conversion Transaction](convertibleconversion-allof-primitive---security-conversion-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Conversion Transaction](convertibleconversion-allof-primitive---security-conversion-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Exercise Transaction](plansecurityexercise-allof-primitive---security-exercise-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Exercise Transaction](plansecurityexercise-allof-primitive---security-exercise-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Issuance Transaction](convertibleissuance-allof-primitive---security-issuance-transaction.md "check type definition")
 
 *   any of
 
@@ -128,128 +128,128 @@ one (and only one) of
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Issuance Transaction](convertibleissuance-allof-primitive---security-issuance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Issuance Transaction](convertibleissuance-allof-primitive---security-issuance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Reissuance Transaction](stockreissuance-allof-primitive---security-reissuance-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Repurchase Transaction](stockrepurchase-allof-primitive---security-repurchase-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Release Transaction](plansecurityrelease-allof-primitive---security-release-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Retraction Transaction](convertibleretraction-allof-primitive---security-retraction-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
-*   all of
-
-    *   all of
-
-        *   all of
-
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Retraction Transaction](convertibleretraction-allof-primitive---security-retraction-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Retraction Transaction](convertibleretraction-allof-primitive---security-retraction-transaction.md "check type definition")
 
 *   all of
 
-    *   all of
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-        *   all of
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-            *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+    *   [Primitive - Security Retraction Transaction](convertibleretraction-allof-primitive---security-retraction-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Split Transaction](plansecuritysplit-allof-primitive---security-split-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Split Transaction](plansecuritysplit-allof-primitive---security-split-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Split Transaction](plansecuritysplit-allof-primitive---security-split-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Transfer Transaction](convertibletransfer-allof-primitive---security-transfer-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Transfer Transaction](convertibletransfer-allof-primitive---security-transfer-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Transfer Transaction](convertibletransfer-allof-primitive---security-transfer-transaction.md "check type definition")
+
+*   all of
+
+    *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+    *   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
+
+    *   [Primitive - Security Transfer Transaction](convertibletransfer-allof-primitive---security-transfer-transaction.md "check type definition")

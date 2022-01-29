@@ -16,7 +16,7 @@ Object describing a class of stock issued by the issuer
 
 all of
 
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Class Properties
 

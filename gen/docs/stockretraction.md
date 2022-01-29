@@ -16,11 +16,11 @@ Object describing a retraction of a stock security
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Retraction Transaction](convertibleretraction-allof-primitive---security-retraction-transaction.md "check type definition")
 
 # Object - Stock Retraction Transaction Properties
 

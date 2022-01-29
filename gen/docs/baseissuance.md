@@ -14,12 +14,6 @@ Abstract object describing fields common to all issuance objects
 
 `object` ([Primitive - Security Issuance Transaction](baseissuance.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Issuance Transaction Properties
 
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |

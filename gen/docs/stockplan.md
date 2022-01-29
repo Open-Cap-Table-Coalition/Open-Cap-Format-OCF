@@ -16,7 +16,7 @@ Object describing a plan which stock options are issued from
 
 all of
 
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 # Object - Stock Plan Properties
 

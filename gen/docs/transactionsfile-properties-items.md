@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items
 ```
 
-
+List of OCF transaction objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------ |

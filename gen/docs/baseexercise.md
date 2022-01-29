@@ -14,12 +14,6 @@ Abstract object describing fields common to all exercise transaction objects
 
 `object` ([Primitive - Security Exercise Transaction](baseexercise.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Exercise Transaction Properties
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |

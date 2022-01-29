@@ -16,11 +16,11 @@ Object describing a warrant acceptance transaction
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Acceptance Transaction](convertibleacceptance-allof-primitive---security-acceptance-transaction.md "check type definition")
 
 # Object - Warrant Acceptance Transaction Properties
 

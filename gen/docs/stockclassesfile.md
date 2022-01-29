@@ -27,7 +27,7 @@ all of
 
 ## items
 
-
+List of OCF stock class objects
 
 `items`
 

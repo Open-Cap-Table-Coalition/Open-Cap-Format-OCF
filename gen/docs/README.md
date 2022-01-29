@@ -192,6 +192,8 @@
 
 *   [Type - Numeric](./numeric.md "Fixed-point string representation of a number (up to 10 decimal places supported)") – `https://opencaptablecoalition.com/schema/types/numeric`
 
+*   [Type - Percentage](./percentage.md "Fixed-point string representation of a percentage as a decimal between 0") – `https://opencaptablecoalition.com/schema/types/percentage`
+
 *   [Type - Phone](./phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/phone`
 
 *   [Type - Ratio](./ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/ratio`
@@ -270,19 +272,19 @@
 
 *   [Stock Issuance - Stock Legend ID Array](./stockissuance-properties-stock-issuance---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids`
 
-*   [Untitled array in File - Stakeholders](./stakeholdersfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items`
+*   [Untitled array in File - Stakeholders](./stakeholdersfile-properties-items.md "List of OCF stakeholder objects") – `https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items`
 
-*   [Untitled array in File - Stock Classes](./stockclassesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items`
+*   [Untitled array in File - Stock Classes](./stockclassesfile-properties-items.md "List of OCF stock class objects") – `https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items`
 
-*   [Untitled array in File - Stock Legend Templates](./stocklegendtemplatesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/properties/items`
+*   [Untitled array in File - Stock Legend Templates](./stocklegendtemplatesfile-properties-items.md "List of OCF stock legend template objects") – `https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/properties/items`
 
-*   [Untitled array in File - Stock Plans](./stockplansfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/items`
+*   [Untitled array in File - Stock Plans](./stockplansfile-properties-items.md "List of OCF stock plan objects") – `https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/items`
 
-*   [Untitled array in File - Transactions](./transactionsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items`
+*   [Untitled array in File - Transactions](./transactionsfile-properties-items.md "List of OCF transaction objects") – `https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items`
 
-*   [Untitled array in File - Valuations](./valuationsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/valuations_file#/properties/items`
+*   [Untitled array in File - Valuations](./valuationsfile-properties-items.md "List of OCF valuation objects") – `https://opencaptablecoalition.com/schema/files/valuations_file#/properties/items`
 
-*   [Untitled array in File - Vesting Schedules](./vestingschedulesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items`
+*   [Untitled array in File - Vesting Schedules](./vestingschedulesfile-properties-items.md "List of OCF vesting schedule objects") – `https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items`
 
 *   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments`
 

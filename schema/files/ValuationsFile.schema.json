@@ -10,6 +10,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF valuation objects",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/objects/valuation"
       }

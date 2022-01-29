@@ -16,11 +16,11 @@ Object describing a re-issuance of stock
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Reissuance Transaction](stockreissuance-allof-primitive---security-reissuance-transaction.md "check type definition")
 
 # Object - Stock Re-issuance Transaction Properties
 
