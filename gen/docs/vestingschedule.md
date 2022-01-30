@@ -16,7 +16,7 @@ Object describing a strictly time-based vesting schedule
 
 all of
 
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 # Object - Vesting Schedule Properties
 

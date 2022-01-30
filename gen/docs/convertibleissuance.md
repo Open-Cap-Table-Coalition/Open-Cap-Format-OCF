@@ -16,11 +16,11 @@ Object describing convertible instrument issuance transaction by the issuer and 
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Issuance Transaction](convertibleissuance-allof-primitive---security-issuance-transaction.md "check type definition")
 
 # Object - Convertible Issuance Transaction Properties
 
@@ -41,8 +41,8 @@ all of
 | [compounding_type](#compounding_type)                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-enum---compounding-type.md "https://opencaptablecoalition.com/schema/enums/compounding_type#/properties/compounding_type")                                                                             |
 | [pro_rata](#pro_rata)                                     | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/pro_rata")                                                                                                                   |
 | [conversion_valuation_cap](#conversion_valuation_cap)     | `object`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/conversion_valuation_cap")                                                                                            |
-| [conversion_discount](#conversion_discount)               | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_discount")                                                                                                        |
-| [conversion_fixed_ownership](#conversion_fixed_ownership) | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_fixed_ownership")                                                                                                 |
+| [conversion_discount](#conversion_discount)               | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---percentage.md "https://opencaptablecoalition.com/schema/types/percentage#/properties/conversion_discount")                                                                                      |
+| [conversion_fixed_ownership](#conversion_fixed_ownership) | `string`      | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---percentage-1.md "https://opencaptablecoalition.com/schema/types/percentage#/properties/conversion_fixed_ownership")                                                                             |
 | [seniority](#seniority)                                   | `integer`     | Required | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-seniority.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/seniority")                                                                      |
 | [id](#id)                                                 | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/id")                                                                                    |
 | [comments](#comments)                                     | Not specified | Optional | cannot be null | [Object - Convertible Issuance Transaction](convertibleissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/comments")                                                                        |
@@ -422,59 +422,59 @@ Type represention of an amount of money in the specified currency
 
 ## conversion_discount
 
-Fixed-point string representation of a number (up to 10 decimal places supported)
+Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)
 
 `conversion_discount`
 
 *   is optional
 
-*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+*   Type: `string` ([Type - Percentage](convertibleissuance-properties-type---percentage-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_discount")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---percentage-1.md "https://opencaptablecoalition.com/schema/types/percentage#/properties/conversion_discount")
 
 ### conversion_discount Type
 
-`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+`string` ([Type - Percentage](convertibleissuance-properties-type---percentage-1.md))
 
 ### conversion_discount Constraints
 
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^[+-]?[0-9]+(\.[0-9]{1,10})?$
+^0?(\.[0-9]{1,10})?$|^1(\.0{1,10})?$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E0%3F\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24%7C%5E1\(%5C.0%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## conversion_fixed_ownership
 
-Fixed-point string representation of a number (up to 10 decimal places supported)
+Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)
 
 `conversion_fixed_ownership`
 
 *   is optional
 
-*   Type: `string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+*   Type: `string` ([Type - Percentage](convertibleissuance-properties-type---percentage-1.md))
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Issuance Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/conversion_fixed_ownership")
+*   defined in: [Object - Convertible Issuance Transaction](convertibleissuance-properties-type---percentage-1.md "https://opencaptablecoalition.com/schema/types/percentage#/properties/conversion_fixed_ownership")
 
 ### conversion_fixed_ownership Type
 
-`string` ([Type - Numeric](ratio-properties-type---numeric-1.md))
+`string` ([Type - Percentage](convertibleissuance-properties-type---percentage-1.md))
 
 ### conversion_fixed_ownership Constraints
 
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^[+-]?[0-9]+(\.[0-9]{1,10})?$
+^0?(\.[0-9]{1,10})?$|^1(\.0{1,10})?$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5B%2B-%5D%3F%5B0-9%5D%2B\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E0%3F\(%5C.%5B0-9%5D%7B1%2C10%7D\)%3F%24%7C%5E1\(%5C.0%7B1%2C10%7D\)%3F%24 "try regular expression with regexr.com")
 
 ## seniority
 

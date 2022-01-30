@@ -106,7 +106,7 @@ Object describing the issuer of the cap table (the company whose cap table this 
 
 all of
 
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 ## comments
 

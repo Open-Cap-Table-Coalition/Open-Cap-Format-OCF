@@ -14,12 +14,6 @@ Abstract object describing fields common to all release transaction objects
 
 `object` ([Primitive - Security Release Transaction](baserelease.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Release Transaction Properties
 
 | Property                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                               |

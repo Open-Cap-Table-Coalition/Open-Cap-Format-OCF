@@ -16,11 +16,11 @@ Object describing a split of a plan security
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Split Transaction](plansecuritysplit-allof-primitive---security-split-transaction.md "check type definition")
 
 # Object - Plan Security Split Transaction Properties
 

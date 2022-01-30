@@ -16,11 +16,11 @@ Object describing a stock repurchase transaction
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Repurchase Transaction](stockrepurchase-allof-primitive---security-repurchase-transaction.md "check type definition")
 
 # Object - Stock Repurchase Transaction Properties
 

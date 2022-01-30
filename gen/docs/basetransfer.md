@@ -14,12 +14,6 @@ Abstract object describing a security transfer or secondary sale transaction
 
 `object` ([Primitive - Security Transfer Transaction](basetransfer.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Transfer Transaction Properties
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |

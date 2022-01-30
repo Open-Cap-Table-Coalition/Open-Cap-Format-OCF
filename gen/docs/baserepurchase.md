@@ -14,12 +14,6 @@ Abstract object describing common properties to a repurchase transaction
 
 `object` ([Primitive - Security Repurchase Transaction](baserepurchase.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Repurchase Transaction Properties
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |

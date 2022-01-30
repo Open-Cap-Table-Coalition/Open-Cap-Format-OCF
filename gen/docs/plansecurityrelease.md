@@ -16,11 +16,11 @@ Object describing a plan security release transaction
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Release Transaction](plansecurityrelease-allof-primitive---security-release-transaction.md "check type definition")
 
 # Object - Plan Security Release Transaction Properties
 
