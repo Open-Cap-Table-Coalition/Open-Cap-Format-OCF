@@ -192,6 +192,8 @@
 
 *   [Type - Numeric](./numeric.md "Fixed-point string representation of a number (up to 10 decimal places supported)") – `https://opencaptablecoalition.com/schema/types/numeric`
 
+*   [Type - Percentage](./percentage.md "Fixed-point string representation of a percentage as a decimal between 0") – `https://opencaptablecoalition.com/schema/types/percentage`
+
 *   [Type - Phone](./phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/phone`
 
 *   [Type - Ratio](./ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/ratio`

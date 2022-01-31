@@ -16,11 +16,11 @@ Object describing a transfer or secondary sale of a warrant security
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Transfer Transaction](convertibletransfer-allof-primitive---security-transfer-transaction.md "check type definition")
 
 # Object - Warrant Transfer Transaction Properties
 

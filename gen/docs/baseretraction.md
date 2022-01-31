@@ -14,12 +14,6 @@ Abstract object describing a security retraction transaction
 
 `object` ([Primitive - Security Retraction Transaction](baseretraction.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Retraction Transaction Properties
 
 | Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                    |

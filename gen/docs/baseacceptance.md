@@ -14,12 +14,6 @@ Abstract object describing a security acceptance transaction
 
 `object` ([Primitive - Security Acceptance Transaction](baseacceptance.md))
 
-all of
-
-*   all of
-
-    *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Acceptance Transaction Properties
 
 | Property | Type | Required | Nullable | Defined by |

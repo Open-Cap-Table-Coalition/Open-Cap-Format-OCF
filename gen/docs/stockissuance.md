@@ -16,11 +16,11 @@ Object describing a stock issuance transaction by the issuer and held by a stake
 
 all of
 
-*   all of
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
-    *   all of
+*   [Primitive - Security Transaction](convertibletransfer-allof-primitive---security-transaction.md "check type definition")
 
-        *   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Primitive - Security Issuance Transaction](convertibleissuance-allof-primitive---security-issuance-transaction.md "check type definition")
 
 # Object - Stock Issuance Transaction Properties
 

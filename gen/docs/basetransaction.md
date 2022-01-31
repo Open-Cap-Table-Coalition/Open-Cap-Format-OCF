@@ -14,10 +14,6 @@ Abstract transaction object to be extended by all other transaction objects
 
 `object` ([Primitive - Security Transaction](basetransaction.md))
 
-all of
-
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
-
 # Primitive - Security Transaction Properties
 
 | Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                |

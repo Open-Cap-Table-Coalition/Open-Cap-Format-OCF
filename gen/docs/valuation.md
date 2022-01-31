@@ -16,7 +16,7 @@ Object describing a valuation used in the cap table
 
 all of
 
-*   [Object - BaseObject](basetransaction-allof-object---baseobject.md "check type definition")
+*   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
 
 # Object - Valuation Properties
 
