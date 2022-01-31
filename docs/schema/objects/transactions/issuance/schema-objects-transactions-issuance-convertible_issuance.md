@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_CONVERTIBLE_ISSUANCE`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance](/docs/schema/primitives/transactions/issuance/schema-primitives-transactions-issuance-base_issuance.md)
-
-**Composed From:**
 
 **Properties:**
 

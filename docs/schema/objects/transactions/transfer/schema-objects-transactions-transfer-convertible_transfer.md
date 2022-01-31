@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_CONVERTIBLE_TRANSFER`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer](/docs/schema/primitives/transactions/transfer/schema-primitives-transactions-transfer-base_transfer.md)
-
-**Composed From:**
 
 **Properties:**
 

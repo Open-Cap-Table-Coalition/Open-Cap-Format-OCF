@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_PLAN_SECURITY_RETRACTION`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction](/docs/schema/primitives/transactions/retraction/schema-primitives-transactions-retraction-base_retraction.md)
-
-**Composed From:**
 
 **Properties:**
 

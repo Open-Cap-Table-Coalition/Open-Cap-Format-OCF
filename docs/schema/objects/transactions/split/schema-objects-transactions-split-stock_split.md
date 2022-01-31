@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_STOCK_SPLIT`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split](/docs/schema/primitives/transactions/split/schema-primitives-transactions-split-base_split.md)
-
-**Composed From:**
 
 **Properties:**
 

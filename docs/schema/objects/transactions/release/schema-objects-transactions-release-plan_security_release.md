@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_PLAN_SECURITY_RELEASE`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release](/docs/schema/primitives/transactions/release/schema-primitives-transactions-release-base_release.md)
-
-**Composed From:**
 
 **Properties:**
 

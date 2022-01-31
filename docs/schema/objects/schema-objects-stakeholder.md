@@ -10,9 +10,9 @@
 
 **Data Type:** `OCF Object - STAKEHOLDER`
 
-- [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
-
 **Composed From:**
+
+- [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 
 **Properties:**
 

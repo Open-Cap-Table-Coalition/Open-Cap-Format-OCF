@@ -10,11 +10,11 @@
 
 **Data Type:** `OCF Object - TX_STOCK_REISSUANCE`
 
+**Composed From:**
+
 - [https://opencaptablecoalition.com/schema/primitives/base_object](/docs/schema/primitives/schema-primitives-base_object.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction](/docs/schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
 - [https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance](/docs/schema/primitives/transactions/reissuance/schema-primitives-transactions-reissuance-base_reissuance.md)
-
-**Composed From:**
 
 **Properties:**
 

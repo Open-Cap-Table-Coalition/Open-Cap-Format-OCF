@@ -87,7 +87,7 @@ definitive documentation of the necessary properties and all details thereof.
 
 ## How to Contribute
 
-If you would like to suggest a bug-fix or correction to the existing spec, please go head and submit a pull request
+If you would like to suggest a bug-fix or correction to the existing spec, please go ahead and submit a pull request
 with the change. Please consult our [contributor guidelines](/docs/CONTRIBUTING.MD) before submitting.
 
 If you have a suggestion, feature request or other substantive change you think should be incorporated into OCF,

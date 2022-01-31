@@ -10,9 +10,9 @@
 
 **Data Type:** `OCF_VALUATIONS_FILE`
 
-- [https://opencaptablecoalition.com/schema/primitives/base_file](/docs/schema/primitives/schema-primitives-base_file.md)
-
 **Composed From:**
+
+- [https://opencaptablecoalition.com/schema/primitives/base_file](/docs/schema/primitives/schema-primitives-base_file.md)
 
 **Properties:**
 
