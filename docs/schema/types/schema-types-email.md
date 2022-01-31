@@ -12,9 +12,9 @@ _Type representation of an email address_
 
 **Properties:**
 
-| Property      | Type                                                                                                                                            | Description                                        | Required   |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------- |
-| email_type    | `ENUM - EMAIL TYPE`</br>_Description:_ Enumeration of email types</br>**ONE OF:**</br>&bull; PERSONAL</br>&bull; BUSINESS</br>&bull; OTHER</br> | Type of e-mail address (e.g. personal or business) | `REQUIRED` |
-| email_address | `STRING`                                                                                                                                        | A valid e-mail address                             | `REQUIRED` |
+| Property      | Type                                                                                                                                                      | Description                                        | Required   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------- |
+| email_type    | `ENUM - EMAIL TYPE`</br></br>_Description:_ Enumeration of email types</br></br>**ONE OF:**</br>&bull; PERSONAL</br>&bull; BUSINESS</br>&bull; OTHER</br> | Type of e-mail address (e.g. personal or business) | `REQUIRED` |
+| email_address | `STRING`                                                                                                                                                  | A valid e-mail address                             | `REQUIRED` |
 
 **Source Code:** [schema/types/Email.schema.json](/schema/types/Email.schema.json)
