@@ -1,4 +1,4 @@
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Logo.png)
+![](./docs/images/OCF%20Logo.png)
 
 # Open Cap Table Format (OCF)
 
@@ -41,7 +41,7 @@ There are currently 8 file types that make up a cap table:
 
 **At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf extension:**
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Container.png)
+![](./docs/images/OCF%20Container.png)
 
 We are working on sample tooling to interact with compressed \*.ocf files.
 
@@ -54,7 +54,7 @@ see a full list of event transactions supported in our [transactions schemas fol
 
 Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/Transaction%20Stack%20Animation.gif)
+![](./docs/images/Transaction%20Stack%20Animation.gif)
 
 ### Schema Composition
 

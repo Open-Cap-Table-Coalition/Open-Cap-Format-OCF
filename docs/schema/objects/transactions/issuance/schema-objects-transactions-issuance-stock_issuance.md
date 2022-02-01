@@ -36,7 +36,7 @@
 | stakeholder_id            | `STRING`                                                                                                                      | Identifier for the stakeholder that holds legal title to this convertible                                                 | `REQUIRED` |
 | board_approval_date       | [schema/types/date](/docs/schema/types/schema-types-date.md)                                                                  | Date of board approval for the convertible                                                                                | `REQUIRED` |
 | consideration             | [schema/types/monetary](/docs/schema/types/schema-types-monetary.md)                                                          | Consideration for the security                                                                                            | `REQUIRED` |
-| security_law_exemptions   | [schema/types/security_exemption](/docs/schema/types/schema-types-security_exemption.md)                                      | List of security law exemptions (and applicable jurisdictions) for this convertible                                       | `REQUIRED` |
+| security_law_exemptions   | [ [schema/types/security_exemption](/docs/schema/types/schema-types-security_exemption.md) ]                                  | List of security law exemptions (and applicable jurisdictions) for this convertible                                       | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/issuance/StockIssuance.schema.json](/schema/objects/transactions/issuance/StockIssuance.schema.json)
 
