@@ -6,15 +6,15 @@
   "type": "object",
   "properties": {
     "custom_id": {
-      "description": "A custom ID for this convertible (e.g. CN-1.)",
+      "description": "A custom ID for this security (e.g. CN-1.)",
       "type": "string"
     },
     "stakeholder_id": {
-      "description": "Identifier for the stakeholder that holds legal title to this convertible",
+      "description": "Identifier for the stakeholder that holds legal title to this security",
       "type": "string"
     },
     "board_approval_date": {
-      "description": "Date of board approval for the convertible",
+      "description": "Date of board approval for the security",
       "$ref": "https://opencaptablecoalition.com/schema/types/date"
     },
     "consideration": {
@@ -23,7 +23,7 @@
     },
     "security_law_exemptions": {
       "title": "Security Issuance - Security Exemption Array",
-      "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
+      "description": "List of security law exemptions (and applicable jurisdictions) for this security",
       "type": "array",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/types/security_exemption"
