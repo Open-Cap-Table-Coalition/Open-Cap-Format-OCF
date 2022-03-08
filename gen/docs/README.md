@@ -262,7 +262,7 @@
 
 *   [Security Exercise - Resulting Security ID Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids`
 
-*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions`
+*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this security") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions`
 
 *   [Security Reissuance - Resulting Security ID Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a reissuance") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids`
 
