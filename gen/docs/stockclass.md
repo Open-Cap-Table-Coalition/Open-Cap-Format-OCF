@@ -207,7 +207,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## par_value
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `par_value`
 
@@ -225,7 +225,7 @@ Type represention of an amount of money in the specified currency
 
 ## price_per_share
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `price_per_share`
 

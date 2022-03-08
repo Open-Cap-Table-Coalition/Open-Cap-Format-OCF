@@ -26,7 +26,7 @@ Abstract object describing fields common to all issuance objects
 
 ## custom_id
 
-A custom ID for this convertible (e.g. CN-1.)
+A custom ID for this security (e.g. CN-1.)
 
 `custom_id`
 
@@ -44,7 +44,7 @@ A custom ID for this convertible (e.g. CN-1.)
 
 ## stakeholder_id
 
-Identifier for the stakeholder that holds legal title to this convertible
+Identifier for the stakeholder that holds legal title to this security
 
 `stakeholder_id`
 
@@ -84,7 +84,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 
@@ -102,7 +102,7 @@ Type represention of an amount of money in the specified currency
 
 ## security_law_exemptions
 
-List of security law exemptions (and applicable jurisdictions) for this convertible
+List of security law exemptions (and applicable jurisdictions) for this security
 
 `security_law_exemptions`
 

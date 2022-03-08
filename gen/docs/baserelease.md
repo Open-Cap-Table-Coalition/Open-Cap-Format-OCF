@@ -52,7 +52,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 ## release_price
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `release_price`
 
@@ -134,7 +134,7 @@ Whether this is a stock swap or not?
 
 ## cash_paid
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `cash_paid`
 
@@ -180,7 +180,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## sale_price_per_unit
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `sale_price_per_unit`
 

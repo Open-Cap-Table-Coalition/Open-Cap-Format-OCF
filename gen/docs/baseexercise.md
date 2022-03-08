@@ -23,7 +23,7 @@ Abstract object describing fields common to all exercise transaction objects
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 

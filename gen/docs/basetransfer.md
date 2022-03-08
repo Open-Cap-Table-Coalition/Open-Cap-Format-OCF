@@ -24,7 +24,7 @@ Abstract object describing a security transfer or secondary sale transaction
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/monetary",
   "title": "Type - Monetary",
-  "description": "Type represention of an amount of money in the specified currency",
+  "description": "Type representation of an amount of money in a specified currency",
   "type": "object",
   "properties": {
     "amount": {
@@ -10,8 +10,8 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
     },
     "currency": {
-      "description": "ISO-4217 currency code",
-      "type": "string"
+      "description": "ISO 4217 currency code",
+      "$ref": "https://opencaptablecoalition.com/schema/types/currency_code"
     }
   },
   "required": ["amount", "currency"]

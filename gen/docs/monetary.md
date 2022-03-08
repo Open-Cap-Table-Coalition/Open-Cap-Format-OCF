@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/types/monetary
 ```
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------- |
@@ -16,10 +16,10 @@ Type represention of an amount of money in the specified currency
 
 # Type - Monetary Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                          |
-| :-------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount") |
-| [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-currency.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/currency")   |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                         |
+| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")                |
+| [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/currency_code#/properties/currency") |
 
 ## amount
 
@@ -51,18 +51,24 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## currency
 
-ISO-4217 currency code
+Type representation of an ISO 4217 currency code
 
 `currency`
 
 *   is required
 
-*   Type: `string`
+*   Type: `string` ([Type - Currency Code](monetary-properties-type---currency-code.md))
 
 *   cannot be null
 
-*   defined in: [Type - Monetary](monetary-properties-currency.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/currency")
+*   defined in: [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/currency_code#/properties/currency")
 
 ### currency Type
 
-`string`
+`string` ([Type - Currency Code](monetary-properties-type---currency-code.md))
+
+### currency Constraints
+
+**maximum length**: the maximum number of characters for this string is: `3`
+
+**minimum length**: the minimum number of characters for this string is: `3`
