@@ -22,8 +22,8 @@
       "type": "string"
     },
     "country": {
-      "description": "Country code for this address (ISO-3166)",
-      "type": "string"
+      "description": "Country code for this address (ISO 3166-1 alpha-2)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/country_code"
     },
     "postal_code": {
       "description": "Address postal code",

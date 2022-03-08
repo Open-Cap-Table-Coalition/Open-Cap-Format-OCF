@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/country_code",
+  "title": "Type - Country Code",
+  "description": "Type representation of an ISO 3166-1 alpha 2 country code",
+  "type": "string",
+  "minLength": 2,
+  "maxLength": 2
+}
