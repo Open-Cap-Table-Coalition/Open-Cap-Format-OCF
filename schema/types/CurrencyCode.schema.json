@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/currency_code",
+  "$id": "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json",
   "title": "Type - Currency Code",
   "description": "Type representation of an ISO 4217 currency code",
   "type": "string",

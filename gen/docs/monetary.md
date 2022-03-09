@@ -16,10 +16,10 @@ Type representation of an amount of money in a specified currency
 
 # Type - Monetary Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                         |
-| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")                |
-| [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/currency_code#/properties/currency") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                    |
+| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")                           |
+| [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json#/properties/currency") |
 
 ## amount
 
@@ -61,7 +61,7 @@ Type representation of an ISO 4217 currency code
 
 *   cannot be null
 
-*   defined in: [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/currency_code#/properties/currency")
+*   defined in: [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json#/properties/currency")
 
 ### currency Type
 

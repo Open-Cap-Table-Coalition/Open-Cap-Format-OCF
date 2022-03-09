@@ -11,7 +11,7 @@
     },
     "currency": {
       "description": "ISO 4217 currency code",
-      "$ref": "https://opencaptablecoalition.com/schema/types/currency_code"
+      "$ref": "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json"
     }
   },
   "required": ["amount", "currency"]

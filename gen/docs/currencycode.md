@@ -1,7 +1,7 @@
 # Type - Currency Code Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/currency_code
+https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json
 ```
 
 Type representation of an ISO 4217 currency code
