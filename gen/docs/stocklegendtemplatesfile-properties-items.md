@@ -1,7 +1,7 @@
 # Untitled array in File - Stock Legend Templates Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/properties/items
+https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json#/properties/items
 ```
 
 

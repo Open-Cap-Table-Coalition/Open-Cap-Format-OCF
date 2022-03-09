@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/stock_legend_template",
+  "$id": "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json",
   "title": "Object - Stock Legend Template",
   "description": "Object describing a stock legend template",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     }
   ],
   "properties": {

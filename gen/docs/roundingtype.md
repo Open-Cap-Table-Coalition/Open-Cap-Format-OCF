@@ -1,7 +1,7 @@
 # Enum - Rounding Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/rounding_type
+https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json
 ```
 
 Enumeration of rounding types

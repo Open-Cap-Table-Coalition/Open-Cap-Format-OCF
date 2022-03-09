@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Repurchase Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json#/properties/resulting_security_ids/items
 ```
 
 

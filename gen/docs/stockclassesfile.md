@@ -1,7 +1,7 @@
 # File - Stock Classes Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_classes_file
+https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json
 ```
 
 JSON containing file type identifier and list of stock classes
@@ -20,10 +20,10 @@ all of
 
 # File - Stock Classes Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                 |
-| :---------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [items](#items)         | `array`       | Required | cannot be null | [File - Stock Classes](stockclassesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items")         |
-| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Stock Classes](stockclassesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/file_type") |
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                           |
+| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [items](#items)         | `array`       | Required | cannot be null | [File - Stock Classes](stockclassesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items")         |
+| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Stock Classes](stockclassesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/file_type") |
 
 ## items
 
@@ -37,7 +37,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Stock Classes](stockclassesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items")
+*   defined in: [File - Stock Classes](stockclassesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items")
 
 ### items Type
 
@@ -55,7 +55,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Stock Classes](stockclassesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/file_type")
+*   defined in: [File - Stock Classes](stockclassesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/file_type")
 
 ### file_type Type
 

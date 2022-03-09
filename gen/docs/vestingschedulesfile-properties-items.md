@@ -1,7 +1,7 @@
 # Untitled array in File - Vesting Schedules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items
+https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/items
 ```
 
 

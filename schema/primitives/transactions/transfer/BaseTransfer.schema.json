@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json",
   "title": "Primitive - Security Transfer Transaction",
   "description": "Abstract object describing a security transfer or secondary sale transaction",
   "type": "object",
   "properties": {
     "consideration": {
       "description": "Consideration for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "balance_security_id": {
       "description": "Identifier for the security that holds the remainder balance (for partial transfers)",

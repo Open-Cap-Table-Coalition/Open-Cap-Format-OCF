@@ -1,7 +1,7 @@
 # Type - File Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/file
+https://opencaptablecoalition.com/schema/types/File.schema.json
 ```
 
 Type representation of a file
@@ -16,10 +16,10 @@ Type representation of a file
 
 # Type - File Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                             |
-| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| [filepath](#filepath) | `string` | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath")  |
-| [md5](#md5)           | `string` | Required | cannot be null | [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/md5#/properties/md5") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                         |
+| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| [filepath](#filepath) | `string` | Required | cannot be null | [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/File.schema.json#/properties/filepath")  |
+| [md5](#md5)           | `string` | Required | cannot be null | [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/Md5.schema.json#/properties/md5") |
 
 ## filepath
 
@@ -33,7 +33,7 @@ Path to the file within the OCF container
 
 *   cannot be null
 
-*   defined in: [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/file#/properties/filepath")
+*   defined in: [Type - File](file-properties-filepath.md "https://opencaptablecoalition.com/schema/types/File.schema.json#/properties/filepath")
 
 ### filepath Type
 
@@ -51,7 +51,7 @@ String representation of MD5 hash with basic validation for a string of 32 chara
 
 *   cannot be null
 
-*   defined in: [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/md5#/properties/md5")
+*   defined in: [Type - File](file-properties-type---md5-hash.md "https://opencaptablecoalition.com/schema/types/Md5.schema.json#/properties/md5")
 
 ### md5 Type
 

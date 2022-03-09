@@ -1,7 +1,7 @@
 # Primitive - Security Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion
+https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json
 ```
 
 Abstract object describing fields common to all conversion transaction objects
@@ -16,9 +16,9 @@ Abstract object describing fields common to all conversion transaction objects
 
 # Primitive - Security Conversion Transaction Properties
 
-| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Conversion Transaction](baseconversion-properties-security-conversion---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion#/properties/resulting_security_ids") |
+| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Conversion Transaction](baseconversion-properties-security-conversion---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json#/properties/resulting_security_ids") |
 
 ## resulting_security_ids
 
@@ -32,7 +32,7 @@ Identifier for the security (or securities) that resulted from the conversion
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Conversion Transaction](baseconversion-properties-security-conversion---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Conversion Transaction](baseconversion-properties-security-conversion---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

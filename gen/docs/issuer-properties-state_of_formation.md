@@ -1,7 +1,7 @@
 # Untitled string in Object - Issuer Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer#/properties/state_of_formation
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/state_of_formation
 ```
 
 The state, province, or subdivision where the issuer company was legally formed (ISO-3166-2)

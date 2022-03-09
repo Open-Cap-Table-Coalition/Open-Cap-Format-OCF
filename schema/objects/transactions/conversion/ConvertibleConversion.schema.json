@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json",
   "title": "Object - Convertible Conversion Transaction",
   "description": "Object describing a conversion of a convertible security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json"
     }
   ],
   "properties": {

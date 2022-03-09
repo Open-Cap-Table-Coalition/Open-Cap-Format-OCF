@@ -1,7 +1,7 @@
 # Security Split - Resulting Security ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json#/properties/resulting_security_ids
 ```
 
 Array of identifiers for new security (or securities) created as a result of the transaction

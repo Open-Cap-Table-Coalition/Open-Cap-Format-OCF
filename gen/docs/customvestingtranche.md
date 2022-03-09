@@ -1,7 +1,7 @@
 # Type - Custom Vesting Tranche Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/custom_vesting_tranche
+https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json
 ```
 
 Type representation of a vesting tranche by date and quantity
@@ -16,10 +16,10 @@ Type representation of a vesting tranche by date and quantity
 
 # Type - Custom Vesting Tranche Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                  |
-| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [vest_date](#vest_date)         | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_date") |
-| [vest_quantity](#vest_quantity) | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/vest_quantity")                    |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                            |
+| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [vest_date](#vest_date)         | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json#/properties/vest_date") |
+| [vest_quantity](#vest_quantity) | `string` | Required | cannot be null | [Type - Custom Vesting Tranche](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/vest_quantity")                  |
 
 ## vest_date
 
@@ -33,7 +33,7 @@ Date of vesting for the tranche
 
 *   cannot be null
 
-*   defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche#/properties/vest_date")
+*   defined in: [Type - Custom Vesting Tranche](customvestingtranche-properties-vest_date.md "https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json#/properties/vest_date")
 
 ### vest_date Type
 
@@ -51,7 +51,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Type - Custom Vesting Tranche](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/vest_quantity")
+*   defined in: [Type - Custom Vesting Tranche](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/vest_quantity")
 
 ### vest_quantity Type
 

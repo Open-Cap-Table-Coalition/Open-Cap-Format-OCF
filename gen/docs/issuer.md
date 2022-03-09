@@ -1,7 +1,7 @@
 # Object - Issuer Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json
 ```
 
 Object describing the issuer of the cap table (the company whose cap table this is)
@@ -20,20 +20,20 @@ all of
 
 # Object - Issuer Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                     |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/object_type")                                          |
-| [legal_name](#legal_name)                     | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/legal_name")                                            |
-| [dba](#dba)                                   | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-dba.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/dba")                                                          |
-| [formation_date](#formation_date)             | `string`      | Required | cannot be null | [Object - Issuer](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/formation_date") |
-| [country_of_formation](#country_of_formation) | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/country_of_formation")                        |
-| [state_of_formation](#state_of_formation)     | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/state_of_formation")                            |
-| [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/tax_ids")                                    |
-| [email](#email)                               | `object`      | Optional | cannot be null | [Object - Issuer](contactinfo-properties-contact-info---email-address-array-type---email.md "https://opencaptablecoalition.com/schema/types/email#/properties/email")          |
-| [phone](#phone)                               | `object`      | Optional | cannot be null | [Object - Issuer](contactinfo-properties-contact-info---phone-number-array-type---phone.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone")           |
-| [address](#address)                           | `object`      | Optional | cannot be null | [Object - Issuer](issuer-properties-type---address.md "https://opencaptablecoalition.com/schema/types/address#/properties/address")                                            |
-| [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-id.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/id")                                                            |
-| [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/comments")                                                |
+| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                 |
+| :-------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/object_type")                                          |
+| [legal_name](#legal_name)                     | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/legal_name")                                            |
+| [dba](#dba)                                   | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-dba.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/dba")                                                          |
+| [formation_date](#formation_date)             | `string`      | Required | cannot be null | [Object - Issuer](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/formation_date") |
+| [country_of_formation](#country_of_formation) | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/country_of_formation")                        |
+| [state_of_formation](#state_of_formation)     | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/state_of_formation")                            |
+| [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/tax_ids")                                    |
+| [email](#email)                               | `object`      | Optional | cannot be null | [Object - Issuer](contactinfo-properties-contact-info---email-address-array-type---email.md "https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email")          |
+| [phone](#phone)                               | `object`      | Optional | cannot be null | [Object - Issuer](contactinfo-properties-contact-info---phone-number-array-type---phone.md "https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone")           |
+| [address](#address)                           | `object`      | Optional | cannot be null | [Object - Issuer](issuer-properties-type---address.md "https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/address")                                            |
+| [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-id.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/id")                                                            |
+| [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Issuer](issuer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/comments")                                                |
 
 ## object_type
 
@@ -47,7 +47,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/object_type")
+*   defined in: [Object - Issuer](issuer-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -73,7 +73,7 @@ Legal name of the issuer
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-legal_name.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/legal_name")
+*   defined in: [Object - Issuer](issuer-properties-legal_name.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/legal_name")
 
 ### legal_name Type
 
@@ -91,7 +91,7 @@ Doing Business As name
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-dba.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/dba")
+*   defined in: [Object - Issuer](issuer-properties-dba.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/dba")
 
 ### dba Type
 
@@ -109,7 +109,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/formation_date")
+*   defined in: [Object - Issuer](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/formation_date")
 
 ### formation_date Type
 
@@ -131,7 +131,7 @@ The country where the issuer company was legally formed (ISO-3166 - alpha-3)
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/country_of_formation")
+*   defined in: [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/country_of_formation")
 
 ### country_of_formation Type
 
@@ -149,7 +149,7 @@ The state, province, or subdivision where the issuer company was legally formed 
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-state_of_formation.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/state_of_formation")
+*   defined in: [Object - Issuer](issuer-properties-state_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/state_of_formation")
 
 ### state_of_formation Type
 
@@ -167,7 +167,7 @@ The tax ids for this issuer company
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-issuer---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/tax_ids")
+*   defined in: [Object - Issuer](issuer-properties-issuer---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
@@ -185,7 +185,7 @@ Type representation of an email address
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](contactinfo-properties-contact-info---email-address-array-type---email.md "https://opencaptablecoalition.com/schema/types/email#/properties/email")
+*   defined in: [Object - Issuer](contactinfo-properties-contact-info---email-address-array-type---email.md "https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email")
 
 ### email Type
 
@@ -203,7 +203,7 @@ Type representation of a phone number
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](contactinfo-properties-contact-info---phone-number-array-type---phone.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone")
+*   defined in: [Object - Issuer](contactinfo-properties-contact-info---phone-number-array-type---phone.md "https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone")
 
 ### phone Type
 
@@ -221,7 +221,7 @@ Type representation of an address
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-type---address.md "https://opencaptablecoalition.com/schema/types/address#/properties/address")
+*   defined in: [Object - Issuer](issuer-properties-type---address.md "https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/address")
 
 ### address Type
 
@@ -239,7 +239,7 @@ Type representation of an address
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-id.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/id")
+*   defined in: [Object - Issuer](issuer-properties-id.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/id")
 
 ### id Type
 
@@ -257,7 +257,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/issuer#/properties/comments")
+*   defined in: [Object - Issuer](issuer-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/comments")
 
 ### comments Type
 

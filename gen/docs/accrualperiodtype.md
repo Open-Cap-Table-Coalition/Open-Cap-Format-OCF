@@ -1,7 +1,7 @@
 # Enum - Accrual Period Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/accrual_period_type
+https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json
 ```
 
 Enumeration of interest accrual period types

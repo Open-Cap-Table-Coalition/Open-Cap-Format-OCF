@@ -1,7 +1,7 @@
 # Object - Stock Split Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split
+https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json
 ```
 
 Object describing a split of a stock security
@@ -24,15 +24,15 @@ all of
 
 # Object - Stock Split Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                               |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/object_type")                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/date")                                     |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/resulting_security_ids") |
-| [split_ratio](#split_ratio)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/split_ratio")                       |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                          |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/object_type")                       |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/date")                                     |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/resulting_security_ids") |
+| [split_ratio](#split_ratio)                       | Not specified | Optional | cannot be null | [Object - Stock Split Transaction](stocksplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/split_ratio")                       |
 
 ## object_type
 
@@ -46,7 +46,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/object_type")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -72,7 +72,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/id")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/id")
 
 ### id Type
 
@@ -90,7 +90,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/comments")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -108,7 +108,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/security_id")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -126,7 +126,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/date")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/date")
 
 ### date Type
 
@@ -144,7 +144,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/resulting_security_ids")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 
@@ -162,7 +162,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Split Transaction](stocksplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/split_ratio")
+*   defined in: [Object - Stock Split Transaction](stocksplit-properties-split_ratio.md "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/split_ratio")
 
 ### split_ratio Type
 

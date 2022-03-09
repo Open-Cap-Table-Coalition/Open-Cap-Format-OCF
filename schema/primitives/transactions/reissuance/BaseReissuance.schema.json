@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json",
   "title": "Primitive - Security Reissuance Transaction",
   "description": "Abstract object describing common properties to a reissuance of a security",
   "type": "object",

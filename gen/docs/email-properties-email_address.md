@@ -1,7 +1,7 @@
 # Untitled string in Type - Email Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/email#/properties/email_address
+https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email_address
 ```
 
 A valid e-mail address

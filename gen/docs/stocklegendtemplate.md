@@ -1,7 +1,7 @@
 # Object - Stock Legend Template Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_legend_template
+https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json
 ```
 
 Object describing a stock legend template
@@ -20,13 +20,13 @@ all of
 
 # Object - Stock Legend Template Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                       |
-| :-------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/object_type") |
-| [name](#name)               | `string`      | Required | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-name.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/name")               |
-| [text](#text)               | `string`      | Required | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-text.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/text")               |
-| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/id")                   |
-| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/comments")       |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                 |
+| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/object_type") |
+| [name](#name)               | `string`      | Required | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-name.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/name")               |
+| [text](#text)               | `string`      | Required | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-text.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/text")               |
+| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/id")                   |
+| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Stock Legend Template](stocklegendtemplate-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/comments")       |
 
 ## object_type
 
@@ -40,7 +40,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/object_type")
+*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -66,7 +66,7 @@ Name for the stock legend template
 
 *   cannot be null
 
-*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-name.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/name")
+*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-name.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/name")
 
 ### name Type
 
@@ -84,7 +84,7 @@ The full text of the stock legend
 
 *   cannot be null
 
-*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-text.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/text")
+*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-text.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/text")
 
 ### text Type
 
@@ -102,7 +102,7 @@ The full text of the stock legend
 
 *   cannot be null
 
-*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/id")
+*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/id")
 
 ### id Type
 
@@ -120,7 +120,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/comments")
+*   defined in: [Object - Stock Legend Template](stocklegendtemplate-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/comments")
 
 ### comments Type
 

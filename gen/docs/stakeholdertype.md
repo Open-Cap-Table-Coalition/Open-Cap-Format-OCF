@@ -1,7 +1,7 @@
 # Enum - Stakeholder Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/stakeholder_type
+https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json
 ```
 
 Enumeration of stakeholder types - individual (human) or institution (entity)

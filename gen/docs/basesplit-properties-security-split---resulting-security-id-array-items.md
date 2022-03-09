@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Split Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json#/properties/resulting_security_ids/items
 ```
 
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Issuer Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer#/properties/comments
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/comments
 ```
 
 

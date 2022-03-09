@@ -1,17 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/stakeholders_file",
+  "$id": "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json",
   "title": "File - Stakeholders",
   "description": "JSON containing file type identifier and list of stakeholders",
   "allOf": [
-    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json"
+    }
   ],
   "type": "object",
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/stakeholder"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json"
       }
     },
     "file_type": {

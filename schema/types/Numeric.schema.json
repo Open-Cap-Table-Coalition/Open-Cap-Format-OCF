@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/numeric",
+  "$id": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json",
   "title": "Type - Numeric",
   "description": "Fixed-point string representation of a number (up to 10 decimal places supported)",
   "type": "string",

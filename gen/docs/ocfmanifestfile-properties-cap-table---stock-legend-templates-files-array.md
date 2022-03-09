@@ -1,7 +1,7 @@
 # Cap Table - Stock Legend Templates File(s) Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_legend_templates_files
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_legend_templates_files
 ```
 
 List of files containing lists of issuer stock legend templates, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_legend_templates_file schema to validate loaded files)

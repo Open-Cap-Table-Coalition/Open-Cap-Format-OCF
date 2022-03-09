@@ -1,7 +1,7 @@
 # Enum - Convertible Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/convertible_type#/properties/convertible_type
+https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json#/properties/convertible_type
 ```
 
 Enumeration of convertible instrument types

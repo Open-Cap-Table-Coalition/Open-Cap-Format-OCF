@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/release/plan_security_release",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json",
   "title": "Object - Plan Security Release Transaction",
   "description": "Object describing a plan security release transaction",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json"
     }
   ],
   "properties": {

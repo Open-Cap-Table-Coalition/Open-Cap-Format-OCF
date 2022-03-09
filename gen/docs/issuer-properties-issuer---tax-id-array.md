@@ -1,7 +1,7 @@
 # Issuer - Tax ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer#/properties/tax_ids
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/tax_ids
 ```
 
 The tax ids for this issuer company

@@ -1,7 +1,7 @@
 # Object - BaseFile Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/base_file
+https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json
 ```
 
 Abstract file to be extended by all other files
@@ -16,9 +16,9 @@ Abstract file to be extended by all other files
 
 # Object - BaseFile Properties
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                        |
-| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [file_type](#file_type) | `string` | Required | cannot be null | [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/file_type#/properties/file_type") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                   |
+| :---------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [file_type](#file_type) | `string` | Required | cannot be null | [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/FileType.schema.json#/properties/file_type") |
 
 ## file_type
 
@@ -32,7 +32,7 @@ Enumeration of different OCF file types which are used to load proper schemas fo
 
 *   cannot be null
 
-*   defined in: [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/file_type#/properties/file_type")
+*   defined in: [Object - BaseFile](basefile-properties-enum---ocf-file-type.md "https://opencaptablecoalition.com/schema/enums/FileType.schema.json#/properties/file_type")
 
 ### file_type Type
 

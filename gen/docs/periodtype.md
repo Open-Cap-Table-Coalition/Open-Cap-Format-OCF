@@ -1,7 +1,7 @@
 # Enum - Period Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/period_type
+https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json
 ```
 
 Enumeration of time period types

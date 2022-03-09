@@ -1,7 +1,7 @@
 # Type - Stock Parent Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/stock_parent
+https://opencaptablecoalition.com/schema/types/StockParent.schema.json
 ```
 
 Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a stock came from a previous stock entry)
@@ -16,10 +16,10 @@ Type representation of the parent security of a given stock issuance (e.g. if a 
 
 # Type - Stock Parent Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                        |
-| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [parent_object_type](#parent_object_type) | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/parent_security_type#/properties/parent_object_type") |
-| [parent_object_id](#parent_object_id)     | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_id")                      |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                  |
+| :---------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [parent_object_type](#parent_object_type) | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json#/properties/parent_object_type") |
+| [parent_object_id](#parent_object_id)     | `string` | Required | cannot be null | [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/StockParent.schema.json#/properties/parent_object_id")                     |
 
 ## parent_object_type
 
@@ -33,7 +33,7 @@ Enumeration of parent sources a stock can be issued or created from
 
 *   cannot be null
 
-*   defined in: [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/parent_security_type#/properties/parent_object_type")
+*   defined in: [Type - Stock Parent](stockparent-properties-enum---parent-security-type.md "https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json#/properties/parent_object_type")
 
 ### parent_object_type Type
 
@@ -62,7 +62,7 @@ Parent object's ID must be a valid ID pointing to an object of the type specifie
 
 *   cannot be null
 
-*   defined in: [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/stock_parent#/properties/parent_object_id")
+*   defined in: [Type - Stock Parent](stockparent-properties-parent_object_id.md "https://opencaptablecoalition.com/schema/types/StockParent.schema.json#/properties/parent_object_id")
 
 ### parent_object_id Type
 

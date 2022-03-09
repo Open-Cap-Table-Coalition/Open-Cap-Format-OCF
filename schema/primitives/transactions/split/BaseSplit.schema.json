@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json",
   "title": "Primitive - Security Split Transaction",
   "description": "Abstract object describing a security split transaction",
   "type": "object",
@@ -17,7 +17,7 @@
     },
     "split_ratio": {
       "description": "Ratio of old shares to new shares",
-      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     }
   },
   "required": ["resulting_security_ids", "split_ratio"]

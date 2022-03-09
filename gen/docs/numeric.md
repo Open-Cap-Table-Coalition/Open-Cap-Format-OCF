@@ -1,7 +1,7 @@
 # Type - Numeric Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/numeric
+https://opencaptablecoalition.com/schema/types/Numeric.schema.json
 ```
 
 Fixed-point string representation of a number (up to 10 decimal places supported)

@@ -1,7 +1,7 @@
 # Untitled string in Type - Vesting Rules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_schedule_id
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_schedule_id
 ```
 
 Time-based vesting schedule applied to the securities

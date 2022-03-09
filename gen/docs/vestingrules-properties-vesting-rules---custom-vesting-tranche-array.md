@@ -1,7 +1,7 @@
 # Vesting Rules - Custom Vesting Tranche Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_tranches
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_tranches
 ```
 
 Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.

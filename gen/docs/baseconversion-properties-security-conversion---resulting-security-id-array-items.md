@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json#/properties/resulting_security_ids/items
 ```
 
 

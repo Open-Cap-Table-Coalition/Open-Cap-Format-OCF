@@ -1,7 +1,7 @@
 # Untitled string in Object - Valuation Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/valuation#/properties/provider
+https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/provider
 ```
 
 Entity which provided the valuation

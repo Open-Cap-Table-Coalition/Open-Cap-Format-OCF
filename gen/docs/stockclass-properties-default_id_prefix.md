@@ -1,7 +1,7 @@
 # Untitled string in Object - Stock Class Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_class#/properties/default_id_prefix
+https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/default_id_prefix
 ```
 
 Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1). If certificate IDs have a dash, the prefix should end in the dash like CS-

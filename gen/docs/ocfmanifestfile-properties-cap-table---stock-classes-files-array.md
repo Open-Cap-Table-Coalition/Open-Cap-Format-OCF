@@ -1,7 +1,7 @@
 # Cap Table - Stock Classes File(s) Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/stock_classes_files
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_classes_files
 ```
 
 List of files containing lists of issuer stock classes, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_classes_file schema to validate loaded files)

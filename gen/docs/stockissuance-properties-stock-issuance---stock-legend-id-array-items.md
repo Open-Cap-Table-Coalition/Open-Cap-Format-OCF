@@ -1,7 +1,7 @@
 # Untitled string in Object - Stock Issuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance#/properties/stock_legend_ids/items
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/StockIssuance.schema.json#/properties/stock_legend_ids/items
 ```
 
 

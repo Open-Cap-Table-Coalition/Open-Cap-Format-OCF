@@ -1,7 +1,7 @@
 # Untitled string in Object - Stakeholder Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/issuer_assigned_id
+https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/issuer_assigned_id
 ```
 
 This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder

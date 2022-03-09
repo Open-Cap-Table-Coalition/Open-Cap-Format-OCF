@@ -1,7 +1,7 @@
 # Untitled string in Type - Address Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/address#/properties/city
+https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/city
 ```
 
 City

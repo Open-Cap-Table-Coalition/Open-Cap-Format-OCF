@@ -1,7 +1,7 @@
 # Untitled null in Type - Event-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_occurred/oneOf/0
+https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json#/properties/event_occurred/oneOf/0
 ```
 
 Event has not occurred (null)

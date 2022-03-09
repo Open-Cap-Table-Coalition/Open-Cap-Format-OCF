@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/option_type",
+  "$id": "https://opencaptablecoalition.com/schema/enums/OptionType.schema.json",
   "title": "Enum - Option Type",
   "description": "Enumeration of option types",
   "type": "string",

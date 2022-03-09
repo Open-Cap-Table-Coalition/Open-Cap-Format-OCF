@@ -1,7 +1,7 @@
 # Untitled undefined type in File - Stock Plans Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/file_type
+https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json#/properties/file_type
 ```
 
 

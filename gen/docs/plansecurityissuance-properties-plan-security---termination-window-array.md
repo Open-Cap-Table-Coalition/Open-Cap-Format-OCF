@@ -1,7 +1,7 @@
 # Plan Security - Termination Window Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/termination_exercise_windows
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json#/properties/termination_exercise_windows
 ```
 
 Exercise periods applicable to plan security after a termination for a given, enumerated reason

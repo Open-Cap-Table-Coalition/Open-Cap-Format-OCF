@@ -1,7 +1,7 @@
 # Object - BaseObject Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/base_object
+https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json
 ```
 
 Abstract object to be extended by all other objects
@@ -16,11 +16,11 @@ Abstract object to be extended by all other objects
 
 # Object - BaseObject Properties
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                              |
-| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [id](#id)                   | `string` | Required | cannot be null | [Object - BaseObject](baseobject-properties-id.md "https://opencaptablecoalition.com/schema/primitives/base_object#/properties/id")                     |
-| [comments](#comments)       | `array`  | Optional | cannot be null | [Object - BaseObject](baseobject-properties-comments.md "https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments")         |
-| [object_type](#object_type) | `string` | Required | cannot be null | [Object - BaseObject](baseobject-properties-enum---object-type.md "https://opencaptablecoalition.com/schema/enums/object_type#/properties/object_type") |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                         |
+| :-------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                   | `string` | Required | cannot be null | [Object - BaseObject](baseobject-properties-id.md "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json#/properties/id")                     |
+| [comments](#comments)       | `array`  | Optional | cannot be null | [Object - BaseObject](baseobject-properties-comments.md "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json#/properties/comments")         |
+| [object_type](#object_type) | `string` | Required | cannot be null | [Object - BaseObject](baseobject-properties-enum---object-type.md "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json#/properties/object_type") |
 
 ## id
 
@@ -34,7 +34,7 @@ Identifier for the object
 
 *   cannot be null
 
-*   defined in: [Object - BaseObject](baseobject-properties-id.md "https://opencaptablecoalition.com/schema/primitives/base_object#/properties/id")
+*   defined in: [Object - BaseObject](baseobject-properties-id.md "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json#/properties/id")
 
 ### id Type
 
@@ -52,7 +52,7 @@ Unstructured text comments related to and stored for the object
 
 *   cannot be null
 
-*   defined in: [Object - BaseObject](baseobject-properties-comments.md "https://opencaptablecoalition.com/schema/primitives/base_object#/properties/comments")
+*   defined in: [Object - BaseObject](baseobject-properties-comments.md "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -70,7 +70,7 @@ Enumeration of object types
 
 *   cannot be null
 
-*   defined in: [Object - BaseObject](baseobject-properties-enum---object-type.md "https://opencaptablecoalition.com/schema/enums/object_type#/properties/object_type")
+*   defined in: [Object - BaseObject](baseobject-properties-enum---object-type.md "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json#/properties/object_type")
 
 ### object_type Type
 

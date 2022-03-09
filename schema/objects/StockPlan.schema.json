@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/stock_plan",
+  "$id": "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json",
   "title": "Object - Stock Plan",
   "description": "Object describing a plan which stock options are issued from",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     }
   ],
   "properties": {
@@ -19,11 +19,11 @@
     },
     "board_approval_date": {
       "description": "Date on which board approved the plan",
-      "$ref": "https://opencaptablecoalition.com/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "current_shares_reserved": {
       "description": "The number of shares currently approved. The original number of shares can be determined from the event log",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "stock_class_id": {
       "description": "Identifier of the StockClass object this plan is composed of",

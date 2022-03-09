@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights",
+  "$id": "https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json",
   "title": "Type - Stock Class Conversion Rights",
   "description": "Type representation of a conversion right from one security into a stock class",
   "type": "object",
   "properties": {
     "ratio": {
       "description": "One share of this stock class converts into this many target stock class shares",
-      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     },
     "converts_to_future_round": {
       "description": "Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)",
@@ -19,7 +19,7 @@
     },
     "rounding_type": {
       "description": "How should fractional shares be rounded?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/rounding_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
     }
   },
   "oneOf": [

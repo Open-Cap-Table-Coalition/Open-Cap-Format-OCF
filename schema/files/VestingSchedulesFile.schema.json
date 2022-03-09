@@ -1,17 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/vesting_schedules_file",
+  "$id": "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json",
   "title": "File - Vesting Schedules",
   "description": "JSON containing file type identifier and list of vesting schedules",
   "type": "object",
   "allOf": [
-    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json"
+    }
   ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/vesting_schedule"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json"
       }
     },
     "file_type": {

@@ -1,7 +1,7 @@
 # Untitled string in Type - Conversion Trigger Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/description
+https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json#/properties/description
 ```
 
 Legal language describiing the conversion right (ideally, this should be excerpted from the instrument where possible)

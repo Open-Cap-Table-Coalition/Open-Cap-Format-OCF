@@ -1,7 +1,7 @@
 # Enum - Termination Window Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/termination_window_type
+https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json
 ```
 
 Enumeration of termination window types

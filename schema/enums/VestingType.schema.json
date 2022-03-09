@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/vesting_type",
+  "$id": "https://opencaptablecoalition.com/schema/enums/VestingType.schema.json",
   "title": "Enum - Vesting Type",
   "description": "Enumeration of vesting types",
   "type": "string",

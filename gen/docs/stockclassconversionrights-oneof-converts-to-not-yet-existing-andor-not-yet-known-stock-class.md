@@ -1,7 +1,7 @@
 # Converts to not-yet-existing and/or not-yet-known stock class Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/oneOf/0
+https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json#/oneOf/0
 ```
 
 

@@ -1,7 +1,7 @@
 # Untitled array in File - Valuations Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/valuations_file#/properties/items
+https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json#/properties/items
 ```
 
 
