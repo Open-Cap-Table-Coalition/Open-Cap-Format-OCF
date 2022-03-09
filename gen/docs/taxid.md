@@ -16,10 +16,10 @@ Type representation of a government identifier for tax purposes (e.g. EIN) and c
 
 # Type - Tax Identifier Properties
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                           |
-| :------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")               |
-| [country](#country) | `string` | Required | cannot be null | [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/country") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
+| :------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")                          |
+| [country](#country) | `string` | Required | cannot be null | [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country") |
 
 ## tax_id
 
@@ -51,7 +51,7 @@ Type representation of an ISO 3166-1 alpha 2 country code
 
 *   cannot be null
 
-*   defined in: [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/country")
+*   defined in: [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country")
 
 ### country Type
 

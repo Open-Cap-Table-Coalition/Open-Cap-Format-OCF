@@ -16,14 +16,14 @@ Type representation of an address
 
 # Type - Address Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                         |
-| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [address_type](#address_type)     | `string` | Required | cannot be null | [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type") |
-| [street_suite](#street_suite)     | `string` | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")             |
-| [city](#city)                     | `string` | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                             |
-| [state_province](#state_province) | `string` | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province")         |
-| [country](#country)               | `string` | Required | cannot be null | [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/country")      |
-| [postal_code](#postal_code)       | `string` | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")               |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                               |
+| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [address_type](#address_type)     | `string` | Required | cannot be null | [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type")       |
+| [street_suite](#street_suite)     | `string` | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")                   |
+| [city](#city)                     | `string` | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                                   |
+| [state_province](#state_province) | `string` | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province")               |
+| [country](#country)               | `string` | Required | cannot be null | [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country") |
+| [postal_code](#postal_code)       | `string` | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")                     |
 
 ## address_type
 
@@ -119,7 +119,7 @@ Type representation of an ISO 3166-1 alpha 2 country code
 
 *   cannot be null
 
-*   defined in: [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/country")
+*   defined in: [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country")
 
 ### country Type
 

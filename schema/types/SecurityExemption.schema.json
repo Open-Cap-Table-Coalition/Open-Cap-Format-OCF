@@ -11,7 +11,7 @@
     },
     "jurisdiction": {
       "description": "Country code of the jurisdiction of the applicable law (ISO 3166-1 alpha-2)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/country_code"
+      "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
     }
   },
   "required": ["description", "jurisdiction"]

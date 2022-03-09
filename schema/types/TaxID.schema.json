@@ -11,7 +11,7 @@
     },
     "country": {
       "description": "Issuing country code (ISO 3166-1 alpha-2) for the tax identifier",
-      "$ref": "https://opencaptablecoalition.com/schema/types/country_code"
+      "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
     }
   },
   "required": ["tax_id", "country"]

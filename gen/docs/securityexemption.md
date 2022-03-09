@@ -16,10 +16,10 @@ Type representation of a securities issuance exemption that includes an unstruct
 
 # Type - Security Exemption Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                           |
-| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [description](#description)   | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/description") |
-| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/jurisdiction")        |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                               |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [description](#description)   | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/security_exemption#/properties/description")     |
+| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/jurisdiction") |
 
 ## description
 
@@ -51,7 +51,7 @@ Type representation of an ISO 3166-1 alpha 2 country code
 
 *   cannot be null
 
-*   defined in: [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/country_code#/properties/jurisdiction")
+*   defined in: [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/jurisdiction")
 
 ### jurisdiction Type
 
