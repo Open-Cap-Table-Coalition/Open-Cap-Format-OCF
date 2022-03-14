@@ -272,19 +272,19 @@
 
 *   [Stock Issuance - Stock Legend ID Array](./stockissuance-properties-stock-issuance---stock-legend-id-array.md "List of stock legend ids that apply to this stock") – `https://opencaptablecoalition.com/schema/objects/transactions/issuance/StockIssuance.schema.json#/properties/stock_legend_ids`
 
-*   [Untitled array in File - Stakeholders](./stakeholdersfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/items`
+*   [Untitled array in File - Stakeholders](./stakeholdersfile-properties-items.md "List of OCF stakeholder objects") – `https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Stock Classes](./stockclassesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items`
+*   [Untitled array in File - Stock Classes](./stockclassesfile-properties-items.md "List of OCF stock class objects") – `https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Stock Legend Templates](./stocklegendtemplatesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json#/properties/items`
+*   [Untitled array in File - Stock Legend Templates](./stocklegendtemplatesfile-properties-items.md "List of OCF stock legend template objects") – `https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Stock Plans](./stockplansfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json#/properties/items`
+*   [Untitled array in File - Stock Plans](./stockplansfile-properties-items.md "List of OCF stock plan objects") – `https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Transactions](./transactionsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items`
+*   [Untitled array in File - Transactions](./transactionsfile-properties-items.md "List of OCF transaction objects") – `https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Valuations](./valuationsfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json#/properties/items`
+*   [Untitled array in File - Valuations](./valuationsfile-properties-items.md "List of OCF valuation objects") – `https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json#/properties/items`
 
-*   [Untitled array in File - Vesting Schedules](./vestingschedulesfile-properties-items.md) – `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/items`
+*   [Untitled array in File - Vesting Schedules](./vestingschedulesfile-properties-items.md "List of OCF vesting schedule objects") – `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/items`
 
 *   [Untitled array in Object - BaseObject](./baseobject-properties-comments.md "Unstructured text comments related to and stored for the object") – `https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json#/properties/comments`
 

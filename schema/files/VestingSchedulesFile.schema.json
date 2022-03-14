@@ -12,6 +12,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF vesting schedule objects",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json"
       }

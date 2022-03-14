@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items
 ```
 
-
+List of OCF stock class objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------ |

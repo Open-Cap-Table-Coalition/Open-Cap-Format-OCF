@@ -12,6 +12,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF stock plan objects",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json"
       }

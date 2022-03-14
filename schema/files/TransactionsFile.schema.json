@@ -12,6 +12,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF transaction objects",
       "items": {
         "oneOf": [
           {

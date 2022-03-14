@@ -12,6 +12,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF stakeholder objects",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json"
       }
