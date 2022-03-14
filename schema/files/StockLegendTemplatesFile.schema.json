@@ -10,6 +10,7 @@
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF stock legend template objects",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/objects/stock_legend_template"
       }

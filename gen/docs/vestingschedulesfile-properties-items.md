@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items
 ```
 
-
+List of OCF vesting schedule objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                      |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------- |

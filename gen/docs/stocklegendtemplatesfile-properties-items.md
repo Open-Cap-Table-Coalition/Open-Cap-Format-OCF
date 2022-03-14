@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/files/stock_legend_templates_file#/properties/items
 ```
 
-
+List of OCF stock legend template objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------- |

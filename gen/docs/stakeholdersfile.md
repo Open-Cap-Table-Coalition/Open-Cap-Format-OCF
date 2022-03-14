@@ -27,7 +27,7 @@ all of
 
 ## items
 
-
+List of OCF stakeholder objects
 
 `items`
 

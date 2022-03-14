@@ -27,7 +27,7 @@ all of
 
 ## items
 
-
+List of OCF stock plan objects
 
 `items`
 
