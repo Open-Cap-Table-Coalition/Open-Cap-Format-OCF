@@ -1,7 +1,7 @@
 # Untitled undefined type in Type - Vesting Rules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_conditions/items
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_conditions/items
 ```
 
 

@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json",
   "title": "Object - Stock Conversion Transaction",
   "description": "Object describing a conversion of stock",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json"
     }
   ],
   "properties": {
@@ -25,11 +25,11 @@
     },
     "quantity_converted": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "conversion_ratio": {
       "description": "Quantity of non-monetary security units converted",
-      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     },
     "id": {},
     "comments": {},

@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/email",
+  "$id": "https://opencaptablecoalition.com/schema/types/Email.schema.json",
   "title": "Type - Email",
   "description": "Type representation of an email address",
   "type": "object",
   "properties": {
     "email_type": {
       "description": "Type of e-mail address (e.g. personal or business)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/email_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/EmailType.schema.json"
     },
     "email_address": {
       "description": "A valid e-mail address",

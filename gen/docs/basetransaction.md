@@ -1,7 +1,7 @@
 # Primitive - Security Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction
+https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json
 ```
 
 Abstract transaction object to be extended by all other transaction objects
@@ -16,10 +16,10 @@ Abstract transaction object to be extended by all other transaction objects
 
 # Primitive - Security Transaction Properties
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                |
-| :-------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [security_id](#security_id) | `string` | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id") |
-| [date](#date)               | `string` | Required | cannot be null | [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/date")     |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
+| :-------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [security_id](#security_id) | `string` | Required | cannot be null | [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json#/properties/security_id") |
+| [date](#date)               | `string` | Required | cannot be null | [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/date")    |
 
 ## security_id
 
@@ -33,7 +33,7 @@ Identifier for the security which the transaction applies to
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction#/properties/security_id")
+*   defined in: [Primitive - Security Transaction](basetransaction-properties-security_id.md "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -51,7 +51,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/date")
+*   defined in: [Primitive - Security Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/date")
 
 ### date Type
 

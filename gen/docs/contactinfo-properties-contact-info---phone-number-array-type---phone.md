@@ -1,7 +1,7 @@
 # Type - Phone Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/phone#/properties/phone_numbers/items
+https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_numbers/items
 ```
 
 Type representation of a phone number
@@ -16,10 +16,10 @@ Type representation of a phone number
 
 # items Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                               |
-| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| [phone_type](#phone_type)     | `string` | Required | cannot be null | [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/phone_type#/properties/phone_type") |
-| [phone_number](#phone_number) | `string` | Required | cannot be null | [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_number")         |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                          |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [phone_type](#phone_type)     | `string` | Required | cannot be null | [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json#/properties/phone_type") |
+| [phone_number](#phone_number) | `string` | Required | cannot be null | [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_number")        |
 
 ## phone_type
 
@@ -33,7 +33,7 @@ Enumeration of phone number types
 
 *   cannot be null
 
-*   defined in: [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/phone_type#/properties/phone_type")
+*   defined in: [Type - Phone](phone-properties-enum---phone-type.md "https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json#/properties/phone_type")
 
 ### phone_type Type
 
@@ -62,7 +62,7 @@ A valid phone number
 
 *   cannot be null
 
-*   defined in: [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/phone#/properties/phone_number")
+*   defined in: [Type - Phone](phone-properties-phone_number.md "https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_number")
 
 ### phone_number Type
 

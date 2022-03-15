@@ -1,7 +1,7 @@
 # File - Transactions Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/transactions_file
+https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json
 ```
 
 JSON containing file type identifier and list transactions
@@ -20,14 +20,14 @@ all of
 
 # File - Transactions Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                               |
-| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [items](#items)         | `array`       | Required | cannot be null | [File - Transactions](transactionsfile-properties-items.md "https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items")         |
-| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Transactions](transactionsfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/transactions_file#/properties/file_type") |
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                          |
+| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [items](#items)         | `array`       | Required | cannot be null | [File - Transactions](transactionsfile-properties-items.md "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items")         |
+| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Transactions](transactionsfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/file_type") |
 
 ## items
 
-
+List of OCF transaction objects
 
 `items`
 
@@ -37,7 +37,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Transactions](transactionsfile-properties-items.md "https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items")
+*   defined in: [File - Transactions](transactionsfile-properties-items.md "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items")
 
 ### items Type
 
@@ -55,7 +55,7 @@ an array of merged types ([Details](transactionsfile-properties-items-items.md))
 
 *   cannot be null
 
-*   defined in: [File - Transactions](transactionsfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/transactions_file#/properties/file_type")
+*   defined in: [File - Transactions](transactionsfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/file_type")
 
 ### file_type Type
 

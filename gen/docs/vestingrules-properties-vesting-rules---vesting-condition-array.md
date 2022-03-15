@@ -1,7 +1,7 @@
 # Vesting Rules - Vesting Condition Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_conditions
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_conditions
 ```
 
 Tree-structured schedule- and/or event-driven vesting conditions for the securities, including single- or double-trigger acceleration.

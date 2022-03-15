@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Release Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/method
+https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/method
 ```
 
 Method of release

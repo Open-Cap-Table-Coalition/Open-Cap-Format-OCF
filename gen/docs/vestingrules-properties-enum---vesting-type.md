@@ -1,7 +1,7 @@
 # Enum - Vesting Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/vesting_type#/properties/vesting_type
+https://opencaptablecoalition.com/schema/enums/VestingType.schema.json#/properties/vesting_type
 ```
 
 Enumeration of vesting types

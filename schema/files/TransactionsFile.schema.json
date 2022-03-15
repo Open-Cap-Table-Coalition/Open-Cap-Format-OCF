@@ -1,106 +1,109 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/transactions_file",
+  "$id": "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json",
   "title": "File - Transactions",
   "description": "JSON containing file type identifier and list transactions",
   "type": "object",
   "allOf": [
-    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json"
+    }
   ],
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF transaction objects",
       "items": {
         "oneOf": [
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/plan_security_acceptance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/warrant_acceptance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/exercise/warrant_exercise"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/exercise/WarrantExercise.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/StockIssuance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/repurchase/StockRepurchase.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/release/plan_security_release"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/convertible_retraction"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/ConvertibleRetraction.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/stock_retraction"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/StockRetraction.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/WarrantRetraction.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/PlanSecuritySplit.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/warrant_split"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/WarrantSplit.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/plan_security_transfer"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/stock_transfer"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/StockTransfer.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/warrant_transfer"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/WarrantTransfer.schema.json"
           }
         ]
       }

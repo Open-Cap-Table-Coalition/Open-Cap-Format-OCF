@@ -1,7 +1,7 @@
 # Untitled undefined type in Type - Event-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/dependent_vesting/items
+https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json#/properties/dependent_vesting/items
 ```
 
 

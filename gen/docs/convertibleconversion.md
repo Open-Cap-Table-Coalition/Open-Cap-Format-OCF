@@ -1,7 +1,7 @@
 # Object - Convertible Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion
+https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json
 ```
 
 Object describing a conversion of a convertible security
@@ -24,15 +24,15 @@ all of
 
 # Object - Convertible Conversion Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/object_type")                       |
-| [reason_text](#reason_text)                       | `string`      | Required | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/reason_text")                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/date")                                     |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/object_type")                       |
+| [reason_text](#reason_text)                       | `string`      | Required | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/reason_text")                       |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/date")                                     |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Convertible Conversion Transaction](convertibleconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/resulting_security_ids") |
 
 ## object_type
 
@@ -46,7 +46,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/object_type")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -72,7 +72,7 @@ Reason for the conversion
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/reason_text")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/reason_text")
 
 ### reason_text Type
 
@@ -90,7 +90,7 @@ Reason for the conversion
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/id")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/id")
 
 ### id Type
 
@@ -108,7 +108,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/comments")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -126,7 +126,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/security_id")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -144,7 +144,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/date")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/date")
 
 ### date Type
 
@@ -162,7 +162,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/resulting_security_ids")
+*   defined in: [Object - Convertible Conversion Transaction](convertibleconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

@@ -1,7 +1,7 @@
 # Primitive - Security Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/base_acceptance
+https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json
 ```
 
 Abstract object describing a security acceptance transaction

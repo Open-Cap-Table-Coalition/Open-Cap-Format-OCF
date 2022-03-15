@@ -1,7 +1,7 @@
 # Type - Monetary Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/monetary
+https://opencaptablecoalition.com/schema/types/Monetary.schema.json
 ```
 
 Type representation of an amount of money in a specified currency
@@ -18,7 +18,7 @@ Type representation of an amount of money in a specified currency
 
 | Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                    |
 | :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")                           |
+| [amount](#amount)     | `string` | Required | cannot be null | [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/amount")               |
 | [currency](#currency) | `string` | Required | cannot be null | [Type - Monetary](monetary-properties-type---currency-code.md "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json#/properties/currency") |
 
 ## amount
@@ -33,7 +33,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/amount")
+*   defined in: [Type - Monetary](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/amount")
 
 ### amount Type
 

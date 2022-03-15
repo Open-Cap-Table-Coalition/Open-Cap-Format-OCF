@@ -1,7 +1,7 @@
 # Untitled string in Object - Stock Plan Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id
+https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/stock_class_id
 ```
 
 Identifier of the StockClass object this plan is composed of

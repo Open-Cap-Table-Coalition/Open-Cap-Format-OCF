@@ -1,7 +1,7 @@
 # File - Vesting Schedules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/vesting_schedules_file
+https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json
 ```
 
 JSON containing file type identifier and list of vesting schedules
@@ -20,14 +20,14 @@ all of
 
 # File - Vesting Schedules Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                             |
-| :---------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [items](#items)         | `array`       | Required | cannot be null | [File - Vesting Schedules](vestingschedulesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items")         |
-| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Vesting Schedules](vestingschedulesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/file_type") |
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                                       |
+| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [items](#items)         | `array`       | Required | cannot be null | [File - Vesting Schedules](vestingschedulesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/items")         |
+| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Vesting Schedules](vestingschedulesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/file_type") |
 
 ## items
 
-
+List of OCF vesting schedule objects
 
 `items`
 
@@ -37,7 +37,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Vesting Schedules](vestingschedulesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/items")
+*   defined in: [File - Vesting Schedules](vestingschedulesfile-properties-items.md "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/items")
 
 ### items Type
 
@@ -55,7 +55,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Vesting Schedules](vestingschedulesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/vesting_schedules_file#/properties/file_type")
+*   defined in: [File - Vesting Schedules](vestingschedulesfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json#/properties/file_type")
 
 ### file_type Type
 

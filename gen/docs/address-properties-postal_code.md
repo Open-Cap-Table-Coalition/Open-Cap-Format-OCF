@@ -1,7 +1,7 @@
 # Untitled string in Type - Address Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/address#/properties/postal_code
+https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/postal_code
 ```
 
 Address postal code

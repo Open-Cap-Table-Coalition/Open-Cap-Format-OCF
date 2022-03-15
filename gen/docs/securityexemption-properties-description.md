@@ -1,7 +1,7 @@
 # Untitled string in Type - Security Exemption Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/security_exemption#/properties/description
+https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json#/properties/description
 ```
 
 Description of an applicable security law exemption governing the issuance

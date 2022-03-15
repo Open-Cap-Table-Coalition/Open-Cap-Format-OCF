@@ -1,7 +1,7 @@
 # Untitled boolean in Primitive - Security Release Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/stock_swap
+https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/stock_swap
 ```
 
 Whether this is a stock swap or not?

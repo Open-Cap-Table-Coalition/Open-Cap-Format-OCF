@@ -1,7 +1,7 @@
 # Security Conversion - Resulting Security ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json#/properties/resulting_security_ids
 ```
 
 Identifier for the security (or securities) that resulted from the conversion

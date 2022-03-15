@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Issuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance#/properties/custom_id
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json#/properties/custom_id
 ```
 
 

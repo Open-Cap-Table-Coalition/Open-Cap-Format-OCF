@@ -1,7 +1,7 @@
 # Enum - Phone Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/phone_type
+https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json
 ```
 
 Enumeration of phone number types

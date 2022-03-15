@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/security_id
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/security_id
 ```
 
 

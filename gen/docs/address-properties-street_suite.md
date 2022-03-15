@@ -1,7 +1,7 @@
 # Untitled string in Type - Address Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/address#/properties/street_suite
+https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/street_suite
 ```
 
 Street address (multi-line string)

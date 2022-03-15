@@ -1,10 +1,10 @@
 # Untitled array in File - Stock Classes Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/items
+https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/items
 ```
 
-
+List of OCF stock class objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                              |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------ |

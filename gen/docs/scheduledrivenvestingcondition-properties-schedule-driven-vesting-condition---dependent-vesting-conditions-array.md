@@ -1,7 +1,7 @@
 # Schedule-driven Vesting Condition - Dependent Vesting Conditions Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting
+https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting
 ```
 
 Vesting periods or conditions which become operative once this condition is met

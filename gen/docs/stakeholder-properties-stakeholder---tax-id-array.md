@@ -1,7 +1,7 @@
 # Stakeholder - Tax ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/tax_ids
+https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/tax_ids
 ```
 
 The tax ids for this stakeholder

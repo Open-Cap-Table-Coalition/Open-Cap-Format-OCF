@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/date",
+  "$id": "https://opencaptablecoalition.com/schema/types/Date.schema.json",
   "title": "Type - Date",
   "description": "Type represention of an ISO-8601 date, e.g. 2022-01-28",
   "type": "string",

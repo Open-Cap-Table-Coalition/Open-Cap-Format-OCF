@@ -1,7 +1,7 @@
 # Object - Stock Re-issuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance
+https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json
 ```
 
 Object describing a re-issuance of stock
@@ -24,14 +24,14 @@ all of
 
 # Object - Stock Re-issuance Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/object_type")                       |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/date")                                     |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/object_type")                       |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/date")                                     |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Re-issuance Transaction](stockreissuance-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/resulting_security_ids") |
 
 ## object_type
 
@@ -45,7 +45,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/object_type")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -71,7 +71,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/id")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/id")
 
 ### id Type
 
@@ -89,7 +89,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/comments")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -107,7 +107,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/security_id")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -125,7 +125,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/date")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/date")
 
 ### date Type
 
@@ -143,7 +143,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance#/properties/resulting_security_ids")
+*   defined in: [Object - Stock Re-issuance Transaction](stockreissuance-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

@@ -1,7 +1,7 @@
 # Untitled string in Type - Address Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/address#/properties/country
+https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/country
 ```
 
 Country code for this address (ISO-3166)

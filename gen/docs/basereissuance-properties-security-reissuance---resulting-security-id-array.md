@@ -1,7 +1,7 @@
 # Security Reissuance - Resulting Security ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json#/properties/resulting_security_ids
 ```
 
 Identifier of the new security (or securities) issuance resulting from a reissuance

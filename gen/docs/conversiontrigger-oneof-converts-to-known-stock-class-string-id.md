@@ -1,7 +1,7 @@
 # Converts to known stock class (String ID) Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/conversion_trigger#/oneOf/1
+https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json#/oneOf/1
 ```
 
 Other conversion triggers permit or require holders of a security convert it into a known StockClass, such as the right to convert Preferred into Common. If this is the case, put the target StockClass' ID here.

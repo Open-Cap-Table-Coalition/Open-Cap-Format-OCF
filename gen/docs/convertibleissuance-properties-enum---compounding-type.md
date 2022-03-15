@@ -1,7 +1,7 @@
 # Enum - Compounding Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/compounding_type#/properties/compounding_type
+https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json#/properties/compounding_type
 ```
 
 Enumeration of interest compounding types

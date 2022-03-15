@@ -1,7 +1,7 @@
 # Object - Stock Class Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_class
+https://opencaptablecoalition.com/schema/objects/StockClass.schema.json
 ```
 
 Object describing a class of stock issued by the issuer
@@ -20,23 +20,23 @@ all of
 
 # Object - Stock Class Properties
 
-| Property                                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :------------------------------------------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                                         | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/object_type")                                             |
-| [name](#name)                                                       | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-name.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/name")                                                           |
-| [class_type](#class_type)                                           | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-enum---stock-class-type.md "https://opencaptablecoalition.com/schema/enums/stock_class_type#/properties/class_type")                               |
-| [default_id_prefix](#default_id_prefix)                             | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-default_id_prefix.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/default_id_prefix")                                 |
-| [current_shares_authorized](#current_shares_authorized)             | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_authorized")                                     |
-| [board_approval_date](#board_approval_date)                         | `string`      | Required | cannot be null | [Object - Stock Class](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date")        |
-| [votes_per_share](#votes_per_share)                                 | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/votes_per_share")                                               |
-| [par_value](#par_value)                                             | `object`      | Required | cannot be null | [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/par_value")                                              |
-| [price_per_share](#price_per_share)                                 | `object`      | Required | cannot be null | [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price_per_share")                                        |
-| [seniority](#seniority)                                             | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/seniority")                                                     |
-| [conversion_rights](#conversion_rights)                             | `array`       | Optional | cannot be null | [Object - Stock Class](stockclass-properties-stock-class---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/conversion_rights") |
-| [liquidation_preference_multiple](#liquidation_preference_multiple) | `string`      | Optional | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/liquidation_preference_multiple")                               |
-| [participation_cap_multiple](#participation_cap_multiple)           | `string`      | Optional | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/participation_cap_multiple")                                    |
-| [id](#id)                                                           | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/id")                                                               |
-| [comments](#comments)                                               | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/comments")                                                   |
+| Property                                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                 |
+| :------------------------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                                         | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/object_type")                                             |
+| [name](#name)                                                       | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-name.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/name")                                                           |
+| [class_type](#class_type)                                           | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-enum---stock-class-type.md "https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json#/properties/class_type")                                |
+| [default_id_prefix](#default_id_prefix)                             | `string`      | Required | cannot be null | [Object - Stock Class](stockclass-properties-default_id_prefix.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/default_id_prefix")                                 |
+| [current_shares_authorized](#current_shares_authorized)             | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/current_shares_authorized")                                    |
+| [board_approval_date](#board_approval_date)                         | `string`      | Required | cannot be null | [Object - Stock Class](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/board_approval_date")       |
+| [votes_per_share](#votes_per_share)                                 | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/votes_per_share")                                              |
+| [par_value](#par_value)                                             | `object`      | Required | cannot be null | [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/par_value")                                             |
+| [price_per_share](#price_per_share)                                 | `object`      | Required | cannot be null | [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price_per_share")                                       |
+| [seniority](#seniority)                                             | `string`      | Required | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/seniority")                                                    |
+| [conversion_rights](#conversion_rights)                             | `array`       | Optional | cannot be null | [Object - Stock Class](stockclass-properties-stock-class---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/conversion_rights") |
+| [liquidation_preference_multiple](#liquidation_preference_multiple) | `string`      | Optional | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/liquidation_preference_multiple")                              |
+| [participation_cap_multiple](#participation_cap_multiple)           | `string`      | Optional | cannot be null | [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/participation_cap_multiple")                                   |
+| [id](#id)                                                           | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/id")                                                               |
+| [comments](#comments)                                               | Not specified | Optional | cannot be null | [Object - Stock Class](stockclass-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/comments")                                                   |
 
 ## object_type
 
@@ -50,7 +50,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/object_type")
+*   defined in: [Object - Stock Class](stockclass-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -76,7 +76,7 @@ Name for the stock type (e.g. Series A Preferred or Class A Common)
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-name.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/name")
+*   defined in: [Object - Stock Class](stockclass-properties-name.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/name")
 
 ### name Type
 
@@ -94,7 +94,7 @@ Enumeration of stock class types
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-enum---stock-class-type.md "https://opencaptablecoalition.com/schema/enums/stock_class_type#/properties/class_type")
+*   defined in: [Object - Stock Class](stockclass-properties-enum---stock-class-type.md "https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json#/properties/class_type")
 
 ### class_type Type
 
@@ -121,7 +121,7 @@ Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1)
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-default_id_prefix.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/default_id_prefix")
+*   defined in: [Object - Stock Class](stockclass-properties-default_id_prefix.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/default_id_prefix")
 
 ### default_id_prefix Type
 
@@ -139,7 +139,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_authorized")
+*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/current_shares_authorized")
 
 ### current_shares_authorized Type
 
@@ -167,7 +167,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date")
+*   defined in: [Object - Stock Class](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -189,7 +189,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/votes_per_share")
+*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/votes_per_share")
 
 ### votes_per_share Type
 
@@ -217,7 +217,7 @@ Type representation of an amount of money in a specified currency
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/par_value")
+*   defined in: [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/par_value")
 
 ### par_value Type
 
@@ -235,7 +235,7 @@ Type representation of an amount of money in a specified currency
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price_per_share")
+*   defined in: [Object - Stock Class](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
@@ -253,7 +253,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/seniority")
+*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/seniority")
 
 ### seniority Type
 
@@ -281,7 +281,7 @@ List of stock class conversion rights possible for this stock class
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-stock-class---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/conversion_rights")
+*   defined in: [Object - Stock Class](stockclass-properties-stock-class---stock-class-conversion-rights-array.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/conversion_rights")
 
 ### conversion_rights Type
 
@@ -299,7 +299,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/liquidation_preference_multiple")
+*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/liquidation_preference_multiple")
 
 ### liquidation_preference_multiple Type
 
@@ -327,7 +327,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/participation_cap_multiple")
+*   defined in: [Object - Stock Class](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/participation_cap_multiple")
 
 ### participation_cap_multiple Type
 
@@ -355,7 +355,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/id")
+*   defined in: [Object - Stock Class](stockclass-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/id")
 
 ### id Type
 
@@ -373,7 +373,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Class](stockclass-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_class#/properties/comments")
+*   defined in: [Object - Stock Class](stockclass-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/comments")
 
 ### comments Type
 

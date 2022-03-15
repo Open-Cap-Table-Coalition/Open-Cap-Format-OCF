@@ -1,7 +1,7 @@
 # Untitled boolean in Type - Conversion Trigger Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/conversion_trigger#/properties/converts_to_future_round
+https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json#/properties/converts_to_future_round
 ```
 
 Is this StockClass potentially convertible into a future, as-yet undetermined StockClass (e.g. Founder Preferred)

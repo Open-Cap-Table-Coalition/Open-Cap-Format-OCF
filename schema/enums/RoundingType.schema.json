@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/rounding_type",
+  "$id": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json",
   "title": "Enum - Rounding Type",
   "description": "Enumeration of rounding types",
   "type": "string",

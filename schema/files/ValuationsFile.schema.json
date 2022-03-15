@@ -1,17 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/valuations_file",
+  "$id": "https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json",
   "title": "File - Valuations",
   "description": "JSON containing file type identifier and list of valuations",
   "type": "object",
   "allOf": [
-    { "$ref": "https://opencaptablecoalition.com/schema/primitives/base_file" }
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json"
+    }
   ],
   "properties": {
     "items": {
       "type": "array",
+      "description": "List of OCF valuation objects",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/valuation"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json"
       }
     },
     "file_type": {

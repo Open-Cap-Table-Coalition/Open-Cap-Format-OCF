@@ -1,7 +1,7 @@
 # Untitled string in Object - Stock Class Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_class#/properties/name
+https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/name
 ```
 
 Name for the stock type (e.g. Series A Preferred or Class A Common)

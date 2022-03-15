@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json",
   "title": "Object - Stock Split Transaction",
   "description": "Object describing a split of a stock security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json"
     }
   ],
   "properties": {

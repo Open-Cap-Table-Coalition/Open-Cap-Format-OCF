@@ -1,7 +1,7 @@
 # File - Stakeholders Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stakeholders_file
+https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json
 ```
 
 JSON containing file type identifier and list of stakeholders
@@ -20,14 +20,14 @@ all of
 
 # File - Stakeholders Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                               |
-| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [items](#items)         | `array`       | Required | cannot be null | [File - Stakeholders](stakeholdersfile-properties-items.md "https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items")         |
-| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Stakeholders](stakeholdersfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/file_type") |
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                          |
+| :---------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [items](#items)         | `array`       | Required | cannot be null | [File - Stakeholders](stakeholdersfile-properties-items.md "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/items")         |
+| [file_type](#file_type) | Not specified | Required | cannot be null | [File - Stakeholders](stakeholdersfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/file_type") |
 
 ## items
 
-
+List of OCF stakeholder objects
 
 `items`
 
@@ -37,7 +37,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Stakeholders](stakeholdersfile-properties-items.md "https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items")
+*   defined in: [File - Stakeholders](stakeholdersfile-properties-items.md "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/items")
 
 ### items Type
 
@@ -55,7 +55,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [File - Stakeholders](stakeholdersfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/file_type")
+*   defined in: [File - Stakeholders](stakeholdersfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/file_type")
 
 ### file_type Type
 

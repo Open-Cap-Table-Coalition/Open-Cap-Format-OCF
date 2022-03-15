@@ -1,7 +1,7 @@
 # Object - Valuation Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/valuation
+https://opencaptablecoalition.com/schema/objects/Valuation.schema.json
 ```
 
 Object describing a valuation used in the cap table
@@ -20,15 +20,15 @@ all of
 
 # Object - Valuation Properties
 
-| Property                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                        |
-| :---------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)         | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/object_type")                                    |
-| [provider](#provider)               | `string`      | Optional | cannot be null | [Object - Valuation](valuation-properties-provider.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/provider")                                          |
-| [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price_per_share")                            |
-| [valuation_date](#valuation_date)   | `string`      | Required | cannot be null | [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/valuation_date") |
-| [valuation_type](#valuation_type)   | `string`      | Required | cannot be null | [Object - Valuation](valuation-properties-enum---valuation-type.md "https://opencaptablecoalition.com/schema/enums/valuation_type#/properties/valuation_type")                    |
-| [id](#id)                           | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-id.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/id")                                                      |
-| [comments](#comments)               | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/comments")                                          |
+| Property                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                    |
+| :---------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)         | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/object_type")                                    |
+| [provider](#provider)               | `string`      | Optional | cannot be null | [Object - Valuation](valuation-properties-provider.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/provider")                                          |
+| [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price_per_share")                            |
+| [valuation_date](#valuation_date)   | `string`      | Required | cannot be null | [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/valuation_date") |
+| [valuation_type](#valuation_type)   | `string`      | Required | cannot be null | [Object - Valuation](valuation-properties-enum---valuation-type.md "https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json#/properties/valuation_type")                     |
+| [id](#id)                           | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-id.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/id")                                                      |
+| [comments](#comments)               | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/comments")                                          |
 
 ## object_type
 
@@ -42,7 +42,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/object_type")
+*   defined in: [Object - Valuation](valuation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -68,7 +68,7 @@ Entity which provided the valuation
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-properties-provider.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/provider")
+*   defined in: [Object - Valuation](valuation-properties-provider.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/provider")
 
 ### provider Type
 
@@ -86,7 +86,7 @@ Type representation of an amount of money in a specified currency
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price_per_share")
+*   defined in: [Object - Valuation](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price_per_share")
 
 ### price_per_share Type
 
@@ -104,7 +104,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/valuation_date")
+*   defined in: [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/valuation_date")
 
 ### valuation_date Type
 
@@ -126,7 +126,7 @@ Enumeration of valuation types
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-properties-enum---valuation-type.md "https://opencaptablecoalition.com/schema/enums/valuation_type#/properties/valuation_type")
+*   defined in: [Object - Valuation](valuation-properties-enum---valuation-type.md "https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json#/properties/valuation_type")
 
 ### valuation_type Type
 
@@ -152,7 +152,7 @@ Enumeration of valuation types
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-properties-id.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/id")
+*   defined in: [Object - Valuation](valuation-properties-id.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/id")
 
 ### id Type
 
@@ -170,7 +170,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](valuation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/valuation#/properties/comments")
+*   defined in: [Object - Valuation](valuation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/comments")
 
 ### comments Type
 

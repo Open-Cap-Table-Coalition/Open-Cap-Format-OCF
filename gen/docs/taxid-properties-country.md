@@ -1,7 +1,7 @@
 # Untitled string in Type - Tax Identifier Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country
+https://opencaptablecoalition.com/schema/types/TaxID.schema.json#/properties/country
 ```
 
 Issuing country code (ISO-3166) for the tax identifier

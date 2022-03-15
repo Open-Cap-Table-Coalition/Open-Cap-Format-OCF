@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json",
   "title": "Object - Plan Security Retraction Transaction",
   "description": "Object describing a retraction of a plan security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json"
     }
   ],
   "properties": {

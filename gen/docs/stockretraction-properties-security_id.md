@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Retraction Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/retraction/stock_retraction#/properties/security_id
+https://opencaptablecoalition.com/schema/objects/transactions/retraction/StockRetraction.schema.json#/properties/security_id
 ```
 
 

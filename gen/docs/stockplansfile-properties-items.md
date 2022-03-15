@@ -1,10 +1,10 @@
 # Untitled array in File - Stock Plans Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_plans_file#/properties/items
+https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json#/properties/items
 ```
 
-
+List of OCF stock plan objects
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                          |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------- |

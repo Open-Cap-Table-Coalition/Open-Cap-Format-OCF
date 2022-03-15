@@ -1,7 +1,7 @@
 # Untitled string in Type - Address Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/address#/properties/state_province
+https://opencaptablecoalition.com/schema/types/Address.schema.json#/properties/state_province
 ```
 
 State, province or equivalent identifier required for an address in this country (ISO-3166-2)

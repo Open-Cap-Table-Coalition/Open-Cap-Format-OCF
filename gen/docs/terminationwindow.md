@@ -1,7 +1,7 @@
 # Type - Termination Window Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/termination_window
+https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json
 ```
 
 Type representation of a termination window
@@ -16,11 +16,11 @@ Type representation of a termination window
 
 # Type - Termination Window Properties
 
-| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                              |
-| :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [reason](#reason)           | `string`  | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/termination_window_type#/properties/reason") |
-| [period](#period)           | `integer` | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period")                              |
-| [period_type](#period_type) | `string`  | Required | cannot be null | [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")       |
+| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                        |
+| :-------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [reason](#reason)           | `string`  | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json#/properties/reason") |
+| [period](#period)           | `integer` | Required | cannot be null | [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json#/properties/period")                             |
+| [period_type](#period_type) | `string`  | Required | cannot be null | [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json#/properties/period_type")      |
 
 ## reason
 
@@ -34,7 +34,7 @@ Enumeration of termination window types
 
 *   cannot be null
 
-*   defined in: [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/termination_window_type#/properties/reason")
+*   defined in: [Type - Termination Window](terminationwindow-properties-enum---termination-window-type.md "https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json#/properties/reason")
 
 ### reason Type
 
@@ -65,7 +65,7 @@ The length of the period in this termination window (in number of periods of typ
 
 *   cannot be null
 
-*   defined in: [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/termination_window#/properties/period")
+*   defined in: [Type - Termination Window](terminationwindow-properties-period.md "https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json#/properties/period")
 
 ### period Type
 
@@ -83,7 +83,7 @@ Enumeration of time period types
 
 *   cannot be null
 
-*   defined in: [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")
+*   defined in: [Type - Termination Window](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json#/properties/period_type")
 
 ### period_type Type
 

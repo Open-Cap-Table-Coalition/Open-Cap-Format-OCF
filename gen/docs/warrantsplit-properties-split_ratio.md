@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Split Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/split/warrant_split#/properties/split_ratio
+https://opencaptablecoalition.com/schema/objects/transactions/split/WarrantSplit.schema.json#/properties/split_ratio
 ```
 
 

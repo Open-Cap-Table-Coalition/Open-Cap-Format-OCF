@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json",
   "title": "Object - Plan Security Issuance Transaction",
   "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json"
     }
   ],
   "properties": {
@@ -25,23 +25,23 @@
     },
     "compensation_type": {
       "description": "If the plan security is compensation, what kind?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/compensation_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json"
     },
     "option_grant_type": {
       "description": "If the plan security is an option, what kind?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/option_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
     },
     "quantity": {
       "description": "How many shares are subject to this plan security?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "exercise_price": {
       "description": "What is the exercise price?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "vesting_rules": {
       "description": "What vesting applies to this plan security?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting_rules"
+      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
     },
     "expiration_date": {
       "description": "Expiration date of the plan security",
@@ -50,7 +50,7 @@
           "type": "null"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/date"
+          "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "description": "Exercise periods applicable to plan security after a termination for a given, enumerated reason",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/termination_window"
+        "$ref": "https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json"
       }
     },
     "id": {},

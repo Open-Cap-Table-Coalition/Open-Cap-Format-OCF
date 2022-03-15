@@ -1,7 +1,7 @@
 # Stock Class - Stock Class Conversion Rights Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_class#/properties/conversion_rights
+https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/conversion_rights
 ```
 
 List of stock class conversion rights possible for this stock class
