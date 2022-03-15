@@ -1,7 +1,7 @@
 # Untitled undefined type in OCF Manifest File Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/file_type
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/file_type
 ```
 
 

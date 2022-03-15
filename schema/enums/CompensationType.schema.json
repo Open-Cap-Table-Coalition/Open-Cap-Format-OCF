@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/compensation_type",
+  "$id": "https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json",
   "title": "Enum - Compensation Type",
   "description": "Enumeration of stock compensation types",
   "type": "string",

@@ -1,7 +1,7 @@
 # Untitled string in Type - Vesting Rules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_description
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_description
 ```
 
 Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches

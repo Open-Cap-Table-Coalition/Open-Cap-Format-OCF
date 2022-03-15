@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/name",
+  "$id": "https://opencaptablecoalition.com/schema/types/Name.schema.json",
   "title": "Type - Name",
   "description": "Type comprising of multiple name components",
   "type": "object",

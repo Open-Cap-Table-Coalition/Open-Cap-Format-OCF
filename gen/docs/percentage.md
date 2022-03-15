@@ -1,7 +1,7 @@
 # Type - Percentage Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/percentage
+https://opencaptablecoalition.com/schema/types/Percentage.schema.json
 ```
 
 Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)

@@ -1,7 +1,7 @@
 # Untitled undefined type in File - Stakeholders Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/file_type
+https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/file_type
 ```
 
 

@@ -1,7 +1,7 @@
 # Primitive - Security Release Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release
+https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json
 ```
 
 Abstract object describing fields common to all release transaction objects
@@ -16,17 +16,17 @@ Abstract object describing fields common to all release transaction objects
 
 # Primitive - Security Release Transaction Properties
 
-| Property                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                               |
-| :------------------------------------------ | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [settlement_date](#settlement_date)         | `string`  | Required | cannot be null | [Primitive - Security Release Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/settlement_date") |
-| [release_price](#release_price)             | `object`  | Required | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/release_price")                               |
-| [net_quantity](#net_quantity)               | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/net_quantity")                                       |
-| [method](#method)                           | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](baserelease-properties-method.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/method")                  |
-| [stock_swap](#stock_swap)                   | `boolean` | Optional | cannot be null | [Primitive - Security Release Transaction](baserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/stock_swap")          |
-| [cash_paid](#cash_paid)                     | `object`  | Optional | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/cash_paid")                                   |
-| [quantity_sold](#quantity_sold)             | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_sold")                                      |
-| [sale_price_per_unit](#sale_price_per_unit) | `object`  | Optional | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/sale_price_per_unit")                         |
-| [withheld_quantity](#withheld_quantity)     | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/withheld_quantity")                                  |
+| Property                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                           |
+| :------------------------------------------ | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [settlement_date](#settlement_date)         | `string`  | Required | cannot be null | [Primitive - Security Release Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/settlement_date") |
+| [release_price](#release_price)             | `object`  | Required | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/release_price")                               |
+| [net_quantity](#net_quantity)               | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/net_quantity")                                       |
+| [method](#method)                           | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](baserelease-properties-method.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/method")                   |
+| [stock_swap](#stock_swap)                   | `boolean` | Optional | cannot be null | [Primitive - Security Release Transaction](baserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/stock_swap")           |
+| [cash_paid](#cash_paid)                     | `object`  | Optional | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/cash_paid")                                   |
+| [quantity_sold](#quantity_sold)             | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity_sold")                                      |
+| [sale_price_per_unit](#sale_price_per_unit) | `object`  | Optional | cannot be null | [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/sale_price_per_unit")                         |
+| [withheld_quantity](#withheld_quantity)     | `string`  | Optional | cannot be null | [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/withheld_quantity")                                  |
 
 ## settlement_date
 
@@ -40,7 +40,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/settlement_date")
+*   defined in: [Primitive - Security Release Transaction](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/settlement_date")
 
 ### settlement_date Type
 
@@ -62,7 +62,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/release_price")
+*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/release_price")
 
 ### release_price Type
 
@@ -80,7 +80,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/net_quantity")
+*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/net_quantity")
 
 ### net_quantity Type
 
@@ -108,7 +108,7 @@ Method of release
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](baserelease-properties-method.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/method")
+*   defined in: [Primitive - Security Release Transaction](baserelease-properties-method.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/method")
 
 ### method Type
 
@@ -126,7 +126,7 @@ Whether this is a stock swap or not?
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](baserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release#/properties/stock_swap")
+*   defined in: [Primitive - Security Release Transaction](baserelease-properties-stock_swap.md "https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json#/properties/stock_swap")
 
 ### stock_swap Type
 
@@ -144,7 +144,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/cash_paid")
+*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/cash_paid")
 
 ### cash_paid Type
 
@@ -162,7 +162,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_sold")
+*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity_sold")
 
 ### quantity_sold Type
 
@@ -190,7 +190,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/sale_price_per_unit")
+*   defined in: [Primitive - Security Release Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/sale_price_per_unit")
 
 ### sale_price_per_unit Type
 
@@ -208,7 +208,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/withheld_quantity")
+*   defined in: [Primitive - Security Release Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/withheld_quantity")
 
 ### withheld_quantity Type
 

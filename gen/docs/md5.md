@@ -1,7 +1,7 @@
 # Type - MD5 Hash Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/md5
+https://opencaptablecoalition.com/schema/types/Md5.schema.json
 ```
 
 String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers

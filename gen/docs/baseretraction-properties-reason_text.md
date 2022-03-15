@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Retraction Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction#/properties/reason_text
+https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json#/properties/reason_text
 ```
 
 Reason for the retraction

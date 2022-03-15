@@ -1,7 +1,7 @@
 # Enum - Allocation Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/allocation_type
+https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json
 ```
 
 Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:

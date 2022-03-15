@@ -1,7 +1,7 @@
 # Untitled undefined type in File - Transactions Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items/items
+https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items/items
 ```
 
 

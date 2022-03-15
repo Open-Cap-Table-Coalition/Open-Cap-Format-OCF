@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Split Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json#/properties/resulting_security_ids
 ```
 
 

@@ -1,7 +1,7 @@
 # Enum - Stakeholder Relationship Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type
+https://opencaptablecoalition.com/schema/enums/StakeholderRelationshipType.schema.json
 ```
 
 Enumeration of types of relationships between stakeholder and issuer

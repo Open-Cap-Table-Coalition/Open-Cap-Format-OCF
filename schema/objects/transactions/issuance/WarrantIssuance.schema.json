@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json",
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json"
     }
   ],
   "properties": {
@@ -24,28 +24,28 @@
       "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights"
+        "$ref": "https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json"
       }
     },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "exercise_price": {
       "description": "The exercise price of the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "purchase_price": {
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "vesting_rules": {
       "description": "Vesting conditions applicable to the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting_rules"
+      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
-      "$ref": "https://opencaptablecoalition.com/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "id": {},
     "comments": {},

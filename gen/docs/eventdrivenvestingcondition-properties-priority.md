@@ -1,7 +1,7 @@
 # Untitled integer in Type - Event-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/priority
+https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json#/properties/priority
 ```
 
 Given sibling conditions, this field determines the order by which conditions shall be applied

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Release Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/release/plan_security_release#/properties/net_quantity
+https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json#/properties/net_quantity
 ```
 
 

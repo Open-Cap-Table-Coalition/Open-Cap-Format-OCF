@@ -1,7 +1,7 @@
 # Enum - OCF Version Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/ocf_version_type#/properties/ocf_version
+https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json#/properties/ocf_version
 ```
 
 Enumeration of recognized OCF versions

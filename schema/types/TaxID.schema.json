@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/tax_identifier",
+  "$id": "https://opencaptablecoalition.com/schema/types/TaxID.schema.json",
   "title": "Type - Tax Identifier",
   "description": "Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)",
   "type": "object",

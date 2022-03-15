@@ -1,7 +1,7 @@
 # Untitled string in Object - Stock Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/balance_security_id
+https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/balance_security_id
 ```
 
 Identifier for the security that holds the remainder balance (for partial conversions)

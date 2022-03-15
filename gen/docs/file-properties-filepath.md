@@ -1,7 +1,7 @@
 # Untitled string in Type - File Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/file#/properties/filepath
+https://opencaptablecoalition.com/schema/types/File.schema.json#/properties/filepath
 ```
 
 Path to the file within the OCF container

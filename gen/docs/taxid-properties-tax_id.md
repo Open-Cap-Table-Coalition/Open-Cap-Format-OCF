@@ -1,7 +1,7 @@
 # Untitled string in Type - Tax Identifier Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id
+https://opencaptablecoalition.com/schema/types/TaxID.schema.json#/properties/tax_id
 ```
 
 Tax identifier as string

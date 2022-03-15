@@ -1,7 +1,7 @@
 # Primitive - Security Reissuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance
+https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json
 ```
 
 Abstract object describing common properties to a reissuance of a security
@@ -16,9 +16,9 @@ Abstract object describing common properties to a reissuance of a security
 
 # Primitive - Security Reissuance Transaction Properties
 
-| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids") |
+| Property                                          | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [resulting_security_ids](#resulting_security_ids) | `array` | Required | cannot be null | [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json#/properties/resulting_security_ids") |
 
 ## resulting_security_ids
 
@@ -32,7 +32,7 @@ Identifier of the new security (or securities) issuance resulting from a reissua
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Reissuance Transaction](basereissuance-properties-security-reissuance---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

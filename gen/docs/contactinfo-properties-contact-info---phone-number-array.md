@@ -1,7 +1,7 @@
 # Contact Info - Phone Number Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers
+https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/phone_numbers
 ```
 
 Phone numbers to reach the contact at

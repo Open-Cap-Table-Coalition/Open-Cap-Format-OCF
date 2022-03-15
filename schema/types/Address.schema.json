@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/address",
+  "$id": "https://opencaptablecoalition.com/schema/types/Address.schema.json",
   "title": "Type - Address",
   "description": "Type representation of an address",
   "type": "object",
   "properties": {
     "address_type": {
       "description": "What type of address is this (e.g. legal address, contact address, etc.)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/address_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/AddressType.schema.json"
     },
     "street_suite": {
       "description": "Street address (multi-line string)",

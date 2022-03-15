@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Cancellation Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation#/properties/balance_security_id
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json#/properties/balance_security_id
 ```
 
 

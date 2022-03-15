@@ -1,7 +1,7 @@
 # Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting/items/anyOf/1
+https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items/anyOf/1
 ```
 
 Type representation of a row in a vesting schedule
@@ -16,14 +16,14 @@ Type representation of a row in a vesting schedule
 
 # 1 Properties
 
-| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
-| :---------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [amount_numerator](#amount_numerator)     | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/amount_numerator")                                                        |
-| [amount_denominator](#amount_denominator) | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/amount_denominator")                                                    |
-| [period_length](#period_length)           | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/period_length")                                                              |
-| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")                                                                                 |
-| [priority](#priority)                     | `integer` | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/priority")                                                                        |
-| [dependent_vesting](#dependent_vesting)   | `array`   | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting") |
+| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
+| :---------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [amount_numerator](#amount_numerator)     | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")                                                        |
+| [amount_denominator](#amount_denominator) | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")                                                    |
+| [period_length](#period_length)           | `integer` | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/period_length")                                                              |
+| [period_type](#period_type)               | `string`  | Required | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json#/properties/period_type")                                                                               |
+| [priority](#priority)                     | `integer` | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/priority")                                                                        |
+| [dependent_vesting](#dependent_vesting)   | `array`   | Optional | cannot be null | [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting") |
 
 ## amount_numerator
 
@@ -37,7 +37,7 @@ Numerator of the tranche amount (e.g. 1 in 1/48th)
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/amount_numerator")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_numerator.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/amount_numerator")
 
 ### amount_numerator Type
 
@@ -55,7 +55,7 @@ Denominator of the tranche amount (e.g. 48 in 1/48th)
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/amount_denominator")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-amount_denominator.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/amount_denominator")
 
 ### amount_denominator Type
 
@@ -73,7 +73,7 @@ Length of period following the vesting start date for this tranche
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/period_length")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-period_length.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/period_length")
 
 ### period_length Type
 
@@ -91,7 +91,7 @@ Enumeration of time period types
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/period_type#/properties/period_type")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-enum---period-type.md "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json#/properties/period_type")
 
 ### period_type Type
 
@@ -119,7 +119,7 @@ What order should this period be calculated (1 is highest priority)
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/priority")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-priority.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/priority")
 
 ### priority Type
 
@@ -137,7 +137,7 @@ Vesting periods or conditions which become operative once this condition is met
 
 *   cannot be null
 
-*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting")
+*   defined in: [Type - Schedule-driven Vesting Condition](scheduledrivenvestingcondition-properties-schedule-driven-vesting-condition---dependent-vesting-conditions-array.md "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting")
 
 ### dependent_vesting Type
 

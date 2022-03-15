@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Valuation Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/valuation#/properties/id
+https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/id
 ```
 
 

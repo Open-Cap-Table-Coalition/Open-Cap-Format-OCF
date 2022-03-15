@@ -1,7 +1,7 @@
 # Enum - Valuation Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/valuation_type
+https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json
 ```
 
 Enumeration of valuation types

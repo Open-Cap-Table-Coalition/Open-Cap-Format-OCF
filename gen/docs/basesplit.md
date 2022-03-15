@@ -1,7 +1,7 @@
 # Primitive - Security Split Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split
+https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json
 ```
 
 Abstract object describing a security split transaction
@@ -16,10 +16,10 @@ Abstract object describing a security split transaction
 
 # Primitive - Security Split Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
-| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids") |
-| [split_ratio](#split_ratio)                       | `object` | Required | cannot be null | [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/split_ratio")                                                                 |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json#/properties/resulting_security_ids") |
+| [split_ratio](#split_ratio)                       | `object` | Required | cannot be null | [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/split_ratio")                                                                |
 
 ## resulting_security_ids
 
@@ -33,7 +33,7 @@ Array of identifiers for new security (or securities) created as a result of the
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Split Transaction](basesplit-properties-security-split---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 
@@ -57,7 +57,7 @@ Type representation of a ratio as antecedent and consequent numeric values
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/split_ratio")
+*   defined in: [Primitive - Security Split Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/split_ratio")
 
 ### split_ratio Type
 

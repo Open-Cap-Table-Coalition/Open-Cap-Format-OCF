@@ -1,7 +1,7 @@
 # Untitled string in Type - Monetary Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/monetary#/properties/currency
+https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/currency
 ```
 
 ISO-4217 currency code

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Plan Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/comments
+https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/comments
 ```
 
 

@@ -1,7 +1,7 @@
 # Object - Stock Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion
+https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json
 ```
 
 Object describing a conversion of stock
@@ -24,17 +24,17 @@ all of
 
 # Object - Stock Conversion Transaction Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
-| :------------------------------------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/object_type")                       |
-| [balance_security_id](#balance_security_id)       | `string`      | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/balance_security_id")       |
-| [quantity_converted](#quantity_converted)         | `string`      | Required | cannot be null | [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_converted")                                                        |
-| [conversion_ratio](#conversion_ratio)             | `object`      | Required | cannot be null | [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/conversion_ratio")                                                    |
-| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/id")                                         |
-| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/comments")                             |
-| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/security_id")                       |
-| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/date")                                     |
-| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/resulting_security_ids") |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                              |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/object_type")                       |
+| [balance_security_id](#balance_security_id)       | `string`      | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/balance_security_id")       |
+| [quantity_converted](#quantity_converted)         | `string`      | Required | cannot be null | [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity_converted")                                                       |
+| [conversion_ratio](#conversion_ratio)             | `object`      | Required | cannot be null | [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/conversion_ratio")                                                   |
+| [id](#id)                                         | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/id")                                         |
+| [comments](#comments)                             | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/comments")                             |
+| [security_id](#security_id)                       | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/security_id")                       |
+| [date](#date)                                     | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/date")                                     |
+| [resulting_security_ids](#resulting_security_ids) | Not specified | Optional | cannot be null | [Object - Stock Conversion Transaction](stockconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/resulting_security_ids") |
 
 ## object_type
 
@@ -48,7 +48,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/object_type")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -74,7 +74,7 @@ Identifier for the security that holds the remainder balance (for partial conver
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/balance_security_id")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/balance_security_id")
 
 ### balance_security_id Type
 
@@ -92,7 +92,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity_converted")
+*   defined in: [Object - Stock Conversion Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity_converted")
 
 ### quantity_converted Type
 
@@ -120,7 +120,7 @@ Type representation of a ratio as antecedent and consequent numeric values
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/ratio#/properties/conversion_ratio")
+*   defined in: [Object - Stock Conversion Transaction](conversiontrigger-properties-type---ratio.md "https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/conversion_ratio")
 
 ### conversion_ratio Type
 
@@ -138,7 +138,7 @@ Type representation of a ratio as antecedent and consequent numeric values
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/id")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/id")
 
 ### id Type
 
@@ -156,7 +156,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/comments")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -174,7 +174,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/security_id")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -192,7 +192,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/date")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/date")
 
 ### date Type
 
@@ -210,7 +210,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/resulting_security_ids")
+*   defined in: [Object - Stock Conversion Transaction](stockconversion-properties-resulting_security_ids.md "https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

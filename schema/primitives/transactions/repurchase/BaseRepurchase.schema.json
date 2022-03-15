@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json",
   "title": "Primitive - Security Repurchase Transaction",
   "description": "Abstract object describing common properties to a repurchase transaction",
   "type": "object",
   "properties": {
     "price": {
       "description": "Repurchase price per share of the stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "quantity": {
       "description": "Number of shares of stock repurchased",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "consideration": {
       "description": "Consideration for the repurchase of the stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "resulting_security_ids": {
       "title": "Security Repurchase - Resulting Security ID Array",

@@ -1,7 +1,7 @@
 # Event-driven Vesting Condition - Event-driven Vesting Condition Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/dependent_vesting
+https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json#/properties/dependent_vesting
 ```
 
 Additional vesting conditions which become operative once this condition is met

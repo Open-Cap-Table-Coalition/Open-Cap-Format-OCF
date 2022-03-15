@@ -1,7 +1,7 @@
 # Enum - Stock Class Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/stock_class_type#/properties/class_type
+https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json#/properties/class_type
 ```
 
 Enumeration of stock class types

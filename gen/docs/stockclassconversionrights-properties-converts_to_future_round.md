@@ -1,7 +1,7 @@
 # Untitled boolean in Type - Stock Class Conversion Rights Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_future_round
+https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json#/properties/converts_to_future_round
 ```
 
 Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)

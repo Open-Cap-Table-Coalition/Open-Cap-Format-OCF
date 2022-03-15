@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/acceptance/plan_security_acceptance#/properties/comments
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json#/properties/comments
 ```
 
 

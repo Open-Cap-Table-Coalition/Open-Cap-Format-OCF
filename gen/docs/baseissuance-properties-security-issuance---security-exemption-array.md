@@ -1,10 +1,10 @@
 # Security Issuance - Security Exemption Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance#/properties/security_law_exemptions
+https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json#/properties/security_law_exemptions
 ```
 
-List of security law exemptions (and applicable jurisdictions) for this security
+List of security law exemptions (and applicable jurisdictions) for this convertible
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                 |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------- |

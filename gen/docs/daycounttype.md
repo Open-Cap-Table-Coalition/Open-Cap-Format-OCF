@@ -1,7 +1,7 @@
 # Enum - Day Count Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/day_count_type
+https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json
 ```
 
 Enumeration of how the number of days are determined per period

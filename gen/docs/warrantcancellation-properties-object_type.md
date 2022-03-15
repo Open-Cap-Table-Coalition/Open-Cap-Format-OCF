@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Cancellation Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/object_type
 ```
 
 

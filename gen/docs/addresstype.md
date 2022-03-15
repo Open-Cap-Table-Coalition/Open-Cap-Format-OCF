@@ -1,7 +1,7 @@
 # Enum - Address Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/address_type
+https://opencaptablecoalition.com/schema/enums/AddressType.schema.json
 ```
 
 Enumeration of address types

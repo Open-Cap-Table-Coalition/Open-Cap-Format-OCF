@@ -1,7 +1,7 @@
 # Type - Vesting Rules Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/vesting_rules
+https://opencaptablecoalition.com/schema/types/VestingRules.schema.json
 ```
 
 Type representing all aspects related to vesting securities
@@ -16,14 +16,14 @@ Type representing all aspects related to vesting securities
 
 # Type - Vesting Rules Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                         |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [vesting_type](#vesting_type)                             | `string` | Required | cannot be null | [Type - Vesting Rules](vestingrules-properties-enum---vesting-type.md "https://opencaptablecoalition.com/schema/enums/vesting_type#/properties/vesting_type")                                      |
-| [vesting_schedule_id](#vesting_schedule_id)               | `string` | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting_schedule_id.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_schedule_id")                              |
-| [vesting_start_date](#vesting_start_date)                 | `string` | Optional | cannot be null | [Type - Vesting Rules](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/vesting_start_date")            |
-| [vesting_conditions](#vesting_conditions)                 | `array`  | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting-rules---vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_conditions")           |
-| [custom_vesting_tranches](#custom_vesting_tranches)       | `array`  | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting-rules---custom-vesting-tranche-array.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_tranches") |
-| [custom_vesting_description](#custom_vesting_description) | `string` | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-custom_vesting_description.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_description")                |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                    |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [vesting_type](#vesting_type)                             | `string` | Required | cannot be null | [Type - Vesting Rules](vestingrules-properties-enum---vesting-type.md "https://opencaptablecoalition.com/schema/enums/VestingType.schema.json#/properties/vesting_type")                                      |
+| [vesting_schedule_id](#vesting_schedule_id)               | `string` | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting_schedule_id.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_schedule_id")                              |
+| [vesting_start_date](#vesting_start_date)                 | `string` | Optional | cannot be null | [Type - Vesting Rules](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/vesting_start_date")           |
+| [vesting_conditions](#vesting_conditions)                 | `array`  | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting-rules---vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_conditions")           |
+| [custom_vesting_tranches](#custom_vesting_tranches)       | `array`  | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-vesting-rules---custom-vesting-tranche-array.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_tranches") |
+| [custom_vesting_description](#custom_vesting_description) | `string` | Optional | cannot be null | [Type - Vesting Rules](vestingrules-properties-custom_vesting_description.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_description")                |
 
 ## vesting_type
 
@@ -37,7 +37,7 @@ Enumeration of vesting types
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](vestingrules-properties-enum---vesting-type.md "https://opencaptablecoalition.com/schema/enums/vesting_type#/properties/vesting_type")
+*   defined in: [Type - Vesting Rules](vestingrules-properties-enum---vesting-type.md "https://opencaptablecoalition.com/schema/enums/VestingType.schema.json#/properties/vesting_type")
 
 ### vesting_type Type
 
@@ -65,7 +65,7 @@ Time-based vesting schedule applied to the securities
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting_schedule_id.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_schedule_id")
+*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting_schedule_id.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_schedule_id")
 
 ### vesting_schedule_id Type
 
@@ -83,7 +83,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/vesting_start_date")
+*   defined in: [Type - Vesting Rules](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/vesting_start_date")
 
 ### vesting_start_date Type
 
@@ -107,7 +107,7 @@ Tree-structured schedule- and/or event-driven vesting conditions for the securit
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting-rules---vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/vesting_conditions")
+*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting-rules---vesting-condition-array.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/vesting_conditions")
 
 ### vesting_conditions Type
 
@@ -127,7 +127,7 @@ Explicitly-defined vesting tranches for the securities which can be used in plac
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting-rules---custom-vesting-tranche-array.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_tranches")
+*   defined in: [Type - Vesting Rules](vestingrules-properties-vesting-rules---custom-vesting-tranche-array.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_tranches")
 
 ### custom_vesting_tranches Type
 
@@ -145,7 +145,7 @@ Description field to allow explanation of the vesting conditions which resulted 
 
 *   cannot be null
 
-*   defined in: [Type - Vesting Rules](vestingrules-properties-custom_vesting_description.md "https://opencaptablecoalition.com/schema/types/vesting_rules#/properties/custom_vesting_description")
+*   defined in: [Type - Vesting Rules](vestingrules-properties-custom_vesting_description.md "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json#/properties/custom_vesting_description")
 
 ### custom_vesting_description Type
 

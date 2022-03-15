@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/md5",
+  "$id": "https://opencaptablecoalition.com/schema/types/Md5.schema.json",
   "title": "Type - MD5 Hash",
   "description": "String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers",
   "type": "string",

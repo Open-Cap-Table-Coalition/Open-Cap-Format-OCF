@@ -1,7 +1,7 @@
 # Object - Stock Plan Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_plan
+https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json
 ```
 
 Object describing a plan which stock options are issued from
@@ -20,15 +20,15 @@ all of
 
 # Object - Stock Plan Properties
 
-| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                              |
-| :-------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/object_type")                                        |
-| [plan_name](#plan_name)                             | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/plan_name")                                            |
-| [board_approval_date](#board_approval_date)         | `string`      | Optional | cannot be null | [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date") |
-| [current_shares_reserved](#current_shares_reserved) | `string`      | Required | cannot be null | [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_reserved")                                |
-| [stock_class_id](#stock_class_id)                   | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id")                                  |
-| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/id")                                                          |
-| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/comments")                                              |
+| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                          |
+| :-------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                         | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/object_type")                                         |
+| [plan_name](#plan_name)                             | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/plan_name")                                             |
+| [board_approval_date](#board_approval_date)         | `string`      | Optional | cannot be null | [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/board_approval_date") |
+| [current_shares_reserved](#current_shares_reserved) | `string`      | Required | cannot be null | [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/current_shares_reserved")                                |
+| [stock_class_id](#stock_class_id)                   | `string`      | Required | cannot be null | [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/stock_class_id")                                   |
+| [id](#id)                                           | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/id")                                                           |
+| [comments](#comments)                               | Not specified | Optional | cannot be null | [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/comments")                                               |
 
 ## object_type
 
@@ -42,7 +42,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/object_type")
+*   defined in: [Object - Stock Plan](stockplan-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -68,7 +68,7 @@ Name for the stock plan
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/plan_name")
+*   defined in: [Object - Stock Plan](stockplan-properties-plan_name.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/plan_name")
 
 ### plan_name Type
 
@@ -86,7 +86,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/date#/properties/board_approval_date")
+*   defined in: [Object - Stock Plan](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/board_approval_date")
 
 ### board_approval_date Type
 
@@ -108,7 +108,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/current_shares_reserved")
+*   defined in: [Object - Stock Plan](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/current_shares_reserved")
 
 ### current_shares_reserved Type
 
@@ -136,7 +136,7 @@ Identifier of the StockClass object this plan is composed of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/stock_class_id")
+*   defined in: [Object - Stock Plan](stockplan-properties-stock_class_id.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/stock_class_id")
 
 ### stock_class_id Type
 
@@ -154,7 +154,7 @@ Identifier of the StockClass object this plan is composed of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/id")
+*   defined in: [Object - Stock Plan](stockplan-properties-id.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/id")
 
 ### id Type
 
@@ -172,7 +172,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stock_plan#/properties/comments")
+*   defined in: [Object - Stock Plan](stockplan-properties-comments.md "https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json#/properties/comments")
 
 ### comments Type
 

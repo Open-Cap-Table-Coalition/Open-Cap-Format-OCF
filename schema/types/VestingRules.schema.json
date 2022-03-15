@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting_rules",
+  "$id": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json",
   "title": "Type - Vesting Rules",
   "description": "Type representing all aspects related to vesting securities",
   "type": "object",
   "properties": {
     "vesting_type": {
       "description": "Whether the vesting rules are schedule-driven, event-driven, or a combination of both",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/vesting_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/VestingType.schema.json"
     },
     "vesting_schedule_id": {
       "description": "Time-based vesting schedule applied to the securities",
@@ -15,7 +15,7 @@
     },
     "vesting_start_date": {
       "description": "Vesting commencement date to pair with the time-based vesting schedule",
-      "$ref": "https://opencaptablecoalition.com/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "vesting_conditions": {
       "title": "Vesting Rules - Vesting Condition Array",
@@ -24,10 +24,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json"
           }
         ]
       }
@@ -37,7 +37,7 @@
       "description": "Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.\n\n**Note**: custom vesting tranches override the applied vesting schedule if both are present.",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/custom_vesting_tranche"
+        "$ref": "https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json"
       }
     },
     "custom_vesting_description": {

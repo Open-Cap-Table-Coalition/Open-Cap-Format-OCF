@@ -1,7 +1,7 @@
 # Untitled string in Type - Phone Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/phone#/properties/phone_number
+https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_number
 ```
 
 A valid phone number

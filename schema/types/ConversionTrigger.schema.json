@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/conversion_trigger",
+  "$id": "https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json",
   "title": "Type - Conversion Trigger",
   "description": "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)",
   "type": "object",
   "properties": {
     "ratio": {
       "description": "What number of target StockClass shares do one share of this StockClass convert into (this can be set or changed with an event where this cannot be determined at time of issuance)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     },
     "rounding_type": {
       "description": "How should fractional shares be rounded?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/rounding_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
     },
     "nickname": {
       "description": "Human-friendly nickname to describe the conversion right",

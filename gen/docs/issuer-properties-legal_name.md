@@ -1,7 +1,7 @@
 # Untitled string in Object - Issuer Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer#/properties/legal_name
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/legal_name
 ```
 
 Legal name of the issuer

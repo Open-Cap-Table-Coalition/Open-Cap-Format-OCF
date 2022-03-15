@@ -1,7 +1,7 @@
 # Security Transfer - Resulting Security ID Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/resulting_security_ids
+https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json#/properties/resulting_security_ids
 ```
 
 Array of identifiers for new security (or securities) created as a result of the transaction

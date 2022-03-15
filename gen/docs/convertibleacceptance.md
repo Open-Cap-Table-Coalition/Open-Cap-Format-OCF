@@ -1,7 +1,7 @@
 # Object - Convertible Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json
 ```
 
 Object describing a convertible acceptance transaction
@@ -24,13 +24,13 @@ all of
 
 # Object - Convertible Acceptance Transaction Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                               |
-| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/object_type") |
-| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/id")                   |
-| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/comments")       |
-| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/security_id") |
-| [date](#date)               | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/date")               |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                          |
+| :-------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/object_type") |
+| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/id")                   |
+| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/comments")       |
+| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/security_id") |
+| [date](#date)               | Not specified | Optional | cannot be null | [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/date")               |
 
 ## object_type
 
@@ -44,7 +44,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/object_type")
+*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -70,7 +70,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/id")
+*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/id")
 
 ### id Type
 
@@ -88,7 +88,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/comments")
+*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -106,7 +106,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/security_id")
+*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -124,7 +124,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance#/properties/date")
+*   defined in: [Object - Convertible Acceptance Transaction](convertibleacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json#/properties/date")
 
 ### date Type
 

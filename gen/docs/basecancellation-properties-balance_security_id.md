@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Cancellation Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation#/properties/balance_security_id
+https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/BaseCancellation.schema.json#/properties/balance_security_id
 ```
 
 Identifier for the security that holds the remainder balance (for partial cancellations)

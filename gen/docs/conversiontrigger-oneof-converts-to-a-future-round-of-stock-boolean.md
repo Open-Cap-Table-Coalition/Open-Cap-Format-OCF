@@ -1,7 +1,7 @@
 # Converts to a future round of stock (boolean) Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/conversion_trigger#/oneOf/0
+https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json#/oneOf/0
 ```
 
 Some conversion triggers let holders convert into a future round/series of stock - e.g. at the next qualified financing or some similar formulation. If this is true, such a right applies to securities using this ConversionTrigger.

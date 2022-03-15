@@ -1,7 +1,7 @@
 # Enum - Option Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/option_type
+https://opencaptablecoalition.com/schema/enums/OptionType.schema.json
 ```
 
 Enumeration of option types

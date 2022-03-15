@@ -1,7 +1,7 @@
 # Untitled array in File - Stakeholders Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stakeholders_file#/properties/items
+https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json#/properties/items
 ```
 
 List of OCF stakeholder objects

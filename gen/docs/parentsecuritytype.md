@@ -1,7 +1,7 @@
 # Enum - Parent Security Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/parent_security_type
+https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json
 ```
 
 Enumeration of parent sources a stock can be issued or created from
