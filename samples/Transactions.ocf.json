@@ -508,7 +508,7 @@
       "security_law_exemptions": [
         {
           "description": "Exemption",
-          "jurisdiction": "USA"
+          "jurisdiction": "US"
         }
       ],
       "board_approval_date": "2022-02-01",
@@ -735,7 +735,7 @@
       "security_law_exemptions": [
         {
           "description": "Exemption",
-          "jurisdiction": "USA"
+          "jurisdiction": "US"
         }
       ],
       "board_approval_date": "2022-02-01",

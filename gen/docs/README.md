@@ -174,6 +174,8 @@
 
 *   [Type - Conversion Trigger](./conversiontrigger.md "Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)") – `https://opencaptablecoalition.com/schema/types/conversion_trigger`
 
+*   [Type - Country Code](./countrycode.md "Type representation of an ISO 3166-1 alpha 2 country code") – `https://opencaptablecoalition.com/schema/types/CountryCode.schema.json`
+
 *   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of a vesting tranche by date and quantity") – `https://opencaptablecoalition.com/schema/types/custom_vesting_tranche`
 
 *   [Type - Date](./date.md "Type represention of an ISO-8601 date, e") – `https://opencaptablecoalition.com/schema/types/date`
@@ -200,7 +202,7 @@
 
 *   [Type - Schedule-driven Vesting Condition](./scheduledrivenvestingcondition.md "Type representation of a row in a vesting schedule") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition`
 
-*   [Type - Security Exemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis") – `https://opencaptablecoalition.com/schema/types/security_exemption`
+*   [Type - Security Exemption](./securityexemption.md "Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis") – `https://opencaptablecoalition.com/schema/types/security_exemption`
 
 *   [Type - Stock Class Conversion Rights](./stockclassconversionrights.md "Type representation of a conversion right from one security into a stock class") – `https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights`
 

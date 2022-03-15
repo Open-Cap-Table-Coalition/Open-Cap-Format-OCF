@@ -16,14 +16,14 @@ Type representation of an address
 
 # Type - Address Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                         |
-| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [address_type](#address_type)     | `string` | Required | cannot be null | [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type") |
-| [street_suite](#street_suite)     | `string` | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")             |
-| [city](#city)                     | `string` | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                             |
-| [state_province](#state_province) | `string` | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province")         |
-| [country](#country)               | `string` | Required | cannot be null | [Type - Address](address-properties-country.md "https://opencaptablecoalition.com/schema/types/address#/properties/country")                       |
-| [postal_code](#postal_code)       | `string` | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")               |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                               |
+| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [address_type](#address_type)     | `string` | Required | cannot be null | [Type - Address](address-properties-enum---address-type.md "https://opencaptablecoalition.com/schema/enums/address_type#/properties/address_type")       |
+| [street_suite](#street_suite)     | `string` | Optional | cannot be null | [Type - Address](address-properties-street_suite.md "https://opencaptablecoalition.com/schema/types/address#/properties/street_suite")                   |
+| [city](#city)                     | `string` | Optional | cannot be null | [Type - Address](address-properties-city.md "https://opencaptablecoalition.com/schema/types/address#/properties/city")                                   |
+| [state_province](#state_province) | `string` | Optional | cannot be null | [Type - Address](address-properties-state_province.md "https://opencaptablecoalition.com/schema/types/address#/properties/state_province")               |
+| [country](#country)               | `string` | Required | cannot be null | [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country") |
+| [postal_code](#postal_code)       | `string` | Optional | cannot be null | [Type - Address](address-properties-postal_code.md "https://opencaptablecoalition.com/schema/types/address#/properties/postal_code")                     |
 
 ## address_type
 
@@ -109,21 +109,35 @@ State, province or equivalent identifier required for an address in this country
 
 ## country
 
-Country code for this address (ISO-3166)
+Type representation of an ISO 3166-1 alpha 2 country code
 
 `country`
 
 *   is required
 
-*   Type: `string`
+*   Type: `string` ([Type - Country Code](address-properties-type---country-code.md))
 
 *   cannot be null
 
-*   defined in: [Type - Address](address-properties-country.md "https://opencaptablecoalition.com/schema/types/address#/properties/country")
+*   defined in: [Type - Address](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country")
 
 ### country Type
 
-`string`
+`string` ([Type - Country Code](address-properties-type---country-code.md))
+
+### country Constraints
+
+**maximum length**: the maximum number of characters for this string is: `2`
+
+**minimum length**: the minimum number of characters for this string is: `2`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Z]{2}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Z%5D%7B2%7D%24 "try regular expression with regexr.com")
 
 ## postal_code
 

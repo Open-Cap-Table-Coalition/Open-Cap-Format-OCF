@@ -16,10 +16,10 @@ Type representation of a government identifier for tax purposes (e.g. EIN) and c
 
 # Type - Tax Identifier Properties
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                                                               |
-| :------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")   |
-| [country](#country) | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-country.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
+| :------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [tax_id](#tax_id)   | `string` | Required | cannot be null | [Type - Tax Identifier](taxid-properties-tax_id.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/tax_id")                          |
+| [country](#country) | `string` | Required | cannot be null | [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country") |
 
 ## tax_id
 
@@ -41,18 +41,32 @@ Tax identifier as string
 
 ## country
 
-Issuing country code (ISO-3166) for the tax identifier
+Type representation of an ISO 3166-1 alpha 2 country code
 
 `country`
 
 *   is required
 
-*   Type: `string`
+*   Type: `string` ([Type - Country Code](address-properties-type---country-code.md))
 
 *   cannot be null
 
-*   defined in: [Type - Tax Identifier](taxid-properties-country.md "https://opencaptablecoalition.com/schema/types/tax_identifier#/properties/country")
+*   defined in: [Type - Tax Identifier](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country")
 
 ### country Type
 
-`string`
+`string` ([Type - Country Code](address-properties-type---country-code.md))
+
+### country Constraints
+
+**maximum length**: the maximum number of characters for this string is: `2`
+
+**minimum length**: the minimum number of characters for this string is: `2`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Z]{2}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Z%5D%7B2%7D%24 "try regular expression with regexr.com")
