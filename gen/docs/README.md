@@ -218,7 +218,15 @@
 
 ### Objects
 
+*   [Type - Email](./contactinfo-properties-contact-info---email-address-array-type---email.md "Type representation of an email address") – `https://opencaptablecoalition.com/schema/types/email#/properties/emails/items`
 
+*   [Type - Name](./contactinfo-properties-type---name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/name#/properties/name`
+
+*   [Type - Phone](./contactinfo-properties-contact-info---phone-number-array-type---phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/phone#/properties/phone_numbers/items`
+
+*   [Type - Ratio](./conversiontrigger-properties-type---ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/ratio#/properties/ratio`
+
+*   [Type - Schedule-driven Vesting Condition](./eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md "Type representation of a row in a vesting schedule") – `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting/items/anyOf/1`
 
 ### Arrays
 
