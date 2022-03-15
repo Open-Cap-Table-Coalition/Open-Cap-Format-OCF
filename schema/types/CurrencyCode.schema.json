@@ -5,5 +5,6 @@
   "description": "Type representation of an ISO 4217 currency code",
   "type": "string",
   "minLength": 3,
-  "maxLength": 3
+  "maxLength": 3,
+  "pattern": "^[A-Z]{3}$"
 }
