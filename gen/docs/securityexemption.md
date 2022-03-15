@@ -4,7 +4,7 @@
 https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json
 ```
 
-Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis
+Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                               |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------- |
@@ -16,10 +16,10 @@ Type representation of a securities issuance exemption that includes an unstruct
 
 # Type - Security Exemption Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                        |
-| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [description](#description)   | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json#/properties/description")   |
-| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-jurisdiction.md "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json#/properties/jurisdiction") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                      |
+| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [description](#description)   | `string` | Required | cannot be null | [Type - Security Exemption](securityexemption-properties-description.md "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json#/properties/description") |
+| [jurisdiction](#jurisdiction) | `string` | Required | cannot be null | [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/jurisdiction")        |
 
 ## description
 
@@ -41,18 +41,32 @@ Description of an applicable security law exemption governing the issuance
 
 ## jurisdiction
 
-Country code of the jurisdiction of the applicable law (ISO-3166)
+Type representation of an ISO 3166-1 alpha 2 country code
 
 `jurisdiction`
 
 *   is required
 
-*   Type: `string`
+*   Type: `string` ([Type - Country Code](address-properties-type---country-code.md))
 
 *   cannot be null
 
-*   defined in: [Type - Security Exemption](securityexemption-properties-jurisdiction.md "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json#/properties/jurisdiction")
+*   defined in: [Type - Security Exemption](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/jurisdiction")
 
 ### jurisdiction Type
 
-`string`
+`string` ([Type - Country Code](address-properties-type---country-code.md))
+
+### jurisdiction Constraints
+
+**maximum length**: the maximum number of characters for this string is: `2`
+
+**minimum length**: the minimum number of characters for this string is: `2`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Z]{2}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Z%5D%7B2%7D%24 "try regular expression with regexr.com")

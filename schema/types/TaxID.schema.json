@@ -10,8 +10,8 @@
       "type": "string"
     },
     "country": {
-      "description": "Issuing country code (ISO-3166) for the tax identifier",
-      "type": "string"
+      "description": "Issuing country code (ISO 3166-1 alpha-2) for the tax identifier",
+      "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
     }
   },
   "required": ["tax_id", "country"]

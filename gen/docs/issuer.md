@@ -26,7 +26,7 @@ all of
 | [legal_name](#legal_name)                     | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-legal_name.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/legal_name")                                            |
 | [dba](#dba)                                   | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-dba.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/dba")                                                          |
 | [formation_date](#formation_date)             | `string`      | Required | cannot be null | [Object - Issuer](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/formation_date") |
-| [country_of_formation](#country_of_formation) | `string`      | Required | cannot be null | [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/country_of_formation")                        |
+| [country_of_formation](#country_of_formation) | `string`      | Required | cannot be null | [Object - Issuer](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country_of_formation")                     |
 | [state_of_formation](#state_of_formation)     | `string`      | Optional | cannot be null | [Object - Issuer](issuer-properties-state_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/state_of_formation")                            |
 | [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Issuer](issuer-properties-issuer---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/tax_ids")                                    |
 | [email](#email)                               | `object`      | Optional | cannot be null | [Object - Issuer](contactinfo-properties-contact-info---email-address-array-type---email.md "https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email")          |
@@ -121,21 +121,35 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 ## country_of_formation
 
-The country where the issuer company was legally formed (ISO-3166 - alpha-3)
+Type representation of an ISO 3166-1 alpha 2 country code
 
 `country_of_formation`
 
 *   is required
 
-*   Type: `string`
+*   Type: `string` ([Type - Country Code](address-properties-type---country-code.md))
 
 *   cannot be null
 
-*   defined in: [Object - Issuer](issuer-properties-country_of_formation.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/country_of_formation")
+*   defined in: [Object - Issuer](address-properties-type---country-code.md "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json#/properties/country_of_formation")
 
 ### country_of_formation Type
 
-`string`
+`string` ([Type - Country Code](address-properties-type---country-code.md))
+
+### country_of_formation Constraints
+
+**maximum length**: the maximum number of characters for this string is: `2`
+
+**minimum length**: the minimum number of characters for this string is: `2`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Z]{2}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Z%5D%7B2%7D%24 "try regular expression with regexr.com")
 
 ## state_of_formation
 
