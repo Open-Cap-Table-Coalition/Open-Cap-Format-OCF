@@ -12,6 +12,16 @@
       "items": {
         "type": "string"
       }
+    },
+    "split_transaction_id": {
+      "title": "Id of stock class split transaction",
+      "description": "When stock is reissued as a result of a stock split, this field contains id of the respective stock class split transaction. It is not set otherwise.",
+      "type": "string"
+    },
+    "reason_text": {
+      "title": "Reason for stock reissuance",
+      "description": "Free-form human-readable reason for stock reissuance",
+      "type": "string"
     }
   },
   "required": ["resulting_security_ids"]
