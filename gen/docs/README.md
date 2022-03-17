@@ -220,15 +220,7 @@
 
 ### Objects
 
-*   [Type - Email](./contactinfo-properties-contact-info---email-address-array-type---email.md "Type representation of an email address") – `https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/emails/items`
 
-*   [Type - Name](./contactinfo-properties-type---name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name`
-
-*   [Type - Phone](./contactinfo-properties-contact-info---phone-number-array-type---phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_numbers/items`
-
-*   [Type - Ratio](./conversiontrigger-properties-type---ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/ratio`
-
-*   [Type - Schedule-driven Vesting Condition](./eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md "Type representation of a row in a vesting schedule") – `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items/anyOf/1`
 
 ### Arrays
 
@@ -266,7 +258,7 @@
 
 *   [Security Exercise - Resulting Security ID Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json#/properties/resulting_security_ids`
 
-*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json#/properties/security_law_exemptions`
+*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this security") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json#/properties/security_law_exemptions`
 
 *   [Security Reissuance - Resulting Security ID Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a reissuance") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json#/properties/resulting_security_ids`
 
