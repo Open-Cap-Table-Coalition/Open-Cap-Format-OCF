@@ -176,6 +176,8 @@
 
 *   [Type - Country Code](./countrycode.md "Type representation of an ISO 3166-1 alpha 2 country code") – `https://opencaptablecoalition.com/schema/types/CountryCode.schema.json`
 
+*   [Type - Currency Code](./currencycode.md "Type representation of an ISO 4217 currency code") – `https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json`
+
 *   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of a vesting tranche by date and quantity") – `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
 
 *   [Type - Date](./date.md "Type represention of an ISO-8601 date, e") – `https://opencaptablecoalition.com/schema/types/Date.schema.json`
@@ -188,7 +190,7 @@
 
 *   [Type - MD5 Hash](./md5.md "String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers") – `https://opencaptablecoalition.com/schema/types/Md5.schema.json`
 
-*   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/Monetary.schema.json`
+*   [Type - Monetary](./monetary.md "Type representation of an amount of money in a specified currency") – `https://opencaptablecoalition.com/schema/types/Monetary.schema.json`
 
 *   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/Name.schema.json`
 
@@ -218,7 +220,15 @@
 
 ### Objects
 
+*   [Type - Email](./contactinfo-properties-contact-info---email-address-array-type---email.md "Type representation of an email address") – `https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/emails/items`
 
+*   [Type - Name](./contactinfo-properties-type---name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name`
+
+*   [Type - Phone](./contactinfo-properties-contact-info---phone-number-array-type---phone.md "Type representation of a phone number") – `https://opencaptablecoalition.com/schema/types/Phone.schema.json#/properties/phone_numbers/items`
+
+*   [Type - Ratio](./conversiontrigger-properties-type---ratio.md "Type representation of a ratio as antecedent and consequent numeric values") – `https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/ratio`
+
+*   [Type - Schedule-driven Vesting Condition](./eventdrivenvestingcondition-properties-event-driven-vesting-condition---event-driven-vesting-condition-array-items-anyof-type---schedule-driven-vesting-condition.md "Type representation of a row in a vesting schedule") – `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items/anyOf/1`
 
 ### Arrays
 

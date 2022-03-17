@@ -206,7 +206,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## exercise_price
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `exercise_price`
 

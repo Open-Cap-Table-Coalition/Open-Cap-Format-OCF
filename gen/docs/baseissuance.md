@@ -84,7 +84,7 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 

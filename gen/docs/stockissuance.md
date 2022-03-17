@@ -90,7 +90,7 @@ Identifier of the stock class for this stock issuance
 
 ## share_price
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `share_price`
 
@@ -154,7 +154,7 @@ Type representing all aspects related to vesting securities
 
 ## cost_basis
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `cost_basis`
 
