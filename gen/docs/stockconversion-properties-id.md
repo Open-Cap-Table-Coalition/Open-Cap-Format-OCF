@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion#/properties/id
+https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json#/properties/id
 ```
 
 

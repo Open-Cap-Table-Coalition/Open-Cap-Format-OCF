@@ -1,7 +1,7 @@
 # Enum - Object Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/object_type#/properties/object_type
+https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json#/properties/object_type
 ```
 
 Enumeration of object types

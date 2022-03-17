@@ -1,7 +1,7 @@
 # Type - Email Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/email#/properties/emails/items
+https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/emails/items
 ```
 
 Type representation of an email address
@@ -16,10 +16,10 @@ Type representation of an email address
 
 # items Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                               |
-| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| [email_type](#email_type)       | `string` | Required | cannot be null | [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/email_type#/properties/email_type") |
-| [email_address](#email_address) | `string` | Required | cannot be null | [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_address")       |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                          |
+| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [email_type](#email_type)       | `string` | Required | cannot be null | [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/EmailType.schema.json#/properties/email_type") |
+| [email_address](#email_address) | `string` | Required | cannot be null | [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email_address")      |
 
 ## email_type
 
@@ -33,7 +33,7 @@ Enumeration of email types
 
 *   cannot be null
 
-*   defined in: [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/email_type#/properties/email_type")
+*   defined in: [Type - Email](email-properties-enum---email-type.md "https://opencaptablecoalition.com/schema/enums/EmailType.schema.json#/properties/email_type")
 
 ### email_type Type
 
@@ -61,7 +61,7 @@ A valid e-mail address
 
 *   cannot be null
 
-*   defined in: [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/email#/properties/email_address")
+*   defined in: [Type - Email](email-properties-email_address.md "https://opencaptablecoalition.com/schema/types/Email.schema.json#/properties/email_address")
 
 ### email_address Type
 

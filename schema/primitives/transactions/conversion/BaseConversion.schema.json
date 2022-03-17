@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json",
   "title": "Primitive - Security Conversion Transaction",
   "description": "Abstract object describing fields common to all conversion transaction objects",
   "type": "object",

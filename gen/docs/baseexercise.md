@@ -1,7 +1,7 @@
 # Primitive - Security Exercise Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise
+https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json
 ```
 
 Abstract object describing fields common to all exercise transaction objects
@@ -16,14 +16,14 @@ Abstract object describing fields common to all exercise transaction objects
 
 # Primitive - Security Exercise Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
-| :------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")                                                                          |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
+| :------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [consideration](#consideration)                   | `object` | Optional | cannot be null | [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/consideration")                                                                         |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Required | cannot be null | [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json#/properties/resulting_security_ids") |
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 
@@ -33,7 +33,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")
+*   defined in: [Primitive - Security Exercise Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/consideration")
 
 ### consideration Type
 
@@ -51,7 +51,7 @@ Identifier for the security (or securities) that resulted from the exercise
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Exercise Transaction](baseexercise-properties-security-exercise---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

@@ -1,7 +1,7 @@
 # Stakeholder - Address Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/addresses
+https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/addresses
 ```
 
 Addresses for the stakeholder

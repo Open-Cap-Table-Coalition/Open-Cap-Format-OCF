@@ -1,7 +1,7 @@
 # Contact Info - Email Address Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails
+https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/emails
 ```
 
 Emails to reach the contact at

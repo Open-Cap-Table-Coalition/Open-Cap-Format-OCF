@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/acceptance/warrant_acceptance#/properties/comments
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json#/properties/comments
 ```
 
 

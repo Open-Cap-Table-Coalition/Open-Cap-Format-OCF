@@ -1,7 +1,7 @@
 # Untitled integer in Type - Termination Window Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/termination_window#/properties/period
+https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json#/properties/period
 ```
 
 The length of the period in this termination window (in number of periods of type period_type)

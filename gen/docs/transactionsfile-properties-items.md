@@ -1,7 +1,7 @@
 # Untitled array in File - Transactions Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/transactions_file#/properties/items
+https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json#/properties/items
 ```
 
 List of OCF transaction objects

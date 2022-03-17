@@ -1,7 +1,7 @@
 # Untitled string in Primitive - Security Transfer Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer#/properties/resulting_security_ids/items
+https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json#/properties/resulting_security_ids/items
 ```
 
 

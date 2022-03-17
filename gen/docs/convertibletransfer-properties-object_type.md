@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Convertible Transfer Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json#/properties/object_type
 ```
 
 

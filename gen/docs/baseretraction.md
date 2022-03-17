@@ -1,7 +1,7 @@
 # Primitive - Security Retraction Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction
+https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json
 ```
 
 Abstract object describing a security retraction transaction
@@ -16,9 +16,9 @@ Abstract object describing a security retraction transaction
 
 # Primitive - Security Retraction Transaction Properties
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                    |
-| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [reason_text](#reason_text) | `string` | Required | cannot be null | [Primitive - Security Retraction Transaction](baseretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction#/properties/reason_text") |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                               |
+| :-------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [reason_text](#reason_text) | `string` | Required | cannot be null | [Primitive - Security Retraction Transaction](baseretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json#/properties/reason_text") |
 
 ## reason_text
 
@@ -32,7 +32,7 @@ Reason for the retraction
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Retraction Transaction](baseretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction#/properties/reason_text")
+*   defined in: [Primitive - Security Retraction Transaction](baseretraction-properties-reason_text.md "https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json#/properties/reason_text")
 
 ### reason_text Type
 

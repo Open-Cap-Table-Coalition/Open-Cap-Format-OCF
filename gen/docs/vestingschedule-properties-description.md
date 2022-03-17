@@ -1,7 +1,7 @@
 # Untitled string in Object - Vesting Schedule Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/description
+https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json#/properties/description
 ```
 
 Detailed description of the vesting schedule

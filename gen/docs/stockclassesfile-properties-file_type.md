@@ -1,7 +1,7 @@
 # Untitled undefined type in File - Stock Classes Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/stock_classes_file#/properties/file_type
+https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json#/properties/file_type
 ```
 
 

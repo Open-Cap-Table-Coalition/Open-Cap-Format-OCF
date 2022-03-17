@@ -1,7 +1,7 @@
 # Object - Stakeholder Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stakeholder
+https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json
 ```
 
 Object describing a stakeholder
@@ -20,18 +20,18 @@ all of
 
 # Object - Stakeholder Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                             |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/object_type")                                                   |
-| [name](#name)                                 | `object`      | Required | cannot be null | [Object - Stakeholder](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")                                                                   |
-| [stakeholder_type](#stakeholder_type)         | `string`      | Required | cannot be null | [Object - Stakeholder](stakeholder-properties-enum---stakeholder-type.md "https://opencaptablecoalition.com/schema/enums/stakeholder_type#/properties/stakeholder_type")                               |
-| [issuer_assigned_id](#issuer_assigned_id)     | `string`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-issuer_assigned_id.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/issuer_assigned_id")                                     |
-| [current_relationship](#current_relationship) | `string`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-enum---stakeholder-relationship-type.md "https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type#/properties/current_relationship") |
-| [primary_contact](#primary_contact)           | `object`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-type---contact-info.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/primary_contact")                                        |
-| [addresses](#addresses)                       | `array`       | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-stakeholder---address-array.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/addresses")                                     |
-| [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-stakeholder---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/tax_ids")                                        |
-| [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-id.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/id")                                                                     |
-| [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/comments")                                                         |
+| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                       |
+| :-------------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                   | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/object_type")                                                 |
+| [name](#name)                                 | `object`      | Required | cannot be null | [Object - Stakeholder](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name")                                                                 |
+| [stakeholder_type](#stakeholder_type)         | `string`      | Required | cannot be null | [Object - Stakeholder](stakeholder-properties-enum---stakeholder-type.md "https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json#/properties/stakeholder_type")                              |
+| [issuer_assigned_id](#issuer_assigned_id)     | `string`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-issuer_assigned_id.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/issuer_assigned_id")                                   |
+| [current_relationship](#current_relationship) | `string`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-enum---stakeholder-relationship-type.md "https://opencaptablecoalition.com/schema/enums/StakeholderRelationshipType.schema.json#/properties/current_relationship") |
+| [primary_contact](#primary_contact)           | `object`      | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-type---contact-info.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/primary_contact")                                       |
+| [addresses](#addresses)                       | `array`       | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-stakeholder---address-array.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/addresses")                                   |
+| [tax_ids](#tax_ids)                           | `array`       | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-stakeholder---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/tax_ids")                                      |
+| [id](#id)                                     | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-id.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/id")                                                                   |
+| [comments](#comments)                         | Not specified | Optional | cannot be null | [Object - Stakeholder](stakeholder-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/comments")                                                       |
 
 ## object_type
 
@@ -45,7 +45,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/object_type")
+*   defined in: [Object - Stakeholder](stakeholder-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -71,7 +71,7 @@ Type comprising of multiple name components
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")
+*   defined in: [Object - Stakeholder](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name")
 
 ### name Type
 
@@ -89,7 +89,7 @@ Enumeration of stakeholder types - individual (human) or institution (entity)
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-enum---stakeholder-type.md "https://opencaptablecoalition.com/schema/enums/stakeholder_type#/properties/stakeholder_type")
+*   defined in: [Object - Stakeholder](stakeholder-properties-enum---stakeholder-type.md "https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json#/properties/stakeholder_type")
 
 ### stakeholder_type Type
 
@@ -116,7 +116,7 @@ This might be any sort of id assigned to the stakeholder by the issuer, such as 
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-issuer_assigned_id.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/issuer_assigned_id")
+*   defined in: [Object - Stakeholder](stakeholder-properties-issuer_assigned_id.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/issuer_assigned_id")
 
 ### issuer_assigned_id Type
 
@@ -134,7 +134,7 @@ Enumeration of types of relationships between stakeholder and issuer
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-enum---stakeholder-relationship-type.md "https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type#/properties/current_relationship")
+*   defined in: [Object - Stakeholder](stakeholder-properties-enum---stakeholder-relationship-type.md "https://opencaptablecoalition.com/schema/enums/StakeholderRelationshipType.schema.json#/properties/current_relationship")
 
 ### current_relationship Type
 
@@ -172,7 +172,7 @@ Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-type---contact-info.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/primary_contact")
+*   defined in: [Object - Stakeholder](stakeholder-properties-type---contact-info.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/primary_contact")
 
 ### primary_contact Type
 
@@ -190,7 +190,7 @@ Addresses for the stakeholder
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-stakeholder---address-array.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/addresses")
+*   defined in: [Object - Stakeholder](stakeholder-properties-stakeholder---address-array.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/addresses")
 
 ### addresses Type
 
@@ -208,7 +208,7 @@ The tax ids for this stakeholder
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-stakeholder---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/tax_ids")
+*   defined in: [Object - Stakeholder](stakeholder-properties-stakeholder---tax-id-array.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/tax_ids")
 
 ### tax_ids Type
 
@@ -226,7 +226,7 @@ The tax ids for this stakeholder
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-id.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/id")
+*   defined in: [Object - Stakeholder](stakeholder-properties-id.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/id")
 
 ### id Type
 
@@ -244,7 +244,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stakeholder](stakeholder-properties-comments.md "https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/comments")
+*   defined in: [Object - Stakeholder](stakeholder-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/comments")
 
 ### comments Type
 

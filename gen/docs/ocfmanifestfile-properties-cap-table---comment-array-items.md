@@ -1,7 +1,7 @@
 # Untitled string in OCF Manifest File Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/comments/items
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/comments/items
 ```
 
 

@@ -1,7 +1,7 @@
 # Untitled string in Type - Name Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/name#/properties/legal_name
+https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/legal_name
 ```
 
 Legal full name for the individual/institution

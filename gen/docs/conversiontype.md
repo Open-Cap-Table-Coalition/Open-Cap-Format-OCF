@@ -1,7 +1,7 @@
 # Enum - Conversion Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/conversion_type
+https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json
 ```
 
 Enumeration of convertible conversion types

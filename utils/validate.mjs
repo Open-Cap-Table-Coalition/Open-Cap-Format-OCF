@@ -15,28 +15,28 @@ import core from "@actions/core";
 // Constants for various URIs
 // TODO - move to separate constants file
 export const OCF_MANIFEST_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/ocf_manifest_file";
+  "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json";
 
 export const OCF_TRANSACTIONS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/transactions_file";
+  "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json";
 
 export const OCF_STAKEHOLDERS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/stakeholders_file";
+  "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json";
 
 export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/stock_plans_file";
+  "https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json";
 
 export const OCF_VALUATIONS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/valuations_file";
+  "https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json";
 
 export const OCF_VESTING_SCHEDULES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/vesting_schedules_file";
+  "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json";
 
 export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/stock_classes_file";
+  "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json";
 
 export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/stock_legend_templates_file";
+  "https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json";
 
 export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,

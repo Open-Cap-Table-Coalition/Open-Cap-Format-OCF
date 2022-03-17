@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json",
   "title": "Object - Stock Re-issuance Transaction",
   "description": "Object describing a re-issuance of stock",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json"
     }
   ],
   "properties": {

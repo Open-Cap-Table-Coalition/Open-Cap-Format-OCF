@@ -1,7 +1,7 @@
 # Untitled undefined type in File - Valuations Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/valuations_file#/properties/file_type
+https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json#/properties/file_type
 ```
 
 

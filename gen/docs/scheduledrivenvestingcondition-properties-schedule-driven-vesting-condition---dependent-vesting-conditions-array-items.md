@@ -1,7 +1,7 @@
 # Untitled undefined type in Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/dependent_vesting/items
+https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/dependent_vesting/items
 ```
 
 

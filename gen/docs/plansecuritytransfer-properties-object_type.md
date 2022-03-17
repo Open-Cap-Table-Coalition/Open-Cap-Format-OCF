@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Transfer Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/transfer/plan_security_transfer#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json#/properties/object_type
 ```
 
 

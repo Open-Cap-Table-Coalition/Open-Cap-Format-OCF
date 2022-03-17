@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition",
+  "$id": "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json",
   "title": "Type - Schedule-driven Vesting Condition",
   "description": "Type representation of a row in a vesting schedule",
   "type": "object",
@@ -19,7 +19,7 @@
     },
     "period_type": {
       "description": "Type of period (days, months, years)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/period_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json"
     },
     "priority": {
       "description": "What order should this period be calculated (1 is highest priority)",
@@ -32,10 +32,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition"
+            "$ref": "https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json"
           }
         ]
       }

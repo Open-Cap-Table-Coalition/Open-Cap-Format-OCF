@@ -1,7 +1,7 @@
 # Enum - Interest Payout Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/interest_payout_type#/properties/interest_payout
+https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json#/properties/interest_payout
 ```
 
 Enumeration of interest payout types (e.g. deferred or cash payment)

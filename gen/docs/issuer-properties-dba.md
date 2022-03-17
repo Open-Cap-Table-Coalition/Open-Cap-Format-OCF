@@ -1,7 +1,7 @@
 # Untitled string in Object - Issuer Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/issuer#/properties/dba
+https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/dba
 ```
 
 Doing Business As name

@@ -1,7 +1,7 @@
 # Enum - Compensation Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/compensation_type
+https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json
 ```
 
 Enumeration of stock compensation types

@@ -1,7 +1,7 @@
 # Enum - OCF File Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/file_type#/properties/file_type
+https://opencaptablecoalition.com/schema/enums/FileType.schema.json#/properties/file_type
 ```
 
 Enumeration of different OCF file types which are used to load proper schemas for validation

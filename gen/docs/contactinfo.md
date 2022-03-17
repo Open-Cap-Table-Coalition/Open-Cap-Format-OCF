@@ -1,7 +1,7 @@
 # Type - Contact Info Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/contact_info
+https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json
 ```
 
 Type representation of a primary contact person for a stakeholder (e.g. a fund)
@@ -16,11 +16,11 @@ Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 # Type - Contact Info Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                 |
-| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name)                   | `object` | Required | cannot be null | [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")                                        |
-| [phone_numbers](#phone_numbers) | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers") |
-| [emails](#emails)               | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")       |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                            |
+| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [name](#name)                   | `object` | Required | cannot be null | [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name")                                       |
+| [phone_numbers](#phone_numbers) | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/phone_numbers") |
+| [emails](#emails)               | `array`  | Required | cannot be null | [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/emails")       |
 
 ## name
 
@@ -34,7 +34,7 @@ Type comprising of multiple name components
 
 *   cannot be null
 
-*   defined in: [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/name#/properties/name")
+*   defined in: [Type - Contact Info](contactinfo-properties-type---name.md "https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/name")
 
 ### name Type
 
@@ -52,7 +52,7 @@ Phone numbers to reach the contact at
 
 *   cannot be null
 
-*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/phone_numbers")
+*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---phone-number-array.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/phone_numbers")
 
 ### phone_numbers Type
 
@@ -70,7 +70,7 @@ Emails to reach the contact at
 
 *   cannot be null
 
-*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/contact_info#/properties/emails")
+*   defined in: [Type - Contact Info](contactinfo-properties-contact-info---email-address-array.md "https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json#/properties/emails")
 
 ### emails Type
 

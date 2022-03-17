@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Issuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance#/properties/expiration_date
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json#/properties/expiration_date
 ```
 
 Expiration date of the plan security

@@ -1,32 +1,32 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json",
   "title": "Primitive - Security Issuance Transaction",
   "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
   "properties": {
     "custom_id": {
-      "description": "A custom ID for this security (e.g. CN-1.)",
+      "description": "A custom ID for this convertible (e.g. CN-1.)",
       "type": "string"
     },
     "stakeholder_id": {
-      "description": "Identifier for the stakeholder that holds legal title to this security",
+      "description": "Identifier for the stakeholder that holds legal title to this convertible",
       "type": "string"
     },
     "board_approval_date": {
-      "description": "Date of board approval for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/date"
+      "description": "Date of board approval for the convertible",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "consideration": {
       "description": "Consideration for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "security_law_exemptions": {
       "title": "Security Issuance - Security Exemption Array",
-      "description": "List of security law exemptions (and applicable jurisdictions) for this security",
+      "description": "List of security law exemptions (and applicable jurisdictions) for this convertible",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/security_exemption"
+        "$ref": "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json"
       }
     }
   },

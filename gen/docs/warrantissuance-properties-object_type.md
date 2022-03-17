@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Warrant Issuance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json#/properties/object_type
 ```
 
 

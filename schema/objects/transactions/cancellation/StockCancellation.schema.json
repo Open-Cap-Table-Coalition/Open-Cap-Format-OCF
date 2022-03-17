@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json",
   "title": "Object - Stock Cancellation Transaction",
   "description": "Object describing a cancellation of a stock security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/BaseCancellation.schema.json"
     }
   ],
   "properties": {
@@ -21,7 +21,7 @@
     },
     "quantity": {
       "description": "Quantity of non-monetary security units cancelled",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "id": {},
     "comments": {},

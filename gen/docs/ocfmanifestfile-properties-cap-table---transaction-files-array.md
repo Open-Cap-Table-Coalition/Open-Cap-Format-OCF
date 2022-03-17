@@ -1,7 +1,7 @@
 # Cap Table - Transaction File(s) Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/transactions_files
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/transactions_files
 ```
 
 List of files containing lists of issuer transactions, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/transactions_file schema to validate loaded files)

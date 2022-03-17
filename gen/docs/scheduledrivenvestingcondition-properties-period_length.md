@@ -1,7 +1,7 @@
 # Untitled integer in Type - Schedule-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition#/properties/period_length
+https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json#/properties/period_length
 ```
 
 Length of period following the vesting start date for this tranche

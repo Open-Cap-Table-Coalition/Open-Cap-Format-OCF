@@ -1,7 +1,7 @@
 # Object - Stock Acceptance Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance
+https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json
 ```
 
 Object describing a stock acceptance transaction
@@ -24,13 +24,13 @@ all of
 
 # Object - Stock Acceptance Transaction Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                             |
-| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/object_type") |
-| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/id")                   |
-| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/comments")       |
-| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/security_id") |
-| [date](#date)               | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/date")               |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                        |
+| :-------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type) | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/object_type") |
+| [id](#id)                   | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/id")                   |
+| [comments](#comments)       | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/comments")       |
+| [security_id](#security_id) | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/security_id") |
+| [date](#date)               | Not specified | Optional | cannot be null | [Object - Stock Acceptance Transaction](stockacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/date")               |
 
 ## object_type
 
@@ -44,7 +44,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/object_type")
+*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -70,7 +70,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/id")
+*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/id")
 
 ### id Type
 
@@ -88,7 +88,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/comments")
+*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -106,7 +106,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/security_id")
+*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -124,7 +124,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance#/properties/date")
+*   defined in: [Object - Stock Acceptance Transaction](stockacceptance-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json#/properties/date")
 
 ### date Type
 

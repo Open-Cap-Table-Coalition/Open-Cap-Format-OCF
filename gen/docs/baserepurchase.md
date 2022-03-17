@@ -1,7 +1,7 @@
 # Primitive - Security Repurchase Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase
+https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json
 ```
 
 Abstract object describing common properties to a repurchase transaction
@@ -16,16 +16,16 @@ Abstract object describing common properties to a repurchase transaction
 
 # Primitive - Security Repurchase Transaction Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price")                                                                                          |
-| [quantity](#quantity)                             | `string` | Required | cannot be null | [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")                                                                                              |
-| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")                                                                                  |
-| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [price](#price)                                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price")                                                                                         |
+| [quantity](#quantity)                             | `string` | Required | cannot be null | [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity")                                                                                             |
+| [consideration](#consideration)                   | `object` | Required | cannot be null | [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/consideration")                                                                                 |
+| [resulting_security_ids](#resulting_security_ids) | `array`  | Optional | cannot be null | [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json#/properties/resulting_security_ids") |
 
 ## price
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `price`
 
@@ -35,7 +35,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/price")
+*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price")
 
 ### price Type
 
@@ -53,7 +53,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")
+*   defined in: [Primitive - Security Repurchase Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity")
 
 ### quantity Type
 
@@ -71,7 +71,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## consideration
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `consideration`
 
@@ -81,7 +81,7 @@ Type represention of an amount of money in the specified currency
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/monetary#/properties/consideration")
+*   defined in: [Primitive - Security Repurchase Transaction](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/consideration")
 
 ### consideration Type
 
@@ -99,7 +99,7 @@ For partial repurchases, list of security id(s) of the resulting stock objects h
 
 *   cannot be null
 
-*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase#/properties/resulting_security_ids")
+*   defined in: [Primitive - Security Repurchase Transaction](baserepurchase-properties-security-repurchase---resulting-security-id-array.md "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json#/properties/resulting_security_ids")
 
 ### resulting_security_ids Type
 

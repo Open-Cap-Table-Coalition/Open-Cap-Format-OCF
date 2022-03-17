@@ -1,7 +1,7 @@
 # Untitled string in Type - Stock Class Conversion Rights Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights#/properties/converts_to_stock_class_id
+https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json#/properties/converts_to_stock_class_id
 ```
 
 The identifier of the existing, known stock class this stock class can convert into

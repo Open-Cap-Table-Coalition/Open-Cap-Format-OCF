@@ -1,7 +1,7 @@
 # Untitled string in Object - Convertible Conversion Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion#/properties/reason_text
+https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json#/properties/reason_text
 ```
 
 Reason for the conversion

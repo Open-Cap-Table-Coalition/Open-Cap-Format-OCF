@@ -1,7 +1,7 @@
 # Untitled string in Type - Name Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/name#/properties/first_name
+https://opencaptablecoalition.com/schema/types/Name.schema.json#/properties/first_name
 ```
 
 First/given name for the individual

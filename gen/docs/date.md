@@ -1,7 +1,7 @@
 # Type - Date Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/date
+https://opencaptablecoalition.com/schema/types/Date.schema.json
 ```
 
 Type represention of an ISO-8601 date, e.g. 2022-01-28

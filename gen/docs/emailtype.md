@@ -1,7 +1,7 @@
 # Enum - Email Type Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/enums/email_type
+https://opencaptablecoalition.com/schema/enums/EmailType.schema.json
 ```
 
 Enumeration of email types

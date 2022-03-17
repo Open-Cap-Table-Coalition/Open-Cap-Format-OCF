@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Class Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_class#/properties/comments
+https://opencaptablecoalition.com/schema/objects/StockClass.schema.json#/properties/comments
 ```
 
 

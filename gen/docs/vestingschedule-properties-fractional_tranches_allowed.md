@@ -1,7 +1,7 @@
 # Untitled boolean in Object - Vesting Schedule Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/fractional_tranches_allowed
+https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json#/properties/fractional_tranches_allowed
 ```
 
 Whether or not fractional tranches are allowed. Note: if this is true, the allocation type is ignored

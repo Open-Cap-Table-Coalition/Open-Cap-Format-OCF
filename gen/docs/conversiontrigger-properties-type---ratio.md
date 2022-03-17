@@ -1,7 +1,7 @@
 # Type - Ratio Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/ratio#/properties/ratio
+https://opencaptablecoalition.com/schema/types/Ratio.schema.json#/properties/ratio
 ```
 
 Type representation of a ratio as antecedent and consequent numeric values
@@ -16,10 +16,10 @@ Type representation of a ratio as antecedent and consequent numeric values
 
 # ratio Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                           |
-| :------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| [antecedent](#antecedent) | `string` | Required | cannot be null | [Type - Ratio](ratio-properties-type---numeric.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/antecedent")   |
-| [consequent](#consequent) | `string` | Required | cannot be null | [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/consequent") |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                       |
+| :------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [antecedent](#antecedent) | `string` | Required | cannot be null | [Type - Ratio](ratio-properties-type---numeric.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/antecedent")   |
+| [consequent](#consequent) | `string` | Required | cannot be null | [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/consequent") |
 
 ## antecedent
 
@@ -33,7 +33,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/antecedent")
+*   defined in: [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/antecedent")
 
 ### antecedent Type
 
@@ -61,7 +61,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/consequent")
+*   defined in: [Type - Ratio](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/consequent")
 
 ### consequent Type
 

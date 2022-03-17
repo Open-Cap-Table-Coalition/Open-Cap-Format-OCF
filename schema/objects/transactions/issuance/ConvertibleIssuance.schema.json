@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json",
   "title": "Object - Convertible Issuance Transaction",
   "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/base_object"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json"
     }
   ],
   "properties": {
@@ -21,71 +21,71 @@
     },
     "convertible_type": {
       "description": "What kind of convertible instrument is this (of the supported, enumerated types)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/convertible_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json"
     },
     "conversion_type": {
       "description": "Does this conversion happen pre or post money?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/conversion_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json"
     },
     "original_principal_amount": {
       "description": "Principal at date of issuance of this convertible",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "interest_rate": {
       "description": "Interest rate of the convertible (if applicable)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "day_count_convention": {
       "description": "How many days are there is a given period for calculation purposes?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/day_count_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json"
     },
     "interest_payout": {
       "description": "How is interest paid out (if at applicable)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/interest_payout_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json"
     },
     "maturity_date": {
       "description": "What is the maturity date (if applicable)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/date"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "default_conversion_rights": {
       "description": "What can this instrument convert into for a maturity or next equity financing conversion? Default, basic conversion ratio for this convertible expressed as a ratio of shares / unit principal.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights"
+      "$ref": "https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json"
     },
     "conversion_triggers": {
       "title": "Convertible - Conversion Trigger Array",
       "description": "In event the convertible can convert due to trigger events (e.g. Change of Control, at Election of Holder), what are the terms and has conversion been triggered? Conversion possibilities for this convertible more complex than a ratio of shares / unit principal.",
       "type": ["array", "null"],
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/conversion_trigger"
+        "$ref": "https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json"
       }
     },
     "exit_multiple": {
       "description": "For cash proceeds calculation during a liquidity event.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/ratio"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     },
     "interest_accrual_period": {
       "description": "What is the period over which interest is calculated?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/accrual_period_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json"
     },
     "compounding_type": {
       "description": "What type of interest compounding?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/compounding_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json"
     },
     "pro_rata": {
       "description": "What pro-rata (if any) is the holder entitled to buy at the next round?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/numeric"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "conversion_valuation_cap": {
       "description": "What is the valuation cap (if applicable)?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/monetary"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "conversion_discount": {
       "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/percentage"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
     },
     "conversion_fixed_ownership": {
       "description": "If the instrument purports to grant a percentage ownership of the Company, what is the percentage, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/percentage"
+      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
     },
     "seniority": {
       "description": "If different convertible instruments have seniorty over one another, use this value to build a seniority stack, with 1 being highest seniority and equal seniority values assumed to be equal priority",

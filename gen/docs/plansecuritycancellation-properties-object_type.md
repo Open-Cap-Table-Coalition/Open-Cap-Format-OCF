@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Plan Security Cancellation Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation#/properties/object_type
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json#/properties/object_type
 ```
 
 

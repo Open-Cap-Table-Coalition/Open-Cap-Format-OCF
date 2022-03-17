@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stock Legend Template Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stock_legend_template#/properties/comments
+https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json#/properties/comments
 ```
 
 

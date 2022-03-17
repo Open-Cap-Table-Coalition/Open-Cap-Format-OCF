@@ -1,7 +1,7 @@
 # Vesting Schedule - Schedule-driven Vesting Condition Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/vesting_schedule#/properties/schedule_driven_vesting_conditions
+https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json#/properties/schedule_driven_vesting_conditions
 ```
 
 Schedule rows defining the vesting schedule tranches

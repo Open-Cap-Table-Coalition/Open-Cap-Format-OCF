@@ -1,7 +1,7 @@
 # Untitled undefined type in Type - Event-driven Vesting Condition Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition#/properties/event_expiration
+https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json#/properties/event_expiration
 ```
 
 Date by which event must be met to qualify, given that the condition carries an expiry

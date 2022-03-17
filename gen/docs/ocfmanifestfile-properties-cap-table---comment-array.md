@@ -1,7 +1,7 @@
 # Cap Table - Comment Array Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/files/ocf_manifest_file#/properties/comments
+https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/comments
 ```
 
 Unstructured text comments related to and stored for the cap table

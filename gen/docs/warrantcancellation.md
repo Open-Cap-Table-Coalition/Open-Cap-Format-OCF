@@ -1,7 +1,7 @@
 # Object - Warrant Cancellation Transaction Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation
+https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json
 ```
 
 Object describing a cancellation of a warrant security
@@ -24,16 +24,16 @@ all of
 
 # Object - Warrant Cancellation Transaction Properties
 
-| Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                           |
-| :------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/object_type")                 |
-| [quantity](#quantity)                       | `string`      | Required | cannot be null | [Object - Warrant Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")                                                                      |
-| [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/id")                                   |
-| [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/comments")                       |
-| [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/security_id")                 |
-| [date](#date)                               | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/date")                               |
-| [balance_security_id](#balance_security_id) | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/balance_security_id") |
-| [reason_text](#reason_text)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/reason_text")                 |
+| Property                                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
+| :------------------------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_type](#object_type)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/object_type")                 |
+| [quantity](#quantity)                       | `string`      | Required | cannot be null | [Object - Warrant Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity")                                                                     |
+| [id](#id)                                   | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/id")                                   |
+| [comments](#comments)                       | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/comments")                       |
+| [security_id](#security_id)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/security_id")                 |
+| [date](#date)                               | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/date")                               |
+| [balance_security_id](#balance_security_id) | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/balance_security_id") |
+| [reason_text](#reason_text)                 | Not specified | Optional | cannot be null | [Object - Warrant Cancellation Transaction](warrantcancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/reason_text")                 |
 
 ## object_type
 
@@ -47,7 +47,7 @@ all of
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/object_type")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/object_type")
 
 ### object_type Type
 
@@ -73,7 +73,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/numeric#/properties/quantity")
+*   defined in: [Object - Warrant Cancellation Transaction](ratio-properties-type---numeric-1.md "https://opencaptablecoalition.com/schema/types/Numeric.schema.json#/properties/quantity")
 
 ### quantity Type
 
@@ -101,7 +101,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/id")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/id")
 
 ### id Type
 
@@ -119,7 +119,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/comments")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/comments")
 
 ### comments Type
 
@@ -137,7 +137,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/security_id")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/security_id")
 
 ### security_id Type
 
@@ -155,7 +155,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/date")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-date.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/date")
 
 ### date Type
 
@@ -173,7 +173,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/balance_security_id")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-balance_security_id.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/balance_security_id")
 
 ### balance_security_id Type
 
@@ -191,7 +191,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation#/properties/reason_text")
+*   defined in: [Object - Warrant Cancellation Transaction](warrantcancellation-properties-reason_text.md "https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json#/properties/reason_text")
 
 ### reason_text Type
 

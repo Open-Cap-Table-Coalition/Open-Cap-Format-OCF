@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/stock_parent",
+  "$id": "https://opencaptablecoalition.com/schema/types/StockParent.schema.json",
   "title": "Type - Stock Parent",
   "description": "Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a stock came from a previous stock entry)",
   "type": "object",
   "properties": {
     "parent_object_type": {
       "description": "Parent object type for this stock issuance (e.g. a stock plan or warrant)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/parent_security_type"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json"
     },
     "parent_object_id": {
       "description": "Parent object's ID must be a valid ID pointing to an object of the type specified in parent_object_type",

@@ -1,7 +1,7 @@
 # Untitled undefined type in Object - Stakeholder Schema
 
 ```txt
-https://opencaptablecoalition.com/schema/objects/stakeholder#/properties/id
+https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json#/properties/id
 ```
 
 
