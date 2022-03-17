@@ -76,7 +76,7 @@ Entity which provided the valuation
 
 ## price_per_share
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `price_per_share`
 

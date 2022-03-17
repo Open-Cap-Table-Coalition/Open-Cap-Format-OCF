@@ -63,7 +63,7 @@ unknown
 
 ## amount
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `amount`
 

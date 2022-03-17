@@ -137,7 +137,7 @@ Enumeration of convertible conversion types
 
 ## original_principal_amount
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `original_principal_amount`
 
@@ -404,7 +404,7 @@ Fixed-point string representation of a number (up to 10 decimal places supported
 
 ## conversion_valuation_cap
 
-Type represention of an amount of money in the specified currency
+Type representation of an amount of money in a specified currency
 
 `conversion_valuation_cap`
 

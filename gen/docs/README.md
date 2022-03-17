@@ -176,6 +176,8 @@
 
 *   [Type - Country Code](./countrycode.md "Type representation of an ISO 3166-1 alpha 2 country code") – `https://opencaptablecoalition.com/schema/types/CountryCode.schema.json`
 
+*   [Type - Currency Code](./currencycode.md "Type representation of an ISO 4217 currency code") – `https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json`
+
 *   [Type - Custom Vesting Tranche](./customvestingtranche.md "Type representation of a vesting tranche by date and quantity") – `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
 
 *   [Type - Date](./date.md "Type represention of an ISO-8601 date, e") – `https://opencaptablecoalition.com/schema/types/Date.schema.json`
@@ -188,7 +190,7 @@
 
 *   [Type - MD5 Hash](./md5.md "String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers") – `https://opencaptablecoalition.com/schema/types/Md5.schema.json`
 
-*   [Type - Monetary](./monetary.md "Type represention of an amount of money in the specified currency") – `https://opencaptablecoalition.com/schema/types/Monetary.schema.json`
+*   [Type - Monetary](./monetary.md "Type representation of an amount of money in a specified currency") – `https://opencaptablecoalition.com/schema/types/Monetary.schema.json`
 
 *   [Type - Name](./name.md "Type comprising of multiple name components") – `https://opencaptablecoalition.com/schema/types/Name.schema.json`
 
@@ -256,7 +258,7 @@
 
 *   [Security Exercise - Resulting Security ID Array](./baseexercise-properties-security-exercise---resulting-security-id-array.md "Identifier for the security (or securities) that resulted from the exercise") – `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json#/properties/resulting_security_ids`
 
-*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this convertible") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json#/properties/security_law_exemptions`
+*   [Security Issuance - Security Exemption Array](./baseissuance-properties-security-issuance---security-exemption-array.md "List of security law exemptions (and applicable jurisdictions) for this security") – `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json#/properties/security_law_exemptions`
 
 *   [Security Reissuance - Resulting Security ID Array](./basereissuance-properties-security-reissuance---resulting-security-id-array.md "Identifier of the new security (or securities) issuance resulting from a reissuance") – `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json#/properties/resulting_security_ids`
 
