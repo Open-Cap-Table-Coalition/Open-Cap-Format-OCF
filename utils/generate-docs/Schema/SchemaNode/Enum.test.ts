@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import Enum, { EnumSchemaNodeJson } from "./Enum.js";
 
 const SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/test_enum",
+  $id: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying an Enum schema from OCF",
   type: "string",
@@ -32,13 +32,13 @@ describe("Enum", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/enums/test_enum\`
+\`https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json\`
 
 **Description:** _This is a test fixture exemplifying an Enum schema from OCF_
 
 **ONE OF:**</br>&bull; test_enum1
 
-**Source Code:** [schema/enums/test_enum](/schema/enums/TestEnum.schema.json)
+**Source Code:** [schema/enums/TestEnum](/schema/enums/TestEnum.schema.json)
 `);
     });
   });

@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import TypePattern, { TypePatternSchemaNodeJson } from "./TypePattern.js";
 
 const FIXTURE: TypePatternSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/types/test_type_pattern",
+  $id: "https://opencaptablecoalition.com/schema/types/TestTypePattern.schema.json",
   title: "Test Title",
   description:
     "This is a test fixture exemplifying an TypePattern schema from OCF",
@@ -22,7 +22,7 @@ describe("TypePattern", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/types/test_type_pattern\`
+\`https://opencaptablecoalition.com/schema/types/TestTypePattern.schema.json\`
 
 **Description:** _This is a test fixture exemplifying an TypePattern schema from OCF_
 
@@ -30,7 +30,7 @@ describe("TypePattern", () => {
 
 **Value:** \`STRING\` - _Must Match Regex Pattern: \`^[a-fA-F0-9]{32}$\`_
 
-**Source Code:** [schema/types/test_type_pattern](/schema/types/TestTypePattern.schema.json)
+**Source Code:** [schema/types/TestTypePattern](/schema/types/TestTypePattern.schema.json)
 
 `);
     });

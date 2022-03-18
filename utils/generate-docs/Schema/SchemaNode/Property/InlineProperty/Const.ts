@@ -21,7 +21,7 @@ export default class ConstProperty extends InlineProperty {
 
   protected objectTypeEnumSchemaNode = () =>
     this.schema.findSchemaNodeById(
-      "https://opencaptablecoalition.com/schema/enums/object_type"
+      "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
     );
 
   protected markdownLinkToObjectType = () =>

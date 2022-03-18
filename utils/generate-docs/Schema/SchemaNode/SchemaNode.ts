@@ -1,3 +1,4 @@
+import path from "node:path";
 import { markdownTable } from "markdown-table";
 
 import Schema from "../Schema.js";
@@ -27,28 +28,10 @@ export default abstract class SchemaNode {
 
   protected type = () => this.json["type"];
 
-  protected sourceFilename = (suffix: string) => {
-    const filename = this.id().split("/").at(-1);
-    if (!filename) {
-      throw new Error(`Could not parse filename from id: ${this.id()}`);
-    }
-    return (
-      filename
-        .split("_")
-        .map((str) => str[0].toUpperCase() + str.slice(1))
-        .join("") + suffix
-    );
-  };
+  protected basename = () => path.basename(this.id(), ".schema.json");
 
-  protected outputFilename = () => {
-    const baseName = this.shortId().split("/").slice(1).join("-");
-    if (!baseName) {
-      throw new Error(`Could not parse filename from id: ${this.id()}`);
-    }
-    return `schema-${baseName}.md`;
-  };
-
-  protected directory = () => this.shortId().split("/").slice(0, -1).join("/");
+  protected directory = () =>
+    path.dirname(this.id().slice("https://opencaptablecoalition.com/".length));
 
   protected allOf = (): SchemaNode[] =>
     "allOf" in this.json && this.json["allOf"]
@@ -58,10 +41,9 @@ export default abstract class SchemaNode {
       : [];
 
   protected allOfMarkdown = (): string =>
-    this.allOf().map(
-      (schemaNode) => `- [${schemaNode.shortId()}](${schemaNode.outputPath()})`
-    ).join(`
-`);
+    this.allOf()
+      .map((schemaNode) => `- ${schemaNode.markdownOutputLink()}`)
+      .join("\n");
 
   /**
    * Only those properties that are defined directly in the JSON (as opposed to
@@ -87,16 +69,15 @@ export default abstract class SchemaNode {
 
   parentType = () => this.shortId().split("/")[1];
 
-  shortId = () => this.id().slice("https://opencaptablecoalition.com/".length);
+  shortId = () => `${this.directory()}/${this.basename()}`;
 
   title = () => this.json["title"];
 
   description = () => this.json["description"];
 
-  sourcePath = () =>
-    `${this.directory()}/${this.sourceFilename(".schema.json")}`;
+  sourcePath = () => `/${this.shortId()}.schema.json`;
 
-  outputPath = () => `${this.directory()}/${this.outputFilename()}`;
+  outputPath = () => `/docs/${this.shortId()}.md`;
 
   propertiesJson = () => this.json["properties"];
 
@@ -139,5 +120,7 @@ export default abstract class SchemaNode {
 
   abstract markdownOutput(): string;
 
-  markdownSourceLink = () => `[${this.shortId()}](/${this.sourcePath()})`;
+  markdownSourceLink = () => `[${this.shortId()}](${this.sourcePath()})`;
+
+  markdownOutputLink = () => `[${this.shortId()}](${this.outputPath()})`;
 }

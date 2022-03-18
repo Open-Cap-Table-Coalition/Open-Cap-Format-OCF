@@ -109,51 +109,51 @@ _Describes the eight top-level files that hold OCF objects and are required to e
 
 - **OCF Manifest File**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/ocf_manifest_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json`
   - **Description:** Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc.
-  - **View more:** [schema/files/ocf_manifest_file](schema/files/schema-files-ocf_manifest_file.md)
+  - **View more:** [schema/files/OCFManifestFile](/docs/schema/files/OCFManifestFile.md)
 
 - **File - Stakeholders**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/stakeholders_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json`
   - **Description:** JSON containing file type identifier and list of stakeholders
-  - **View more:** [schema/files/stakeholders_file](schema/files/schema-files-stakeholders_file.md)
+  - **View more:** [schema/files/StakeholdersFile](/docs/schema/files/StakeholdersFile.md)
 
 - **File - Stock Classes**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/stock_classes_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json`
   - **Description:** JSON containing file type identifier and list of stock classes
-  - **View more:** [schema/files/stock_classes_file](schema/files/schema-files-stock_classes_file.md)
+  - **View more:** [schema/files/StockClassesFile](/docs/schema/files/StockClassesFile.md)
 
 - **File - Stock Legend Templates**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/stock_legend_templates_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json`
   - **Description:** JSON containing file type identifier and list of stock legend templates
-  - **View more:** [schema/files/stock_legend_templates_file](schema/files/schema-files-stock_legend_templates_file.md)
+  - **View more:** [schema/files/StockLegendTemplatesFile](/docs/schema/files/StockLegendTemplatesFile.md)
 
 - **File - Stock Plans**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/stock_plans_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json`
   - **Description:** JSON containing file type identifier and list of stock plans
-  - **View more:** [schema/files/stock_plans_file](schema/files/schema-files-stock_plans_file.md)
+  - **View more:** [schema/files/StockPlansFile](/docs/schema/files/StockPlansFile.md)
 
 - **File - Transactions**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/transactions_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json`
   - **Description:** JSON containing file type identifier and list transactions
-  - **View more:** [schema/files/transactions_file](schema/files/schema-files-transactions_file.md)
+  - **View more:** [schema/files/TransactionsFile](/docs/schema/files/TransactionsFile.md)
 
 - **File - Valuations**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/valuations_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json`
   - **Description:** JSON containing file type identifier and list of valuations
-  - **View more:** [schema/files/valuations_file](schema/files/schema-files-valuations_file.md)
+  - **View more:** [schema/files/ValuationsFile](/docs/schema/files/ValuationsFile.md)
 
 - **File - Vesting Schedules**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/vesting_schedules_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json`
   - **Description:** JSON containing file type identifier and list of vesting schedules
-  - **View more:** [schema/files/vesting_schedules_file](schema/files/schema-files-vesting_schedules_file.md)
+  - **View more:** [schema/files/VestingSchedulesFile](/docs/schema/files/VestingSchedulesFile.md)
 
 ### [Objects](/schema/objects)
 
@@ -161,225 +161,225 @@ _Describing the structure of OCF -- these contain the common object properties `
 
 - **Object - Issuer**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/issuer`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/Issuer.schema.json`
   - **Description:** Object describing the issuer of the cap table (the company whose cap table this is)
-  - **View more:** [schema/objects/issuer](schema/objects/schema-objects-issuer.md)
+  - **View more:** [schema/objects/Issuer](/docs/schema/objects/Issuer.md)
 
 - **Object - Stakeholder**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/stakeholder`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json`
   - **Description:** Object describing a stakeholder
-  - **View more:** [schema/objects/stakeholder](schema/objects/schema-objects-stakeholder.md)
+  - **View more:** [schema/objects/Stakeholder](/docs/schema/objects/Stakeholder.md)
 
 - **Object - Stock Class**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/stock_class`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/StockClass.schema.json`
   - **Description:** Object describing a class of stock issued by the issuer
-  - **View more:** [schema/objects/stock_class](schema/objects/schema-objects-stock_class.md)
+  - **View more:** [schema/objects/StockClass](/docs/schema/objects/StockClass.md)
 
 - **Object - Stock Legend Template**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/stock_legend_template`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json`
   - **Description:** Object describing a stock legend template
-  - **View more:** [schema/objects/stock_legend_template](schema/objects/schema-objects-stock_legend_template.md)
+  - **View more:** [schema/objects/StockLegendTemplate](/docs/schema/objects/StockLegendTemplate.md)
 
 - **Object - Stock Plan**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/stock_plan`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json`
   - **Description:** Object describing a plan which stock options are issued from
-  - **View more:** [schema/objects/stock_plan](schema/objects/schema-objects-stock_plan.md)
+  - **View more:** [schema/objects/StockPlan](/docs/schema/objects/StockPlan.md)
 
 - **Object - Valuation**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/valuation`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/Valuation.schema.json`
   - **Description:** Object describing a valuation used in the cap table
-  - **View more:** [schema/objects/valuation](schema/objects/schema-objects-valuation.md)
+  - **View more:** [schema/objects/Valuation](/docs/schema/objects/Valuation.md)
 
 - **Object - Vesting Schedule**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/vesting_schedule`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json`
   - **Description:** Object describing a strictly time-based vesting schedule
-  - **View more:** [schema/objects/vesting_schedule](schema/objects/schema-objects-vesting_schedule.md)
+  - **View more:** [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md)
 
 - **Object - Convertible Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/convertible_transfer`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
   - **Description:** Object describing a transfer or secondary sale of a convertible security
-  - **View more:** [schema/objects/transactions/transfer/convertible_transfer](schema/objects/transactions/transfer/schema-objects-transactions-transfer-convertible_transfer.md)
+  - **View more:** [schema/objects/transactions/transfer/ConvertibleTransfer](/docs/schema/objects/transactions/transfer/ConvertibleTransfer.md)
 
 - **Object - Plan Security Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/plan_security_transfer`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json`
   - **Description:** Object describing a transfer of a plan security
-  - **View more:** [schema/objects/transactions/transfer/plan_security_transfer](schema/objects/transactions/transfer/schema-objects-transactions-transfer-plan_security_transfer.md)
+  - **View more:** [schema/objects/transactions/transfer/PlanSecurityTransfer](/docs/schema/objects/transactions/transfer/PlanSecurityTransfer.md)
 
 - **Object - Stock Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/stock_transfer`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/StockTransfer.schema.json`
   - **Description:** Object describing a transfer or secondary sale of a stock security
-  - **View more:** [schema/objects/transactions/transfer/stock_transfer](schema/objects/transactions/transfer/schema-objects-transactions-transfer-stock_transfer.md)
+  - **View more:** [schema/objects/transactions/transfer/StockTransfer](/docs/schema/objects/transactions/transfer/StockTransfer.md)
 
 - **Object - Warrant Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/warrant_transfer`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/WarrantTransfer.schema.json`
   - **Description:** Object describing a transfer or secondary sale of a warrant security
-  - **View more:** [schema/objects/transactions/transfer/warrant_transfer](schema/objects/transactions/transfer/schema-objects-transactions-transfer-warrant_transfer.md)
+  - **View more:** [schema/objects/transactions/transfer/WarrantTransfer](/docs/schema/objects/transactions/transfer/WarrantTransfer.md)
 
 - **Object - Plan Security Split Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/plan_security_split`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/PlanSecuritySplit.schema.json`
   - **Description:** Object describing a split of a plan security
-  - **View more:** [schema/objects/transactions/split/plan_security_split](schema/objects/transactions/split/schema-objects-transactions-split-plan_security_split.md)
+  - **View more:** [schema/objects/transactions/split/PlanSecuritySplit](/docs/schema/objects/transactions/split/PlanSecuritySplit.md)
 
 - **Object - Stock Split Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/stock_split`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json`
   - **Description:** Object describing a split of a stock security
-  - **View more:** [schema/objects/transactions/split/stock_split](schema/objects/transactions/split/schema-objects-transactions-split-stock_split.md)
+  - **View more:** [schema/objects/transactions/split/StockSplit](/docs/schema/objects/transactions/split/StockSplit.md)
 
 - **Object - Warrant Split Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/warrant_split`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/WarrantSplit.schema.json`
   - **Description:** Object describing a split of a warrant security
-  - **View more:** [schema/objects/transactions/split/warrant_split](schema/objects/transactions/split/schema-objects-transactions-split-warrant_split.md)
+  - **View more:** [schema/objects/transactions/split/WarrantSplit](/docs/schema/objects/transactions/split/WarrantSplit.md)
 
 - **Object - Convertible Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/convertible_retraction`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/ConvertibleRetraction.schema.json`
   - **Description:** Object describing a retraction of a convertible security
-  - **View more:** [schema/objects/transactions/retraction/convertible_retraction](schema/objects/transactions/retraction/schema-objects-transactions-retraction-convertible_retraction.md)
+  - **View more:** [schema/objects/transactions/retraction/ConvertibleRetraction](/docs/schema/objects/transactions/retraction/ConvertibleRetraction.md)
 
 - **Object - Plan Security Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/plan_security_retraction`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json`
   - **Description:** Object describing a retraction of a plan security
-  - **View more:** [schema/objects/transactions/retraction/plan_security_retraction](schema/objects/transactions/retraction/schema-objects-transactions-retraction-plan_security_retraction.md)
+  - **View more:** [schema/objects/transactions/retraction/PlanSecurityRetraction](/docs/schema/objects/transactions/retraction/PlanSecurityRetraction.md)
 
 - **Object - Stock Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/stock_retraction`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/StockRetraction.schema.json`
   - **Description:** Object describing a retraction of a stock security
-  - **View more:** [schema/objects/transactions/retraction/stock_retraction](schema/objects/transactions/retraction/schema-objects-transactions-retraction-stock_retraction.md)
+  - **View more:** [schema/objects/transactions/retraction/StockRetraction](/docs/schema/objects/transactions/retraction/StockRetraction.md)
 
 - **Object - Warrant Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/warrant_retraction`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/retraction/WarrantRetraction.schema.json`
   - **Description:** Object describing a retraction of a warrant security
-  - **View more:** [schema/objects/transactions/retraction/warrant_retraction](schema/objects/transactions/retraction/schema-objects-transactions-retraction-warrant_retraction.md)
+  - **View more:** [schema/objects/transactions/retraction/WarrantRetraction](/docs/schema/objects/transactions/retraction/WarrantRetraction.md)
 
 - **Object - Stock Repurchase Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/repurchase/stock_repurchase`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/repurchase/StockRepurchase.schema.json`
   - **Description:** Object describing a stock repurchase transaction
-  - **View more:** [schema/objects/transactions/repurchase/stock_repurchase](schema/objects/transactions/repurchase/schema-objects-transactions-repurchase-stock_repurchase.md)
+  - **View more:** [schema/objects/transactions/repurchase/StockRepurchase](/docs/schema/objects/transactions/repurchase/StockRepurchase.md)
 
 - **Object - Plan Security Release Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/release/plan_security_release`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json`
   - **Description:** Object describing a plan security release transaction
-  - **View more:** [schema/objects/transactions/release/plan_security_release](schema/objects/transactions/release/schema-objects-transactions-release-plan_security_release.md)
+  - **View more:** [schema/objects/transactions/release/PlanSecurityRelease](/docs/schema/objects/transactions/release/PlanSecurityRelease.md)
 
 - **Object - Stock Re-issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/reissuance/stock_reissuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json`
   - **Description:** Object describing a re-issuance of stock
-  - **View more:** [schema/objects/transactions/reissuance/stock_reissuance](schema/objects/transactions/reissuance/schema-objects-transactions-reissuance-stock_reissuance.md)
+  - **View more:** [schema/objects/transactions/reissuance/StockReissuance](/docs/schema/objects/transactions/reissuance/StockReissuance.md)
 
 - **Object - Convertible Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/convertible_issuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json`
   - **Description:** Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder
-  - **View more:** [schema/objects/transactions/issuance/convertible_issuance](schema/objects/transactions/issuance/schema-objects-transactions-issuance-convertible_issuance.md)
+  - **View more:** [schema/objects/transactions/issuance/ConvertibleIssuance](/docs/schema/objects/transactions/issuance/ConvertibleIssuance.md)
 
 - **Object - Plan Security Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/plan_security_issuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json`
   - **Description:** Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder
-  - **View more:** [schema/objects/transactions/issuance/plan_security_issuance](schema/objects/transactions/issuance/schema-objects-transactions-issuance-plan_security_issuance.md)
+  - **View more:** [schema/objects/transactions/issuance/PlanSecurityIssuance](/docs/schema/objects/transactions/issuance/PlanSecurityIssuance.md)
 
 - **Object - Stock Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/stock_issuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/StockIssuance.schema.json`
   - **Description:** Object describing a stock issuance transaction by the issuer and held by a stakeholder
-  - **View more:** [schema/objects/transactions/issuance/stock_issuance](schema/objects/transactions/issuance/schema-objects-transactions-issuance-stock_issuance.md)
+  - **View more:** [schema/objects/transactions/issuance/StockIssuance](/docs/schema/objects/transactions/issuance/StockIssuance.md)
 
 - **Object - Warrant Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/warrant_issuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json`
   - **Description:** Object describing warrant issuance transaction by the issuer and held by a stakeholder
-  - **View more:** [schema/objects/transactions/issuance/warrant_issuance](schema/objects/transactions/issuance/schema-objects-transactions-issuance-warrant_issuance.md)
+  - **View more:** [schema/objects/transactions/issuance/WarrantIssuance](/docs/schema/objects/transactions/issuance/WarrantIssuance.md)
 
 - **Object - Plan Security Exercise Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/exercise/plan_security_exercise`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json`
   - **Description:** Object describing a plan security exercise transaction
-  - **View more:** [schema/objects/transactions/exercise/plan_security_exercise](schema/objects/transactions/exercise/schema-objects-transactions-exercise-plan_security_exercise.md)
+  - **View more:** [schema/objects/transactions/exercise/PlanSecurityExercise](/docs/schema/objects/transactions/exercise/PlanSecurityExercise.md)
 
 - **Object - Warrant Exercise Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/exercise/warrant_exercise`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/exercise/WarrantExercise.schema.json`
   - **Description:** Object describing a warrant exercise transaction
-  - **View more:** [schema/objects/transactions/exercise/warrant_exercise](schema/objects/transactions/exercise/schema-objects-transactions-exercise-warrant_exercise.md)
+  - **View more:** [schema/objects/transactions/exercise/WarrantExercise](/docs/schema/objects/transactions/exercise/WarrantExercise.md)
 
 - **Object - Convertible Conversion Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/conversion/convertible_conversion`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json`
   - **Description:** Object describing a conversion of a convertible security
-  - **View more:** [schema/objects/transactions/conversion/convertible_conversion](schema/objects/transactions/conversion/schema-objects-transactions-conversion-convertible_conversion.md)
+  - **View more:** [schema/objects/transactions/conversion/ConvertibleConversion](/docs/schema/objects/transactions/conversion/ConvertibleConversion.md)
 
 - **Object - Stock Conversion Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/conversion/stock_conversion`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json`
   - **Description:** Object describing a conversion of stock
-  - **View more:** [schema/objects/transactions/conversion/stock_conversion](schema/objects/transactions/conversion/schema-objects-transactions-conversion-stock_conversion.md)
+  - **View more:** [schema/objects/transactions/conversion/StockConversion](/docs/schema/objects/transactions/conversion/StockConversion.md)
 
 - **Object - Convertible Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/convertible_cancellation`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
   - **Description:** Object describing a cancellation of a convertible security
-  - **View more:** [schema/objects/transactions/cancellation/convertible_cancellation](schema/objects/transactions/cancellation/schema-objects-transactions-cancellation-convertible_cancellation.md)
+  - **View more:** [schema/objects/transactions/cancellation/ConvertibleCancellation](/docs/schema/objects/transactions/cancellation/ConvertibleCancellation.md)
 
 - **Object - Plan Security Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/plan_security_cancellation`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json`
   - **Description:** Object describing a cancellation of a plan security
-  - **View more:** [schema/objects/transactions/cancellation/plan_security_cancellation](schema/objects/transactions/cancellation/schema-objects-transactions-cancellation-plan_security_cancellation.md)
+  - **View more:** [schema/objects/transactions/cancellation/PlanSecurityCancellation](/docs/schema/objects/transactions/cancellation/PlanSecurityCancellation.md)
 
 - **Object - Stock Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/stock_cancellation`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json`
   - **Description:** Object describing a cancellation of a stock security
-  - **View more:** [schema/objects/transactions/cancellation/stock_cancellation](schema/objects/transactions/cancellation/schema-objects-transactions-cancellation-stock_cancellation.md)
+  - **View more:** [schema/objects/transactions/cancellation/StockCancellation](/docs/schema/objects/transactions/cancellation/StockCancellation.md)
 
 - **Object - Warrant Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/warrant_cancellation`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json`
   - **Description:** Object describing a cancellation of a warrant security
-  - **View more:** [schema/objects/transactions/cancellation/warrant_cancellation](schema/objects/transactions/cancellation/schema-objects-transactions-cancellation-warrant_cancellation.md)
+  - **View more:** [schema/objects/transactions/cancellation/WarrantCancellation](/docs/schema/objects/transactions/cancellation/WarrantCancellation.md)
 
 - **Object - Convertible Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/convertible_acceptance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
   - **Description:** Object describing a convertible acceptance transaction
-  - **View more:** [schema/objects/transactions/acceptance/convertible_acceptance](schema/objects/transactions/acceptance/schema-objects-transactions-acceptance-convertible_acceptance.md)
+  - **View more:** [schema/objects/transactions/acceptance/ConvertibleAcceptance](/docs/schema/objects/transactions/acceptance/ConvertibleAcceptance.md)
 
 - **Object - Plan Security Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/plan_security_acceptance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json`
   - **Description:** Object describing a plan security acceptance transaction
-  - **View more:** [schema/objects/transactions/acceptance/plan_security_acceptance](schema/objects/transactions/acceptance/schema-objects-transactions-acceptance-plan_security_acceptance.md)
+  - **View more:** [schema/objects/transactions/acceptance/PlanSecurityAcceptance](/docs/schema/objects/transactions/acceptance/PlanSecurityAcceptance.md)
 
 - **Object - Stock Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/stock_acceptance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json`
   - **Description:** Object describing a stock acceptance transaction
-  - **View more:** [schema/objects/transactions/acceptance/stock_acceptance](schema/objects/transactions/acceptance/schema-objects-transactions-acceptance-stock_acceptance.md)
+  - **View more:** [schema/objects/transactions/acceptance/StockAcceptance](/docs/schema/objects/transactions/acceptance/StockAcceptance.md)
 
 - **Object - Warrant Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/warrant_acceptance`
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json`
   - **Description:** Object describing a warrant acceptance transaction
-  - **View more:** [schema/objects/transactions/acceptance/warrant_acceptance](schema/objects/transactions/acceptance/schema-objects-transactions-acceptance-warrant_acceptance.md)
+  - **View more:** [schema/objects/transactions/acceptance/WarrantAcceptance](/docs/schema/objects/transactions/acceptance/WarrantAcceptance.md)
 
 ### [Enums](/schema/enums)
 
@@ -387,19 +387,19 @@ _Key enumerations used throughout the schemas_
 
 - **Enum - Accrual Period Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/accrual_period_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json`
   - **Description:** Enumeration of interest accrual period types
-  - **View more:** [schema/enums/accrual_period_type](schema/enums/schema-enums-accrual_period_type.md)
+  - **View more:** [schema/enums/AccrualPeriodType](/docs/schema/enums/AccrualPeriodType.md)
 
 - **Enum - Address Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/address_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/AddressType.schema.json`
   - **Description:** Enumeration of address types
-  - **View more:** [schema/enums/address_type](schema/enums/schema-enums-address_type.md)
+  - **View more:** [schema/enums/AddressType](/docs/schema/enums/AddressType.md)
 
 - **Enum - Allocation Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/allocation_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
   - **Description:** Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
     1.  Cumulative Rounding (5 - 4 - 5 - 4)
     2.  Cumulative Round Down (4 - 5 - 4 - 5)
@@ -407,133 +407,133 @@ _Key enumerations used throughout the schemas_
     4.  Back Loaded (4 - 4 - 5 - 5)
     5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
     6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
-  - **View more:** [schema/enums/allocation_type](schema/enums/schema-enums-allocation_type.md)
+  - **View more:** [schema/enums/AllocationType](/docs/schema/enums/AllocationType.md)
 
 - **Enum - Compensation Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/compensation_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json`
   - **Description:** Enumeration of stock compensation types
-  - **View more:** [schema/enums/compensation_type](schema/enums/schema-enums-compensation_type.md)
+  - **View more:** [schema/enums/CompensationType](/docs/schema/enums/CompensationType.md)
 
 - **Enum - Compounding Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/compounding_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json`
   - **Description:** Enumeration of interest compounding types
-  - **View more:** [schema/enums/compounding_type](schema/enums/schema-enums-compounding_type.md)
+  - **View more:** [schema/enums/CompoundingType](/docs/schema/enums/CompoundingType.md)
 
 - **Enum - Conversion Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/conversion_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json`
   - **Description:** Enumeration of convertible conversion types
-  - **View more:** [schema/enums/conversion_type](schema/enums/schema-enums-conversion_type.md)
+  - **View more:** [schema/enums/ConversionType](/docs/schema/enums/ConversionType.md)
 
 - **Enum - Convertible Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/convertible_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json`
   - **Description:** Enumeration of convertible instrument types
-  - **View more:** [schema/enums/convertible_type](schema/enums/schema-enums-convertible_type.md)
+  - **View more:** [schema/enums/ConvertibleType](/docs/schema/enums/ConvertibleType.md)
 
 - **Enum - Day Count Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/day_count_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json`
   - **Description:** Enumeration of how the number of days are determined per period
-  - **View more:** [schema/enums/day_count_type](schema/enums/schema-enums-day_count_type.md)
+  - **View more:** [schema/enums/DayCountType](/docs/schema/enums/DayCountType.md)
 
 - **Enum - Email Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/email_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/EmailType.schema.json`
   - **Description:** Enumeration of email types
-  - **View more:** [schema/enums/email_type](schema/enums/schema-enums-email_type.md)
+  - **View more:** [schema/enums/EmailType](/docs/schema/enums/EmailType.md)
 
 - **Enum - OCF File Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/file_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/FileType.schema.json`
   - **Description:** Enumeration of different OCF file types which are used to load proper schemas for validation
-  - **View more:** [schema/enums/file_type](schema/enums/schema-enums-file_type.md)
+  - **View more:** [schema/enums/FileType](/docs/schema/enums/FileType.md)
 
 - **Enum - Interest Payout Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/interest_payout_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json`
   - **Description:** Enumeration of interest payout types (e.g. deferred or cash payment)
-  - **View more:** [schema/enums/interest_payout_type](schema/enums/schema-enums-interest_payout_type.md)
+  - **View more:** [schema/enums/InterestPayoutType](/docs/schema/enums/InterestPayoutType.md)
 
 - **Enum - OCF Version Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/ocf_version_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json`
   - **Description:** Enumeration of recognized OCF versions
-  - **View more:** [schema/enums/ocf_version_type](schema/enums/schema-enums-ocf_version_type.md)
+  - **View more:** [schema/enums/OCFVersionType](/docs/schema/enums/OCFVersionType.md)
 
 - **Enum - Object Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/object_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json`
   - **Description:** Enumeration of object types
-  - **View more:** [schema/enums/object_type](schema/enums/schema-enums-object_type.md)
+  - **View more:** [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)
 
 - **Enum - Option Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/option_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/OptionType.schema.json`
   - **Description:** Enumeration of option types
-  - **View more:** [schema/enums/option_type](schema/enums/schema-enums-option_type.md)
+  - **View more:** [schema/enums/OptionType](/docs/schema/enums/OptionType.md)
 
 - **Enum - Parent Security Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/parent_security_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json`
   - **Description:** Enumeration of parent sources a stock can be issued or created from
-  - **View more:** [schema/enums/parent_security_type](schema/enums/schema-enums-parent_security_type.md)
+  - **View more:** [schema/enums/ParentSecurityType](/docs/schema/enums/ParentSecurityType.md)
 
 - **Enum - Period Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/period_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json`
   - **Description:** Enumeration of time period types
-  - **View more:** [schema/enums/period_type](schema/enums/schema-enums-period_type.md)
+  - **View more:** [schema/enums/PeriodType](/docs/schema/enums/PeriodType.md)
 
 - **Enum - Phone Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/phone_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json`
   - **Description:** Enumeration of phone number types
-  - **View more:** [schema/enums/phone_type](schema/enums/schema-enums-phone_type.md)
+  - **View more:** [schema/enums/PhoneType](/docs/schema/enums/PhoneType.md)
 
 - **Enum - Rounding Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/rounding_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json`
   - **Description:** Enumeration of rounding types
-  - **View more:** [schema/enums/rounding_type](schema/enums/schema-enums-rounding_type.md)
+  - **View more:** [schema/enums/RoundingType](/docs/schema/enums/RoundingType.md)
 
 - **Enum - Stakeholder Relationship Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/stakeholder_relationship_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/StakeholderRelationshipType.schema.json`
   - **Description:** Enumeration of types of relationships between stakeholder and issuer
-  - **View more:** [schema/enums/stakeholder_relationship_type](schema/enums/schema-enums-stakeholder_relationship_type.md)
+  - **View more:** [schema/enums/StakeholderRelationshipType](/docs/schema/enums/StakeholderRelationshipType.md)
 
 - **Enum - Stakeholder Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/stakeholder_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json`
   - **Description:** Enumeration of stakeholder types - individual (human) or institution (entity)
-  - **View more:** [schema/enums/stakeholder_type](schema/enums/schema-enums-stakeholder_type.md)
+  - **View more:** [schema/enums/StakeholderType](/docs/schema/enums/StakeholderType.md)
 
 - **Enum - Stock Class Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/stock_class_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json`
   - **Description:** Enumeration of stock class types
-  - **View more:** [schema/enums/stock_class_type](schema/enums/schema-enums-stock_class_type.md)
+  - **View more:** [schema/enums/StockClassType](/docs/schema/enums/StockClassType.md)
 
 - **Enum - Termination Window Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/termination_window_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json`
   - **Description:** Enumeration of termination window types
-  - **View more:** [schema/enums/termination_window_type](schema/enums/schema-enums-termination_window_type.md)
+  - **View more:** [schema/enums/TerminationWindowType](/docs/schema/enums/TerminationWindowType.md)
 
 - **Enum - Valuation Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/valuation_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json`
   - **Description:** Enumeration of valuation types
-  - **View more:** [schema/enums/valuation_type](schema/enums/schema-enums-valuation_type.md)
+  - **View more:** [schema/enums/ValuationType](/docs/schema/enums/ValuationType.md)
 
 - **Enum - Vesting Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/vesting_type`
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingType.schema.json`
   - **Description:** Enumeration of vesting types
-  - **View more:** [schema/enums/vesting_type](schema/enums/schema-enums-vesting_type.md)
+  - **View more:** [schema/enums/VestingType](/docs/schema/enums/VestingType.md)
 
 ### [Types](/schema/types)
 
@@ -541,135 +541,147 @@ _Used as common building blocks for properties that are more complex than primit
 
 - **Type - Address**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/address`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Address.schema.json`
   - **Description:** Type representation of an address
-  - **View more:** [schema/types/address](schema/types/schema-types-address.md)
+  - **View more:** [schema/types/Address](/docs/schema/types/Address.md)
 
 - **Type - Contact Info**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/contact_info`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json`
   - **Description:** Type representation of a primary contact person for a stakeholder (e.g. a fund)
-  - **View more:** [schema/types/contact_info](schema/types/schema-types-contact_info.md)
+  - **View more:** [schema/types/ContactInfo](/docs/schema/types/ContactInfo.md)
 
 - **Type - Conversion Trigger**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_trigger`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json`
   - **Description:** Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
-  - **View more:** [schema/types/conversion_trigger](schema/types/schema-types-conversion_trigger.md)
+  - **View more:** [schema/types/ConversionTrigger](/docs/schema/types/ConversionTrigger.md)
+
+- **Type - Country Code**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CountryCode.schema.json`
+  - **Description:** Type representation of an ISO 3166-1 alpha 2 country code
+  - **View more:** [schema/types/CountryCode](/docs/schema/types/CountryCode.md)
+
+- **Type - Currency Code**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json`
+  - **Description:** Type representation of an ISO 4217 currency code
+  - **View more:** [schema/types/CurrencyCode](/docs/schema/types/CurrencyCode.md)
 
 - **Type - Custom Vesting Tranche**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/custom_vesting_tranche`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
   - **Description:** Type representation of a vesting tranche by date and quantity
-  - **View more:** [schema/types/custom_vesting_tranche](schema/types/schema-types-custom_vesting_tranche.md)
+  - **View more:** [schema/types/CustomVestingTranche](/docs/schema/types/CustomVestingTranche.md)
 
 - **Type - Date**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/date`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Date.schema.json`
   - **Description:** Type represention of an ISO-8601 date, e.g. 2022-01-28
-  - **View more:** [schema/types/date](schema/types/schema-types-date.md)
+  - **View more:** [schema/types/Date](/docs/schema/types/Date.md)
 
 - **Type - Email**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/email`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Email.schema.json`
   - **Description:** Type representation of an email address
-  - **View more:** [schema/types/email](schema/types/schema-types-email.md)
+  - **View more:** [schema/types/Email](/docs/schema/types/Email.md)
 
 - **Type - Event-driven Vesting Condition**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/event_driven_vesting_condition`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json`
   - **Description:** Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
-  - **View more:** [schema/types/event_driven_vesting_condition](schema/types/schema-types-event_driven_vesting_condition.md)
+  - **View more:** [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)
 
 - **Type - File**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/file`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/File.schema.json`
   - **Description:** Type representation of a file
-  - **View more:** [schema/types/file](schema/types/schema-types-file.md)
+  - **View more:** [schema/types/File](/docs/schema/types/File.md)
 
 - **Type - MD5 Hash**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/md5`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Md5.schema.json`
   - **Description:** String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers
-  - **View more:** [schema/types/md5](schema/types/schema-types-md5.md)
+  - **View more:** [schema/types/Md5](/docs/schema/types/Md5.md)
 
 - **Type - Monetary**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/monetary`
-  - **Description:** Type represention of an amount of money in the specified currency
-  - **View more:** [schema/types/monetary](schema/types/schema-types-monetary.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Monetary.schema.json`
+  - **Description:** Type representation of an amount of money in a specified currency
+  - **View more:** [schema/types/Monetary](/docs/schema/types/Monetary.md)
 
 - **Type - Name**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/name`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Name.schema.json`
   - **Description:** Type comprising of multiple name components
-  - **View more:** [schema/types/name](schema/types/schema-types-name.md)
+  - **View more:** [schema/types/Name](/docs/schema/types/Name.md)
 
 - **Type - Numeric**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/numeric`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Numeric.schema.json`
   - **Description:** Fixed-point string representation of a number (up to 10 decimal places supported)
-  - **View more:** [schema/types/numeric](schema/types/schema-types-numeric.md)
+  - **View more:** [schema/types/Numeric](/docs/schema/types/Numeric.md)
 
 - **Type - Percentage**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/percentage`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Percentage.schema.json`
   - **Description:** Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)
-  - **View more:** [schema/types/percentage](schema/types/schema-types-percentage.md)
+  - **View more:** [schema/types/Percentage](/docs/schema/types/Percentage.md)
 
 - **Type - Phone**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/phone`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Phone.schema.json`
   - **Description:** Type representation of a phone number
-  - **View more:** [schema/types/phone](schema/types/schema-types-phone.md)
+  - **View more:** [schema/types/Phone](/docs/schema/types/Phone.md)
 
 - **Type - Ratio**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ratio`
-  - **Description:** Type representation of a ratio as antecedent and consequent numeric values
-  - **View more:** [schema/types/ratio](schema/types/schema-types-ratio.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/Ratio.schema.json`
+  - **Description:** Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values
+  - **View more:** [schema/types/Ratio](/docs/schema/types/Ratio.md)
 
 - **Type - Schedule-driven Vesting Condition**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/schedule_driven_vesting_condition`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json`
   - **Description:** Type representation of a row in a vesting schedule
-  - **View more:** [schema/types/schedule_driven_vesting_condition](schema/types/schema-types-schedule_driven_vesting_condition.md)
+  - **View more:** [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md)
 
 - **Type - Security Exemption**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/security_exemption`
-  - **Description:** Type representation of a securities issuance exemption that includes an unstructured description and a country code (ISO-3166) for ease of processing and analysis
-  - **View more:** [schema/types/security_exemption](schema/types/schema-types-security_exemption.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json`
+  - **Description:** Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis
+  - **View more:** [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md)
 
 - **Type - Stock Class Conversion Rights**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/stock_class_conversion_rights`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json`
   - **Description:** Type representation of a conversion right from one security into a stock class
-  - **View more:** [schema/types/stock_class_conversion_rights](schema/types/schema-types-stock_class_conversion_rights.md)
+  - **View more:** [schema/types/StockClassConversionRights](/docs/schema/types/StockClassConversionRights.md)
 
 - **Type - Stock Parent**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/stock_parent`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/StockParent.schema.json`
   - **Description:** Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a stock came from a previous stock entry)
-  - **View more:** [schema/types/stock_parent](schema/types/schema-types-stock_parent.md)
+  - **View more:** [schema/types/StockParent](/docs/schema/types/StockParent.md)
 
 - **Type - Tax Identifier**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/tax_identifier`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/TaxID.schema.json`
   - **Description:** Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)
-  - **View more:** [schema/types/tax_identifier](schema/types/schema-types-tax_identifier.md)
+  - **View more:** [schema/types/TaxID](/docs/schema/types/TaxID.md)
 
 - **Type - Termination Window**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/termination_window`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json`
   - **Description:** Type representation of a termination window
-  - **View more:** [schema/types/termination_window](schema/types/schema-types-termination_window.md)
+  - **View more:** [schema/types/TerminationWindow](/docs/schema/types/TerminationWindow.md)
 
 - **Type - Vesting Rules**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting_rules`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
   - **Description:** Type representing all aspects related to vesting securities
-  - **View more:** [schema/types/vesting_rules](schema/types/schema-types-vesting_rules.md)
+  - **View more:** [schema/types/VestingRules](/docs/schema/types/VestingRules.md)
 
 ### [Primitives](/schema/primitives)
 
@@ -677,87 +689,87 @@ _Used for object property composition and enforcing uniform properties across pa
 
 - **Object - BaseFile**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/base_file`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
   - **Description:** Abstract file to be extended by all other files
-  - **View more:** [schema/primitives/base_file](schema/primitives/schema-primitives-base_file.md)
+  - **View more:** [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
 
 - **Object - BaseObject**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/base_object`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json`
   - **Description:** Abstract object to be extended by all other objects
-  - **View more:** [schema/primitives/base_object](schema/primitives/schema-primitives-base_object.md)
+  - **View more:** [schema/primitives/BaseObject](/docs/schema/primitives/BaseObject.md)
 
 - **Primitive - Security Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/base_transaction`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all other transaction objects
-  - **View more:** [schema/primitives/transactions/base_transaction](schema/primitives/transactions/schema-primitives-transactions-base_transaction.md)
+  - **View more:** [schema/primitives/transactions/BaseTransaction](/docs/schema/primitives/transactions/BaseTransaction.md)
 
 - **Primitive - Security Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/base_transfer`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json`
   - **Description:** Abstract object describing a security transfer or secondary sale transaction
-  - **View more:** [schema/primitives/transactions/transfer/base_transfer](schema/primitives/transactions/transfer/schema-primitives-transactions-transfer-base_transfer.md)
+  - **View more:** [schema/primitives/transactions/transfer/BaseTransfer](/docs/schema/primitives/transactions/transfer/BaseTransfer.md)
 
 - **Primitive - Security Split Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/split/base_split`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json`
   - **Description:** Abstract object describing a security split transaction
-  - **View more:** [schema/primitives/transactions/split/base_split](schema/primitives/transactions/split/schema-primitives-transactions-split-base_split.md)
+  - **View more:** [schema/primitives/transactions/split/BaseSplit](/docs/schema/primitives/transactions/split/BaseSplit.md)
 
 - **Primitive - Security Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/retraction/base_retraction`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json`
   - **Description:** Abstract object describing a security retraction transaction
-  - **View more:** [schema/primitives/transactions/retraction/base_retraction](schema/primitives/transactions/retraction/schema-primitives-transactions-retraction-base_retraction.md)
+  - **View more:** [schema/primitives/transactions/retraction/BaseRetraction](/docs/schema/primitives/transactions/retraction/BaseRetraction.md)
 
 - **Primitive - Security Repurchase Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/base_repurchase`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json`
   - **Description:** Abstract object describing common properties to a repurchase transaction
-  - **View more:** [schema/primitives/transactions/repurchase/base_repurchase](schema/primitives/transactions/repurchase/schema-primitives-transactions-repurchase-base_repurchase.md)
+  - **View more:** [schema/primitives/transactions/repurchase/BaseRepurchase](/docs/schema/primitives/transactions/repurchase/BaseRepurchase.md)
 
 - **Primitive - Security Release Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/release/base_release`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json`
   - **Description:** Abstract object describing fields common to all release transaction objects
-  - **View more:** [schema/primitives/transactions/release/base_release](schema/primitives/transactions/release/schema-primitives-transactions-release-base_release.md)
+  - **View more:** [schema/primitives/transactions/release/BaseRelease](/docs/schema/primitives/transactions/release/BaseRelease.md)
 
 - **Primitive - Security Reissuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/base_reissuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json`
   - **Description:** Abstract object describing common properties to a reissuance of a security
-  - **View more:** [schema/primitives/transactions/reissuance/base_reissuance](schema/primitives/transactions/reissuance/schema-primitives-transactions-reissuance-base_reissuance.md)
+  - **View more:** [schema/primitives/transactions/reissuance/BaseReissuance](/docs/schema/primitives/transactions/reissuance/BaseReissuance.md)
 
 - **Primitive - Security Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/base_issuance`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json`
   - **Description:** Abstract object describing fields common to all issuance objects
-  - **View more:** [schema/primitives/transactions/issuance/base_issuance](schema/primitives/transactions/issuance/schema-primitives-transactions-issuance-base_issuance.md)
+  - **View more:** [schema/primitives/transactions/issuance/BaseIssuance](/docs/schema/primitives/transactions/issuance/BaseIssuance.md)
 
 - **Primitive - Security Exercise Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/base_exercise`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json`
   - **Description:** Abstract object describing fields common to all exercise transaction objects
-  - **View more:** [schema/primitives/transactions/exercise/base_exercise](schema/primitives/transactions/exercise/schema-primitives-transactions-exercise-base_exercise.md)
+  - **View more:** [schema/primitives/transactions/exercise/BaseExercise](/docs/schema/primitives/transactions/exercise/BaseExercise.md)
 
 - **Primitive - Security Conversion Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/conversion/base_conversion`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json`
   - **Description:** Abstract object describing fields common to all conversion transaction objects
-  - **View more:** [schema/primitives/transactions/conversion/base_conversion](schema/primitives/transactions/conversion/schema-primitives-transactions-conversion-base_conversion.md)
+  - **View more:** [schema/primitives/transactions/conversion/BaseConversion](/docs/schema/primitives/transactions/conversion/BaseConversion.md)
 
 - **Primitive - Security Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/base_cancellation`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/BaseCancellation.schema.json`
   - **Description:** Abstract object describing fields common to all cancellation transaction objects
-  - **View more:** [schema/primitives/transactions/cancellation/base_cancellation](schema/primitives/transactions/cancellation/schema-primitives-transactions-cancellation-base_cancellation.md)
+  - **View more:** [schema/primitives/transactions/cancellation/BaseCancellation](/docs/schema/primitives/transactions/cancellation/BaseCancellation.md)
 
 - **Primitive - Security Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/base_acceptance`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json`
   - **Description:** Abstract object describing a security acceptance transaction
-  - **View more:** [schema/primitives/transactions/acceptance/base_acceptance](schema/primitives/transactions/acceptance/schema-primitives-transactions-acceptance-base_acceptance.md)
+  - **View more:** [schema/primitives/transactions/acceptance/BaseAcceptance](/docs/schema/primitives/transactions/acceptance/BaseAcceptance.md)
 
 ## Developer Information
 

@@ -4,7 +4,7 @@ import { EnumSchemaNodeJson } from "./Enum.js";
 import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
 const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/object_type",
+  $id: "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json",
   title: "Enum - Object Type",
   description: "Enumeration of object types",
   type: "string",
@@ -12,7 +12,7 @@ const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/test_enum",
+  $id: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying an Enum schema from OCF",
   type: "string",
@@ -20,7 +20,7 @@ const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/base_object",
+  $id: "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json",
   title: "Object - BaseObject",
   description: "Abstract object to be extended by all other objects",
   type: "object",
@@ -39,26 +39,28 @@ const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
     },
     object_type: {
       description: "Object type field",
-      $ref: "https://opencaptablecoalition.com/schema/enums/object_type",
+      $ref: "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json",
     },
   },
   required: ["id", "object_type"],
 };
 
 const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/objects/valuation",
+  $id: "https://opencaptablecoalition.com/schema/objects/Valuation",
   title: "Object - Valuation",
   description: "Object describing a valuation used in the cap table",
   type: "object",
   allOf: [
-    { $ref: "https://opencaptablecoalition.com/schema/primitives/base_object" },
+    {
+      $ref: "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json",
+    },
   ],
   properties: {
     object_type: {
       const: "VALUATION",
     },
     refProperty1: {
-      $ref: "https://opencaptablecoalition.com/schema/enums/test_enum",
+      $ref: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
     },
   },
   additionalProperties: false,
@@ -85,7 +87,7 @@ describe("Object", () => {
 
 ### Object - Valuation
 
-\`https://opencaptablecoalition.com/schema/objects/valuation\`
+\`https://opencaptablecoalition.com/schema/objects/Valuation\`
 
 **Description:** _Object describing a valuation used in the cap table_
 
@@ -93,7 +95,7 @@ describe("Object", () => {
 
 **Composed From:**
 
-- [schema/primitives/base_object](schema/primitives/schema-primitives-base_object.md)
+- [schema/primitives/BaseObject](/docs/schema/primitives/BaseObject.md)
 
 **Properties:**
 
@@ -101,10 +103,10 @@ describe("Object", () => {
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------- |
 | id           | \`STRING\`                                                                                                                                     | Identifier for the object                                       | \`REQUIRED\` |
 | comments     | [\`STRING\`]                                                                                                                                   | Unstructured text comments related to and stored for the object | -          |
-| object_type  | **Constant:** \`VALUATION\`</br>_Defined in [schema/enums/object_type](schema/enums/schema-enums-object_type.md)_                              | Object type field                                               | \`REQUIRED\` |
+| object_type  | **Constant:** \`VALUATION\`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_                                       | Object type field                                               | \`REQUIRED\` |
 | refProperty1 | \`Test Title\`</br></br>_Description:_ This is a test fixture exemplifying an Enum schema from OCF</br></br>**ONE OF:** </br>&bull; test_enum1 | This is a test fixture exemplifying an Enum schema from OCF     | \`REQUIRED\` |
 
-**Source Code:** [schema/objects/valuation](/schema/objects/Valuation.schema.json)
+**Source Code:** [schema/objects/Valuation](/schema/objects/Valuation.schema.json)
 
 
 `);

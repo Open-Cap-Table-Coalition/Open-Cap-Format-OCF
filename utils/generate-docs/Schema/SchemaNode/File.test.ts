@@ -4,19 +4,21 @@ import { EnumSchemaNodeJson } from "./Enum.js";
 import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
 const FILE_FIXTURE: FileSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/files/test_file",
+  $id: "https://opencaptablecoalition.com/schema/files/TestFile.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying a File schema from OCF",
   type: "object",
   allOf: [
-    { $ref: "https://opencaptablecoalition.com/schema/primitives/base_file" },
+    {
+      $ref: "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json",
+    },
   ],
   properties: { file_type: { const: "OCF_TEST_FILE" } },
   required: ["test_property1"],
 };
 
 const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/object_type",
+  $id: "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json",
   title: "Enum - Object Type",
   description: "Enumeration of object types",
   type: "string",
@@ -24,7 +26,7 @@ const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/base_file",
+  $id: "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json",
   title: "Object - BaseFile",
   description: "Abstract file to be extended by all other files",
   type: "object",
@@ -33,7 +35,7 @@ const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
 };
 
 const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/test_enum",
+  $id: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying an Enum schema from OCF",
   type: "string",
@@ -57,7 +59,7 @@ describe("File", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/files/test_file\`
+\`https://opencaptablecoalition.com/schema/files/TestFile.schema.json\`
 
 **Description:** _This is a test fixture exemplifying a File schema from OCF_
 
@@ -65,15 +67,15 @@ describe("File", () => {
 
 **Composed From:**
 
-- [schema/primitives/base_file](schema/primitives/schema-primitives-base_file.md)
+- [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
 
 **Properties:**
 
-| Property  | Type                                                                                                                | Description       | Required |
-| --------- | ------------------------------------------------------------------------------------------------------------------- | ----------------- | -------- |
-| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/object_type](schema/enums/schema-enums-object_type.md)_ | Object type field | -        |
+| Property  | Type                                                                                                       | Description       | Required |
+| --------- | ---------------------------------------------------------------------------------------------------------- | ----------------- | -------- |
+| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field | -        |
 
-**Source Code:** [schema/files/test_file](/schema/files/TestFile.schema.json)
+**Source Code:** [schema/files/TestFile](/schema/files/TestFile.schema.json)
 
 `);
     });
