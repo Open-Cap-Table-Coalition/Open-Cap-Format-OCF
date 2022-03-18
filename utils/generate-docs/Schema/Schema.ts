@@ -1,3 +1,6 @@
+import path from "node:path";
+import { fileURLToPath } from "url";
+
 import SchemaReader from "./SchemaReader.js";
 import SchemaWriter from "./SchemaWriter.js";
 import ExamplesReader from "./ExamplesReader.js";
@@ -11,21 +14,18 @@ import SchemaNodeFactory, {
 export type { SchemaNodeJson };
 export type { ExampleJson };
 
+const ROOT = path.resolve(fileURLToPath(import.meta.url), "../../../..");
+
 /**
  *  Schema represents the OCF schema format.
  */
 export default class Schema {
-  static generateDocs = async (
-    schemaSource: string,
-    examplesSource: string,
-    output: string,
-    readmePath: string
-  ) => {
-    const schemaNodeJsons = await SchemaReader.read(schemaSource);
-    const exampleJsons = await ExamplesReader.read(examplesSource);
+  static generateDocs = async () => {
+    const schemaNodeJsons = await SchemaReader.read(path.join(ROOT, "schema"));
+    const exampleJsons = await ExamplesReader.read(path.join(ROOT, "samples"));
     const schema = new Schema(schemaNodeJsons, exampleJsons);
-    await SchemaWriter.write(output, schema);
-    await TableOfContents.write(schema, readmePath);
+    await SchemaWriter.write(path.join(ROOT), schema);
+    await TableOfContents.write(schema, path.join(ROOT, "README.md"));
   };
 
   readonly schemaNodes: SchemaNode[];
