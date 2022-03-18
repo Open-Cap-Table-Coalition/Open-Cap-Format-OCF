@@ -19,7 +19,7 @@
 | Property  | Type                                                                                                              | Description                    | Required   |
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------ | ---------- |
 | file_type | **Constant:** `OCF_STOCK_PLANS_FILE`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field              | `REQUIRED` |
-| items     | [ `OBJECT` ]                                                                                                      | List of OCF stock plan objects | `REQUIRED` |
+| items     | [ [schema/objects/StockPlan](/docs/schema/objects/StockPlan.md) ]                                                 | List of OCF stock plan objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StockPlansFile](/schema/files/StockPlansFile.schema.json)
 

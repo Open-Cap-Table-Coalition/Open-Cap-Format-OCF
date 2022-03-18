@@ -36,6 +36,8 @@ ${JSON.stringify(this.examples(), null, 2)}
 \`\`\``
       : "";
 
+  markdownTableType = () => this.markdownOutputLink();
+
   markdownOutput = () => `${this.markdownHeader()}
 
 **Description:** _${this.description()}_
