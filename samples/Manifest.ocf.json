@@ -33,6 +33,8 @@
     },
     "comments": []
   },
+  "as_of": "2022-03-22",
+  "generated_at": "2022-03-22T01:23:45-06:00",
   "stock_plans_files": [
     {
       "filepath": "./StockPlans.json",

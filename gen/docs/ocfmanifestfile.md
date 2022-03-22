@@ -25,6 +25,8 @@ all of
 | [ocf_version](#ocf_version)                                   | `string`      | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-enum---ocf-version-type.md "https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json#/properties/ocf_version")                                          |
 | [file_type](#file_type)                                       | Not specified | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/file_type")                                                         |
 | [issuer](#issuer)                                             | Merged        | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-object---issuer.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/issuer")                                                             |
+| [as_of](#as_of)                                               | `string`      | Required | cannot be null | [OCF Manifest File](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/as_of")                                     |
+| [generated_at](#generated_at)                                 | `string`      | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-generated_at.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/generated_at")                                                   |
 | [comments](#comments)                                         | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/comments")                                          |
 | [stock_plans_files](#stock_plans_files)                       | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-plans-files-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_plans_files")                       |
 | [stock_legend_templates_files](#stock_legend_templates_files) | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-legend-templates-files-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_legend_templates_files") |
@@ -107,6 +109,50 @@ Object describing the issuer of the cap table (the company whose cap table this 
 all of
 
 *   [Object - BaseObject](issuer-allof-object---baseobject.md "check type definition")
+
+## as_of
+
+Type represention of an ISO-8601 date, e.g. 2022-01-28
+
+`as_of`
+
+*   is required
+
+*   Type: `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+*   cannot be null
+
+*   defined in: [OCF Manifest File](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/as_of")
+
+### as_of Type
+
+`string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
+
+### as_of Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+## generated_at
+
+Timestamp of when the package was generated
+
+`generated_at`
+
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [OCF Manifest File](ocfmanifestfile-properties-generated_at.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/generated_at")
+
+### generated_at Type
+
+`string`
+
+### generated_at Constraints
+
+**date time**: the string must be a date time string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## comments
 
