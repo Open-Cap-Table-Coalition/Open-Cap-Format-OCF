@@ -25,7 +25,7 @@ all of
 | [ocf_version](#ocf_version)                                   | `string`      | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-enum---ocf-version-type.md "https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json#/properties/ocf_version")                                          |
 | [file_type](#file_type)                                       | Not specified | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-file_type.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/file_type")                                                         |
 | [issuer](#issuer)                                             | Merged        | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-object---issuer.md "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json#/properties/issuer")                                                             |
-| [comments](#comments)                                         | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/comments")                                          |
+| [comments](#comments)                                         | `array`       | Optional | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---comment-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/comments")                                          |
 | [stock_plans_files](#stock_plans_files)                       | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-plans-files-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_plans_files")                       |
 | [stock_legend_templates_files](#stock_legend_templates_files) | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-legend-templates-files-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_legend_templates_files") |
 | [stock_classes_files](#stock_classes_files)                   | `array`       | Required | cannot be null | [OCF Manifest File](ocfmanifestfile-properties-cap-table---stock-classes-files-array.md "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/properties/stock_classes_files")                   |
@@ -114,7 +114,7 @@ Unstructured text comments related to and stored for the cap table
 
 `comments`
 
-*   is required
+*   is optional
 
 *   Type: `string[]`
 
