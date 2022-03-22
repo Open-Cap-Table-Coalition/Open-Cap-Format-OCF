@@ -2,17 +2,17 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json",
   "title": "Type - Ratio",
-  "description": "Type representation of a ratio as antecedent and consequent numeric values",
+  "description": "Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values",
   "type": "object",
   "properties": {
-    "antecedent": {
-      "description": "Antecedent value of ratio (e.g. in a:b, a is the antecedent)",
+    "numerator": {
+      "description": "Numerator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where A is the numerator",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
-    "consequent": {
-      "description": "Consequent value of ratio (e.g. in a:b, b is the consequent)",
+    "denominator": {
+      "description": "Denominator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where B is the denominator",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     }
   },
-  "required": ["antecedent", "consequent"]
+  "required": ["numerator", "denominator"]
 }
