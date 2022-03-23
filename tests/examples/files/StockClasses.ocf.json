@@ -45,8 +45,8 @@
       "conversion_rights": [
         {
           "ratio": {
-            "antecedent": "1",
-            "consequent": "1"
+            "numerator": "1",
+            "denominator": "1"
           },
           "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
           "rounding_type": "NORMAL"

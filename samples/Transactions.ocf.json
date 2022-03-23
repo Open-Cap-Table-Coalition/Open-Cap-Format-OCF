@@ -70,7 +70,7 @@
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "ACTUAL_365",
       "default_conversion_rights": {
-        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "ratio": { "numerator": "2.0", "denominator": "1" },
         "rounding_type": "CEILING",
         "converts_to_future_round": true
       },
@@ -97,7 +97,7 @@
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "30_360",
       "default_conversion_rights": {
-        "ratio": { "antecedent": "1", "consequent": "2.0" },
+        "ratio": { "numerator": "2.0", "denominator": "1" },
         "rounding_type": "FLOOR",
         "converts_to_stock_class_id": "cls_86"
       },
@@ -112,7 +112,7 @@
       "interest_rate": "3.11",
       "interest_payout": "CASH",
       "maturity_date": "2034-01-01",
-      "exit_multiple": { "antecedent": "1", "consequent": "3.0" },
+      "exit_multiple": { "numerator": "3.0", "denominator": "1" },
       "interest_accrual_period": "MONTHLY",
       "compounding_type": "SIMPLE",
       "pro_rata": "2500",
@@ -373,8 +373,8 @@
       "date": "2022-01-01",
       "resulting_security_ids": ["2", "3"],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       }
     },
     {
@@ -384,8 +384,8 @@
       "date": "2022-01-01",
       "resulting_security_ids": ["2", "3"],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       },
       "comments": ["One comment", "A second comment"]
     },
@@ -447,8 +447,8 @@
       "resulting_security_ids": ["resultant-security-id-1"],
       "quantity_converted": "1",
       "conversion_ratio": {
-        "antecedent": "1",
-        "consequent": "1"
+        "numerator": "1",
+        "denominator": "1"
       }
     },
     {
@@ -463,8 +463,8 @@
       ],
       "quantity_converted": "10",
       "conversion_ratio": {
-        "antecedent": "1",
-        "consequent": "3"
+        "numerator": "3",
+        "denominator": "1"
       },
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
@@ -476,8 +476,8 @@
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "date": "2022-01-17",
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       }
     },
     {
@@ -613,8 +613,8 @@
         "resultant-security-id-2"
       ],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       }
     },
     {
@@ -627,8 +627,8 @@
         "resultant-security-id-2"
       ],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       },
       "comments": ["Here is a comment", "Here is another comment"]
     },
@@ -747,8 +747,8 @@
         {
           "converts_to_stock_class_id": "stock-class-id",
           "ratio": {
-            "antecedent": "1",
-            "consequent": "10"
+            "numerator": "10",
+            "denominator": "1"
           },
           "rounding_type": "CEILING"
         }
@@ -798,8 +798,8 @@
         "resultant-security-id-2"
       ],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       }
     },
     {
@@ -812,8 +812,8 @@
         "resultant-security-id-2"
       ],
       "split_ratio": {
-        "antecedent": "1",
-        "consequent": "2"
+        "numerator": "2",
+        "denominator": "1"
       },
       "comments": ["Here is a comment", "Here is another comment"]
     },
