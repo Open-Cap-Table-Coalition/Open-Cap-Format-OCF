@@ -22,7 +22,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "current_shares_reserved": {
-      "description": "The most recent number of shares reserved in the pool for this stock plan by the Board or equivalent body. Actual shares issued and outstanding from the pool can be determined by traversing the event stack. Authorized share history (e.g. previous `current_shares_reserved` amounts) is not available in OCF version 1.",
+      "description": "The most recent number of shares reserved in the pool for this stock plan by the Board or equivalent body. Actual shares issued and outstanding from the pool should be determined by traversing the event stack. The plan's reserved share history (e.g. previous `current_shares_reserved` amounts) is not available in OCF version 1.",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "stock_class_id": {
