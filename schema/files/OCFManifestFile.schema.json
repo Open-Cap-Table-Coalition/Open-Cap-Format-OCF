@@ -103,7 +103,6 @@
     "issuer",
     "as_of",
     "generated_at",
-    "comments",
     "stock_plans_files",
     "stock_legend_templates_files",
     "stock_classes_files",
