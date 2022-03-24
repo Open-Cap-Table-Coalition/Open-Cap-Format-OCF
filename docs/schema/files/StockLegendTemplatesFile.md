@@ -16,10 +16,10 @@
 
 **Properties:**
 
-| Property  | Type                                                                                                                         | Description                               | Required   |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ---------- |
-| file_type | **Constant:** `OCF_STOCK_LEGEND_TEMPLATES_FILE`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field                         | `REQUIRED` |
-| items     | [ [schema/objects/StockLegendTemplate](/docs/schema/objects/StockLegendTemplate.md) ]                                        | List of OCF stock legend template objects | `REQUIRED` |
+| Property  | Type                                                                                                                     | Description                               | Required   |
+| --------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | ---------- |
+| file_type | **Constant:** `OCF_STOCK_LEGEND_TEMPLATES_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field                         | `REQUIRED` |
+| items     | [ [schema/objects/StockLegendTemplate](/docs/schema/objects/StockLegendTemplate.md) ]                                    | List of OCF stock legend template objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StockLegendTemplatesFile](/schema/files/StockLegendTemplatesFile.schema.json)
 

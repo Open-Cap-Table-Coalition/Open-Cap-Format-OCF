@@ -3,7 +3,8 @@ import util from "node:util";
 import SchemaNode from "../../SchemaNode.js";
 import AnyOfArray, { AnyOfArrayJson } from "./AnyOfArray.js";
 import Boolean, { BooleanJson } from "./Boolean.js";
-import Const, { ConstJson } from "./Const.js";
+import ObjectConst, { ObjectConstJson } from "./ObjectConst.js";
+import FileConst, { FileConstJson } from "./FileConst.js";
 import Integer, { IntegerJson } from "./Integer.js";
 import MultiType, { MultiTypeJson } from "./MultiType.js";
 import OneOf, { OneOfJson } from "./OneOf.js";
@@ -16,15 +17,16 @@ import Null, { NullJson } from "./Null.js";
 export type InlinePropertyJson =
   | AnyOfArrayJson
   | BooleanJson
-  | ConstJson
+  | FileConstJson
   | IntegerJson
   | MultiTypeJson
-  | OneOfJson
+  | NullJson
+  | ObjectConstJson
   | OneOfArrayJson
+  | OneOfJson
   | RefArrayJson
   | StringJson
-  | TypeArrayJson
-  | NullJson;
+  | TypeArrayJson;
 
 interface Schema {
   findSchemaNodeById: (id: string) => SchemaNode;
@@ -42,8 +44,12 @@ export default class InlinePropertyFactory {
   static isBooleanJson = (json: InlinePropertyJson): json is BooleanJson =>
     "type" in json && json["type"] === "boolean";
 
-  static isConstJson = (json: InlinePropertyJson): json is ConstJson =>
+  static isFileConstJson = (json: InlinePropertyJson): json is FileConstJson =>
     "const" in json;
+
+  static isObjectConstJson = (
+    json: InlinePropertyJson
+  ): json is ObjectConstJson => "const" in json;
 
   static isIntegerJson = (json: InlinePropertyJson): json is IntegerJson =>
     "type" in json && json["type"] === "integer";
@@ -67,7 +73,7 @@ export default class InlinePropertyFactory {
   static isStringJson = (json: InlinePropertyJson): json is StringJson =>
     "type" in json && json["type"] === "string";
 
-  static isTypeArrayJson = (json: InlinePropertyJson): json is StringJson =>
+  static isTypeArrayJson = (json: InlinePropertyJson): json is TypeArrayJson =>
     "type" in json &&
     json["type"] === "array" &&
     "items" in json &&
@@ -81,14 +87,23 @@ export default class InlinePropertyFactory {
     json: InlinePropertyJson,
     idOverride?: string
   ) => {
+    if (
+      idOverride === "file_type" &&
+      InlinePropertyFactory.isFileConstJson(json)
+    )
+      return new FileConst(schema, json, idOverride);
+
+    if (
+      idOverride === "object_type" &&
+      InlinePropertyFactory.isObjectConstJson(json)
+    )
+      return new ObjectConst(schema, json, idOverride);
+
     if (InlinePropertyFactory.isAnyOfArrayJson(json))
       return new AnyOfArray(schema, json, idOverride);
 
     if (InlinePropertyFactory.isBooleanJson(json))
       return new Boolean(schema, json, idOverride);
-
-    if (InlinePropertyFactory.isConstJson(json))
-      return new Const(schema, json, idOverride);
 
     if (InlinePropertyFactory.isIntegerJson(json))
       return new Integer(schema, json, idOverride);

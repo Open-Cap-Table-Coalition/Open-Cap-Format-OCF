@@ -16,10 +16,10 @@
 
 **Properties:**
 
-| Property  | Type                                                                                                             | Description                   | Required   |
-| --------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- | ---------- |
-| file_type | **Constant:** `OCF_VALUATIONS_FILE`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field             | `REQUIRED` |
-| items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                                | List of OCF valuation objects | `REQUIRED` |
+| Property  | Type                                                                                                         | Description                   | Required   |
+| --------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------- | ---------- |
+| file_type | **Constant:** `OCF_VALUATIONS_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field             | `REQUIRED` |
+| items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                            | List of OCF valuation objects | `REQUIRED` |
 
 **Source Code:** [schema/files/ValuationsFile](/schema/files/ValuationsFile.schema.json)
 

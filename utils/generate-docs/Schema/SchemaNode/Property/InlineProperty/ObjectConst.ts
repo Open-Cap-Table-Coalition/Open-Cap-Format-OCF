@@ -5,14 +5,14 @@ interface Schema {
   findSchemaNodeById: (id: string) => SchemaNode;
 }
 
-export interface ConstJson {
+export interface ObjectConstJson {
   const: string;
 }
 
-export default class ConstProperty extends InlineProperty {
-  protected readonly json: ConstJson;
+export default class ObjectConstProperty extends InlineProperty {
+  protected readonly json: ObjectConstJson;
 
-  constructor(schema: Schema, json: ConstJson, idOverride?: string) {
+  constructor(schema: Schema, json: ObjectConstJson, idOverride?: string) {
     super(schema, json, idOverride);
     this.json = json;
   }
@@ -24,11 +24,8 @@ export default class ConstProperty extends InlineProperty {
       "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
     );
 
-  protected markdownLinkToObjectType = () =>
-    `[${this.objectTypeEnumSchemaNode().shortId()}](${this.objectTypeEnumSchemaNode().outputPath()})`;
-
   markdownTableType = () =>
-    `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.markdownLinkToObjectType()}_`;
+    `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.objectTypeEnumSchemaNode().markdownOutputLink()}_`;
 
   markdownTableDescription = () => "Object type field";
 }

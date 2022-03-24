@@ -75,8 +75,8 @@ const FILE_FIXTURE: FileSchemaNodeJson = {
   required: ["test_property1"],
 };
 
-const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json",
+const ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
+  $id: "https://opencaptablecoalition.com/schema/enums/FileType.schema.json",
   title: "Enum - Object Type",
   description: "Enumeration of object types",
   type: "string",
@@ -106,7 +106,7 @@ describe("File", () => {
       const schema = new Schema([
         BASE_OBJECT_SCHEMA_NODE_FIXTURE,
         OBJECT_SCHEMA_NODE_FIXTURE,
-        ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE,
+        ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE,
         ENUM_SCHEMA_NODE_FIXTURE,
         BASE_FILE_SCHEMA_NODE_FIXTURE,
         FILE_FIXTURE,
@@ -131,10 +131,10 @@ describe("File", () => {
 
 **Properties:**
 
-| Property  | Type                                                                                                       | Description                | Required |
-| --------- | ---------------------------------------------------------------------------------------------------------- | -------------------------- | -------- |
-| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field          | -        |
-| items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                          | Example ref array property | -        |
+| Property  | Type                                                                                                   | Description                | Required |
+| --------- | ------------------------------------------------------------------------------------------------------ | -------------------------- | -------- |
+| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field          | -        |
+| items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                      | Example ref array property | -        |
 
 **Source Code:** [schema/files/TestFile](/schema/files/TestFile.schema.json)
 

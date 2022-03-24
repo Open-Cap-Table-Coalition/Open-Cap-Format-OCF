@@ -16,10 +16,10 @@
 
 **Properties:**
 
-| Property  | Type                                                                                                                | Description                     | Required   |
-| --------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
-| file_type | **Constant:** `OCF_STOCK_CLASSES_FILE`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field               | `REQUIRED` |
-| items     | [ [schema/objects/StockClass](/docs/schema/objects/StockClass.md) ]                                                 | List of OCF stock class objects | `REQUIRED` |
+| Property  | Type                                                                                                            | Description                     | Required   |
+| --------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
+| file_type | **Constant:** `OCF_STOCK_CLASSES_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field               | `REQUIRED` |
+| items     | [ [schema/objects/StockClass](/docs/schema/objects/StockClass.md) ]                                             | List of OCF stock class objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StockClassesFile](/schema/files/StockClassesFile.schema.json)
 
