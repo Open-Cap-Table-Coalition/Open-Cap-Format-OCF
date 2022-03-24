@@ -26,7 +26,7 @@ export default class EnumSchemaNode extends SchemaNode {
   markdownTableId = () => this.id();
 
   markdownTableType = () =>
-    `\`${this.title()}\`</br></br>_Description:_ ${this.description()}</br></br>**ONE OF:** ${this.enumAsMarkdownList()}`;
+    `\`${this.title()}\`</br></br>_Description:_ ${this.markdownTableDescription()}</br></br>**ONE OF:** ${this.enumAsMarkdownList()}`;
 
   markdownOutput = () => `${this.markdownHeader()}
 

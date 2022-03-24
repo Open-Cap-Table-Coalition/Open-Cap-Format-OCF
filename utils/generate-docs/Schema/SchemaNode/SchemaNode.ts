@@ -104,8 +104,7 @@ export default abstract class SchemaNode {
 
   markdownTableType = () => `\`${this.type().toUpperCase()}\``;
 
-  markdownTableDescription = () =>
-    this.description().replace(/\r?\n|\r/, "</br>");
+  markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
   markdownPropertiesTable = () =>
     markdownTable([
