@@ -17,6 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2.5.1
         with:
+          node-version-file: ".nvmrc"
           cache: "npm"
 
       - name: Install Dependencies
@@ -31,7 +32,7 @@ jobs:
           PATHSPEC=$2
           output=$(git status --porcelain $STATUS_ARGS $PATHSPEC)
           if [[ -z "$output" ]];
-          then  
+          then
             echo "Clean"
             echo "0"
           else
