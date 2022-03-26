@@ -17,7 +17,7 @@ royalty is hereby granted, provided that
   - A notice in the form "Copyright © [$date-of-ocf-file] [Open Cap Table Coalition](https://opencaptablecoalition.com)."; and
 2) For _ALL_ copies of an OCF File or portions thereof that **are** JSON Schema files, you include
   - A `$comment` field with a value of: "Copyright © [$date-of-ocf-file] 
-  Open Cap Table Coalition (https://opencaptablecoalition.com) - Original File: [$url-of-original-schema-file]."
+  Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: [$url-of-original-schema-file]"
 
 When space permits, inclusion of the full text of this **NOTICE** should be provided. We request 
 that authorship attribution be provided in any software, documents, or other items or products 
