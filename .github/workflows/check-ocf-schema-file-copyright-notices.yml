@@ -1,0 +1,27 @@
+name: Check OCF Schema File Copyright Notices
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-ocf-schema-file-copyright-notices:
+    name: Check OCF Schema File Copyright Notices
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check for coypright notices
+        run: node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -vt
