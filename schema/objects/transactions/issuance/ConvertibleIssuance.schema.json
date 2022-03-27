@@ -54,7 +54,10 @@
     "conversion_triggers": {
       "title": "Convertible - Conversion Trigger Array",
       "description": "In event the convertible can convert due to trigger events (e.g. Change of Control, at Election of Holder), what are the terms and has conversion been triggered? Conversion possibilities for this convertible more complex than a ratio of shares / unit principal.",
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json"
       }
@@ -110,5 +113,6 @@
     "default_conversion_rights",
     "conversion_triggers",
     "seniority"
-  ]
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json"
 }

@@ -100,5 +100,6 @@
     "transactions_files",
     "stakeholders_files"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/OCFManifestFile.schema.json"
 }

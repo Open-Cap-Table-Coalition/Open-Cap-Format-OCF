@@ -12,14 +12,12 @@
     "STOCK_PLAN",
     "VALUATION",
     "VESTING_SCHEDULE",
-
     "TX_CONVERTIBLE_ACCEPTANCE",
     "TX_CONVERTIBLE_CANCELLATION",
     "TX_CONVERTIBLE_CONVERSION",
     "TX_CONVERTIBLE_ISSUANCE",
     "TX_CONVERTIBLE_RETRACTION",
     "TX_CONVERTIBLE_TRANSFER",
-
     "TX_PLAN_SECURITY_ACCEPTANCE",
     "TX_PLAN_SECURITY_CANCELLATION",
     "TX_PLAN_SECURITY_EXERCISE",
@@ -28,7 +26,6 @@
     "TX_PLAN_SECURITY_RETRACTION",
     "TX_PLAN_SECURITY_SPLIT",
     "TX_PLAN_SECURITY_TRANSFER",
-
     "TX_STOCK_ACCEPTANCE",
     "TX_STOCK_CANCELLATION",
     "TX_STOCK_CONVERSION",
@@ -38,7 +35,6 @@
     "TX_STOCK_RETRACTION",
     "TX_STOCK_SPLIT",
     "TX_STOCK_TRANSFER",
-
     "TX_WARRANT_ACCEPTANCE",
     "TX_WARRANT_CANCELLATION",
     "TX_WARRANT_EXERCISE",
@@ -46,5 +42,6 @@
     "TX_WARRANT_RETRACTION",
     "TX_WARRANT_SPLIT",
     "TX_WARRANT_TRANSFER"
-  ]
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ObjectType.schema.json"
 }

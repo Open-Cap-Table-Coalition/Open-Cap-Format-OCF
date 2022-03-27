@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged
-
+npm run enforce-copyright-notices && git add schema
 npm run generate-docs && git add docs/schema && git add README.md

@@ -25,12 +25,20 @@
   "oneOf": [
     {
       "title": "Converts to not-yet-existing and/or not-yet-known stock class",
-      "required": ["converts_to_future_round"]
+      "required": [
+        "converts_to_future_round"
+      ]
     },
     {
       "title": "Converts to existing, known stock class",
-      "required": ["converts_to_stock_class_id"]
+      "required": [
+        "converts_to_stock_class_id"
+      ]
     }
   ],
-  "required": ["ratio", "rounding_type"]
+  "required": [
+    "ratio",
+    "rounding_type"
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/StockClassConversionRights.schema.json"
 }
