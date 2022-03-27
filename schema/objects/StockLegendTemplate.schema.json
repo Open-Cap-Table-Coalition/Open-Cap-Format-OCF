@@ -25,9 +25,6 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": [
-    "name",
-    "text"
-  ],
+  "required": ["name", "text"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockLegendTemplate.schema.json"
 }

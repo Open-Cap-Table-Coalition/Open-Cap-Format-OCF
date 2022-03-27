@@ -79,9 +79,7 @@
           "const": "OPTION"
         }
       },
-      "required": [
-        "option_grant_type"
-      ]
+      "required": ["option_grant_type"]
     },
     {
       "properties": {

@@ -4,8 +4,6 @@
   "title": "Enum - OCF Version Type",
   "description": "Enumeration of recognized OCF versions",
   "type": "string",
-  "enum": [
-    "1.0.0-a3"
-  ],
+  "enum": ["1.0.0-a3"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/OCFVersionType.schema.json"
 }
