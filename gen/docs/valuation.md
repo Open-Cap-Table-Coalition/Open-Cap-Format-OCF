@@ -25,7 +25,7 @@ all of
 | [object_type](#object_type)         | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-object_type.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/object_type")                                    |
 | [provider](#provider)               | `string`      | Optional | cannot be null | [Object - Valuation](valuation-properties-provider.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/provider")                                          |
 | [price_per_share](#price_per_share) | `object`      | Required | cannot be null | [Object - Valuation](basetransfer-properties-type---monetary.md "https://opencaptablecoalition.com/schema/types/Monetary.schema.json#/properties/price_per_share")                            |
-| [valuation_date](#valuation_date)   | `string`      | Required | cannot be null | [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/valuation_date") |
+| [effective_date](#effective_date)   | `string`      | Required | cannot be null | [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/effective_date") |
 | [valuation_type](#valuation_type)   | `string`      | Required | cannot be null | [Object - Valuation](valuation-properties-enum---valuation-type.md "https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json#/properties/valuation_type")                     |
 | [id](#id)                           | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-id.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/id")                                                      |
 | [comments](#comments)               | Not specified | Optional | cannot be null | [Object - Valuation](valuation-properties-comments.md "https://opencaptablecoalition.com/schema/objects/Valuation.schema.json#/properties/comments")                                          |
@@ -92,11 +92,11 @@ Type representation of an amount of money in a specified currency
 
 `object` ([Type - Monetary](basetransfer-properties-type---monetary.md))
 
-## valuation_date
+## effective_date
 
 Type represention of an ISO-8601 date, e.g. 2022-01-28
 
-`valuation_date`
+`effective_date`
 
 *   is required
 
@@ -104,13 +104,13 @@ Type represention of an ISO-8601 date, e.g. 2022-01-28
 
 *   cannot be null
 
-*   defined in: [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/valuation_date")
+*   defined in: [Object - Valuation](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md "https://opencaptablecoalition.com/schema/types/Date.schema.json#/properties/effective_date")
 
-### valuation_date Type
+### effective_date Type
 
 `string` ([Type - Date](eventdrivenvestingcondition-properties-event_occurred-oneof-type---date.md))
 
-### valuation_date Constraints
+### effective_date Constraints
 
 **date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
