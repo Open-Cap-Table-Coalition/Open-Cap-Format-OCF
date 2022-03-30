@@ -6,9 +6,9 @@ https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json#/prop
 
 Timestamp of when the package was generated
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                            |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [OCFManifestFile.schema.json*](../../schema/files/OCFManifestFile.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [OCFManifestFile.schema.json\*](../../schema/files/OCFManifestFile.schema.json "open original schema") |
 
 ## generated_at Type
 

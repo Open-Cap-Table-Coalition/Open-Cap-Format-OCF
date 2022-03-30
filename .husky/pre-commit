@@ -3,4 +3,4 @@
 
 npx lint-staged
 
-npm run generate-docs && git add gen/docs
+npm run generate-docs && git add docs/schema && git add README.md

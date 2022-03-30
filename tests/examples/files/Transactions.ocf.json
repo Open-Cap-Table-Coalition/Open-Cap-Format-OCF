@@ -41,7 +41,7 @@
       "security_id": "test-security-id",
       "resulting_security_ids": ["new-security-1", "new-security-2"],
       "date": "2022-01-17",
-      "split_ratio": { "antecedent": "1", "consequent": "2" }
+      "split_ratio": { "numerator": "2", "denominator": "1" }
     },
     {
       "object_type": "TX_STOCK_TRANSFER",
