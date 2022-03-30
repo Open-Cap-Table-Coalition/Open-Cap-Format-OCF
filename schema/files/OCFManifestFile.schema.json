@@ -26,7 +26,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "generated_at": {
-      "description": "Timestamp of when the package was generated",
+      "description": "Timestamp of when the package was generated. Useful when determining which set of data is most up-to-date, if presented with two packages that have the same `as_of` date, but different cap table data.",
       "type": "string",
       "format": "date-time"
     },
