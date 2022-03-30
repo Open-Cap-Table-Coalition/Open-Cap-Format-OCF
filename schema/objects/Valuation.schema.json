@@ -21,8 +21,8 @@
       "description": "Valued price per share",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
-    "valuation_date": {
-      "description": "Date of the valuation",
+    "effective_date": {
+      "description": "Date on which this valuation is first valid",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "valuation_type": {
@@ -33,5 +33,5 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": ["price_per_share", "valuation_date", "valuation_type"]
+  "required": ["price_per_share", "effective_date", "valuation_type"]
 }
