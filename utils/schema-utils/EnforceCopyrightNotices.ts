@@ -51,16 +51,20 @@ export async function enforceOcfCopyrightNotices(
       "(Copyright © \\d{4} Open Cap Table Coalition \\(https:\\/\\/opencaptablecoalition\\.com\\) \\/ Original File: https:\\/\\/github\\.com\\/Open-Cap-Table-Coalition\\/Open-Cap-Format-OCF\\/tree\\/main\\/schema\\/).+(\\.schema\\.json)$"
     );
 
-    if (verbose) console.log("Traverse schema dir for schema paths...");
+    if (verbose) console.log("\nTraverse schema dir for schema paths...");
     const schema_paths = await getSchemaFilepaths(false);
 
-    if (verbose) console.log("Read schema files...");
+    if (verbose) console.log("\nRead schema files...");
     const schema_buffers = await Promise.all(
       schema_paths.map((path) => readFile(path))
     );
 
-    if (verbose) console.log("Load Schema JSONs from file contents...");
-    const schemas = schema_buffers.map((schema_buffer) => {
+    if (verbose) console.log("\nLoad Schema JSONs from file contents...");
+    const schemas = schema_buffers.map((schema_buffer, index) => {
+      if (verbose)
+        console.log(
+          `\t(${index}) Parse JSON Schema at path ${schema_paths[index]}`
+        );
       return JSON.parse(schema_buffer.toString()) as Record<string, any>;
     });
 
