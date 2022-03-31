@@ -12,8 +12,10 @@
 
 **Properties:**
 
-| Property               | Type       | Description                                                                         | Required   |
-| ---------------------- | ---------- | ----------------------------------------------------------------------------------- | ---------- |
-| resulting_security_ids | [`STRING`] | Identifier of the new security (or securities) issuance resulting from a reissuance | `REQUIRED` |
+| Property               | Type       | Description                                                                                                                                           | Required   |
+| ---------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| resulting_security_ids | [`STRING`] | Identifier of the new security (or securities) issuance resulting from a reissuance                                                                   | `REQUIRED` |
+| split_transaction_id   | `STRING`   | When stock is reissued as a result of a stock split, this field contains id of the respective stock class split transaction. It is not set otherwise. | -          |
+| reason_text            | `STRING`   | Free-form human-readable reason for stock reissuance                                                                                                  | -          |
 
 **Source Code:** [schema/primitives/transactions/reissuance/BaseReissuance](/schema/primitives/transactions/reissuance/BaseReissuance.schema.json)
