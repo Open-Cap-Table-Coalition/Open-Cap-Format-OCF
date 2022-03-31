@@ -32,7 +32,7 @@
     },
     "option_grant_type": {
       "description": "If the plan security is an option, what kind?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/OptionType.schema.json"
     },
     "quantity": {
       "description": "How many shares are subject to this plan security?",
