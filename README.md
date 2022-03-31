@@ -225,23 +225,11 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a transfer or secondary sale of a warrant security
   - **View more:** [schema/objects/transactions/transfer/WarrantTransfer](/docs/schema/objects/transactions/transfer/WarrantTransfer.md)
 
-- **Object - Plan Security Split Transaction**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/PlanSecuritySplit.schema.json`
-  - **Description:** Object describing a split of a plan security
-  - **View more:** [schema/objects/transactions/split/PlanSecuritySplit](/docs/schema/objects/transactions/split/PlanSecuritySplit.md)
-
 - **Object - Stock Split Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json`
-  - **Description:** Object describing a split of a stock security
-  - **View more:** [schema/objects/transactions/split/StockSplit](/docs/schema/objects/transactions/split/StockSplit.md)
-
-- **Object - Warrant Split Transaction**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/WarrantSplit.schema.json`
-  - **Description:** Object describing a split of a warrant security
-  - **View more:** [schema/objects/transactions/split/WarrantSplit](/docs/schema/objects/transactions/split/WarrantSplit.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/split/StockClassSplit.schema.json`
+  - **Description:** Object describing a split of a stock class
+  - **View more:** [schema/objects/transactions/split/StockClassSplit](/docs/schema/objects/transactions/split/StockClassSplit.md)
 
 - **Object - Convertible Retraction Transaction**
 
@@ -701,6 +689,18 @@ _Used for object property composition and enforcing uniform properties across pa
 
 - **Primitive - Security Transaction**
 
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json`
+  - **Description:** Abstract transaction object to be extended by all transaction objects that deal with individual securities
+  - **View more:** [schema/primitives/transactions/BaseSecurityTransaction](/docs/schema/primitives/transactions/BaseSecurityTransaction.md)
+
+- **Primitive - Stock Class Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseStockClassTransaction.schema.json`
+  - **Description:** Abstract transaction object to be extended by all transaction objects that affect the stock class
+  - **View more:** [schema/primitives/transactions/BaseStockClassTransaction](/docs/schema/primitives/transactions/BaseStockClassTransaction.md)
+
+- **Primitive - Transaction**
+
   - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all other transaction objects
   - **View more:** [schema/primitives/transactions/BaseTransaction](/docs/schema/primitives/transactions/BaseTransaction.md)
@@ -710,12 +710,6 @@ _Used for object property composition and enforcing uniform properties across pa
   - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json`
   - **Description:** Abstract object describing a security transfer or secondary sale transaction
   - **View more:** [schema/primitives/transactions/transfer/BaseTransfer](/docs/schema/primitives/transactions/transfer/BaseTransfer.md)
-
-- **Primitive - Security Split Transaction**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/split/BaseSplit.schema.json`
-  - **Description:** Abstract object describing a security split transaction
-  - **View more:** [schema/primitives/transactions/split/BaseSplit](/docs/schema/primitives/transactions/split/BaseSplit.md)
 
 - **Primitive - Security Retraction Transaction**
 
