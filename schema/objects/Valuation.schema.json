@@ -17,6 +17,10 @@
       "description": "Entity which provided the valuation",
       "type": "string"
     },
+    "board_approval_date": {
+      "description": "Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
     "price_per_share": {
       "description": "Valued price per share",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
