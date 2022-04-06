@@ -10,6 +10,34 @@ import { getSchemaFilepaths } from "./Loaders.js";
 import { schemaUrlFromRepoPath } from "./PathTools.js";
 
 /**
+ * Given a schema, with a known local schema_path, generate a
+ * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
+ * @param schema_inst -> OCF schema JSON to update.
+ * @param copyright_year -> Number: What year should copyright notice be for?
+ * @param tag -> String: What branch tag should be added to repo root to generate valid url to GitHub docs?
+ * @param verbose -> Boolean: Display detailed logs.
+ */
+export function addValidOcfCommentToSchema(
+  schema_path: string,
+  schema_inst: Record<string, any>,
+  copyright_year: number,
+  tag: string = "main",
+  verbose: boolean = false
+) {
+  let comment_contents = `Copyright © ${copyright_year} Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: ${schemaUrlFromRepoPath(
+    schema_path,
+    tag
+  )}`;
+  schema_inst["$comment"] = comment_contents;
+  let schema_data = JSON.stringify(schema_inst, null, 2);
+  fs.writeFileSync(schema_path, schema_data);
+  if (verbose)
+    console.log(
+      `\t--> Inserted valid $comment field in schema ${schema_inst["$id"]}`
+    );
+}
+
+/**
  * Load all schema files in the /schemas folder. Check that there is a $comment field
  * with a notice in the form required by the license:
  *
@@ -30,6 +58,8 @@ import { schemaUrlFromRepoPath } from "./PathTools.js";
  * @param add_missing_comments - Boolean. If false, do not add missing $comment fields. If this is set to false and
  *        the $comment field is missing in any schema file, the tests will fail. If this is set to true, the only reason
  *        the test should fail is an unexpected error.
+ * @param force_overwrite - Boolean. If true, the $comment field is regenerated for all schemas.
+ * @param tag String -> What branch tag should be appended to the repo root url? Lets us specify a specific version to view (main by default).
  * @returns Promise that resolves to true if notices are present or added to all schema files, false if (a) notices are missing
  *        from one or more schemas and are not set to be added (add_missing_comments = false) or (b) an unexpected
  *        error is encountered.
@@ -38,7 +68,9 @@ export async function enforceOcfCopyrightNotices(
   verbose: boolean = false,
   test: boolean = false,
   replace_invalid_comments: boolean = true,
-  add_missing_comments: boolean = true
+  add_missing_comments: boolean = true,
+  force_overwrite: boolean = false,
+  tag: string = "main"
 ): Promise<boolean> {
   if (verbose) console.log(`ENFORCE COPYRIGHT NOTICES ----------------------`);
 
@@ -52,7 +84,7 @@ export async function enforceOcfCopyrightNotices(
     );
 
     if (verbose) console.log("\nTraverse schema dir for schema paths...");
-    const schema_paths = await getSchemaFilepaths(false);
+    const schema_paths = await getSchemaFilepaths(verbose);
 
     if (verbose) console.log("\nRead schema files...");
     const schema_buffers = await Promise.all(
@@ -82,75 +114,80 @@ export async function enforceOcfCopyrightNotices(
           `•\tCheck schema ${schema_inst["$id"]} for valid $comment field`
         );
 
-      // If the schemas *has* a $comment field
-      if (schema_inst.hasOwnProperty("$comment")) {
+      // If the user flagged force_overwrite, we're going to genereate a valid $comment and overwrite whatever is in the file in ALL circumstances
+      if (force_overwrite) {
         if (verbose)
           console.log(
-            `\t--> Schema has $comment field... check contents match required regex`
+            `\t--> force_overwrite selected - generate valid $comment and overwrite any existing values.`
           );
-
-        // Test that the $comment value matches requisite regex pattern
-        if (comment_regex_check.test(schema_inst["$comment"])) {
+        addValidOcfCommentToSchema(
+          schema_paths[i],
+          schema_inst,
+          copyright_year,
+          tag,
+          verbose
+        );
+      } else {
+        // If the schemas *has* a $comment field
+        if (schema_inst.hasOwnProperty("$comment")) {
           if (verbose)
             console.log(
-              `\t--> $comment contents pass regex requirements. Proceed to next schema.`
+              `\t--> Schema has $comment field... check contents match required regex`
             );
-        }
-        // If the $comment value doesn't match the regex pattern, check to see if user wants us to fix invalid $comments
-        else {
-          // If user wants invalid comments replaced (replace_invalid_comments === true), go ahead and replace the $comment field
-          if (replace_invalid_comments) {
+
+          // Test that the $comment value matches requisite regex pattern
+          if (comment_regex_check.test(schema_inst["$comment"])) {
             if (verbose)
               console.log(
-                `\t--> $comment contents FAILED regex requirements but replace_invalid_comments set to true. Replace invalid value.`
-              );
-            let comment_contents = `Copyright © ${copyright_year} Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: ${schemaUrlFromRepoPath(
-              schema_paths[i]
-            )}`;
-            schema_inst["$comment"] = comment_contents;
-            let schema_data = JSON.stringify(schema_inst, null, 2);
-            fs.writeFileSync(schema_paths[i], schema_data);
-            if (verbose)
-              console.log(
-                `\t--> Schema ${schema_inst["$id"]} is now in spec. Done!`
+                `\t--> $comment contents pass regex requirements. Proceed to next schema.`
               );
           }
-          // Otherwise, stop and return false as we have at least one invalid $comment field. If we're in test mode, signal to GitHub actions API the action failed.
+          // If the $comment value doesn't match the regex pattern, check to see if user wants us to fix invalid $comments
           else {
-            let error_message = `XX\tSchema ${schema_inst["$id"]} has $comment field but it failed regex test and replace_invalid_comments set to false. Cannot proceed.`;
+            // If user wants invalid comments replaced (replace_invalid_comments === true), go ahead and replace the $comment field
+            if (replace_invalid_comments) {
+              if (verbose)
+                console.log(
+                  `\t--> $comment contents FAILED regex requirements but replace_invalid_comments set to true. Replace invalid value.`
+                );
+              addValidOcfCommentToSchema(
+                schema_paths[i],
+                schema_inst,
+                copyright_year,
+                tag,
+                verbose
+              );
+            }
+            // Otherwise, stop and return false as we have at least one invalid $comment field. If we're in test mode, signal to GitHub actions API the action failed.
+            else {
+              let error_message = `XX\tSchema ${schema_inst["$id"]} has $comment field but it failed regex test and replace_invalid_comments set to false. Cannot proceed.`;
+              if (verbose) console.log(error_message);
+              if (test) core.setFailed(error_message);
+              return false;
+            }
+          }
+        }
+        // If there is no $comment field...
+        else {
+          if (verbose)
+            console.log(`\t--> Schema DOES NOT have $comment field...`);
+          // Fix missing $comment field if add_missing_comments===true
+          if (add_missing_comments) {
+            addValidOcfCommentToSchema(
+              schema_paths[i],
+              schema_inst,
+              copyright_year,
+              tag,
+              verbose
+            );
+          }
+          // Otherwise, signal the check failed and, if in test mode, trigger failure in GitHub action
+          else {
+            let error_message = `XX\tSchema ${schema_inst["$id"]} missing $comment field but add_missing_comments set to false... cannot proceed`;
             if (verbose) console.log(error_message);
             if (test) core.setFailed(error_message);
             return false;
           }
-        }
-      }
-      // If there is no $comment field...
-      else {
-        if (verbose)
-          console.log(`\t--> Schema DOES NOT have $comment field...`);
-        // Fix missing $comment field if add_missing_comments===true
-        if (add_missing_comments) {
-          let comment_contents = `Copyright © ${copyright_year} Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: ${schemaUrlFromRepoPath(
-            schema_paths[i]
-          )}`;
-          if (verbose)
-            console.log(
-              `\t--> Copyright notice to insert into schema: ${comment_contents}`
-            );
-          schema_inst["$comment"] = comment_contents;
-          let schema_data = JSON.stringify(schema_inst, null, 2);
-          fs.writeFileSync(schema_paths[i], schema_data);
-          if (verbose)
-            console.log(
-              `\t--> Schema ${schema_inst["$id"]} is now in spec. Done!`
-            );
-        }
-        // Otherwise, signal the check failed and, if in test mode, trigger failure in GitHub action
-        else {
-          let error_message = `XX\tSchema ${schema_inst["$id"]} missing $comment field but add_missing_comments set to false... cannot proceed`;
-          if (verbose) console.log(error_message);
-          if (test) core.setFailed(error_message);
-          return false;
         }
       }
     }
@@ -194,6 +231,9 @@ interface CopyrightNoticeCheckArgs extends Arguments {
   r?: boolean;
   add?: boolean;
   a?: boolean;
+  force?: boolean;
+  f?: boolean;
+  tag?: string;
 }
 
 yargs(hideBin(process.argv))
@@ -229,13 +269,29 @@ yargs(hideBin(process.argv))
         demandOption: false,
         type: "boolean",
       },
+      force: {
+        describe:
+          "Insert valid $comment to all schemas, ignoring whether a valid $comment was or was not present.",
+        alias: "f",
+        demandOption: false,
+        type: "boolean",
+      },
+      tag: {
+        describe:
+          "What tag should be appended to the repo root url? This lets us specify specific tags other than latest main branch.",
+        demandOption: "false",
+        type: "string",
+        default: "main",
+      },
     },
     handler: async (argv: CopyrightNoticeCheckArgs) => {
       await enforceOcfCopyrightNotices(
-        argv?.verbose ? argv.verbose : false,
-        argv?.test ? argv.test : false,
-        argv?.replace ? argv.replace : false,
-        argv?.add ? argv.add : false
+        argv?.verbose ? argv.verbose : argv?.v ? argv.v : false,
+        argv?.test ? argv.test : argv?.t ? argv.t : false,
+        argv?.replace ? argv.replace : argv?.r ? argv.r : false,
+        argv?.add ? argv.add : argv?.a ? argv.a : false,
+        argv?.force ? argv.force : argv?.f ? argv.f : false,
+        argv?.tag ? argv.tag : "main"
       );
     },
   })

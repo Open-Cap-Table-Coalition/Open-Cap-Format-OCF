@@ -28,9 +28,15 @@ export async function getSchemaFilepaths(
    */
   const paths = [];
   for await (const f of getFiles("./schema")) {
-    paths.push(f);
-    if (verbose) {
-      console.log(`•\t${f}`);
+    if (f.substring(f.length - 12) === ".schema.json") {
+      paths.push(f);
+      if (verbose) {
+        console.log(`\t•\tFOUND SCHEMA: ${f}`);
+      }
+    } else {
+      if (verbose) {
+        console.log(`\t☠\tIGNORE NON-SCHEMA: ${f}`);
+      }
     }
   }
   return paths;
