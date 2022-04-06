@@ -12,6 +12,9 @@
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json"
+    },
+    {
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json"
     }
   ],
@@ -23,7 +26,9 @@
     "comments": {},
     "security_id": {},
     "date": {},
-    "resulting_security_ids": {}
+    "resulting_security_ids": {},
+    "split_transaction_id": {},
+    "reason_text": {}
   },
   "additionalProperties": false,
   "required": [],

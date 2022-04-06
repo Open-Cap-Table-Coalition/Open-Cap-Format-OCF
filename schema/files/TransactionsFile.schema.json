@@ -85,13 +85,7 @@
             "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/retraction/WarrantRetraction.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/PlanSecuritySplit.schema.json"
-          },
-          {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/StockSplit.schema.json"
-          },
-          {
-            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/WarrantSplit.schema.json"
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/split/StockClassSplit.schema.json"
           },
           {
             "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json"

@@ -1,4 +1,17 @@
 {
   "file_type": "OCF_VALUATIONS_FILE",
-  "items": []
+  "items": [
+    {
+      "id": "892e8b19-ed26-4049-9ada-a5cf816376fd",
+      "object_type": "VALUATION",
+      "provider": "Bob's quality, discount valuations",
+      "price_per_share": {
+        "amount": "10000000.00",
+        "currency": "USD"
+      },
+      "effective_date": "2022-01-28",
+      "valuation_type": "409A",
+      "comments": ["Wow, what a great deal this guy gave us."]
+    }
+  ]
 }

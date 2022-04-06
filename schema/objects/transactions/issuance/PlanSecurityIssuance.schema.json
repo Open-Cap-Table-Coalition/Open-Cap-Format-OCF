@@ -12,6 +12,9 @@
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json"
+    },
+    {
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json"
     }
   ],
@@ -29,7 +32,7 @@
     },
     "option_grant_type": {
       "description": "If the plan security is an option, what kind?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/OptionType.schema.json"
     },
     "quantity": {
       "description": "How many shares are subject to this plan security?",

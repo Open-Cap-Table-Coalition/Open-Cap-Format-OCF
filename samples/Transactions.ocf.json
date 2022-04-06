@@ -249,6 +249,38 @@
     },
     {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "id": "test-plan-security-issuance-any-of-block-for-compensation-type-option",
+      "security_id": "test-security-id",
+      "date": "2019-12-12",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "CA"
+        }
+      ],
+      "board_approval_date": "2021-01-21",
+      "stakeholder_id": "test-stakeholder-id",
+      "consideration": { "amount": "1.00", "currency": "USD" },
+      "custom_id": "CA-1",
+      "stock_plan_id": "test-stock-plan-id",
+      "compensation_type": "OPTION",
+      "option_grant_type": "ISO",
+      "quantity": "50",
+      "exercise_price": { "amount": "50.00", "currency": "USD" },
+      "vesting_rules": {
+        "vesting_type": "SCHEDULE_DRIVEN_ONLY"
+      },
+      "expiration_date": "2031-01-20",
+      "termination_exercise_windows": [
+        {
+          "reason": "CAUSE",
+          "period": 1,
+          "period_type": "DAYS"
+        }
+      ]
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
       "id": "test-plan-security-issuance-full-fields",
       "security_id": "test-security-id",
       "date": "2019-12-12",
@@ -367,29 +399,6 @@
       "comments": ["A", "Series", "Of", "Comments"]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_SPLIT",
-      "id": "test-plan-security-split-minimal",
-      "security_id": "1",
-      "date": "2022-01-01",
-      "resulting_security_ids": ["2", "3"],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      }
-    },
-    {
-      "object_type": "TX_PLAN_SECURITY_SPLIT",
-      "id": "test-plan-security-split-full-fields",
-      "security_id": "1",
-      "date": "2022-01-01",
-      "resulting_security_ids": ["2", "3"],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      },
-      "comments": ["One comment", "A second comment"]
-    },
-    {
       "object_type": "TX_PLAN_SECURITY_TRANSFER",
       "id": "test-plan-security-transfer-minimal",
       "security_id": "0zHLfmI9G0",
@@ -468,17 +477,6 @@
       },
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
-    },
-    {
-      "object_type": "TX_STOCK_SPLIT",
-      "id": "test-quantity-split",
-      "security_id": "test-security-id",
-      "resulting_security_ids": ["new-security-1", "new-security-2"],
-      "date": "2022-01-17",
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      }
     },
     {
       "object_type": "TX_STOCK_ISSUANCE",
@@ -604,7 +602,17 @@
       "comments": ["Here is a comment", "Here is another comment"]
     },
     {
-      "object_type": "TX_STOCK_SPLIT",
+      "object_type": "TX_STOCK_CLASS_SPLIT",
+      "id": "common-2-for-1-split",
+      "date": "2022-02-01",
+      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "split_ratio": {
+        "numerator": "2",
+        "denominator": "1"
+      }
+    },
+    {
+      "object_type": "TX_STOCK_REISSUANCE",
       "id": "test-stock-split-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
@@ -612,13 +620,10 @@
         "resultant-security-id-1",
         "resultant-security-id-2"
       ],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      }
+      "split_transaction_id": "test-split1-common"
     },
     {
-      "object_type": "TX_STOCK_SPLIT",
+      "object_type": "TX_STOCK_REISSUANCE",
       "id": "test-stock-split-full-fields",
       "security_id": "test-security-id",
       "date": "2022-02-01",
@@ -626,10 +631,8 @@
         "resultant-security-id-1",
         "resultant-security-id-2"
       ],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      },
+      "split_transaction_id": "test-split1-common",
+      "reason_text": "Reissue due to 2-for-1 Common stock split",
       "comments": ["Here is a comment", "Here is another comment"]
     },
     {
@@ -786,35 +789,6 @@
       "security_id": "test-security-id",
       "date": "2022-02-01",
       "reason_text": "Need to retract",
-      "comments": ["Here is a comment", "Here is another comment"]
-    },
-    {
-      "object_type": "TX_WARRANT_SPLIT",
-      "id": "test-warrant-split-minimal",
-      "security_id": "test-security-id",
-      "date": "2022-02-01",
-      "resulting_security_ids": [
-        "resultant-security-id-1",
-        "resultant-security-id-2"
-      ],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      }
-    },
-    {
-      "object_type": "TX_WARRANT_SPLIT",
-      "id": "test-warrant-split-full-fields",
-      "security_id": "test-security-id",
-      "date": "2022-02-01",
-      "resulting_security_ids": [
-        "resultant-security-id-1",
-        "resultant-security-id-2"
-      ],
-      "split_ratio": {
-        "numerator": "2",
-        "denominator": "1"
-      },
       "comments": ["Here is a comment", "Here is another comment"]
     },
     {

@@ -17,12 +17,16 @@
       "description": "Entity which provided the valuation",
       "type": "string"
     },
+    "board_approval_date": {
+      "description": "Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
     "price_per_share": {
       "description": "Valued price per share",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
-    "valuation_date": {
-      "description": "Date of the valuation",
+    "effective_date": {
+      "description": "Date on which this valuation is first valid",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "valuation_type": {
@@ -33,6 +37,6 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": ["price_per_share", "valuation_date", "valuation_type"],
+  "required": ["price_per_share", "effective_date", "valuation_type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Valuation.schema.json"
 }

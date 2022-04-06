@@ -12,6 +12,9 @@
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json"
     },
     {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json"
+    },
+    {
       "$ref": "https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json"
     }
   ],
