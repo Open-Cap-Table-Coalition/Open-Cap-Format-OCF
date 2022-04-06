@@ -21,6 +21,15 @@
       "description": "Issuer for the cap table",
       "$ref": "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json"
     },
+    "as_of": {
+      "description": "The point-in-time represented by this OCF Package",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
+    "generated_at": {
+      "description": "Timestamp of when the package was generated. Useful when determining which set of data is most up-to-date, if presented with two packages that have the same `as_of` date, but different cap table data.",
+      "type": "string",
+      "format": "date-time"
+    },
     "comments": {
       "title": "Cap Table - Comment Array",
       "description": "Unstructured text comments related to and stored for the cap table",
@@ -92,6 +101,8 @@
     "ocf_version",
     "file_type",
     "issuer",
+    "as_of",
+    "generated_at",
     "stock_plans_files",
     "stock_legend_templates_files",
     "stock_classes_files",
