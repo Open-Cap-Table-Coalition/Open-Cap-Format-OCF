@@ -21,6 +21,10 @@
       "description": "Date on which board approved the plan",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
+    "stockholder_approval_date": {
+      "description": "This optional field tracks when the stockholders approved this stock plan. This is intended for use by US companies that want to issue Incentive Stock Options (ISOs), as the issuing StockPlan must receive shareholder approval within a specified time frame in order to issue valid ISOs.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
     "current_shares_reserved": {
       "description": "The most recent number of shares reserved in the pool for this stock plan by the Board or equivalent body. Actual shares issued and outstanding from the pool should be determined by traversing the event stack. The plan's reserved share history (e.g. previous `current_shares_reserved` amounts) is not available in OCF version 1.",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
