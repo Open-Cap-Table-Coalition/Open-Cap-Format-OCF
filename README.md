@@ -802,6 +802,7 @@ our toolchain and everything here is subject to change_
 - Ryan Carpenter
 - Ben Hutchings
 - Patrick Johnmeyer
+- Andrey Lebedev
 - Tyler McConnell
 - Dan Owen
 - Chris Pasakarnis
