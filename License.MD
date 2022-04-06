@@ -23,7 +23,7 @@ royalty is hereby granted, provided that
 - A `$comment` field with a value of: "Copyright © [$date-of-ocf-file]
   Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: [$url-of-original-schema-file]"
 
-When space permits, inclusion of the full text of this **NOTICE** should be provided. We request
+When space permits, inclusion of the full text of the **NOTICE** (as defined below) should be provided. We request
 that authorship attribution be provided in any software, documents, or other items or products
 that you create pursuant to the implementation of OCF Files, or any portion thereof.
 
@@ -40,12 +40,11 @@ works of OCF Files for use as a technical specification is expressly prohibited.
 In addition, "Code Components" — sample OCF file implementations, sample OCF JSONs and computer
 programming language code — are licensed under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
 
-The notice is:
+The full "Notice" is:
 
-> "Copyright © 2022 Open Cap Table Coalition. This software or document
+> "Copyright © [$date-of-ocf-file] Open Cap Table Coalition. This software or document
 > includes material copied from or derived from [title and URI of the
->
-> > OCF File]."
+> OCF File]."
 
 #### 2. DISCLAIMERS
 
