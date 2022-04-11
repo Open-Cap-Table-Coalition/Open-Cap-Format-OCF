@@ -11,7 +11,8 @@
     },
     "phone_number": {
       "description": "A valid phone number",
-      "type": "string"
+      "type": "string",
+      "pattern": "^\\+\\d{1,3}\\s\\d{2,3}\\s\\d{2,3}\\s\\d{4}$"
     }
   },
   "required": ["phone_type", "phone_number"],
