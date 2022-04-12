@@ -90,6 +90,7 @@
     "conversion_rights": [
       {
         "converts_to_stock_class_id": "stock-class-id",
+        "conversion_calculation_type": "RATIO",
         "ratio": {
           "numerator": "10",
           "denominator": "1"

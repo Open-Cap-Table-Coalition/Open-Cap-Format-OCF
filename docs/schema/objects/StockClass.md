@@ -86,6 +86,7 @@ In practice, stock classes with same seniority may be created at different point
     "seniority": "2",
     "conversion_rights": [
       {
+        "conversion_calculation_type": "RATIO",
         "ratio": {
           "numerator": "1",
           "denominator": "1"

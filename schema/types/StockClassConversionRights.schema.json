@@ -5,9 +5,21 @@
   "description": "Type representation of a conversion right from one security into a stock class",
   "type": "object",
   "properties": {
+    "conversion_calculation_type": {
+      "description": "How is the resulting number of shares calculated",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionCalculationType.schema.json"
+    },
     "ratio": {
       "description": "One share of this stock class converts into this many target stock class shares",
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    },
+    "rounding_type": {
+      "description": "How should fractional shares be rounded?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
+    },
+    "fixed_conversion_amount": {
+      "description": "If the security converts to a fixed amount of shares of the target Stock Class, provide the amount",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "converts_to_future_round": {
       "description": "Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred)",
@@ -17,21 +29,73 @@
       "description": "The identifier of the existing, known stock class this stock class can convert into",
       "type": "string"
     },
-    "rounding_type": {
-      "description": "How should fractional shares be rounded?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
+    "custom_conversion_description": {
+      "description": "Detailed description of how the number of resulting shares should be determined? For use with CUSTOM conversion calculaton types.",
+      "type": "string"
     }
   },
   "oneOf": [
     {
       "title": "Converts to not-yet-existing and/or not-yet-known stock class",
-      "required": ["converts_to_future_round"]
+      "required": ["converts_to_future_round"],
+      "oneOf": [
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "RATIO"
+            }
+          },
+          "required": ["ratio", "rounding_type"]
+        },
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "CUSTOM"
+            }
+          },
+          "required": ["custom_conversion_description"]
+        },
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "FIXED"
+            }
+          },
+          "required": ["fixed_conversion_amount"]
+        }
+      ]
     },
     {
       "title": "Converts to existing, known stock class",
-      "required": ["converts_to_stock_class_id"]
+      "required": ["converts_to_stock_class_id"],
+      "oneOf": [
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "RATIO"
+            }
+          },
+          "required": ["ratio", "rounding_type"]
+        },
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "CUSTOM"
+            }
+          },
+          "required": ["custom_conversion_description"]
+        },
+        {
+          "properties": {
+            "conversion_calculation_type": {
+              "const": "FIXED"
+            }
+          },
+          "required": ["fixed_conversion_amount"]
+        }
+      ]
     }
   ],
-  "required": ["ratio", "rounding_type"],
+  "required": ["conversion_calculation_type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/StockClassConversionRights.schema.json"
 }

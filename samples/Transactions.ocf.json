@@ -95,6 +95,7 @@
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "ACTUAL_365",
       "default_conversion_rights": {
+        "conversion_calculation_type": "RATIO",
         "ratio": { "numerator": "2.0", "denominator": "1" },
         "rounding_type": "CEILING",
         "converts_to_future_round": true
@@ -122,6 +123,7 @@
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "30_360",
       "default_conversion_rights": {
+        "conversion_calculation_type": "RATIO",
         "ratio": { "numerator": "2.0", "denominator": "1" },
         "rounding_type": "FLOOR",
         "converts_to_stock_class_id": "cls_86"
@@ -768,6 +770,7 @@
       "conversion_rights": [
         {
           "converts_to_stock_class_id": "stock-class-id",
+          "conversion_calculation_type": "RATIO",
           "ratio": {
             "numerator": "10",
             "denominator": "1"

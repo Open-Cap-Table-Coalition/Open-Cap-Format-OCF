@@ -76,6 +76,7 @@
     },
     "day_count_convention": "ACTUAL_365",
     "default_conversion_rights": {
+      "conversion_calculation_type": "RATIO",
       "ratio": {
         "numerator": "2.0",
         "denominator": "1"
@@ -112,6 +113,7 @@
     },
     "day_count_convention": "30_360",
     "default_conversion_rights": {
+      "conversion_calculation_type": "RATIO",
       "ratio": {
         "numerator": "2.0",
         "denominator": "1"
