@@ -1,0 +1,16 @@
+:house: [Documentation Home](/README.md)
+
+---
+
+### Type - Country Subdivision Code
+
+`https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json`
+
+**Description:** _Type representation of an ISO 3166-2 country subdivision code_
+
+**Data Type:** `Primitive`
+
+**Value:** `STRING` - _Must Match Regex Pattern: `^[A-Z]{2}-[A-Z0-9]{1,3}$`_
+
+**Source Code:** [schema/types/CountrySubdivisionCode](/schema/types/CountrySubdivisionCode.schema.json)
+
