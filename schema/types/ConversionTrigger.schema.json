@@ -10,7 +10,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     },
     "rounding_type": {
-      "description": "How should fractional units of the target Stock Class be rounded?",
+      "description": "How should fractional shares of the target Stock Class be rounded?",
       "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
     },
     "nickname": {
