@@ -409,6 +409,15 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of interest compounding types
   - **View more:** [schema/enums/CompoundingType](/docs/schema/enums/CompoundingType.md)
 
+- **Enum - Conversion Calculation Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionCalculationType.schema.json`
+  - **Description:** Enumeration of convertible conversion calculation types. We currently support:
+  1) `RATIO` - units of source security to units of target Stock Class
+  2) `FIXED` - converts to a fixed number of shares of Stock Class, and
+  3) `CUSTOM` - conversion cannot be structured in OCF.`
+  - **View more:** [schema/enums/ConversionCalculationType](/docs/schema/enums/ConversionCalculationType.md)
+
 - **Enum - Conversion Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json`

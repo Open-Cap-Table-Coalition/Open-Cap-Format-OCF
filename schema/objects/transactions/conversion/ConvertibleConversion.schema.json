@@ -38,7 +38,8 @@
     "comments": {},
     "security_id": {},
     "date": {},
-    "resulting_security_ids": {}
+    "resulting_security_ids": {},
+    "conversion_calculation_type": {}
   },
   "additionalProperties": false,
   "required": ["reason_text"],

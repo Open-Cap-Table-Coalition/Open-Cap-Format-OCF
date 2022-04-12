@@ -44,6 +44,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
+      "conversion_calculation_type": "RATIO",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
     },
@@ -53,6 +54,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
+      "conversion_calculation_type": "RATIO",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
     },
@@ -62,6 +64,18 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
+      "conversion_calculation_type": "RATIO",
+      "reason_text": "for testing",
+      "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CONVERSION",
+      "id": "test-convertible-custom-conversion-all-fields",
+      "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+      "date": "2006-11-09",
+      "quantity_converted": "100.00",
+      "conversion_calculation_type": "CUSTOM",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
       "comments": ["comment-one", "comment-two", "..."]
@@ -464,6 +478,7 @@
       "id": "test-stock-conversion-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
+      "conversion_calculation_type": "RATIO",
       "resulting_security_ids": ["resultant-security-id-1"],
       "quantity_converted": "1"
     },
@@ -477,6 +492,7 @@
         "resultant-security-id-2",
         "resultant-security-id-3"
       ],
+      "conversion_calculation_type": "RATIO",
       "quantity_converted": "10",
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
