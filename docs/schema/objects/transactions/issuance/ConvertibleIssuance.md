@@ -89,6 +89,34 @@
   },
   {
     "object_type": "TX_CONVERTIBLE_ISSUANCE",
+    "id": "test-convertible-custom-conversion-issuance-minimal",
+    "security_id": "con_123456",
+    "date": "1978-05-27",
+    "security_law_exemptions": [],
+    "board_approval_date": "2022-01-01",
+    "stakeholder_id": "stk_567890",
+    "consideration": {
+      "amount": "3.50",
+      "currency": "USD"
+    },
+    "custom_id": "CN-1",
+    "conversion_type": "PRE_MONEY",
+    "convertible_type": "NOTE",
+    "original_principal_amount": {
+      "amount": "1000",
+      "currency": "GBP"
+    },
+    "day_count_convention": "ACTUAL_365",
+    "default_conversion_rights": {
+      "conversion_calculation_type": "CUSTOM",
+      "custom_conversion_description": "Convertible into 5% of \"Company Capitalization\" at time of conversion.\n“Company Capitalization” is calculated as of immediately prior to the Equity Financing and (without double-counting, in each case calculated on an as-converted to Common Stock basis):\n• Includes all shares of Capital Stock issued and outstanding;\n• Includes all Converting Securities, except to the extent the original purchase amounts of such Converting Securities exceeds $2,000,000;\n• Includes all (i) issued and outstanding Options and (ii) Promised Options; and\n• Includes the Unissued Option Pool, except that any increase to the Unissued Option Pool in connection with the Equity Financing shall only be included to the extent that the number of Promised Options exceeds the Unissued Option Pool prior to such increase.",
+      "converts_to_future_round": true
+    },
+    "conversion_triggers": [],
+    "seniority": 1
+  },
+  {
+    "object_type": "TX_CONVERTIBLE_ISSUANCE",
     "id": "test-convertible-issuance-all-fields",
     "security_id": "con_123456",
     "date": "1978-05-27",
