@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json",
   "title": "Type - Conversion Trigger",
-  "description": "Type representation of a security's conversion rights into a Stock Class upon an event (such as holder election or Change of Control)",
+  "description": "Type representation of a convertible's conversion rights into a Stock Class upon an event (such as holder election or Change of Control)",
   "type": "object",
   "properties": {
     "ratio": {
