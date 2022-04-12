@@ -10,8 +10,9 @@
       "$ref": "https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json"
     },
     "phone_number": {
-      "description": "A valid phone number",
-      "type": "string"
+      "description": "A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890)",
+      "type": "string",
+      "pattern": "^\\+\\d{1,3}\\s\\d{2,3}\\s\\d{2,3}\\s\\d{4}$"
     }
   },
   "required": ["phone_type", "phone_number"],
