@@ -454,11 +454,7 @@
       "security_id": "test-security-id",
       "date": "2022-02-01",
       "resulting_security_ids": ["resultant-security-id-1"],
-      "quantity_converted": "1",
-      "conversion_ratio": {
-        "numerator": "1",
-        "denominator": "1"
-      }
+      "quantity_converted": "1"
     },
     {
       "object_type": "TX_STOCK_CONVERSION",
@@ -471,10 +467,6 @@
         "resultant-security-id-3"
       ],
       "quantity_converted": "10",
-      "conversion_ratio": {
-        "numerator": "3",
-        "denominator": "1"
-      },
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
     },
