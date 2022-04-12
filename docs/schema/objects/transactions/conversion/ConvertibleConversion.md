@@ -28,6 +28,8 @@
 | security_id            | `STRING`                                                                                                               | Identifier for the security (stock, plan security, warrant, or convertible) by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to. | `REQUIRED` |
 | resulting_security_ids | [`STRING`]                                                                                                             | Identifier for the security (or securities) that resulted from the conversion                                                                                                                                                                                                                                                                                                                                                                                                                               | `REQUIRED` |
 | reason_text            | `STRING`                                                                                                               | Reason for the conversion                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `REQUIRED` |
+| quantity_converted     | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                                  | Quantity of security units converted                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | -          |
+| balance_security_id    | `STRING`                                                                                                               | Identifier for the convertible that holds the remainder balance (for partial conversions)                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 
 **Source Code:** [schema/objects/transactions/conversion/ConvertibleConversion](/schema/objects/transactions/conversion/ConvertibleConversion.schema.json)
 
@@ -40,6 +42,19 @@
     "id": "test-convertible-conversion-minimal",
     "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
     "date": "2006-11-09",
+    "quantity_converted": "100.00",
+    "reason_text": "for testing",
+    "resulting_security_ids": [
+      "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
+      "..."
+    ]
+  },
+  {
+    "object_type": "TX_CONVERTIBLE_CONVERSION",
+    "id": "test-custom-conversion-minimal",
+    "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+    "date": "2006-11-09",
+    "quantity_converted": "100.00",
     "reason_text": "for testing",
     "resulting_security_ids": [
       "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
@@ -51,6 +66,7 @@
     "id": "test-convertible-conversion-all-fields",
     "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
     "date": "2006-11-09",
+    "quantity_converted": "100.00",
     "reason_text": "for testing",
     "resulting_security_ids": [
       "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
