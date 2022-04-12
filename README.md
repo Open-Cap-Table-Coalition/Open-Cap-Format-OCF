@@ -611,6 +611,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Fixed-point string representation of a number (up to 10 decimal places supported)
   - **View more:** [schema/types/Numeric](/docs/schema/types/Numeric.md)
 
+- **Type - Omitted Field**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/OmittedField.schema.json`
+  - **Description:** Transitional type; allows an otherwise "required" field to support omission by an implementation that can not yet support all fields. This is not intended to be permanent; rather it is a communication mechanism indicating that a field added in a pre-release version of the spec will need to be implemented in the next release.
+  - **View more:** [schema/types/OmittedField](/docs/schema/types/OmittedField.md)
+
 - **Type - Percentage**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Percentage.schema.json`

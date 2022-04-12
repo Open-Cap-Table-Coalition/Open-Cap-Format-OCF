@@ -35,7 +35,14 @@
     },
     "votes_per_share": {
       "description": "The number of votes each share of this stock class gets",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "oneOf": [
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/OmittedField.schema.json"
+        }
+      ]
     },
     "par_value": {
       "description": "Per-share par value of this stock class",
