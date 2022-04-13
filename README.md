@@ -418,11 +418,11 @@ _Key enumerations used throughout the schemas_
   3) `CUSTOM` - conversion cannot be structured in OCF.`
   - **View more:** [schema/enums/ConversionCalculationType](/docs/schema/enums/ConversionCalculationType.md)
 
-- **Enum - Conversion Type**
+- **Enum - Conversion Trigger Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json`
-  - **Description:** Enumeration of convertible conversion types
-  - **View more:** [schema/enums/ConversionType](/docs/schema/enums/ConversionType.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json`
+  - **Description:** Enumeration of types of conversion triggers - e.g. does a trigger result in automatic conversion, a right to convert or automatic conversion with an option to delay
+  - **View more:** [schema/enums/ConversionTriggerType](/docs/schema/enums/ConversionTriggerType.md)
 
 - **Enum - Convertible Type**
 

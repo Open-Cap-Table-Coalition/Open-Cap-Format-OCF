@@ -44,7 +44,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
-      "conversion_calculation_type": "RATIO",
+      "conversion_trigger_id": "CN-1.CONV.TRIG.1",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
     },
@@ -54,7 +54,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
-      "conversion_calculation_type": "RATIO",
+      "conversion_trigger_id": "CN-1.CONV.TRIG.1",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
     },
@@ -64,7 +64,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
-      "conversion_calculation_type": "RATIO",
+      "conversion_trigger_id": "CN-1.CONV.TRIG",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
       "comments": ["comment-one", "comment-two", "..."]
@@ -75,7 +75,7 @@
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
       "quantity_converted": "100.00",
-      "conversion_calculation_type": "CUSTOM",
+      "conversion_trigger_id": "CN-1.CONV.TRIG",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
       "comments": ["comment-one", "comment-two", "..."]
@@ -90,17 +90,23 @@
       "stakeholder_id": "stk_567890",
       "consideration": { "amount": "3.50", "currency": "USD" },
       "custom_id": "CN-1",
-      "conversion_type": "PRE_MONEY",
       "convertible_type": "NOTE",
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "ACTUAL_365",
-      "default_conversion_rights": {
-        "conversion_calculation_type": "RATIO",
-        "ratio": { "numerator": "2.0", "denominator": "1" },
-        "rounding_type": "CEILING",
-        "converts_to_future_round": true
-      },
-      "conversion_triggers": [],
+      "conversion_triggers": [
+        {
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Convert on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC",
+          "stock_class_conversion_right": {
+            "conversion_calculation_type": "RATIO",
+            "ratio": { "numerator": "2.0", "denominator": "1" },
+            "rounding_type": "CEILING",
+            "converts_to_future_round": true
+          }
+        }
+      ],
       "seniority": 1
     },
     {
@@ -113,16 +119,34 @@
       "stakeholder_id": "stk_567890",
       "consideration": { "amount": "3.50", "currency": "USD" },
       "custom_id": "CN-1",
-      "conversion_type": "PRE_MONEY",
       "convertible_type": "NOTE",
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "ACTUAL_365",
-      "default_conversion_rights": {
-        "conversion_calculation_type": "CUSTOM",
-        "custom_conversion_description": "Convertible into 5% of \"Company Capitalization\" at time of conversion.\n“Company Capitalization” is calculated as of immediately prior to the Equity Financing and (without double-counting, in each case calculated on an as-converted to Common Stock basis):\n• Includes all shares of Capital Stock issued and outstanding;\n• Includes all Converting Securities, except to the extent the original purchase amounts of such Converting Securities exceeds $2,000,000;\n• Includes all (i) issued and outstanding Options and (ii) Promised Options; and\n• Includes the Unissued Option Pool, except that any increase to the Unissued Option Pool in connection with the Equity Financing shall only be included to the extent that the number of Promised Options exceeds the Unissued Option Pool prior to such increase.",
-        "converts_to_future_round": true
-      },
-      "conversion_triggers": [],
+      "conversion_triggers": [
+        {
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Convert on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC",
+          "stock_class_conversion_right": {
+            "conversion_calculation_type": "RATIO",
+            "ratio": { "numerator": "2.0", "denominator": "1" },
+            "rounding_type": "CEILING",
+            "converts_to_future_round": true
+          }
+        },
+        {
+          "trigger_id": "CN-1.QUALIFIED_FINANCING_TRIGGER",
+          "nickname": "Next Qualified Financing",
+          "trigger_description": "Holder shall have the option to convert this note at the Company's next qualified financing. Qualified financing meaning any transaction or series of transactions raising more than $10,000,000.00 in the aggregate of Preferred Stock, SAFEs and/or Convertible Notes.",
+          "trigger_type": "ELECTIVE",
+          "stock_class_conversion_right": {
+            "conversion_calculation_type": "CUSTOM",
+            "custom_conversion_description": "Convertible into 5% of \"Company Capitalization\" at next qualified financing.\n“Company Capitalization” is calculated as of immediately prior to the Equity Financing and (without double-counting, in each case calculated on an as-converted to Common Stock basis):\n• Includes all shares of Capital Stock issued and outstanding;\n• Includes all Converting Securities, except to the extent the original purchase amounts of such Converting Securities exceeds $2,000,000;\n• Includes all (i) issued and outstanding Options and (ii) Promised Options; and\n• Includes the Unissued Option Pool, except that any increase to the Unissued Option Pool in connection with the Equity Financing shall only be included to the extent that the number of Promised Options exceeds the Unissued Option Pool prior to such increase.",
+            "converts_to_future_round": true
+          }
+        }
+      ],
       "seniority": 1
     },
     {
@@ -140,21 +164,21 @@
       "stakeholder_id": "stk_567890",
       "consideration": { "amount": "3.50", "currency": "USD" },
       "custom_id": "CN-1",
-      "conversion_type": "POST_MONEY",
       "convertible_type": "SAFE",
       "original_principal_amount": { "amount": "1000", "currency": "GBP" },
       "day_count_convention": "30_360",
-      "default_conversion_rights": {
-        "conversion_calculation_type": "RATIO",
-        "ratio": { "numerator": "2.0", "denominator": "1" },
-        "rounding_type": "FLOOR",
-        "converts_to_stock_class_id": "cls_86"
-      },
       "conversion_triggers": [
         {
-          "rounding_type": "NORMAL",
-          "description": "Trigger",
-          "converts_to_future_round": false
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Convert on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC",
+          "stock_class_conversion_right": {
+            "conversion_calculation_type": "RATIO",
+            "ratio": { "numerator": "2.0", "denominator": "1" },
+            "rounding_type": "CEILING",
+            "converts_to_future_round": true
+          }
         }
       ],
       "seniority": 1,
@@ -502,7 +526,6 @@
       "id": "test-stock-conversion-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
-      "conversion_calculation_type": "RATIO",
       "resulting_security_ids": ["resultant-security-id-1"],
       "quantity_converted": "1"
     },
@@ -516,7 +539,6 @@
         "resultant-security-id-2",
         "resultant-security-id-3"
       ],
-      "conversion_calculation_type": "RATIO",
       "quantity_converted": "10",
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
