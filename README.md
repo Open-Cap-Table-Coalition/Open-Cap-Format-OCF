@@ -413,15 +413,17 @@ _Key enumerations used throughout the schemas_
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionCalculationType.schema.json`
   - **Description:** Enumeration of convertible conversion calculation types. We currently support:
+
   1. `RATIO` - units of source security to units of target Stock Class
   2. `FIXED` - converts to a fixed number of shares of Stock Class, and
   3. `CUSTOM` - conversion cannot be structured in OCF.`
+
   - **View more:** [schema/enums/ConversionCalculationType](/docs/schema/enums/ConversionCalculationType.md)
 
 - **Enum - Conversion Trigger Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json`
-  - **Description:** Enumeration of types of conversion triggers - e.g. does a trigger result in automatic conversion, a right to convert or automatic conversion with an option to delay
+  - **Description:** Enumeration of types of conversion triggers - e.g. does a trigger result in automatic conversion, a right to convert or automatic conversion with the option to delay
   - **View more:** [schema/enums/ConversionTriggerType](/docs/schema/enums/ConversionTriggerType.md)
 
 - **Enum - Convertible Type**
