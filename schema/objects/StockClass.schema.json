@@ -40,7 +40,7 @@
           "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/OmittedField.schema.json"
+          "$ref": "https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json"
         }
       ]
     },
