@@ -18,3 +18,5 @@ _Type representation of a ratio as two parts of a quotient, i.e. numerator and d
 | denominator | [schema/types/Numeric](/docs/schema/types/Numeric.md) | Denominator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where B is the denominator | `REQUIRED` |
 
 **Source Code:** [schema/types/Ratio](/schema/types/Ratio.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

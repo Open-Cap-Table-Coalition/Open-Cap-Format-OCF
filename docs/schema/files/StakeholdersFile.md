@@ -22,3 +22,5 @@
 | items     | [ [schema/objects/Stakeholder](/docs/schema/objects/Stakeholder.md) ]                                          | List of OCF stakeholder objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StakeholdersFile](/schema/files/StakeholdersFile.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

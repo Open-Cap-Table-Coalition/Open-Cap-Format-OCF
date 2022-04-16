@@ -18,3 +18,5 @@ _Type representation of a phone number_
 | phone_number | `STRING`                                                                                                                                                                      | A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890) | `REQUIRED` |
 
 **Source Code:** [schema/types/Phone](/schema/types/Phone.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -19,3 +19,5 @@
 | reason_text            | `STRING`   | Free-form human-readable reason for stock reissuance                                                                                                  | -          |
 
 **Source Code:** [schema/primitives/transactions/reissuance/BaseReissuance](/schema/primitives/transactions/reissuance/BaseReissuance.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

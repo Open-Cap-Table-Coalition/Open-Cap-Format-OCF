@@ -19,3 +19,5 @@ _Type representation of a termination window_
 | period_type | `Enum - Period Type`</br></br>_Description:_ Enumeration of time period types</br></br>**ONE OF:** </br>&bull; DAYS </br>&bull; MONTHS </br>&bull; YEARS                                                                                              | The type of period being measured (e.g. days or month)                                         | `REQUIRED` |
 
 **Source Code:** [schema/types/TerminationWindow](/schema/types/TerminationWindow.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

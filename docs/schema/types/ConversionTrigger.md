@@ -23,3 +23,5 @@ _Type representation of a convertibles conversion rights into stock upon an even
 | converts_to_stock_class_id | `STRING`                                                                                                                                                   | What is the id of the StockClass this StockClass can convert into?                                                                                                                  | -          |
 
 **Source Code:** [schema/types/ConversionTrigger](/schema/types/ConversionTrigger.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

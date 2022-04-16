@@ -18,3 +18,5 @@ _Type representation of a file_
 | md5      | [schema/types/Md5](/docs/schema/types/Md5.md) | MD5 file checksum                         | `REQUIRED` |
 
 **Source Code:** [schema/types/File](/schema/types/File.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -13,3 +13,5 @@
 **Value:** `STRING` - _Must Match Regex Pattern: `^[A-Z]{3}$`_
 
 **Source Code:** [schema/types/CurrencyCode](/schema/types/CurrencyCode.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; DEFERRED </br>&bull; CASH
 
 **Source Code:** [schema/enums/InterestPayoutType](/schema/enums/InterestPayoutType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

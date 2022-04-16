@@ -22,3 +22,5 @@
 | items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                            | List of OCF valuation objects | `REQUIRED` |
 
 **Source Code:** [schema/files/ValuationsFile](/schema/files/ValuationsFile.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

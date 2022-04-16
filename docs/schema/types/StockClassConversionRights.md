@@ -20,3 +20,5 @@ _Type representation of a conversion right from one security into a stock class_
 | rounding_type              | `Enum - Rounding Type`</br></br>_Description:_ Enumeration of rounding types</br></br>**ONE OF:** </br>&bull; CEILING </br>&bull; FLOOR </br>&bull; NORMAL | How should fractional shares be rounded?                                                                            | `REQUIRED` |
 
 **Source Code:** [schema/types/StockClassConversionRights](/schema/types/StockClassConversionRights.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

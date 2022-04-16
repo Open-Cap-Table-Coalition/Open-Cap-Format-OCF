@@ -17,3 +17,5 @@
 | date     | [schema/types/Date](/docs/schema/types/Date.md) | Date on which the transaction occurred | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/BaseTransaction](/schema/primitives/transactions/BaseTransaction.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

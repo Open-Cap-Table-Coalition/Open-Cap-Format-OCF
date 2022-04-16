@@ -19,3 +19,5 @@
 | resulting_security_ids | [`STRING`]                                              | Array of identifiers for new security (or securities) created as a result of the transaction | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/transfer/BaseTransfer](/schema/primitives/transactions/transfer/BaseTransfer.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

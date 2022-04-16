@@ -107,6 +107,8 @@ describe("Object", () => {
 | refProperty1 | \`Test Title\`</br></br>_Description:_ This is a test fixture exemplifying an Enum schema from OCF</br></br>**ONE OF:** </br>&bull; test_enum1 | This is a test fixture exemplifying an Enum schema from OCF     | \`REQUIRED\` |
 
 **Source Code:** [schema/objects/Valuation](/schema/objects/Valuation.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

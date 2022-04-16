@@ -19,3 +19,5 @@ _Type comprising of multiple name components_
 | last_name  | `STRING` | Last/family name for the individual            | -          |
 
 **Source Code:** [schema/types/Name](/schema/types/Name.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

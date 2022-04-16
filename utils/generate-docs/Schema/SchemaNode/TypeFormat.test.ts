@@ -31,6 +31,8 @@ describe("TypeFormat", () => {
 **Value:** \`STRING - _Must match JSONSchema Format: DATE_\`
 
 **Source Code:** [schema/types/TestTypeFormat](/schema/types/TestTypeFormat.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

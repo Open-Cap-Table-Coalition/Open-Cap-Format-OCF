@@ -32,3 +32,5 @@
 | address              | [schema/types/Address](/docs/schema/types/Address.md)                                               | The headquarters address of the issuing company                                              | -          |
 
 **Source Code:** [schema/objects/Issuer](/schema/objects/Issuer.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

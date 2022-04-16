@@ -31,6 +31,8 @@ describe("TypePattern", () => {
 **Value:** \`STRING\` - _Must Match Regex Pattern: \`^[a-fA-F0-9]{32}$\`_
 
 **Source Code:** [schema/types/TestTypePattern](/schema/types/TestTypePattern.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

@@ -137,6 +137,8 @@ describe("File", () => {
 | items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                      | Example ref array property | -        |
 
 **Source Code:** [schema/files/TestFile](/schema/files/TestFile.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

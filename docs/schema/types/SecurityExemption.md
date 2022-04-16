@@ -18,3 +18,5 @@ _Type representation of a securities issuance exemption that includes an unstruc
 | jurisdiction | [schema/types/CountryCode](/docs/schema/types/CountryCode.md) | Country code of the jurisdiction of the applicable law (ISO 3166-1 alpha-2) | `REQUIRED` |
 
 **Source Code:** [schema/types/SecurityExemption](/schema/types/SecurityExemption.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

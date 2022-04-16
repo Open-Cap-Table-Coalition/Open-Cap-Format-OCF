@@ -22,3 +22,5 @@
 | items     | [ [schema/objects/StockClass](/docs/schema/objects/StockClass.md) ]                                             | List of OCF stock class objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StockClassesFile](/schema/files/StockClassesFile.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
