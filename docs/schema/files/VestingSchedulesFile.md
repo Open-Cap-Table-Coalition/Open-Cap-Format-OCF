@@ -22,4 +22,3 @@
 | items     | [ [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md) ]                                       | List of OCF vesting schedule objects | `REQUIRED` |
 
 **Source Code:** [schema/files/VestingSchedulesFile](/schema/files/VestingSchedulesFile.schema.json)
-

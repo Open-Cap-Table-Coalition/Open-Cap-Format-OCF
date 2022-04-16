@@ -65,6 +65,8 @@ export default abstract class SchemaNode {
       {}
     );
 
+  protected markdownExamples = (): string | null => null;
+
   id = () => this.json["$id"];
 
   parentType = () => this.shortId().split("/")[1];
@@ -101,6 +103,9 @@ export default abstract class SchemaNode {
 ### ${this.title()}
 
 \`${this.id()}\``;
+
+  markdownFooter = () => `**Source Code:** ${this.markdownSourceLink()}
+${this.markdownExamples() ? "\n" + this.markdownExamples() + "\n" : ""}`;
 
   markdownTableType = () => `\`${this.type().toUpperCase()}\``;
 

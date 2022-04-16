@@ -42,7 +42,6 @@ _This is a test fixture exemplifying an TypeObject schema from OCF_
 | refProperty1 | [schema/types/TestTypeObject](/docs/schema/types/TestTypeObject.md) | This is a test fixture exemplifying an TypeObject schema from OCF | -          |
 
 **Source Code:** [schema/types/TestTypeObject](/schema/types/TestTypeObject.schema.json)
-
 `);
     });
   });

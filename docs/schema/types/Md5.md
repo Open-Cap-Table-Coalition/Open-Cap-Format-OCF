@@ -13,4 +13,3 @@
 **Value:** `STRING` - _Must Match Regex Pattern: `^[a-fA-F0-9]{32}$`_
 
 **Source Code:** [schema/types/Md5](/schema/types/Md5.schema.json)
-

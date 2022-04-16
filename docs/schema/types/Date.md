@@ -13,4 +13,3 @@
 **Value:** `STRING - _Must match JSONSchema Format: DATE_`
 
 **Source Code:** [schema/types/Date](/schema/types/Date.schema.json)
-

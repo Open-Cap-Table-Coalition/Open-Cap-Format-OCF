@@ -18,4 +18,3 @@ _Type representation of an email address_
 | email_address | `STRING`                                                                                                                                                | A valid e-mail address                             | `REQUIRED` |
 
 **Source Code:** [schema/types/Email](/schema/types/Email.schema.json)
-

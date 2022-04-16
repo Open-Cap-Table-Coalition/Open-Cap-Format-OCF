@@ -22,4 +22,3 @@ _Type representing all aspects related to vesting securities_
 | custom_vesting_description | `STRING`                                                                                                                                                                                                                                                          | Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches                                                                                                                                                                                                                                                                          | -          |
 
 **Source Code:** [schema/types/VestingRules](/schema/types/VestingRules.schema.json)
-

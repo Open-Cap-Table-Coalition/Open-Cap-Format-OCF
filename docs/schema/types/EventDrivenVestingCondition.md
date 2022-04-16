@@ -22,4 +22,3 @@ _Type representation of complex event-driven vesting criteria. These conditions 
 | dependent_vesting | **Array of Any Of Following Types/Objs:**</br>&bull; [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)</br>&bull; [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md) | Additional vesting conditions which become operative once this condition is met                                 | -          |
 
 **Source Code:** [schema/types/EventDrivenVestingCondition](/schema/types/EventDrivenVestingCondition.schema.json)
-

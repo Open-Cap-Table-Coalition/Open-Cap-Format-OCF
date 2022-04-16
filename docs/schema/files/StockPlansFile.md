@@ -22,4 +22,3 @@
 | items     | [ [schema/objects/StockPlan](/docs/schema/objects/StockPlan.md) ]                                             | List of OCF stock plan objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StockPlansFile](/schema/files/StockPlansFile.schema.json)
-

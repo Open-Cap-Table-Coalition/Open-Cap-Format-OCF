@@ -19,4 +19,3 @@ _Type representation of a primary contact person for a stakeholder (e.g. a fund)
 | emails        | [ [schema/types/Email](/docs/schema/types/Email.md) ] | Emails to reach the contact at        | `REQUIRED` |
 
 **Source Code:** [schema/types/ContactInfo](/schema/types/ContactInfo.schema.json)
-

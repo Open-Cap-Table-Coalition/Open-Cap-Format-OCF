@@ -18,4 +18,3 @@ _Type representation of the parent security of a given stock issuance (e.g. if a
 | parent_object_id   | `STRING`                                                                                                                                                                                                                            | Parent object's ID must be a valid ID pointing to an object of the type specified in parent_object_type | `REQUIRED` |
 
 **Source Code:** [schema/types/StockParent](/schema/types/StockParent.schema.json)
-

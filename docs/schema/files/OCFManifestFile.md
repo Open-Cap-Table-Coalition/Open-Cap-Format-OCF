@@ -33,4 +33,3 @@
 | stakeholders_files           | [ [schema/types/File](/docs/schema/types/File.md) ]                                                                                | List of files containing lists of issuer stakeholders, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stakeholders_file schema to validate loaded files)                     | `REQUIRED` |
 
 **Source Code:** [schema/files/OCFManifestFile](/schema/files/OCFManifestFile.schema.json)
-

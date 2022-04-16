@@ -22,4 +22,3 @@ _Type representation of an address_
 | postal_code    | `STRING`                                                                                                                                                | Address postal code                                                                           | -          |
 
 **Source Code:** [schema/types/Address](/schema/types/Address.schema.json)
-

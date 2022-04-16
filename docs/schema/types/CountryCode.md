@@ -13,4 +13,3 @@
 **Value:** `STRING` - _Must Match Regex Pattern: `^[A-Z]{2}$`_
 
 **Source Code:** [schema/types/CountryCode](/schema/types/CountryCode.schema.json)
-

@@ -34,6 +34,5 @@ export default class EnumSchemaNode extends SchemaNode {
 
 **ONE OF:**${this.enumAsMarkdownList()}
 
-**Source Code:** ${this.markdownSourceLink()}
-`;
+${this.markdownFooter()}`;
 }

@@ -22,4 +22,3 @@ _Type representation of a row in a vesting schedule_
 | dependent_vesting  | **Array of Any Of Following Types/Objs:**</br>&bull; [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)</br>&bull; [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md) | Vesting periods or conditions which become operative once this condition is met | -          |
 
 **Source Code:** [schema/types/ScheduleDrivenVestingCondition](/schema/types/ScheduleDrivenVestingCondition.schema.json)
-
