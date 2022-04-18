@@ -542,7 +542,7 @@ _Used as common building blocks for properties that are more complex than primit
 - **Type - Conversion Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json`
-  - **Description:** Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
+  - **Description:** Type representation of a convertible's conversion rights into a Stock Class upon an event (such as holder election or Change of Control)
   - **View more:** [schema/types/ConversionTrigger](/docs/schema/types/ConversionTrigger.md)
 
 - **Type - Country Code**
