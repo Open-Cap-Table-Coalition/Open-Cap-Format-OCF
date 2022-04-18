@@ -23,3 +23,4 @@ _Type representation of a row in a vesting schedule_
 
 **Source Code:** [schema/types/ScheduleDrivenVestingCondition](/schema/types/ScheduleDrivenVestingCondition.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

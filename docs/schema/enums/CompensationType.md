@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; OPTION </br>&bull; RSU
 
 **Source Code:** [schema/enums/CompensationType](/schema/enums/CompensationType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

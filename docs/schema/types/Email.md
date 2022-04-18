@@ -19,3 +19,4 @@ _Type representation of an email address_
 
 **Source Code:** [schema/types/Email](/schema/types/Email.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

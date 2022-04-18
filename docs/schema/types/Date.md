@@ -14,3 +14,4 @@
 
 **Source Code:** [schema/types/Date](/schema/types/Date.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

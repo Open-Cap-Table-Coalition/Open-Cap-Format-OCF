@@ -24,3 +24,4 @@ _Type representation of a convertibles conversion rights into stock upon an even
 
 **Source Code:** [schema/types/ConversionTrigger](/schema/types/ConversionTrigger.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

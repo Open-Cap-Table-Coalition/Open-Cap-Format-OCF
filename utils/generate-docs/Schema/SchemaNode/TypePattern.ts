@@ -29,7 +29,5 @@ export default class TypePatternSchemaNode extends SchemaNode {
 
 **Value:** \`${this.type().toUpperCase()}\` - _Must Match Regex Pattern: \`${this.pattern()}\`_
 
-**Source Code:** ${this.markdownSourceLink()}
-
-`;
+${this.markdownFooter()}`;
 }

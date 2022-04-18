@@ -17,3 +17,5 @@
 | resulting_security_ids | [`STRING`] | Identifier for the security (or securities) that resulted from the conversion | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/conversion/BaseConversion](/schema/primitives/transactions/conversion/BaseConversion.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

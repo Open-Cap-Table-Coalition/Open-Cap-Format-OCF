@@ -18,3 +18,5 @@
 | resulting_security_ids | [`STRING`]                                              | Identifier for the security (or securities) that resulted from the exercise | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/exercise/BaseExercise](/schema/primitives/transactions/exercise/BaseExercise.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

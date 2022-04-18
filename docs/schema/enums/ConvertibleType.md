@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; NOTE </br>&bull; SAFE </br>&bull; CONVERTIBLE_SECURITY
 
 **Source Code:** [schema/enums/ConvertibleType](/schema/enums/ConvertibleType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -1,5 +1,6 @@
 import path from "node:path";
 import { markdownTable } from "markdown-table";
+import { format } from "date-fns";
 
 import Schema from "../Schema.js";
 import PropertyFactory, { PropertyJson } from "./Property/Factory.js";
@@ -65,6 +66,8 @@ export default abstract class SchemaNode {
       {}
     );
 
+  protected markdownExamples = (): string | null => null;
+
   id = () => this.json["$id"];
 
   parentType = () => this.shortId().split("/")[1];
@@ -101,6 +104,11 @@ export default abstract class SchemaNode {
 ### ${this.title()}
 
 \`${this.id()}\``;
+
+  markdownFooter = () => `**Source Code:** ${this.markdownSourceLink()}
+${this.markdownExamples() ? "\n" + this.markdownExamples() + "\n" : ""}
+Copyright © ${format(new Date(), "Y")} Open Cap Table Coalition.
+`;
 
   markdownTableType = () => `\`${this.type().toUpperCase()}\``;
 

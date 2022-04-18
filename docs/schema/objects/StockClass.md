@@ -100,3 +100,5 @@ In practice, stock classes with same seniority may be created at different point
   }
 ]
 ```
+
+Copyright © 2022 Open Cap Table Coalition.

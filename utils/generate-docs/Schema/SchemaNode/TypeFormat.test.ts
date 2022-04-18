@@ -32,6 +32,7 @@ describe("TypeFormat", () => {
 
 **Source Code:** [schema/types/TestTypeFormat](/schema/types/TestTypeFormat.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

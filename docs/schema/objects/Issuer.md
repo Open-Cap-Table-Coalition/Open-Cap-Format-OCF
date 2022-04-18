@@ -33,4 +33,4 @@
 
 **Source Code:** [schema/objects/Issuer](/schema/objects/Issuer.schema.json)
 
-
+Copyright © 2022 Open Cap Table Coalition.

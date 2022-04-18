@@ -14,3 +14,4 @@
 
 **Source Code:** [schema/types/CountryCode](/schema/types/CountryCode.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

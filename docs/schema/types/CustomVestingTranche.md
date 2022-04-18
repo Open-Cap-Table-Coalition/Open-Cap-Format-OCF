@@ -19,3 +19,4 @@ _Type representation of a vesting tranche by date and quantity_
 
 **Source Code:** [schema/types/CustomVestingTranche](/schema/types/CustomVestingTranche.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
