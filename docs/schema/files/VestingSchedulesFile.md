@@ -19,7 +19,7 @@
 | Property  | Type                                                                                                                | Description                          | Required   |
 | --------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------- |
 | file_type | **Constant:** `OCF_VESTING_SCHEDULES_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field                    | `REQUIRED` |
-| items     | [ [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md) ]                                       | List of OCF vesting schedule objects | `REQUIRED` |
+| items     | [ [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md) ]                                             | List of OCF vesting schedule objects | `REQUIRED` |
 
 **Source Code:** [schema/files/VestingSchedulesFile](/schema/files/VestingSchedulesFile.schema.json)
 

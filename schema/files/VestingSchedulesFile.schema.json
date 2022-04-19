@@ -14,7 +14,7 @@
       "type": "array",
       "description": "List of OCF vesting schedule objects",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json"
+        "$ref": "https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json"
       }
     },
     "file_type": {

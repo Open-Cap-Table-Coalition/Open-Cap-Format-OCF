@@ -201,6 +201,12 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a strictly time-based vesting schedule
   - **View more:** [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md)
 
+- **Object - Vesting Schedule**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
+  - **Description:** Object describing a strictly time-based vesting schedule
+  - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
+
 - **Object - Convertible Transfer Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
@@ -395,6 +401,9 @@ _Key enumerations used throughout the schemas_
     4.  Back Loaded (4 - 4 - 5 - 5)
     5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
     6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
+
+  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)
+
   - **View more:** [schema/enums/AllocationType](/docs/schema/enums/AllocationType.md)
 
 - **Enum - Compensation Type**
@@ -670,6 +679,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json`
   - **Description:** Type representation of a termination window
   - **View more:** [schema/types/TerminationWindow](/docs/schema/types/TerminationWindow.md)
+
+- **Type - Vesting Condition**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json`
+  - **Description:** Describes conditions / triggers to be satisfied for vesting to occur
+  - **View more:** [schema/types/VestingCondition](/docs/schema/types/VestingCondition.md)
 
 - **Type - Vesting Rules**
 
