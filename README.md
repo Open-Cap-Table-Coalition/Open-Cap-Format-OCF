@@ -681,8 +681,20 @@ _Used as common building blocks for properties that are more complex than primit
 - **Type - Vesting Condition**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json`
-  - **Description:** Describes conditions / triggers to be satisfied for vesting to occur
+  - **Description:** Describes conditio / triggers to be satisfied for vesting to occur
   - **View more:** [schema/types/VestingCondition](/docs/schema/types/VestingCondition.md)
+
+- **Type - Vesting Condition Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingConditionTrigger.schema.json`
+  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
+  - **View more:** [schema/types/VestingConditionTrigger](/docs/schema/types/VestingConditionTrigger.md)
+
+- **Type - Vesting Period**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingPeriod.schema.json`
+  - **Description:** Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms
+  - **View more:** [schema/types/VestingPeriod](/docs/schema/types/VestingPeriod.md)
 
 - **Type - Vesting Rules**
 

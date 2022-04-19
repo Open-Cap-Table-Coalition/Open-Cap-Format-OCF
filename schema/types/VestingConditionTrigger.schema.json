@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/VestingConditionTrigger.schema.json",
+  "title": "Type - Vesting Condition Trigger",
+  "description": "Describes triggers to be satisfied for a VestingCondition to be met",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "...",
+      "type": "string",
+      "enum": ["VESTING_START_DATE", "VESTING_SCHEDULE_RELATIVE"]
+    },
+    "period": {
+      "description": "...",
+      "$ref": "https://opencaptablecoalition.com/schema/types/VestingPeriod.schema.json"
+    },
+    "relative_to_condition_id": {
+      "description": "...",
+      "type": "string"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "type": {
+          "const": "VESTING_START_DATE"
+        }
+      }
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "VESTING_SCHEDULE_RELATIVE"
+        }
+      },
+      "required": ["period", "relative_to_condition_id"]
+    }
+  ],
+  "required": ["type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/VestingConditionTrigger.schema.json"
+}

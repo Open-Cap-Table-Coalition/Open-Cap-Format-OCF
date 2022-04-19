@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json",
   "title": "Type - Vesting Condition",
-  "description": "Describes conditions / triggers to be satisfied for vesting to occur",
+  "description": "Describes conditio / triggers to be satisfied for vesting to occur",
   "type": "object",
   "properties": {
     "id": {
@@ -22,8 +22,12 @@
       "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
+    "trigger": {
+      "description": "...",
+      "$ref": "https://opencaptablecoalition.com/schema/types/VestingConditionTrigger.schema.json"
+    },
     "next_condition_ids": {
-      "description": "List of ALL VestingCondition IDs that can still trigger after this one. If there are none, use an empty array.\nConditions should be in priority order, so if two conditions are met simultaneously the first one in the array will take precedence.",
+      "description": "List of ALL VestingCondition IDs that can trigger after this one. If there are none, use an empty array.\nConditions should be in priority order, so if two conditions are met simultaneously the first one in the array will take precedence.",
       "type": "array",
       "items": {
         "type": "string"
