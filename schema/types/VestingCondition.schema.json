@@ -4,8 +4,34 @@
   "title": "Type - Vesting Condition",
   "description": "Describes conditions / triggers to be satisfied for vesting to occur",
   "type": "object",
-  "properties": {},
-  "required": [],
-  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "description": "Reference identifier for the condition",
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "description": "Detailed description of the condition",
+      "type": "string"
+    },
+    "portion": {
+      "description": "If specified, the fractional part of the whole security that is vested, e.g. 25:100 for 25%. Use `quantity` for a fixed vesting amount.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    },
+    "quantity": {
+      "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "next_condition_ids": {
+      "description": "List of ALL VestingCondition IDs that can still trigger after this one. If there are none, use an empty array.\nConditions should be in priority order, so if two conditions are met simultaneously the first one in the array will take precedence.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["id", "next_condition_ids"],
+  "oneOf": [{ "required": ["portion"] }, { "required": ["quantity"] }],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/VestingCondition.schema.json"
 }

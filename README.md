@@ -401,9 +401,7 @@ _Key enumerations used throughout the schemas_
     4.  Back Loaded (4 - 4 - 5 - 5)
     5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
     6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
-
-  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)
-
+    7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)
   - **View more:** [schema/enums/AllocationType](/docs/schema/enums/AllocationType.md)
 
 - **Enum - Compensation Type**

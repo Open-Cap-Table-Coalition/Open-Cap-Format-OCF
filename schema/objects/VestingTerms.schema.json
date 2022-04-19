@@ -27,7 +27,7 @@
     },
     "vesting_conditions": {
       "title": "Vesting Terms - Vesting Condition Array",
-      "description": "An",
+      "description": "Conditions / triggers that describe the graph of vesting schedules and events",
       "type": "array",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json"
