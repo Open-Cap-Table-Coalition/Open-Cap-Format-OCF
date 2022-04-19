@@ -22,9 +22,12 @@ export default class RefProperty extends Property {
 
   id = () => this.idOverride || this.referenced.id();
 
-  markdownTableDescription = () =>
-    this.description().replace(/\n/g, "</br>") ||
-    this.referenced.markdownTableDescription();
+  markdownTableDescription() {
+    return (
+      super.markdownTableDescription() ||
+      this.referenced.markdownTableDescription()
+    );
+  }
 
   markdownTableType = () => this.referenced.markdownTableType();
 
