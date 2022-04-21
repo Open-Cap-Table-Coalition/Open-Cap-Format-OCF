@@ -772,7 +772,7 @@ _Used for object property composition and enforcing uniform properties across pa
 - We use [JSON Schema Draft 7](https://json-schema.org/specification-links.html#draft-7) for maximum compatibility with
   JSON Schema [implementations](https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org)
 
-### Recommended Editor for the openapi.json file
+### Recommended Code Editor For Schema Files
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 
