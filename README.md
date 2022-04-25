@@ -623,6 +623,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a phone number
   - **View more:** [schema/types/Phone](/docs/schema/types/Phone.md)
 
+- **Type - Pre-Release Omission**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json`
+  - **Description:** Transitional type; allows an otherwise "required" field to support omission by an implementation that can not yet support all fields. This is not intended to be permanent; rather it is a communication mechanism indicating that a field added in a pre-release version of the spec will need to be implemented to support the next release.
+  - **View more:** [schema/types/PreReleaseOmission](/docs/schema/types/PreReleaseOmission.md)
+
 - **Type - Ratio**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Ratio.schema.json`
