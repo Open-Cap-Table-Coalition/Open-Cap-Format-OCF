@@ -17,55 +17,64 @@
     "repetitions": {
       "type": "integer",
       "minimum": 1
-    },
-    "day_of_month": {
-      "type": "string",
-      "enum": [
-        "01",
-        "02",
-        "03",
-        "04",
-        "05",
-        "06",
-        "07",
-        "08",
-        "09",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29_OR_EOM",
-        "30_OR_EOM",
-        "31_OR_EOM",
-        "EOM",
-        "VESTING_START_DAY_OR_EOM"
-      ]
     }
   },
   "if": {
-    "properties": { "type": { "const": "DAYS" } }
+    "properties": {
+      "type": { "const": "DAYS" }
+    }
   },
   "then": {
-    "required": ["length", "type", "repetitions"]
+    "properties": { "length": {}, "type": {}, "repetitions": {} },
+    "required": ["length", "type", "repetitions"],
+    "additionalProperties": false
   },
   "else": {
-    "required": ["length", "type", "repetitions", "day_of_month"]
+    "properties": {
+      "length": {},
+      "type": {},
+      "repetitions": {},
+      "day_of_month": {
+        "type": "string",
+        "enum": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29_OR_EOM",
+          "30_OR_EOM",
+          "31_OR_EOM",
+          "EOM",
+          "VESTING_START_DAY_OR_EOM"
+        ]
+      }
+    },
+    "required": ["length", "type", "repetitions", "day_of_month"],
+    "additionalProperties": false
   },
-  "additionalProperties": false,
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/VestingPeriod.schema.json"
 }
