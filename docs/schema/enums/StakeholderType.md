@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; INDIVIDUAL </br>&bull; INSTITUTION
 
 **Source Code:** [schema/enums/StakeholderType](/schema/enums/StakeholderType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

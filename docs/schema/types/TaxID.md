@@ -19,3 +19,4 @@ _Type representation of a government identifier for tax purposes (e.g. EIN) and 
 
 **Source Code:** [schema/types/TaxID](/schema/types/TaxID.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

@@ -108,7 +108,7 @@ describe("Object", () => {
 
 **Source Code:** [schema/objects/Valuation](/schema/objects/Valuation.schema.json)
 
-
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

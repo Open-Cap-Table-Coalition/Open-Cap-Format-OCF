@@ -29,7 +29,5 @@ export default class TypeFormatSchemaNode extends SchemaNode {
 
 **Value:** \`${this.type().toUpperCase()} - _Must match JSONSchema Format: ${this.format().toUpperCase()}_\`
 
-**Source Code:** ${this.markdownSourceLink()}
-
-`;
+${this.markdownFooter()}`;
 }

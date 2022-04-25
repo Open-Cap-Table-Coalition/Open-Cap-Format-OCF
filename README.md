@@ -542,7 +542,7 @@ _Used as common building blocks for properties that are more complex than primit
 - **Type - Conversion Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json`
-  - **Description:** Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
+  - **Description:** Type representation of a convertible's conversion rights into a Stock Class upon an event (such as holder election or Change of Control)
   - **View more:** [schema/types/ConversionTrigger](/docs/schema/types/ConversionTrigger.md)
 
 - **Type - Country Code**
@@ -778,7 +778,7 @@ _Used for object property composition and enforcing uniform properties across pa
 - We use [JSON Schema Draft 7](https://json-schema.org/specification-links.html#draft-7) for maximum compatibility with
   JSON Schema [implementations](https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org)
 
-### Recommended Editor for the openapi.json file
+### Recommended Code Editor For Schema Files
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 

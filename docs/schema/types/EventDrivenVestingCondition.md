@@ -23,3 +23,4 @@ _Type representation of complex event-driven vesting criteria. These conditions 
 
 **Source Code:** [schema/types/EventDrivenVestingCondition](/schema/types/EventDrivenVestingCondition.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

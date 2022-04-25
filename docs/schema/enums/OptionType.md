@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; NSO </br>&bull; ISO </br>&bull; INTL
 
 **Source Code:** [schema/enums/OptionType](/schema/enums/OptionType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

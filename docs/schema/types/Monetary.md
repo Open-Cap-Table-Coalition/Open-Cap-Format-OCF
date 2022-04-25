@@ -19,3 +19,4 @@ _Type representation of an amount of money in a specified currency_
 
 **Source Code:** [schema/types/Monetary](/schema/types/Monetary.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

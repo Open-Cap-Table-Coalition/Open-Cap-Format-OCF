@@ -21,3 +21,4 @@ _Type representation of a conversion right from one security into a stock class_
 
 **Source Code:** [schema/types/StockClassConversionRights](/schema/types/StockClassConversionRights.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

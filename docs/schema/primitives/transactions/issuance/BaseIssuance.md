@@ -21,3 +21,5 @@
 | security_law_exemptions | [ [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md) ] | List of security law exemptions (and applicable jurisdictions) for this security | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/issuance/BaseIssuance](/schema/primitives/transactions/issuance/BaseIssuance.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

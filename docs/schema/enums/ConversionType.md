@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; PRE_MONEY </br>&bull; POST_MONEY
 
 **Source Code:** [schema/enums/ConversionType](/schema/enums/ConversionType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

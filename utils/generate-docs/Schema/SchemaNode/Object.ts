@@ -52,8 +52,5 @@ ${this.allOfMarkdown()}
 
 ${this.markdownPropertiesTable()}
 
-**Source Code:** ${this.markdownSourceLink()}
-
-${this.markdownExamples()}
-`;
+${this.markdownFooter()}`;
 }

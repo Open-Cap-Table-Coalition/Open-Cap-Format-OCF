@@ -23,3 +23,4 @@
 
 **Source Code:** [schema/files/VestingSchedulesFile](/schema/files/VestingSchedulesFile.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

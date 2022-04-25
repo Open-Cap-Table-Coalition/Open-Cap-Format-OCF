@@ -33,6 +33,5 @@ export default class PrimitiveSchemaNode extends SchemaNode {
 
 ${this.markdownPropertiesTable()}
 
-**Source Code:** ${this.markdownSourceLink()}
-`;
+${this.markdownFooter()}`;
 }
