@@ -16,3 +16,5 @@
 | -------- | ---- | ----------- | -------- |
 
 **Source Code:** [schema/primitives/transactions/acceptance/BaseAcceptance](/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

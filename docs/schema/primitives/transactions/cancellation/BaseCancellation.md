@@ -18,3 +18,5 @@
 | reason_text         | `STRING` | Reason for the cancellation                                                              | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/cancellation/BaseCancellation](/schema/primitives/transactions/cancellation/BaseCancellation.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

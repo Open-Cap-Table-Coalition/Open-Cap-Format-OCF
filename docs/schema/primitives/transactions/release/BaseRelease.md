@@ -25,3 +25,5 @@
 | withheld_quantity   | [schema/types/Numeric](/docs/schema/types/Numeric.md)   | Quantity of security units withheld  | -          |
 
 **Source Code:** [schema/primitives/transactions/release/BaseRelease](/schema/primitives/transactions/release/BaseRelease.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -26,8 +26,9 @@ export default abstract class Property {
 
   markdownTableId = () => this.id();
 
-  markdownTableDescription = () =>
-    this.description().replace(/\r?\n|\r/g, "</br>");
+  markdownTableDescription() {
+    return this.description().replace(/\r?\n|\r/g, "</br>");
+  }
 
   abstract markdownTableType(): string;
 }

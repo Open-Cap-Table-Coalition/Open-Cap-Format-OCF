@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; LEGAL </br>&bull; CONTACT </br>&bull; OTHER
 
 **Source Code:** [schema/enums/AddressType](/schema/enums/AddressType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -23,3 +23,4 @@ _Type representing all aspects related to vesting securities_
 
 **Source Code:** [schema/types/VestingRules](/schema/types/VestingRules.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

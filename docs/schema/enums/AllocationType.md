@@ -17,3 +17,5 @@
 **ONE OF:**</br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE
 
 **Source Code:** [schema/enums/AllocationType](/schema/enums/AllocationType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

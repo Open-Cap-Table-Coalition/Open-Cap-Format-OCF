@@ -629,6 +629,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a phone number
   - **View more:** [schema/types/Phone](/docs/schema/types/Phone.md)
 
+- **Type - Pre-Release Omission**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json`
+  - **Description:** Transitional type; allows an otherwise "required" field to support omission by an implementation that can not yet support all fields. This is not intended to be permanent; rather it is a communication mechanism indicating that a field added in a pre-release version of the spec will need to be implemented to support the next release.
+  - **View more:** [schema/types/PreReleaseOmission](/docs/schema/types/PreReleaseOmission.md)
+
 - **Type - Ratio**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Ratio.schema.json`
@@ -838,7 +844,7 @@ _Used for object property composition and enforcing uniform properties across pa
 - We use [JSON Schema Draft 7](https://json-schema.org/specification-links.html#draft-7) for maximum compatibility with
   JSON Schema [implementations](https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org)
 
-### Recommended Editor for the openapi.json file
+### Recommended Code Editor For Schema Files
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 
