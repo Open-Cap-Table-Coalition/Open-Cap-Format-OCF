@@ -1,9 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/ConversionCalculationType.schema.json",
-  "title": "Enum - Conversion Calculation Type",
-  "description": "Enumeration of convertible conversion calculation types. We currently support:\n1. `RATIO` - units of source security to units of target Stock Class\n2. `FIXED` - converts to a fixed number of shares of Stock Class, and\n3. `CUSTOM` - conversion cannot be structured in OCF.`",
+  "$id": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json",
+  "title": "Enum - Conversion Mechanism Type",
+  "description": "Enumeration of convertible conversion calculation types.",
   "type": "string",
-  "enum": ["FIXED", "RATIO", "CUSTOM"],
-  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConversionCalculationType.schema.json"
+  "enum": [
+    "FIXED_AMOUNT_CONVERSION",
+    "FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION",
+    "RATIO_CONVERSION",
+    "SAFE_CONVERSION",
+    "CONVERTIBLE_NOTE_CONVERSION",
+    "CUSTOM_CONVERSION"
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums\\ConversionCalculationType.schema.json"
 }

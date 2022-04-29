@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ConvertibleTrigger.schema.json",
+  "title": "Type - Convertible Conversion Trigger",
+  "description": "Type representation of a convertible's conversion rights into stock class upon an event (such as holder's election or Change of Control)",
+  "type": "object",
+  "properties": {
+    "trigger_id": {
+      "description": "Id for this conversion trigger, unique within list of ConversionTriggers in parent convertible issuance's `conversion_triggers` field.",
+      "type": "string"
+    },
+    "nickname": {
+      "description": "Human-friendly nickname to describe the conversion right",
+      "type": "string"
+    },
+    "trigger_description": {
+      "description": "Long-form description of the trigger",
+      "type": "string"
+    },
+    "trigger_condition": {
+      "description": "Legal language describing what conditions must be satisfied for the conversion to take place (ideally, this should be excerpted from the instrument where possible)",
+      "type": "string"
+    },
+    "trigger_type": {
+      "description": "When the trigger condition is met, is the conversion automatic, elective or automatic with an elective right not to convert",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/TriggerType.schema.json"
+    },
+    "trigger_date": {
+      "description": "What is the date of the trigger (if applicable for this trigger)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
+    "conversion_right": {
+      "description": "When the conditions of the trigger are met, how does the convertible convert?",
+      "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json"
+    }
+  },
+  "required": [
+    "trigger_id",
+    "trigger_description",
+    "trigger_type",
+    "conversion_right"
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types\\conversion_triggers\\ConvertibleTrigger.schema.json"
+}

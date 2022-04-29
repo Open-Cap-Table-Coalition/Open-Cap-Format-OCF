@@ -44,13 +44,15 @@
       "seniority": "2",
       "conversion_rights": [
         {
-          "conversion_calculation_type": "RATIO",
-          "ratio": {
-            "numerator": "1",
-            "denominator": "1"
+          "conversion_mechanism": {
+            "type": "RATIO_CONVERSION",
+            "ratio": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "rounding_type": "NORMAL"
           },
-          "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-          "rounding_type": "NORMAL"
+          "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d"
         }
       ],
       "liquidation_preference_multiple": "2",

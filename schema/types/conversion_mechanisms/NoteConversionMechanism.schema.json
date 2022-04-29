@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - Note",
+  "description": "Sets forth inputs and conversion mechanism of a convertible note",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "CONVERTIBLE_NOTE_CONVERSION"
+    },
+    "interest_rate": {
+      "description": "Interest rate of the convertible (if applicable)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "day_count_convention": {
+      "description": "How many days are there is a given period for calculation purposes?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json"
+    },
+    "interest_payout": {
+      "description": "How is interest paid out (if at applicable)",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json"
+    },
+    "interest_accrual_period": {
+      "description": "What is the period over which interest is calculated?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json"
+    },
+    "compounding_type": {
+      "description": "What type of interest compounding?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json"
+    },
+    "conversion_discount": {
+      "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
+    },
+    "conversion_valuation_cap": {
+      "description": "What is the valuation cap (if applicable)?",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+    },
+    "exit_multiple": {
+      "description": "For cash proceeds calculation during a liquidity event.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    }
+  },
+  "required": [
+    "type",
+    "interest_rate",
+    "day_count_convention",
+    "interest_payout",
+    "interest_accrual_period",
+    "compounding_type"
+  ],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types\\conversion_mechanisms\\NoteConversionMechanism.schema.json"
+}
