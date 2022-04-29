@@ -90,6 +90,125 @@
         "next_condition_ids": []
       }
     ]
+  },
+  {
+    "id": "multi-tranche-event-based",
+    "object_type": "VESTING_TERMS",
+    "name": "Multi-tranche, event-based with 100%, double-trigger acceleration",
+    "description": "20% of the options vest each time a sale is made in excess of $100,000 in the aggregate, so long as such sale is made prior to Noon Eastern 4 years from vesting commencement.",
+    "allocation_type": "CUMULATIVE_ROUND_DOWN",
+    "vesting_conditions": [
+      {
+        "id": "vesting-start",
+        "quantity": "0",
+        "trigger": {
+          "type": "VESTING_START_DATE"
+        },
+        "next_condition_ids": [
+          "vesting-expired",
+          "double-trigger-acceleration",
+          "100k-sale-1"
+        ]
+      },
+      {
+        "id": "vesting-expired",
+        "quantity": "0",
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 4,
+            "type": "YEARS",
+            "repetitions": 1,
+            "day_of_month": "VESTING_START_DAY_OR_EOM"
+          },
+          "relative_to_condition_id": "vesting-start"
+        },
+        "next_condition_ids": []
+      },
+      {
+        "id": "double-trigger-acceleration",
+        "portion": {
+          "numerator": "1",
+          "denominator": "1",
+          "remainder": true
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      },
+      {
+        "id": "100k-sale-1",
+        "portion": {
+          "numerator": "20",
+          "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": [
+          "vesting-expired",
+          "double-trigger-acceleration",
+          "100k-sale-2"
+        ]
+      },
+      {
+        "id": "100k-sale-2",
+        "portion": {
+          "numerator": "20",
+          "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": [
+          "vesting-expired",
+          "double-trigger-acceleration",
+          "100k-sale-3"
+        ]
+      },
+      {
+        "id": "100k-sale-3",
+        "portion": {
+          "numerator": "20",
+          "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": [
+          "vesting-expired",
+          "double-trigger-acceleration",
+          "100k-sale-4"
+        ]
+      },
+      {
+        "id": "100k-sale-4",
+        "portion": {
+          "numerator": "20",
+          "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": [
+          "vesting-expired",
+          "double-trigger-acceleration",
+          "100k-sale-5"
+        ]
+      },
+      {
+        "id": "100k-sale-5",
+        "portion": {
+          "numerator": "20",
+          "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      }
+    ]
   }
 ]
 ```

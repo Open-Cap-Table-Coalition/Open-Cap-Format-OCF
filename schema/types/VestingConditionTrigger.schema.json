@@ -8,7 +8,11 @@
     "type": {
       "description": "...",
       "type": "string",
-      "enum": ["VESTING_START_DATE", "VESTING_SCHEDULE_RELATIVE"]
+      "enum": [
+        "VESTING_START_DATE",
+        "VESTING_SCHEDULE_RELATIVE",
+        "VESTING_EVENT"
+      ]
     },
     "period": {
       "description": "...",
@@ -34,6 +38,13 @@
         }
       },
       "required": ["period", "relative_to_condition_id"]
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "VESTING_EVENT"
+        }
+      }
     }
   ],
   "required": ["type"],
