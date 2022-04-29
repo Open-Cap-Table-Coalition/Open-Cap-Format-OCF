@@ -149,11 +149,11 @@ _Describes the eight top-level files that hold OCF objects and are required to e
   - **Description:** JSON containing file type identifier and list of valuations
   - **View more:** [schema/files/ValuationsFile](/docs/schema/files/ValuationsFile.md)
 
-- **File - Vesting Schedules**
+- **File - Vesting Terms**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json`
-  - **Description:** JSON containing file type identifier and list of vesting schedules
-  - **View more:** [schema/files/VestingSchedulesFile](/docs/schema/files/VestingSchedulesFile.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json`
+  - **Description:** JSON containing file type identifier and list of vesting terms
+  - **View more:** [schema/files/VestingTermsFile](/docs/schema/files/VestingTermsFile.md)
 
 ### [Objects](/schema/objects)
 
@@ -195,13 +195,7 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a valuation used in the cap table
   - **View more:** [schema/objects/Valuation](/docs/schema/objects/Valuation.md)
 
-- **Object - Vesting Schedule**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json`
-  - **Description:** Object describing a strictly time-based vesting schedule
-  - **View more:** [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md)
-
-- **Object - Vesting Schedule**
+- **Object - Vesting Terms**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
   - **Description:** Object describing a strictly time-based vesting schedule
@@ -394,7 +388,7 @@ _Key enumerations used throughout the schemas_
 - **Enum - Allocation Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
-  - **Description:** Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
+  - **Description:** Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
     1.  Cumulative Rounding (5 - 4 - 5 - 4)
     2.  Cumulative Round Down (4 - 5 - 4 - 5)
     3.  Front Loaded (5 - 5 - 4 - 4)

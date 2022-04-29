@@ -6,7 +6,7 @@
 
 `https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
 
-**Description:** _Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: 
+**Description:** _Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: 
   1.  Cumulative Rounding (5 - 4 - 5 - 4)
   2.  Cumulative Round Down (4 - 5 - 4 - 5)
   3.  Front Loaded (5 - 5 - 4 - 4)

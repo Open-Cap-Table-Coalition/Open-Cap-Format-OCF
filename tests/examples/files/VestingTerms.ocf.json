@@ -1,0 +1,54 @@
+{
+  "file_type": "OCF_VESTING_TERMS_FILE",
+  "items": [
+    {
+      "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
+      "object_type": "VESTING_TERMS",
+      "name": "Four Year / One Year Cliff",
+      "description": "25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.",
+      "allocation_type": "CUMULATIVE_ROUNDING",
+      "vesting_conditions": [
+        {
+          "id": "vesting-start",
+          "quantity": "0",
+          "trigger": {
+            "type": "VESTING_START_DATE"
+          },
+          "next_condition_ids": ["cliff"]
+        },
+        {
+          "id": "cliff",
+          "description": "25% payout at 1 year",
+          "portion": { "numerator": "12", "denominator": "48" },
+          "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+              "length": 12,
+              "type": "MONTHS",
+              "repetitions": 1,
+              "day_of_month": "VESTING_START_DAY_OR_EOM"
+            },
+            "relative_to_condition_id": "vesting-start"
+          },
+          "next_condition_ids": ["monthly-thereafter"]
+        },
+        {
+          "id": "monthly-thereafter",
+          "description": "1/48th payout each month thereafter",
+          "portion": { "numerator": "1", "denominator": "48" },
+          "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+              "length": 1,
+              "type": "MONTHS",
+              "repetitions": 36,
+              "day_of_month": "VESTING_START_DAY_OR_EOM"
+            },
+            "relative_to_condition_id": "cliff"
+          },
+          "next_condition_ids": []
+        }
+      ]
+    }
+  ]
+}
