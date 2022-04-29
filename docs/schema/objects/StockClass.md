@@ -33,7 +33,7 @@
 a) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, 
 b) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order.
 In practice, stock classes with same seniority may be created at different points in time and (for example, an extension of an existing preferred financing round), and also a new stock class can be created with seniority between two existing stock classes, in which case it is assigned some decimal number between the numbers representing seniority of the respective classes. | `REQUIRED` |
-| conversion_rights               | [ [schema/types/StockClassConversionRights](/docs/schema/types/StockClassConversionRights.md) ]                                                  | List of stock class conversion rights possible for this stock class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | -          |
+| conversion_rights               | [ [schema/types/conversion_rights/StockClassConversionRight](/docs/schema/types/conversion_rights/StockClassConversionRight.md) ]                | List of stock class conversion rights possible for this stock class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | -          |
 | liquidation_preference_multiple | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                                                            | The liquidation preference per share for this stock class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | -          |
 | participation_cap_multiple      | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                                                            | The participation cap multiple per share for this stock class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | -          |
 
@@ -86,13 +86,15 @@ In practice, stock classes with same seniority may be created at different point
     "seniority": "2",
     "conversion_rights": [
       {
-        "conversion_calculation_type": "RATIO",
-        "ratio": {
-          "numerator": "1",
-          "denominator": "1"
+        "conversion_mechanism": {
+          "mechanism_type": "RATIO_CONVERSION",
+          "ratio": {
+            "numerator": "1",
+            "denominator": "1"
+          },
+          "rounding_type": "NORMAL"
         },
-        "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-        "rounding_type": "NORMAL"
+        "converts_to_stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d"
       }
     ],
     "liquidation_preference_multiple": "2",

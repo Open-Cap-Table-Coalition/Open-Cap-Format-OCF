@@ -1,0 +1,22 @@
+:house: [Documentation Home](/README.md)
+
+---
+
+### Type - Stock Class Conversion Rights
+
+`https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json`
+
+_Type representation of a conversion right from one Stock Class into another Stock Class_
+
+**Data Type:** `OCF TYPE`
+
+**Properties:**
+
+| Property                   | Type                                                                                                                                                                                | Description                                                                                                         | Required   |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------- |
+| conversion_mechanism       | **ONE OF the Following Types/Objs:**</br>&bull; [schema/types/conversion_mechanisms/RatioConversionMechanism](/docs/schema/types/conversion_mechanisms/RatioConversionMechanism.md) | What conversion mechanism applies to calculate the number of resulting stock class shares?                          | `REQUIRED` |
+| converts_to_future_round   | `BOOLEAN`                                                                                                                                                                           | Is this stock class potentially convertible into a future, as-yet undetermined stock class (e.g. Founder Preferred) | -          |
+| converts_to_stock_class_id | `STRING`                                                                                                                                                                            | The identifier of the existing, known stock class this stock class can convert into                                 | -          |
+
+**Source Code:** [schema/types/conversion_rights/StockClassConversionRight](/schema/types/conversion_rights/StockClassConversionRight.schema.json)
+

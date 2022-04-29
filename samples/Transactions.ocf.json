@@ -107,7 +107,7 @@
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
-              "type": "CONVERTIBLE_NOTE_CONVERSION",
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
               "interest_rate": "8.99",
               "day_count_convention": "ACTUAL_365",
               "interest_payout": "DEFERRED",
@@ -137,7 +137,7 @@
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
-              "type": "CONVERTIBLE_NOTE_CONVERSION",
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
               "interest_rate": "8.99",
               "day_count_convention": "ACTUAL_365",
               "interest_payout": "DEFERRED",
@@ -192,7 +192,7 @@
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
-              "type": "CONVERTIBLE_NOTE_CONVERSION",
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
               "interest_rate": "8.99",
               "day_count_convention": "ACTUAL_365",
               "interest_payout": "DEFERRED",
@@ -901,7 +901,7 @@
           "trigger_date": "2029-01-01",
           "conversion_right": {
             "conversion_mechanism": {
-              "type": "FIXED_AMOUNT_CONVERSION",
+              "mechanism_type": "FIXED_AMOUNT_CONVERSION",
               "converts_to_quantity": "10000.00"
             },
             "converts_to_stock_class_id": "stock-class-id"
@@ -938,7 +938,7 @@
           "trigger_date": "2032-02-01",
           "conversion_right": {
             "conversion_mechanism": {
-              "type": "FIXED_AMOUNT_CONVERSION",
+              "mechanism_type": "FIXED_AMOUNT_CONVERSION",
               "converts_to_quantity": "10000.00"
             },
             "converts_to_stock_class_id": "stock-class-id"

@@ -5,7 +5,7 @@
   "description": "Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type",
   "type": "object",
   "properties": {
-    "type": {
+    "mechanism_type": {
       "const": "CUSTOM_CONVERSION"
     },
     "custom_conversion_description": {
@@ -13,7 +13,6 @@
       "type": "string"
     }
   },
-  "required": ["custom_conversion_description", "type"],
-  "additionalProperties": false,
-  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types\\conversion_mechanisms\\CustomConversionMechanism.schema.json"
+  "required": ["custom_conversion_description", "mechanism_type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
 }

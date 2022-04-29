@@ -5,7 +5,7 @@
   "description": "Descrives how a security converts into a fixed amount of a stock class",
   "type": "object",
   "properties": {
-    "type": {
+    "mechanism_type": {
       "const": "FIXED_AMOUNT_CONVERSION"
     },
     "converts_to_quantity": {
@@ -13,7 +13,6 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     }
   },
-  "required": ["converts_to_quantity", "type"],
-  "additionalProperties": false,
-  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types\\conversion_mechanisms\\FixedAmountConversionMechanism.schema.json"
+  "required": ["converts_to_quantity", "mechanism_type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json"
 }

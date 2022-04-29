@@ -45,7 +45,7 @@
       "conversion_rights": [
         {
           "conversion_mechanism": {
-            "type": "RATIO_CONVERSION",
+            "mechanism_type": "RATIO_CONVERSION",
             "ratio": {
               "numerator": "1",
               "denominator": "1"
