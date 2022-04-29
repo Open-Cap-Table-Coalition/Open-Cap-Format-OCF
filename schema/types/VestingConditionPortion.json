@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/VestingConditionPortion.schema.json",
+  "title": "Type - Vesting Condition Portion",
+  "description": "Describes a fractional portion (ratio) of shares associated with a Vesting Condition",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    }
+  ],
+  "properties": {
+    "numerator": {},
+    "denominator": {},
+    "remainder": {
+      "description": "If false, the ratio is applied to the entire quantity of the security's issuance. If true, it is applied to amount that has yet to vest. For example:\n A stakeholder has been granted 1000 shares, and 400 are already vested.\nIf the portion is 1/5 and `remainder` is `false` for a VestingCondition, then that condition will vest 200 shares -- 1/5 of the 1000 granted.\nIf the portion is 1/5 and `remainder` is `true`, then that condition will vest 120 shares -- 1/5 of the 600 unvested.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/VestingCondition.schema.json"
+}

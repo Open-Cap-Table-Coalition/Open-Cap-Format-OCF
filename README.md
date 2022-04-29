@@ -678,6 +678,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Describes conditio / triggers to be satisfied for vesting to occur
   - **View more:** [schema/types/VestingCondition](/docs/schema/types/VestingCondition.md)
 
+- **Type - Vesting Condition Portion**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingConditionPortion.schema.json`
+  - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
+  - **View more:** [schema/types/VestingConditionPortion](/docs/schema/types/VestingConditionPortion.md)
+
 - **Type - Vesting Condition Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/VestingConditionTrigger.schema.json`
