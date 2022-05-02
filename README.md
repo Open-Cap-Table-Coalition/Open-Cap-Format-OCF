@@ -570,12 +570,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an ISO 4217 currency code
   - **View more:** [schema/types/CurrencyCode](/docs/schema/types/CurrencyCode.md)
 
-- **Type - Custom Vesting Tranche**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
-  - **Description:** Type representation of a vesting tranche by date and quantity
-  - **View more:** [schema/types/CustomVestingTranche](/docs/schema/types/CustomVestingTranche.md)
-
 - **Type - Date**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Date.schema.json`
@@ -587,12 +581,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/Email.schema.json`
   - **Description:** Type representation of an email address
   - **View more:** [schema/types/Email](/docs/schema/types/Email.md)
-
-- **Type - Event-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
-  - **View more:** [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)
 
 - **Type - File**
 
@@ -648,12 +636,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values
   - **View more:** [schema/types/Ratio](/docs/schema/types/Ratio.md)
 
-- **Type - Schedule-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of a row in a vesting schedule
-  - **View more:** [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md)
-
 - **Type - Security Exemption**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json`
@@ -707,12 +689,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
   - **Description:** Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms
   - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
-
-- **Type - Vesting Rules**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json`
-  - **Description:** Type representing all aspects related to vesting securities
-  - **View more:** [schema/types/vesting/VestingRules](/docs/schema/types/vesting/VestingRules.md)
 
 ### [Primitives](/schema/primitives)
 
