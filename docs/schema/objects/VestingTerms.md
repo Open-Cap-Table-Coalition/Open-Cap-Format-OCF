@@ -33,7 +33,7 @@
 ```json
 [
   {
-    "id": "d3d756f3-0cd9-40c7-80dd-6aced7c7d93c",
+    "id": "4yr-1yr-cliff-schedule",
     "object_type": "VESTING_TERMS",
     "name": "Four Year / One Year Cliff",
     "description": "25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.",
@@ -202,6 +202,26 @@
         "portion": {
           "numerator": "20",
           "denominator": "100"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      }
+    ]
+  },
+  {
+    "id": "custom-vesting-100pct-upfront",
+    "object_type": "VESTING_TERMS",
+    "name": "Custom terms object specifically for test-plan-security-issuance-full-fields",
+    "description": "100% of the options vest on a security-specific date",
+    "allocation_type": "CUMULATIVE_ROUND_DOWN",
+    "vesting_conditions": [
+      {
+        "id": "full-vesting",
+        "portion": {
+          "numerator": "1",
+          "denominator": "1"
         },
         "trigger": {
           "type": "VESTING_EVENT"

@@ -36,7 +36,7 @@
 | option_grant_type            | `Enum - Option Type`</br></br>_Description:_ Enumeration of option types</br></br>**ONE OF:** </br>&bull; NSO </br>&bull; ISO </br>&bull; INTL     | If the plan security is an option, what kind?                                                                                                                                                                                                                                                                                                                                                                                                                                                               | -          |
 | quantity                     | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                                                              | How many shares are subject to this plan security?                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `REQUIRED` |
 | exercise_price               | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                                                            | What is the exercise price?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `REQUIRED` |
-| vesting_rules                | [schema/types/vesting/VestingRules](/docs/schema/types/vesting/VestingRules.md)                                                                    | What vesting applies to this plan security?                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `REQUIRED` |
+| vesting_terms_id             | `STRING`                                                                                                                                           | Identifier of the VestingTerms to which this security is subject                                                                                                                                                                                                                                                                                                                                                                                                                                            | -          |
 | expiration_date              | **ONE OF the Following Types/Objs:**</br>&bull; `NULL` _()_</br>&bull; [schema/types/Date](/docs/schema/types/Date.md)                             | Expiration date of the plan security                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | termination_exercise_windows | [ [schema/types/TerminationWindow](/docs/schema/types/TerminationWindow.md) ]                                                                      | Exercise periods applicable to plan security after a termination for a given, enumerated reason                                                                                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
 
@@ -49,7 +49,7 @@
   {
     "object_type": "TX_PLAN_SECURITY_ISSUANCE",
     "id": "test-plan-security-issuance-minimal",
-    "security_id": "test-security-id",
+    "security_id": "test-plan-security-id",
     "date": "2019-12-12",
     "security_law_exemptions": [
       {
@@ -71,9 +71,7 @@
       "amount": "50.00",
       "currency": "USD"
     },
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY"
-    },
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
     "expiration_date": "2031-01-20",
     "termination_exercise_windows": [
       {
@@ -109,9 +107,6 @@
       "amount": "50.00",
       "currency": "USD"
     },
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY"
-    },
     "expiration_date": "2031-01-20",
     "termination_exercise_windows": [
       {
@@ -124,7 +119,7 @@
   {
     "object_type": "TX_PLAN_SECURITY_ISSUANCE",
     "id": "test-plan-security-issuance-full-fields",
-    "security_id": "test-security-id",
+    "security_id": "test-plan-security-issuance-full-fields",
     "date": "2019-12-12",
     "security_law_exemptions": [
       {
@@ -150,28 +145,7 @@
       "amount": "50.00",
       "currency": "CAD"
     },
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-      "vesting_schedule_id": "test-vesting-schedule-id",
-      "vesting_start_date": "2021-01-10",
-      "vesting_conditions": [
-        {
-          "amount_numerator": 1,
-          "amount_denominator": 4,
-          "period_length": 1,
-          "period_type": "YEARS",
-          "priority": 1,
-          "dependent_vesting": []
-        }
-      ],
-      "custom_vesting_tranches": [
-        {
-          "vest_date": "2021-01-11",
-          "vest_quantity": "100"
-        }
-      ],
-      "custom_vesting_description": "100% up front due to custom vesting tranche"
-    },
+    "vesting_terms_id": "custom-vesting-100pct-upfront",
     "expiration_date": "2031-01-20",
     "termination_exercise_windows": [
       {

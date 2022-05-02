@@ -29,4 +29,21 @@
 
 **Source Code:** [schema/objects/transactions/vesting/VestingEvent](/schema/objects/transactions/vesting/VestingEvent.schema.json)
 
+**Examples:**
+
+```json
+[
+  {
+    "object_type": "TX_VESTING_EVENT",
+    "id": "test-plan-security-issuance-full-fields-vesting-event",
+    "security_id": "test-plan-security-issuance-full-fields",
+    "date": "2021-01-11",
+    "comments": [
+      "100% up front due to custom vesting tranche"
+    ],
+    "vesting_condition_id": "full-vesting"
+  }
+]
+```
+
 Copyright © 2022 Open Cap Table Coalition.

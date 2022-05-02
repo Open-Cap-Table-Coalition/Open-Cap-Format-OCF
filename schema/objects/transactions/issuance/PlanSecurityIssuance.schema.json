@@ -42,9 +42,9 @@
       "description": "What is the exercise price?",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
-    "vesting_rules": {
-      "description": "What vesting applies to this plan security?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json"
+    "vesting_terms_id": {
+      "description": "Identifier of the VestingTerms to which this security is subject",
+      "type": "string"
     },
     "expiration_date": {
       "description": "Expiration date of the plan security",
@@ -98,7 +98,6 @@
     "compensation_type",
     "quantity",
     "exercise_price",
-    "vesting_rules",
     "expiration_date",
     "termination_exercise_windows"
   ],

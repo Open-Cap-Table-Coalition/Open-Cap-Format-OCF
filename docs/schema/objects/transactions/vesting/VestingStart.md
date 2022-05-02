@@ -29,4 +29,18 @@
 
 **Source Code:** [schema/objects/transactions/vesting/VestingStart](/schema/objects/transactions/vesting/VestingStart.schema.json)
 
+**Examples:**
+
+```json
+[
+  {
+    "object_type": "TX_VESTING_START",
+    "id": "test-plan-security-id-vesting-start",
+    "security_id": "test-plan-security-id",
+    "vesting_condition_id": "vesting-start",
+    "date": "2020-01-01"
+  }
+]
+```
+
 Copyright © 2022 Open Cap Table Coalition.
