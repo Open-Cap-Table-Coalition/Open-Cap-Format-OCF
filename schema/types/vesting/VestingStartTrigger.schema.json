@@ -2,8 +2,13 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json",
   "title": "Type - Vesting Start Trigger",
-  "description": "Describes a vesting trigger satisfied at the security's vesting commencement date",
+  "description": "Describes a vesting condition satisfied at the security's vesting commencement date",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json"
+    }
+  ],
   "properties": {
     "type": {
       "const": "VESTING_START_DATE"

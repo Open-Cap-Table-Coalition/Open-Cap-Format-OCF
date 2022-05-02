@@ -4,6 +4,11 @@
   "title": "Type - Vesting Event Trigger",
   "description": "Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json"
+    }
+  ],
   "properties": {
     "type": {
       "const": "VESTING_SCHEDULE_RELATIVE"
