@@ -201,13 +201,13 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a strictly time-based vesting schedule
   - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
 
-- **Object - Stock Transfer Transaction**
+- **Object - Vesting Event Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
   - **Description:** Object describing a transfer or secondary sale of a stock security
   - **View more:** [schema/objects/transactions/vesting/VestingEvent](/docs/schema/objects/transactions/vesting/VestingEvent.md)
 
-- **Object - Stock Transfer Transaction**
+- **Object - Vesting Start Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json`
   - **Description:** Object describing a transfer or secondary sale of a stock security

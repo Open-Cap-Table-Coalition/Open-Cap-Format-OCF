@@ -2,7 +2,7 @@
 
 ---
 
-### Object - Stock Transfer Transaction
+### Object - Vesting Start Transaction
 
 `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json`
 
