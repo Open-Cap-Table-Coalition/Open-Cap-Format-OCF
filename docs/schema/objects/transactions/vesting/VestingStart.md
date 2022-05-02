@@ -46,6 +46,13 @@
     "security_id": "test-stock-issuance-security-id",
     "vesting_condition_id": "vesting-start",
     "date": "2021-01-10"
+  },
+  {
+    "object_type": "TX_VESTING_START",
+    "id": "test-warrant-security-id-vesting-start",
+    "security_id": "test-warrant-security-id",
+    "vesting_condition_id": "vesting-start",
+    "date": "2021-01-10"
   }
 ]
 ```

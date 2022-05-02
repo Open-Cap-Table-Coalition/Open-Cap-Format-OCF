@@ -42,9 +42,9 @@
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
-    "vesting_rules": {
-      "description": "Vesting conditions applicable to the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json"
+    "vesting_terms_id": {
+      "description": "Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.",
+      "type": "string"
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",
