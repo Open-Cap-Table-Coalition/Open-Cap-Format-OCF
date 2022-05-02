@@ -21,11 +21,17 @@
   },
   "if": {
     "properties": {
-      "type": { "const": "DAYS" }
+      "type": {
+        "const": "DAYS"
+      }
     }
   },
   "then": {
-    "properties": { "length": {}, "type": {}, "repetitions": {} },
+    "properties": {
+      "length": {},
+      "type": {},
+      "repetitions": {}
+    },
     "required": ["length", "type", "repetitions"],
     "additionalProperties": false
   },
