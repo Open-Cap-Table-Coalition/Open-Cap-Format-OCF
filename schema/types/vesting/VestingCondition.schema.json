@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json",
   "title": "Type - Vesting Condition",
-  "description": "Describes conditio / triggers to be satisfied for vesting to occur",
+  "description": "Describes condition / triggers to be satisfied for vesting to occur",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Reference identifier for the condition",
+      "description": "Reference identifier for this condition",
       "type": "string",
       "minLength": 1
     },
@@ -23,7 +23,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "trigger": {
-      "description": "...",
+      "description": "Describes how this vesting condition is met, resulting in vesting the specified tranche of shares",
       "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json"
     },
     "next_condition_ids": {
@@ -44,5 +44,6 @@
       "required": ["quantity"]
     }
   ],
+  "additionalProperties": false,
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingCondition.schema.json"
 }

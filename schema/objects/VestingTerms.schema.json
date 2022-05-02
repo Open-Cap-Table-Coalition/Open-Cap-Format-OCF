@@ -26,12 +26,12 @@
       "$ref": "https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json"
     },
     "vesting_conditions": {
-      "title": "Vesting Terms - Vesting Condition Array",
-      "description": "Conditions / triggers that describe the graph of vesting schedules and events",
+      "description": "Conditions and triggers that describe the graph of vesting schedules and events",
       "type": "array",
       "items": {
         "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json"
-      }
+      },
+      "minItems": 1
     },
     "id": {},
     "comments": {}
