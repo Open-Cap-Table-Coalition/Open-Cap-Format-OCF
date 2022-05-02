@@ -490,7 +490,7 @@
     {
       "object_type": "TX_STOCK_ISSUANCE",
       "id": "test-stock-issuance-full-fields",
-      "security_id": "test-security-id",
+      "security_id": "test-stock-issuance-security-id",
       "date": "2022-02-01",
       "security_law_exemptions": [
         {
@@ -512,21 +512,14 @@
         "parent_object_id": "parent-object-id"
       },
       "comments": ["Here is a comment", "Here is another comment"],
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-        "vesting_schedule_id": "test-vesting-schedule-id",
-        "vesting_start_date": "2021-01-10",
-        "vesting_conditions": [
-          {
-            "amount_numerator": 1,
-            "amount_denominator": 4,
-            "period_length": 1,
-            "period_type": "YEARS",
-            "priority": 1,
-            "dependent_vesting": []
-          }
-        ]
-      }
+      "vesting_terms_id": "4yr-1yr-cliff-schedule"
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "test-stock-issuance-security-id-vesting-start",
+      "security_id": "test-stock-issuance-security-id",
+      "vesting_condition_id": "vesting-start",
+      "date": "2021-01-10"
     },
     {
       "object_type": "TX_STOCK_REISSUANCE",
