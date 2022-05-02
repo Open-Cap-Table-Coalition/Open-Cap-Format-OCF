@@ -44,7 +44,7 @@
     },
     "vesting_rules": {
       "description": "Vesting conditions applicable to the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json"
     },
     "expiration_date": {
       "description": "Expiration date of the warrant, if applicable",

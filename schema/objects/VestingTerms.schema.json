@@ -30,7 +30,7 @@
       "description": "Conditions / triggers that describe the graph of vesting schedules and events",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json"
+        "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json"
       }
     },
     "id": {},

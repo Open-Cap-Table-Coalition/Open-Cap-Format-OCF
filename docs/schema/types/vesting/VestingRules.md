@@ -4,7 +4,7 @@
 
 ### Type - Vesting Rules
 
-`https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
+`https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json`
 
 _Type representing all aspects related to vesting securities_
 
@@ -21,6 +21,6 @@ _Type representing all aspects related to vesting securities_
 | custom_vesting_tranches    | [ [schema/types/CustomVestingTranche](/docs/schema/types/CustomVestingTranche.md) ]                                                                                                                                                                               | Explicitly-defined vesting tranches for the securities which can be used in place of a vesting schedule.</br></br>**Note**: custom vesting tranches override the applied vesting schedule if both are present.                                                                                                                                                                          | -          |
 | custom_vesting_description | `STRING`                                                                                                                                                                                                                                                          | Description field to allow explanation of the vesting conditions which resulted in the custom vesting tranches                                                                                                                                                                                                                                                                          | -          |
 
-**Source Code:** [schema/types/VestingRules](/schema/types/VestingRules.schema.json)
+**Source Code:** [schema/types/vesting/VestingRules](/schema/types/vesting/VestingRules.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

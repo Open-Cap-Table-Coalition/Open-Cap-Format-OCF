@@ -36,7 +36,7 @@
     },
     "vesting_rules": {
       "description": "Vesting conditions applicable to this stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json"
     },
     "cost_basis": {
       "description": "The cost basis for this particular stock",

@@ -674,33 +674,33 @@ _Used as common building blocks for properties that are more complex than primit
 
 - **Type - Vesting Condition**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingCondition.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json`
   - **Description:** Describes conditio / triggers to be satisfied for vesting to occur
-  - **View more:** [schema/types/VestingCondition](/docs/schema/types/VestingCondition.md)
+  - **View more:** [schema/types/vesting/VestingCondition](/docs/schema/types/vesting/VestingCondition.md)
 
 - **Type - Vesting Condition Portion**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingConditionPortion.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json`
   - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
-  - **View more:** [schema/types/VestingConditionPortion](/docs/schema/types/VestingConditionPortion.md)
+  - **View more:** [schema/types/vesting/VestingConditionPortion](/docs/schema/types/vesting/VestingConditionPortion.md)
 
 - **Type - Vesting Condition Trigger**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingConditionTrigger.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json`
   - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
-  - **View more:** [schema/types/VestingConditionTrigger](/docs/schema/types/VestingConditionTrigger.md)
+  - **View more:** [schema/types/vesting/VestingConditionTrigger](/docs/schema/types/vesting/VestingConditionTrigger.md)
 
 - **Type - Vesting Period**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingPeriod.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
   - **Description:** Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms
-  - **View more:** [schema/types/VestingPeriod](/docs/schema/types/VestingPeriod.md)
+  - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
 
 - **Type - Vesting Rules**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingRules.schema.json`
   - **Description:** Type representing all aspects related to vesting securities
-  - **View more:** [schema/types/VestingRules](/docs/schema/types/VestingRules.md)
+  - **View more:** [schema/types/vesting/VestingRules](/docs/schema/types/vesting/VestingRules.md)
 
 ### [Primitives](/schema/primitives)
 

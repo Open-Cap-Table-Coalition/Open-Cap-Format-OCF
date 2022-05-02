@@ -4,7 +4,7 @@
 
 ### Type - Vesting Period
 
-`https://opencaptablecoalition.com/schema/types/VestingPeriod.schema.json`
+`https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
 
 _Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms_
 
@@ -18,6 +18,6 @@ _Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms_
 | type        | `Enum - Period Type`</br></br>_Description:_ Enumeration of time period types</br></br>**ONE OF:** </br>&bull; DAYS </br>&bull; MONTHS </br>&bull; YEARS | ...         | -        |
 | repetitions | `INTEGER`                                                                                                                                                |             | -        |
 
-**Source Code:** [schema/types/VestingPeriod](/schema/types/VestingPeriod.schema.json)
+**Source Code:** [schema/types/vesting/VestingPeriod](/schema/types/vesting/VestingPeriod.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
