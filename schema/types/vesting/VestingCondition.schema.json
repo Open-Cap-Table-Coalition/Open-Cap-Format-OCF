@@ -45,7 +45,7 @@
       "uniqueItems": true
     }
   },
-  "required": ["id", "next_condition_ids"],
+  "required": ["id", "trigger", "next_condition_ids"],
   "oneOf": [
     {
       "required": ["portion"]

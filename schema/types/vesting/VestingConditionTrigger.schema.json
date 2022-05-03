@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "type": {
-      "description": "Identifies the type of trigger",
+      "description": "Identifies the sub-type of trigger",
       "type": "string",
       "enum": [
         "VESTING_START_DATE",
