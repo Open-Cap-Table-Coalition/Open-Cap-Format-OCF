@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json",
   "title": "Object - Vesting Event Transaction",
-  "description": "Object describing a transfer or secondary sale of a stock security",
+  "description": "Object describing the transaction of an non-schedule-driven vesting event associated with a security",
   "type": "object",
   "allOf": [
     {

@@ -6,7 +6,7 @@
 
 `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
 
-**Description:** _Object describing a strictly time-based vesting schedule_
+**Description:** _Object describing the terms under which a security vests_
 
 **Data Type:** `OCF Object - VESTING_TERMS`
 

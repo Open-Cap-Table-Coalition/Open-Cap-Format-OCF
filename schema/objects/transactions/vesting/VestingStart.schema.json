@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json",
   "title": "Object - Vesting Start Transaction",
-  "description": "Object describing a transfer or secondary sale of a stock security",
+  "description": "Object describing the transaction of vesting schedule start / commencement associated with a security",
   "type": "object",
   "allOf": [
     {

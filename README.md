@@ -198,19 +198,19 @@ _Describing the structure of OCF -- these contain the common object properties `
 - **Object - Vesting Terms**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
-  - **Description:** Object describing a strictly time-based vesting schedule
+  - **Description:** Object describing the terms under which a security vests
   - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
 
 - **Object - Vesting Event Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
-  - **Description:** Object describing a transfer or secondary sale of a stock security
+  - **Description:** Object describing the transaction of an non-schedule-driven vesting event associated with a security
   - **View more:** [schema/objects/transactions/vesting/VestingEvent](/docs/schema/objects/transactions/vesting/VestingEvent.md)
 
 - **Object - Vesting Start Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json`
-  - **Description:** Object describing a transfer or secondary sale of a stock security
+  - **Description:** Object describing the transaction of vesting schedule start / commencement associated with a security
   - **View more:** [schema/objects/transactions/vesting/VestingStart](/docs/schema/objects/transactions/vesting/VestingStart.md)
 
 - **Object - Convertible Transfer Transaction**

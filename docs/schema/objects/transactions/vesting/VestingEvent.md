@@ -6,7 +6,7 @@
 
 `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
 
-**Description:** _Object describing a transfer or secondary sale of a stock security_
+**Description:** _Object describing the transaction of an non-schedule-driven vesting event associated with a security_
 
 **Data Type:** `OCF Object - TX_VESTING_EVENT`
 

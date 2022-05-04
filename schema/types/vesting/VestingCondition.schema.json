@@ -19,7 +19,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json"
     },
     "quantity": {
-      "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares",
+      "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares. Use `portion` for a proportional vesting amount.",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "trigger": {
@@ -37,7 +37,7 @@
       ]
     },
     "next_condition_ids": {
-      "description": "List of ALL VestingCondition IDs that can trigger after this one. If there are none, use an empty array.\nConditions should be in priority order, so if two conditions are met simultaneously the first one in the array will take precedence.",
+      "description": "List of ALL VestingCondition IDs that can trigger after this one. If there are none, use an empty array.\nConditions should be in priority order in the array, ordered from the highest priority to the lowest.",
       "type": "array",
       "items": {
         "type": "string"

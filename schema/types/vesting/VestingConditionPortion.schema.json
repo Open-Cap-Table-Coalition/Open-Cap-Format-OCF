@@ -13,7 +13,7 @@
     "numerator": {},
     "denominator": {},
     "remainder": {
-      "description": "If false, the ratio is applied to the entire quantity of the security's issuance. If true, it is applied to amount that has yet to vest. For example:\n A stakeholder has been granted 1000 shares, and 400 are already vested.\nIf the portion is 1/5 and `remainder` is `false` for a VestingCondition, then that condition will vest 200 shares -- 1/5 of the 1000 granted.\nIf the portion is 1/5 and `remainder` is `true`, then that condition will vest 120 shares -- 1/5 of the 600 unvested.",
+      "description": "If false, the ratio is applied to the entire quantity of the security's issuance. If true, it is applied to the amount that has yet to vest. For example:\n A stakeholder has been granted 1000 shares, and 400 are already vested.\nIf the portion is 1/5 and `remainder` is `false` for a VestingCondition, then that condition will vest 200 shares -- 1/5 of the 1000 granted.\nIf the portion is 1/5 and `remainder` is `true`, then that condition will vest 120 shares -- 1/5 of the 600 unvested.",
       "type": "boolean",
       "default": false
     }
