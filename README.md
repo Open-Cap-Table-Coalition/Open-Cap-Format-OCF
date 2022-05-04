@@ -409,11 +409,11 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of interest compounding types
   - **View more:** [schema/enums/CompoundingType](/docs/schema/enums/CompoundingType.md)
 
-- **Enum - Conversion Type**
+- **Enum - Conversion Mechanism Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json`
-  - **Description:** Enumeration of convertible conversion types
-  - **View more:** [schema/enums/ConversionType](/docs/schema/enums/ConversionType.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json`
+  - **Description:** Enumeration of convertible conversion calculation types.
+  - **View more:** [schema/enums/ConversionMechanismType](/docs/schema/enums/ConversionMechanismType.md)
 
 - **Enum - Convertible Type**
 
@@ -511,6 +511,12 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of termination window types
   - **View more:** [schema/enums/TerminationWindowType](/docs/schema/enums/TerminationWindowType.md)
 
+- **Enum - Trigger Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/TriggerType.schema.json`
+  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert
+  - **View more:** [schema/enums/TriggerType](/docs/schema/enums/TriggerType.md)
+
 - **Enum - Valuation Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json`
@@ -533,17 +539,17 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an address
   - **View more:** [schema/types/Address](/docs/schema/types/Address.md)
 
+- **Type - Capitalization Definition**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json`
+  - **Description:** Type represents a group of securities that constitutes some formally defined part of the company (e.g. post-money capitalization vs pre-money for a security)
+  - **View more:** [schema/types/CapitalizationDefinition](/docs/schema/types/CapitalizationDefinition.md)
+
 - **Type - Contact Info**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json`
   - **Description:** Type representation of a primary contact person for a stakeholder (e.g. a fund)
   - **View more:** [schema/types/ContactInfo](/docs/schema/types/ContactInfo.md)
-
-- **Type - Conversion Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json`
-  - **Description:** Type representation of a convertible's conversion rights into a Stock Class upon an event (such as holder election or Change of Control)
-  - **View more:** [schema/types/ConversionTrigger](/docs/schema/types/ConversionTrigger.md)
 
 - **Type - Country Code**
 
@@ -647,12 +653,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis
   - **View more:** [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md)
 
-- **Type - Stock Class Conversion Rights**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json`
-  - **Description:** Type representation of a conversion right from one security into a stock class
-  - **View more:** [schema/types/StockClassConversionRights](/docs/schema/types/StockClassConversionRights.md)
-
 - **Type - Stock Parent**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/StockParent.schema.json`
@@ -676,6 +676,72 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
   - **Description:** Type representing all aspects related to vesting securities
   - **View more:** [schema/types/VestingRules](/docs/schema/types/VestingRules.md)
+
+- **Type - Convertible Conversion Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ConvertibleTrigger.schema.json`
+  - **Description:** Type representation of a convertible's conversion rights into stock class upon an event (such as holder's election or Change of Control)
+  - **View more:** [schema/types/conversion_triggers/ConvertibleTrigger](/docs/schema/types/conversion_triggers/ConvertibleTrigger.md)
+
+- **Type - Warrant Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/WarrantTrigger.schema.json`
+  - **Description:** Type representation of a warrant's exercise rights into stock class upon an event (such as holder election or Change of Control)
+  - **View more:** [schema/types/conversion_triggers/WarrantTrigger](/docs/schema/types/conversion_triggers/WarrantTrigger.md)
+
+- **Type - Convertible Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **View more:** [schema/types/conversion_rights/ConvertibleConversionRight](/docs/schema/types/conversion_rights/ConvertibleConversionRight.md)
+
+- **Type - Stock Class Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from one Stock Class into another Stock Class
+  - **View more:** [schema/types/conversion_rights/StockClassConversionRight](/docs/schema/types/conversion_rights/StockClassConversionRight.md)
+
+- **Type - Convertible Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
+
+- **Conversion Mechanism - Custom**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type
+  - **View more:** [schema/types/conversion_mechanisms/CustomConversionMechanism](/docs/schema/types/conversion_mechanisms/CustomConversionMechanism.md)
+
+- **Conversion Mechanism - Fixed Amount**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json`
+  - **Description:** Descrives how a security converts into a fixed amount of a stock class
+  - **View more:** [schema/types/conversion_mechanisms/FixedAmountConversionMechanism](/docs/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.md)
+
+- **Conversion Mechanism - Note**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a convertible note
+  - **View more:** [schema/types/conversion_mechanisms/NoteConversionMechanism](/docs/schema/types/conversion_mechanisms/NoteConversionMechanism.md)
+
+- **Conversion Mechanism - Percent of Capitalization**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of percent of capitalization conversion (where an instrument purports to grant a percent of company capitalization at some point in time)
+  - **View more:** [schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism](/docs/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.md)
+
+- **Conversion Mechanism - Ratio**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a ratio conversion (primarily used to describe conversion from one stock class (e.g. Preferred) into another (e.g. Common)
+  - **View more:** [schema/types/conversion_mechanisms/RatioConversionMechanism](/docs/schema/types/conversion_mechanisms/RatioConversionMechanism.md)
+
+- **Conversion Mechanism - SAFE**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)
+  - **View more:** [schema/types/conversion_mechanisms/SAFEConversionMechanism](/docs/schema/types/conversion_mechanisms/SAFEConversionMechanism.md)
 
 ### [Primitives](/schema/primitives)
 

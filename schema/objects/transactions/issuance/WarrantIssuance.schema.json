@@ -22,14 +22,6 @@
     "object_type": {
       "const": "TX_WARRANT_ISSUANCE"
     },
-    "conversion_rights": {
-      "title": "Warrant Issuance - Stock Class Conversion Rights Array",
-      "description": "What can this instrument convert into for a maturity or next equity financing conversion?",
-      "type": "array",
-      "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json"
-      }
-    },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
@@ -42,13 +34,23 @@
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
+    "exercise_triggers": {
+      "title": "Warrant Issuance - Exercise Trigger Array",
+      "description": "In event the Warrant can convert due to trigger events (e.g. Maturity, Next Qualified Financing, Change of Control, at Election of Holder), what are the terms?",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/WarrantTrigger.schema.json"
+      }
+    },
+    "warrant_expiration_date": {
+      "description": "What is expiration date of the warrant (if applicable)",
+      "$comment": "This may not be necessary as it can be expressed with the exercise_triggers",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+    },
     "vesting_rules": {
       "description": "Vesting conditions applicable to the warrant",
       "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
-    },
-    "expiration_date": {
-      "description": "Expiration date of the warrant, if applicable",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "id": {},
     "comments": {},
@@ -63,7 +65,7 @@
   "additionalProperties": false,
   "required": [
     "quantity",
-    "conversion_rights",
+    "exercise_triggers",
     "purchase_price",
     "exercise_price"
   ],
