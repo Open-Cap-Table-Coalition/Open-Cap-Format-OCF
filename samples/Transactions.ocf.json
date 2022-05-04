@@ -43,6 +43,18 @@
       "id": "test-convertible-conversion-minimal",
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
+      "quantity_converted": "100.00",
+      "trigger_id": "CN-1.CONV.TRIG.1",
+      "reason_text": "for testing",
+      "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CONVERSION",
+      "id": "test-custom-conversion-minimal",
+      "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+      "date": "2006-11-09",
+      "quantity_converted": "100.00",
+      "trigger_id": "CN-1.CONV.TRIG.1",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
     },
@@ -51,6 +63,19 @@
       "id": "test-convertible-conversion-all-fields",
       "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
       "date": "2006-11-09",
+      "quantity_converted": "100.00",
+      "trigger_id": "CN-1.CONV.TRIG",
+      "reason_text": "for testing",
+      "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
+      "object_type": "TX_CONVERTIBLE_CONVERSION",
+      "id": "test-convertible-custom-conversion-all-fields",
+      "security_id": "b61c70c8-19a6-49c0-98f4-65f6c76b3841",
+      "date": "2006-11-09",
+      "quantity_converted": "100.00",
+      "trigger_id": "CN-1.CONV.TRIG",
       "reason_text": "for testing",
       "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
       "comments": ["comment-one", "comment-two", "..."]
@@ -63,18 +88,76 @@
       "security_law_exemptions": [],
       "board_approval_date": "2022-01-01",
       "stakeholder_id": "stk_567890",
-      "consideration": { "amount": "3.50", "currency": "USD" },
-      "custom_id": "CN-1",
-      "conversion_type": "PRE_MONEY",
-      "convertible_type": "NOTE",
-      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
-      "day_count_convention": "ACTUAL_365",
-      "default_conversion_rights": {
-        "ratio": { "numerator": "2.0", "denominator": "1" },
-        "rounding_type": "CEILING",
-        "converts_to_future_round": true
+      "consideration": {
+        "amount": "3.50",
+        "currency": "USD"
       },
-      "conversion_triggers": [],
+      "custom_id": "CN-1",
+      "convertible_type": "NOTE",
+      "investment_amount": {
+        "amount": "1000",
+        "currency": "GBP"
+      },
+      "conversion_triggers": [
+        {
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Converts on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC_ON_DATE",
+          "trigger_date": "2022-01-01",
+          "conversion_right": {
+            "conversion_mechanism": {
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+              "interest_rate": "8.99",
+              "day_count_convention": "ACTUAL_365",
+              "interest_payout": "DEFERRED",
+              "interest_accrual_period": "MONTHLY",
+              "compounding_type": "COMPOUNDING"
+            },
+            "converts_to_future_round": true
+          }
+        }
+      ],
+      "seniority": 1
+    },
+    {
+      "id": "test-convertible-custom-conversion-issuance-minimal",
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "investment_amount": {
+        "amount": "1000",
+        "currency": "GBP"
+      },
+      "convertible_type": "NOTE",
+      "conversion_triggers": [
+        {
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Converts on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC_ON_DATE",
+          "trigger_date": "2022-01-01",
+          "conversion_right": {
+            "conversion_mechanism": {
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+              "interest_rate": "8.99",
+              "day_count_convention": "ACTUAL_365",
+              "interest_payout": "DEFERRED",
+              "interest_accrual_period": "MONTHLY",
+              "compounding_type": "COMPOUNDING"
+            },
+            "converts_to_future_round": true
+          }
+        }
+      ],
+      "security_id": "con_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration": {
+        "amount": "3.50",
+        "currency": "USD"
+      },
+      "custom_id": "CN-1",
       "seniority": 1
     },
     {
@@ -90,35 +173,38 @@
       ],
       "board_approval_date": "2022-01-01",
       "stakeholder_id": "stk_567890",
-      "consideration": { "amount": "3.50", "currency": "USD" },
+      "consideration": {
+        "amount": "3.50",
+        "currency": "USD"
+      },
       "custom_id": "CN-1",
-      "conversion_type": "POST_MONEY",
       "convertible_type": "SAFE",
-      "original_principal_amount": { "amount": "1000", "currency": "GBP" },
-      "day_count_convention": "30_360",
-      "default_conversion_rights": {
-        "ratio": { "numerator": "2.0", "denominator": "1" },
-        "rounding_type": "FLOOR",
-        "converts_to_stock_class_id": "cls_86"
+      "investment_amount": {
+        "amount": "1000",
+        "currency": "GBP"
       },
       "conversion_triggers": [
         {
-          "rounding_type": "NORMAL",
-          "description": "Trigger",
-          "converts_to_future_round": false
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Converts on Maturity",
+          "trigger_description": "The note shall convert on the date of maturity",
+          "trigger_type": "AUTOMATIC_ON_DATE",
+          "trigger_date": "2022-01-01",
+          "conversion_right": {
+            "conversion_mechanism": {
+              "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+              "interest_rate": "8.99",
+              "day_count_convention": "ACTUAL_365",
+              "interest_payout": "DEFERRED",
+              "interest_accrual_period": "MONTHLY",
+              "compounding_type": "COMPOUNDING"
+            },
+            "converts_to_future_round": true
+          }
         }
       ],
       "seniority": 1,
-      "interest_rate": "3.11",
-      "interest_payout": "CASH",
-      "maturity_date": "2034-01-01",
-      "exit_multiple": { "numerator": "3.0", "denominator": "1" },
-      "interest_accrual_period": "MONTHLY",
-      "compounding_type": "SIMPLE",
       "pro_rata": "2500",
-      "conversion_valuation_cap": { "amount": "8000000", "currency": "USD" },
-      "conversion_discount": "0.1",
-      "conversion_fixed_ownership": "0.05",
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
@@ -157,7 +243,10 @@
         "amount": "-867.53",
         "currency": "USD"
       },
-      "consideration": { "amount": "3.50", "currency": "USD" },
+      "consideration": {
+        "amount": "3.50",
+        "currency": "USD"
+      },
       "balance_security_id": "test-security-id-2",
       "comments": ["comment-one", "comment-two", "..."]
     },
@@ -213,7 +302,10 @@
         "resultant-security-id-2"
       ],
       "quantity": "100",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
@@ -229,12 +321,18 @@
       ],
       "board_approval_date": "2021-01-21",
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "RSU",
       "quantity": "50",
-      "exercise_price": { "amount": "50.00", "currency": "USD" },
+      "exercise_price": {
+        "amount": "50.00",
+        "currency": "USD"
+      },
       "vesting_terms_id": "4yr-1yr-cliff-schedule",
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
@@ -265,13 +363,19 @@
       ],
       "board_approval_date": "2021-01-21",
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "OPTION",
       "option_grant_type": "ISO",
       "quantity": "50",
-      "exercise_price": { "amount": "50.00", "currency": "USD" },
+      "exercise_price": {
+        "amount": "50.00",
+        "currency": "USD"
+      },
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
@@ -298,12 +402,18 @@
       ],
       "board_approval_date": "2021-01-21",
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "CAD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "CAD"
+      },
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "RSU",
       "quantity": "100",
-      "exercise_price": { "amount": "50.00", "currency": "CAD" },
+      "exercise_price": {
+        "amount": "50.00",
+        "currency": "CAD"
+      },
       "vesting_terms_id": "custom-vesting-100pct-upfront",
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
@@ -354,7 +464,10 @@
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
       "settlement_date": "2017-07-22",
-      "release_price": { "amount": "9.00", "currency": "CAD" }
+      "release_price": {
+        "amount": "9.00",
+        "currency": "CAD"
+      }
     },
     {
       "object_type": "TX_PLAN_SECURITY_RELEASE",
@@ -362,14 +475,23 @@
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
       "settlement_date": "2017-07-22",
-      "release_price": { "amount": "9.00", "currency": "CAD" },
+      "release_price": {
+        "amount": "9.00",
+        "currency": "CAD"
+      },
       "comments": ["Release the securities"],
       "net_quantity": "42",
       "method": "Method of release",
       "stock_swap": false,
-      "cash_paid": { "amount": "0.00", "currency": "CAD" },
+      "cash_paid": {
+        "amount": "0.00",
+        "currency": "CAD"
+      },
       "quantity_sold": "1",
-      "sale_price_per_unit": { "amount": "0.00", "currency": "CAD" },
+      "sale_price_per_unit": {
+        "amount": "0.00",
+        "currency": "CAD"
+      },
       "withheld_quantity": "0"
     },
     {
@@ -403,7 +525,10 @@
       "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
       "quantity": "11",
       "comments": ["Comment"],
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "balance_security_id": "fyLFexlMGV"
     },
     {
@@ -443,11 +568,7 @@
       "security_id": "test-security-id",
       "date": "2022-02-01",
       "resulting_security_ids": ["resultant-security-id-1"],
-      "quantity_converted": "1",
-      "conversion_ratio": {
-        "numerator": "1",
-        "denominator": "1"
-      }
+      "quantity_converted": "1"
     },
     {
       "object_type": "TX_STOCK_CONVERSION",
@@ -460,10 +581,6 @@
         "resultant-security-id-3"
       ],
       "quantity_converted": "10",
-      "conversion_ratio": {
-        "numerator": "3",
-        "denominator": "1"
-      },
       "comments": ["Here is a comment", "Here is another comment"],
       "balance_security_id": "balance-security-id"
     },
@@ -475,12 +592,21 @@
       "security_law_exemptions": [],
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "S-1",
       "stock_class_id": "stock-class-id",
-      "share_price": { "amount": "1.00", "currency": "USD" },
+      "share_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "quantity": "1000",
-      "cost_basis": { "amount": "0", "currency": "USD" },
+      "cost_basis": {
+        "amount": "0",
+        "currency": "USD"
+      },
       "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
       "issued_from_parent_object": {
         "parent_object_type": "STOCK",
@@ -500,12 +626,21 @@
       ],
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "S-1",
       "stock_class_id": "stock-class-id",
-      "share_price": { "amount": "1.00", "currency": "USD" },
+      "share_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "quantity": "1000",
-      "cost_basis": { "amount": "0", "currency": "USD" },
+      "cost_basis": {
+        "amount": "0",
+        "currency": "USD"
+      },
       "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
       "issued_from_parent_object": {
         "parent_object_type": "STOCK",
@@ -549,18 +684,30 @@
       "id": "test-stock-repurchase-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
-      "price": { "amount": "3.00", "currency": "USD" },
+      "price": {
+        "amount": "3.00",
+        "currency": "USD"
+      },
       "quantity": "33",
-      "consideration": { "amount": "3.00", "currency": "CAD" }
+      "consideration": {
+        "amount": "3.00",
+        "currency": "CAD"
+      }
     },
     {
       "object_type": "TX_STOCK_REPURCHASE",
       "id": "test-stock-repurchase-full-fields",
       "security_id": "test-security-id",
       "date": "2022-02-01",
-      "price": { "amount": "3.00", "currency": "USD" },
+      "price": {
+        "amount": "3.00",
+        "currency": "USD"
+      },
       "quantity": "33",
-      "consideration": { "amount": "3.00", "currency": "CAD" },
+      "consideration": {
+        "amount": "3.00",
+        "currency": "CAD"
+      },
       "comments": ["Here is a comment", "Here is another comment"],
       "resulting_security_ids": [
         "resultant-security-id-1",
@@ -641,7 +788,10 @@
       ],
       "quantity": "10",
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "balance_security_id": "balance-security-id"
     },
     {
@@ -680,6 +830,7 @@
       "id": "test-warrant-exercise-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
+      "trigger_id": "TRIGGER.1",
       "resulting_security_ids": [
         "resultant-security-id-1",
         "resultant-security-id-2"
@@ -690,27 +841,56 @@
       "id": "test-warrant-exercise-full-fields",
       "security_id": "test-security-id",
       "date": "2022-02-01",
+      "trigger_id": "TRIGGER.1",
       "resulting_security_ids": [
         "resultant-security-id-1",
         "resultant-security-id-2"
       ],
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": { "amount": "1.23", "currency": "USD" }
+      "consideration": {
+        "amount": "1.23",
+        "currency": "USD"
+      }
     },
     {
       "object_type": "TX_WARRANT_ISSUANCE",
       "id": "test-warrant-issuance-minimal",
       "security_id": "test-security-id",
       "date": "2022-02-01",
-      "security_law_exemptions": [],
-      "board_approval_date": "2022-02-01",
-      "stakeholder_id": "stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
       "custom_id": "S-1",
+      "stakeholder_id": "stakeholder-id",
+      "board_approval_date": "2022-02-01",
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "security_law_exemptions": [],
       "quantity": "1000",
-      "conversion_rights": [],
-      "purchase_price": { "amount": "1.00", "currency": "USD" },
-      "exercise_price": { "amount": "1.00", "currency": "USD" }
+      "exercise_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "purchase_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "exercise_triggers": [
+        {
+          "trigger_id": "WARRANT-1.TRIG.1",
+          "nickname": "Exercisable Until Expiration",
+          "trigger_description": "The warrant is exercisable on or before its date of expiration",
+          "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
+          "trigger_date": "2029-01-01",
+          "conversion_right": {
+            "conversion_mechanism": {
+              "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+              "converts_to_quantity": "10000.00"
+            },
+            "converts_to_stock_class_id": "stock-class-id"
+          }
+        }
+      ],
+      "warrant_expiration_date": "2032-02-01"
     },
     {
       "object_type": "TX_WARRANT_ISSUANCE",
@@ -725,21 +905,36 @@
       ],
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
-      "consideration": { "amount": "1.00", "currency": "USD" },
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "S-1",
       "quantity": "1000",
-      "conversion_rights": [
+      "exercise_triggers": [
         {
-          "converts_to_stock_class_id": "stock-class-id",
-          "ratio": {
-            "numerator": "10",
-            "denominator": "1"
-          },
-          "rounding_type": "CEILING"
+          "trigger_id": "WARRANT-1.TRIG.1",
+          "nickname": "Exercisable Until Expiration",
+          "trigger_description": "The warrant is exercisable on or before its date of expiration",
+          "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
+          "trigger_date": "2032-02-01",
+          "conversion_right": {
+            "conversion_mechanism": {
+              "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+              "converts_to_quantity": "10000.00"
+            },
+            "converts_to_stock_class_id": "stock-class-id"
+          }
         }
       ],
-      "purchase_price": { "amount": "1.00", "currency": "USD" },
-      "exercise_price": { "amount": "1.00", "currency": "USD" },
+      "purchase_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "exercise_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "comments": ["Here is a comment", "Here is another comment"],
       "vesting_terms_id": "4yr-1yr-cliff-schedule",
       "expiration_date": "2032-02-01"
@@ -749,7 +944,7 @@
       "id": "test-warrant-security-id-vesting-start",
       "security_id": "test-warrant-security-id",
       "vesting_condition_id": "vesting-start",
-      "date": "2021-01-10"
+      "expiration_date": "2032-02-01"
     },
     {
       "object_type": "TX_WARRANT_RETRACTION",
@@ -785,7 +980,10 @@
       ],
       "quantity": "10000",
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": { "amount": "0.50", "currency": "USD" },
+      "consideration": {
+        "amount": "0.50",
+        "currency": "USD"
+      },
       "balance_security_id": "balance-security-id"
     }
   ]

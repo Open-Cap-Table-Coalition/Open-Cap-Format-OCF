@@ -30,10 +30,6 @@
       "description": "Quantity of non-monetary security units converted",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
-    "conversion_ratio": {
-      "description": "Quantity of non-monetary security units converted",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
-    },
     "id": {},
     "comments": {},
     "security_id": {},
@@ -41,6 +37,6 @@
     "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["quantity_converted", "conversion_ratio"],
+  "required": ["quantity_converted"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/conversion/StockConversion.schema.json"
 }

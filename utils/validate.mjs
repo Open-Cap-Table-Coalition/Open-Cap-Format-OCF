@@ -119,7 +119,7 @@ export async function validateOcfDirectory(
 ) {
   try {
     let results = true;
-    const ajv = await getOcfValidator(verbose);
+    const ajv = await getOcfValidator(verbose, false, false, false);
     const ocf_paths = await getOcfFilesFromDir(path, verbose);
 
     if (verbose)
@@ -177,7 +177,7 @@ export async function validateOcfDirectory(
  * moved into a seperate npm package for things like dates.
  *
  * @param {boolean} verbose - if true, will output status to console
- * @param {boolean} errorOnInvalid - AJV's validation error messages when passing
+ * @param {boolean} check_schema_validity - AJV's validation error messages when passing
  * in schemas via the constructor JSON "schema" field are not as verbose as desired.
  * If you switch the validation mode to log, you will get a better validation error when
  * you try to use the validator. This may not give you behavior you want, however.
@@ -187,8 +187,9 @@ export async function validateOcfDirectory(
  */
 export async function getOcfValidator(
   verbose = false,
-  errorOnInvalid = true,
-  test = false
+  check_schema_validity = true,
+  test = false,
+  show_all_errors = false
 ) {
   try {
     if (verbose) console.log("\n-->\tLoad Schema Files...\n");
@@ -207,9 +208,8 @@ export async function getOcfValidator(
     if (verbose) console.log("\n-->\tCreate AJV Validator");
     const ajv = new Ajv({
       schemas,
-      verbose,
-      validateSchema: errorOnInvalid ? true : "log",
-      ...(verbose ? { allErrors: true } : {}),
+      validateSchema: check_schema_validity ? true : "log",
+      ...(show_all_errors ? { allErrors: true, verbose } : {}),
     });
 
     // If we don't do this, AJV can't handle certain *built-in* JSONSchema formats (like dates)
@@ -239,7 +239,8 @@ export async function getOcfValidator(
 export async function validateOcfFileAtPath(
   filepath,
   verbose = false,
-  test = false
+  test = false,
+  show_all_errors = false
 ) {
   try {
     if (verbose) console.log(`\nEvaluate OCF instance @ ${filepath}`);
@@ -247,7 +248,7 @@ export async function validateOcfFileAtPath(
     const ocf_instance = JSON.parse(ocf_instance_str);
     if (verbose)
       console.log("\n\n--- OCF Instance ---------------\n", ocf_instance);
-    await ValidateOcfFile(ocf_instance, verbose, test);
+    await ValidateOcfFile(ocf_instance, verbose, test, show_all_errors);
   } catch (e) {
     if (test) {
       core.setFailed(`\t\tFailed to validate OCF file at path: ${e.message}`);
@@ -273,11 +274,12 @@ export async function validateOcfFileAtPath(
 export async function ValidateOcfFile(
   ocf_file_obj,
   verbose = false,
-  test = false
+  test = false,
+  show_all_errors = false
 ) {
   try {
     console.log("-->\tValidate OCF File");
-    const ajv = await getOcfValidator(verbose, test);
+    const ajv = await getOcfValidator(verbose, false, test, show_all_errors);
     const validator = ajv.getSchema(
       URI_LOOKUP_FOR_FILE_TYPE[ocf_file_obj.file_type]
     );
@@ -320,11 +322,20 @@ export async function ValidateOcfFile(
  * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
  * @returns true if validations pass, otherwise false
  */
-export async function validateOcfSchemas(verbose = false, test = false) {
+export async function validateOcfSchemas(
+  verbose = false,
+  test = false,
+  show_all_errors = false
+) {
   let counter = 1;
 
   try {
-    const validator = await getOcfValidator(verbose, test);
+    const validator = await getOcfValidator(
+      verbose,
+      true,
+      test,
+      show_all_errors
+    );
     if (verbose) {
       console.log(
         "\nVALIDATE OCF FILE SCHEMAS (WILL LOAD AND VALIDATE $REFS)\n"
@@ -376,6 +387,13 @@ yargs(hideBin(process.argv))
         demandOption: false,
         type: "boolean",
       },
+      all_errors: {
+        describe:
+          "Show every error. This is useful where schema loading fails and you need to trace why and where the schema files failed to parse. It is overwhelming when checking an instance of OCF",
+        alias: "a",
+        demandOption: false,
+        type: "boolean",
+      },
       test: {
         describe:
           "Run as a test and trigger GitHub action failures accordingly",
@@ -385,7 +403,7 @@ yargs(hideBin(process.argv))
       },
     },
     handler(argv) {
-      validateOcfSchemas(argv.verbose, argv.test);
+      validateOcfSchemas(argv.verbose, argv.test, argv.all_errors);
     },
   })
   .command({
@@ -404,9 +422,16 @@ yargs(hideBin(process.argv))
         demandOption: false,
         type: "boolean",
       },
+      all_errors: {
+        describe:
+          "Show every error. This is useful where schema loading fails and you need to trace why and where the schema files failed to parse. It is overwhelming when checking an instance of OCF",
+        alias: "a",
+        demandOption: false,
+        type: "boolean",
+      },
     },
     handler(argv) {
-      validateOcfFileAtPath(argv.path, argv.verbose);
+      validateOcfFileAtPath(argv.path, argv.verbose, false, argv.all_errors);
     },
   })
   .command({

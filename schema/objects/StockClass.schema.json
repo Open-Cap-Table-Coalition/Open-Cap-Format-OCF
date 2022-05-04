@@ -61,7 +61,7 @@
       "description": "List of stock class conversion rights possible for this stock class",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json"
+        "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json"
       }
     },
     "liquidation_preference_multiple": {

@@ -12,11 +12,9 @@ _Describes triggers to be satisfied for a VestingCondition to be met_
 
 **Properties:**
 
-| Property                 | Type                                                                              | Description | Required   |
-| ------------------------ | --------------------------------------------------------------------------------- | ----------- | ---------- |
-| type                     | `STRING`                                                                          | ...         | `REQUIRED` |
-| period                   | [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md) | ...         | -          |
-| relative_to_condition_id | `STRING`                                                                          | ...         | -          |
+| Property | Type     | Description                        | Required   |
+| -------- | -------- | ---------------------------------- | ---------- |
+| type     | `STRING` | Identifies the sub-type of trigger | `REQUIRED` |
 
 **Source Code:** [schema/types/vesting/VestingConditionTrigger](/schema/types/vesting/VestingConditionTrigger.schema.json)
 
