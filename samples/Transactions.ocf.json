@@ -937,14 +937,14 @@
       },
       "comments": ["Here is a comment", "Here is another comment"],
       "vesting_terms_id": "4yr-1yr-cliff-schedule",
-      "expiration_date": "2032-02-01"
+      "warrant_expiration_date": "2032-02-01"
     },
     {
       "object_type": "TX_VESTING_START",
       "id": "test-warrant-security-id-vesting-start",
       "security_id": "test-warrant-security-id",
       "vesting_condition_id": "vesting-start",
-      "expiration_date": "2032-02-01"
+      "date": "2021-01-10"
     },
     {
       "object_type": "TX_WARRANT_RETRACTION",

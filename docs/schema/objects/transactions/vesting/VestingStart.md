@@ -52,7 +52,7 @@
     "id": "test-warrant-security-id-vesting-start",
     "security_id": "test-warrant-security-id",
     "vesting_condition_id": "vesting-start",
-    "expiration_date": "2032-02-01"
+    "date": "2021-01-10"
   }
 ]
 ```

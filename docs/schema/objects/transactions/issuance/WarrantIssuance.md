@@ -132,7 +132,7 @@
       "Here is another comment"
     ],
     "vesting_terms_id": "4yr-1yr-cliff-schedule",
-    "expiration_date": "2032-02-01"
+    "warrant_expiration_date": "2032-02-01"
   }
 ]
 ```
