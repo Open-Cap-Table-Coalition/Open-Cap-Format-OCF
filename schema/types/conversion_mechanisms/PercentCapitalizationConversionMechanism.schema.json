@@ -19,7 +19,7 @@
   },
   "required": [
     "converts_to_percent",
-About eight homes will be available to households who make less than 80% of the area’s median income and two will be for those considered homeless or who had financial problems keeping a home.    "mechanism_type"
+    "mechanism_type"
   ],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json"
 }
