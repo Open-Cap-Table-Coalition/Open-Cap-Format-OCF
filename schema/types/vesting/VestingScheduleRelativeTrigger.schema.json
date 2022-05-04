@@ -14,8 +14,15 @@
       "const": "VESTING_SCHEDULE_RELATIVE"
     },
     "period": {
-      "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json"
+      "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger. For weeks or \"ideal\" years (365 days), use `VestingPeriodInDays`. For calendar years use `VestingPeriodInMonths`.",
+      "oneOf": [
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json"
+        }
+      ]
     },
     "relative_to_condition_id": {
       "description": "Reference to the vesting condition ID to which the `period` is relative",

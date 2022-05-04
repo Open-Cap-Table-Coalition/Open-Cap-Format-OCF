@@ -693,8 +693,20 @@ _Used as common building blocks for properties that are more complex than primit
 - **Type - Vesting Period**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
-  - **Description:** Describes a period of time (e.g. 3 months, 1 year) for use in Vesting Terms
+  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
   - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
+
+- **Type - Vesting Period in Days**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json`
+  - **Description:** Describes a period of time expressed in days (e.g. 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/VestingPeriodInDays](/docs/schema/types/vesting/VestingPeriodInDays.md)
+
+- **Type - Vesting Period in Months**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json`
+  - **Description:** Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.
+  - **View more:** [schema/types/vesting/VestingPeriodInMonths](/docs/schema/types/vesting/VestingPeriodInMonths.md)
 
 - **Type - Vesting Event Trigger**
 

@@ -62,7 +62,7 @@
             "length": 12,
             "type": "MONTHS",
             "repetitions": 1,
-            "day_of_month": "VESTING_START_DAY_OR_EOM"
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
           },
           "relative_to_condition_id": "vesting-start"
         },
@@ -83,7 +83,7 @@
             "length": 1,
             "type": "MONTHS",
             "repetitions": 36,
-            "day_of_month": "VESTING_START_DAY_OR_EOM"
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
           },
           "relative_to_condition_id": "cliff"
         },
@@ -116,10 +116,10 @@
         "trigger": {
           "type": "VESTING_SCHEDULE_RELATIVE",
           "period": {
-            "length": 4,
-            "type": "YEARS",
+            "length": 48,
+            "type": "MONTHS",
             "repetitions": 1,
-            "day_of_month": "VESTING_START_DAY_OR_EOM"
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
           },
           "relative_to_condition_id": "vesting-start"
         },
