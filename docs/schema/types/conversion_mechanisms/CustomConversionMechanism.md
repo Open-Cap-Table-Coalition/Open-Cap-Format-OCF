@@ -19,3 +19,4 @@ _Sets forth inputs and conversion mechanism of a custom conversion, a conversion
 
 **Source Code:** [schema/types/conversion_mechanisms/CustomConversionMechanism](/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
