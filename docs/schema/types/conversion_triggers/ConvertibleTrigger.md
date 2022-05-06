@@ -24,3 +24,4 @@ _Type representation of a convertible's conversion rights into stock class upon 
 
 **Source Code:** [schema/types/conversion_triggers/ConvertibleTrigger](/schema/types/conversion_triggers/ConvertibleTrigger.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

@@ -24,3 +24,4 @@ _Type representation of a warrant's exercise rights into stock class upon an eve
 
 **Source Code:** [schema/types/conversion_triggers/WarrantTrigger](/schema/types/conversion_triggers/WarrantTrigger.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

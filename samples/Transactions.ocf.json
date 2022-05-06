@@ -618,11 +618,7 @@
         "amount": "0",
         "currency": "USD"
       },
-      "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
-      "issued_from_parent_object": {
-        "parent_object_type": "STOCK",
-        "parent_object_id": "parent-object-id"
-      }
+      "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"]
     },
     {
       "object_type": "TX_STOCK_ISSUANCE",
@@ -653,10 +649,6 @@
         "currency": "USD"
       },
       "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
-      "issued_from_parent_object": {
-        "parent_object_type": "STOCK",
-        "parent_object_id": "parent-object-id"
-      },
       "comments": ["Here is a comment", "Here is another comment"],
       "vesting_rules": {
         "vesting_type": "SCHEDULE_DRIVEN_ONLY",

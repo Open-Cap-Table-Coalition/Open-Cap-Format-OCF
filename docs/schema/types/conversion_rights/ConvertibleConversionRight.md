@@ -20,3 +20,4 @@ _Type representation of a conversion right from a convertible into a stock class
 
 **Source Code:** [schema/types/conversion_rights/ConvertibleConversionRight](/schema/types/conversion_rights/ConvertibleConversionRight.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; AUTOMATIC_ON_CONDITION </br>&bull; AUTOMATIC_ON_DATE </br>&bull; ELECTIVE_ON_DATE </br>&bull; ELECTIVE_ON_CONDITION </br>&bull; ELECTIVE_AT_WILL </br>&bull; ELECTIVE_ON_OR_BEFORE_DATE
 
 **Source Code:** [schema/enums/TriggerType](/schema/enums/TriggerType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
