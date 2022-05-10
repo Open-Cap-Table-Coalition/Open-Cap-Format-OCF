@@ -192,7 +192,7 @@
         {
           "id": "10pct-after-24-months",
           "description": "10% payout at 2 years",
-          "portion": { "numerator": "1", "denominator": "80" },
+          "portion": { "numerator": "1", "denominator": "10" },
           "trigger": {
             "type": "VESTING_SCHEDULE_RELATIVE",
             "period": {
@@ -217,7 +217,7 @@
               "repetitions": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
-            "relative_to_condition_id": "vesting-start"
+            "relative_to_condition_id": "10pct-after-24-months"
           },
           "next_condition_ids": ["1.67pct-each-month-for-12-months"]
         },
@@ -233,7 +233,7 @@
               "repetitions": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
-            "relative_to_condition_id": "vesting-start"
+            "relative_to_condition_id": "1.25pct-each-month-for-12-months"
           },
           "next_condition_ids": ["2.08pct-each-month-for-12-months"]
         },
@@ -249,7 +249,7 @@
               "repetitions": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
-            "relative_to_condition_id": "vesting-start"
+            "relative_to_condition_id": "1.67pct-each-month-for-12-months"
           },
           "next_condition_ids": ["2.5pct-each-month-for-12-months"]
         },
@@ -265,7 +265,7 @@
               "repetitions": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
-            "relative_to_condition_id": "vesting-start"
+            "relative_to_condition_id": "2.08pct-each-month-for-12-months"
           },
           "next_condition_ids": []
         }
