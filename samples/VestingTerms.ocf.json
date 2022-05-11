@@ -198,7 +198,7 @@
             "period": {
               "length": 24,
               "type": "MONTHS",
-              "repetitions": 1,
+              "occurrences": 1,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
             "relative_to_condition_id": "vesting-start"
@@ -214,7 +214,7 @@
             "period": {
               "length": 1,
               "type": "MONTHS",
-              "repetitions": 12,
+              "occurrences": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
             "relative_to_condition_id": "10pct-after-24-months"
@@ -230,7 +230,7 @@
             "period": {
               "length": 1,
               "type": "MONTHS",
-              "repetitions": 12,
+              "occurrences": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
             "relative_to_condition_id": "1.25pct-each-month-for-12-months"
@@ -246,7 +246,7 @@
             "period": {
               "length": 1,
               "type": "MONTHS",
-              "repetitions": 12,
+              "occurrences": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
             "relative_to_condition_id": "1.67pct-each-month-for-12-months"
@@ -262,7 +262,7 @@
             "period": {
               "length": 1,
               "type": "MONTHS",
-              "repetitions": 12,
+              "occurrences": 12,
               "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
             },
             "relative_to_condition_id": "2.08pct-each-month-for-12-months"

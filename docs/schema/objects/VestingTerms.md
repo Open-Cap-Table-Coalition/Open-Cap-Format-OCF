@@ -229,6 +229,128 @@
         "next_condition_ids": []
       }
     ]
+  },
+  {
+    "id": "6-yr-option-back-loaded",
+    "object_type": "VESTING_TERMS",
+    "name": "Six Year Option - Back Loaded",
+    "description": "Grant vests at a rate of 10% of the original number of shares on the 24th month; then vests 1.25% for 12 months; 1.67% for 12 months; 2.08% for 12 months; and 2.5% for 12 months",
+    "allocation_type": "BACK_LOADED",
+    "vesting_conditions": [
+      {
+        "id": "vesting-start",
+        "quantity": "0",
+        "trigger": {
+          "type": "VESTING_START_DATE"
+        },
+        "next_condition_ids": [
+          "10pct-after-24-months"
+        ]
+      },
+      {
+        "id": "10pct-after-24-months",
+        "description": "10% payout at 2 years",
+        "portion": {
+          "numerator": "1",
+          "denominator": "10"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 24,
+            "type": "MONTHS",
+            "occurrences": 1,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "vesting-start"
+        },
+        "next_condition_ids": [
+          "1.25pct-each-month-for-12-months"
+        ]
+      },
+      {
+        "id": "1.25pct-each-month-for-12-months",
+        "description": "1.25% payout each month for 12 months",
+        "portion": {
+          "numerator": "1",
+          "denominator": "80"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 1,
+            "type": "MONTHS",
+            "occurrences": 12,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "10pct-after-24-months"
+        },
+        "next_condition_ids": [
+          "1.67pct-each-month-for-12-months"
+        ]
+      },
+      {
+        "id": "1.67pct-each-month-for-12-months",
+        "description": "1.67% payout each month for 12 months",
+        "portion": {
+          "numerator": "1",
+          "denominator": "60"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 1,
+            "type": "MONTHS",
+            "occurrences": 12,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "1.25pct-each-month-for-12-months"
+        },
+        "next_condition_ids": [
+          "2.08pct-each-month-for-12-months"
+        ]
+      },
+      {
+        "id": "2.08pct-each-month-for-12-months",
+        "description": "2.08% payout each month for 12 months",
+        "portion": {
+          "numerator": "1",
+          "denominator": "48"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 1,
+            "type": "MONTHS",
+            "occurrences": 12,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "1.67pct-each-month-for-12-months"
+        },
+        "next_condition_ids": [
+          "2.5pct-each-month-for-12-months"
+        ]
+      },
+      {
+        "id": "2.5pct-each-month-for-12-months",
+        "description": "2.5% payout each month for 12 months",
+        "portion": {
+          "numerator": "1",
+          "denominator": "40"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 1,
+            "type": "MONTHS",
+            "occurrences": 12,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "2.08pct-each-month-for-12-months"
+        },
+        "next_condition_ids": []
+      }
+    ]
   }
 ]
 ```
