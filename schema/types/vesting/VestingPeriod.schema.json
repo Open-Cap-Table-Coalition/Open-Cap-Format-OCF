@@ -14,12 +14,12 @@
       "description": "The unit of time for the period, e.g. `MONTHS` or `DAYS`",
       "$ref": "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json"
     },
-    "repetitions": {
-      "description": "The number of times to repeat this vesting period. If vesting occurs monthly for 36 months, for example, this would be `36`",
+    "occurrences": {
+      "description": "The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36`",
       "type": "integer",
       "minimum": 1
     }
   },
-  "required": ["length", "type", "repetitions"],
+  "required": ["length", "type", "occurrences"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingPeriod.schema.json"
 }
