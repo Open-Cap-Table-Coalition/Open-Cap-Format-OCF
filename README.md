@@ -536,6 +536,15 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of valuation types
   - **View more:** [schema/enums/ValuationType](/docs/schema/enums/ValuationType.md)
 
+- **Enum - Vesting Day of Month**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingDayOfMonth.schema.json`
+  - **Description:** Enumeration representing a vesting "day of month". Since not all months have 29, 30, or 31 days, this enum requires those values to also specify an overflow behavior.
+  - `01` - `28` : Day 1, 2... 28 of the month; e.g. `03` means vesting occurs on the 3rd of the month.
+  - `29_OR_LAST_DAY_OF_MONTH` - `31_OR_LAST_DAY_OF_MONTH` : Day 29, 30, or 31 of the month, defaulting to the last day of the month for shorter months; e.g. `31_OR_LAST_DAY_OF_MONTH` means monthly vesting occurs on Jan 31, Feb 28/29, Mar 31, Apr 30, etc.
+  - `VESTING_START_DAY_OR_LAST_DAY_OF_MONTH` vests on the same day of month as the day of the `VESTING_START` condition; e.g. if vesting commences on Jan 15 then any vesting will accrue on the 15th of future vesting months. If vesting commencement occurs on days 29-31, this has the same behavior as the other `*_LAST_DAY_OF_MONTH` values.
+  - **View more:** [schema/enums/VestingDayOfMonth](/docs/schema/enums/VestingDayOfMonth.md)
+
 - **Enum - Vesting Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingType.schema.json`
