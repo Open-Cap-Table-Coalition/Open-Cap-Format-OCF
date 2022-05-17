@@ -41,7 +41,7 @@ There are currently 8 file types that make up a cap table:
 
 **At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf extension:**
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Container.png)
+![](docs/images/OCF%20Container.png)
 
 We are working on sample tooling to interact with compressed \*.ocf files.
 
@@ -54,7 +54,25 @@ see a full list of event transactions supported in our [transactions schemas fol
 
 Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/Transaction%20Stack%20Animation.gif)
+![](/docs/images/Transaction%20Stack%20Animation.gif)
+
+### Conversions
+
+The OCF conversion mechanism (which describes how, when and what a convertible security converts into) is based on three key concepts:
+
+1. Conversion Right: what can the security convert into?
+2. Conversion Trigger: when and under what conditions does the Conversion Right come into effect?
+3. Conversion Mechanism: how is the coversion amount calculated?
+
+We use a similar design pattern for convertible stock (e.g. preferred stock), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).
+
+Let's illustrate the design pattern using convertible securities as an example:
+
+![](docs/images/OCF%20Conversion%20Diagram.png)
+
+And here's what some sample data looks like in practice:
+
+![](docs/images/OCF%20Conversion%20Example.png)
 
 ### Schema Composition
 
