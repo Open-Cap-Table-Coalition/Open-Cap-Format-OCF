@@ -56,7 +56,7 @@
   "transactions_files": [
     {
       "filepath": "./Transactions.json",
-      "md5": "0e7757913b508d5cd8b06a578ac28848"
+      "md5": "ab35839164924530cac5eecbb19f2c4d"
     }
   ],
   "stakeholders_files": [
@@ -65,10 +65,10 @@
       "md5": "12c14ee9ac8e71a120cee15d075ecea6"
     }
   ],
-  "vesting_schedules_files": [
+  "vesting_terms_files": [
     {
-      "filepath": "./VestingSchedules.json",
-      "md5": "a940c11797d285408a47b3a66535e090"
+      "filepath": "./VestingTerms.json",
+      "md5": "c386f2a435dcb00ff89e08f30ed8e843"
     }
   ],
   "valuations_files": [

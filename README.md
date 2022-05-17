@@ -149,11 +149,11 @@ _Describes the eight top-level files that hold OCF objects and are required to e
   - **Description:** JSON containing file type identifier and list of valuations
   - **View more:** [schema/files/ValuationsFile](/docs/schema/files/ValuationsFile.md)
 
-- **File - Vesting Schedules**
+- **File - Vesting Terms**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json`
-  - **Description:** JSON containing file type identifier and list of vesting schedules
-  - **View more:** [schema/files/VestingSchedulesFile](/docs/schema/files/VestingSchedulesFile.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json`
+  - **Description:** JSON containing file type identifier and list of vesting terms
+  - **View more:** [schema/files/VestingTermsFile](/docs/schema/files/VestingTermsFile.md)
 
 ### [Objects](/schema/objects)
 
@@ -195,11 +195,23 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a valuation used in the cap table
   - **View more:** [schema/objects/Valuation](/docs/schema/objects/Valuation.md)
 
-- **Object - Vesting Schedule**
+- **Object - Vesting Terms**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json`
-  - **Description:** Object describing a strictly time-based vesting schedule
-  - **View more:** [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
+  - **Description:** Object describing the terms under which a security vests
+  - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
+
+- **Object - Vesting Event Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
+  - **Description:** Object describing the transaction of an non-schedule-driven vesting event associated with a security
+  - **View more:** [schema/objects/transactions/vesting/VestingEvent](/docs/schema/objects/transactions/vesting/VestingEvent.md)
+
+- **Object - Vesting Start Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json`
+  - **Description:** Object describing the transaction of vesting schedule start / commencement associated with a security
+  - **View more:** [schema/objects/transactions/vesting/VestingStart](/docs/schema/objects/transactions/vesting/VestingStart.md)
 
 - **Object - Convertible Transfer Transaction**
 
@@ -388,13 +400,14 @@ _Key enumerations used throughout the schemas_
 - **Enum - Allocation Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
-  - **Description:** Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
+  - **Description:** Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
     1.  Cumulative Rounding (5 - 4 - 5 - 4)
     2.  Cumulative Round Down (4 - 5 - 4 - 5)
     3.  Front Loaded (5 - 5 - 4 - 4)
     4.  Back Loaded (4 - 4 - 5 - 5)
     5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
     6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
+    7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)
   - **View more:** [schema/enums/AllocationType](/docs/schema/enums/AllocationType.md)
 
 - **Enum - Compensation Type**
@@ -523,6 +536,15 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of valuation types
   - **View more:** [schema/enums/ValuationType](/docs/schema/enums/ValuationType.md)
 
+- **Enum - Vesting Day of Month**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingDayOfMonth.schema.json`
+  - **Description:** Enumeration representing a vesting "day of month". Since not all months have 29, 30, or 31 days, this enum requires those values to also specify an overflow behavior.
+  - `01` - `28` : Day 1, 2... 28 of the month; e.g. `03` means vesting occurs on the 3rd of the month.
+  - `29_OR_LAST_DAY_OF_MONTH` - `31_OR_LAST_DAY_OF_MONTH` : Day 29, 30, or 31 of the month, defaulting to the last day of the month for shorter months; e.g. `31_OR_LAST_DAY_OF_MONTH` means monthly vesting occurs on Jan 31, Feb 28/29, Mar 31, Apr 30, etc.
+  - `VESTING_START_DAY_OR_LAST_DAY_OF_MONTH` vests on the same day of month as the day of the `VESTING_START` condition; e.g. if vesting commences on Jan 15 then any vesting will accrue on the 15th of future vesting months. If vesting commencement occurs on days 29-31, this has the same behavior as the other `*_LAST_DAY_OF_MONTH` values.
+  - **View more:** [schema/enums/VestingDayOfMonth](/docs/schema/enums/VestingDayOfMonth.md)
+
 - **Enum - Vesting Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingType.schema.json`
@@ -563,12 +585,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an ISO 4217 currency code
   - **View more:** [schema/types/CurrencyCode](/docs/schema/types/CurrencyCode.md)
 
-- **Type - Custom Vesting Tranche**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
-  - **Description:** Type representation of a vesting tranche by date and quantity
-  - **View more:** [schema/types/CustomVestingTranche](/docs/schema/types/CustomVestingTranche.md)
-
 - **Type - Date**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Date.schema.json`
@@ -580,12 +596,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/Email.schema.json`
   - **Description:** Type representation of an email address
   - **View more:** [schema/types/Email](/docs/schema/types/Email.md)
-
-- **Type - Event-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
-  - **View more:** [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)
 
 - **Type - File**
 
@@ -641,12 +651,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values
   - **View more:** [schema/types/Ratio](/docs/schema/types/Ratio.md)
 
-- **Type - Schedule-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of a row in a vesting schedule
-  - **View more:** [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md)
-
 - **Type - Security Exemption**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json`
@@ -671,11 +675,59 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a termination window
   - **View more:** [schema/types/TerminationWindow](/docs/schema/types/TerminationWindow.md)
 
-- **Type - Vesting Rules**
+- **Type - Vesting Condition**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
-  - **Description:** Type representing all aspects related to vesting securities
-  - **View more:** [schema/types/VestingRules](/docs/schema/types/VestingRules.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json`
+  - **Description:** Describes condition / triggers to be satisfied for vesting to occur
+  - **View more:** [schema/types/vesting/VestingCondition](/docs/schema/types/vesting/VestingCondition.md)
+
+- **Type - Vesting Condition Portion**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json`
+  - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
+  - **View more:** [schema/types/vesting/VestingConditionPortion](/docs/schema/types/vesting/VestingConditionPortion.md)
+
+- **Type - Vesting Condition Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json`
+  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
+  - **View more:** [schema/types/vesting/VestingConditionTrigger](/docs/schema/types/vesting/VestingConditionTrigger.md)
+
+- **Type - Vesting Event Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied when a particular unscheduled event occurs
+  - **View more:** [schema/types/vesting/VestingEventTrigger](/docs/schema/types/vesting/VestingEventTrigger.md)
+
+- **Type - Vesting Period**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
+  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
+
+- **Type - Vesting Period in Days**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json`
+  - **Description:** Describes a period of time expressed in days (e.g. 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/VestingPeriodInDays](/docs/schema/types/vesting/VestingPeriodInDays.md)
+
+- **Type - Vesting Period in Months**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json`
+  - **Description:** Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.
+  - **View more:** [schema/types/vesting/VestingPeriodInMonths](/docs/schema/types/vesting/VestingPeriodInMonths.md)
+
+- **Type - Vesting Event Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.
+  - **View more:** [schema/types/vesting/VestingScheduleRelativeTrigger](/docs/schema/types/vesting/VestingScheduleRelativeTrigger.md)
+
+- **Type - Vesting Start Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied at the security's vesting commencement date
+  - **View more:** [schema/types/vesting/VestingStartTrigger](/docs/schema/types/vesting/VestingStartTrigger.md)
 
 - **Type - Convertible Conversion Trigger**
 

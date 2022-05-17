@@ -23,13 +23,22 @@ export default class SchemaWriter {
   protected deleteExistingFiles = () =>
     fse.emptyDir(path.join(this.output, "docs/schema"));
 
+  protected tryWriteNewFile = (schemaNode: any) => {
+    try {
+      return fse.outputFile(
+        path.join(this.output, schemaNode.outputPath()),
+        schemaNode.markdownOutput()
+      );
+    } catch (e: any) {
+      console.error(`\nERROR: Failure generating ${schemaNode.outputPath()}\n`);
+      throw e;
+    }
+  };
+
   protected writeNewFiles = () =>
     Promise.all(
       this.schema.schemaNodes.map((schemaNode) =>
-        fse.outputFile(
-          path.join(this.output, schemaNode.outputPath()),
-          schemaNode.markdownOutput()
-        )
+        this.tryWriteNewFile(schemaNode)
       )
     );
 

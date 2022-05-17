@@ -29,8 +29,8 @@ export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
 export const OCF_VALUATIONS_FILE_SCHEMA_URI =
   "https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json";
 
-export const OCF_VESTING_SCHEDULES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json";
+export const OCF_VESTING_TERMS_FILE_SCHEMA_URI =
+  "https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json";
 
 export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
   "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json";
@@ -46,7 +46,7 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_STOCK_PLANS_FILE: OCF_STOCK_PLANS_FILE_SCHEMA_URI,
   OCF_TRANSACTIONS_FILE: OCF_TRANSACTIONS_FILE_SCHEMA_URI,
   OCF_VALUATIONS_FILE: OCF_VALUATIONS_FILE_SCHEMA_URI,
-  OCF_VESTING_SCHEDULES_FILE: OCF_VESTING_SCHEDULES_FILE_SCHEMA_URI,
+  OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
 };
 
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search

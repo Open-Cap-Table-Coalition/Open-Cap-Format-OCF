@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json",
+  "title": "Type - Vesting Event Trigger",
+  "description": "Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json"
+    }
+  ],
+  "properties": {
+    "type": {
+      "const": "VESTING_SCHEDULE_RELATIVE"
+    },
+    "period": {
+      "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger. For weeks or \"ideal\" years (365 days), use `VestingPeriodInDays`. For calendar years use `VestingPeriodInMonths`.",
+      "oneOf": [
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json"
+        }
+      ]
+    },
+    "relative_to_condition_id": {
+      "description": "Reference to the vesting condition ID to which the `period` is relative",
+      "type": "string"
+    }
+  },
+  "required": ["period", "relative_to_condition_id"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
+}

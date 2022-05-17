@@ -48,9 +48,9 @@
       "$comment": "This may not be necessary as it can be expressed with the exercise_triggers",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
-    "vesting_rules": {
-      "description": "Vesting conditions applicable to the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
+    "vesting_terms_id": {
+      "description": "Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.",
+      "type": "string"
     },
     "id": {},
     "comments": {},

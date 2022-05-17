@@ -36,7 +36,7 @@
 | purchase_price          | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
 | exercise_triggers       | [ [schema/types/conversion_triggers/WarrantTrigger](/docs/schema/types/conversion_triggers/WarrantTrigger.md) ]  | In event the Warrant can convert due to trigger events (e.g. Maturity, Next Qualified Financing, Change of Control, at Election of Holder), what are the terms?                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
 | warrant_expiration_date | [schema/types/Date](/docs/schema/types/Date.md)                                                                  | What is expiration date of the warrant (if applicable)                                                                                                                                                                                                                                                                                                                                                                                                                                                      | -          |
-| vesting_rules           | [schema/types/VestingRules](/docs/schema/types/VestingRules.md)                                                  | Vesting conditions applicable to the warrant                                                                                                                                                                                                                                                                                                                                                                                                                                                                | -          |
+| vesting_terms_id        | `STRING`                                                                                                         | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
 
 **Source Code:** [schema/objects/transactions/issuance/WarrantIssuance](/schema/objects/transactions/issuance/WarrantIssuance.schema.json)
 
@@ -87,7 +87,7 @@
   {
     "object_type": "TX_WARRANT_ISSUANCE",
     "id": "test-warrant-issuance-full-fields",
-    "security_id": "test-security-id",
+    "security_id": "test-warrant-security-id",
     "date": "2022-02-01",
     "security_law_exemptions": [
       {
@@ -131,21 +131,7 @@
       "Here is a comment",
       "Here is another comment"
     ],
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-      "vesting_schedule_id": "test-vesting-schedule-id",
-      "vesting_start_date": "2021-01-10",
-      "vesting_conditions": [
-        {
-          "amount_numerator": 1,
-          "amount_denominator": 4,
-          "period_length": 1,
-          "period_type": "YEARS",
-          "priority": 1,
-          "dependent_vesting": []
-        }
-      ]
-    },
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
     "warrant_expiration_date": "2032-02-01"
   }
 ]

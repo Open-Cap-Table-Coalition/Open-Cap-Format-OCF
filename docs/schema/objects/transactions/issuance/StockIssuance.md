@@ -34,7 +34,7 @@
 | stock_class_id          | `STRING`                                                                                                       | Identifier of the stock class for this stock issuance                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
 | share_price             | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                        | The price per share paid for the stock by the holder                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | quantity                | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                          | Number of shares issued to the stakeholder                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
-| vesting_rules           | [schema/types/VestingRules](/docs/schema/types/VestingRules.md)                                                | Vesting conditions applicable to this stock                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | -          |
+| vesting_terms_id        | `STRING`                                                                                                       | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
 | cost_basis              | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                        | The cost basis for this particular stock                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `REQUIRED` |
 | stock_legend_ids        | [`STRING`]                                                                                                     | List of stock legend ids that apply to this stock                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
 
@@ -75,7 +75,7 @@
   {
     "object_type": "TX_STOCK_ISSUANCE",
     "id": "test-stock-issuance-full-fields",
-    "security_id": "test-security-id",
+    "security_id": "test-stock-issuance-security-id",
     "date": "2022-02-01",
     "security_law_exemptions": [
       {
@@ -108,21 +108,7 @@
       "Here is a comment",
       "Here is another comment"
     ],
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-      "vesting_schedule_id": "test-vesting-schedule-id",
-      "vesting_start_date": "2021-01-10",
-      "vesting_conditions": [
-        {
-          "amount_numerator": 1,
-          "amount_denominator": 4,
-          "period_length": 1,
-          "period_type": "YEARS",
-          "priority": 1,
-          "dependent_vesting": []
-        }
-      ]
-    }
+    "vesting_terms_id": "4yr-1yr-cliff-schedule"
   }
 ]
 ```

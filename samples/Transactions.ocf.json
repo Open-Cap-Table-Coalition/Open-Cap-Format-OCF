@@ -311,7 +311,7 @@
     {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
       "id": "test-plan-security-issuance-minimal",
-      "security_id": "test-security-id",
+      "security_id": "test-plan-security-id",
       "date": "2019-12-12",
       "security_law_exemptions": [
         {
@@ -333,9 +333,7 @@
         "amount": "50.00",
         "currency": "USD"
       },
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY"
-      },
+      "vesting_terms_id": "4yr-1yr-cliff-schedule",
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
@@ -344,6 +342,13 @@
           "period_type": "DAYS"
         }
       ]
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "test-plan-security-id-vesting-start",
+      "security_id": "test-plan-security-id",
+      "vesting_condition_id": "vesting-start",
+      "date": "2020-01-01"
     },
     {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
@@ -371,9 +376,6 @@
         "amount": "50.00",
         "currency": "USD"
       },
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY"
-      },
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
@@ -386,7 +388,7 @@
     {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
       "id": "test-plan-security-issuance-full-fields",
-      "security_id": "test-security-id",
+      "security_id": "test-plan-security-issuance-full-fields",
       "date": "2019-12-12",
       "security_law_exemptions": [
         {
@@ -412,28 +414,7 @@
         "amount": "50.00",
         "currency": "CAD"
       },
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-        "vesting_schedule_id": "test-vesting-schedule-id",
-        "vesting_start_date": "2021-01-10",
-        "vesting_conditions": [
-          {
-            "amount_numerator": 1,
-            "amount_denominator": 4,
-            "period_length": 1,
-            "period_type": "YEARS",
-            "priority": 1,
-            "dependent_vesting": []
-          }
-        ],
-        "custom_vesting_tranches": [
-          {
-            "vest_date": "2021-01-11",
-            "vest_quantity": "100"
-          }
-        ],
-        "custom_vesting_description": "100% up front due to custom vesting tranche"
-      },
+      "vesting_terms_id": "custom-vesting-100pct-upfront",
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
@@ -468,6 +449,14 @@
         }
       ],
       "comments": ["comment 1", "comment 2", "a third comment"]
+    },
+    {
+      "object_type": "TX_VESTING_EVENT",
+      "id": "test-plan-security-issuance-full-fields-vesting-event",
+      "security_id": "test-plan-security-issuance-full-fields",
+      "date": "2021-01-11",
+      "comments": ["100% up front due to custom vesting tranche"],
+      "vesting_condition_id": "full-vesting"
     },
     {
       "object_type": "TX_PLAN_SECURITY_RELEASE",
@@ -623,7 +612,7 @@
     {
       "object_type": "TX_STOCK_ISSUANCE",
       "id": "test-stock-issuance-full-fields",
-      "security_id": "test-security-id",
+      "security_id": "test-stock-issuance-security-id",
       "date": "2022-02-01",
       "security_law_exemptions": [
         {
@@ -650,21 +639,14 @@
       },
       "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
       "comments": ["Here is a comment", "Here is another comment"],
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-        "vesting_schedule_id": "test-vesting-schedule-id",
-        "vesting_start_date": "2021-01-10",
-        "vesting_conditions": [
-          {
-            "amount_numerator": 1,
-            "amount_denominator": 4,
-            "period_length": 1,
-            "period_type": "YEARS",
-            "priority": 1,
-            "dependent_vesting": []
-          }
-        ]
-      }
+      "vesting_terms_id": "4yr-1yr-cliff-schedule"
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "test-stock-issuance-security-id-vesting-start",
+      "security_id": "test-stock-issuance-security-id",
+      "vesting_condition_id": "vesting-start",
+      "date": "2021-01-10"
     },
     {
       "object_type": "TX_STOCK_REISSUANCE",
@@ -905,7 +887,7 @@
     {
       "object_type": "TX_WARRANT_ISSUANCE",
       "id": "test-warrant-issuance-full-fields",
-      "security_id": "test-security-id",
+      "security_id": "test-warrant-security-id",
       "date": "2022-02-01",
       "security_law_exemptions": [
         {
@@ -946,22 +928,15 @@
         "currency": "USD"
       },
       "comments": ["Here is a comment", "Here is another comment"],
-      "vesting_rules": {
-        "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-        "vesting_schedule_id": "test-vesting-schedule-id",
-        "vesting_start_date": "2021-01-10",
-        "vesting_conditions": [
-          {
-            "amount_numerator": 1,
-            "amount_denominator": 4,
-            "period_length": 1,
-            "period_type": "YEARS",
-            "priority": 1,
-            "dependent_vesting": []
-          }
-        ]
-      },
+      "vesting_terms_id": "4yr-1yr-cliff-schedule",
       "warrant_expiration_date": "2032-02-01"
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "test-warrant-security-id-vesting-start",
+      "security_id": "test-warrant-security-id",
+      "vesting_condition_id": "vesting-start",
+      "date": "2021-01-10"
     },
     {
       "object_type": "TX_WARRANT_RETRACTION",
