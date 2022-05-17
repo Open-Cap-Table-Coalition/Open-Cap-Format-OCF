@@ -737,6 +737,12 @@ _Used as common building blocks for properties that are more complex than primit
 
 - **Type - Vesting Event Trigger**
 
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied on an absolute date.
+  - **View more:** [schema/types/vesting/VestingScheduleAbsoluteTrigger](/docs/schema/types/vesting/VestingScheduleAbsoluteTrigger.md)
+
+- **Type - Vesting Event Trigger**
+
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json`
   - **Description:** Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.
   - **View more:** [schema/types/vesting/VestingScheduleRelativeTrigger](/docs/schema/types/vesting/VestingScheduleRelativeTrigger.md)
