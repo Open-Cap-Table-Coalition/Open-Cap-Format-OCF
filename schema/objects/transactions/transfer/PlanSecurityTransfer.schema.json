@@ -23,7 +23,7 @@
       "const": "TX_PLAN_SECURITY_TRANSFER"
     },
     "quantity": {
-      "description": "Quantity of non-monetary security units cancelled",
+      "description": "Quantity of non-monetary security units transferred",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "id": {},
