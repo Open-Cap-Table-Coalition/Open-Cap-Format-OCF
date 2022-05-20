@@ -14,7 +14,7 @@
       "const": "VESTING_SCHEDULE_ABSOLUTE"
     },
     "date": {
-      "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger. For weeks or \"ideal\" years (365 days), use `VestingPeriodInDays`. For calendar years use `VestingPeriodInMonths`.",
+      "description": "The date on which this condition triggers.",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     }
   },
