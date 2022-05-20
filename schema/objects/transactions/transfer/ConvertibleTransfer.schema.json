@@ -23,7 +23,7 @@
       "const": "TX_CONVERTIBLE_TRANSFER"
     },
     "amount": {
-      "description": "Amount of monetary value cancelled",
+      "description": "Amount of monetary value transferred",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "id": {},
