@@ -10,6 +10,7 @@
       "type": "string",
       "enum": [
         "VESTING_START_DATE",
+        "VESTING_SCHEDULE_ABSOLUTE",
         "VESTING_SCHEDULE_RELATIVE",
         "VESTING_EVENT"
       ]

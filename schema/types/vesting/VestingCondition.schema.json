@@ -29,6 +29,9 @@
           "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json"
         },
         {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
+        },
+        {
           "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
         },
         {
