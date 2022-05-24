@@ -6,7 +6,7 @@
   "type": "string",
   "enum": [
     "VOLUNTARY_OTHER",
-    "VOLUNTARY_OTHER",
+    "VOLUNTARY_GOOD_CAUSE",
     "VOLUNTARY_RETIREMENT",
     "INVOLUNTARY_OTHER", 
     "INVOLUNTARY_DEATH", 
