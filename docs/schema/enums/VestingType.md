@@ -11,3 +11,5 @@
 **ONE OF:**</br>&bull; SCHEDULE_DRIVEN_ONLY </br>&bull; EVENT_DRIVEN_ONLY </br>&bull; SCHEDULE_AND_EVENT_DRIVEN
 
 **Source Code:** [schema/enums/VestingType](/schema/enums/VestingType.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

@@ -31,12 +31,12 @@
 | board_approval_date     | [schema/types/Date](/docs/schema/types/Date.md)                                                                  | Date of board approval for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `REQUIRED` |
 | consideration           | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Consideration for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `REQUIRED` |
 | security_law_exemptions | [ [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md) ]                                    | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
-| conversion_rights       | [ [schema/types/StockClassConversionRights](/docs/schema/types/StockClassConversionRights.md) ]                  | What can this instrument convert into for a maturity or next equity financing conversion?                                                                                                                                                                                                                                                                                                                                                                                                                   | `REQUIRED` |
 | quantity                | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                            | Quantity of shares the warrant is exercisable for                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
 | exercise_price          | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | The exercise price of the warrant                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
 | purchase_price          | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
-| vesting_rules           | [schema/types/VestingRules](/docs/schema/types/VestingRules.md)                                                  | Vesting conditions applicable to the warrant                                                                                                                                                                                                                                                                                                                                                                                                                                                                | -          |
-| expiration_date         | [schema/types/Date](/docs/schema/types/Date.md)                                                                  | Expiration date of the warrant, if applicable                                                                                                                                                                                                                                                                                                                                                                                                                                                               | -          |
+| exercise_triggers       | [ [schema/types/conversion_triggers/WarrantTrigger](/docs/schema/types/conversion_triggers/WarrantTrigger.md) ]  | In event the Warrant can convert due to trigger events (e.g. Maturity, Next Qualified Financing, Change of Control, at Election of Holder), what are the terms?                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
+| warrant_expiration_date | [schema/types/Date](/docs/schema/types/Date.md)                                                                  | What is expiration date of the warrant (if applicable)                                                                                                                                                                                                                                                                                                                                                                                                                                                      | -          |
+| vesting_terms_id        | `STRING`                                                                                                         | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
 
 **Source Code:** [schema/objects/transactions/issuance/WarrantIssuance](/schema/objects/transactions/issuance/WarrantIssuance.schema.json)
 
@@ -49,29 +49,45 @@
     "id": "test-warrant-issuance-minimal",
     "security_id": "test-security-id",
     "date": "2022-02-01",
-    "security_law_exemptions": [],
-    "board_approval_date": "2022-02-01",
+    "custom_id": "S-1",
     "stakeholder_id": "stakeholder-id",
+    "board_approval_date": "2022-02-01",
     "consideration": {
       "amount": "1.00",
       "currency": "USD"
     },
-    "custom_id": "S-1",
+    "security_law_exemptions": [],
     "quantity": "1000",
-    "conversion_rights": [],
+    "exercise_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
     "purchase_price": {
       "amount": "1.00",
       "currency": "USD"
     },
-    "exercise_price": {
-      "amount": "1.00",
-      "currency": "USD"
-    }
+    "exercise_triggers": [
+      {
+        "trigger_id": "WARRANT-1.TRIG.1",
+        "nickname": "Exercisable Until Expiration",
+        "trigger_description": "The warrant is exercisable on or before its date of expiration",
+        "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
+        "trigger_date": "2029-01-01",
+        "conversion_right": {
+          "conversion_mechanism": {
+            "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+            "converts_to_quantity": "10000.00"
+          },
+          "converts_to_stock_class_id": "stock-class-id"
+        }
+      }
+    ],
+    "warrant_expiration_date": "2032-02-01"
   },
   {
     "object_type": "TX_WARRANT_ISSUANCE",
     "id": "test-warrant-issuance-full-fields",
-    "security_id": "test-security-id",
+    "security_id": "test-warrant-security-id",
     "date": "2022-02-01",
     "security_law_exemptions": [
       {
@@ -87,14 +103,20 @@
     },
     "custom_id": "S-1",
     "quantity": "1000",
-    "conversion_rights": [
+    "exercise_triggers": [
       {
-        "converts_to_stock_class_id": "stock-class-id",
-        "ratio": {
-          "numerator": "10",
-          "denominator": "1"
-        },
-        "rounding_type": "CEILING"
+        "trigger_id": "WARRANT-1.TRIG.1",
+        "nickname": "Exercisable Until Expiration",
+        "trigger_description": "The warrant is exercisable on or before its date of expiration",
+        "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
+        "trigger_date": "2032-02-01",
+        "conversion_right": {
+          "conversion_mechanism": {
+            "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+            "converts_to_quantity": "10000.00"
+          },
+          "converts_to_stock_class_id": "stock-class-id"
+        }
       }
     ],
     "purchase_price": {
@@ -109,22 +131,10 @@
       "Here is a comment",
       "Here is another comment"
     ],
-    "vesting_rules": {
-      "vesting_type": "SCHEDULE_DRIVEN_ONLY",
-      "vesting_schedule_id": "test-vesting-schedule-id",
-      "vesting_start_date": "2021-01-10",
-      "vesting_conditions": [
-        {
-          "amount_numerator": 1,
-          "amount_denominator": 4,
-          "period_length": 1,
-          "period_type": "YEARS",
-          "priority": 1,
-          "dependent_vesting": []
-        }
-      ]
-    },
-    "expiration_date": "2032-02-01"
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
+    "warrant_expiration_date": "2032-02-01"
   }
 ]
 ```
+
+Copyright © 2022 Open Cap Table Coalition.

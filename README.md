@@ -41,7 +41,7 @@ There are currently 8 file types that make up a cap table:
 
 **At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf extension:**
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Container.png)
+![](docs/images/OCF%20Container.png)
 
 We are working on sample tooling to interact with compressed \*.ocf files.
 
@@ -54,7 +54,25 @@ see a full list of event transactions supported in our [transactions schemas fol
 
 Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:
 
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/Transaction%20Stack%20Animation.gif)
+![](/docs/images/Transaction%20Stack%20Animation.gif)
+
+### Conversions
+
+The OCF conversion mechanism (which describes how, when and what a convertible security converts into) is based on three key concepts:
+
+1. Conversion Right: what can the security convert into?
+2. Conversion Trigger: when and under what conditions does the Conversion Right come into effect?
+3. Conversion Mechanism: how is the coversion amount calculated?
+
+We use a similar design pattern for convertible stock (e.g. preferred stock), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).
+
+Let's illustrate the design pattern using convertible securities as an example:
+
+![](docs/images/OCF%20Conversion%20Diagram.png)
+
+And here's what some sample data looks like in practice:
+
+![](docs/images/OCF%20Conversion%20Example.png)
 
 ### Schema Composition
 
@@ -149,11 +167,11 @@ _Describes the eight top-level files that hold OCF objects and are required to e
   - **Description:** JSON containing file type identifier and list of valuations
   - **View more:** [schema/files/ValuationsFile](/docs/schema/files/ValuationsFile.md)
 
-- **File - Vesting Schedules**
+- **File - Vesting Terms**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingSchedulesFile.schema.json`
-  - **Description:** JSON containing file type identifier and list of vesting schedules
-  - **View more:** [schema/files/VestingSchedulesFile](/docs/schema/files/VestingSchedulesFile.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json`
+  - **Description:** JSON containing file type identifier and list of vesting terms
+  - **View more:** [schema/files/VestingTermsFile](/docs/schema/files/VestingTermsFile.md)
 
 ### [Objects](/schema/objects)
 
@@ -195,11 +213,23 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a valuation used in the cap table
   - **View more:** [schema/objects/Valuation](/docs/schema/objects/Valuation.md)
 
-- **Object - Vesting Schedule**
+- **Object - Vesting Terms**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingSchedule.schema.json`
-  - **Description:** Object describing a strictly time-based vesting schedule
-  - **View more:** [schema/objects/VestingSchedule](/docs/schema/objects/VestingSchedule.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
+  - **Description:** Object describing the terms under which a security vests
+  - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
+
+- **Object - Vesting Event Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
+  - **Description:** Object describing the transaction of an non-schedule-driven vesting event associated with a security
+  - **View more:** [schema/objects/transactions/vesting/VestingEvent](/docs/schema/objects/transactions/vesting/VestingEvent.md)
+
+- **Object - Vesting Start Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json`
+  - **Description:** Object describing the transaction of vesting schedule start / commencement associated with a security
+  - **View more:** [schema/objects/transactions/vesting/VestingStart](/docs/schema/objects/transactions/vesting/VestingStart.md)
 
 - **Object - Convertible Transfer Transaction**
 
@@ -388,13 +418,14 @@ _Key enumerations used throughout the schemas_
 - **Enum - Allocation Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
-  - **Description:** Enumeration of allocation types for vesting schedules. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
+  - **Description:** Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:
     1.  Cumulative Rounding (5 - 4 - 5 - 4)
     2.  Cumulative Round Down (4 - 5 - 4 - 5)
     3.  Front Loaded (5 - 5 - 4 - 4)
     4.  Back Loaded (4 - 4 - 5 - 5)
     5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)
     6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)
+    7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)
   - **View more:** [schema/enums/AllocationType](/docs/schema/enums/AllocationType.md)
 
 - **Enum - Compensation Type**
@@ -409,11 +440,11 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of interest compounding types
   - **View more:** [schema/enums/CompoundingType](/docs/schema/enums/CompoundingType.md)
 
-- **Enum - Conversion Type**
+- **Enum - Conversion Mechanism Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionType.schema.json`
-  - **Description:** Enumeration of convertible conversion types
-  - **View more:** [schema/enums/ConversionType](/docs/schema/enums/ConversionType.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json`
+  - **Description:** Enumeration of convertible conversion calculation types.
+  - **View more:** [schema/enums/ConversionMechanismType](/docs/schema/enums/ConversionMechanismType.md)
 
 - **Enum - Convertible Type**
 
@@ -511,11 +542,26 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of termination window types
   - **View more:** [schema/enums/TerminationWindowType](/docs/schema/enums/TerminationWindowType.md)
 
+- **Enum - Trigger Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/TriggerType.schema.json`
+  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert
+  - **View more:** [schema/enums/TriggerType](/docs/schema/enums/TriggerType.md)
+
 - **Enum - Valuation Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json`
   - **Description:** Enumeration of valuation types
   - **View more:** [schema/enums/ValuationType](/docs/schema/enums/ValuationType.md)
+
+- **Enum - Vesting Day of Month**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingDayOfMonth.schema.json`
+  - **Description:** Enumeration representing a vesting "day of month". Since not all months have 29, 30, or 31 days, this enum requires those values to also specify an overflow behavior.
+  - `01` - `28` : Day 1, 2... 28 of the month; e.g. `03` means vesting occurs on the 3rd of the month.
+  - `29_OR_LAST_DAY_OF_MONTH` - `31_OR_LAST_DAY_OF_MONTH` : Day 29, 30, or 31 of the month, defaulting to the last day of the month for shorter months; e.g. `31_OR_LAST_DAY_OF_MONTH` means monthly vesting occurs on Jan 31, Feb 28/29, Mar 31, Apr 30, etc.
+  - `VESTING_START_DAY_OR_LAST_DAY_OF_MONTH` vests on the same day of month as the day of the `VESTING_START` condition; e.g. if vesting commences on Jan 15 then any vesting will accrue on the 15th of future vesting months. If vesting commencement occurs on days 29-31, this has the same behavior as the other `*_LAST_DAY_OF_MONTH` values.
+  - **View more:** [schema/enums/VestingDayOfMonth](/docs/schema/enums/VestingDayOfMonth.md)
 
 - **Enum - Vesting Type**
 
@@ -533,17 +579,17 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an address
   - **View more:** [schema/types/Address](/docs/schema/types/Address.md)
 
+- **Type - Capitalization Definition**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json`
+  - **Description:** Type represents a group of securities that constitutes some formally defined part of the company (e.g. post-money capitalization vs pre-money for a security)
+  - **View more:** [schema/types/CapitalizationDefinition](/docs/schema/types/CapitalizationDefinition.md)
+
 - **Type - Contact Info**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json`
   - **Description:** Type representation of a primary contact person for a stakeholder (e.g. a fund)
   - **View more:** [schema/types/ContactInfo](/docs/schema/types/ContactInfo.md)
-
-- **Type - Conversion Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ConversionTrigger.schema.json`
-  - **Description:** Type representation of a convertibles conversion rights into stock upon an event (such as holder election or Change of Control)
-  - **View more:** [schema/types/ConversionTrigger](/docs/schema/types/ConversionTrigger.md)
 
 - **Type - Country Code**
 
@@ -563,12 +609,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an ISO 4217 currency code
   - **View more:** [schema/types/CurrencyCode](/docs/schema/types/CurrencyCode.md)
 
-- **Type - Custom Vesting Tranche**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/CustomVestingTranche.schema.json`
-  - **Description:** Type representation of a vesting tranche by date and quantity
-  - **View more:** [schema/types/CustomVestingTranche](/docs/schema/types/CustomVestingTranche.md)
-
 - **Type - Date**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Date.schema.json`
@@ -580,12 +620,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/Email.schema.json`
   - **Description:** Type representation of an email address
   - **View more:** [schema/types/Email](/docs/schema/types/Email.md)
-
-- **Type - Event-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/EventDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of complex event-driven vesting criteria. These conditions may exist alone, as siblings, or as a tree (i.e. conditions with one or more dependendent conditions)
-  - **View more:** [schema/types/EventDrivenVestingCondition](/docs/schema/types/EventDrivenVestingCondition.md)
 
 - **Type - File**
 
@@ -629,29 +663,23 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a phone number
   - **View more:** [schema/types/Phone](/docs/schema/types/Phone.md)
 
+- **Type - Pre-Release Omission**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json`
+  - **Description:** Transitional type; allows an otherwise "required" field to support omission by an implementation that can not yet support all fields. This is not intended to be permanent; rather it is a communication mechanism indicating that a field added in a pre-release version of the spec will need to be implemented to support the next release.
+  - **View more:** [schema/types/PreReleaseOmission](/docs/schema/types/PreReleaseOmission.md)
+
 - **Type - Ratio**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Ratio.schema.json`
   - **Description:** Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values
   - **View more:** [schema/types/Ratio](/docs/schema/types/Ratio.md)
 
-- **Type - Schedule-driven Vesting Condition**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/ScheduleDrivenVestingCondition.schema.json`
-  - **Description:** Type representation of a row in a vesting schedule
-  - **View more:** [schema/types/ScheduleDrivenVestingCondition](/docs/schema/types/ScheduleDrivenVestingCondition.md)
-
 - **Type - Security Exemption**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json`
   - **Description:** Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis
   - **View more:** [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md)
-
-- **Type - Stock Class Conversion Rights**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/StockClassConversionRights.schema.json`
-  - **Description:** Type representation of a conversion right from one security into a stock class
-  - **View more:** [schema/types/StockClassConversionRights](/docs/schema/types/StockClassConversionRights.md)
 
 - **Type - Stock Parent**
 
@@ -671,11 +699,131 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a termination window
   - **View more:** [schema/types/TerminationWindow](/docs/schema/types/TerminationWindow.md)
 
-- **Type - Vesting Rules**
+- **Type - Vesting Condition**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/VestingRules.schema.json`
-  - **Description:** Type representing all aspects related to vesting securities
-  - **View more:** [schema/types/VestingRules](/docs/schema/types/VestingRules.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json`
+  - **Description:** Describes condition / triggers to be satisfied for vesting to occur
+  - **View more:** [schema/types/vesting/VestingCondition](/docs/schema/types/vesting/VestingCondition.md)
+
+- **Type - Vesting Condition Portion**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json`
+  - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
+  - **View more:** [schema/types/vesting/VestingConditionPortion](/docs/schema/types/vesting/VestingConditionPortion.md)
+
+- **Type - Vesting Condition Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json`
+  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
+  - **View more:** [schema/types/vesting/VestingConditionTrigger](/docs/schema/types/vesting/VestingConditionTrigger.md)
+
+- **Type - Vesting Event Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied when a particular unscheduled event occurs
+  - **View more:** [schema/types/vesting/VestingEventTrigger](/docs/schema/types/vesting/VestingEventTrigger.md)
+
+- **Type - Vesting Period**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
+  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
+
+- **Type - Vesting Period in Days**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json`
+  - **Description:** Describes a period of time expressed in days (e.g. 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/VestingPeriodInDays](/docs/schema/types/vesting/VestingPeriodInDays.md)
+
+- **Type - Vesting Period in Months**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json`
+  - **Description:** Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.
+  - **View more:** [schema/types/vesting/VestingPeriodInMonths](/docs/schema/types/vesting/VestingPeriodInMonths.md)
+
+- **Type - Vesting Event Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied on an absolute date.
+  - **View more:** [schema/types/vesting/VestingScheduleAbsoluteTrigger](/docs/schema/types/vesting/VestingScheduleAbsoluteTrigger.md)
+
+- **Type - Vesting Event Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.
+  - **View more:** [schema/types/vesting/VestingScheduleRelativeTrigger](/docs/schema/types/vesting/VestingScheduleRelativeTrigger.md)
+
+- **Type - Vesting Start Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json`
+  - **Description:** Describes a vesting condition satisfied at the security's vesting commencement date
+  - **View more:** [schema/types/vesting/VestingStartTrigger](/docs/schema/types/vesting/VestingStartTrigger.md)
+
+- **Type - Convertible Conversion Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ConvertibleTrigger.schema.json`
+  - **Description:** Type representation of a convertible's conversion rights into stock class upon an event (such as holder's election or Change of Control)
+  - **View more:** [schema/types/conversion_triggers/ConvertibleTrigger](/docs/schema/types/conversion_triggers/ConvertibleTrigger.md)
+
+- **Type - Warrant Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/WarrantTrigger.schema.json`
+  - **Description:** Type representation of a warrant's exercise rights into stock class upon an event (such as holder election or Change of Control)
+  - **View more:** [schema/types/conversion_triggers/WarrantTrigger](/docs/schema/types/conversion_triggers/WarrantTrigger.md)
+
+- **Type - Convertible Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **View more:** [schema/types/conversion_rights/ConvertibleConversionRight](/docs/schema/types/conversion_rights/ConvertibleConversionRight.md)
+
+- **Type - Stock Class Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from one Stock Class into another Stock Class
+  - **View more:** [schema/types/conversion_rights/StockClassConversionRight](/docs/schema/types/conversion_rights/StockClassConversionRight.md)
+
+- **Type - Convertible Conversion Rights**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
+
+- **Conversion Mechanism - Custom**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type
+  - **View more:** [schema/types/conversion_mechanisms/CustomConversionMechanism](/docs/schema/types/conversion_mechanisms/CustomConversionMechanism.md)
+
+- **Conversion Mechanism - Fixed Amount**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json`
+  - **Description:** Descrives how a security converts into a fixed amount of a stock class
+  - **View more:** [schema/types/conversion_mechanisms/FixedAmountConversionMechanism](/docs/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.md)
+
+- **Conversion Mechanism - Note**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a convertible note
+  - **View more:** [schema/types/conversion_mechanisms/NoteConversionMechanism](/docs/schema/types/conversion_mechanisms/NoteConversionMechanism.md)
+
+- **Conversion Mechanism - Percent of Capitalization**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of percent of capitalization conversion (where an instrument purports to grant a percent of company capitalization at some point in time)
+  - **View more:** [schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism](/docs/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.md)
+
+- **Conversion Mechanism - Ratio**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a ratio conversion (primarily used to describe conversion from one stock class (e.g. Preferred) into another (e.g. Common)
+  - **View more:** [schema/types/conversion_mechanisms/RatioConversionMechanism](/docs/schema/types/conversion_mechanisms/RatioConversionMechanism.md)
+
+- **Conversion Mechanism - SAFE**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json`
+  - **Description:** Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)
+  - **View more:** [schema/types/conversion_mechanisms/SAFEConversionMechanism](/docs/schema/types/conversion_mechanisms/SAFEConversionMechanism.md)
 
 ### [Primitives](/schema/primitives)
 
@@ -778,7 +926,7 @@ _Used for object property composition and enforcing uniform properties across pa
 - We use [JSON Schema Draft 7](https://json-schema.org/specification-links.html#draft-7) for maximum compatibility with
   JSON Schema [implementations](https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org)
 
-### Recommended Editor for the openapi.json file
+### Recommended Code Editor For Schema Files
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 

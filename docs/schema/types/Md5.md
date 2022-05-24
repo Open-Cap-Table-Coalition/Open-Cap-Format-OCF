@@ -14,3 +14,4 @@
 
 **Source Code:** [schema/types/Md5](/schema/types/Md5.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

@@ -43,6 +43,7 @@ _This is a test fixture exemplifying an TypeObject schema from OCF_
 
 **Source Code:** [schema/types/TestTypeObject](/schema/types/TestTypeObject.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

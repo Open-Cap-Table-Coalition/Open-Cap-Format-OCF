@@ -23,3 +23,4 @@
 
 **Source Code:** [schema/files/StockPlansFile](/schema/files/StockPlansFile.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

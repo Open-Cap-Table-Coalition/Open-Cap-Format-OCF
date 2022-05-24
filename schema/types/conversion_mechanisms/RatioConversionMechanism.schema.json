@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - Ratio",
+  "description": "Sets forth inputs and conversion mechanism of a ratio conversion (primarily used to describe conversion from one stock class (e.g. Preferred) into another (e.g. Common)",
+  "type": "object",
+  "properties": {
+    "mechanism_type": {
+      "const": "RATIO_CONVERSION"
+    },
+    "ratio": {
+      "description": "One share of this stock class converts into this many target stock class shares",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    },
+    "rounding_type": {
+      "description": "How should fractional shares be rounded?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
+    }
+  },
+  "required": ["ratio", "rounding_type", "mechanism_type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
+}

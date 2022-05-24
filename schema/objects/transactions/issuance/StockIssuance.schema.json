@@ -34,9 +34,9 @@
       "description": "Number of shares issued to the stakeholder",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
-    "vesting_rules": {
-      "description": "Vesting conditions applicable to this stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/VestingRules.schema.json"
+    "vesting_terms_id": {
+      "description": "Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.",
+      "type": "string"
     },
     "cost_basis": {
       "description": "The cost basis for this particular stock",
@@ -49,10 +49,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "issued_from_parent_object": {
-      "description": "Did this stock come from a Plan, a StockClass, another Stock issuance, a Convertible or a Warrant, and, if so, which one?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/StockParent.schema.json"
     },
     "id": {},
     "comments": {},
@@ -70,8 +66,7 @@
     "share_price",
     "quantity",
     "cost_basis",
-    "stock_legend_ids",
-    "issued_from_parent_object"
+    "stock_legend_ids"
   ],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/StockIssuance.schema.json"
 }

@@ -17,3 +17,5 @@
 | reason_text | `STRING` | Reason for the retraction | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/retraction/BaseRetraction](/schema/primitives/transactions/retraction/BaseRetraction.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.

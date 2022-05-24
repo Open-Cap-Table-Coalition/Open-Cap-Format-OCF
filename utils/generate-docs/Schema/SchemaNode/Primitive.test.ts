@@ -42,6 +42,8 @@ describe("Primitive", () => {
 | refProperty1 | \`STRING\` | This is a test fixture exemplifying an Primitive schema from OCF | -          |
 
 **Source Code:** [schema/primitives/TestPrimitive](/schema/primitives/TestPrimitive.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

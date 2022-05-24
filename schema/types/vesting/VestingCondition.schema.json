@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json",
+  "title": "Type - Vesting Condition",
+  "description": "Describes condition / triggers to be satisfied for vesting to occur",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Reference identifier for this condition",
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "description": "Detailed description of the condition",
+      "type": "string"
+    },
+    "portion": {
+      "description": "If specified, the fractional part of the whole security that is vested, e.g. 25:100 for 25%. Use `quantity` for a fixed vesting amount.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json"
+    },
+    "quantity": {
+      "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares. Use `portion` for a proportional vesting amount.",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "trigger": {
+      "description": "Describes how this vesting condition is met, resulting in vesting the specified tranche of shares",
+      "oneOf": [
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
+        },
+        {
+          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json"
+        }
+      ]
+    },
+    "next_condition_ids": {
+      "description": "List of ALL VestingCondition IDs that can trigger after this one. If there are none, use an empty array.\nConditions should be in priority order in the array, ordered from the highest priority to the lowest.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["id", "trigger", "next_condition_ids"],
+  "oneOf": [
+    {
+      "required": ["portion"]
+    },
+    {
+      "required": ["quantity"]
+    }
+  ],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingCondition.schema.json"
+}

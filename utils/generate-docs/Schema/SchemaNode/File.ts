@@ -37,7 +37,5 @@ ${this.allOfMarkdown()}
 
 ${this.markdownPropertiesTable()}
 
-**Source Code:** ${this.markdownSourceLink()}
-
-`;
+${this.markdownFooter()}`;
 }

@@ -28,6 +28,7 @@
 | security_id            | `STRING`                                                                                                         | Identifier for the security (stock, plan security, warrant, or convertible) by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to. | `REQUIRED` |
 | consideration          | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Consideration for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | -          |
 | resulting_security_ids | [`STRING`]                                                                                                       | Identifier for the security (or securities) that resulted from the exercise                                                                                                                                                                                                                                                                                                                                                                                                                                 | `REQUIRED` |
+| trigger_id             | `STRING`                                                                                                         | What is the id of the warrant's exercise trigger that resulted in this exercise                                                                                                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/exercise/WarrantExercise](/schema/objects/transactions/exercise/WarrantExercise.schema.json)
 
@@ -40,6 +41,7 @@
     "id": "test-warrant-exercise-minimal",
     "security_id": "test-security-id",
     "date": "2022-02-01",
+    "trigger_id": "TRIGGER.1",
     "resulting_security_ids": [
       "resultant-security-id-1",
       "resultant-security-id-2"
@@ -50,6 +52,7 @@
     "id": "test-warrant-exercise-full-fields",
     "security_id": "test-security-id",
     "date": "2022-02-01",
+    "trigger_id": "TRIGGER.1",
     "resulting_security_ids": [
       "resultant-security-id-1",
       "resultant-security-id-2"
@@ -65,3 +68,5 @@
   }
 ]
 ```
+
+Copyright © 2022 Open Cap Table Coalition.

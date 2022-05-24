@@ -63,9 +63,9 @@
       "md5": "12c14ee9ac8e71a120cee15d075ecea6"
     }
   ],
-  "vesting_schedules_files": [
+  "vesting_terms_files": [
     {
-      "filepath": "./VestingSchedules.json",
+      "filepath": "./VestingTerms.json",
       "md5": "a940c11797d285408a47b3a66535e090"
     }
   ],

@@ -20,3 +20,4 @@ _Type representation of a termination window_
 
 **Source Code:** [schema/types/TerminationWindow](/schema/types/TerminationWindow.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

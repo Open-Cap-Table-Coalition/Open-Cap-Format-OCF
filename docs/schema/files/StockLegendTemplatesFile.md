@@ -23,3 +23,4 @@
 
 **Source Code:** [schema/files/StockLegendTemplatesFile](/schema/files/StockLegendTemplatesFile.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

@@ -29,7 +29,6 @@
 | resulting_security_ids | [`STRING`]                                                                                                       | Identifier for the security (or securities) that resulted from the conversion                                                                                                                                                                                                                                                                                                                                                                                                                               | `REQUIRED` |
 | balance_security_id    | `STRING`                                                                                                         | Identifier for the security that holds the remainder balance (for partial conversions)                                                                                                                                                                                                                                                                                                                                                                                                                      | -          |
 | quantity_converted     | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                            | Quantity of non-monetary security units converted                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
-| conversion_ratio       | [schema/types/Ratio](/docs/schema/types/Ratio.md)                                                                | Quantity of non-monetary security units converted                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/conversion/StockConversion](/schema/objects/transactions/conversion/StockConversion.schema.json)
 
@@ -45,11 +44,7 @@
     "resulting_security_ids": [
       "resultant-security-id-1"
     ],
-    "quantity_converted": "1",
-    "conversion_ratio": {
-      "numerator": "1",
-      "denominator": "1"
-    }
+    "quantity_converted": "1"
   },
   {
     "object_type": "TX_STOCK_CONVERSION",
@@ -62,10 +57,6 @@
       "resultant-security-id-3"
     ],
     "quantity_converted": "10",
-    "conversion_ratio": {
-      "numerator": "3",
-      "denominator": "1"
-    },
     "comments": [
       "Here is a comment",
       "Here is another comment"
@@ -74,3 +65,5 @@
   }
 ]
 ```
+
+Copyright © 2022 Open Cap Table Coalition.

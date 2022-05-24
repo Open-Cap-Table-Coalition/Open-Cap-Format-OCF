@@ -6,10 +6,10 @@
     "lint": "prettier . --check --ignore-unknown",
     "fix": "prettier . --check --write --ignore-unknown",
     "generate-docs": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index.ts",
-    "enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -vart --tag main",
+    "enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -fvart --tag main",
     "prepare": "husky install",
     "validate-ocf-file-schemas": "node ./utils/validate.mjs validate-ocf-schema -v -t",
-    "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -p ./samples -v -t",
+    "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
     "test": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest",
     "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch"
   },
@@ -37,5 +37,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --check --ignore-unknown"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
   }
 }

@@ -138,6 +138,7 @@ describe("File", () => {
 
 **Source Code:** [schema/files/TestFile](/schema/files/TestFile.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

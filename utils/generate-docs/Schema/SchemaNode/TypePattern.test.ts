@@ -32,6 +32,7 @@ describe("TypePattern", () => {
 
 **Source Code:** [schema/types/TestTypePattern](/schema/types/TestTypePattern.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

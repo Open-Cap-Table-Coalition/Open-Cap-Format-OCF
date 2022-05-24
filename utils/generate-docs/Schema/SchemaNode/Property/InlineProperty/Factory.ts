@@ -13,6 +13,7 @@ import RefArray, { RefArrayJson } from "./RefArray.js";
 import String, { StringJson } from "./String.js";
 import TypeArray, { TypeArrayJson } from "./TypeArray.js";
 import Null, { NullJson } from "./Null.js";
+import ScalarConst, { ScalarConstJson } from "./ScalarConst.js";
 
 export type InlinePropertyJson =
   | AnyOfArrayJson
@@ -26,6 +27,7 @@ export type InlinePropertyJson =
   | OneOfJson
   | RefArrayJson
   | StringJson
+  | ScalarConstJson
   | TypeArrayJson;
 
 interface Schema {
@@ -56,6 +58,14 @@ export default class InlinePropertyFactory {
 
   static isMultiTypeJson = (json: InlinePropertyJson): json is MultiTypeJson =>
     "type" in json && typeof json["type"] === "object" && "items" in json;
+
+  static isScalarConstJson = (
+    json: InlinePropertyJson
+  ): json is ScalarConstJson =>
+    "const" in json &&
+    (typeof json["const"] === "string" ||
+      typeof json["const"] === "number" ||
+      typeof json["const"] === "boolean");
 
   static isOneOfJson = (json: InlinePropertyJson): json is OneOfJson =>
     "oneOf" in json;
@@ -128,6 +138,9 @@ export default class InlinePropertyFactory {
 
     if (InlinePropertyFactory.isNullJson(json))
       return new Null(schema, json, idOverride);
+
+    if (InlinePropertyFactory.isScalarConstJson(json))
+      return new ScalarConst(schema, json, idOverride);
 
     throw new Error(`Unrecognized Inline Property JSON: ${util.inspect(json)}`);
   };

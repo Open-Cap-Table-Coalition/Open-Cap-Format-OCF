@@ -19,3 +19,4 @@ _Type representation of a file_
 
 **Source Code:** [schema/types/File](/schema/types/File.schema.json)
 
+Copyright © 2022 Open Cap Table Coalition.

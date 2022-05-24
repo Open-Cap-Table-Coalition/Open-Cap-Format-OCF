@@ -39,6 +39,8 @@ describe("Enum", () => {
 **ONE OF:**</br>&bull; test_enum1
 
 **Source Code:** [schema/enums/TestEnum](/schema/enums/TestEnum.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });

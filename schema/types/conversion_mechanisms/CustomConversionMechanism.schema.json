@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - Custom",
+  "description": "Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type",
+  "type": "object",
+  "properties": {
+    "mechanism_type": {
+      "const": "CUSTOM_CONVERSION"
+    },
+    "custom_conversion_description": {
+      "description": "Detailed description of how the number of resulting shares should be determined? Use legal language from an instrument where possible",
+      "type": "string"
+    }
+  },
+  "required": ["custom_conversion_description", "mechanism_type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
+}
