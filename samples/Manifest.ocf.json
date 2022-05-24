@@ -8,7 +8,7 @@
     "dba": "ACME & Co",
     "formation_date": "2010-01-01",
     "country_of_formation": "US",
-    "country_subdivision_of_formation": "US-DE",
+    "country_subdivision_of_formation": "DE",
     "tax_ids": [
       {
         "tax_id": "34-2345123",
@@ -27,7 +27,7 @@
       "address_type": "LEGAL",
       "street_suite": "1234 Main Street\nSuite 4",
       "city": "Small Town",
-      "state_province": "US-DE",
+      "state_province": "DE",
       "country": "US",
       "postal_code": "12345"
     },

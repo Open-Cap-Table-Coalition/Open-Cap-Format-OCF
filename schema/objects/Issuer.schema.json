@@ -30,7 +30,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
     },
     "country_subdivision_of_formation": {
-      "description": "The state, province, or subdivision where the issuer company was legally formed (ISO 3166-2)",
+      "description": "The state, province, or subdivision where the issuer company was legally formed",
       "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
     },
     "tax_ids": {

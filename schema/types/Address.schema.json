@@ -18,7 +18,7 @@
       "type": "string"
     },
     "country_subdivision": {
-      "description": "State, province, or equivalent identifier required for an address in this country (ISO 3166-2)",
+      "description": "State, province, or equivalent identifier required for an address in this country",
       "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
     },
     "country": {
