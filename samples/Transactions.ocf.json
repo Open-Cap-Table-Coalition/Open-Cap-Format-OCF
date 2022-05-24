@@ -337,7 +337,7 @@
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
-          "reason": "CAUSE",
+          "reason": "INVOLUNTARY_WITH_CAUSE",
           "period": 1,
           "period_type": "DAYS"
         }
@@ -379,7 +379,7 @@
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
-          "reason": "CAUSE",
+          "reason": "INVOLUNTARY_WITH_CAUSE",
           "period": 1,
           "period_type": "DAYS"
         }
@@ -418,33 +418,38 @@
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
-          "reason": "CAUSE",
+          "reason": "INVOLUNTARY_WITH_CAUSE",
           "period": 0,
           "period_type": "DAYS"
         },
         {
-          "reason": "VOLUNTARY",
+          "reason": "VOLUNTARY_GOOD_CAUSE",
           "period": 3,
           "period_type": "MONTHS"
         },
         {
-          "reason": "INVOLUNTARY",
+          "reason": "INVOLUNTARY_OTHER",
           "period": 14,
           "period_type": "DAYS"
         },
         {
-          "reason": "DEATH",
+          "reason": "INVOLUNTARY_DEATH",
           "period": 3,
           "period_type": "YEARS"
         },
         {
-          "reason": "DISABILITY",
+          "reason": "INVOLUNTARY_DISABILITY",
           "period": 3,
           "period_type": "YEARS"
         },
         {
-          "reason": "RETIREMENT",
+          "reason": "VOLUNTARY_RETIREMENT",
           "period": 1,
+          "period_type": "MONTHS"
+        },
+        {
+          "reason": "VOLUNTARY_OTHER",
+          "period": 3,
           "period_type": "MONTHS"
         }
       ],

@@ -8,7 +8,7 @@
 
 **Description:** _Enumeration of termination window types_
 
-**ONE OF:**</br>&bull; CAUSE </br>&bull; VOLUNTARY </br>&bull; INVOLUNTARY </br>&bull; DEATH </br>&bull; DISABILITY </br>&bull; RETIREMENT
+**ONE OF:**</br>&bull; VOLUNTARY_OTHER </br>&bull; VOLUNTARY_OTHER </br>&bull; VOLUNTARY_RETIREMENT </br>&bull; INVOLUNTARY_OTHER </br>&bull; INVOLUNTARY_DEATH </br>&bull; INVOLUNTARY_DISABILITY </br>&bull; INVOLUNTARY_WITH_CAUSE
 
 **Source Code:** [schema/enums/TerminationWindowType](/schema/enums/TerminationWindowType.schema.json)
 
