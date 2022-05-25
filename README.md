@@ -597,6 +597,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an ISO 3166-1 alpha 2 country code
   - **View more:** [schema/types/CountryCode](/docs/schema/types/CountryCode.md)
 
+- **Type - Country Subdivision Code**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json`
+  - **Description:** Type representation of an ISO 3166-2 country subdivision code
+  - **View more:** [schema/types/CountrySubdivisionCode](/docs/schema/types/CountrySubdivisionCode.md)
+
 - **Type - Currency Code**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json`

@@ -17,9 +17,9 @@
       "description": "City",
       "type": "string"
     },
-    "state_province": {
-      "description": "State, province or equivalent identifier required for an address in this country (ISO-3166-2)",
-      "type": "string"
+    "country_subdivision": {
+      "description": "State, province, or equivalent identifier required for an address in this country",
+      "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
     },
     "country": {
       "description": "Country code for this address (ISO 3166-1 alpha-2)",

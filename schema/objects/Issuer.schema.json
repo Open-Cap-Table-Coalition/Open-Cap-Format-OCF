@@ -29,9 +29,9 @@
       "description": "The country where the issuer company was legally formed (ISO 3166-1 alpha-2)",
       "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
     },
-    "state_of_formation": {
-      "description": "The state, province, or subdivision where the issuer company was legally formed (ISO-3166-2)",
-      "type": "string"
+    "country_subdivision_of_formation": {
+      "description": "The state, province, or subdivision where the issuer company was legally formed",
+      "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
     },
     "tax_ids": {
       "title": "Issuer - Tax ID Array",
