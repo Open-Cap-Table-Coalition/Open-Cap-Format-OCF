@@ -290,10 +290,7 @@
         "resultant-security-id-2"
       ],
       "quantity": "100",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
@@ -808,10 +805,7 @@
         "resultant-security-id-2"
       ],
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": {
-        "amount": "1.23",
-        "currency": "USD"
-      }
+      "consideration_text": "1.23 USD"
     },
     {
       "object_type": "TX_WARRANT_ISSUANCE",
