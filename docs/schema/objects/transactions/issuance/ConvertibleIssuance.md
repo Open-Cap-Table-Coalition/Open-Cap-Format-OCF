@@ -49,12 +49,7 @@
     "security_id": "con_123456",
     "date": "1978-05-27",
     "security_law_exemptions": [],
-    "board_approval_date": "2022-01-01",
     "stakeholder_id": "stk_567890",
-    "consideration": {
-      "amount": "3.50",
-      "currency": "USD"
-    },
     "custom_id": "CN-1",
     "convertible_type": "NOTE",
     "investment_amount": {

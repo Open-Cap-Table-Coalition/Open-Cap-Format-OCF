@@ -51,11 +51,6 @@
     "date": "2022-02-01",
     "custom_id": "S-1",
     "stakeholder_id": "stakeholder-id",
-    "board_approval_date": "2022-02-01",
-    "consideration": {
-      "amount": "1.00",
-      "currency": "USD"
-    },
     "security_law_exemptions": [],
     "quantity": "1000",
     "exercise_price": {

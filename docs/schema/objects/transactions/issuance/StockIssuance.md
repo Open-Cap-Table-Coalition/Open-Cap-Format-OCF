@@ -50,12 +50,7 @@
     "security_id": "test-security-id",
     "date": "2022-02-01",
     "security_law_exemptions": [],
-    "board_approval_date": "2022-02-01",
     "stakeholder_id": "stakeholder-id",
-    "consideration": {
-      "amount": "1.00",
-      "currency": "USD"
-    },
     "custom_id": "S-1",
     "stock_class_id": "stock-class-id",
     "share_price": {
