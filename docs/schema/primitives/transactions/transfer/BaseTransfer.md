@@ -12,11 +12,11 @@
 
 **Properties:**
 
-| Property               | Type                                                    | Description                                                                                  | Required   |
-| ---------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------- |
-| consideration          | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Consideration for the security                                                               | -          |
-| balance_security_id    | `STRING`                                                | Identifier for the security that holds the remainder balance (for partial transfers)         | -          |
-| resulting_security_ids | [`STRING`]                                              | Array of identifiers for new security (or securities) created as a result of the transaction | `REQUIRED` |
+| Property               | Type       | Description                                                                                  | Required   |
+| ---------------------- | ---------- | -------------------------------------------------------------------------------------------- | ---------- |
+| consideration_text     | `STRING`   | Unstructured text description of consideration provided in exchange for security transfer    | -          |
+| balance_security_id    | `STRING`   | Identifier for the security that holds the remainder balance (for partial transfers)         | -          |
+| resulting_security_ids | [`STRING`] | Array of identifiers for new security (or securities) created as a result of the transaction | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/transfer/BaseTransfer](/schema/primitives/transactions/transfer/BaseTransfer.schema.json)
 
