@@ -58,6 +58,10 @@
       }
     ],
     "stakeholder_id": "test-stakeholder-id",
+    "consideration": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
     "custom_id": "CA-1",
     "stock_plan_id": "test-stock-plan-id",
     "compensation_type": "RSU",

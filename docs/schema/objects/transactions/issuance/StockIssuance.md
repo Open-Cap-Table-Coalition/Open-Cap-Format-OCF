@@ -51,6 +51,10 @@
     "date": "2022-02-01",
     "security_law_exemptions": [],
     "stakeholder_id": "stakeholder-id",
+    "consideration": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
     "custom_id": "S-1",
     "stock_class_id": "stock-class-id",
     "share_price": {

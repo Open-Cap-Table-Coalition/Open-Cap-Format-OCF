@@ -50,6 +50,10 @@
     "date": "1978-05-27",
     "security_law_exemptions": [],
     "stakeholder_id": "stk_567890",
+    "consideration": {
+      "amount": "3.50",
+      "currency": "USD"
+    },
     "custom_id": "CN-1",
     "convertible_type": "NOTE",
     "investment_amount": {

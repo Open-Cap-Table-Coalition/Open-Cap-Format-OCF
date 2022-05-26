@@ -87,6 +87,10 @@
       "date": "1978-05-27",
       "security_law_exemptions": [],
       "stakeholder_id": "stk_567890",
+      "consideration": {
+        "amount": "3.50",
+        "currency": "USD"
+      },
       "custom_id": "CN-1",
       "convertible_type": "NOTE",
       "investment_amount": {
@@ -315,6 +319,10 @@
         }
       ],
       "stakeholder_id": "test-stakeholder-id",
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "RSU",
@@ -581,6 +589,10 @@
       "date": "2022-02-01",
       "security_law_exemptions": [],
       "stakeholder_id": "stakeholder-id",
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "custom_id": "S-1",
       "stock_class_id": "stock-class-id",
       "share_price": {
@@ -836,6 +848,10 @@
       "date": "2022-02-01",
       "custom_id": "S-1",
       "stakeholder_id": "stakeholder-id",
+      "consideration": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
       "security_law_exemptions": [],
       "quantity": "1000",
       "exercise_price": {
