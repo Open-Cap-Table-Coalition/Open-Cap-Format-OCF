@@ -646,11 +646,7 @@
         "amount": "3.00",
         "currency": "USD"
       },
-      "quantity": "33",
-      "consideration": {
-        "amount": "3.00",
-        "currency": "CAD"
-      }
+      "quantity": "33"
     },
     {
       "object_type": "TX_STOCK_REPURCHASE",
@@ -662,10 +658,7 @@
         "currency": "USD"
       },
       "quantity": "33",
-      "consideration": {
-        "amount": "3.00",
-        "currency": "CAD"
-      },
+      "consideration_text": "3.00 CAD",
       "comments": ["Here is a comment", "Here is another comment"],
       "resulting_security_ids": [
         "resultant-security-id-1",
