@@ -569,12 +569,6 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of vesting trigger types
   - **View more:** [schema/enums/VestingTriggerType](/docs/schema/enums/VestingTriggerType.md)
 
-- **Enum - Vesting Type**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingType.schema.json`
-  - **Description:** Enumeration of vesting types
-  - **View more:** [schema/enums/VestingType](/docs/schema/enums/VestingType.md)
-
 ### [Types](/schema/types)
 
 _Used as common building blocks for properties that are more complex than primitives but don't need separate unique Ids._
