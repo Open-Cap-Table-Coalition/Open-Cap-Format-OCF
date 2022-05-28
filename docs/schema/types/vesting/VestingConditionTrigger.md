@@ -12,9 +12,9 @@ _Describes triggers to be satisfied for a VestingCondition to be met_
 
 **Properties:**
 
-| Property | Type     | Description                        | Required   |
-| -------- | -------- | ---------------------------------- | ---------- |
-| type     | `STRING` | Identifies the sub-type of trigger | `REQUIRED` |
+| Property | Type                                                                                                                                                                                                                                                 | Description                        | Required   |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------- |
+| type     | `Enum - Vesting Trigger Type`</br></br>_Description:_ Enumeration of vesting trigger types</br></br>**ONE OF:** </br>&bull; VESTING_START_DATE </br>&bull; VESTING_SCHEDULE_ABSOLUTE </br>&bull; VESTING_SCHEDULE_RELATIVE </br>&bull; VESTING_EVENT | Identifies the sub-type of trigger | `REQUIRED` |
 
 **Source Code:** [schema/types/vesting/VestingConditionTrigger](/schema/types/vesting/VestingConditionTrigger.schema.json)
 

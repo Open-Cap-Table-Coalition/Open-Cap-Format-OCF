@@ -7,13 +7,7 @@
   "properties": {
     "type": {
       "description": "Identifies the sub-type of trigger",
-      "type": "string",
-      "enum": [
-        "VESTING_START_DATE",
-        "VESTING_SCHEDULE_ABSOLUTE",
-        "VESTING_SCHEDULE_RELATIVE",
-        "VESTING_EVENT"
-      ]
+      "$ref": "https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json"
     }
   },
   "required": ["type"],

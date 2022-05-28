@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json",
+  "title": "Enum - Vesting Trigger Type",
+  "description": "Enumeration of vesting trigger types",
+  "type": "string",
+  "enum": [
+    "VESTING_START_DATE",
+    "VESTING_SCHEDULE_ABSOLUTE",
+    "VESTING_SCHEDULE_RELATIVE",
+    "VESTING_EVENT"
+  ],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/VestingTriggerType.schema.json"
+}

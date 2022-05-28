@@ -563,11 +563,11 @@ _Key enumerations used throughout the schemas_
   - `VESTING_START_DAY_OR_LAST_DAY_OF_MONTH` vests on the same day of month as the day of the `VESTING_START` condition; e.g. if vesting commences on Jan 15 then any vesting will accrue on the 15th of future vesting months. If vesting commencement occurs on days 29-31, this has the same behavior as the other `*_LAST_DAY_OF_MONTH` values.
   - **View more:** [schema/enums/VestingDayOfMonth](/docs/schema/enums/VestingDayOfMonth.md)
 
-- **Enum - Vesting Type**
+- **Enum - Vesting Trigger Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingType.schema.json`
-  - **Description:** Enumeration of vesting types
-  - **View more:** [schema/enums/VestingType](/docs/schema/enums/VestingType.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json`
+  - **Description:** Enumeration of vesting trigger types
+  - **View more:** [schema/enums/VestingTriggerType](/docs/schema/enums/VestingTriggerType.md)
 
 ### [Types](/schema/types)
 
@@ -600,7 +600,7 @@ _Used as common building blocks for properties that are more complex than primit
 - **Type - Country Subdivision Code**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json`
-  - **Description:** Type representation of an ISO 3166-2 country subdivision code
+  - **Description:** Type representation of the second part of an ISO 3166-2 country subdivision code
   - **View more:** [schema/types/CountrySubdivisionCode](/docs/schema/types/CountrySubdivisionCode.md)
 
 - **Type - Currency Code**
