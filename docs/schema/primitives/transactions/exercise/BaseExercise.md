@@ -12,10 +12,10 @@
 
 **Properties:**
 
-| Property               | Type                                                    | Description                                                                 | Required   |
-| ---------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------- | ---------- |
-| consideration          | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Consideration for the security                                              | -          |
-| resulting_security_ids | [`STRING`]                                              | Identifier for the security (or securities) that resulted from the exercise | `REQUIRED` |
+| Property               | Type       | Description                                                                               | Required   |
+| ---------------------- | ---------- | ----------------------------------------------------------------------------------------- | ---------- |
+| consideration_text     | `STRING`   | Unstructured text description of consideration provided in exchange for security exercise | -          |
+| resulting_security_ids | [`STRING`] | Identifier for the security (or securities) that resulted from the exercise               | `REQUIRED` |
 
 **Source Code:** [schema/primitives/transactions/exercise/BaseExercise](/schema/primitives/transactions/exercise/BaseExercise.schema.json)
 

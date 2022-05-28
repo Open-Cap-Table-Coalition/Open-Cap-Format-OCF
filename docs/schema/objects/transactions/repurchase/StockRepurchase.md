@@ -28,7 +28,7 @@
 | security_id            | `STRING`                                                                                                         | Identifier for the security (stock, plan security, warrant, or convertible) by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to. | `REQUIRED` |
 | price                  | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Repurchase price per share of the stock                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `REQUIRED` |
 | quantity               | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                            | Number of shares of stock repurchased                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
-| consideration          | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                          | Consideration for the repurchase of the stock                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `REQUIRED` |
+| consideration_text     | `STRING`                                                                                                         | Unstructured text description of consideration provided in exchange for security repurchase                                                                                                                                                                                                                                                                                                                                                                                                                 | -          |
 | resulting_security_ids | [`STRING`]                                                                                                       | For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares                                                                                                                                                                                                                                                                                                                                                                                                 | -          |
 
 **Source Code:** [schema/objects/transactions/repurchase/StockRepurchase](/schema/objects/transactions/repurchase/StockRepurchase.schema.json)
@@ -46,11 +46,7 @@
       "amount": "3.00",
       "currency": "USD"
     },
-    "quantity": "33",
-    "consideration": {
-      "amount": "3.00",
-      "currency": "CAD"
-    }
+    "quantity": "33"
   },
   {
     "object_type": "TX_STOCK_REPURCHASE",
@@ -62,10 +58,7 @@
       "currency": "USD"
     },
     "quantity": "33",
-    "consideration": {
-      "amount": "3.00",
-      "currency": "CAD"
-    },
+    "consideration_text": "3.00 CAD",
     "comments": [
       "Here is a comment",
       "Here is another comment"

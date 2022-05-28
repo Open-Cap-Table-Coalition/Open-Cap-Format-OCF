@@ -29,7 +29,7 @@
 | custom_id                    | `STRING`                                                                                                                                           | A custom ID for this security (e.g. CN-1.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
 | stakeholder_id               | `STRING`                                                                                                                                           | Identifier for the stakeholder that holds legal title to this security                                                                                                                                                                                                                                                                                                                                                                                                                                      | `REQUIRED` |
 | board_approval_date          | [schema/types/Date](/docs/schema/types/Date.md)                                                                                                    | Date of board approval for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | -          |
-| consideration                | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                                                            | Consideration for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `REQUIRED` |
+| consideration_text           | `STRING`                                                                                                                                           | Unstructured text description of consideration provided in exchange for security issuance                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 | security_law_exemptions      | [ [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md) ]                                                                      | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
 | stock_plan_id                | `STRING`                                                                                                                                           | Identifier of StockPlan the PlanSecurities were issued from                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `REQUIRED` |
 | compensation_type            | `Enum - Compensation Type`</br></br>_Description:_ Enumeration of stock compensation types</br></br>**ONE OF:** </br>&bull; OPTION </br>&bull; RSU | If the plan security is compensation, what kind?                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
@@ -58,10 +58,6 @@
       }
     ],
     "stakeholder_id": "test-stakeholder-id",
-    "consideration": {
-      "amount": "1.00",
-      "currency": "USD"
-    },
     "custom_id": "CA-1",
     "stock_plan_id": "test-stock-plan-id",
     "compensation_type": "RSU",
@@ -93,10 +89,7 @@
     ],
     "board_approval_date": "2021-01-21",
     "stakeholder_id": "test-stakeholder-id",
-    "consideration": {
-      "amount": "1.00",
-      "currency": "USD"
-    },
+    "consideration_text": "1.00 USD",
     "custom_id": "CA-1",
     "stock_plan_id": "test-stock-plan-id",
     "compensation_type": "OPTION",
@@ -132,10 +125,7 @@
     ],
     "board_approval_date": "2021-01-21",
     "stakeholder_id": "test-stakeholder-id",
-    "consideration": {
-      "amount": "1.00",
-      "currency": "CAD"
-    },
+    "consideration_text": "1.00 CAD",
     "custom_id": "CA-1",
     "stock_plan_id": "test-stock-plan-id",
     "compensation_type": "RSU",

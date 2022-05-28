@@ -5,9 +5,9 @@
   "description": "Abstract object describing fields common to all exercise transaction objects",
   "type": "object",
   "properties": {
-    "consideration": {
-      "description": "Consideration for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+    "consideration_text": {
+      "description": "Unstructured text description of consideration provided in exchange for security exercise",
+      "type": "string"
     },
     "resulting_security_ids": {
       "title": "Security Exercise - Resulting Security ID Array",

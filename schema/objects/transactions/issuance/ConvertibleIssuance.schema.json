@@ -54,7 +54,7 @@
     "custom_id": {},
     "stakeholder_id": {},
     "board_approval_date": {},
-    "consideration": {},
+    "consideration_text": {},
     "security_law_exemptions": {}
   },
   "additionalProperties": false,

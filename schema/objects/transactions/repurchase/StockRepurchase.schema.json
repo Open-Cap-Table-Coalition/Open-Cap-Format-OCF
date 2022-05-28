@@ -28,7 +28,7 @@
     "date": {},
     "price": {},
     "quantity": {},
-    "consideration": {},
+    "consideration_text": {},
     "resulting_security_ids": {}
   },
   "additionalProperties": false,

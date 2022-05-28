@@ -87,10 +87,6 @@
       "date": "1978-05-27",
       "security_law_exemptions": [],
       "stakeholder_id": "stk_567890",
-      "consideration": {
-        "amount": "3.50",
-        "currency": "USD"
-      },
       "custom_id": "CN-1",
       "convertible_type": "NOTE",
       "investment_amount": {
@@ -152,10 +148,6 @@
       "security_law_exemptions": [],
       "board_approval_date": "2022-01-01",
       "stakeholder_id": "stk_567890",
-      "consideration": {
-        "amount": "3.50",
-        "currency": "USD"
-      },
       "custom_id": "CN-1",
       "seniority": 1
     },
@@ -172,10 +164,7 @@
       ],
       "board_approval_date": "2022-01-01",
       "stakeholder_id": "stk_567890",
-      "consideration": {
-        "amount": "3.50",
-        "currency": "USD"
-      },
+      "consideration_text": "3.50 USD",
       "custom_id": "CN-1",
       "convertible_type": "SAFE",
       "investment_amount": {
@@ -242,10 +231,7 @@
         "amount": "-867.53",
         "currency": "USD"
       },
-      "consideration": {
-        "amount": "3.50",
-        "currency": "USD"
-      },
+      "consideration_text": "3.50 USD",
       "balance_security_id": "test-security-id-2",
       "comments": ["comment-one", "comment-two", "..."]
     },
@@ -301,10 +287,7 @@
         "resultant-security-id-2"
       ],
       "quantity": "100",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
@@ -319,10 +302,6 @@
         }
       ],
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "RSU",
@@ -361,10 +340,7 @@
       ],
       "board_approval_date": "2021-01-21",
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "OPTION",
@@ -400,10 +376,7 @@
       ],
       "board_approval_date": "2021-01-21",
       "stakeholder_id": "test-stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "CAD"
-      },
+      "consideration_text": "1.00 CAD",
       "custom_id": "CA-1",
       "stock_plan_id": "test-stock-plan-id",
       "compensation_type": "RSU",
@@ -523,10 +496,7 @@
       "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
       "quantity": "11",
       "comments": ["Comment"],
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "balance_security_id": "fyLFexlMGV"
     },
     {
@@ -589,10 +559,6 @@
       "date": "2022-02-01",
       "security_law_exemptions": [],
       "stakeholder_id": "stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
       "custom_id": "S-1",
       "stock_class_id": "stock-class-id",
       "share_price": {
@@ -619,10 +585,7 @@
       ],
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD and 2 tickets to Lion King",
       "custom_id": "S-1",
       "stock_class_id": "stock-class-id",
       "share_price": {
@@ -677,11 +640,7 @@
         "amount": "3.00",
         "currency": "USD"
       },
-      "quantity": "33",
-      "consideration": {
-        "amount": "3.00",
-        "currency": "CAD"
-      }
+      "quantity": "33"
     },
     {
       "object_type": "TX_STOCK_REPURCHASE",
@@ -693,10 +652,7 @@
         "currency": "USD"
       },
       "quantity": "33",
-      "consideration": {
-        "amount": "3.00",
-        "currency": "CAD"
-      },
+      "consideration_text": "3.00 CAD",
       "comments": ["Here is a comment", "Here is another comment"],
       "resulting_security_ids": [
         "resultant-security-id-1",
@@ -777,10 +733,7 @@
       ],
       "quantity": "10",
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "balance_security_id": "balance-security-id"
     },
     {
@@ -836,10 +789,7 @@
         "resultant-security-id-2"
       ],
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": {
-        "amount": "1.23",
-        "currency": "USD"
-      }
+      "consideration_text": "1.23 USD"
     },
     {
       "object_type": "TX_WARRANT_ISSUANCE",
@@ -848,10 +798,6 @@
       "date": "2022-02-01",
       "custom_id": "S-1",
       "stakeholder_id": "stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
       "security_law_exemptions": [],
       "quantity": "1000",
       "exercise_price": {
@@ -893,10 +839,7 @@
       ],
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
-      "consideration": {
-        "amount": "1.00",
-        "currency": "USD"
-      },
+      "consideration_text": "1.00 USD",
       "custom_id": "S-1",
       "quantity": "1000",
       "exercise_triggers": [
@@ -968,10 +911,7 @@
       ],
       "quantity": "10000",
       "comments": ["Here is a comment", "Here is another comment"],
-      "consideration": {
-        "amount": "0.50",
-        "currency": "USD"
-      },
+      "consideration_text": "0.50 USD",
       "balance_security_id": "balance-security-id"
     }
   ]

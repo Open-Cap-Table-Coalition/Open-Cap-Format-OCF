@@ -16,7 +16,7 @@
 | ---------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------- |
 | price                  | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Repurchase price per share of the stock                                                                     | `REQUIRED` |
 | quantity               | [schema/types/Numeric](/docs/schema/types/Numeric.md)   | Number of shares of stock repurchased                                                                       | `REQUIRED` |
-| consideration          | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Consideration for the repurchase of the stock                                                               | `REQUIRED` |
+| consideration_text     | `STRING`                                                | Unstructured text description of consideration provided in exchange for security repurchase                 | -          |
 | resulting_security_ids | [`STRING`]                                              | For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares | -          |
 
 **Source Code:** [schema/primitives/transactions/repurchase/BaseRepurchase](/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json)
