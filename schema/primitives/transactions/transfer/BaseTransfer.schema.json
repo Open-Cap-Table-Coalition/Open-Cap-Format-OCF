@@ -5,9 +5,9 @@
   "description": "Abstract object describing a security transfer or secondary sale transaction",
   "type": "object",
   "properties": {
-    "consideration": {
-      "description": "Consideration for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+    "consideration_text": {
+      "description": "Unstructured text description of consideration provided in exchange for security transfer",
+      "type": "string"
     },
     "balance_security_id": {
       "description": "Identifier for the security that holds the remainder balance (for partial transfers)",

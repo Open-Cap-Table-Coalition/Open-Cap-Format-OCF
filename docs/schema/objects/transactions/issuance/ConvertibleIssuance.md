@@ -28,8 +28,8 @@
 | security_id             | `STRING`                                                                                                                                                                              | Identifier for the security (stock, plan security, warrant, or convertible) by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to. | `REQUIRED` |
 | custom_id               | `STRING`                                                                                                                                                                              | A custom ID for this security (e.g. CN-1.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
 | stakeholder_id          | `STRING`                                                                                                                                                                              | Identifier for the stakeholder that holds legal title to this security                                                                                                                                                                                                                                                                                                                                                                                                                                      | `REQUIRED` |
-| board_approval_date     | [schema/types/Date](/docs/schema/types/Date.md)                                                                                                                                       | Date of board approval for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `REQUIRED` |
-| consideration           | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                                                                                               | Consideration for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `REQUIRED` |
+| board_approval_date     | [schema/types/Date](/docs/schema/types/Date.md)                                                                                                                                       | Date of board approval for the security                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | -          |
+| consideration_text      | `STRING`                                                                                                                                                                              | Unstructured text description of consideration provided in exchange for security issuance                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 | security_law_exemptions | [ [schema/types/SecurityExemption](/docs/schema/types/SecurityExemption.md) ]                                                                                                         | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
 | investment_amount       | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                                                                                               | Amount invested and outstanding on date of issuance of this convertible                                                                                                                                                                                                                                                                                                                                                                                                                                     | `REQUIRED` |
 | convertible_type        | `Enum - Convertible Type`</br></br>_Description:_ Enumeration of convertible instrument types</br></br>**ONE OF:** </br>&bull; NOTE </br>&bull; SAFE </br>&bull; CONVERTIBLE_SECURITY | What kind of convertible instrument is this (of the supported, enumerated types)                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
@@ -49,12 +49,7 @@
     "security_id": "con_123456",
     "date": "1978-05-27",
     "security_law_exemptions": [],
-    "board_approval_date": "2022-01-01",
     "stakeholder_id": "stk_567890",
-    "consideration": {
-      "amount": "3.50",
-      "currency": "USD"
-    },
     "custom_id": "CN-1",
     "convertible_type": "NOTE",
     "investment_amount": {
@@ -116,10 +111,6 @@
     "security_law_exemptions": [],
     "board_approval_date": "2022-01-01",
     "stakeholder_id": "stk_567890",
-    "consideration": {
-      "amount": "3.50",
-      "currency": "USD"
-    },
     "custom_id": "CN-1",
     "seniority": 1
   },
@@ -136,10 +127,7 @@
     ],
     "board_approval_date": "2022-01-01",
     "stakeholder_id": "stk_567890",
-    "consideration": {
-      "amount": "3.50",
-      "currency": "USD"
-    },
+    "consideration_text": "3.50 USD",
     "custom_id": "CN-1",
     "convertible_type": "SAFE",
     "investment_amount": {
