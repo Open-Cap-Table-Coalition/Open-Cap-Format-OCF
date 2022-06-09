@@ -45,7 +45,8 @@
           "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json"
+          "$ref": "https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json",
+          "$comment": "Discussion on this field is ongoing, see https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/discussions/218"
         }
       ]
     },
