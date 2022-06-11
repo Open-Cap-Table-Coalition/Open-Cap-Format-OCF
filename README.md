@@ -798,7 +798,7 @@ _Used as common building blocks for properties that are more complex than primit
 - **Conversion Mechanism - Fixed Amount**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json`
-  - **Description:** Descrives how a security converts into a fixed amount of a stock class
+  - **Description:** Describes how a security converts into a fixed amount of a stock class
   - **View more:** [schema/types/conversion_mechanisms/FixedAmountConversionMechanism](/docs/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.md)
 
 - **Conversion Mechanism - Note**

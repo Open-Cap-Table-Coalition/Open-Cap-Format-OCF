@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "mechanism_type": {
-      "const": "CONVERTIBLE_NOTE_CONVERSION"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json"
     },
     "interest_rate": {
       "description": "Interest rate of the convertible (if applicable)",
@@ -41,6 +41,15 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     }
   },
+  "oneOf": [
+    {
+      "properties": {
+        "mechanism_type": {
+          "const": "CONVERTIBLE_NOTE_CONVERSION"
+        }
+      }
+    }
+  ],
   "required": [
     "mechanism_type",
     "interest_rate",

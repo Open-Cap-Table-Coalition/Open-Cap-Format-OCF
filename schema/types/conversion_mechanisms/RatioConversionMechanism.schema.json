@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "mechanism_type": {
-      "const": "RATIO_CONVERSION"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json"
     },
     "ratio": {
       "description": "One share of this stock class converts into this many target stock class shares",
@@ -17,6 +17,15 @@
       "$ref": "https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json"
     }
   },
+  "oneOf": [
+    {
+      "properties": {
+        "mechanism_type": {
+          "const": "RATIO_CONVERSION"
+        }
+      }
+    }
+  ],
   "required": ["ratio", "rounding_type", "mechanism_type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
 }

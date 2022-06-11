@@ -6,13 +6,22 @@
   "type": "object",
   "properties": {
     "mechanism_type": {
-      "const": "CUSTOM_CONVERSION"
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json"
     },
     "custom_conversion_description": {
       "description": "Detailed description of how the number of resulting shares should be determined? Use legal language from an instrument where possible",
       "type": "string"
     }
   },
+  "oneOf": [
+    {
+      "properties": {
+        "mechanism_type": {
+          "const": "CUSTOM_CONVERSION"
+        }
+      }
+    }
+  ],
   "required": ["custom_conversion_description", "mechanism_type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
 }
