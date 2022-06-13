@@ -789,6 +789,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a conversion right from a convertible into a stock class
   - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
 
+- **Type - Base Conversion Mechanism**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json`
+  - **Description:** Sets forth required field(s) for ALL conversion mechanism types
+  - **View more:** [schema/types/conversion_mechanisms/BaseConversionMechanism](/docs/schema/types/conversion_mechanisms/BaseConversionMechanism.md)
+
 - **Conversion Mechanism - Custom**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json`

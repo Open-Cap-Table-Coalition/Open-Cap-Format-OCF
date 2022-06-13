@@ -70,7 +70,7 @@
         "trigger_date": "2029-01-01",
         "conversion_right": {
           "conversion_mechanism": {
-            "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+            "type": "FIXED_AMOUNT_CONVERSION",
             "converts_to_quantity": "10000.00"
           },
           "converts_to_stock_class_id": "stock-class-id"
@@ -104,7 +104,7 @@
         "trigger_date": "2032-02-01",
         "conversion_right": {
           "conversion_mechanism": {
-            "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+            "type": "FIXED_AMOUNT_CONVERSION",
             "converts_to_quantity": "10000.00"
           },
           "converts_to_stock_class_id": "stock-class-id"
