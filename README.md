@@ -545,7 +545,7 @@ _Key enumerations used throughout the schemas_
 - **Enum - Trigger Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/TriggerType.schema.json`
-  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert
+  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert? If `UNSPECIFIED`, the system of record cannot represent this data in a structured form.
   - **View more:** [schema/enums/TriggerType](/docs/schema/enums/TriggerType.md)
 
 - **Enum - Valuation Type**
