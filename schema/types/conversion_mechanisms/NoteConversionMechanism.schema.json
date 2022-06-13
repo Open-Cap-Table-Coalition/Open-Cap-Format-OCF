@@ -46,6 +46,7 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     }
   },
+  "additionalProperties": false,
   "required": [
     "type",
     "interest_rate",
