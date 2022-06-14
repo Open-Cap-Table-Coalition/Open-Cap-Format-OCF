@@ -10,6 +10,9 @@
     }
   ],
   "properties": {
+    "type": {
+      "const": "CONVERTIBLE_CONVERSION_RIGHT"
+    },
     "conversion_mechanism": {
       "oneOf": [
         {

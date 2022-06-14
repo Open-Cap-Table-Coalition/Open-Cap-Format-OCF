@@ -5,6 +5,10 @@
   "description": "Type representation of a conversion right from a non-plan security into another non-plan security",
   "type": "object",
   "properties": {
+    "type": {
+      "description": "What kind of conversion right is this?",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionRightType.schema.json"
+    },
     "conversion_mechanism": {
       "description": "What conversion mechanism applies to calculate the number of resulting securities?",
       "oneOf": [

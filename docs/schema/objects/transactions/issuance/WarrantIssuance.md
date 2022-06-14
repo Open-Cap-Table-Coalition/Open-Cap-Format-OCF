@@ -63,9 +63,13 @@
     },
     "exercise_triggers": [
       {
-        "type": "UNSPECIFIED",
-        "trigger_id": "platform_2_manual_trigger_id",
+        "trigger_id": "WARRANT-1.TRIG.1",
+        "nickname": "Automatic exercise immediately prior to qualified public offering",
+        "trigger_description": "Warrant shall be deemed exercise immediately prior to consummation to a qualified public offering.",
+        "trigger_condition": "Qualified Public Offering means the issuance by the issuer or any direct or indirect parent of the issuer of its common Equity Interests in an underwritten primary public offering (other than a public offering pursuant to a registration statement on Form S-8) pursuant to an effective registration statement filed with the U.S. Securities and Exchange Commission in accordance with the Securities Act of 1933, as amended.",
+        "type": "AUTOMATIC_ON_CONDITION",
         "conversion_right": {
+          "type": "WARRANT_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "mechanism_type": "FIXED_AMOUNT_CONVERSION",
             "converts_to_quantity": "10000.00"
@@ -74,6 +78,55 @@
         }
       }
     ],
+    "warrant_expiration_date": "2032-02-01"
+  },
+  {
+    "object_type": "TX_WARRANT_ISSUANCE",
+    "id": "test-warrant-issuance-full-fields",
+    "security_id": "test-warrant-security-id",
+    "date": "2022-02-01",
+    "security_law_exemptions": [
+      {
+        "description": "Exemption",
+        "jurisdiction": "US"
+      }
+    ],
+    "board_approval_date": "2022-02-01",
+    "stakeholder_id": "stakeholder-id",
+    "consideration_text": "1.00 USD",
+    "custom_id": "W-2",
+    "quantity": "1000",
+    "exercise_triggers": [
+      {
+        "trigger_id": "WARRANT-1.TRIG.1",
+        "nickname": "Exercisable Until Expiration",
+        "trigger_description": "The warrant is exercisable from its date of issuance until its expiration on February 2, 2032.",
+        "type": "ELECTIVE_IN_RANGE",
+        "start_date": "2010-01-01",
+        "end_date": "2032-02-01",
+        "conversion_right": {
+          "type": "WARRANT_CONVERSION_RIGHT",
+          "conversion_mechanism": {
+            "mechanism_type": "FIXED_AMOUNT_CONVERSION",
+            "converts_to_quantity": "10000.00"
+          },
+          "converts_to_stock_class_id": "stock-class-id"
+        }
+      }
+    ],
+    "purchase_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "exercise_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
     "warrant_expiration_date": "2032-02-01"
   }
 ]

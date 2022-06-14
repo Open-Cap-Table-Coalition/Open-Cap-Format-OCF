@@ -446,6 +446,12 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of convertible conversion calculation types.
   - **View more:** [schema/enums/ConversionMechanismType](/docs/schema/enums/ConversionMechanismType.md)
 
+- **Enum - Conversion Right Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionRightType.schema.json`
+  - **Description:** Enumeration of types of conversion rights.
+  - **View more:** [schema/enums/ConversionRightType](/docs/schema/enums/ConversionRightType.md)
+
 - **Enum - Trigger Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json`
@@ -819,7 +825,7 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a conversion right from one Stock Class into another Stock Class
   - **View more:** [schema/types/conversion_rights/StockClassConversionRight](/docs/schema/types/conversion_rights/StockClassConversionRight.md)
 
-- **Type - Convertible Conversion Rights**
+- **Type - Warrant Conversion Rights**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
   - **Description:** Type representation of a conversion right from a convertible into another non-plan security

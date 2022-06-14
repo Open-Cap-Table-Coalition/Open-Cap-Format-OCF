@@ -64,6 +64,7 @@
         "type": "AUTOMATIC_ON_DATE",
         "trigger_date": "2022-01-01",
         "conversion_right": {
+          "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",
@@ -94,6 +95,7 @@
         "type": "AUTOMATIC_ON_DATE",
         "trigger_date": "2022-01-01",
         "conversion_right": {
+          "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",
@@ -142,6 +144,7 @@
         "type": "AUTOMATIC_ON_DATE",
         "trigger_date": "2022-01-01",
         "conversion_right": {
+          "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",

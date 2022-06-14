@@ -23,7 +23,7 @@
     },
     "conversion_right": {
       "description": "When the conditions of the trigger are met, how does the convertible convert?",
-      "anyOf": [
+      "oneOf": [
         {
           "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json"
         },
