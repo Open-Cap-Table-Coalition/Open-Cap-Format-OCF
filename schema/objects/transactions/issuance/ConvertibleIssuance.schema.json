@@ -36,7 +36,26 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ConvertibleTrigger.schema.json"
+        "anyOf": [
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json"
+          }
+        ]
       }
     },
     "pro_rata": {

@@ -98,7 +98,7 @@
           "trigger_id": "CN-1.TRIG.1",
           "nickname": "Converts on Maturity",
           "trigger_description": "The note shall convert on the date of maturity",
-          "trigger_type": "AUTOMATIC_ON_DATE",
+          "type": "AUTOMATIC_ON_DATE",
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
@@ -128,7 +128,7 @@
           "trigger_id": "CN-1.TRIG.1",
           "nickname": "Converts on Maturity",
           "trigger_description": "The note shall convert on the date of maturity",
-          "trigger_type": "AUTOMATIC_ON_DATE",
+          "type": "AUTOMATIC_ON_DATE",
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
@@ -176,7 +176,7 @@
           "trigger_id": "CN-1.TRIG.1",
           "nickname": "Converts on Maturity",
           "trigger_description": "The note shall convert on the date of maturity",
-          "trigger_type": "AUTOMATIC_ON_DATE",
+          "type": "AUTOMATIC_ON_DATE",
           "trigger_date": "2022-01-01",
           "conversion_right": {
             "conversion_mechanism": {
@@ -799,10 +799,10 @@
     {
       "object_type": "TX_WARRANT_ISSUANCE",
       "id": "test-warrant-issuance-minimal",
-      "security_id": "test-security-id",
+      "security_id": "test-warrant-id",
       "date": "2022-02-01",
-      "custom_id": "S-1",
       "stakeholder_id": "stakeholder-id",
+      "custom_id": "W-1",
       "security_law_exemptions": [],
       "quantity": "1000",
       "exercise_price": {
@@ -816,10 +816,10 @@
       "exercise_triggers": [
         {
           "trigger_id": "WARRANT-1.TRIG.1",
-          "nickname": "Exercisable Until Expiration",
-          "trigger_description": "The warrant is exercisable on or before its date of expiration",
-          "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
-          "trigger_date": "2029-01-01",
+          "nickname": "Automatic exercise immediately prior to qualified public offering",
+          "trigger_description": "Warrant shall be deemed exercise immediately prior to consummation to a qualified public offering.",
+          "trigger_condition": "Qualified Public Offering means the issuance by the issuer or any direct or indirect parent of the issuer of its common Equity Interests in an underwritten primary public offering (other than a public offering pursuant to a registration statement on Form S-8) pursuant to an effective registration statement filed with the U.S. Securities and Exchange Commission in accordance with the Securities Act of 1933, as amended.",
+          "type": "AUTOMATIC_ON_CONDITION",
           "conversion_right": {
             "conversion_mechanism": {
               "mechanism_type": "FIXED_AMOUNT_CONVERSION",
@@ -845,15 +845,16 @@
       "board_approval_date": "2022-02-01",
       "stakeholder_id": "stakeholder-id",
       "consideration_text": "1.00 USD",
-      "custom_id": "S-1",
+      "custom_id": "W-2",
       "quantity": "1000",
       "exercise_triggers": [
         {
           "trigger_id": "WARRANT-1.TRIG.1",
           "nickname": "Exercisable Until Expiration",
-          "trigger_description": "The warrant is exercisable on or before its date of expiration",
-          "trigger_type": "ELECTIVE_ON_OR_BEFORE_DATE",
-          "trigger_date": "2032-02-01",
+          "trigger_description": "The warrant is exercisable from its date of issuance until its expiration on February 2, 2032.",
+          "type": "ELECTIVE_IN_RANGE",
+          "start_date": "2010-01-01",
+          "end_date": "2032-02-01",
           "conversion_right": {
             "conversion_mechanism": {
               "mechanism_type": "FIXED_AMOUNT_CONVERSION",

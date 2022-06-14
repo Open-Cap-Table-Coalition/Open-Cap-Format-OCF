@@ -6,7 +6,7 @@
 
 `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
 
-_Type representation of a conversion right from a convertible into a stock class_
+_Type representation of a conversion right from a convertible into another non-plan security_
 
 **Data Type:** `OCF TYPE`
 
