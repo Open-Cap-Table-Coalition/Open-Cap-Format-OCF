@@ -446,6 +446,18 @@ _Key enumerations used throughout the schemas_
   - **Description:** Enumeration of convertible conversion calculation types.
   - **View more:** [schema/enums/ConversionMechanismType](/docs/schema/enums/ConversionMechanismType.md)
 
+- **Enum - Conversion Right Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionRightType.schema.json`
+  - **Description:** Enumeration of types of conversion rights.
+  - **View more:** [schema/enums/ConversionRightType](/docs/schema/enums/ConversionRightType.md)
+
+- **Enum - Trigger Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json`
+  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert? If `UNSPECIFIED`, the system of record cannot represent this data in a structured form.
+  - **View more:** [schema/enums/ConversionTriggerType](/docs/schema/enums/ConversionTriggerType.md)
+
 - **Enum - Convertible Type**
 
   - **Id:** `https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json`
@@ -541,12 +553,6 @@ _Key enumerations used throughout the schemas_
   - **Id:** `https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json`
   - **Description:** Enumeration of termination window types
   - **View more:** [schema/enums/TerminationWindowType](/docs/schema/enums/TerminationWindowType.md)
-
-- **Enum - Trigger Type**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/enums/TriggerType.schema.json`
-  - **Description:** Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert
-  - **View more:** [schema/enums/TriggerType](/docs/schema/enums/TriggerType.md)
 
 - **Enum - Valuation Type**
 
@@ -759,22 +765,58 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Describes a vesting condition satisfied at the security's vesting commencement date
   - **View more:** [schema/types/vesting/VestingStartTrigger](/docs/schema/types/vesting/VestingStartTrigger.md)
 
-- **Type - Convertible Conversion Trigger**
+- **Type - Automatic Conversion on Condition Trigger**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ConvertibleTrigger.schema.json`
-  - **Description:** Type representation of a convertible's conversion rights into stock class upon an event (such as holder's election or Change of Control)
-  - **View more:** [schema/types/conversion_triggers/ConvertibleTrigger](/docs/schema/types/conversion_triggers/ConvertibleTrigger.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json`
+  - **Description:** Type representation of automatic trigger on a tive or condition.
+  - **View more:** [schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger](/docs/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.md)
 
-- **Type - Warrant Trigger**
+- **Type - Automatic Conversion on Date Trigger**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/WarrantTrigger.schema.json`
-  - **Description:** Type representation of a warrant's exercise rights into stock class upon an event (such as holder election or Change of Control)
-  - **View more:** [schema/types/conversion_triggers/WarrantTrigger](/docs/schema/types/conversion_triggers/WarrantTrigger.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json`
+  - **Description:** Type representation of an automatic trigger on a date.
+  - **View more:** [schema/types/conversion_triggers/AutomaticConversionOnDateTrigger](/docs/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.md)
+
+- **Type - Base Conversion Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/BaseConversionTrigger.schema.json`
+  - **Description:** Type representation of required fields require for conversion rights types.
+  - **View more:** [schema/types/conversion_triggers/BaseConversionTrigger](/docs/schema/types/conversion_triggers/BaseConversionTrigger.md)
+
+- **Type - Elective Conversion At Will**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json`
+  - **Description:** Type representation of elective trigger valid at will (so long as instrument is valid and outstanding).
+  - **View more:** [schema/types/conversion_triggers/ElectiveConversionAtWillTrigger](/docs/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.md)
+
+- **Type - Elective Conversion In Date Range Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json`
+  - **Description:** Type representation of elective trigger valid on or after start_date and until or before end_date.
+  - **View more:** [schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger](/docs/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.md)
+
+- **Type - Elective Conversion on Condition Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json`
+  - **Description:** Type representation of elective trigger on fulfillment of a condition.
+  - **View more:** [schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger](/docs/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.md)
+
+- **Type - Unspecified Conversion Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json`
+  - **Description:** Use this where no structured data is available regarding what triggers the conversion of a given security.
+  - **View more:** [schema/types/conversion_triggers/UnspecifiedConversionTrigger](/docs/schema/types/conversion_triggers/UnspecifiedConversionTrigger.md)
+
+- **Type - Base Conversion Right**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/BaseConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a non-plan security into another non-plan security
+  - **View more:** [schema/types/conversion_rights/BaseConversionRight](/docs/schema/types/conversion_rights/BaseConversionRight.md)
 
 - **Type - Convertible Conversion Rights**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json`
-  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **Description:** Type representation of a conversion right from a convertible into another non-plan security
   - **View more:** [schema/types/conversion_rights/ConvertibleConversionRight](/docs/schema/types/conversion_rights/ConvertibleConversionRight.md)
 
 - **Type - Stock Class Conversion Rights**
@@ -783,10 +825,10 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a conversion right from one Stock Class into another Stock Class
   - **View more:** [schema/types/conversion_rights/StockClassConversionRight](/docs/schema/types/conversion_rights/StockClassConversionRight.md)
 
-- **Type - Convertible Conversion Rights**
+- **Type - Warrant Conversion Rights**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
-  - **Description:** Type representation of a conversion right from a convertible into a stock class
+  - **Description:** Type representation of a conversion right from a convertible into another non-plan security
   - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
 
 - **Type - Base Conversion Mechanism**

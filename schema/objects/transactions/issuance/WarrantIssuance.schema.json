@@ -38,9 +38,27 @@
       "title": "Warrant Issuance - Exercise Trigger Array",
       "description": "In event the Warrant can convert due to trigger events (e.g. Maturity, Next Qualified Financing, Change of Control, at Election of Holder), what are the terms?",
       "type": "array",
-      "minItems": 1,
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/WarrantTrigger.schema.json"
+        "anyOf": [
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json"
+          }
+        ]
       }
     },
     "warrant_expiration_date": {
