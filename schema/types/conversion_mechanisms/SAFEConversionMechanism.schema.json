@@ -4,8 +4,13 @@
   "title": "Conversion Mechanism - SAFE",
   "description": "Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json"
+    }
+  ],
   "properties": {
-    "mechanism_type": {
+    "type": {
       "const": "SAFE_CONVERSION"
     },
     "conversion_discount": {
@@ -21,6 +26,7 @@
       "type": "boolean"
     }
   },
-  "required": ["mechanism_type"],
+  "additionalProperties": false,
+  "required": ["type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
 }

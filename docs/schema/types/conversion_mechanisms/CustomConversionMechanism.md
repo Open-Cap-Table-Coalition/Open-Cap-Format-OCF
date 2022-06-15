@@ -14,7 +14,7 @@ _Sets forth inputs and conversion mechanism of a custom conversion, a conversion
 
 | Property                      | Type                              | Description                                                                                                                           | Required   |
 | ----------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| mechanism_type                | **Constant:** `CUSTOM_CONVERSION` | Scalar Constant                                                                                                                       | `REQUIRED` |
+| type                          | **Constant:** `CUSTOM_CONVERSION` | Scalar Constant                                                                                                                       | `REQUIRED` |
 | custom_conversion_description | `STRING`                          | Detailed description of how the number of resulting shares should be determined? Use legal language from an instrument where possible | `REQUIRED` |
 
 **Source Code:** [schema/types/conversion_mechanisms/CustomConversionMechanism](/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json)

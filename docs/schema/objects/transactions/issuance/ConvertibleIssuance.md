@@ -65,7 +65,7 @@
         "trigger_date": "2022-01-01",
         "conversion_right": {
           "conversion_mechanism": {
-            "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+            "type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",
@@ -95,7 +95,7 @@
         "trigger_date": "2022-01-01",
         "conversion_right": {
           "conversion_mechanism": {
-            "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+            "type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",
@@ -143,7 +143,7 @@
         "trigger_date": "2022-01-01",
         "conversion_right": {
           "conversion_mechanism": {
-            "mechanism_type": "CONVERTIBLE_NOTE_CONVERSION",
+            "type": "CONVERTIBLE_NOTE_CONVERSION",
             "interest_rate": "8.99",
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",

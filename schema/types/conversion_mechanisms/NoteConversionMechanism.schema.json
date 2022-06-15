@@ -4,8 +4,13 @@
   "title": "Conversion Mechanism - Note",
   "description": "Sets forth inputs and conversion mechanism of a convertible note",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json"
+    }
+  ],
   "properties": {
-    "mechanism_type": {
+    "type": {
       "const": "CONVERTIBLE_NOTE_CONVERSION"
     },
     "interest_rate": {
@@ -41,8 +46,9 @@
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
     }
   },
+  "additionalProperties": false,
   "required": [
-    "mechanism_type",
+    "type",
     "interest_rate",
     "day_count_convention",
     "interest_payout",
