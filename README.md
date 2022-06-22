@@ -717,23 +717,11 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
   - **View more:** [schema/types/vesting/VestingConditionPortion](/docs/schema/types/vesting/VestingConditionPortion.md)
 
-- **Type - Vesting Condition Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json`
-  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
-  - **View more:** [schema/types/vesting/VestingConditionTrigger](/docs/schema/types/vesting/VestingConditionTrigger.md)
-
 - **Type - Vesting Event Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json`
   - **Description:** Describes a vesting condition satisfied when a particular unscheduled event occurs
   - **View more:** [schema/types/vesting/VestingEventTrigger](/docs/schema/types/vesting/VestingEventTrigger.md)
-
-- **Type - Vesting Period**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
-  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
-  - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
 
 - **Type - Vesting Period in Days**
 
@@ -777,12 +765,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an automatic trigger on a date.
   - **View more:** [schema/types/conversion_triggers/AutomaticConversionOnDateTrigger](/docs/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.md)
 
-- **Type - Base Conversion Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/BaseConversionTrigger.schema.json`
-  - **Description:** Type representation of required fields require for conversion rights types.
-  - **View more:** [schema/types/conversion_triggers/BaseConversionTrigger](/docs/schema/types/conversion_triggers/BaseConversionTrigger.md)
-
 - **Type - Elective Conversion At Will**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json`
@@ -807,12 +789,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Use this where no structured data is available regarding what triggers the conversion of a given security.
   - **View more:** [schema/types/conversion_triggers/UnspecifiedConversionTrigger](/docs/schema/types/conversion_triggers/UnspecifiedConversionTrigger.md)
 
-- **Type - Base Conversion Right**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/BaseConversionRight.schema.json`
-  - **Description:** Type representation of a conversion right from a non-plan security into another non-plan security
-  - **View more:** [schema/types/conversion_rights/BaseConversionRight](/docs/schema/types/conversion_rights/BaseConversionRight.md)
-
 - **Type - Convertible Conversion Rights**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json`
@@ -830,12 +806,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
   - **Description:** Type representation of a conversion right from a convertible into another non-plan security
   - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
-
-- **Type - Base Conversion Mechanism**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json`
-  - **Description:** Sets forth required field(s) for ALL conversion mechanism types
-  - **View more:** [schema/types/conversion_mechanisms/BaseConversionMechanism](/docs/schema/types/conversion_mechanisms/BaseConversionMechanism.md)
 
 - **Conversion Mechanism - Custom**
 
@@ -872,6 +842,36 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json`
   - **Description:** Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)
   - **View more:** [schema/types/conversion_mechanisms/SAFEConversionMechanism](/docs/schema/types/conversion_mechanisms/SAFEConversionMechanism.md)
+
+- **Type - Vesting Condition Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/BaseVestingConditionTrigger.schema.json`
+  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
+  - **View more:** [schema/types/vesting/BaseVestingConditionTrigger](/docs/schema/types/vesting/BaseVestingConditionTrigger.md)
+
+- **Type - Vesting Period**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/BaseVestingPeriod.schema.json`
+  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
+  - **View more:** [schema/types/vesting/BaseVestingPeriod](/docs/schema/types/vesting/BaseVestingPeriod.md)
+
+- **Type - Base Conversion Trigger**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/BaseConversionTrigger.schema.json`
+  - **Description:** Type representation of required fields require for conversion rights types.
+  - **View more:** [schema/types/conversion_triggers/BaseConversionTrigger](/docs/schema/types/conversion_triggers/BaseConversionTrigger.md)
+
+- **Type - Base Conversion Right**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/BaseConversionRight.schema.json`
+  - **Description:** Type representation of a conversion right from a non-plan security into another non-plan security
+  - **View more:** [schema/types/conversion_rights/BaseConversionRight](/docs/schema/types/conversion_rights/BaseConversionRight.md)
+
+- **Type - Base Conversion Mechanism**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json`
+  - **Description:** Sets forth required field(s) for ALL conversion mechanism types
+  - **View more:** [schema/types/conversion_mechanisms/BaseConversionMechanism](/docs/schema/types/conversion_mechanisms/BaseConversionMechanism.md)
 
 ### [Primitives](/schema/primitives)
 

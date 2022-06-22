@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/BaseVestingConditionTrigger.schema.json"
     }
   ],
   "properties": {
