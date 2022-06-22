@@ -8,7 +8,7 @@
 
 **Description** _Abstract type representation of a conversion right from a non-plan security into another non-plan security_
 
-**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF Objects. :warning:**
+**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**
 
 **Properties:**
 

@@ -8,7 +8,7 @@
 
 **Description** _Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms_
 
-**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF Objects. :warning:**
+**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**
 
 **Properties:**
 

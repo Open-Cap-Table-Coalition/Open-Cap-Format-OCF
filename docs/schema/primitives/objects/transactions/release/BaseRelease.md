@@ -8,7 +8,7 @@
 
 **Description** _Abstract object describing fields common to all release transaction objects_
 
-**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF Objects. :warning:**
+**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**
 
 **Properties:**
 

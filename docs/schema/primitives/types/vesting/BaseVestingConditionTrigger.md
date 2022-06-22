@@ -8,7 +8,7 @@
 
 **Description** _Abstract type describing base fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met_
 
-**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF Objects. :warning:**
+**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**
 
 **Properties:**
 

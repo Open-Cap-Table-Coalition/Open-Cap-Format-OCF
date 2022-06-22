@@ -27,7 +27,7 @@ export default class PrimitiveSchemaNode extends SchemaNode {
 
 **Description** _${this.description()}_
 
-**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF Objects. :warning:**
+**:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically \"types\" and \"objects\". :warning:**
 
 **Properties:**
 
