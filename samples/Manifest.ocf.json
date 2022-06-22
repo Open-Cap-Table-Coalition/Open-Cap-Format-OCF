@@ -27,7 +27,7 @@
       "address_type": "LEGAL",
       "street_suite": "1234 Main Street\nSuite 4",
       "city": "Small Town",
-      "state_province": "DE",
+      "country_subdivision": "DE",
       "country": "US",
       "postal_code": "12345"
     },
