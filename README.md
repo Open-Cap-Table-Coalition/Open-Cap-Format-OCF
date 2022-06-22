@@ -877,12 +877,6 @@ _Used as common building blocks for properties that are more complex than primit
 
 _Used for object property composition and enforcing uniform properties across parts of the schema._
 
-- **Object - BaseFile**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
-  - **Description:** Abstract file to be extended by all other files
-  - **View more:** [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
-
 - **Object - BaseObject**
 
   - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json`
@@ -966,6 +960,12 @@ _Used for object property composition and enforcing uniform properties across pa
   - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json`
   - **Description:** Abstract object describing a security acceptance transaction
   - **View more:** [schema/primitives/transactions/acceptance/BaseAcceptance](/docs/schema/primitives/transactions/acceptance/BaseAcceptance.md)
+
+- **Object - BaseFile**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
+  - **Description:** Abstract file to be extended by all other files
+  - **View more:** [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
 
 ## Developer Information
 
