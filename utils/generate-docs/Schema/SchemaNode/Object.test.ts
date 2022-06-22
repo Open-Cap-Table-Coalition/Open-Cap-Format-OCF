@@ -20,7 +20,7 @@ const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json",
+  $id: "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json",
   title: "Object - BaseObject",
   description: "Abstract object to be extended by all other objects",
   type: "object",
@@ -52,7 +52,7 @@ const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json",
+      $ref: "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json",
     },
   ],
   properties: {

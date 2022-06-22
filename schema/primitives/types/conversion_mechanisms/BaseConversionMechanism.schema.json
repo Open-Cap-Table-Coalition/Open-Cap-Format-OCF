@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json",
-  "title": "Type - Base Conversion Mechanism",
-  "description": "Sets forth required field(s) for ALL conversion mechanism types",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/BaseConversionMechanism.schema.json",
+  "title": "Primitive - Base Conversion Mechanism Type",
+  "description": "Abstract type setting forth required field(s) for ALL conversion mechanism types",
   "type": "object",
   "properties": {
     "type": {

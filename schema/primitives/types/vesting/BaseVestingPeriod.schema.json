@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting/BaseVestingPeriod.schema.json",
-  "title": "Type - Vesting Period",
-  "description": "Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingPeriod.schema.json",
+  "title": "Primitive - Vesting Period Type",
+  "description": "Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms",
   "type": "object",
   "properties": {
     "length": {

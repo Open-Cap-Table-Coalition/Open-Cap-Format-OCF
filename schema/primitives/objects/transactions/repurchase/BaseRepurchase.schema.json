@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/repurchase/BaseRepurchase.schema.json",
   "title": "Primitive - Security Repurchase Transaction",
   "description": "Abstract object describing common properties to a repurchase transaction",
   "type": "object",

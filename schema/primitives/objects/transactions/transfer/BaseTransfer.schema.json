@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/transfer/BaseTransfer.schema.json",
   "title": "Primitive - Security Transfer Transaction",
   "description": "Abstract object describing a security transfer or secondary sale transaction",
   "type": "object",

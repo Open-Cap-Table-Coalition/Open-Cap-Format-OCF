@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseSecurityTransaction.schema.json",
   "title": "Primitive - Security Transaction",
   "description": "Abstract transaction object to be extended by all transaction objects that deal with individual securities",
   "type": "object",

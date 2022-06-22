@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseStockClassTransaction.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseStockClassTransaction.schema.json",
   "title": "Primitive - Stock Class Transaction",
   "description": "Abstract transaction object to be extended by all transaction objects that affect the stock class",
   "type": "object",

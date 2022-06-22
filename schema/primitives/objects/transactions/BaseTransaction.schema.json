@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseTransaction.schema.json",
   "title": "Primitive - Transaction",
   "description": "Abstract transaction object to be extended by all other transaction objects",
   "type": "object",

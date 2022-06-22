@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/BaseCancellation.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/cancellation/BaseCancellation.schema.json",
   "title": "Primitive - Security Cancellation Transaction",
   "description": "Abstract object describing fields common to all cancellation transaction objects",
   "type": "object",

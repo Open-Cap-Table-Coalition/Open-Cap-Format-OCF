@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting/BaseVestingConditionTrigger.schema.json",
-  "title": "Type - Vesting Condition Trigger",
-  "description": "Describes triggers to be satisfied for a VestingCondition to be met",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingConditionTrigger.schema.json",
+  "title": "Primitive - Vesting Condition Trigger Type",
+  "description": "Abstract type describing base fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met",
   "type": "object",
   "properties": {
     "type": {

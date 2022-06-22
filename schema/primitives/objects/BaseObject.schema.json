@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json",
-  "title": "Object - BaseObject",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json",
+  "title": "Primitive - BaseObject",
   "description": "Abstract object to be extended by all other objects",
   "type": "object",
   "properties": {

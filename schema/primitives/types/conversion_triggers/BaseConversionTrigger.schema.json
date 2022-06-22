@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/conversion_triggers/BaseConversionTrigger.schema.json",
-  "title": "Type - Base Conversion Trigger",
-  "description": "Type representation of required fields require for conversion rights types.",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/BaseConversionTrigger.schema.json",
+  "title": "Primitive - Base Conversion Trigger Type",
+  "description": "Abstract type representation of required fields require for conversion rights types.",
   "type": "object",
   "properties": {
     "type": {
