@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json"
     }
   ],
   "properties": {

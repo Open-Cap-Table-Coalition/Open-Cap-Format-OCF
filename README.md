@@ -717,23 +717,11 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Describes a fractional portion (ratio) of shares associated with a Vesting Condition
   - **View more:** [schema/types/vesting/VestingConditionPortion](/docs/schema/types/vesting/VestingConditionPortion.md)
 
-- **Type - Vesting Condition Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingConditionTrigger.schema.json`
-  - **Description:** Describes triggers to be satisfied for a VestingCondition to be met
-  - **View more:** [schema/types/vesting/VestingConditionTrigger](/docs/schema/types/vesting/VestingConditionTrigger.md)
-
 - **Type - Vesting Event Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json`
   - **Description:** Describes a vesting condition satisfied when a particular unscheduled event occurs
   - **View more:** [schema/types/vesting/VestingEventTrigger](/docs/schema/types/vesting/VestingEventTrigger.md)
-
-- **Type - Vesting Period**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json`
-  - **Description:** Describes a period of time (e.g. 3 months, 365 days) for use in Vesting Terms
-  - **View more:** [schema/types/vesting/VestingPeriod](/docs/schema/types/vesting/VestingPeriod.md)
 
 - **Type - Vesting Period in Days**
 
@@ -777,12 +765,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of an automatic trigger on a date.
   - **View more:** [schema/types/conversion_triggers/AutomaticConversionOnDateTrigger](/docs/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.md)
 
-- **Type - Base Conversion Trigger**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/BaseConversionTrigger.schema.json`
-  - **Description:** Type representation of required fields require for conversion rights types.
-  - **View more:** [schema/types/conversion_triggers/BaseConversionTrigger](/docs/schema/types/conversion_triggers/BaseConversionTrigger.md)
-
 - **Type - Elective Conversion At Will**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json`
@@ -807,12 +789,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Use this where no structured data is available regarding what triggers the conversion of a given security.
   - **View more:** [schema/types/conversion_triggers/UnspecifiedConversionTrigger](/docs/schema/types/conversion_triggers/UnspecifiedConversionTrigger.md)
 
-- **Type - Base Conversion Right**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/BaseConversionRight.schema.json`
-  - **Description:** Type representation of a conversion right from a non-plan security into another non-plan security
-  - **View more:** [schema/types/conversion_rights/BaseConversionRight](/docs/schema/types/conversion_rights/BaseConversionRight.md)
-
 - **Type - Convertible Conversion Rights**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json`
@@ -830,12 +806,6 @@ _Used as common building blocks for properties that are more complex than primit
   - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json`
   - **Description:** Type representation of a conversion right from a convertible into another non-plan security
   - **View more:** [schema/types/conversion_rights/WarrantConversionRight](/docs/schema/types/conversion_rights/WarrantConversionRight.md)
-
-- **Type - Base Conversion Mechanism**
-
-  - **Id:** `https://opencaptablecoalition.com/schema/types/conversion_mechanisms/BaseConversionMechanism.schema.json`
-  - **Description:** Sets forth required field(s) for ALL conversion mechanism types
-  - **View more:** [schema/types/conversion_mechanisms/BaseConversionMechanism](/docs/schema/types/conversion_mechanisms/BaseConversionMechanism.md)
 
 - **Conversion Mechanism - Custom**
 
@@ -877,95 +847,125 @@ _Used as common building blocks for properties that are more complex than primit
 
 _Used for object property composition and enforcing uniform properties across parts of the schema._
 
-- **Object - BaseFile**
+- **Primitive - Vesting Condition Trigger Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
-  - **Description:** Abstract file to be extended by all other files
-  - **View more:** [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingConditionTrigger.schema.json`
+  - **Description:** Abstract type describing base fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met
+  - **View more:** [schema/primitives/types/vesting/BaseVestingConditionTrigger](/docs/schema/primitives/types/vesting/BaseVestingConditionTrigger.md)
 
-- **Object - BaseObject**
+- **Primitive - Vesting Period Type**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseObject.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingPeriod.schema.json`
+  - **Description:** Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms
+  - **View more:** [schema/primitives/types/vesting/BaseVestingPeriod](/docs/schema/primitives/types/vesting/BaseVestingPeriod.md)
+
+- **Primitive - Base Conversion Trigger Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/BaseConversionTrigger.schema.json`
+  - **Description:** Abstract type representation of required fields require for conversion rights types.
+  - **View more:** [schema/primitives/types/conversion_triggers/BaseConversionTrigger](/docs/schema/primitives/types/conversion_triggers/BaseConversionTrigger.md)
+
+- **Primitive - Base Conversion Right Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/types/conversion_rights/BaseConversionRight.schema.json`
+  - **Description:** Abstract type representation of a conversion right from a non-plan security into another non-plan security
+  - **View more:** [schema/primitives/types/conversion_rights/BaseConversionRight](/docs/schema/primitives/types/conversion_rights/BaseConversionRight.md)
+
+- **Primitive - Base Conversion Mechanism Type**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/BaseConversionMechanism.schema.json`
+  - **Description:** Abstract type setting forth required field(s) for ALL conversion mechanism types
+  - **View more:** [schema/primitives/types/conversion_mechanisms/BaseConversionMechanism](/docs/schema/primitives/types/conversion_mechanisms/BaseConversionMechanism.md)
+
+- **Primitive - BaseObject**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json`
   - **Description:** Abstract object to be extended by all other objects
-  - **View more:** [schema/primitives/BaseObject](/docs/schema/primitives/BaseObject.md)
+  - **View more:** [schema/primitives/objects/BaseObject](/docs/schema/primitives/objects/BaseObject.md)
 
 - **Primitive - Security Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseSecurityTransaction.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseSecurityTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all transaction objects that deal with individual securities
-  - **View more:** [schema/primitives/transactions/BaseSecurityTransaction](/docs/schema/primitives/transactions/BaseSecurityTransaction.md)
+  - **View more:** [schema/primitives/objects/transactions/BaseSecurityTransaction](/docs/schema/primitives/objects/transactions/BaseSecurityTransaction.md)
 
 - **Primitive - Stock Class Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseStockClassTransaction.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseStockClassTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all transaction objects that affect the stock class
-  - **View more:** [schema/primitives/transactions/BaseStockClassTransaction](/docs/schema/primitives/transactions/BaseStockClassTransaction.md)
+  - **View more:** [schema/primitives/objects/transactions/BaseStockClassTransaction](/docs/schema/primitives/objects/transactions/BaseStockClassTransaction.md)
 
 - **Primitive - Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/BaseTransaction.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all other transaction objects
-  - **View more:** [schema/primitives/transactions/BaseTransaction](/docs/schema/primitives/transactions/BaseTransaction.md)
+  - **View more:** [schema/primitives/objects/transactions/BaseTransaction](/docs/schema/primitives/objects/transactions/BaseTransaction.md)
 
 - **Primitive - Security Transfer Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/transfer/BaseTransfer.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/transfer/BaseTransfer.schema.json`
   - **Description:** Abstract object describing a security transfer or secondary sale transaction
-  - **View more:** [schema/primitives/transactions/transfer/BaseTransfer](/docs/schema/primitives/transactions/transfer/BaseTransfer.md)
+  - **View more:** [schema/primitives/objects/transactions/transfer/BaseTransfer](/docs/schema/primitives/objects/transactions/transfer/BaseTransfer.md)
 
 - **Primitive - Security Retraction Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/retraction/BaseRetraction.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/retraction/BaseRetraction.schema.json`
   - **Description:** Abstract object describing a security retraction transaction
-  - **View more:** [schema/primitives/transactions/retraction/BaseRetraction](/docs/schema/primitives/transactions/retraction/BaseRetraction.md)
+  - **View more:** [schema/primitives/objects/transactions/retraction/BaseRetraction](/docs/schema/primitives/objects/transactions/retraction/BaseRetraction.md)
 
 - **Primitive - Security Repurchase Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/repurchase/BaseRepurchase.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/repurchase/BaseRepurchase.schema.json`
   - **Description:** Abstract object describing common properties to a repurchase transaction
-  - **View more:** [schema/primitives/transactions/repurchase/BaseRepurchase](/docs/schema/primitives/transactions/repurchase/BaseRepurchase.md)
+  - **View more:** [schema/primitives/objects/transactions/repurchase/BaseRepurchase](/docs/schema/primitives/objects/transactions/repurchase/BaseRepurchase.md)
 
 - **Primitive - Security Release Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/release/BaseRelease.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/release/BaseRelease.schema.json`
   - **Description:** Abstract object describing fields common to all release transaction objects
-  - **View more:** [schema/primitives/transactions/release/BaseRelease](/docs/schema/primitives/transactions/release/BaseRelease.md)
+  - **View more:** [schema/primitives/objects/transactions/release/BaseRelease](/docs/schema/primitives/objects/transactions/release/BaseRelease.md)
 
 - **Primitive - Security Reissuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/reissuance/BaseReissuance.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/reissuance/BaseReissuance.schema.json`
   - **Description:** Abstract object describing common properties to a reissuance of a security
-  - **View more:** [schema/primitives/transactions/reissuance/BaseReissuance](/docs/schema/primitives/transactions/reissuance/BaseReissuance.md)
+  - **View more:** [schema/primitives/objects/transactions/reissuance/BaseReissuance](/docs/schema/primitives/objects/transactions/reissuance/BaseReissuance.md)
 
 - **Primitive - Security Issuance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/issuance/BaseIssuance.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/issuance/BaseIssuance.schema.json`
   - **Description:** Abstract object describing fields common to all issuance objects
-  - **View more:** [schema/primitives/transactions/issuance/BaseIssuance](/docs/schema/primitives/transactions/issuance/BaseIssuance.md)
+  - **View more:** [schema/primitives/objects/transactions/issuance/BaseIssuance](/docs/schema/primitives/objects/transactions/issuance/BaseIssuance.md)
 
 - **Primitive - Security Exercise Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/exercise/BaseExercise.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/BaseExercise.schema.json`
   - **Description:** Abstract object describing fields common to all exercise transaction objects
-  - **View more:** [schema/primitives/transactions/exercise/BaseExercise](/docs/schema/primitives/transactions/exercise/BaseExercise.md)
+  - **View more:** [schema/primitives/objects/transactions/exercise/BaseExercise](/docs/schema/primitives/objects/transactions/exercise/BaseExercise.md)
 
 - **Primitive - Security Conversion Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/conversion/BaseConversion.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/conversion/BaseConversion.schema.json`
   - **Description:** Abstract object describing fields common to all conversion transaction objects
-  - **View more:** [schema/primitives/transactions/conversion/BaseConversion](/docs/schema/primitives/transactions/conversion/BaseConversion.md)
+  - **View more:** [schema/primitives/objects/transactions/conversion/BaseConversion](/docs/schema/primitives/objects/transactions/conversion/BaseConversion.md)
 
 - **Primitive - Security Cancellation Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/cancellation/BaseCancellation.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/cancellation/BaseCancellation.schema.json`
   - **Description:** Abstract object describing fields common to all cancellation transaction objects
-  - **View more:** [schema/primitives/transactions/cancellation/BaseCancellation](/docs/schema/primitives/transactions/cancellation/BaseCancellation.md)
+  - **View more:** [schema/primitives/objects/transactions/cancellation/BaseCancellation](/docs/schema/primitives/objects/transactions/cancellation/BaseCancellation.md)
 
 - **Primitive - Security Acceptance Transaction**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/acceptance/BaseAcceptance.schema.json`
   - **Description:** Abstract object describing a security acceptance transaction
-  - **View more:** [schema/primitives/transactions/acceptance/BaseAcceptance](/docs/schema/primitives/transactions/acceptance/BaseAcceptance.md)
+  - **View more:** [schema/primitives/objects/transactions/acceptance/BaseAcceptance](/docs/schema/primitives/objects/transactions/acceptance/BaseAcceptance.md)
+
+- **Object - BaseFile**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json`
+  - **Description:** Abstract file to be extended by all other files
+  - **View more:** [schema/primitives/files/BaseFile](/docs/schema/primitives/files/BaseFile.md)
 
 ## Developer Information
 

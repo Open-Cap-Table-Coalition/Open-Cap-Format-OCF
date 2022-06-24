@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriod.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingPeriod.schema.json"
     }
   ],
   "properties": {

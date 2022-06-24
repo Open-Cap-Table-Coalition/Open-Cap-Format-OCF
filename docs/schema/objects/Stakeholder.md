@@ -12,7 +12,7 @@
 
 **Composed From:**
 
-- [schema/primitives/BaseObject](/docs/schema/primitives/BaseObject.md)
+- [schema/primitives/objects/BaseObject](/docs/schema/primitives/objects/BaseObject.md)
 
 **Properties:**
 
