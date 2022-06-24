@@ -59,7 +59,7 @@ const FILE_FIXTURE: FileSchemaNodeJson = {
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json",
+      $ref: "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json",
     },
   ],
   properties: {
@@ -84,7 +84,7 @@ const ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json",
+  $id: "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json",
   title: "Object - BaseFile",
   description: "Abstract file to be extended by all other files",
   type: "object",

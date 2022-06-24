@@ -4,7 +4,7 @@
 
 ### Object - BaseFile
 
-`https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
+`https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json`
 
 **Description** _Abstract file to be extended by all other files_
 
@@ -16,6 +16,6 @@
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- |
 | file_type | `Enum - OCF File Type`</br></br>_Description:_ Enumeration of different OCF file types which are used to load proper schemas for validation</br></br>**ONE OF:** </br>&bull; OCF_MANIFEST_FILE </br>&bull; OCF_STAKEHOLDERS_FILE </br>&bull; OCF_STOCK_CLASSES_FILE </br>&bull; OCF_STOCK_LEGEND_TEMPLATES_FILE </br>&bull; OCF_STOCK_PLANS_FILE </br>&bull; OCF_TRANSACTIONS_FILE </br>&bull; OCF_VALUATIONS_FILE </br>&bull; OCF_VESTING_TERMS_FILE | File type field (used to select proper schema for validation) | `REQUIRED` |
 
-**Source Code:** [schema/primitives/BaseFile](/schema/primitives/BaseFile.schema.json)
+**Source Code:** [schema/primitives/files/BaseFile](/schema/primitives/files/BaseFile.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

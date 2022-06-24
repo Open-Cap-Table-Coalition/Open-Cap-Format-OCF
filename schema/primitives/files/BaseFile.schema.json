@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json",
   "title": "Object - BaseFile",
   "description": "Abstract file to be extended by all other files",
   "type": "object",

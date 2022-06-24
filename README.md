@@ -963,9 +963,9 @@ _Used for object property composition and enforcing uniform properties across pa
 
 - **Object - BaseFile**
 
-  - **Id:** `https://opencaptablecoalition.com/schema/primitives/BaseFile.schema.json`
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json`
   - **Description:** Abstract file to be extended by all other files
-  - **View more:** [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
+  - **View more:** [schema/primitives/files/BaseFile](/docs/schema/primitives/files/BaseFile.md)
 
 ## Developer Information
 
