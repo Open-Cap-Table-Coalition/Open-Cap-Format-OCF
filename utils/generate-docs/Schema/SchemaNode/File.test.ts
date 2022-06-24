@@ -127,7 +127,7 @@ describe("File", () => {
 
 **Composed From:**
 
-- [schema/primitives/BaseFile](/docs/schema/primitives/BaseFile.md)
+- [schema/primitives/files/BaseFile](/docs/schema/primitives/files/BaseFile.md)
 
 **Properties:**
 
