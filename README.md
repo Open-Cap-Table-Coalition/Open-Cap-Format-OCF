@@ -39,11 +39,13 @@ There are currently 8 file types that make up a cap table:
 8. [Vesting Schedules File(s)](/schema/files/VestingSchedulesFile.schema.json) - One or more files storing vesting
    schedules used by the issuer.
 
-**At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf extension:**
+**At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf.zip extension:**
 
 ![](docs/images/OCF%20Container.png)
 
-We are working on sample tooling to interact with compressed \*.ocf files.
+We are working on sample tooling to interact with compressed \*.ocf.zip files.
+
+**You can also break out the various OCF Types and OCF Objects and make those available separately via API or other, suitable mechanism. The key part of OCF is the data structure, not the container itself, though, to ensure complete cap table integrity, a full cap table export is recommended.**
 
 ### Event-Driven Architecture
 
@@ -56,17 +58,21 @@ Here's an example of how an event stack would work to track the lifecycle of a s
 
 ![](/docs/images/Transaction%20Stack%20Animation.gif)
 
+## Key OCF Concepts
+
+_OCF is designed to be extremely expressive and extensible. Pay particular attention to vesting and conversion, which have both been designed to support the types of complex, bespoke vesting and conversion conditions commonly found on attorney-drafted options and convertibles yet are (today) challenging to model in a structured format_
+
 ### Conversions
 
-The OCF conversion mechanism (which describes how, when and what a convertible security converts into) is based on three key concepts:
+The conversion of one OCF security into another is modeled using three key concepts which describe how, when and into what a convertible security converts into:
 
-1. Conversion Right: what can the security convert into?
-2. Conversion Trigger: when and under what conditions does the Conversion Right come into effect?
-3. Conversion Mechanism: how is the coversion amount calculated?
+1. [Conversion Right](/schema/types/conversion_rights/): what can the security convert into?
+2. [Conversion Trigger](/schema/types/conversion_triggers/): when and under what conditions does the Conversion Right come into effect?
+3. [Conversion Mechanism](/schema/types/conversion_mechanisms/): how is the coversion amount calculated?
 
-We use a similar design pattern for convertible stock (e.g. preferred stock), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).
+We use the same design patterns for convertible stock (e.g. preferred stock converting into common), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).
 
-Let's illustrate the design pattern using convertible securities as an example:
+Let's illustrate the design pattern using a convertible note as an example:
 
 ![](docs/images/OCF%20Conversion%20Diagram.png)
 
@@ -74,45 +80,13 @@ And here's what some sample data looks like in practice:
 
 ![](docs/images/OCF%20Conversion%20Example.png)
 
-### Schema Composition
+### Vesting
 
-In order to improve code quality, reduce repetition and provide for a better developer experience, OCF schemas rely
-heavily on [object composition](https://en.wikipedia.org/wiki/Object_composition). In the
-[primitives folder](/schema/primitives), you'll see a number of abstract base models called "primitives" stored in a
-folder structure that mirrors our [objects folder](/schema/objects). We incorporate the properties in these primitives
-into OCF objects by using the JSONSchema [allOf](https://json-schema.org/understanding-json-schema/reference/combining.html)
-property.
+Our vesting data model supports arbitrarily-complex trees of dependent vesting conditions that can mix time-based and event-based vesting (e.g. vesting over time and "milestone" vesting, in any execution order with any desired dependencies). We are working on more comprehensive documentation for these concepts. In the meantime, please review the [vesting terms object](/schema/objects/VestingTerms.schema.json) (essentially a "vesting schedule"). the vesting OCF Types in [/schema/types/vesting](/schema/types/vesting/), and the vesting events in [/schema/objects/transactions/vesting](/schema/objects/transactions/vesting/) (which are used to indicate when a given vesting schedule starts for a given security and when a milestone-based condition is satisfied).
 
-For example, all of our transaction events must have properties listed in the
-[BaseTransaction](/schema/primitives/transactions/BaseTransaction.schema.json) schema. Then, different groups of
-transaction events share some common properties, and these are enforced by incorporating more specific primitives -
-e.g. all issues (whether of stock, plan securities, warrants or convertibles) must incorporate the properties set
-forth in [BaseAcceptance](/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json) _in addition to the
-properties in BaseTransaction_.
+You can see example vesting schedules in our samples folder in the [VestingTerms.ocf.json](/samples/VestingTerms.ocf.json) file.
 
-### What's with empty properties (e.g. {}) in your schemas?
-
-You'll notice that _required_ OCF object properties that are incorporated via composition have empty objects
-as their schema values in the OCF object schemas (i.e. `"id": {}`). This is due to how JSONSchema validators interact with the
-"required" property. If validators don't find a required property in an object schema, even if it's one of the
-primitives the object is composed of, most (all?) JSONSchema validators will throw an error. As a result, we need to
-add required, "inherited" properties to the final OCF object schemas. They don't actually need to be redefined, however,
-so we just assign these repeat properties a value of {} in the schema as JSONSchema validators _can_ import the property
-details via allOf. Our documentation generator looks back to the full details of the property from the inherited schemas,
-however, and the documentation shows the full property details inherited from the primitives. Unless you're developing
-OCF schemas, these implementation details probably won't matter to you, and you can rely on our documentation for
-definitive documentation of the necessary properties and all details thereof.
-
-## How to Contribute
-
-If you would like to suggest a bug-fix or correction to the existing spec, please go ahead and submit a pull request
-with the change. Please consult our [contributor guidelines](/docs/CONTRIBUTING.MD) before submitting.
-
-If you have a suggestion, feature request or other substantive change you think should be incorporated into OCF,
-please start by opening a discussion in our
-[suggestions channel](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/discussions/categories/suggestions)
-on GitHub. Once a consensus is reached on whether and how to incorporate your suggestion, the TWG
-may open an issue and assign a TWG member to lead further work on the issue.
+Stay tuned for expanded documentation!
 
 ## Overall Repo Organization
 
@@ -978,9 +952,55 @@ _Used for object property composition and enforcing uniform properties across pa
 
 - Simply use [VSCode](https://code.visualstudio.com/) with the "Prettier - Code formatter"
 
-### Developing
+### Development Environment Setup
 
 This repo requires Prettier to be run on all files. Run `npm install` to install dev dependencies and Prettier will automatically run pre-commit.
+
+### OCF Types vs OCF Objects
+
+You may notice this distinction in our repo organization, yet both OCF Types and OCF Objects are commonly JSONSchema `object` types (basically meaning they are JSONs).
+
+- An **OCF Object** is a schema with a JSONSchema types of `object` that MUST have a unique Id field in each instance of its schema.
+
+- An **OCF Type** is meant to describe a specific data type that is does not have a unique ID and will be nested somewhere within an OCF Object. These usually have a JSONSchema type of `object`, but they can also be JSONSchema primitives like strings, numbers, etc. that have specific validation rules (e.g. a regex pattern). They do **not** have unique IDs.
+
+### OCF Schemas Rely Heavily on Object Composition Patterns
+
+In order to improve code quality, reduce repetition and provide for a better developer experience, OCF schemas rely
+heavily on [object composition](https://en.wikipedia.org/wiki/Object_composition). In the
+[primitives folder](/schema/primitives), you'll see a folder structure that mirrors the overall `/schema` folder. Where a number of related OCF Objects or OCF Types share properties, we create a "primitive" object in this primitives folder. This primitive's path in the primitives folder must mirror the path to the OCF Object(s) or OCF Type(s) composed from it. We incorporate the properties in these primitives
+into OCF objects by using the JSONSchema [allOf](https://json-schema.org/understanding-json-schema/reference/combining.html)
+property.
+
+Where there are different "flavors" of a given base - e.g. the primitive `BaseConversionRight` is composed into OCF Types of `ConvertibleConversionRight`, a `StockClassConversionRight` or a `WarrantConversionRight` - the final OCF Types / Objects must have a `type` that holds the specific flavors type enumeration - e.g. `STOCK_CLASS_CONVERSION_RIGHT` for `StockClassConversionRight`. This avoids validation problems where two flavors must have identical properties but different allowable property values.
+
+**Here are a couple of concrete object composition examples:**
+
+1. The `ConversionTrigger` OCF Types like `AutomaticConversionOnConditionTrigger` and `ElectiveConversionOnConditionTrigger` are all composed from `BaseConversionTrigger`. The primitive can be found at [/schema/primitives/types/conversion_triggers/](/schema/primitives/types/conversion_triggers/) while the OCF Types composed from this primitive can be found in [/schema/types/conversion_triggers/](/schema/types/conversion_triggers/) [objects folder](/schema/objects).
+2. All OCF Objects must be composed of the [BaseObject](/schema/primitives/objects/BaseObject.schema.json) which ensures there is a required object id field on all OCF Objects. This can be found in `/schema/primitives/objects` as all objects in the `/schema/objects` folder will incorporate its properties.
+3. All of our transaction events must have properties listed in the
+   [BaseTransaction](/schema/primitives/transactions/BaseTransaction.schema.json) schema. Then, different groups of
+   transaction events share some common properties, and these are enforced by incorporating more specific primitives -
+   e.g. all issues (whether of stock, plan securities, warrants or convertibles) must incorporate the properties set
+   forth in [BaseAcceptance](/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json) _in addition to the
+   properties in BaseTransaction_.
+
+### What's with the empty properties (e.g. {}) in your schemas?
+
+You'll notice that _required_ OCF type and object properties that are incorporated via [object composition](###schema-composition-explained)
+have empty objects as their schema values in the OCF object schemas (i.e. `"id": {}`). This is due to how JSONSchema validators
+interact with the "required" property. If validators don't find a required property in an object schema, even if it's one of the
+primitives the object is composed of, most (all?) JSONSchema validators will throw an error. As a result, we need to
+add required, "inherited" properties to the final OCF object schemas. They don't actually need to be redefined, however,
+so we just assign these repeat properties a value of {} in the schema as JSONSchema validators _can_ import the property
+details via allOf. Our documentation generator looks back to the full details of the property from the inherited schemas,
+however, and the documentation shows the full property details inherited from the primitives. Unless you're developing
+OCF schemas, these implementation details probably won't matter to you, and you can rely on our documentation for
+definitive documentation of the necessary properties and all details thereof.
+
+### Don't Add Additional Properties to OCF
+
+You may notice that the primitive schemas do not prevent the inclusion of additional properties, whereas all OCF Types and OCF Objects that are also JSONSchema `objects` (basically anything that's not just an enum or primitive data type with validation check) have `additionalProperties`: `false` to prevent the inclusion of additional properties. This is due to primitives not being meant for use by consumers of the OCF standard. As we build more complex objects from primitives, we need to allow the primitive to have the additional properties required by the final OCF Objects and Types or else you'd get validation errors. We do not want the OCF Types and OCF Objects that are meant for use by the community to have additional properties, however, as we want to avoid situations where third-parties implementing OCF add custom or undocumented fields and types. This could cause unanticipated compatibility issues and collisions with future versions of OCF, if, for example, a popular implementation of OCF used a custom property with a name that we later want to add to to the official standard.
 
 ### Testing
 
@@ -1001,16 +1021,4 @@ our toolchain and everything here is subject to change_
 
 ## Contributors (alphabetical)
 
-- Ryan Carpenter
-- Ben Hutchings
-- Patrick Johnmeyer
-- Andrey Lebedev
-- Tyler McConnell
-- Dan Owen
-- Chris Pasakarnis
-- John Scrudato
-- Ray Shan
-- Caroline Taymor
-- Eric Vogl
-- Rob Wise
-- Jacob Yavis
+Please see the Open Cap Table Coalition Website or our GitHub Code Contributors List.
