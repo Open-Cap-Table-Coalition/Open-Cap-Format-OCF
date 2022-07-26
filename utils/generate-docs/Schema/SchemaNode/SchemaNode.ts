@@ -68,6 +68,9 @@ export default abstract class SchemaNode {
 
   protected markdownExamples = (): string | null => null;
 
+  protected supplementalMarkdowns = (): string[] =>
+    this.schema.findSupplementalMarkdownsByShortId(this.shortId());
+
   id = () => this.json["$id"];
 
   parentType = () => this.shortId().split("/")[1];
@@ -105,10 +108,18 @@ export default abstract class SchemaNode {
 
 \`${this.id()}\``;
 
-  markdownFooter = () => `**Source Code:** ${this.markdownSourceLink()}
-${this.markdownExamples() ? "\n" + this.markdownExamples() + "\n" : ""}
-Copyright © ${format(new Date(), "Y")} Open Cap Table Coalition.
-`;
+  markdownFooter = () =>
+    [
+      this.supplementalMarkdowns().length > 0
+        ? this.supplementalMarkdowns()
+        : null,
+      `**Source Code:** ${this.markdownSourceLink()}`,
+      this.markdownExamples() ? this.markdownExamples() : null,
+      `Copyright © ${format(new Date(), "Y")} Open Cap Table Coalition.`,
+    ]
+      .flat()
+      .filter(Boolean)
+      .join("\n\n") + "\n";
 
   markdownTableType = () => `\`${this.type().toUpperCase()}\``;
 

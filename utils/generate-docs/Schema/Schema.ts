@@ -4,6 +4,8 @@ import { fileURLToPath } from "url";
 import SchemaReader from "./SchemaReader.js";
 import SchemaWriter from "./SchemaWriter.js";
 import ExamplesReader from "./ExamplesReader.js";
+import SupplementalsReader from "./SupplementalsReader.js";
+import Supplementals from "./Supplementals.js";
 import Examples, { ExampleJson } from "./Examples.js";
 import TableOfContents from "./TableOfContents.js";
 import SchemaNodeFactory, {
@@ -23,22 +25,32 @@ export default class Schema {
   static generateDocs = async () => {
     const schemaNodeJsons = await SchemaReader.read(path.join(ROOT, "schema"));
     const exampleJsons = await ExamplesReader.read(path.join(ROOT, "samples"));
-    const schema = new Schema(schemaNodeJsons, exampleJsons);
+    const supplementalMarkdowns = await SupplementalsReader.read(
+      path.join(ROOT, "docs", "supplemental")
+    );
+    const schema = new Schema(
+      schemaNodeJsons,
+      exampleJsons,
+      supplementalMarkdowns
+    );
     await SchemaWriter.write(path.join(ROOT), schema);
     await TableOfContents.write(schema, path.join(ROOT, "README.md"));
   };
 
   readonly schemaNodes: SchemaNode[];
   readonly examples: Examples;
+  readonly supplementals: Supplementals;
 
   constructor(
     schemaNodeJsons: SchemaNodeJson[],
-    exampleJsons: ExampleJson[] = []
+    exampleJsons: ExampleJson[] = [],
+    supplementalMarkdowns: string[] = []
   ) {
     this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
       SchemaNodeFactory.build(this, json)
     );
     this.examples = new Examples(exampleJsons);
+    this.supplementals = new Supplementals(supplementalMarkdowns);
   }
 
   findSchemaNodeById = (id: string) => {
@@ -51,6 +63,9 @@ export default class Schema {
 
   findExampleItemsByObjectType = (objectType: string) =>
     this.examples.findExampleItemsByObjectType(objectType);
+
+  findSupplementalMarkdownsByShortId = (shortId: string) =>
+    this.supplementals.findSupplementalMarkdownByShortId(shortId);
 
   filterSchemaNodesByParentType = (parentType: string) =>
     this.schemaNodes.filter(
