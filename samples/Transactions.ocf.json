@@ -443,35 +443,30 @@
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
       "settlement_date": "2017-07-22",
+      "quantity": 9000,
       "release_price": {
         "amount": "9.00",
         "currency": "CAD"
-      }
+      },
+      "resulting_security_ids": []
     },
     {
       "object_type": "TX_PLAN_SECURITY_RELEASE",
       "id": "test-plan-security-release-full-fields",
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
-      "settlement_date": "2017-07-22",
+      "settlement_date": "2017-07-25",
+      "quantity": 9000,
       "release_price": {
         "amount": "9.00",
         "currency": "CAD"
       },
+      "consideration_text": "9.00 CAD",
       "comments": ["Release the securities"],
-      "net_quantity": "42",
-      "method": "Method of release",
-      "stock_swap": false,
-      "cash_paid": {
-        "amount": "0.00",
-        "currency": "CAD"
-      },
-      "quantity_sold": "1",
-      "sale_price_per_unit": {
-        "amount": "0.00",
-        "currency": "CAD"
-      },
-      "withheld_quantity": "0"
+      "resulting_security_ids": [
+        "resultant-security-id-1",
+        "resultant-security-id-2"
+      ]
     },
     {
       "object_type": "TX_PLAN_SECURITY_RETRACTION",

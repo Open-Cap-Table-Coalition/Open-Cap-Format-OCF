@@ -28,13 +28,9 @@
     "date": {},
     "settlement_date": {},
     "release_price": {},
-    "net_quantity": {},
-    "method": {},
-    "stock_swap": {},
-    "cash_paid": {},
-    "quantity_sold": {},
-    "sale_price_per_unit": {},
-    "withheld_quantity": {}
+    "quantity": {},
+    "consideration_text": {},
+    "resulting_security_ids": {}
   },
   "additionalProperties": false,
   "required": [],
