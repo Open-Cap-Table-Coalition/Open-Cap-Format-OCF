@@ -44,7 +44,7 @@
     "security_id": "387878ba-8fb6-4673-812e-32c092947899",
     "date": "2017-07-22",
     "settlement_date": "2017-07-22",
-    "quantity": 9000,
+    "quantity": "9000",
     "release_price": {
       "amount": "9.00",
       "currency": "CAD"
@@ -57,7 +57,7 @@
     "security_id": "387878ba-8fb6-4673-812e-32c092947899",
     "date": "2017-07-22",
     "settlement_date": "2017-07-25",
-    "quantity": 9000,
+    "quantity": "9000",
     "release_price": {
       "amount": "9.00",
       "currency": "CAD"
