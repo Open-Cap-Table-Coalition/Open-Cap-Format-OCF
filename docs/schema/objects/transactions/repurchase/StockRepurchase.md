@@ -63,11 +63,7 @@
       "Here is a comment",
       "Here is another comment"
     ],
-    "resulting_security_ids": [
-      "resultant-security-id-1",
-      "resultant-security-id-2",
-      "resultant-security-id-3"
-    ]
+    "balance_security_id": "balance-security-id"
   }
 ]
 ```
