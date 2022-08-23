@@ -12,12 +12,12 @@
 
 **Properties:**
 
-| Property               | Type                                                    | Description                                                                                                 | Required   |
-| ---------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------- |
-| price                  | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Repurchase price per share of the stock                                                                     | `REQUIRED` |
-| quantity               | [schema/types/Numeric](/docs/schema/types/Numeric.md)   | Number of shares of stock repurchased                                                                       | `REQUIRED` |
-| consideration_text     | `STRING`                                                | Unstructured text description of consideration provided in exchange for security repurchase                 | -          |
-| resulting_security_ids | [`STRING`]                                              | For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares | -          |
+| Property            | Type                                                    | Description                                                                                 | Required   |
+| ------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------- |
+| price               | [schema/types/Monetary](/docs/schema/types/Monetary.md) | Repurchase price per share of the stock                                                     | `REQUIRED` |
+| quantity            | [schema/types/Numeric](/docs/schema/types/Numeric.md)   | Number of shares of stock repurchased                                                       | `REQUIRED` |
+| consideration_text  | `STRING`                                                | Unstructured text description of consideration provided in exchange for security repurchase | -          |
+| balance_security_id | `STRING`                                                | Identifier for the security that holds the remainder balance (for partial repurchases)      | -          |
 
 **Source Code:** [schema/primitives/objects/transactions/repurchase/BaseRepurchase](/schema/primitives/objects/transactions/repurchase/BaseRepurchase.schema.json)
 

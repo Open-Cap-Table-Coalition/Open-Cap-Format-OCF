@@ -17,13 +17,9 @@
       "description": "Unstructured text description of consideration provided in exchange for security repurchase",
       "type": "string"
     },
-    "resulting_security_ids": {
-      "title": "Security Repurchase - Resulting Security ID Array",
-      "description": "For partial repurchases, list of security id(s) of the resulting stock objects holding any remaining shares",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial repurchases)",
+      "type": "string"
     }
   },
   "required": ["price", "quantity"],

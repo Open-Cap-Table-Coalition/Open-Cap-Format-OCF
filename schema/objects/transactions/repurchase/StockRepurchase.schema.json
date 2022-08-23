@@ -29,7 +29,7 @@
     "price": {},
     "quantity": {},
     "consideration_text": {},
-    "resulting_security_ids": {}
+    "balance_security_id": {}
   },
   "additionalProperties": false,
   "required": [],
