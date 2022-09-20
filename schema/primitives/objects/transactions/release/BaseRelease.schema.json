@@ -6,11 +6,11 @@
   "type": "object",
   "properties": {
     "settlement_date": {
-      "description": "Date of settlement",
+      "description": "The settlement date for the shares released, typically after the release transaction date",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
     "release_price": {
-      "description": "Consideration for the security",
+      "description": "The release price used to determine the value of the security at the time of release",
       "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "quantity": {
