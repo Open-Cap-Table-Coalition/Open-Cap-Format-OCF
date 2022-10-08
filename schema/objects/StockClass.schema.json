@@ -81,7 +81,6 @@
     "class_type",
     "default_id_prefix",
     "current_shares_authorized",
-    "board_approval_date",
     "votes_per_share",
     "seniority"
   ],
