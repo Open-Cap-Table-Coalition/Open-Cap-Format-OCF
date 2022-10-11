@@ -97,9 +97,6 @@ export async function enforceOcfCopyrightNotices(
         console.log(
           `\t(${index}) Parse JSON Schema at path ${schema_paths[index]}`
         );
-      console.log(
-        `\t(${index}) Parse JSON Schema at path ${schema_paths[index]}`
-      );
       return JSON.parse(schema_buffer.toString()) as Record<string, any>;
     });
 
