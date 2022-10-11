@@ -6,11 +6,13 @@ import core from "@actions/core";
 import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 
+import * as path from "path";
+
 import { getSchemaFilepaths } from "./Loaders.js";
 import { schemaUrlFromRepoPath } from "./PathTools.js";
 
 /**
- * Given a schema, with a known local schema_path, generate a
+ * Given a schema, with a known local schema_path, generate an url to the corresponding file in the repo
  * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
  * @param schema_inst -> OCF schema JSON to update.
  * @param copyright_year -> Number: What year should copyright notice be for?
@@ -24,6 +26,11 @@ export function addValidOcfCommentToSchema(
   tag: string = "main",
   verbose: boolean = false
 ) {
+  console.log(`addValidOcfCommentToSchema - schema_path: ${schema_path}`);
+  console.log(
+    `addValidOcfCommentToSchema - schema_path ${schema_path.split(path.sep)}`
+  );
+
   let comment_contents = `Copyright © ${copyright_year} Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: ${schemaUrlFromRepoPath(
     schema_path,
     tag
@@ -97,6 +104,9 @@ export async function enforceOcfCopyrightNotices(
         console.log(
           `\t(${index}) Parse JSON Schema at path ${schema_paths[index]}`
         );
+      console.log(
+        `\t(${index}) Parse JSON Schema at path ${schema_paths[index]}`
+      );
       return JSON.parse(schema_buffer.toString()) as Record<string, any>;
     });
 

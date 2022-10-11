@@ -1,4 +1,5 @@
 import path from "node:path";
+
 import { repo_url_root } from "./Constants.js";
 
 export const schemaDirPath = path.join("__dirname", "../../schema");
@@ -39,7 +40,10 @@ export const basenameFromSchemaPath = (schema_path: string) =>
  * @returns String -> The relative path to the schema file in the ./schema repo dir
  */
 export const schemaPathRelativeToSchemaDir = (schema_path: string) =>
-  `/${path.relative("./schema", schema_path)}`;
+  `/${path.relative("./schema", schema_path)}`.replace(
+    new RegExp("\\" + path.sep, "g"),
+    "/"
+  );
 
 /**
  * Given the local path to the schema, return the schema path relative to the repo root.
