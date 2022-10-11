@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
-  "title": "Type - Vesting Event Trigger",
+  "title": "Type - Vesting Schedule Absolute Trigger",
   "description": "Describes a vesting condition satisfied on an absolute date.",
   "type": "object",
   "allOf": [
