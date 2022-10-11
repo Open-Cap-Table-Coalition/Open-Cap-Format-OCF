@@ -6,8 +6,6 @@ import core from "@actions/core";
 import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 
-import * as path from "path";
-
 import { getSchemaFilepaths } from "./Loaders.js";
 import { schemaUrlFromRepoPath } from "./PathTools.js";
 
@@ -26,11 +24,6 @@ export function addValidOcfCommentToSchema(
   tag: string = "main",
   verbose: boolean = false
 ) {
-  console.log(`addValidOcfCommentToSchema - schema_path: ${schema_path}`);
-  console.log(
-    `addValidOcfCommentToSchema - schema_path ${schema_path.split(path.sep)}`
-  );
-
   let comment_contents = `Copyright © ${copyright_year} Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: ${schemaUrlFromRepoPath(
     schema_path,
     tag
