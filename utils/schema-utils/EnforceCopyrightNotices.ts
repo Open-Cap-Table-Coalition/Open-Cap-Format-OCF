@@ -10,7 +10,7 @@ import { getSchemaFilepaths } from "./Loaders.js";
 import { schemaUrlFromRepoPath } from "./PathTools.js";
 
 /**
- * Given a schema, with a known local schema_path, generate a
+ * Given a schema, with a known local schema_path, generate an url to the corresponding file in the repo
  * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
  * @param schema_inst -> OCF schema JSON to update.
  * @param copyright_year -> Number: What year should copyright notice be for?
