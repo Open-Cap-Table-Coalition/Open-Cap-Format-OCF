@@ -2,6 +2,8 @@ import readdirp, { EntryInfo } from "readdirp";
 
 import { SchemaNodeJson } from "./Schema.js";
 
+import { pathToFileURL } from "url";
+
 /**
  *  Reader parses a file tree of JSON schema files and converts them into
  *  SchemaNode objects.
@@ -21,7 +23,7 @@ export default class SchemaReader {
   protected loadJsonFromEntryInfo = (
     entryInfo: EntryInfo
   ): Promise<SchemaNodeJson> =>
-    import(entryInfo.fullPath).then(
+    import(pathToFileURL(entryInfo.fullPath).href).then(
       (json: { default: SchemaNodeJson }) => json["default"]
     );
 
