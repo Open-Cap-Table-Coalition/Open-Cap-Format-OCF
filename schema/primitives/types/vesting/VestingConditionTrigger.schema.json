@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingConditionTrigger.schema.json",
+  "title": "Primitive - Vesting Condition Trigger Type",
+  "description": "Abstract type describing fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Identifies the sub-type of trigger",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json"
+    }
+  },
+  "required": ["type"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
+}

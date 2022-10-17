@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/reissuance/Reissuance.schema.json",
+  "title": "Primitive - Security Reissuance Transaction",
+  "description": "Abstract object describing common properties to a reissuance of a security",
+  "type": "object",
+  "properties": {
+    "resulting_security_ids": {
+      "title": "Security Reissuance - Resulting Security ID Array",
+      "description": "Identifier of the new security (or securities) issuance resulting from a reissuance",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "split_transaction_id": {
+      "title": "Id of stock class split transaction",
+      "description": "When stock is reissued as a result of a stock split, this field contains id of the respective stock class split transaction. It is not set otherwise.",
+      "type": "string"
+    },
+    "reason_text": {
+      "title": "Reason for stock reissuance",
+      "description": "Free-form human-readable reason for stock reissuance",
+      "type": "string"
+    }
+  },
+  "required": ["resulting_security_ids"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/reissuance/Reissuance.schema.json"
+}

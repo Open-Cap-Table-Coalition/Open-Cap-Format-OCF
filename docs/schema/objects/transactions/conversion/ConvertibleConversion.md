@@ -12,10 +12,10 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/BaseObject](/docs/schema/primitives/objects/BaseObject.md)
-- [schema/primitives/objects/transactions/BaseTransaction](/docs/schema/primitives/objects/transactions/BaseTransaction.md)
-- [schema/primitives/objects/transactions/BaseSecurityTransaction](/docs/schema/primitives/objects/transactions/BaseSecurityTransaction.md)
-- [schema/primitives/objects/transactions/conversion/BaseConversion](/docs/schema/primitives/objects/transactions/conversion/BaseConversion.md)
+- [schema/primitives/objects/Object](/docs/schema/primitives/objects/Object.md)
+- [schema/primitives/objects/transactions/Transaction](/docs/schema/primitives/objects/transactions/Transaction.md)
+- [schema/primitives/objects/transactions/SecurityTransaction](/docs/schema/primitives/objects/transactions/SecurityTransaction.md)
+- [schema/primitives/objects/transactions/conversion/Conversion](/docs/schema/primitives/objects/transactions/conversion/Conversion.md)
 
 **Properties:**
 
@@ -31,7 +31,7 @@
 | quantity_converted        | [schema/types/Numeric](/docs/schema/types/Numeric.md)                                                                  | Quantity of security units converted                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | -          |
 | balance_security_id       | `STRING`                                                                                                               | Identifier for the convertible that holds the remainder balance (for partial conversions)                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 | trigger_id                | `STRING`                                                                                                               | What is the id of the convertible's conversion trigger that resulted in this conversion                                                                                                                                                                                                                                                                                                                                                                                                                     | `REQUIRED` |
-| capitalization_definition | [schema/types/CapitalizationDefinition](/docs/schema/types/CapitalizationDefinition.md)                                | If this conversion event was based on the company's capitalization as calculated at the time of conversion, please specify what stock classes, stock plans and securities were included in the calculation                                                                                                                                                                                                                                                                                                  | -          |
+| capitalization_definition | [schema/types/CapitalizationDefinition](/docs/schema/types/CapitalizationDefinition.md)                                | If this conversion event was d on the company's capitalization as calculated at the time of conversion, please specify what stock classes, stock plans and securities were included in the calculation                                                                                                                                                                                                                                                                                                      | -          |
 
 **Source Code:** [schema/objects/transactions/conversion/ConvertibleConversion](/schema/objects/transactions/conversion/ConvertibleConversion.schema.json)
 

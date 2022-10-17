@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/repurchase/Repurchase.schema.json",
+  "title": "Primitive - Security Repurchase Transaction",
+  "description": "Abstract object describing common properties to a repurchase transaction",
+  "type": "object",
+  "properties": {
+    "price": {
+      "description": "Repurchase price per share of the stock",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+    },
+    "quantity": {
+      "description": "Number of shares of stock repurchased",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "consideration_text": {
+      "description": "Unstructured text description of consideration provided in exchange for security repurchase",
+      "type": "string"
+    },
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial repurchases)",
+      "type": "string"
+    }
+  },
+  "required": ["price", "quantity"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/repurchase/Repurchase.schema.json"
+}
