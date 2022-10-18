@@ -2,7 +2,7 @@
 
 ---
 
-### Type - Vesting Event Trigger
+### Type - Vesting Schedule Relative Trigger
 
 `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json`
 

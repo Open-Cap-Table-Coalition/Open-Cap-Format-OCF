@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json",
-  "title": "Type - Vesting Event Trigger",
+  "title": "Type - Vesting Schedule Relative Trigger",
   "description": "Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.",
   "type": "object",
   "allOf": [

@@ -709,13 +709,13 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.
   - **View more:** [schema/types/vesting/VestingPeriodInMonths](/docs/schema/types/vesting/VestingPeriodInMonths.md)
 
-- **Type - Vesting Event Trigger**
+- **Type - Vesting Schedule Absolute Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json`
   - **Description:** Describes a vesting condition satisfied on an absolute date.
   - **View more:** [schema/types/vesting/VestingScheduleAbsoluteTrigger](/docs/schema/types/vesting/VestingScheduleAbsoluteTrigger.md)
 
-- **Type - Vesting Event Trigger**
+- **Type - Vesting Schedule Relative Trigger**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json`
   - **Description:** Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.
