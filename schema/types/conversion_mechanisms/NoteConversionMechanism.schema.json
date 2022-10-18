@@ -44,6 +44,10 @@
     "exit_multiple": {
       "description": "For cash proceeds calculation during a liquidity event.",
       "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+    },
+    "conversion_mfn": {
+      "description": "Is this an MFN (Most Favored Nations) flavored Convertible Note?",
+      "type": "boolean"
     }
   },
   "additionalProperties": false,
