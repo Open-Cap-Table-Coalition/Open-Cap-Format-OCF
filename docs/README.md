@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 ![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Logo.png)
 
 # Open Cap Table Format (OCF)

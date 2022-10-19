@@ -11,6 +11,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
+    - toc.integrate
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
