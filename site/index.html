@@ -1,0 +1,4987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Open CapTable Format (OCF)</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-cap-table-format-ocf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Open CapTable Format (OCF)" class="md-header__button md-logo" aria-label="Open CapTable Format (OCF)" data-md-component="logo">
+      
+  <img src="images/OCF Logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open CapTable Format (OCF)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/naveedn/Open-Cap-Format-OCF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="schema/enums/AccrualPeriodType/" class="md-tabs__link">
+        Schema
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Open CapTable Format (OCF)" class="md-nav__button md-logo" aria-label="Open CapTable Format (OCF)" data-md-component="logo">
+      
+  <img src="images/OCF Logo.png" alt="logo">
+
+    </a>
+    Open CapTable Format (OCF)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/naveedn/Open-Cap-Format-OCF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ocf" class="md-nav__link">
+    What is OCF?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How Does It Work?
+  </a>
+  
+    <nav class="md-nav" aria-label="How Does It Work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocf-file-types" class="md-nav__link">
+    OCF File Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    Event-Driven Architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-ocf-concepts" class="md-nav__link">
+    Key OCF Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Key OCF Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversions" class="md-nav__link">
+    Conversions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vesting" class="md-nav__link">
+    Vesting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-repo-organization" class="md-nav__link">
+    Overall Repo Organization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemas-are-divided-into-five-folders" class="md-nav__link">
+    Schemas are divided into five folders:
+  </a>
+  
+    <nav class="md-nav" aria-label="Schemas are divided into five folders:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    Primitives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-information" class="md-nav__link">
+    Developer Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-code-editor-for-schema-files" class="md-nav__link">
+    Recommended Code Editor For Schema Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    Development Environment Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocf-types-vs-ocf-objects" class="md-nav__link">
+    OCF Types vs OCF Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocf-schemas-rely-heavily-on-object-composition-patterns" class="md-nav__link">
+    OCF Schemas Rely Heavily on Object Composition Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-with-the-empty-properties-eg-in-your-schemas" class="md-nav__link">
+    What's with the empty properties (e.g. {}) in your schemas?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-add-additional-properties-to-ocf" class="md-nav__link">
+    Don't Add Additional Properties to OCF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors-alphabetical" class="md-nav__link">
+    Contributors (alphabetical)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Schema
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Schema" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Schema
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Enums
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enums" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Enums
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/AccrualPeriodType/" class="md-nav__link">
+        AccrualPeriodType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/AddressType/" class="md-nav__link">
+        AddressType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/AllocationType/" class="md-nav__link">
+        AllocationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/CompensationType/" class="md-nav__link">
+        CompensationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/CompoundingType/" class="md-nav__link">
+        CompoundingType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ConversionMechanismType/" class="md-nav__link">
+        ConversionMechanismType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ConversionRightType/" class="md-nav__link">
+        ConversionRightType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ConversionTriggerType/" class="md-nav__link">
+        ConversionTriggerType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ConvertibleType/" class="md-nav__link">
+        ConvertibleType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/DayCountType/" class="md-nav__link">
+        DayCountType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/EmailType/" class="md-nav__link">
+        EmailType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/FileType/" class="md-nav__link">
+        FileType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/InterestPayoutType/" class="md-nav__link">
+        InterestPayoutType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/OCFVersionType/" class="md-nav__link">
+        OCFVersionType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ObjectType/" class="md-nav__link">
+        ObjectType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/OptionType/" class="md-nav__link">
+        OptionType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ParentSecurityType/" class="md-nav__link">
+        ParentSecurityType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/PeriodType/" class="md-nav__link">
+        PeriodType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/PhoneType/" class="md-nav__link">
+        PhoneType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/RoundingType/" class="md-nav__link">
+        RoundingType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/StakeholderRelationshipType/" class="md-nav__link">
+        StakeholderRelationshipType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/StakeholderType/" class="md-nav__link">
+        StakeholderType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/StockClassType/" class="md-nav__link">
+        StockClassType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/TerminationWindowType/" class="md-nav__link">
+        TerminationWindowType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/ValuationType/" class="md-nav__link">
+        ValuationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/VestingDayOfMonth/" class="md-nav__link">
+        VestingDayOfMonth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/enums/VestingTriggerType/" class="md-nav__link">
+        VestingTriggerType
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/OCFManifestFile/" class="md-nav__link">
+        OCFManifestFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/StakeholdersFile/" class="md-nav__link">
+        StakeholdersFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/StockClassesFile/" class="md-nav__link">
+        StockClassesFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/StockLegendTemplatesFile/" class="md-nav__link">
+        StockLegendTemplatesFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/StockPlansFile/" class="md-nav__link">
+        StockPlansFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/TransactionsFile/" class="md-nav__link">
+        TransactionsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/ValuationsFile/" class="md-nav__link">
+        ValuationsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/files/VestingTermsFile/" class="md-nav__link">
+        VestingTermsFile
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Objects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Objects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/Issuer/" class="md-nav__link">
+        Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/Stakeholder/" class="md-nav__link">
+        Stakeholder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/StockClass/" class="md-nav__link">
+        StockClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/StockLegendTemplate/" class="md-nav__link">
+        StockLegendTemplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/StockPlan/" class="md-nav__link">
+        StockPlan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/Valuation/" class="md-nav__link">
+        Valuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/VestingTerms/" class="md-nav__link">
+        VestingTerms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8" type="checkbox" id="__nav_2_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8">
+          Transactions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transactions" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_1" type="checkbox" id="__nav_2_3_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_1">
+          Acceptance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Acceptance" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          Acceptance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/acceptance/ConvertibleAcceptance/" class="md-nav__link">
+        ConvertibleAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/acceptance/PlanSecurityAcceptance/" class="md-nav__link">
+        PlanSecurityAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/acceptance/StockAcceptance/" class="md-nav__link">
+        StockAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/acceptance/WarrantAcceptance/" class="md-nav__link">
+        WarrantAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_2" type="checkbox" id="__nav_2_3_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_2">
+          Cancellation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancellation" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cancellation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/cancellation/ConvertibleCancellation/" class="md-nav__link">
+        ConvertibleCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/cancellation/PlanSecurityCancellation/" class="md-nav__link">
+        PlanSecurityCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/cancellation/StockCancellation/" class="md-nav__link">
+        StockCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/cancellation/WarrantCancellation/" class="md-nav__link">
+        WarrantCancellation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_3" type="checkbox" id="__nav_2_3_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_3">
+          Conversion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/conversion/ConvertibleConversion/" class="md-nav__link">
+        ConvertibleConversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/conversion/StockConversion/" class="md-nav__link">
+        StockConversion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_4" type="checkbox" id="__nav_2_3_8_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_4">
+          Exercise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercise" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Exercise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/exercise/PlanSecurityExercise/" class="md-nav__link">
+        PlanSecurityExercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/exercise/WarrantExercise/" class="md-nav__link">
+        WarrantExercise
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_5" type="checkbox" id="__nav_2_3_8_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_5">
+          Issuance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Issuance" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_5">
+          <span class="md-nav__icon md-icon"></span>
+          Issuance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/issuance/ConvertibleIssuance/" class="md-nav__link">
+        ConvertibleIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/issuance/PlanSecurityIssuance/" class="md-nav__link">
+        PlanSecurityIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/issuance/StockIssuance/" class="md-nav__link">
+        StockIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/issuance/WarrantIssuance/" class="md-nav__link">
+        WarrantIssuance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/reissuance/StockReissuance/" class="md-nav__link">
+        StockReissuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/release/PlanSecurityRelease/" class="md-nav__link">
+        PlanSecurityRelease
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/repurchase/StockRepurchase/" class="md-nav__link">
+        StockRepurchase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_9" type="checkbox" id="__nav_2_3_8_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_9">
+          Retraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retraction" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_9">
+          <span class="md-nav__icon md-icon"></span>
+          Retraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/retraction/ConvertibleRetraction/" class="md-nav__link">
+        ConvertibleRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/retraction/PlanSecurityRetraction/" class="md-nav__link">
+        PlanSecurityRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/retraction/StockRetraction/" class="md-nav__link">
+        StockRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/retraction/WarrantRetraction/" class="md-nav__link">
+        WarrantRetraction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/split/StockClassSplit/" class="md-nav__link">
+        StockClassSplit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_11" type="checkbox" id="__nav_2_3_8_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_11">
+          Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transfer" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/transfer/ConvertibleTransfer/" class="md-nav__link">
+        ConvertibleTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/transfer/PlanSecurityTransfer/" class="md-nav__link">
+        PlanSecurityTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/transfer/StockTransfer/" class="md-nav__link">
+        StockTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/transfer/WarrantTransfer/" class="md-nav__link">
+        WarrantTransfer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_8_12" type="checkbox" id="__nav_2_3_8_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_8_12">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_8_12">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/vesting/VestingEvent/" class="md-nav__link">
+        VestingEvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/objects/transactions/vesting/VestingStart/" class="md-nav__link">
+        VestingStart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Primitives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Primitives" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Primitives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/files/BaseFile/" class="md-nav__link">
+        BaseFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2" type="checkbox" id="__nav_2_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_2">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Objects" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Objects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/BaseObject/" class="md-nav__link">
+        BaseObject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2_2" type="checkbox" id="__nav_2_4_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_2_2">
+          Transactions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transactions" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/BaseSecurityTransaction/" class="md-nav__link">
+        BaseSecurityTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/BaseStockClassTransaction/" class="md-nav__link">
+        BaseStockClassTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/BaseTransaction/" class="md-nav__link">
+        BaseTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/acceptance/BaseAcceptance/" class="md-nav__link">
+        BaseAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/cancellation/BaseCancellation/" class="md-nav__link">
+        BaseCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/conversion/BaseConversion/" class="md-nav__link">
+        BaseConversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/exercise/BaseExercise/" class="md-nav__link">
+        BaseExercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/issuance/BaseIssuance/" class="md-nav__link">
+        BaseIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/reissuance/BaseReissuance/" class="md-nav__link">
+        BaseReissuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/release/BaseRelease/" class="md-nav__link">
+        BaseRelease
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/repurchase/BaseRepurchase/" class="md-nav__link">
+        BaseRepurchase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/retraction/BaseRetraction/" class="md-nav__link">
+        BaseRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/objects/transactions/transfer/BaseTransfer/" class="md-nav__link">
+        BaseTransfer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_3">
+          Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Types" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/types/conversion_mechanisms/BaseConversionMechanism/" class="md-nav__link">
+        BaseConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/types/conversion_rights/BaseConversionRight/" class="md-nav__link">
+        BaseConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/types/conversion_triggers/BaseConversionTrigger/" class="md-nav__link">
+        BaseConversionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3_4" type="checkbox" id="__nav_2_4_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_3_4">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/types/vesting/BaseVestingConditionTrigger/" class="md-nav__link">
+        BaseVestingConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/primitives/types/vesting/BaseVestingPeriod/" class="md-nav__link">
+        BaseVestingPeriod
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Types" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Address/" class="md-nav__link">
+        Address
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/CapitalizationDefinition/" class="md-nav__link">
+        CapitalizationDefinition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/ContactInfo/" class="md-nav__link">
+        ContactInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/CountryCode/" class="md-nav__link">
+        CountryCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/CountrySubdivisionCode/" class="md-nav__link">
+        CountrySubdivisionCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/CurrencyCode/" class="md-nav__link">
+        CurrencyCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/File/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Md5/" class="md-nav__link">
+        Md5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Monetary/" class="md-nav__link">
+        Monetary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Name/" class="md-nav__link">
+        Name
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Numeric/" class="md-nav__link">
+        Numeric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Percentage/" class="md-nav__link">
+        Percentage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Phone/" class="md-nav__link">
+        Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/PreReleaseOmission/" class="md-nav__link">
+        PreReleaseOmission
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/Ratio/" class="md-nav__link">
+        Ratio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/SecurityExemption/" class="md-nav__link">
+        SecurityExemption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/StockParent/" class="md-nav__link">
+        StockParent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/TaxID/" class="md-nav__link">
+        TaxID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/TerminationWindow/" class="md-nav__link">
+        TerminationWindow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_22" type="checkbox" id="__nav_2_5_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_22">
+          Conversion mechanisms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion mechanisms" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_22">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion mechanisms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/CustomConversionMechanism/" class="md-nav__link">
+        CustomConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/FixedAmountConversionMechanism/" class="md-nav__link">
+        FixedAmountConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/NoteConversionMechanism/" class="md-nav__link">
+        NoteConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism/" class="md-nav__link">
+        PercentCapitalizationConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/RatioConversionMechanism/" class="md-nav__link">
+        RatioConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_mechanisms/SAFEConversionMechanism/" class="md-nav__link">
+        SAFEConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_23" type="checkbox" id="__nav_2_5_23" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_23">
+          Conversion rights
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion rights" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_23">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion rights
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_rights/ConvertibleConversionRight/" class="md-nav__link">
+        ConvertibleConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_rights/StockClassConversionRight/" class="md-nav__link">
+        StockClassConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_rights/WarrantConversionRight/" class="md-nav__link">
+        WarrantConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_24" type="checkbox" id="__nav_2_5_24" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_24">
+          Conversion triggers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion triggers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_24">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion triggers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger/" class="md-nav__link">
+        AutomaticConversionOnConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/AutomaticConversionOnDateTrigger/" class="md-nav__link">
+        AutomaticConversionOnDateTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/ElectiveConversionAtWillTrigger/" class="md-nav__link">
+        ElectiveConversionAtWillTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger/" class="md-nav__link">
+        ElectiveConversionInDateRangeTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger/" class="md-nav__link">
+        ElectiveConversionOnConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/conversion_triggers/UnspecifiedConversionTrigger/" class="md-nav__link">
+        UnspecifiedConversionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_25" type="checkbox" id="__nav_2_5_25" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_25">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_25">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingCondition/" class="md-nav__link">
+        VestingCondition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingConditionPortion/" class="md-nav__link">
+        VestingConditionPortion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingEventTrigger/" class="md-nav__link">
+        VestingEventTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingPeriodInDays/" class="md-nav__link">
+        VestingPeriodInDays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingPeriodInMonths/" class="md-nav__link">
+        VestingPeriodInMonths
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingScheduleAbsoluteTrigger/" class="md-nav__link">
+        VestingScheduleAbsoluteTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingScheduleRelativeTrigger/" class="md-nav__link">
+        VestingScheduleRelativeTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema/types/vesting/VestingStartTrigger/" class="md-nav__link">
+        VestingStartTrigger
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ocf" class="md-nav__link">
+    What is OCF?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How Does It Work?
+  </a>
+  
+    <nav class="md-nav" aria-label="How Does It Work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocf-file-types" class="md-nav__link">
+    OCF File Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    Event-Driven Architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-ocf-concepts" class="md-nav__link">
+    Key OCF Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Key OCF Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversions" class="md-nav__link">
+    Conversions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vesting" class="md-nav__link">
+    Vesting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-repo-organization" class="md-nav__link">
+    Overall Repo Organization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemas-are-divided-into-five-folders" class="md-nav__link">
+    Schemas are divided into five folders:
+  </a>
+  
+    <nav class="md-nav" aria-label="Schemas are divided into five folders:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    Primitives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-information" class="md-nav__link">
+    Developer Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-code-editor-for-schema-files" class="md-nav__link">
+    Recommended Code Editor For Schema Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    Development Environment Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocf-types-vs-ocf-objects" class="md-nav__link">
+    OCF Types vs OCF Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocf-schemas-rely-heavily-on-object-composition-patterns" class="md-nav__link">
+    OCF Schemas Rely Heavily on Object Composition Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-with-the-empty-properties-eg-in-your-schemas" class="md-nav__link">
+    What's with the empty properties (e.g. {}) in your schemas?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-add-additional-properties-to-ocf" class="md-nav__link">
+    Don't Add Additional Properties to OCF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors-alphabetical" class="md-nav__link">
+    Contributors (alphabetical)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/naveedn/Open-Cap-Format-OCF/edit/master/docs/README.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<p><img alt="" src="https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Logo.png" /></p>
+<h1 id="open-cap-table-format-ocf">Open Cap Table Format (OCF)</h1>
+<p>Data Schema and Specification for Open Cap Format (OCF) published by the <a href="https://medium.com/@opencaptable">Open Cap Table Coalition</a>.</p>
+<h2 id="what-is-ocf">What is OCF?</h2>
+<p>OCF (or <strong>O</strong>pen <strong>C</strong>ap Table <strong>F</strong>ormat) is a data standard developed by the Open Cap Table Coalition to enable the
+easy and accurate exchange and use of company capitalization information through a standardized format. It is made
+freely available for anyone to use, though changes must be made through the Coalition's <a href="#how-to-contribute">change process</a>.</p>
+<h2 id="how-does-it-work">How Does It Work?</h2>
+<h3 id="ocf-file-types">OCF File Types</h3>
+<p>OCF is a multi-file format designed to make it easy to split, compress or stream company capitalization tables.
+A valid OCF cap table is made up of JSON objects that match the schemas available in our repo in
+the <a href="/schema">Schemas folder</a>.</p>
+<p>OCF objects are grouped and stored in eight file types (defined in our <a href="/schema/files">file schemas folder</a>).</p>
+<p>There are currently 8 file types that make up a cap table:</p>
+<ol>
+<li><a href="/schema/files/OCFManifestFile.schema.json">A Manifest File</a> - The manifest holds basic issuer information and
+   references to the instances of the other 7 file types needed to represent a company's capitalization history.</li>
+<li><a href="/schema/files/StakeholdersFile.schema.json">Stakeholders File(s)</a> - One or more files listing all stakeholders
+   of the Company. Stakeholder types are enumerated in our standard, and we welcome comments on how to categorize
+   stakeholders.</li>
+<li><a href="/schema/files/StockClassesFile.schema.json">Stock Classes File(s)</a> - One or more files listing all classes /
+   series of stock issued by the issuer.</li>
+<li><a href="/schema/files/StockLegendTemplatesFile.schema.json">Stock Legend Templates File(s)</a> - One or more files storing the
+   legends used by the issuer.</li>
+<li><a href="/schema/files/StockPlansFile.schema.json">Stock Plans File(s)</a> - One or more files storing the issuer's stock plans
+   and related information.</li>
+<li><a href="/schema/files/TransactionsFile.schema.json">Transactions File(s)</a> - One or more files storing the transactions for
+   the issuers. Any of our <a href="/schema/objects/transactions">transaction event objects</a> are supported.</li>
+<li><a href="/schema/files/ValuationsFile.schema.json">Valuations File(s)</a> - One or more files storing valuations for the issuer.</li>
+<li><a href="/schema/files/VestingSchedulesFile.schema.json">Vesting Schedules File(s)</a> - One or more files storing vesting
+   schedules used by the issuer.</li>
+</ol>
+<p><strong>At the moment, we recommend combining all of these files into a single compressed file with a *.ocf.zip extension:</strong></p>
+<p><img alt="" src="docs/images/OCF%20Container.png" /></p>
+<p>We are working on sample tooling to interact with compressed *.ocf.zip files.</p>
+<p><strong>You can also break out the various OCF Types and OCF Objects and make those available separately via API or other, suitable mechanism. The key part of OCF is the data structure, not the container itself, though, to ensure complete cap table integrity, a full cap table export is recommended.</strong></p>
+<h3 id="event-driven-architecture">Event-Driven Architecture</h3>
+<p>OCF is powered by an event-driven architecture. All Stocks, Plan Securities, Warrants and Convertibles have
+object-specific events that are added to an event "stack" to represent the history of that security. These events
+describe the relevant data needed to describe key events such as issuances, transfers, conversions, etc. You can
+see a full list of event transactions supported in our <a href="/schema/objects/transactions">transactions schemas folder</a>.</p>
+<p>Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:</p>
+<p><img alt="" src="/docs/images/Transaction%20Stack%20Animation.gif" /></p>
+<h2 id="key-ocf-concepts">Key OCF Concepts</h2>
+<p><em>OCF is designed to be extremely expressive and extensible. Pay particular attention to vesting and conversion, which have both been designed to support the types of complex, bespoke vesting and conversion conditions commonly found on attorney-drafted options and convertibles yet are (today) challenging to model in a structured format</em></p>
+<h3 id="conversions">Conversions</h3>
+<p>The conversion of one OCF security into another is modeled using three key concepts which describe how, when and into what a convertible security converts into:</p>
+<ol>
+<li><a href="/schema/types/conversion_rights/">Conversion Right</a>: what can the security convert into?</li>
+<li><a href="/schema/types/conversion_triggers/">Conversion Trigger</a>: when and under what conditions does the Conversion Right come into effect?</li>
+<li><a href="/schema/types/conversion_mechanisms/">Conversion Mechanism</a>: how is the coversion amount calculated?</li>
+</ol>
+<p>We use the same design patterns for convertible stock (e.g. preferred stock converting into common), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).</p>
+<p>Let's illustrate the design pattern using a convertible note as an example:</p>
+<p><img alt="" src="docs/images/OCF%20Conversion%20Diagram.png" /></p>
+<p>And here's what some sample data looks like in practice:</p>
+<p><img alt="" src="docs/images/OCF%20Conversion%20Example.png" /></p>
+<h3 id="vesting">Vesting</h3>
+<p>Our vesting data model supports arbitrarily-complex trees of dependent vesting conditions that can mix time-based and event-based vesting (e.g. vesting over time and "milestone" vesting, in any execution order with any desired dependencies). We are working on more comprehensive documentation for these concepts. In the meantime, please review the <a href="/schema/objects/VestingTerms.schema.json">vesting terms object</a> (essentially a "vesting schedule"). the vesting OCF Types in <a href="/schema/types/vesting/">/schema/types/vesting</a>, and the vesting events in <a href="/schema/objects/transactions/vesting/">/schema/objects/transactions/vesting</a> (which are used to indicate when a given vesting schedule starts for a given security and when a milestone-based condition is satisfied).</p>
+<p>You can see example vesting schedules in our samples folder in the <a href="/samples/VestingTerms.ocf.json">VestingTerms.ocf.json</a> file.</p>
+<p>Stay tuned for expanded documentation!</p>
+<h2 id="overall-repo-organization">Overall Repo Organization</h2>
+<p><a href="docs/README.md">Full documentation</a> is available in the <a href="/docs">docs folder</a>. Our documentation is
+auto-generated and our toolchain is still being refined, so the layout may continue to change and improve.</p>
+<h2 id="schemas-are-divided-into-five-folders">Schemas are divided into five folders:</h2>
+<h3 id="files"><a href="/schema/files">Files</a></h3>
+<p><em>Describes the eight top-level files that hold OCF objects and are required to export or import a cap table.</em></p>
+<ul>
+<li>
+<p><strong>OCF Manifest File</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/OCFManifestFile.md">schema/files/OCFManifestFile</a></p>
+</li>
+<li>
+<p><strong>File - Stakeholders</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of stakeholders</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/StakeholdersFile.md">schema/files/StakeholdersFile</a></p>
+</li>
+<li>
+<p><strong>File - Stock Classes</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of stock classes</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/StockClassesFile.md">schema/files/StockClassesFile</a></p>
+</li>
+<li>
+<p><strong>File - Stock Legend Templates</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of stock legend templates</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/StockLegendTemplatesFile.md">schema/files/StockLegendTemplatesFile</a></p>
+</li>
+<li>
+<p><strong>File - Stock Plans</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of stock plans</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/StockPlansFile.md">schema/files/StockPlansFile</a></p>
+</li>
+<li>
+<p><strong>File - Transactions</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list transactions</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/TransactionsFile.md">schema/files/TransactionsFile</a></p>
+</li>
+<li>
+<p><strong>File - Valuations</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of valuations</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/files/ValuationsFile.md">schema/files/ValuationsFile</a></p>
+</li>
+<li>
+<p><strong>File - Vesting Terms</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> JSON containing file type identifier and list of vesting terms</li>
+<li><strong>View more:</strong> <a href="/docs/schema/files/VestingTermsFile.md">schema/files/VestingTermsFile</a></li>
+</ul>
+<h3 id="objects"><a href="/schema/objects">Objects</a></h3>
+<p><em>Describing the structure of OCF -- these contain the common object properties <code>id</code> and <code>comments</code></em></p>
+<ul>
+<li>
+<p><strong>Object - Issuer</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/Issuer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing the issuer of the cap table (the company whose cap table this is)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/Issuer.md">schema/objects/Issuer</a></p>
+</li>
+<li>
+<p><strong>Object - Stakeholder</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a stakeholder</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/Stakeholder.md">schema/objects/Stakeholder</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Class</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/StockClass.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a class of stock issued by the issuer</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/StockClass.md">schema/objects/StockClass</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Legend Template</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a stock legend template</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/StockLegendTemplate.md">schema/objects/StockLegendTemplate</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Plan</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/StockPlan.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a plan which stock options are issued from</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/StockPlan.md">schema/objects/StockPlan</a></p>
+</li>
+<li>
+<p><strong>Object - Valuation</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/Valuation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a valuation used in the cap table</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/Valuation.md">schema/objects/Valuation</a></p>
+</li>
+<li>
+<p><strong>Object - Vesting Terms</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing the terms under which a security vests</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/VestingTerms.md">schema/objects/VestingTerms</a></p>
+</li>
+<li>
+<p><strong>Object - Vesting Event Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing the transaction of an non-schedule-driven vesting event associated with a security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/vesting/VestingEvent.md">schema/objects/transactions/vesting/VestingEvent</a></p>
+</li>
+<li>
+<p><strong>Object - Vesting Start Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing the transaction of vesting schedule start / commencement associated with a security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/vesting/VestingStart.md">schema/objects/transactions/vesting/VestingStart</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Transfer Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a transfer or secondary sale of a convertible security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/transfer/ConvertibleTransfer.md">schema/objects/transactions/transfer/ConvertibleTransfer</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Transfer Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a transfer of a plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/transfer/PlanSecurityTransfer.md">schema/objects/transactions/transfer/PlanSecurityTransfer</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Transfer Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/transfer/StockTransfer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a transfer or secondary sale of a stock security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/transfer/StockTransfer.md">schema/objects/transactions/transfer/StockTransfer</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Transfer Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/transfer/WarrantTransfer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a transfer or secondary sale of a warrant security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/transfer/WarrantTransfer.md">schema/objects/transactions/transfer/WarrantTransfer</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Split Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/split/StockClassSplit.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a split of a stock class</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/split/StockClassSplit.md">schema/objects/transactions/split/StockClassSplit</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Retraction Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/retraction/ConvertibleRetraction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a retraction of a convertible security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/retraction/ConvertibleRetraction.md">schema/objects/transactions/retraction/ConvertibleRetraction</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Retraction Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a retraction of a plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/retraction/PlanSecurityRetraction.md">schema/objects/transactions/retraction/PlanSecurityRetraction</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Retraction Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/retraction/StockRetraction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a retraction of a stock security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/retraction/StockRetraction.md">schema/objects/transactions/retraction/StockRetraction</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Retraction Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/retraction/WarrantRetraction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a retraction of a warrant security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/retraction/WarrantRetraction.md">schema/objects/transactions/retraction/WarrantRetraction</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Repurchase Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/repurchase/StockRepurchase.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a stock repurchase transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/repurchase/StockRepurchase.md">schema/objects/transactions/repurchase/StockRepurchase</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Release Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a plan security release transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/release/PlanSecurityRelease.md">schema/objects/transactions/release/PlanSecurityRelease</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Re-issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/reissuance/StockReissuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a re-issuance of stock</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/reissuance/StockReissuance.md">schema/objects/transactions/reissuance/StockReissuance</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/issuance/ConvertibleIssuance.md">schema/objects/transactions/issuance/ConvertibleIssuance</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/issuance/PlanSecurityIssuance.md">schema/objects/transactions/issuance/PlanSecurityIssuance</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/issuance/StockIssuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a stock issuance transaction by the issuer and held by a stakeholder</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/issuance/StockIssuance.md">schema/objects/transactions/issuance/StockIssuance</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing warrant issuance transaction by the issuer and held by a stakeholder</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/issuance/WarrantIssuance.md">schema/objects/transactions/issuance/WarrantIssuance</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Exercise Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a plan security exercise transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/exercise/PlanSecurityExercise.md">schema/objects/transactions/exercise/PlanSecurityExercise</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Exercise Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/exercise/WarrantExercise.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a warrant exercise transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/exercise/WarrantExercise.md">schema/objects/transactions/exercise/WarrantExercise</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Conversion Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/conversion/ConvertibleConversion.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a conversion of a convertible security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/conversion/ConvertibleConversion.md">schema/objects/transactions/conversion/ConvertibleConversion</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Conversion Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/conversion/StockConversion.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a conversion of stock</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/conversion/StockConversion.md">schema/objects/transactions/conversion/StockConversion</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Cancellation Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a cancellation of a convertible security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/cancellation/ConvertibleCancellation.md">schema/objects/transactions/cancellation/ConvertibleCancellation</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Cancellation Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a cancellation of a plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/cancellation/PlanSecurityCancellation.md">schema/objects/transactions/cancellation/PlanSecurityCancellation</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Cancellation Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a cancellation of a stock security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/cancellation/StockCancellation.md">schema/objects/transactions/cancellation/StockCancellation</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Cancellation Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a cancellation of a warrant security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/cancellation/WarrantCancellation.md">schema/objects/transactions/cancellation/WarrantCancellation</a></p>
+</li>
+<li>
+<p><strong>Object - Convertible Acceptance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a convertible acceptance transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/acceptance/ConvertibleAcceptance.md">schema/objects/transactions/acceptance/ConvertibleAcceptance</a></p>
+</li>
+<li>
+<p><strong>Object - Plan Security Acceptance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a plan security acceptance transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/acceptance/PlanSecurityAcceptance.md">schema/objects/transactions/acceptance/PlanSecurityAcceptance</a></p>
+</li>
+<li>
+<p><strong>Object - Stock Acceptance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/acceptance/StockAcceptance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a stock acceptance transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/objects/transactions/acceptance/StockAcceptance.md">schema/objects/transactions/acceptance/StockAcceptance</a></p>
+</li>
+<li>
+<p><strong>Object - Warrant Acceptance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Object describing a warrant acceptance transaction</li>
+<li><strong>View more:</strong> <a href="/docs/schema/objects/transactions/acceptance/WarrantAcceptance.md">schema/objects/transactions/acceptance/WarrantAcceptance</a></li>
+</ul>
+<h3 id="enums"><a href="/schema/enums">Enums</a></h3>
+<p><em>Key enumerations used throughout the schemas</em></p>
+<ul>
+<li>
+<p><strong>Enum - Accrual Period Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of interest accrual period types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/AccrualPeriodType.md">schema/enums/AccrualPeriodType</a></p>
+</li>
+<li>
+<p><strong>Enum - Address Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/AddressType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of address types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/AddressType.md">schema/enums/AddressType</a></p>
+</li>
+<li>
+<p><strong>Enum - Allocation Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows:<ol>
+<li>Cumulative Rounding (5 - 4 - 5 - 4)</li>
+<li>Cumulative Round Down (4 - 5 - 4 - 5)</li>
+<li>Front Loaded (5 - 5 - 4 - 4)</li>
+<li>Back Loaded (4 - 4 - 5 - 5)</li>
+<li>Front Loaded to Single Tranche (6 - 4 - 4 - 4)</li>
+<li>Back Loaded to Single Tranche (4 - 4 - 4 - 6)</li>
+<li>Fractional (4.5 - 4.5 - 4.5 - 4.5)</li>
+</ol>
+</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/AllocationType.md">schema/enums/AllocationType</a></p>
+</li>
+<li>
+<p><strong>Enum - Compensation Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of stock compensation types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/CompensationType.md">schema/enums/CompensationType</a></p>
+</li>
+<li>
+<p><strong>Enum - Compounding Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of interest compounding types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/CompoundingType.md">schema/enums/CompoundingType</a></p>
+</li>
+<li>
+<p><strong>Enum - Conversion Mechanism Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of convertible conversion calculation types.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ConversionMechanismType.md">schema/enums/ConversionMechanismType</a></p>
+</li>
+<li>
+<p><strong>Enum - Conversion Right Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ConversionRightType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of types of conversion rights.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ConversionRightType.md">schema/enums/ConversionRightType</a></p>
+</li>
+<li>
+<p><strong>Enum - Trigger Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert? If <code>UNSPECIFIED</code>, the system of record cannot represent this data in a structured form.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ConversionTriggerType.md">schema/enums/ConversionTriggerType</a></p>
+</li>
+<li>
+<p><strong>Enum - Convertible Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of convertible instrument types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ConvertibleType.md">schema/enums/ConvertibleType</a></p>
+</li>
+<li>
+<p><strong>Enum - Day Count Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of how the number of days are determined per period</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/DayCountType.md">schema/enums/DayCountType</a></p>
+</li>
+<li>
+<p><strong>Enum - Email Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/EmailType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of email types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/EmailType.md">schema/enums/EmailType</a></p>
+</li>
+<li>
+<p><strong>Enum - OCF File Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/FileType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of different OCF file types which are used to load proper schemas for validation</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/FileType.md">schema/enums/FileType</a></p>
+</li>
+<li>
+<p><strong>Enum - Interest Payout Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of interest payout types (e.g. deferred or cash payment)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/InterestPayoutType.md">schema/enums/InterestPayoutType</a></p>
+</li>
+<li>
+<p><strong>Enum - OCF Version Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of recognized OCF versions</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/OCFVersionType.md">schema/enums/OCFVersionType</a></p>
+</li>
+<li>
+<p><strong>Enum - Object Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of object types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ObjectType.md">schema/enums/ObjectType</a></p>
+</li>
+<li>
+<p><strong>Enum - Option Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/OptionType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of option types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/OptionType.md">schema/enums/OptionType</a></p>
+</li>
+<li>
+<p><strong>Enum - Parent Security Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of parent sources a stock can be issued or created from</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ParentSecurityType.md">schema/enums/ParentSecurityType</a></p>
+</li>
+<li>
+<p><strong>Enum - Period Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of time period types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/PeriodType.md">schema/enums/PeriodType</a></p>
+</li>
+<li>
+<p><strong>Enum - Phone Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of phone number types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/PhoneType.md">schema/enums/PhoneType</a></p>
+</li>
+<li>
+<p><strong>Enum - Rounding Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of rounding types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/RoundingType.md">schema/enums/RoundingType</a></p>
+</li>
+<li>
+<p><strong>Enum - Stakeholder Relationship Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/StakeholderRelationshipType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of types of relationships between stakeholder and issuer</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/StakeholderRelationshipType.md">schema/enums/StakeholderRelationshipType</a></p>
+</li>
+<li>
+<p><strong>Enum - Stakeholder Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of stakeholder types - individual (human) or institution (entity)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/StakeholderType.md">schema/enums/StakeholderType</a></p>
+</li>
+<li>
+<p><strong>Enum - Stock Class Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of stock class types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/StockClassType.md">schema/enums/StockClassType</a></p>
+</li>
+<li>
+<p><strong>Enum - Termination Window Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of termination window types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/TerminationWindowType.md">schema/enums/TerminationWindowType</a></p>
+</li>
+<li>
+<p><strong>Enum - Valuation Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of valuation types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/ValuationType.md">schema/enums/ValuationType</a></p>
+</li>
+<li>
+<p><strong>Enum - Vesting Day of Month</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/VestingDayOfMonth.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration representing a vesting "day of month". Since not all months have 29, 30, or 31 days, this enum requires those values to also specify an overflow behavior.</li>
+<li><code>01</code> - <code>28</code> : Day 1, 2... 28 of the month; e.g. <code>03</code> means vesting occurs on the 3rd of the month.</li>
+<li><code>29_OR_LAST_DAY_OF_MONTH</code> - <code>31_OR_LAST_DAY_OF_MONTH</code> : Day 29, 30, or 31 of the month, defaulting to the last day of the month for shorter months; e.g. <code>31_OR_LAST_DAY_OF_MONTH</code> means monthly vesting occurs on Jan 31, Feb 28/29, Mar 31, Apr 30, etc.</li>
+<li><code>VESTING_START_DAY_OR_LAST_DAY_OF_MONTH</code> vests on the same day of month as the day of the <code>VESTING_START</code> condition; e.g. if vesting commences on Jan 15 then any vesting will accrue on the 15th of future vesting months. If vesting commencement occurs on days 29-31, this has the same behavior as the other <code>*_LAST_DAY_OF_MONTH</code> values.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/enums/VestingDayOfMonth.md">schema/enums/VestingDayOfMonth</a></p>
+</li>
+<li>
+<p><strong>Enum - Vesting Trigger Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Enumeration of vesting trigger types</li>
+<li><strong>View more:</strong> <a href="/docs/schema/enums/VestingTriggerType.md">schema/enums/VestingTriggerType</a></li>
+</ul>
+<h3 id="types"><a href="/schema/types">Types</a></h3>
+<p><em>Used as common building blocks for properties that are more complex than primitives but don't need separate unique Ids.</em></p>
+<ul>
+<li>
+<p><strong>Type - Address</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Address.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an address</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Address.md">schema/types/Address</a></p>
+</li>
+<li>
+<p><strong>Type - Capitalization Definition</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type represents a group of securities that constitutes some formally defined part of the company (e.g. post-money capitalization vs pre-money for a security)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/CapitalizationDefinition.md">schema/types/CapitalizationDefinition</a></p>
+</li>
+<li>
+<p><strong>Type - Contact Info</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a primary contact person for a stakeholder (e.g. a fund)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/ContactInfo.md">schema/types/ContactInfo</a></p>
+</li>
+<li>
+<p><strong>Type - Country Code</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/CountryCode.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an ISO 3166-1 alpha 2 country code</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/CountryCode.md">schema/types/CountryCode</a></p>
+</li>
+<li>
+<p><strong>Type - Country Subdivision Code</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of the second part of an ISO 3166-2 country subdivision code</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/CountrySubdivisionCode.md">schema/types/CountrySubdivisionCode</a></p>
+</li>
+<li>
+<p><strong>Type - Currency Code</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an ISO 4217 currency code</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/CurrencyCode.md">schema/types/CurrencyCode</a></p>
+</li>
+<li>
+<p><strong>Type - Date</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Date.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type represention of an ISO-8601 date, e.g. 2022-01-28</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Date.md">schema/types/Date</a></p>
+</li>
+<li>
+<p><strong>Type - Email</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Email.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an email address</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Email.md">schema/types/Email</a></p>
+</li>
+<li>
+<p><strong>Type - File</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/File.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a file</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/File.md">schema/types/File</a></p>
+</li>
+<li>
+<p><strong>Type - MD5 Hash</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Md5.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Md5.md">schema/types/Md5</a></p>
+</li>
+<li>
+<p><strong>Type - Monetary</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Monetary.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an amount of money in a specified currency</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Monetary.md">schema/types/Monetary</a></p>
+</li>
+<li>
+<p><strong>Type - Name</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Name.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type comprising of multiple name components</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Name.md">schema/types/Name</a></p>
+</li>
+<li>
+<p><strong>Type - Numeric</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Numeric.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Fixed-point string representation of a number (up to 10 decimal places supported)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Numeric.md">schema/types/Numeric</a></p>
+</li>
+<li>
+<p><strong>Type - Percentage</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Percentage.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Percentage.md">schema/types/Percentage</a></p>
+</li>
+<li>
+<p><strong>Type - Phone</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Phone.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a phone number</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Phone.md">schema/types/Phone</a></p>
+</li>
+<li>
+<p><strong>Type - Pre-Release Omission</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Transitional type; allows an otherwise "required" field to support omission by an implementation that can not yet support all fields. This is not intended to be permanent; rather it is a communication mechanism indicating that a field added in a pre-release version of the spec will need to be implemented to support the next release.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/PreReleaseOmission.md">schema/types/PreReleaseOmission</a></p>
+</li>
+<li>
+<p><strong>Type - Ratio</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/Ratio.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/Ratio.md">schema/types/Ratio</a></p>
+</li>
+<li>
+<p><strong>Type - Security Exemption</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/SecurityExemption.md">schema/types/SecurityExemption</a></p>
+</li>
+<li>
+<p><strong>Type - Stock Parent</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/StockParent.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a stock came from a previous stock entry)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/StockParent.md">schema/types/StockParent</a></p>
+</li>
+<li>
+<p><strong>Type - Tax Identifier</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/TaxID.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/TaxID.md">schema/types/TaxID</a></p>
+</li>
+<li>
+<p><strong>Type - Termination Window</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a termination window</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/TerminationWindow.md">schema/types/TerminationWindow</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Condition</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes condition / triggers to be satisfied for vesting to occur</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingCondition.md">schema/types/vesting/VestingCondition</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Condition Portion</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a fractional portion (ratio) of shares associated with a Vesting Condition</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingConditionPortion.md">schema/types/vesting/VestingConditionPortion</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Event Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a vesting condition satisfied when a particular unscheduled event occurs</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingEventTrigger.md">schema/types/vesting/VestingEventTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Period in Days</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a period of time expressed in days (e.g. 365 days) for use in Vesting Terms</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingPeriodInDays.md">schema/types/vesting/VestingPeriodInDays</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Period in Months</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingPeriodInMonths.md">schema/types/vesting/VestingPeriodInMonths</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Schedule Absolute Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a vesting condition satisfied on an absolute date.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingScheduleAbsoluteTrigger.md">schema/types/vesting/VestingScheduleAbsoluteTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Schedule Relative Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingScheduleRelativeTrigger.md">schema/types/vesting/VestingScheduleRelativeTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Vesting Start Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes a vesting condition satisfied at the security's vesting commencement date</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/vesting/VestingStartTrigger.md">schema/types/vesting/VestingStartTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Automatic Conversion on Condition Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of automatic trigger on a tive or condition.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.md">schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Automatic Conversion on Date Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of an automatic trigger on a date.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.md">schema/types/conversion_triggers/AutomaticConversionOnDateTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Elective Conversion At Will</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of elective trigger valid at will (so long as instrument is valid and outstanding).</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.md">schema/types/conversion_triggers/ElectiveConversionAtWillTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Elective Conversion In Date Range Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of elective trigger valid on or after start_date and until or before end_date.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.md">schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Elective Conversion on Condition Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of elective trigger on fulfillment of a condition.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.md">schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Unspecified Conversion Trigger</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Use this where no structured data is available regarding what triggers the conversion of a given security.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_triggers/UnspecifiedConversionTrigger.md">schema/types/conversion_triggers/UnspecifiedConversionTrigger</a></p>
+</li>
+<li>
+<p><strong>Type - Convertible Conversion Rights</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a conversion right from a convertible into another non-plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_rights/ConvertibleConversionRight.md">schema/types/conversion_rights/ConvertibleConversionRight</a></p>
+</li>
+<li>
+<p><strong>Type - Stock Class Conversion Rights</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a conversion right from one Stock Class into another Stock Class</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_rights/StockClassConversionRight.md">schema/types/conversion_rights/StockClassConversionRight</a></p>
+</li>
+<li>
+<p><strong>Type - Warrant Conversion Rights</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Type representation of a conversion right from a convertible into another non-plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_rights/WarrantConversionRight.md">schema/types/conversion_rights/WarrantConversionRight</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - Custom</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/CustomConversionMechanism.md">schema/types/conversion_mechanisms/CustomConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - Fixed Amount</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Describes how a security converts into a fixed amount of a stock class</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.md">schema/types/conversion_mechanisms/FixedAmountConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - Note</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Sets forth inputs and conversion mechanism of a convertible note</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/NoteConversionMechanism.md">schema/types/conversion_mechanisms/NoteConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - Percent of Capitalization</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Sets forth inputs and conversion mechanism of percent of capitalization conversion (where an instrument purports to grant a percent of company capitalization at some point in time)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.md">schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - Ratio</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Sets forth inputs and conversion mechanism of a ratio conversion (primarily used to describe conversion from one stock class (e.g. Preferred) into another (e.g. Common)</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/RatioConversionMechanism.md">schema/types/conversion_mechanisms/RatioConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Conversion Mechanism - SAFE</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)</li>
+<li><strong>View more:</strong> <a href="/docs/schema/types/conversion_mechanisms/SAFEConversionMechanism.md">schema/types/conversion_mechanisms/SAFEConversionMechanism</a></li>
+</ul>
+<h3 id="primitives"><a href="/schema/primitives">Primitives</a></h3>
+<p><em>Used for object property composition and enforcing uniform properties across parts of the schema.</em></p>
+<ul>
+<li>
+<p><strong>Primitive - Vesting Condition Trigger Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingConditionTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract type describing base fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/types/vesting/BaseVestingConditionTrigger.md">schema/primitives/types/vesting/BaseVestingConditionTrigger</a></p>
+</li>
+<li>
+<p><strong>Primitive - Vesting Period Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/types/vesting/BaseVestingPeriod.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/types/vesting/BaseVestingPeriod.md">schema/primitives/types/vesting/BaseVestingPeriod</a></p>
+</li>
+<li>
+<p><strong>Primitive - Base Conversion Trigger Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/BaseConversionTrigger.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract type representation of required fields require for conversion rights types.</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/types/conversion_triggers/BaseConversionTrigger.md">schema/primitives/types/conversion_triggers/BaseConversionTrigger</a></p>
+</li>
+<li>
+<p><strong>Primitive - Base Conversion Right Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/types/conversion_rights/BaseConversionRight.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract type representation of a conversion right from a non-plan security into another non-plan security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/types/conversion_rights/BaseConversionRight.md">schema/primitives/types/conversion_rights/BaseConversionRight</a></p>
+</li>
+<li>
+<p><strong>Primitive - Base Conversion Mechanism Type</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/BaseConversionMechanism.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract type setting forth required field(s) for ALL conversion mechanism types</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/types/conversion_mechanisms/BaseConversionMechanism.md">schema/primitives/types/conversion_mechanisms/BaseConversionMechanism</a></p>
+</li>
+<li>
+<p><strong>Primitive - BaseObject</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object to be extended by all other objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/BaseObject.md">schema/primitives/objects/BaseObject</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseSecurityTransaction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract transaction object to be extended by all transaction objects that deal with individual securities</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/BaseSecurityTransaction.md">schema/primitives/objects/transactions/BaseSecurityTransaction</a></p>
+</li>
+<li>
+<p><strong>Primitive - Stock Class Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseStockClassTransaction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract transaction object to be extended by all transaction objects that affect the stock class</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/BaseStockClassTransaction.md">schema/primitives/objects/transactions/BaseStockClassTransaction</a></p>
+</li>
+<li>
+<p><strong>Primitive - Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseTransaction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract transaction object to be extended by all other transaction objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/BaseTransaction.md">schema/primitives/objects/transactions/BaseTransaction</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Transfer Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/transfer/BaseTransfer.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing a security transfer or secondary sale transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/transfer/BaseTransfer.md">schema/primitives/objects/transactions/transfer/BaseTransfer</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Retraction Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/retraction/BaseRetraction.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing a security retraction transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/retraction/BaseRetraction.md">schema/primitives/objects/transactions/retraction/BaseRetraction</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Repurchase Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/repurchase/BaseRepurchase.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing common properties to a repurchase transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/repurchase/BaseRepurchase.md">schema/primitives/objects/transactions/repurchase/BaseRepurchase</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Release Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/release/BaseRelease.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing fields common to all release transaction objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/release/BaseRelease.md">schema/primitives/objects/transactions/release/BaseRelease</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Reissuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/reissuance/BaseReissuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing common properties to a reissuance of a security</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/reissuance/BaseReissuance.md">schema/primitives/objects/transactions/reissuance/BaseReissuance</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Issuance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/issuance/BaseIssuance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing fields common to all issuance objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/issuance/BaseIssuance.md">schema/primitives/objects/transactions/issuance/BaseIssuance</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Exercise Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/BaseExercise.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing fields common to all exercise transaction objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/exercise/BaseExercise.md">schema/primitives/objects/transactions/exercise/BaseExercise</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Conversion Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/conversion/BaseConversion.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing fields common to all conversion transaction objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/conversion/BaseConversion.md">schema/primitives/objects/transactions/conversion/BaseConversion</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Cancellation Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/cancellation/BaseCancellation.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing fields common to all cancellation transaction objects</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/cancellation/BaseCancellation.md">schema/primitives/objects/transactions/cancellation/BaseCancellation</a></p>
+</li>
+<li>
+<p><strong>Primitive - Security Acceptance Transaction</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/objects/transactions/acceptance/BaseAcceptance.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract object describing a security acceptance transaction</li>
+<li>
+<p><strong>View more:</strong> <a href="/docs/schema/primitives/objects/transactions/acceptance/BaseAcceptance.md">schema/primitives/objects/transactions/acceptance/BaseAcceptance</a></p>
+</li>
+<li>
+<p><strong>Object - BaseFile</strong></p>
+</li>
+<li>
+<p><strong>Id:</strong> <code>https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json</code></p>
+</li>
+<li><strong>Description:</strong> Abstract file to be extended by all other files</li>
+<li><strong>View more:</strong> <a href="/docs/schema/primitives/files/BaseFile.md">schema/primitives/files/BaseFile</a></li>
+</ul>
+<h2 id="developer-information">Developer Information</h2>
+<h3 id="format">Format</h3>
+<ul>
+<li>We use <a href="https://json-schema.org/specification-links.html#draft-7">JSON Schema Draft 7</a> for maximum compatibility with
+  JSON Schema <a href="https://protect-us.mimecast.com/s/bvw6ClYgmKf29D5ZHqNca4?domain=json-schema.org">implementations</a></li>
+</ul>
+<h3 id="recommended-code-editor-for-schema-files">Recommended Code Editor For Schema Files</h3>
+<ul>
+<li>Simply use <a href="https://code.visualstudio.com/">VSCode</a> with the "Prettier - Code formatter"</li>
+</ul>
+<h3 id="development-environment-setup">Development Environment Setup</h3>
+<p>This repo requires Prettier to be run on all files. Run <code>npm install</code> to install dev dependencies and Prettier will automatically run pre-commit.</p>
+<h3 id="ocf-types-vs-ocf-objects">OCF Types vs OCF Objects</h3>
+<p>You may notice this distinction in our repo organization, yet both OCF Types and OCF Objects are commonly JSONSchema <code>object</code> types (basically meaning they are JSONs).</p>
+<ul>
+<li>
+<p>An <strong>OCF Object</strong> is a schema with a JSONSchema types of <code>object</code> that MUST have a unique Id field in each instance of its schema.</p>
+</li>
+<li>
+<p>An <strong>OCF Type</strong> is meant to describe a specific data type that is does not have a unique ID and will be nested somewhere within an OCF Object. These usually have a JSONSchema type of <code>object</code>, but they can also be JSONSchema primitives like strings, numbers, etc. that have specific validation rules (e.g. a regex pattern). They do <strong>not</strong> have unique IDs.</p>
+</li>
+</ul>
+<h3 id="ocf-schemas-rely-heavily-on-object-composition-patterns">OCF Schemas Rely Heavily on Object Composition Patterns</h3>
+<p>In order to improve code quality, reduce repetition and provide for a better developer experience, OCF schemas rely
+heavily on <a href="https://en.wikipedia.org/wiki/Object_composition">object composition</a>. In the
+<a href="/schema/primitives">primitives folder</a>, you'll see a folder structure that mirrors the overall <code>/schema</code> folder. Where a number of related OCF Objects or OCF Types share properties, we create a "primitive" object in this primitives folder. This primitive's path in the primitives folder must mirror the path to the OCF Object(s) or OCF Type(s) composed from it. We incorporate the properties in these primitives
+into OCF objects by using the JSONSchema <a href="https://json-schema.org/understanding-json-schema/reference/combining.html">allOf</a>
+property.</p>
+<p>Where there are different "flavors" of a given base - e.g. the primitive <code>BaseConversionRight</code> is composed into OCF Types of <code>ConvertibleConversionRight</code>, a <code>StockClassConversionRight</code> or a <code>WarrantConversionRight</code> - the final OCF Types / Objects must have a <code>type</code> that holds the specific flavors type enumeration - e.g. <code>STOCK_CLASS_CONVERSION_RIGHT</code> for <code>StockClassConversionRight</code>. This avoids validation problems where two flavors must have identical properties but different allowable property values.</p>
+<p><strong>Here are a couple of concrete object composition examples:</strong></p>
+<ol>
+<li>The <code>ConversionTrigger</code> OCF Types like <code>AutomaticConversionOnConditionTrigger</code> and <code>ElectiveConversionOnConditionTrigger</code> are all composed from <code>BaseConversionTrigger</code>. The primitive can be found at <a href="/schema/primitives/types/conversion_triggers/">/schema/primitives/types/conversion_triggers/</a> while the OCF Types composed from this primitive can be found in <a href="/schema/types/conversion_triggers/">/schema/types/conversion_triggers/</a> <a href="/schema/objects">objects folder</a>.</li>
+<li>All OCF Objects must be composed of the <a href="/schema/primitives/objects/BaseObject.schema.json">BaseObject</a> which ensures there is a required object id field on all OCF Objects. This can be found in <code>/schema/primitives/objects</code> as all objects in the <code>/schema/objects</code> folder will incorporate its properties.</li>
+<li>All of our transaction events must have properties listed in the
+   <a href="/schema/primitives/transactions/BaseTransaction.schema.json">BaseTransaction</a> schema. Then, different groups of
+   transaction events share some common properties, and these are enforced by incorporating more specific primitives -
+   e.g. all issues (whether of stock, plan securities, warrants or convertibles) must incorporate the properties set
+   forth in <a href="/schema/primitives/transactions/acceptance/BaseAcceptance.schema.json">BaseAcceptance</a> <em>in addition to the
+   properties in BaseTransaction</em>.</li>
+</ol>
+<h3 id="whats-with-the-empty-properties-eg-in-your-schemas">What's with the empty properties (e.g. {}) in your schemas?</h3>
+<p>You'll notice that <em>required</em> OCF type and object properties that are incorporated via <a href="###schema-composition-explained">object composition</a>
+have empty objects as their schema values in the OCF object schemas (i.e. <code>"id": {}</code>). This is due to how JSONSchema validators
+interact with the "required" property. If validators don't find a required property in an object schema, even if it's one of the
+primitives the object is composed of, most (all?) JSONSchema validators will throw an error. As a result, we need to
+add required, "inherited" properties to the final OCF object schemas. They don't actually need to be redefined, however,
+so we just assign these repeat properties a value of {} in the schema as JSONSchema validators <em>can</em> import the property
+details via allOf. Our documentation generator looks back to the full details of the property from the inherited schemas,
+however, and the documentation shows the full property details inherited from the primitives. Unless you're developing
+OCF schemas, these implementation details probably won't matter to you, and you can rely on our documentation for
+definitive documentation of the necessary properties and all details thereof.</p>
+<h3 id="dont-add-additional-properties-to-ocf">Don't Add Additional Properties to OCF</h3>
+<p>You may notice that the primitive schemas do not prevent the inclusion of additional properties, whereas all OCF Types and OCF Objects that are also JSONSchema <code>objects</code> (basically anything that's not just an enum or primitive data type with validation check) have <code>additionalProperties</code>: <code>false</code> to prevent the inclusion of additional properties. This is due to primitives not being meant for use by consumers of the OCF standard. As we build more complex objects from primitives, we need to allow the primitive to have the additional properties required by the final OCF Objects and Types or else you'd get validation errors. We do not want the OCF Types and OCF Objects that are meant for use by the community to have additional properties, however, as we want to avoid situations where third-parties implementing OCF add custom or undocumented fields and types. This could cause unanticipated compatibility issues and collisions with future versions of OCF, if, for example, a popular implementation of OCF used a custom property with a name that we later want to add to to the official standard.</p>
+<h3 id="testing">Testing</h3>
+<p>We have created npm scripts to perform various validations, such as validating the schemas themselves and our
+example ocf object instances:</p>
+<ul>
+<li>To validate schemas in the repo, run <code>npm run validate-ocf-file-schemas</code></li>
+<li>To validate examples in the repo, run <code>npm run validate-example-ocf-files</code></li>
+</ul>
+<p>If you want to use the validator for your own files, you can run the following command from the repo root:</p>
+<ul>
+<li><code>node ./utils/validate.mjs validate-ocf-director -p [path/to/ocf/files] -v</code></li>
+</ul>
+<p><em>Feel free to omit the -v if you don't want full console logs of the validation process</em></p>
+<p>We'll be releasing more complete documentation for validating and packaging in the future. <em>NOTE: We are still refining
+our toolchain and everything here is subject to change</em></p>
+<h2 id="contributors-alphabetical">Contributors (alphabetical)</h2>
+<p>Please see the Open Cap Table Coalition Website or our GitHub Code Contributors List.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="schema/enums/AccrualPeriodType/" class="md-footer__link md-footer__link--next" aria-label="Next: AccrualPeriodType" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              AccrualPeriodType
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
