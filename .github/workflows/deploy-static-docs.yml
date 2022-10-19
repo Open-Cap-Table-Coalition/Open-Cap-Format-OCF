@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  deploy:
+  deploy-static-site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,6 +19,14 @@ jobs:
 
       - name: Install Dependencies
         run: pip install requirements.txt
+
+      - name: Wait for check generated docs to succeed
+        uses: lewagon/wait-on-check-action@v1.0.0
+        with:
+          ref: ${{ github.ref }}
+          check-name: "Check Generated Docs"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
 
       - name: Deploy documentation to github pages
         run: mkdocs gh-deploy --force
