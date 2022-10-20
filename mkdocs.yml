@@ -1,8 +1,9 @@
-site_name: Open CapTable Format (OCF)
+site_name: Open CapTable Format Specification
 repo_url: https://github.com/naveedn/Open-Cap-Format-OCF
 theme:
   name: material
-  logo: "./images/OCF Logo.png"
+  logo: "./images/OCF Logo Transparent.png"
+  favicon: "./images/favicon.png"
   extra:
     homepage: https://www.opencaptablecoalition.com/
   features:
@@ -12,6 +13,8 @@ theme:
     - navigation.sections
     - navigation.top
     - toc.integrate
+extra_css:
+  - "./stylesheets/extra.css"
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:

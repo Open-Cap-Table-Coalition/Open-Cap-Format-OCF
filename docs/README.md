@@ -1,9 +1,4 @@
----
-hide:
-  - navigation
----
-
-![](https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Logo.png)
+![](images/OCF%20Logo.png)
 
 # Open Cap Table Format (OCF)
 
@@ -46,7 +41,7 @@ There are currently 8 file types that make up a cap table:
 
 **At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf.zip extension:**
 
-![](docs/images/OCF%20Container.png)
+![](images/OCF%20Container.png)
 
 We are working on sample tooling to interact with compressed \*.ocf.zip files.
 
@@ -61,7 +56,7 @@ see a full list of event transactions supported in our [transactions schemas fol
 
 Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:
 
-![](/docs/images/Transaction%20Stack%20Animation.gif)
+![](images/Transaction%20Stack%20Animation.gif)
 
 ## Key OCF Concepts
 
@@ -79,11 +74,11 @@ We use the same design patterns for convertible stock (e.g. preferred stock conv
 
 Let's illustrate the design pattern using a convertible note as an example:
 
-![](docs/images/OCF%20Conversion%20Diagram.png)
+![](images/OCF%20Conversion%20Diagram.png)
 
 And here's what some sample data looks like in practice:
 
-![](docs/images/OCF%20Conversion%20Example.png)
+![](images/OCF%20Conversion%20Example.png)
 
 ### Vesting
 
