@@ -8,12 +8,12 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
-        <title>Open CapTable Format (OCF)</title>
+        <title>Open CapTable Format Specification</title>
       
     
     
@@ -36,6 +36,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -78,9 +80,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Open CapTable Format (OCF)" class="md-header__button md-logo" aria-label="Open CapTable Format (OCF)" data-md-component="logo">
+    <a href="." title="Open CapTable Format Specification" class="md-header__button md-logo" aria-label="Open CapTable Format Specification" data-md-component="logo">
       
-  <img src="images/OCF Logo.png" alt="logo">
+  <img src="images/OCF Logo Transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -90,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Open CapTable Format (OCF)
+            Open CapTable Format Specification
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -213,9 +215,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -227,12 +227,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Open CapTable Format (OCF)" class="md-nav__button md-logo" aria-label="Open CapTable Format (OCF)" data-md-component="logo">
+    <a href="." title="Open CapTable Format Specification" class="md-nav__button md-logo" aria-label="Open CapTable Format Specification" data-md-component="logo">
       
-  <img src="images/OCF Logo.png" alt="logo">
+  <img src="images/OCF Logo Transparent.png" alt="logo">
 
     </a>
-    Open CapTable Format (OCF)
+    Open CapTable Format Specification
   </label>
   
     <div class="md-nav__source">
@@ -3184,7 +3184,7 @@
   </a>
 
 
-<p><img alt="" src="https://github.com/gunderson-dettmer/OCF-MD-Generator/blob/master/docs/images/OCF%20Logo.png" /></p>
+<p><img alt="" src="images/OCF%20Logo.png" /></p>
 <h1 id="open-cap-table-format-ocf">Open Cap Table Format (OCF)</h1>
 <p>Data Schema and Specification for Open Cap Format (OCF) published by the <a href="https://medium.com/@opencaptable">Open Cap Table Coalition</a>.</p>
 <h2 id="what-is-ocf">What is OCF?</h2>
@@ -3217,7 +3217,7 @@ the <a href="/schema">Schemas folder</a>.</p>
    schedules used by the issuer.</li>
 </ol>
 <p><strong>At the moment, we recommend combining all of these files into a single compressed file with a *.ocf.zip extension:</strong></p>
-<p><img alt="" src="docs/images/OCF%20Container.png" /></p>
+<p><img alt="" src="images/OCF%20Container.png" /></p>
 <p>We are working on sample tooling to interact with compressed *.ocf.zip files.</p>
 <p><strong>You can also break out the various OCF Types and OCF Objects and make those available separately via API or other, suitable mechanism. The key part of OCF is the data structure, not the container itself, though, to ensure complete cap table integrity, a full cap table export is recommended.</strong></p>
 <h3 id="event-driven-architecture">Event-Driven Architecture</h3>
@@ -3226,7 +3226,7 @@ object-specific events that are added to an event "stack" to represent the histo
 describe the relevant data needed to describe key events such as issuances, transfers, conversions, etc. You can
 see a full list of event transactions supported in our <a href="/schema/objects/transactions">transactions schemas folder</a>.</p>
 <p>Here's an example of how an event stack would work to track the lifecycle of a single issuance of preferred stock:</p>
-<p><img alt="" src="/docs/images/Transaction%20Stack%20Animation.gif" /></p>
+<p><img alt="" src="images/Transaction%20Stack%20Animation.gif" /></p>
 <h2 id="key-ocf-concepts">Key OCF Concepts</h2>
 <p><em>OCF is designed to be extremely expressive and extensible. Pay particular attention to vesting and conversion, which have both been designed to support the types of complex, bespoke vesting and conversion conditions commonly found on attorney-drafted options and convertibles yet are (today) challenging to model in a structured format</em></p>
 <h3 id="conversions">Conversions</h3>
@@ -3238,9 +3238,9 @@ see a full list of event transactions supported in our <a href="/schema/objects/
 </ol>
 <p>We use the same design patterns for convertible stock (e.g. preferred stock converting into common), warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).</p>
 <p>Let's illustrate the design pattern using a convertible note as an example:</p>
-<p><img alt="" src="docs/images/OCF%20Conversion%20Diagram.png" /></p>
+<p><img alt="" src="images/OCF%20Conversion%20Diagram.png" /></p>
 <p>And here's what some sample data looks like in practice:</p>
-<p><img alt="" src="docs/images/OCF%20Conversion%20Example.png" /></p>
+<p><img alt="" src="images/OCF%20Conversion%20Example.png" /></p>
 <h3 id="vesting">Vesting</h3>
 <p>Our vesting data model supports arbitrarily-complex trees of dependent vesting conditions that can mix time-based and event-based vesting (e.g. vesting over time and "milestone" vesting, in any execution order with any desired dependencies). We are working on more comprehensive documentation for these concepts. In the meantime, please review the <a href="/schema/objects/VestingTerms.schema.json">vesting terms object</a> (essentially a "vesting schedule"). the vesting OCF Types in <a href="/schema/types/vesting/">/schema/types/vesting</a>, and the vesting events in <a href="/schema/objects/transactions/vesting/">/schema/objects/transactions/vesting</a> (which are used to indicate when a given vesting schedule starts for a given security and when a milestone-based condition is satisfied).</p>
 <p>You can see example vesting schedules in our samples folder in the <a href="/samples/VestingTerms.ocf.json">VestingTerms.ocf.json</a> file.</p>
@@ -4703,8 +4703,6 @@ our toolchain and everything here is subject to change</em></p>
 
 
 
-  
-
 
 
                 
@@ -4723,8 +4721,6 @@ our toolchain and everything here is subject to change</em></p>
       
         <footer class="md-footer">
   
-    
-      
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
