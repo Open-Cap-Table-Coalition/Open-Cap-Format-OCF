@@ -39,3 +39,20 @@ jobs:
             echo "Please ensure you are regenerating documentation via 'npm run generate-docs/' and have committted those changes. Changed files: $output"
             echo "1"
           fi
+  deploy-static-site:
+    runs-on: ubuntu-latest
+    needs: check-gen-docs
+    steps:
+      - name: Setup Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Wait for check generated docs to succeed
+        uses: lewagon/wait-on-check-action@v1.0.0
+
+      - name: Deploy documentation to github pages
+        run: mkdocs gh-deploy --force
