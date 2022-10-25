@@ -12,9 +12,9 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/BaseObject](/docs/schema/primitives/objects/BaseObject.md)
-- [schema/primitives/objects/transactions/BaseTransaction](/docs/schema/primitives/objects/transactions/BaseTransaction.md)
-- [schema/primitives/objects/transactions/BaseStockClassTransaction](/docs/schema/primitives/objects/transactions/BaseStockClassTransaction.md)
+- [schema/primitives/objects/Object](/docs/schema/primitives/objects/Object.md)
+- [schema/primitives/objects/transactions/Transaction](/docs/schema/primitives/objects/transactions/Transaction.md)
+- [schema/primitives/objects/transactions/StockClassTransaction](/docs/schema/primitives/objects/transactions/StockClassTransaction.md)
 
 **Properties:**
 

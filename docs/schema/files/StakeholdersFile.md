@@ -12,7 +12,7 @@
 
 **Composed From:**
 
-- [schema/primitives/files/BaseFile](/docs/schema/primitives/files/BaseFile.md)
+- [schema/primitives/files/File](/docs/schema/primitives/files/File.md)
 
 **Properties:**
 

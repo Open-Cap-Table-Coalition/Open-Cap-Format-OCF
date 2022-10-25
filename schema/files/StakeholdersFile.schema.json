@@ -5,7 +5,7 @@
   "description": "JSON containing file type identifier and list of stakeholders",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json"
     }
   ],
   "type": "object",

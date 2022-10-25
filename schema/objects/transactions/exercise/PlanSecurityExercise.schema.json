@@ -6,16 +6,16 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseTransaction.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/BaseSecurityTransaction.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/BaseExercise.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/Exercise.schema.json"
     }
   ],
   "properties": {

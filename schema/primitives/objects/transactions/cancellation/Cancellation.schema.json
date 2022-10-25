@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/cancellation/Cancellation.schema.json",
+  "title": "Primitive - Security Cancellation Transaction",
+  "description": "Abstract object describing fields common to all cancellation transaction objects",
+  "type": "object",
+  "properties": {
+    "balance_security_id": {
+      "description": "Identifier for the security that holds the remainder balance (for partial cancellations)",
+      "type": "string"
+    },
+    "reason_text": {
+      "description": "Reason for the cancellation",
+      "type": "string"
+    }
+  },
+  "required": ["reason_text"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/cancellation/Cancellation.schema.json"
+}

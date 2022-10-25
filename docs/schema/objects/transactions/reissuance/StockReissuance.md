@@ -12,10 +12,10 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/BaseObject](/docs/schema/primitives/objects/BaseObject.md)
-- [schema/primitives/objects/transactions/BaseTransaction](/docs/schema/primitives/objects/transactions/BaseTransaction.md)
-- [schema/primitives/objects/transactions/BaseSecurityTransaction](/docs/schema/primitives/objects/transactions/BaseSecurityTransaction.md)
-- [schema/primitives/objects/transactions/reissuance/BaseReissuance](/docs/schema/primitives/objects/transactions/reissuance/BaseReissuance.md)
+- [schema/primitives/objects/Object](/docs/schema/primitives/objects/Object.md)
+- [schema/primitives/objects/transactions/Transaction](/docs/schema/primitives/objects/transactions/Transaction.md)
+- [schema/primitives/objects/transactions/SecurityTransaction](/docs/schema/primitives/objects/transactions/SecurityTransaction.md)
+- [schema/primitives/objects/transactions/reissuance/Reissuance](/docs/schema/primitives/objects/transactions/reissuance/Reissuance.md)
 
 **Properties:**
 

@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/BaseConversionTrigger.schema.json"
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
     }
   ],
   "properties": {

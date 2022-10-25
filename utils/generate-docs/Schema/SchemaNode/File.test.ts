@@ -5,8 +5,8 @@ import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 import { ObjectSchemaNodeJson } from "./Object.js";
 
 const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json",
-  title: "Object - BaseObject",
+  $id: "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json",
+  title: "Object - Object",
   description: "Abstract object to be extended by all other objects",
   type: "object",
   properties: {
@@ -37,7 +37,7 @@ const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/objects/BaseObject.schema.json",
+      $ref: "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json",
     },
   ],
   properties: {
@@ -59,7 +59,7 @@ const FILE_FIXTURE: FileSchemaNodeJson = {
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json",
+      $ref: "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json",
     },
   ],
   properties: {
@@ -84,8 +84,8 @@ const ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/files/BaseFile.schema.json",
-  title: "Object - BaseFile",
+  $id: "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json",
+  title: "Object - File",
   description: "Abstract file to be extended by all other files",
   type: "object",
   properties: {},
@@ -127,7 +127,7 @@ describe("File", () => {
 
 **Composed From:**
 
-- [schema/primitives/files/BaseFile](/docs/schema/primitives/files/BaseFile.md)
+- [schema/primitives/files/File](/docs/schema/primitives/files/File.md)
 
 **Properties:**
 
