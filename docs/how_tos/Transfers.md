@@ -1,17 +1,17 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../README.md)
 
 # OCF Transfers
 
 ## Overview
 
-Most likely, if you are modeling a real company's capitalization, someone is going to eventually want to transfer a security between one or more stakeholders. In order to achieve this, you're going to need to use one of the [transfer events](../../schema/objects/transactions/transfer).
+Most likely, if you are modeling a real company's capitalization, someone is going to eventually want to transfer a security between one or more stakeholders. In order to achieve this, you're going to need to use one of the [transfer events](../schema/objects/transactions/transfer).
 
 Each of our four, core security types has its own transfer event:
 
-1. [ConvertibleTransfer](../../schema/objects/transactions/transfer/ConvertibleTransfer.md)
-2. [PlanSecurityTransfer](../../schema/objects/transactions/transfer/PlanSecurityTransfer.md)
-3. [StockTransfer](../../schema/objects/transactions/transfer/StockTransfer.md)
-4. [WarrantTransfer](../../schema/objects/transactions/transfer/WarrantTransfer.md)
+1. [ConvertibleTransfer](../schema/objects/transactions/transfer/ConvertibleTransfer.md)
+2. [PlanSecurityTransfer](../schema/objects/transactions/transfer/PlanSecurityTransfer.md)
+3. [StockTransfer](../schema/objects/transactions/transfer/StockTransfer.md)
+4. [WarrantTransfer](../schema/objects/transactions/transfer/WarrantTransfer.md)
 
 Don't forget that OCF is event-driven. You do not want to mutate (or change) the OCF objects that already exist. So, for example, if you had a stock issuance to Bob, and Bob now wants to transfer all of his
 shares to Alice, if you look at the transfer schema, you'll probably notice a problem:
@@ -37,7 +37,7 @@ shares to Alice, if you look at the transfer schema, you'll probably notice a pr
 
 We know the `security_id` of the source stock from its original issuance event. We also know from that issuance that Bob is the stakehoder-owner of the stock. But how does Alice come into play?
 
-You'll notice that not only does the transaction object have a source `security_id`, there is also a field for `resulting_security_ids`. This should point to the **issuance(s)** that result from this transfer. So, in fact, to model a simple transfer from Bob to Alice, you need **two** events - a [StockIssuance](../../schema/objects/transactions/issuance/StockIssuance.md) to Alice **and** the transfer linking Bob's stock to Alice's.
+You'll notice that not only does the transaction object have a source `security_id`, there is also a field for `resulting_security_ids`. This should point to the **issuance(s)** that result from this transfer. So, in fact, to model a simple transfer from Bob to Alice, you need **two** events - a [StockIssuance](../schema/objects/transactions/issuance/StockIssuance.md) to Alice **and** the transfer linking Bob's stock to Alice's.
 
 If Bob has any remaining shares following the issuance, his remaining shares get a new security_id via another issuance event and the transfer's `balance_security_id` should point to that new security_id. If Bob transfers all of his shares, nothing further is required. Anyone traversing the events should be able to see that Bob's stock was transfered in its entirety to the security_ids in `resulting_security_ids` on the transfer.
 
@@ -49,7 +49,7 @@ Let's walk through it in depth.
 
 We a company with a StockClass with ID `SeriesA` and a name of `Series A Preferred Stock`.
 
-1. The Company wants to issue 1,000 shares of Series A Preferred Stock to Bob Immaperson. To do this, create a [StockIssuance](../../schema/objects/transactions/issuance/StockIssuance.md) event in your OCF event stack:
+1. The Company wants to issue 1,000 shares of Series A Preferred Stock to Bob Immaperson. To do this, create a [StockIssuance](../schema/objects/transactions/issuance/StockIssuance.md) event in your OCF event stack:
 
 ```
 {
