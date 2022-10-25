@@ -1,17 +1,3 @@
-:house: [Documentation Home](/README.md)
-
----
-
-### Type - Numeric
-
-`https://opencaptablecoalition.com/schema/types/Numeric.schema.json`
-
-**Description:** _Fixed-point string representation of a number (up to 10 decimal places supported)_
-
-**Data Type:** `Primitive`
-
-**Value:** `STRING` - _Must Match Regex Pattern: `^[+-]?[0-9]+(\.[0-9]{1,10})?$`_
-
 :house: [Documentation Home](../../../README.md)
 
 # OCF Transfers
@@ -199,8 +185,3 @@ So here are the three events you'd have in your event stack:
 ```
 
 You can clearly see that Bob transferred all 1,000 shares of his stock here. Nothing further is required to note that the transfer is "terminal" or that nothing further remains of security with id `bob-stock-1` to dispose of.
-
-
-**Source Code:** [schema/types/Numeric](/schema/types/Numeric.schema.json)
-
-Copyright © 2022 Open Cap Table Coalition.
