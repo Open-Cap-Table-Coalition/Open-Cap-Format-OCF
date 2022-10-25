@@ -2,6 +2,8 @@ import readdirp, { EntryInfo } from "readdirp";
 
 import { ExampleJson } from "./Examples.js";
 
+import { pathToFileURL } from "url";
+
 /**
  *  Reader parses a file tree of example implementations of JSON data conforming
  * to the OCF and loads into JS objects.
@@ -21,7 +23,7 @@ export default class ExamplesReader {
   protected loadJsonFromEntryInfo = (
     entryInfo: EntryInfo
   ): Promise<ExampleJson> =>
-    import(entryInfo.fullPath).then(
+    import(pathToFileURL(entryInfo.fullPath).href).then(
       (json: { default: ExampleJson }) => json["default"]
     );
 
