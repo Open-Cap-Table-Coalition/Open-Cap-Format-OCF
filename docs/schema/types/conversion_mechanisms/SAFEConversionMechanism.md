@@ -17,6 +17,7 @@ _Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and i
 | type                     | **Constant:** `SAFE_CONVERSION`                             | Scalar Constant                                                                                                           | `REQUIRED` |
 | conversion_discount      | [schema/types/Percentage](/docs/schema/types/Percentage.md) | What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%) | -          |
 | conversion_valuation_cap | [schema/types/Monetary](/docs/schema/types/Monetary.md)     | What is the valuation cap (if applicable)?                                                                                | -          |
+| exit_multiple            | [schema/types/Ratio](/docs/schema/types/Ratio.md)           | For cash proceeds calculation during a liquidity event.                                                                   | -          |
 | conversion_mfn           | `BOOLEAN`                                                   | Is this an MFN flavored SAFE?                                                                                             | -          |
 
 **Source Code:** [schema/types/conversion_mechanisms/SAFEConversionMechanism](/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json)
