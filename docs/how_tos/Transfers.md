@@ -81,7 +81,7 @@ Note: we are assuming you have a stakeholder object with id `bob` and a StockLeg
 2. Now, let's say a year later, Bob wants to transfer all of his shares to Alice Hooman. Create a new issuance for Alice in your event stack:
 
 ```
-{
+  {
     "object_type": "TX_STOCK_ISSUANCE",
     "id": "give-alice-the-stock",
     "security_id": "alice-stock-1",
@@ -100,9 +100,9 @@ Note: we are assuming you have a stakeholder object with id `bob` and a StockLeg
       "currency": "USD"
     },
     "stock_legend_ids": [
-      "series-a-legend",
+      "series-a-legend"
     ]
-  },
+  }
 ```
 
 Again, we assume you've created a stakeholder object for Alice.
@@ -111,15 +111,15 @@ Again, we assume you've created a stakeholder object for Alice.
 
 ```
     {
-        "object_type": "TX_STOCK_TRANSFER",
-        "id": "bob-transfer-to-alice",
-        "security_id": "bob-stock-1",
-        "date": "2023-02-01",
-        "resulting_security_ids": [
+      "object_type": "TX_STOCK_TRANSFER",
+      "id": "bob-transfer-to-alice",
+      "security_id": "bob-stock-1",
+      "date": "2023-02-01",
+      "resulting_security_ids": [
         "alice-stock-1"
-        ],
-        "quantity": "1000"
-    },
+      ],
+      "quantity": "1000"
+    }
 ```
 
 So here are the three events you'd have in your event stack:
@@ -127,59 +127,59 @@ So here are the three events you'd have in your event stack:
 ```
 [
     {
-        "object_type": "TX_STOCK_ISSUANCE",
-        "id": "give-bob-some-stock",
-        "security_id": "bob-stock-1",
-        "date": "2022-02-01",
-        "security_law_exemptions": [],
-        "stakeholder_id": "bob",
-        "custom_id": "PA-1",
-        "stock_class_id": "SeriesA",
-        "share_price": {
+      "object_type": "TX_STOCK_ISSUANCE",
+      "id": "give-bob-some-stock",
+      "security_id": "bob-stock-1",
+      "date": "2022-02-01",
+      "security_law_exemptions": [],
+      "stakeholder_id": "bob",
+      "custom_id": "PA-1",
+      "stock_class_id": "SeriesA",
+      "share_price": {
         "amount": "1.00",
         "currency": "USD"
-        },
-        "quantity": "1000",
-        "cost_basis": {
+      },
+      "quantity": "1000",
+      "cost_basis": {
         "amount": "1.00",
         "currency": "USD"
-        },
-        "stock_legend_ids": [
-        "series-a-legend",
-        ]
+      },
+      "stock_legend_ids": [
+        "series-a-legend"
+      ]
     },
     ...
     {
-        "object_type": "TX_STOCK_ISSUANCE",
-        "id": "give-alice-the-stock",
-        "security_id": "alice-stock-1",
-        "date": "2023-02-01",
-        "security_law_exemptions": [],
-        "stakeholder_id": "alice",
-        "custom_id": "PA-23",
-        "stock_class_id": "SeriesA",
-        "share_price": {
+      "object_type": "TX_STOCK_ISSUANCE",
+      "id": "give-alice-the-stock",
+      "security_id": "alice-stock-1",
+      "date": "2023-02-01",
+      "security_law_exemptions": [],
+      "stakeholder_id": "alice",
+      "custom_id": "PA-23",
+      "stock_class_id": "SeriesA",
+      "share_price": {
         "amount": "2.73",
         "currency": "USD"
-        },
-        "quantity": "1000",
-        "cost_basis": {
+      },
+      "quantity": "1000",
+      "cost_basis": {
         "amount": "2.73",
         "currency": "USD"
-        },
-        "stock_legend_ids": [
-        "series-a-legend",
-        ]
+      },
+      "stock_legend_ids": [
+        "series-a-legend"
+      ]
     },
     {
-        "object_type": "TX_STOCK_TRANSFER",
-        "id": "bob-transfer-to-alice",
-        "security_id": "bob-stock-1",
-        "date": "2023-02-01",
-        "resulting_security_ids": [
+      "object_type": "TX_STOCK_TRANSFER",
+      "id": "bob-transfer-to-alice",
+      "security_id": "bob-stock-1",
+      "date": "2023-02-01",
+      "resulting_security_ids": [
         "alice-stock-1"
-        ],
-        "quantity": "1000"
+      ],
+      "quantity": "1000"
     }
 ]
 ```
