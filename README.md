@@ -954,7 +954,15 @@ _Used for object property composition and enforcing uniform properties across pa
 
 ### Development Environment Setup
 
-This repo requires Prettier to be run on all files. Run `npm install` to install dev dependencies and Prettier will automatically run pre-commit.
+This repo requires Prettier to be run on all files. Run `npm install` to install dev dependencies and Prettier will automatically run pre-commit. It is recommended to use nvm to install the same version of node.js that other developers are using, which is defined by the .nvmrc and the .node-version files.
+
+This site is generated using mkdocs, and requires python 3 (The current python interpreter used is `3.8.9`) To install the dependencies necessary, run the following commands from the project root:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 ### OCF Types vs OCF Objects
 
