@@ -55,4 +55,6 @@ jobs:
         run: pip install -r ./requirements.txt
 
       - name: Deploy documentation to github pages
-        run: mkdocs gh-deploy --force
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
