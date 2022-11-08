@@ -349,6 +349,12 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a cancellation of a warrant security
   - **View more:** [schema/objects/transactions/cancellation/WarrantCancellation](/docs/schema/objects/transactions/cancellation/WarrantCancellation.md)
 
+- **Object - Stock Class Conversion Ratio Adjustment Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
+  - **Description:** Object describing the conversion ratio adjustment of a stock class that has a RatioConversionMechanism conversion mechanism where there was an actual repricing due to a down-round. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection.
+  - **View more:** [schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment](/docs/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.md)
+
 - **Object - Convertible Acceptance Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`

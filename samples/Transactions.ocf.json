@@ -685,6 +685,27 @@
       }
     },
     {
+      "object_type": "TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT",
+      "id": "change-conversion-ratio-following-down-round",
+      "date": "2022-11-02",
+      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "new_conversion_price": {
+        "amount": "0.20",
+        "currency": "USD"
+      },
+      "new_ratio_conversion_mechanism": {
+        "type": "RATIO_CONVERSION",
+        "rounding_type": "CEILING",
+        "ratio": {
+          "numerator": "1.00",
+          "denominator": "0.20"
+        }
+      },
+      "comments": [
+        "Broad-based anti-dilution repricing due to massive down-round. Calculated by Law Firms R Us LLP on November 1st, 2022."
+      ]
+    },
+    {
       "object_type": "TX_STOCK_REISSUANCE",
       "id": "test-stock-split-minimal",
       "security_id": "test-security-id",
