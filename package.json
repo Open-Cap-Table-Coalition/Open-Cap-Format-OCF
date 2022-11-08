@@ -10,8 +10,8 @@
     "prepare": "husky install",
     "validate-ocf-file-schemas": "node ./utils/validate.mjs validate-ocf-schema -v -t",
     "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
-    "test": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest",
-    "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch"
+    "test": "node test-script.js",
+    "test:watch": "node test-script.js watch"
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
