@@ -12,11 +12,12 @@ _Sets forth inputs and conversion mechanism of a ratio conversion (primarily use
 
 **Properties:**
 
-| Property      | Type                                                                                                                                                       | Description                                                                     | Required   |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------- |
-| type          | **Constant:** `RATIO_CONVERSION`                                                                                                                           | Scalar Constant                                                                 | `REQUIRED` |
-| ratio         | [schema/types/Ratio](/docs/schema/types/Ratio.md)                                                                                                          | One share of this stock class converts into this many target stock class shares | `REQUIRED` |
-| rounding_type | `Enum - Rounding Type`</br></br>_Description:_ Enumeration of rounding types</br></br>**ONE OF:** </br>&bull; CEILING </br>&bull; FLOOR </br>&bull; NORMAL | How should fractional shares be rounded?                                        | `REQUIRED` |
+| Property         | Type                                                                                                                                                       | Description                                                                     | Required   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------- |
+| type             | **Constant:** `RATIO_CONVERSION`                                                                                                                           | Scalar Constant                                                                 | `REQUIRED` |
+| conversion_price | [schema/types/Monetary](/docs/schema/types/Monetary.md)                                                                                                    | What is the effective conversion price per share of this stock class?           | `REQUIRED` |
+| ratio            | [schema/types/Ratio](/docs/schema/types/Ratio.md)                                                                                                          | One share of this stock class converts into this many target stock class shares | `REQUIRED` |
+| rounding_type    | `Enum - Rounding Type`</br></br>_Description:_ Enumeration of rounding types</br></br>**ONE OF:** </br>&bull; CEILING </br>&bull; FLOOR </br>&bull; NORMAL | How should fractional shares be rounded?                                        | `REQUIRED` |
 
 **Source Code:** [schema/types/conversion_mechanisms/RatioConversionMechanism](/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json)
 
