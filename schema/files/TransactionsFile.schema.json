@@ -104,6 +104,9 @@
           },
           {
             "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json"
+          },
+          {
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json"
           }
         ]
       }

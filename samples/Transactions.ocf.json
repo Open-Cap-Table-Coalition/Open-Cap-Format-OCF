@@ -915,6 +915,16 @@
       "comments": ["Here is a comment", "Here is another comment"],
       "consideration_text": "0.50 USD",
       "balance_security_id": "balance-security-id"
+    },
+    {
+      "object_type": "TX_STOCK_PLAN_POOL_ADJUSTMENT",
+      "id": "increase_sop_pool",
+      "comments": ["Increased for upcoming financing."],
+      "date": "2022-11-14",
+      "stock_plan_id": "2022 Stock Option Plan",
+      "board_approval_date": "2022-11-14",
+      "stockholder_approval_date": "2022-11-14",
+      "shares_reserved": "100000000"
     }
   ]
 }
