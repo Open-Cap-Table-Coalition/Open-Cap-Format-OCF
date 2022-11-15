@@ -67,7 +67,12 @@
           "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "CONVERTIBLE_NOTE_CONVERSION",
-            "interest_rate": "8.99",
+            "interest_rates": [
+              {
+                "rate": "0.0899",
+                "accrual_start_date": "2021-01-01"
+              }
+            ],
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",
             "interest_accrual_period": "MONTHLY",
@@ -98,7 +103,13 @@
           "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "CONVERTIBLE_NOTE_CONVERSION",
-            "interest_rate": "8.99",
+            "interest_rates": [
+              {
+                "rate": "0.08",
+                "accrual_start_date": "2021-01-01",
+                "accrual_end_date": "2023-12-31"
+              }
+            ],
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",
             "interest_accrual_period": "MONTHLY",
@@ -147,7 +158,21 @@
           "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "CONVERTIBLE_NOTE_CONVERSION",
-            "interest_rate": "8.99",
+            "interest_rates": [
+              {
+                "rate": "0.0115",
+                "accrual_start_date": "2021-01-01"
+              },
+              {
+                "rate": "0.0135",
+                "accrual_start_date": "2022-01-01"
+              },
+              {
+                "rate": "0.0155",
+                "accrual_start_date": "2023-01-01",
+                "accrual_end_date": "2023-12-31"
+              }
+            ],
             "day_count_convention": "ACTUAL_365",
             "interest_payout": "DEFERRED",
             "interest_accrual_period": "MONTHLY",

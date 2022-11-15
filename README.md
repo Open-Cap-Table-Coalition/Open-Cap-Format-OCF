@@ -607,6 +607,12 @@ _Used as common building blocks for properties that are more complex than primit
   - **Description:** Type representation of a file
   - **View more:** [schema/types/File](/docs/schema/types/File.md)
 
+- **Type - Interest Rate**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/types/InterestRate.schema.json`
+  - **Description:** Type representation of an interest rate, including accrual start and end dates
+  - **View more:** [schema/types/InterestRate](/docs/schema/types/InterestRate.md)
+
 - **Type - MD5 Hash**
 
   - **Id:** `https://opencaptablecoalition.com/schema/types/Md5.schema.json`
