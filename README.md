@@ -349,6 +349,12 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing a cancellation of a warrant security
   - **View more:** [schema/objects/transactions/cancellation/WarrantCancellation](/docs/schema/objects/transactions/cancellation/WarrantCancellation.md)
 
+- **Object - Stock Plan Pool Adjustment Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
+  - **Description:** Object describing the change in the size of a Stock Plan pool.
+  - **View more:** [schema/objects/transactions/adjustment/StockPlanPoolAdjustment](/docs/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.md)
+
 - **Object - Convertible Acceptance Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
@@ -874,6 +880,12 @@ _Used for object property composition and enforcing uniform properties across pa
   - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockClassTransaction.schema.json`
   - **Description:** Abstract transaction object to be extended by all transaction objects that affect the stock class
   - **View more:** [schema/primitives/objects/transactions/StockClassTransaction](/docs/schema/primitives/objects/transactions/StockClassTransaction.md)
+
+- **Primitive - Stock Plan Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockPlanTransaction.schema.json`
+  - **Description:** Abstract transaction object to be extended by all transaction objects that affect a stock plan
+  - **View more:** [schema/primitives/objects/transactions/StockPlanTransaction](/docs/schema/primitives/objects/transactions/StockPlanTransaction.md)
 
 - **Primitive - Transaction**
 

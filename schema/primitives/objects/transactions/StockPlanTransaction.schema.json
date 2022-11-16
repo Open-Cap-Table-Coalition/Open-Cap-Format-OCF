@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockPlanTransaction.schema.json",
+  "title": "Primitive - Stock Plan Transaction",
+  "description": "Abstract transaction object to be extended by all transaction objects that affect a stock plan",
+  "type": "object",
+  "properties": {
+    "stock_plan_id": {
+      "description": "Identifier of the Stock Plan object, a subject of this transaction",
+      "type": "string"
+    }
+  },
+  "required": ["stock_plan_id"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/StockPlanTransaction.schema.json"
+}
