@@ -43,7 +43,11 @@ export default class Schema {
       addFileExtension
     );
     await SchemaWriter.write(path.join(ROOT), schema);
-    await TableOfContents.write(schema, path.join(ROOT, "README.md"));
+    await TableOfContents.write(
+      schema,
+      path.join(ROOT, "README.md"),
+      repoUrlRoot ? repoUrlRoot : ""
+    );
   };
 
   readonly schemaNodes: SchemaNode[];

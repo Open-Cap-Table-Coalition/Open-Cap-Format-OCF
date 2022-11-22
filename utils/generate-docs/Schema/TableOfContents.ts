@@ -11,8 +11,8 @@ const README_INSERT_END = "## Developer Information";
  * into the project's README.
  */
 export default class TableOfContents {
-  static write = (schema: Schema, readmePath: string) => {
-    const tableOfContents = new TableOfContents(schema);
+  static write = (schema: Schema, readmePath: string, repoUrlRoot: string) => {
+    const tableOfContents = new TableOfContents(schema, repoUrlRoot);
     const readmeString = fse.readFileSync(readmePath).toString();
     return fse.writeFile(
       readmePath,
@@ -21,9 +21,11 @@ export default class TableOfContents {
   };
 
   protected readonly schema: Schema;
+  protected readonly repoUrlRoot: string;
 
-  constructor(schema: Schema) {
+  constructor(schema: Schema, repoUrlRoot: string) {
     this.schema = schema;
+    this.repoUrlRoot = repoUrlRoot;
   }
 
   protected markdownFromSchemaNode = (
@@ -46,31 +48,31 @@ export default class TableOfContents {
 
   markdown = () => `## Schemas are divided into five folders:
 
-### [Files](/schema/files)
+### [Files](${this.repoUrlRoot}/schema/files)
 
 _Describes the eight top-level files that hold OCF objects and are required to export or import a cap table._
 
 ${this.markdownForSchemaNodesOfParentType("files")}
 
-### [Objects](/schema/objects)
+### [Objects](${this.repoUrlRoot}/schema/objects)
 
 _Describing the structure of OCF -- these contain the common object properties \`id\` and \`comments\`_
 
 ${this.markdownForSchemaNodesOfParentType("objects")}
 
-### [Enums](/schema/enums)
+### [Enums](${this.repoUrlRoot}/schema/enums)
 
 _Key enumerations used throughout the schemas_
 
 ${this.markdownForSchemaNodesOfParentType("enums")}
 
-### [Types](/schema/types)
+### [Types](${this.repoUrlRoot}/schema/types)
 
 _Used as common building blocks for properties that are more complex than primitives but don't need separate unique Ids._
 
 ${this.markdownForSchemaNodesOfParentType("types")}
 
-### [Primitives](/schema/primitives)
+### [Primitives](${this.repoUrlRoot}/schema/primitives)
 
 _Used for object property composition and enforcing uniform properties across parts of the schema._
 
