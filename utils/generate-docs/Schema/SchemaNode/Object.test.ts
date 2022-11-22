@@ -150,8 +150,6 @@ Copyright © 2022 Open Cap Table Coalition.
         false
       ).markdownOutput();
 
-      console.log(actual);
-
       expect(actual)
         .toEqual(`:house: [Documentation Home](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README)
 
