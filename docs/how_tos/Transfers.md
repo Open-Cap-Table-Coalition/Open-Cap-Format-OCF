@@ -142,7 +142,7 @@ So here are the three events you'd have in your event stack:
     },
     "stock_legend_ids": ["series-a-legend"]
   },
-  // ... many more ...
+  // many more ...
   {
     "object_type": "TX_STOCK_ISSUANCE",
     "id": "give-alice-the-stock",
