@@ -74,4 +74,45 @@ Copyright © 2022 Open Cap Table Coalition.
 `);
     });
   });
+
+  // Testing our modular urls in the generator so we can point the links to external pages instead of just the repo
+  describe("#markdownOutputMkDocs", () => {
+    it("returns a string representing the node as Markdown for display on MkDocs", () => {
+      const schema = new Schema(
+        [SCHEMA_NODE_FIXTURE],
+        [],
+        [],
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md",
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/docs",
+        "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF",
+        false
+      );
+      const actual = new Enum(
+        schema,
+        SCHEMA_NODE_FIXTURE,
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md",
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/docs",
+        "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF",
+        false
+      ).markdownOutput();
+
+      expect(actual)
+        .toEqual(`:house: [Documentation Home](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md)
+
+---
+
+### Test Title
+
+\`https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json\`
+
+**Description:** _This is a test fixture exemplifying an Enum schema from OCF_
+
+**ONE OF:**</br>&bull; test_enum1
+
+**Source Code:** [schema/enums/TestEnum](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/schema/enums/TestEnum.schema.json)
+
+Copyright © 2022 Open Cap Table Coalition.
+`);
+    });
+  });
 });
