@@ -170,7 +170,7 @@ Copyright © 2022 Open Cap Table Coalition.
         ],
         [],
         [],
-        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md",
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README",
         "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/docs",
         "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF",
         false
@@ -178,14 +178,14 @@ Copyright © 2022 Open Cap Table Coalition.
       const actual = new File(
         schema,
         FILE_FIXTURE,
-        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md",
+        "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README",
         "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/docs",
         "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF",
         false
       ).markdownOutput();
 
       expect(actual)
-        .toEqual(`:house: [Documentation Home](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README.md)
+        .toEqual(`:house: [Documentation Home](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/README)
 
 ---
 
