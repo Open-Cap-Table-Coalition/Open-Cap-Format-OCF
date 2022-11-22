@@ -19,7 +19,15 @@ const FILE_SCHEMA_JSON_FIXTURE: FileSchemaNodeJson = {
 describe("Schema", () => {
   describe("#findSchemaNodeById", () => {
     it("return the SchemaNode matching the given `id`", () => {
-      const schema = new Schema([FILE_SCHEMA_JSON_FIXTURE]);
+      const schema = new Schema(
+        [FILE_SCHEMA_JSON_FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
 
       const actual = schema.findSchemaNodeById(
         "https://opencaptablecoalition.com/schema/files/test_file"
@@ -33,7 +41,15 @@ describe("Schema", () => {
 
   describe("#filterSchemaNodesByParentType", () => {
     it("return the SchemaNode matching the given `id`", () => {
-      const schema = new Schema([FILE_SCHEMA_JSON_FIXTURE]);
+      const schema = new Schema(
+        [FILE_SCHEMA_JSON_FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
 
       const actual = schema.filterSchemaNodesByParentType("files");
 

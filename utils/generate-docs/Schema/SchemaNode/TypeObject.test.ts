@@ -19,8 +19,23 @@ const FIXTURE: TypeObjectSchemaNodeJson = {
 describe("TypeObject", () => {
   describe("#markdownOutput", () => {
     it("returns a string representing the node as Markdown", () => {
-      const schema = new Schema([FIXTURE]);
-      const actual = new TypeObject(schema, FIXTURE).markdownOutput();
+      const schema = new Schema(
+        [FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const actual = new TypeObject(
+        schema,
+        FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
+      ).markdownOutput();
 
       expect(actual).toEqual(`:house: [Documentation Home](/README.md)
 

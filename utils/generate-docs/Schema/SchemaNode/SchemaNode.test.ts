@@ -18,28 +18,73 @@ class DummyNode extends SchemaNode {
 describe("SchemaNode", () => {
   describe("#sourcePath", () => {
     it("returns the location of the file relative to the schema", () => {
-      const schema = new Schema([FIXTURE]);
-      const schemaNode = new DummyNode(schema, FIXTURE);
+      const schema = new Schema(
+        [FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const schemaNode = new DummyNode(
+        schema,
+        FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
 
-      const actual = schemaNode.sourcePath();
+      const actual = schemaNode.jsonSourcePath();
       expect(actual).toEqual("/schema/files/TestFile.schema.json");
     });
   });
 
   describe("#outputPath", () => {
     it("returns the location of the markdown doc", () => {
-      const schema = new Schema([FIXTURE]);
-      const schemaNode = new DummyNode(schema, FIXTURE);
+      const schema = new Schema(
+        [FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const schemaNode = new DummyNode(
+        schema,
+        FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
 
-      const actual = schemaNode.outputPath();
+      const actual = schemaNode.docMdLink();
       expect(actual).toEqual("/docs/schema/files/TestFile.md");
     });
   });
 
   describe("#parentType", () => {
     it("returns the location of the file relative to the schema", () => {
-      const schema = new Schema([FIXTURE]);
-      const schemaNode = new DummyNode(schema, FIXTURE);
+      const schema = new Schema(
+        [FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const schemaNode = new DummyNode(
+        schema,
+        FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
 
       const actual = schemaNode.parentType();
       expect(actual).toEqual("files");

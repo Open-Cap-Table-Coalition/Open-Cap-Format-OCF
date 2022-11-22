@@ -103,15 +103,30 @@ const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 describe("File", () => {
   describe("#markdownOutput", () => {
     it("returns a string representing the node as Markdown", () => {
-      const schema = new Schema([
-        BASE_OBJECT_SCHEMA_NODE_FIXTURE,
-        OBJECT_SCHEMA_NODE_FIXTURE,
-        ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE,
-        ENUM_SCHEMA_NODE_FIXTURE,
-        BASE_FILE_SCHEMA_NODE_FIXTURE,
+      const schema = new Schema(
+        [
+          BASE_OBJECT_SCHEMA_NODE_FIXTURE,
+          OBJECT_SCHEMA_NODE_FIXTURE,
+          ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE,
+          ENUM_SCHEMA_NODE_FIXTURE,
+          BASE_FILE_SCHEMA_NODE_FIXTURE,
+          FILE_FIXTURE,
+        ],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const actual = new File(
+        schema,
         FILE_FIXTURE,
-      ]);
-      const actual = new File(schema, FILE_FIXTURE).markdownOutput();
+        "/README.md",
+        "/docs",
+        "",
+        true
+      ).markdownOutput();
 
       expect(actual).toEqual(`:house: [Documentation Home](/README.md)
 

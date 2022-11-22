@@ -22,7 +22,12 @@ const ROOT = path.resolve(fileURLToPath(import.meta.url), "../../../..");
  *  Schema represents the OCF schema format.
  */
 export default class Schema {
-  static generateDocs = async () => {
+  static generateDocs = async (
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) => {
     const schemaNodeJsons = await SchemaReader.read(path.join(ROOT, "schema"));
     const exampleJsons = await ExamplesReader.read(path.join(ROOT, "samples"));
     const supplementalMarkdowns = await SupplementalsReader.read(
@@ -31,7 +36,11 @@ export default class Schema {
     const schema = new Schema(
       schemaNodeJsons,
       exampleJsons,
-      supplementalMarkdowns
+      supplementalMarkdowns,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
     );
     await SchemaWriter.write(path.join(ROOT), schema);
     await TableOfContents.write(schema, path.join(ROOT, "README.md"));
@@ -44,10 +53,21 @@ export default class Schema {
   constructor(
     schemaNodeJsons: SchemaNodeJson[],
     exampleJsons: ExampleJson[] = [],
-    supplementalMarkdowns: string[] = []
+    supplementalMarkdowns: string[] = [],
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
   ) {
     this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
-      SchemaNodeFactory.build(this, json)
+      SchemaNodeFactory.build(
+        this,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      )
     );
     this.examples = new Examples(exampleJsons);
     this.supplementals = new Supplementals(supplementalMarkdowns);

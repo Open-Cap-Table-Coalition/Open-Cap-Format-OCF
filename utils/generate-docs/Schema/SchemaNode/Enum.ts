@@ -11,8 +11,22 @@ export interface EnumSchemaNodeJson extends SchemaNodeJson {
 export default class EnumSchemaNode extends SchemaNode {
   protected readonly json: EnumSchemaNodeJson;
 
-  constructor(schema: Schema, json: EnumSchemaNodeJson) {
-    super(schema, json);
+  constructor(
+    schema: Schema,
+    json: EnumSchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) {
+    super(
+      schema,
+      json,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
+    );
     this.json = json;
   }
 

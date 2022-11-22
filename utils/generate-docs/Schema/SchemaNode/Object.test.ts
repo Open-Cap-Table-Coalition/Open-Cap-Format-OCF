@@ -70,15 +70,27 @@ const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
 describe("Object", () => {
   describe("#markdownOutput", () => {
     it("returns a string representing the node as Markdown", () => {
-      const schema = new Schema([
-        ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE,
-        ENUM_SCHEMA_NODE_FIXTURE,
-        BASE_OBJECT_SCHEMA_NODE_FIXTURE,
-        OBJECT_SCHEMA_NODE_FIXTURE,
-      ]);
+      const schema = new Schema(
+        [
+          ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE,
+          ENUM_SCHEMA_NODE_FIXTURE,
+          BASE_OBJECT_SCHEMA_NODE_FIXTURE,
+          OBJECT_SCHEMA_NODE_FIXTURE,
+        ],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
       const actual = new Object(
         schema,
-        OBJECT_SCHEMA_NODE_FIXTURE
+        OBJECT_SCHEMA_NODE_FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
       ).markdownOutput();
 
       expect(actual).toEqual(`:house: [Documentation Home](/README.md)

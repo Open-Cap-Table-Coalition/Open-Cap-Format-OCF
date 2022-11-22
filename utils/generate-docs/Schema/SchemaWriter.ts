@@ -26,11 +26,11 @@ export default class SchemaWriter {
   protected tryWriteNewFile = (schemaNode: any) => {
     try {
       return fse.outputFile(
-        path.join(this.output, schemaNode.outputPath()),
+        path.join(this.output, `docs/schema/${schemaNode.shortId()}.md`),
         schemaNode.markdownOutput()
       );
     } catch (e: any) {
-      console.error(`\nERROR: Failure generating ${schemaNode.outputPath()}\n`);
+      console.error(`\nERROR: Failure generating ${schemaNode.docMdLink()}\n`);
       throw e;
     }
   };

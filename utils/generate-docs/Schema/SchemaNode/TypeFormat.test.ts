@@ -13,8 +13,23 @@ const FIXTURE: TypeFormatSchemaNodeJson = {
 describe("TypeFormat", () => {
   describe("#markdownOutput", () => {
     it("returns a string representing the node as Markdown", () => {
-      const schema = new Schema([FIXTURE]);
-      const actual = new TypeFormat(schema, FIXTURE).markdownOutput();
+      const schema = new Schema(
+        [FIXTURE],
+        [],
+        [],
+        "/README.md",
+        "/docs",
+        "",
+        true
+      );
+      const actual = new TypeFormat(
+        schema,
+        FIXTURE,
+        "/README.md",
+        "/docs",
+        "",
+        true
+      ).markdownOutput();
 
       expect(actual).toEqual(`:house: [Documentation Home](/README.md)
 

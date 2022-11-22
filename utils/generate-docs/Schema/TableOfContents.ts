@@ -35,7 +35,7 @@ export default class TableOfContents {
     .description()
     .replace(/\n/g, "\n  ")
     .replace(/ \n/g, "\n")}
-  - **View more:** [${schemaNode.shortId()}](${schemaNode.outputPath()})`;
+  - **View more:** [${schemaNode.shortId()}](${schemaNode.docMdLink()})`;
 
   protected markdownForSchemaNodesOfParentType = (parentType: string) =>
     this.schema

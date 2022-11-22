@@ -13,8 +13,22 @@ export interface PrimitiveSchemaNodeJson extends SchemaNodeJson {
 export default class PrimitiveSchemaNode extends SchemaNode {
   protected readonly json: PrimitiveSchemaNodeJson;
 
-  constructor(schema: Schema, json: PrimitiveSchemaNodeJson) {
-    super(schema, json);
+  constructor(
+    schema: Schema,
+    json: PrimitiveSchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) {
+    super(
+      schema,
+      json,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
+    );
     this.json = json;
   }
 

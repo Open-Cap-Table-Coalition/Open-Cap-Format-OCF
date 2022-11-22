@@ -14,7 +14,15 @@ const SCHEMA_NODE_FIXTURE = {
 describe("TableOfContents", () => {
   describe("#markdown", () => {
     it("returns a markdown string of a table of contents generated from a schema", () => {
-      const schema = new Schema([SCHEMA_NODE_FIXTURE]);
+      const schema = new Schema(
+        [SCHEMA_NODE_FIXTURE],
+        [],
+        [],
+        "https://opencaptablecoalition.com/README.md",
+        "/docs",
+        "",
+        true
+      );
       const tableOfContents = new TableOfContents(schema);
 
       const actual = tableOfContents.markdown();

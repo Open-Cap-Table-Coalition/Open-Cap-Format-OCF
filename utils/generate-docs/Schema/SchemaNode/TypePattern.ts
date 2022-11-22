@@ -12,14 +12,28 @@ export interface TypePatternSchemaNodeJson extends SchemaNodeJson {
 export default class TypePatternSchemaNode extends SchemaNode {
   protected readonly json: TypePatternSchemaNodeJson;
 
-  constructor(schema: Schema, json: TypePatternSchemaNodeJson) {
-    super(schema, json);
+  constructor(
+    schema: Schema,
+    json: TypePatternSchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) {
+    super(
+      schema,
+      json,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
+    );
     this.json = json;
   }
 
   protected pattern = () => this.json["pattern"];
 
-  markdownTableType = () => `[${this.shortId()}](${this.outputPath()})`;
+  markdownTableType = () => `[${this.shortId()}](${this.docMdLink()})`;
 
   markdownOutput = () => `${this.markdownHeader()}
 

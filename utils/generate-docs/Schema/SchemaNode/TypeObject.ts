@@ -15,14 +15,28 @@ export interface TypeObjectSchemaNodeJson extends SchemaNodeJson {
 export default class TypeObjectSchemaNode extends SchemaNode {
   protected readonly json: TypeObjectSchemaNodeJson;
 
-  constructor(schema: Schema, json: TypeObjectSchemaNodeJson) {
-    super(schema, json);
+  constructor(
+    schema: Schema,
+    json: TypeObjectSchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) {
+    super(
+      schema,
+      json,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
+    );
     this.json = json;
   }
 
   protected oneOf = () => this.json["oneOf"];
 
-  markdownTableType = () => `[${this.shortId()}](${this.outputPath()})`;
+  markdownTableType = () => `[${this.shortId()}](${this.docMdLink()})`;
 
   markdownOutput = () => `${this.markdownHeader()}
 

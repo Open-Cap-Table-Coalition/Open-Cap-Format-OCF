@@ -65,21 +65,77 @@ export default class SchemaNodeFactory {
   ): json is TypePatternSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
-  static build = (schema: Schema, json: SchemaNodeJson) => {
+  static build = (
+    schema: Schema,
+    json: SchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) => {
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))
-      return new FileSchemaNode(schema, json);
+      return new FileSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isEnumSchemaNodeJson(json))
-      return new EnumSchemaNode(schema, json);
+      return new EnumSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isObjectSchemaNodeJson(json))
-      return new ObjectSchemaNode(schema, json);
+      return new ObjectSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isPrimitiveSchemaNodeJson(json))
-      return new PrimitiveSchemaNode(schema, json);
+      return new PrimitiveSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isTypeObjectSchemaNodeJson(json))
-      return new TypeObjectSchemaNode(schema, json);
+      return new TypeObjectSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isTypeFormatSchemaNodeJson(json))
-      return new TypeFormatSchemaNode(schema, json);
+      return new TypeFormatSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     if (SchemaNodeFactory.isTypePatternSchemaNodeJson(json))
-      return new TypePatternSchemaNode(schema, json);
+      return new TypePatternSchemaNode(
+        schema,
+        json,
+        docIndexPath,
+        docsUrlRoot,
+        repoUrlRoot,
+        addFileExtension
+      );
     throw new Error(`Unrecgonized JSON schema: ${json}`);
   };
 }

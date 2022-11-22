@@ -17,8 +17,22 @@ export interface ObjectSchemaNodeJson extends SchemaNodeJson {
 export default class ObjectSchemaNode extends SchemaNode {
   protected readonly json: ObjectSchemaNodeJson;
 
-  constructor(schema: Schema, json: ObjectSchemaNodeJson) {
-    super(schema, json);
+  constructor(
+    schema: Schema,
+    json: ObjectSchemaNodeJson,
+    docIndexPath: string,
+    docsUrlRoot?: string,
+    repoUrlRoot?: string,
+    addFileExtension?: boolean
+  ) {
+    super(
+      schema,
+      json,
+      docIndexPath,
+      docsUrlRoot,
+      repoUrlRoot,
+      addFileExtension
+    );
     this.json = json;
   }
 

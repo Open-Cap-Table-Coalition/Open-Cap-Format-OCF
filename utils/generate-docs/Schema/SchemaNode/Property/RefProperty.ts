@@ -31,5 +31,5 @@ export default class RefProperty extends Property {
 
   markdownTableType = () => this.referenced.markdownTableType();
 
-  outputPath = () => this.referenced.outputPath();
+  outputPath = () => this.referenced.docMdLink();
 }
