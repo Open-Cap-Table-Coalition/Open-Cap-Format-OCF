@@ -12,9 +12,9 @@
 
 **Properties:**
 
-| Property | Type                                         | Description                            | Required   |
-| -------- | -------------------------------------------- | -------------------------------------- | ---------- |
-| date     | [schema/types/Date](/docs/schema/types/Date) | Date on which the transaction occurred | `REQUIRED` |
+| Property | Type                                            | Description                            | Required   |
+| -------- | ----------------------------------------------- | -------------------------------------- | ---------- |
+| date     | [schema/types/Date](/docs/schema/types/Date.md) | Date on which the transaction occurred | `REQUIRED` |
 
 **Source Code:** [schema/primitives/objects/transactions/Transaction](/schema/primitives/objects/transactions/Transaction.schema.json)
 

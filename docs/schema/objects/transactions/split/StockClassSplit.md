@@ -12,20 +12,20 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/Object](/docs/schema/primitives/objects/Object)
-- [schema/primitives/objects/transactions/Transaction](/docs/schema/primitives/objects/transactions/Transaction)
-- [schema/primitives/objects/transactions/StockClassTransaction](/docs/schema/primitives/objects/transactions/StockClassTransaction)
+- [schema/primitives/objects/Object](/docs/schema/primitives/objects/Object.md)
+- [schema/primitives/objects/transactions/Transaction](/docs/schema/primitives/objects/transactions/Transaction.md)
+- [schema/primitives/objects/transactions/StockClassTransaction](/docs/schema/primitives/objects/transactions/StockClassTransaction.md)
 
 **Properties:**
 
-| Property       | Type                                                                                                           | Description                                                                                                    | Required   |
-| -------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------- |
-| id             | `STRING`                                                                                                       | Identifier for the object                                                                                      | `REQUIRED` |
-| comments       | [`STRING`]                                                                                                     | Unstructured text comments related to and stored for the object                                                | -          |
-| object_type    | **Constant:** `TX_STOCK_CLASS_SPLIT`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType)_ | Object type field                                                                                              | `REQUIRED` |
-| date           | [schema/types/Date](/docs/schema/types/Date)                                                                   | Date on which the transaction occurred                                                                         | `REQUIRED` |
-| stock_class_id | `STRING`                                                                                                       | Identifier of the StockClass object, a subject of this transaction                                             | `REQUIRED` |
-| split_ratio    | [schema/types/Ratio](/docs/schema/types/Ratio)                                                                 | Ratio of new shares to old shares. For 2-for-1 split the numerator of the ratio is 2 and the denominator is 1. | `REQUIRED` |
+| Property       | Type                                                                                                              | Description                                                                                                    | Required   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------- |
+| id             | `STRING`                                                                                                          | Identifier for the object                                                                                      | `REQUIRED` |
+| comments       | [`STRING`]                                                                                                        | Unstructured text comments related to and stored for the object                                                | -          |
+| object_type    | **Constant:** `TX_STOCK_CLASS_SPLIT`</br>_Defined in [schema/enums/ObjectType](/docs/schema/enums/ObjectType.md)_ | Object type field                                                                                              | `REQUIRED` |
+| date           | [schema/types/Date](/docs/schema/types/Date.md)                                                                   | Date on which the transaction occurred                                                                         | `REQUIRED` |
+| stock_class_id | `STRING`                                                                                                          | Identifier of the StockClass object, a subject of this transaction                                             | `REQUIRED` |
+| split_ratio    | [schema/types/Ratio](/docs/schema/types/Ratio.md)                                                                 | Ratio of new shares to old shares. For 2-for-1 split the numerator of the ratio is 2 and the denominator is 1. | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/split/StockClassSplit](/schema/objects/transactions/split/StockClassSplit.schema.json)
 

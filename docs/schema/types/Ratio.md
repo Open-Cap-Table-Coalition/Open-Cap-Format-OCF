@@ -12,10 +12,10 @@ _Type representation of a ratio as two parts of a quotient, i.e. numerator and d
 
 **Properties:**
 
-| Property    | Type                                               | Description                                                                                                               | Required   |
-| ----------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| numerator   | [schema/types/Numeric](/docs/schema/types/Numeric) | Numerator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where A is the numerator     | `REQUIRED` |
-| denominator | [schema/types/Numeric](/docs/schema/types/Numeric) | Denominator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where B is the denominator | `REQUIRED` |
+| Property    | Type                                                  | Description                                                                                                               | Required   |
+| ----------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| numerator   | [schema/types/Numeric](/docs/schema/types/Numeric.md) | Numerator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where A is the numerator     | `REQUIRED` |
+| denominator | [schema/types/Numeric](/docs/schema/types/Numeric.md) | Denominator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where B is the denominator | `REQUIRED` |
 
 **Source Code:** [schema/types/Ratio](/schema/types/Ratio.schema.json)
 

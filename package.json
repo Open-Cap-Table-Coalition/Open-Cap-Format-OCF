@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "prettier . --check --ignore-unknown",
     "fix": "prettier . --check --write --ignore-unknown",
-    "generate-docs": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index.ts generate-docs --repoUrlRoot '' --docUrlRoot '/docs' --indexPath /README.md",
+    "generate-docs": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index.ts generate-docs --repoUrlRoot '' --docUrlRoot '/docs' --indexPath /README.md --addFileExtension",
     "generate-pretty-docs": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index.ts generate-docs  --repoUrlRoot https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/main --docUrlRoot https://naveedn.github.io/Open-Cap-Format-OCF --indexPath https://naveedn.github.io/Open-Cap-Format-OCF/",
     "enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -fvart --tag main",
     "prepare": "husky install",

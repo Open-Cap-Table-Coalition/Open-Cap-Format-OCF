@@ -12,14 +12,14 @@
 
 **Composed From:**
 
-- [schema/primitives/files/File](/docs/schema/primitives/files/File)
+- [schema/primitives/files/File](/docs/schema/primitives/files/File.md)
 
 **Properties:**
 
-| Property  | Type                                                                                                         | Description                       | Required   |
-| --------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------- | ---------- |
-| file_type | **Constant:** `OCF_VESTING_TERMS_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType)_ | Object type field                 | `REQUIRED` |
-| items     | [ [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms) ]                                         | List of OCF vesting terms objects | `REQUIRED` |
+| Property  | Type                                                                                                            | Description                       | Required   |
+| --------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------- | ---------- |
+| file_type | **Constant:** `OCF_VESTING_TERMS_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field                 | `REQUIRED` |
+| items     | [ [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md) ]                                         | List of OCF vesting terms objects | `REQUIRED` |
 
 **Source Code:** [schema/files/VestingTermsFile](/schema/files/VestingTermsFile.schema.json)
 

@@ -12,14 +12,14 @@
 
 **Composed From:**
 
-- [schema/primitives/files/File](/docs/schema/primitives/files/File)
+- [schema/primitives/files/File](/docs/schema/primitives/files/File.md)
 
 **Properties:**
 
-| Property  | Type                                                                                                        | Description                     | Required   |
-| --------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
-| file_type | **Constant:** `OCF_STAKEHOLDERS_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType)_ | Object type field               | `REQUIRED` |
-| items     | [ [schema/objects/Stakeholder](/docs/schema/objects/Stakeholder) ]                                          | List of OCF stakeholder objects | `REQUIRED` |
+| Property  | Type                                                                                                           | Description                     | Required   |
+| --------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
+| file_type | **Constant:** `OCF_STAKEHOLDERS_FILE`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field               | `REQUIRED` |
+| items     | [ [schema/objects/Stakeholder](/docs/schema/objects/Stakeholder.md) ]                                          | List of OCF stakeholder objects | `REQUIRED` |
 
 **Source Code:** [schema/files/StakeholdersFile](/schema/files/StakeholdersFile.schema.json)
 
