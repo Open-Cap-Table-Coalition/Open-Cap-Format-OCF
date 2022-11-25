@@ -4,7 +4,7 @@
     {
       "id": "all-or-nothing",
       "object_type": "VESTING_TERMS",
-      "name": "qual sale",
+      "name": "Documentation: Example 1",
       "description": "100% of the options vest on a security-specific date",
       "allocation_type": "CUMULATIVE_ROUND_DOWN",
       "vesting_conditions": [
@@ -21,6 +21,13 @@
           "next_condition_ids": []
         }
       ]
+    },
+    {
+      "object_type": "TX_VESTING_EVENT",
+      "id": "d0a02b7a",
+      "security_id": "vesting-ex-1",
+      "date": "2022-07-14",
+      "vesting_condition_id": "qualifying-sale"
     }
   ]
 }
