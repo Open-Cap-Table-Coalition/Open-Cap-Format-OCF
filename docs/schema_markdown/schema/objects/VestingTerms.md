@@ -51,10 +51,13 @@ flowchart TB
   id-->|Company acquisition > $100MM|sold
 ```
 
+https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/77e5085c92484218cb9b5f8c6ca07090a74b93c5/samples/VestingTerms.example1.ocf.json#L1-L26
+
 <!-- Supplemental for:
   schema/objects/VestingTerms
 -->
 
+```
 flowchart TB
 id(( ))
 start[[vesting-start]]
@@ -78,6 +81,7 @@ evt1-->dbl
 evt2-->dbl
 evt3-->dbl
 evt4-->dbl
+```
 
 
 **Source Code:** [schema/objects/VestingTerms](../../../../schema/objects/VestingTerms.schema.json)
