@@ -92,3 +92,7 @@ It will also need to include md5 hashes and references to the other files mentio
   "country_subdivision_of_formation": "MI"
 }
 ```
+
+## Bundle into final format
+
+Once all the files are assembled into a folder (as demonstrated in this [Directory](issuance_aperture_science_inc)), you'll need to generate the md5 hashes of these files to reference them in the manifest file (use `md5 *.json` on macos), and finally zip them into a file with the `.ocf.zip` extension, as demonstrated with this [ZipFile](issuance_aperture_science_inc.ocf.zip).
