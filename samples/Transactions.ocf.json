@@ -355,6 +355,7 @@
       "vesting_condition_id": "vesting-start",
       "date": "2020-01-01"
     },
+
     {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
       "id": "test-plan-security-issuance-any-of-block-for-compensation-type-option",

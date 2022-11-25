@@ -193,6 +193,12 @@ _Describing the structure of OCF -- these contain the common object properties `
   - **Description:** Object describing the terms under which a security vests
   - **View more:** [schema/objects/VestingTerms](/docs/schema/objects/VestingTerms.md)
 
+- **Object - Vesting Acceleration Transaction**
+
+  - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingAcceleration.schema.json`
+  - **Description:** Object describing an acceleration of vesting, in which additional shares vest ahead of the schedule specified in security's vesting terms.
+  - **View more:** [schema/objects/transactions/vesting/VestingAcceleration](/docs/schema/objects/transactions/vesting/VestingAcceleration.md)
+
 - **Object - Vesting Event Transaction**
 
   - **Id:** `https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`

@@ -100,6 +100,9 @@
             "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/WarrantTransfer.schema.json"
           },
           {
+            "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingAcceleration.schema.json"
+          },
+          {
             "$ref": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingStart.schema.json"
           },
           {
