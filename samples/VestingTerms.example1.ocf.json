@@ -1,0 +1,26 @@
+{
+  "file_type": "OCF_VESTING_TERMS_FILE",
+  "items": [
+    {
+      "id": "all-or-nothing",
+      "object_type": "VESTING_TERMS",
+      "name": "qual sale",
+      "description": "100% of the options vest on a security-specific date",
+      "allocation_type": "CUMULATIVE_ROUND_DOWN",
+      "vesting_conditions": [
+        {
+          "id": "qualifying-sale",
+          "description": "Company is acquired for > $100MM",
+          "portion": {
+            "numerator": "1",
+            "denominator": "1"
+          },
+          "trigger": {
+            "type": "VESTING_EVENT"
+          },
+          "next_condition_ids": []
+        }
+      ]
+    }
+  ]
+}

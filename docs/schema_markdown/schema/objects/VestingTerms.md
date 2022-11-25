@@ -26,12 +26,87 @@
 | allocation_type    | `Enum - Allocation Type`</br></br>_Description:_ Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: </br>  1.  Cumulative Rounding (5 - 4 - 5 - 4)</br>  2.  Cumulative Round Down (4 - 5 - 4 - 5)</br>  3.  Front Loaded (5 - 5 - 4 - 4)</br>  4.  Back Loaded (4 - 4 - 5 - 5)</br>  5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)</br>  6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)</br>  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)</br></br>**ONE OF:** </br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL | Allocation/rounding type for the vesting schedule                               | `REQUIRED` |
 | vesting_conditions | [ [schema/types/vesting/VestingCondition](../types/vesting/VestingCondition.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Conditions and triggers that describe the graph of vesting schedules and events | `REQUIRED` |
 
+## Explanation
+
+Vesting Terms objects support a structured representation of security
+vesting. This is accomplished by expressing security vesting as a graph of
+"Vesting Conditions", and then recording vesting transactions on each security.
+
+### Philosophy?
+
+- Graphs should be acylical
+- Triggers are the entry point
+
+### Example 1: Event-based vesting
+
+We'll start with a minimal example of event-based vesting. In this scenario,
+let's say a Warrant has been issued but it will not vest _at all_ unless the
+company is sold for $100,000,000 or more. In graph form:
+
+```mermaid
+flowchart TB
+  id(( ))
+  sold[[qualifying-sale]]
+
+  id-->|Company acquisition > $100MM|sold
+```
+
+<!-- Supplemental for:
+  schema/objects/VestingTerms
+-->
+
+flowchart TB
+id(( ))
+start[[vesting-start]]
+expired(vesting-expired)
+dbl[[double-trigger-acceleration]]
+evt1[[twentypct-1]]
+evt2[[twentypct-2]]
+evt3[[twentypct-3]]
+evt4[[twentypct-4]]
+evt5[[twentypct-5]]
+
+id-->start
+start-->|+4 years|expired
+start-->dbl
+start-->evt1-->evt2-->evt3-->evt4-->evt5
+evt1-->expired
+evt2-->expired
+evt3-->expired
+evt4-->expired
+evt1-->dbl
+evt2-->dbl
+evt3-->dbl
+evt4-->dbl
+
+
 **Source Code:** [schema/objects/VestingTerms](../../../../schema/objects/VestingTerms.schema.json)
 
 **Examples:**
 
 ```json
 [
+  {
+    "id": "all-or-nothing",
+    "object_type": "VESTING_TERMS",
+    "name": "qual sale",
+    "description": "100% of the options vest on a security-specific date",
+    "allocation_type": "CUMULATIVE_ROUND_DOWN",
+    "vesting_conditions": [
+      {
+        "id": "qualifying-sale",
+        "description": "Company is acquired for > $100MM",
+        "portion": {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      }
+    ]
+  },
   {
     "id": "4yr-1yr-cliff-schedule",
     "object_type": "VESTING_TERMS",
