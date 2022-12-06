@@ -10,7 +10,7 @@
     }
   ],
   "properties": {
-    "conversion_mechanism_type": {
+    "type": {
       "const": "SAFE_CONVERSION"
     },
     "conversion_discount": {
