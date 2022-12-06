@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json",
   "title": "Conversion Mechanism - SAFE",
-  "description": "Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)",
+  "description": "Sets forth inputs and conversion mechanism of a SAFE",
   "type": "object",
   "allOf": [
     {
@@ -10,7 +10,7 @@
     }
   ],
   "properties": {
-    "type": {
+    "conversion_mechanism_type": {
       "const": "SAFE_CONVERSION"
     },
     "conversion_discount": {
@@ -28,9 +28,21 @@
     "conversion_mfn": {
       "description": "Is this an MFN flavored SAFE?",
       "type": "boolean"
+    },
+    "conversion_timing": {
+      "description": "Should the conversion amount be based on pre or post money capitalization",
+      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionTimingType.schema.json"
+    },
+    "pre_money_capitalization": {
+      "description": "For the purposes of calculating the conversion, how is pre-money capitalization defined (use the language in the instrument, if possible)?",
+      "$ref": "https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json"
+    },
+    "post_money_capitalization": {
+      "description": "For the purposes of calculating the conversion, how is post-money capitalization defined (use the language in the instrument, if possible)?",
+      "$ref": "https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json"
     }
   },
+  "required": ["conversion_mechanism_type", "conversion_timing"],
   "additionalProperties": false,
-  "required": ["type"],
   "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
 }
