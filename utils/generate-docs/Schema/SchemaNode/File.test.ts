@@ -113,7 +113,7 @@ describe("File", () => {
       ]);
       const actual = new File(schema, FILE_FIXTURE).markdownOutput();
 
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -127,16 +127,16 @@ describe("File", () => {
 
 **Composed From:**
 
-- [schema/primitives/files/File](/docs/schema/primitives/files/File.md)
+- [schema/primitives/files/File](../primitives/files/File.md)
 
 **Properties:**
 
-| Property  | Type                                                                                                   | Description                | Required |
-| --------- | ------------------------------------------------------------------------------------------------------ | -------------------------- | -------- |
-| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/FileType](/docs/schema/enums/FileType.md)_ | Object type field          | -        |
-| items     | [ [schema/objects/Valuation](/docs/schema/objects/Valuation.md) ]                                      | Example ref array property | -        |
+| Property  | Type                                                                                         | Description                | Required |
+| --------- | -------------------------------------------------------------------------------------------- | -------------------------- | -------- |
+| file_type | **Constant:** \`OCF_TEST_FILE\`</br>_Defined in [schema/enums/FileType](../enums/FileType.md)_ | Object type field          | -        |
+| items     | [ [schema/objects/Valuation](../objects/Valuation.md) ]                                      | Example ref array property | -        |
 
-**Source Code:** [schema/files/TestFile](/schema/files/TestFile.schema.json)
+**Source Code:** [schema/files/TestFile](../../../../schema/files/TestFile.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

@@ -1,0 +1,42 @@
+site_name: Open CapTable Format Specification
+repo_url: https://github.com/JSv4/OCF-Docs-Test
+site_url: https://jsv4.github.io/OCF-Docs-Test
+site_author: Open Cap Table Coalition
+site_description: Official documentation for the Open Cap Format (OCF).
+theme:
+  name: material
+  logo: "./images/OCF Logo Transparent.png"
+  favicon: "./images/favicon.png"
+  extra:
+    homepage: https://www.opencaptablecoalition.com/
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+extra_css:
+  - "./stylesheets/extra.css"
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+plugins:
+  - search
+  - awesome-pages # Required for pagenav-generator
+  - pagenav-generator
+  - awesome-pages:
+      collapse_single_pages: true
+      strict: false
+  - mkdocs-simple-hooks:
+      hooks:
+        on_files: "docs.hooks:copy_schemas"
