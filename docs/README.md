@@ -12,7 +12,7 @@ Check out some of past announcements related to OCF and the Coalition on our [Me
 
 ## Documentation
 
-We have extensive, auto-generated documentation available on our [documentation page](https://jsv4.github.io/OCF-Docs-Test/). The documents are automatically updated with every update to OCF.
+We have extensive, auto-generated documentation available on our [documentation page](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/). The documents are automatically updated with every update to OCF.
 
 You an find samples in our repo in the samples folder, or, check out our tutorials (again, through the documentation) to see how to get started with OCF and download complete, sample OCF cap tables.
 
