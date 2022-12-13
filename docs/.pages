@@ -1,7 +1,7 @@
 nav:
   - Introduction: "README.md"
   - Architecture: explainers
-  - OCF Schemas: schema_markdown
+  - Schemas: schema_markdown
   - Tutorials: tutorials
   - Contribute: "CONTRIBUTING.md"
   - Blog: https://medium.com/@opencaptable
