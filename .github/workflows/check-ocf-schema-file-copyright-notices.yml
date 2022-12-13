@@ -24,4 +24,4 @@ jobs:
         run: npm install
 
       - name: Check for coypright notices
-        run: node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -vt --tag main
+        run: node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceUrls.ts check-urls -vt --tag main

@@ -7,7 +7,10 @@ import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 
 import { getSchemaFilepaths } from "./Loaders.js";
-import { schemaUrlFromRepoPath } from "./PathTools.js";
+import {
+  schemaRawUrlFromRepoPath,
+  schemaUrlFromRepoPath,
+} from "./PathTools.js";
 
 /**
  * Given a schema, with a known local schema_path, generate an url to the corresponding file in the repo
@@ -35,6 +38,26 @@ export function addValidOcfCommentToSchema(
     console.log(
       `\t--> Inserted valid $comment field in schema ${schema_inst["$id"]}`
     );
+}
+
+/**
+ * Given a schema, with a known local schema_path, set the repo raw url
+ * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
+ * @param schema_inst -> OCF schema JSON to update.
+ * @param tag -> String: What branch tag should be added to repo root to generate valid url to GitHub docs?
+ * @param verbose -> Boolean: Display detailed logs.
+ */
+export function setRawUrl(
+  schema_path: string,
+  schema_inst: Record<string, any>,
+  tag: string = "main",
+  verbose: boolean = false
+) {
+  schema_inst["$id"] = schemaRawUrlFromRepoPath(schema_path, tag);
+  let schema_data = JSON.stringify(schema_inst, null, 2);
+  fs.writeFileSync(schema_path, schema_data);
+  if (verbose)
+    console.log(`\t--> Set id field in schema ${schema_inst["$id"]}`);
 }
 
 /**
@@ -105,7 +128,7 @@ export async function enforceOcfCopyrightNotices(
         `Enforce $comment copyright notices on ${schemas.length} total schemas:`
       );
 
-    // Loop over the schemas to check for $comment fields
+    // Loop over the schemas to check for $comment & $id fields
     for (let i = 0; i < schemas.length; i++) {
       let schema_inst = schemas[i];
 
@@ -190,6 +213,9 @@ export async function enforceOcfCopyrightNotices(
           }
         }
       }
+
+      if (verbose) console.log("Setting the repo raw url");
+      setRawUrl(schema_paths[i], schemas[i], tag, verbose);
     }
     if (verbose)
       console.log("ENFORCE COPYRIGHT NOTICES COMPLETE -------------");
@@ -238,9 +264,9 @@ interface CopyrightNoticeCheckArgs extends Arguments {
 
 yargs(hideBin(process.argv))
   .command({
-    command: "check-notices",
+    command: "check-urls",
     describe:
-      "Read schema files from disk, check for copyright notices, and, depending on flags set by user, fix/add them.",
+      "Read schema files from disk, check for copyright notices & url, and, depending on flags set by user, fix/add them.",
     builder: {
       verbose: {
         describe: "Verbose outputs show detailed steps and errors",
