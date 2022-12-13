@@ -20,5 +20,5 @@ export default abstract class InlineProperty extends Property {
 
   id = () => this.idOverride || "";
 
-  abstract markdownTableType(): string;
+  abstract markdownTableType(inMdFileAtPath?: string): string;
 }

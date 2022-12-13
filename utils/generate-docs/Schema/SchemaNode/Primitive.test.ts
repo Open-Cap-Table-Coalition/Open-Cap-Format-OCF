@@ -22,7 +22,7 @@ describe("Primitive", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new Primitive(schema, FIXTURE).markdownOutput();
 
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -41,7 +41,7 @@ describe("Primitive", () => {
 | 1            | \`STRING\` | Example description                                              | \`REQUIRED\` |
 | refProperty1 | \`STRING\` | This is a test fixture exemplifying an Primitive schema from OCF | -          |
 
-**Source Code:** [schema/primitives/TestPrimitive](/schema/primitives/TestPrimitive.schema.json)
+**Source Code:** [schema/primitives/TestPrimitive](../../../../schema/primitives/TestPrimitive.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

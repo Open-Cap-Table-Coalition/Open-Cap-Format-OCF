@@ -16,7 +16,7 @@ describe("TypePattern", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypePattern(schema, FIXTURE).markdownOutput();
 
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -30,7 +30,7 @@ describe("TypePattern", () => {
 
 **Value:** \`STRING\` - _Must Match Regex Pattern: \`^[a-fA-F0-9]{32}$\`_
 
-**Source Code:** [schema/types/TestTypePattern](/schema/types/TestTypePattern.schema.json)
+**Source Code:** [schema/types/TestTypePattern](../../../../schema/types/TestTypePattern.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

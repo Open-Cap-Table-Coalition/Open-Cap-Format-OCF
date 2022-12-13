@@ -25,8 +25,8 @@ export default class AnyOfArrayProperty extends InlineProperty {
       PropertyFactory.build(this.schema, propertyJson)
     );
 
-  markdownTableType = (): string =>
+  markdownTableType = (inMdFileAtPath: string): string =>
     `**Array of Any Of Following Types/Objs:**</br>&bull; ${this.anyOfProperties()
-      .map((property) => property.markdownTableType())
+      .map((property) => property.markdownTableType(inMdFileAtPath))
       .join("</br>&bull; ")}`;
 }

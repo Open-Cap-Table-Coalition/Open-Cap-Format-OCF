@@ -23,6 +23,6 @@ export default class MultiTypeProperty extends InlineProperty {
   protected refProperty = () =>
     PropertyFactory.build(this.schema, this.json["items"]);
 
-  markdownTableType = (): string =>
-    `[ ${this.refProperty().markdownTableType()} ]`;
+  markdownTableType = (inMdFileAtPath: string): string =>
+    `[ ${this.refProperty().markdownTableType(inMdFileAtPath)} ]`;
 }

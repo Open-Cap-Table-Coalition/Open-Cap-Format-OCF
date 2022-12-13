@@ -1,0 +1,7 @@
+nav:
+  - Introduction: "README.md"
+  - Architecture: explainers
+  - Schemas: schema_markdown
+  - Tutorials: tutorials
+  - Contribute: "CONTRIBUTING.md"
+  - Blog: https://medium.com/@opencaptable

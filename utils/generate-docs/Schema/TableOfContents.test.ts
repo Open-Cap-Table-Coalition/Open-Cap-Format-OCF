@@ -1,4 +1,5 @@
-import Schema from "./Schema.js";
+import path from "node:path";
+import Schema, { REPO_ROOT } from "./Schema.js";
 import TableOfContents from "./TableOfContents.js";
 
 const SCHEMA_NODE_FIXTURE = {
@@ -17,11 +18,13 @@ describe("TableOfContents", () => {
       const schema = new Schema([SCHEMA_NODE_FIXTURE]);
       const tableOfContents = new TableOfContents(schema);
 
-      const actual = tableOfContents.markdown();
+      const actual = tableOfContents.markdown(
+        path.join(REPO_ROOT, "docs", "markdown")
+      );
 
       expect(actual).toEqual(`## Schemas are divided into five folders:
 
-### [Files](/schema/files)
+### Files
 
 _Describes the eight top-level files that hold OCF objects and are required to export or import a cap table._
 
@@ -29,27 +32,27 @@ _Describes the eight top-level files that hold OCF objects and are required to e
 
   - **Id:** \`https://opencaptablecoalition.com/schema/files/TestFile.schema.json\`
   - **Description:** This is a test fixture exemplifying a File schema from OCF
-  - **View more:** [schema/files/TestFile](/docs/schema/files/TestFile.md)
+  - **View more:** [schema/files/TestFile](schema/files/TestFile.md)
 
-### [Objects](/schema/objects)
+### Objects
 
 _Describing the structure of OCF -- these contain the common object properties \`id\` and \`comments\`_
 
 
 
-### [Enums](/schema/enums)
+### Enums
 
 _Key enumerations used throughout the schemas_
 
 
 
-### [Types](/schema/types)
+### Types
 
 _Used as common building blocks for properties that are more complex than primitives but don't need separate unique Ids._
 
 
 
-### [Primitives](/schema/primitives)
+### Primitives
 
 _Used for object property composition and enforcing uniform properties across parts of the schema._
 
