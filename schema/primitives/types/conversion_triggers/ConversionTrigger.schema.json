@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json",
   "title": "Primitive - Conversion Trigger Type",
   "description": "Abstract type representation of required fields require for conversion rights types.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingPeriod.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingPeriod.schema.json",
   "title": "Primitive - Vesting Period Type",
   "description": "Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms",
   "type": "object",

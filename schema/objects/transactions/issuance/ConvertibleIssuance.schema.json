@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json",
   "title": "Object - Convertible Issuance Transaction",
   "description": "Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder",
   "type": "object",

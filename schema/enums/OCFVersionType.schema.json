@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OCFVersionType.schema.json",
   "title": "Enum - OCF Version Type",
   "description": "Enumeration of recognized OCF versions",
   "type": "string",

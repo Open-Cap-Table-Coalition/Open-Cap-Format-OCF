@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json",
   "title": "Type - Ratio",
   "description": "Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values",
   "type": "object",
