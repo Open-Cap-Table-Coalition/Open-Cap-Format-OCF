@@ -30,4 +30,19 @@
 
 **Source Code:** [schema/objects/transactions/vesting/VestingAcceleration](/schema/objects/transactions/vesting/VestingAcceleration.schema.json)
 
+**Examples:**
+
+```json
+[
+  {
+    "object_type": "TX_VESTING_ACCELERATION",
+    "quantity": "32458",
+    "reason_text": "Founder was terminated following change in control. 100% double-trigger acceleration.",
+    "id": "founder-vest-acceleration-1",
+    "date": "2020-01-01",
+    "security_id": "test-plan-security-id"
+  }
+]
+```
+
 Copyright © 2022 Open Cap Table Coalition.
