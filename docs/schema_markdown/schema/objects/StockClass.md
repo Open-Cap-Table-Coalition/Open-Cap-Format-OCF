@@ -77,6 +77,10 @@
       {
         "conversion_mechanism": {
           "type": "RATIO_CONVERSION",
+          "conversion_price": {
+            "amount": "1.00",
+            "currency": "USD"
+          },
           "ratio": {
             "numerator": "1",
             "denominator": "1"

@@ -47,7 +47,12 @@
     "security_id": "0f96b82a-6dc5-4205-bcb1-15740e5f8304",
     "date": "2022-01-24",
     "reason_text": "We wish to make a retraction",
-    "comments": ["A", "Series", "Of", "Comments"]
+    "comments": [
+      "A",
+      "Series",
+      "Of",
+      "Comments"
+    ]
   }
 ]
 ```

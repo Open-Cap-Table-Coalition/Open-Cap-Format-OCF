@@ -42,7 +42,10 @@
     "id": "test-plan-security-transfer-minimal",
     "security_id": "0zHLfmI9G0",
     "date": "2001-01-01",
-    "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
+    "resulting_security_ids": [
+      "eiO9qSCztZ",
+      "feit2eP2NQ"
+    ],
     "quantity": "11"
   },
   {
@@ -50,9 +53,14 @@
     "id": "test-plan-security-transfer-full-fields",
     "security_id": "0zHLfmI9G0",
     "date": "2001-01-01",
-    "resulting_security_ids": ["eiO9qSCztZ", "feit2eP2NQ"],
+    "resulting_security_ids": [
+      "eiO9qSCztZ",
+      "feit2eP2NQ"
+    ],
     "quantity": "11",
-    "comments": ["Comment"],
+    "comments": [
+      "Comment"
+    ],
     "consideration_text": "1.00 USD",
     "balance_security_id": "fyLFexlMGV"
   }

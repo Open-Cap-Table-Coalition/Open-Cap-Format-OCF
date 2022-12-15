@@ -16,15 +16,15 @@
 
 **Properties:**
 
-| Property           | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Description                                                                     | Required   |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------- |
-| id                 | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Identifier for the object                                                       | `REQUIRED` |
-| comments           | [`STRING`]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Unstructured text comments related to and stored for the object                 | -          |
-| object_type        | **Constant:** `VESTING_TERMS`</br>_Defined in [schema/enums/ObjectType](../enums/ObjectType.md)_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Object type field                                                               | `REQUIRED` |
-| name               | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Concise name for the vesting schedule                                           | `REQUIRED` |
-| description        | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Detailed description of the vesting schedule                                    | `REQUIRED` |
-| allocation_type    | `Enum - Allocation Type`</br></br>_Description:_ Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: </br> 1. Cumulative Rounding (5 - 4 - 5 - 4)</br> 2. Cumulative Round Down (4 - 5 - 4 - 5)</br> 3. Front Loaded (5 - 5 - 4 - 4)</br> 4. Back Loaded (4 - 4 - 5 - 5)</br> 5. Front Loaded to Single Tranche (6 - 4 - 4 - 4)</br> 6. Back Loaded to Single Tranche (4 - 4 - 4 - 6)</br> 7. Fractional (4.5 - 4.5 - 4.5 - 4.5)</br></br>**ONE OF:** </br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL | Allocation/rounding type for the vesting schedule                               | `REQUIRED` |
-| vesting_conditions | [ [schema/types/vesting/VestingCondition](../types/vesting/VestingCondition.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Conditions and triggers that describe the graph of vesting schedules and events | `REQUIRED` |
+| Property           | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Description                                                                     | Required   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------- |
+| id                 | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Identifier for the object                                                       | `REQUIRED` |
+| comments           | [`STRING`]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Unstructured text comments related to and stored for the object                 | -          |
+| object_type        | **Constant:** `VESTING_TERMS`</br>_Defined in [schema/enums/ObjectType](../enums/ObjectType.md)_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Object type field                                                               | `REQUIRED` |
+| name               | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Concise name for the vesting schedule                                           | `REQUIRED` |
+| description        | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Detailed description of the vesting schedule                                    | `REQUIRED` |
+| allocation_type    | `Enum - Allocation Type`</br></br>_Description:_ Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: </br>  1.  Cumulative Rounding (5 - 4 - 5 - 4)</br>  2.  Cumulative Round Down (4 - 5 - 4 - 5)</br>  3.  Front Loaded (5 - 5 - 4 - 4)</br>  4.  Back Loaded (4 - 4 - 5 - 5)</br>  5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)</br>  6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)</br>  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)</br></br>**ONE OF:** </br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL | Allocation/rounding type for the vesting schedule                               | `REQUIRED` |
+| vesting_conditions | [ [schema/types/vesting/VestingCondition](../types/vesting/VestingCondition.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Conditions and triggers that describe the graph of vesting schedules and events | `REQUIRED` |
 
 **Source Code:** [schema/objects/VestingTerms](../../../../schema/objects/VestingTerms.schema.json)
 
@@ -45,7 +45,9 @@
         "trigger": {
           "type": "VESTING_START_DATE"
         },
-        "next_condition_ids": ["cliff"]
+        "next_condition_ids": [
+          "cliff"
+        ]
       },
       {
         "id": "cliff",
@@ -64,7 +66,9 @@
           },
           "relative_to_condition_id": "vesting-start"
         },
-        "next_condition_ids": ["monthly-thereafter"]
+        "next_condition_ids": [
+          "monthly-thereafter"
+        ]
       },
       {
         "id": "monthly-thereafter",
@@ -239,7 +243,9 @@
         "trigger": {
           "type": "VESTING_START_DATE"
         },
-        "next_condition_ids": ["10pct-after-24-months"]
+        "next_condition_ids": [
+          "10pct-after-24-months"
+        ]
       },
       {
         "id": "10pct-after-24-months",
@@ -258,7 +264,9 @@
           },
           "relative_to_condition_id": "vesting-start"
         },
-        "next_condition_ids": ["1.25pct-each-month-for-12-months"]
+        "next_condition_ids": [
+          "1.25pct-each-month-for-12-months"
+        ]
       },
       {
         "id": "1.25pct-each-month-for-12-months",
@@ -277,7 +285,9 @@
           },
           "relative_to_condition_id": "10pct-after-24-months"
         },
-        "next_condition_ids": ["1.67pct-each-month-for-12-months"]
+        "next_condition_ids": [
+          "1.67pct-each-month-for-12-months"
+        ]
       },
       {
         "id": "1.67pct-each-month-for-12-months",
@@ -296,7 +306,9 @@
           },
           "relative_to_condition_id": "1.25pct-each-month-for-12-months"
         },
-        "next_condition_ids": ["2.08pct-each-month-for-12-months"]
+        "next_condition_ids": [
+          "2.08pct-each-month-for-12-months"
+        ]
       },
       {
         "id": "2.08pct-each-month-for-12-months",
@@ -315,7 +327,9 @@
           },
           "relative_to_condition_id": "1.67pct-each-month-for-12-months"
         },
-        "next_condition_ids": ["2.5pct-each-month-for-12-months"]
+        "next_condition_ids": [
+          "2.5pct-each-month-for-12-months"
+        ]
       },
       {
         "id": "2.5pct-each-month-for-12-months",

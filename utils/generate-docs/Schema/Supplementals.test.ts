@@ -7,7 +7,7 @@ BODY BODY BODY
 
 # See Also:
 
-- [schema/objects/Issuer](/docs/schema/objects/Issuer.md)
+- [schema/objects/Issuer](/docs/schema_markdown/objects/Issuer.md)
 `;
 
 const IRRELEVANT_SUPPLEMENTAL_MARKDOWN_FIXTURE = `
@@ -17,7 +17,7 @@ BODY BODY BODY
 
 # See Also:
 
-- [schema/objects/Stakeholder](/docs/schema/objects/Stakeholder.md)
+- [schema/objects/Stakeholder](/docs/schema_markdown/objects/Stakeholder.md)
 `;
 
 describe("Supplementals", () => {

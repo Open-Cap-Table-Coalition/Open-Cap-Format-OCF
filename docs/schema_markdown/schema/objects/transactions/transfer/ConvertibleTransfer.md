@@ -42,7 +42,10 @@
     "id": "test-convertible-transfer-minimal",
     "security_id": "test-security-id",
     "date": "2018-06-07",
-    "resulting_security_ids": ["new-security-1", "..."],
+    "resulting_security_ids": [
+      "new-security-1",
+      "..."
+    ],
     "amount": {
       "amount": "-867.53",
       "currency": "USD"
@@ -53,14 +56,21 @@
     "id": "test-convertible-transfer-all-fields",
     "security_id": "test-security-id",
     "date": "2018-06-07",
-    "resulting_security_ids": ["new-security-1", "..."],
+    "resulting_security_ids": [
+      "new-security-1",
+      "..."
+    ],
     "amount": {
       "amount": "-867.53",
       "currency": "USD"
     },
     "consideration_text": "3.50 USD",
     "balance_security_id": "test-security-id-2",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

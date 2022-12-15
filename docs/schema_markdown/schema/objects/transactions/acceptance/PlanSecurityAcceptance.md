@@ -44,7 +44,11 @@
     "id": "test-plan-security-acceptance-all-fields",
     "security_id": "test-security-id",
     "date": "2019-12-10",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

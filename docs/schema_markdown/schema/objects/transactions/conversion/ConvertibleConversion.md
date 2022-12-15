@@ -47,7 +47,10 @@
     "quantity_converted": "100.00",
     "trigger_id": "CN-1.CONV.TRIG.1",
     "reason_text": "for testing",
-    "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
+    "resulting_security_ids": [
+      "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
+      "..."
+    ]
   },
   {
     "object_type": "TX_CONVERTIBLE_CONVERSION",
@@ -57,7 +60,10 @@
     "quantity_converted": "100.00",
     "trigger_id": "CN-1.CONV.TRIG.1",
     "reason_text": "for testing",
-    "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."]
+    "resulting_security_ids": [
+      "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
+      "..."
+    ]
   },
   {
     "object_type": "TX_CONVERTIBLE_CONVERSION",
@@ -67,8 +73,15 @@
     "quantity_converted": "100.00",
     "trigger_id": "CN-1.CONV.TRIG",
     "reason_text": "for testing",
-    "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
-    "comments": ["comment-one", "comment-two", "..."]
+    "resulting_security_ids": [
+      "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
+      "..."
+    ],
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   },
   {
     "object_type": "TX_CONVERTIBLE_CONVERSION",
@@ -78,8 +91,15 @@
     "quantity_converted": "100.00",
     "trigger_id": "CN-1.CONV.TRIG",
     "reason_text": "for testing",
-    "resulting_security_ids": ["c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c", "..."],
-    "comments": ["comment-one", "comment-two", "..."]
+    "resulting_security_ids": [
+      "c349dcc8-cbf9-4ed9-88cd-9de4d0c8517c",
+      "..."
+    ],
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

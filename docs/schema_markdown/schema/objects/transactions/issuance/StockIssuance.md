@@ -62,7 +62,10 @@
       "amount": "0",
       "currency": "USD"
     },
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"]
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
   },
   {
     "object_type": "TX_STOCK_ISSUANCE",
@@ -89,8 +92,14 @@
       "amount": "0",
       "currency": "USD"
     },
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
-    "comments": ["Here is a comment", "Here is another comment"],
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "vesting_terms_id": "4yr-1yr-cliff-schedule"
   }
 ]
