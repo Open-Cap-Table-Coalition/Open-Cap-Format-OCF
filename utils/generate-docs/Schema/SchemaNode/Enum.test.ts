@@ -26,7 +26,7 @@ describe("Enum", () => {
       const schema = new Schema([SCHEMA_NODE_FIXTURE]);
       const actual = new Enum(schema, SCHEMA_NODE_FIXTURE).markdownOutput();
 
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -38,7 +38,7 @@ describe("Enum", () => {
 
 **ONE OF:**</br>&bull; test_enum1
 
-**Source Code:** [schema/enums/TestEnum](/schema/enums/TestEnum.schema.json)
+**Source Code:** [schema/enums/TestEnum](../../../../schema/enums/TestEnum.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

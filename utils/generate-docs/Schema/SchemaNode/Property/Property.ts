@@ -30,5 +30,5 @@ export default abstract class Property {
     return this.description().replace(/\r?\n|\r/g, "</br>");
   }
 
-  abstract markdownTableType(): string;
+  abstract markdownTableType(inMdFileAtPath?: string): string;
 }

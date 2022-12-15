@@ -24,8 +24,10 @@ export default class ObjectConstProperty extends InlineProperty {
       "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
     );
 
-  markdownTableType = () =>
-    `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.objectTypeEnumSchemaNode().markdownOutputLink()}_`;
+  markdownTableType = (inMdFileAtPath: string) =>
+    `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.objectTypeEnumSchemaNode().mdLinkToNodesMdDocs(
+      inMdFileAtPath
+    )}_`;
 
   markdownTableDescription = () => "Object type field";
 }

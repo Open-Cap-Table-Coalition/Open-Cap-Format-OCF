@@ -36,5 +36,5 @@
   },
   "additionalProperties": false,
   "required": ["quantity"],
-  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/transfer/StockTransfer.schema.json"
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schemaobjects/transactions/transfer/StockTransfer.schema.json"
 }

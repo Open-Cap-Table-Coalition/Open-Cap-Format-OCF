@@ -21,16 +21,18 @@ export default class SchemaWriter {
   }
 
   protected deleteExistingFiles = () =>
-    fse.emptyDir(path.join(this.output, "docs/schema"));
+    fse.emptyDir(path.join(this.output, "schema_markdown/schema"));
 
   protected tryWriteNewFile = (schemaNode: any) => {
     try {
       return fse.outputFile(
-        path.join(this.output, schemaNode.outputPath()),
+        path.join(this.output, schemaNode.outputFileAbsolutePath()),
         schemaNode.markdownOutput()
       );
     } catch (e: any) {
-      console.error(`\nERROR: Failure generating ${schemaNode.outputPath()}\n`);
+      console.error(
+        `\nERROR: Failure generating ${schemaNode.outputFileAbsolutePath()}\n`
+      );
       throw e;
     }
   };

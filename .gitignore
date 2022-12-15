@@ -7,3 +7,12 @@
 
 # Node
 node_modules
+
+# Python 
+*.pyc
+venv/
+requirements.txt
+docs/__pycache__
+
+# MkDocs
+site/
