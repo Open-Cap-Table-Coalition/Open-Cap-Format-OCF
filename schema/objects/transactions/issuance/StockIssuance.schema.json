@@ -40,15 +40,7 @@
     },
     "cost_basis": {
       "description": "The cost basis for this particular stock",
-      "oneOf": [
-        {
-          "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
-        },
-        {
-          "$ref": "https://opencaptablecoalition.com/schema/types/PreReleaseOmission.schema.json",
-          "$comment": "Discussion on this field is ongoing, see https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/discussions/218"
-        }
-      ]
+      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
     },
     "stock_legend_ids": {
       "title": "Stock Issuance - Stock Legend ID Array",
