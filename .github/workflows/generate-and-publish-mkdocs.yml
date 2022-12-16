@@ -1,0 +1,38 @@
+name: Publish Docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  create-mkdocs-docs:
+    name: Generate Docs for GitHub Page Hosting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Setup Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install Dependencies
+        run: pip install -r ./requirements.txt
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Generate documentation
+        run: npm run generate-docs
+
+      - name: Deploy documentation to github pages
+        run: mkdocs gh-deploy --force

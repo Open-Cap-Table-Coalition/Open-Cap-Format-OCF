@@ -1,4 +1,4 @@
-name: Check OCF Schema File Copyright Notices
+name: Write OCF Schema File Copyright Notices
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  check-ocf-schema-file-copyright-notices:
-    name: Check OCF Schema File Copyright Notices
+  enforce-ocf-schema-file-copyright-notices:
+    name: Write OCF Schema File Copyright Notices
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,4 +24,7 @@ jobs:
         run: npm install
 
       - name: Check for coypright notices
-        run: node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -vt --tag main
+        run: npm run enforce-copyright-notices
+
+      - name: Prettier Fix Formatting
+        run: npm run fix

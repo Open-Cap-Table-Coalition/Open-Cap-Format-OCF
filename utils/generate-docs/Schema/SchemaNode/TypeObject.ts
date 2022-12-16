@@ -22,7 +22,8 @@ export default class TypeObjectSchemaNode extends SchemaNode {
 
   protected oneOf = () => this.json["oneOf"];
 
-  markdownTableType = () => `[${this.shortId()}](${this.outputPath()})`;
+  markdownTableType = (inMdFileAtPath: string) =>
+    `${this.mdLinkToNodesMdDocs(inMdFileAtPath)}`;
 
   markdownOutput = () => `${this.markdownHeader()}
 
