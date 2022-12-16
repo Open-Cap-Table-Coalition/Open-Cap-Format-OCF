@@ -1,4 +1,5 @@
 import path from "node:path";
+import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
 import { markdownTable } from "markdown-table";
 import { format } from "date-fns";
 
@@ -43,7 +44,10 @@ export default abstract class SchemaNode {
 
   protected allOfMarkdown = (): string =>
     this.allOf()
-      .map((schemaNode) => `- ${schemaNode.markdownOutputLink()}`)
+      .map(
+        (schemaNode) =>
+          `- ${schemaNode.mdLinkToNodesMdDocs(this.outputFileAbsolutePath())}`
+      )
       .join("\n");
 
   /**
@@ -81,9 +85,31 @@ export default abstract class SchemaNode {
 
   description = () => this.json["description"];
 
-  sourcePath = () => `/${this.shortId()}.schema.json`;
+  /**
+   * Within the resulting /docs folder, what is the absolute path for the resulting markdown file when written to disk?
+   * @returns "absolute" path from the /docs folder to resulting MD.
+   */
+  outputFileAbsolutePath = () => `docs/schema_markdown/${this.shortId()}.md`;
 
-  outputPath = () => `/docs/${this.shortId()}.md`;
+  /**
+   * Using repo root as root, what is the absolute path of the schema used to generate this MD file?
+   * @returns "absolute" path from the repo root to the source schema use to generate the MD.
+   */
+  sourceSchemaAbsolutePath = () => `${this.shortId()}.schema.json`;
+
+  // schema/primitives/types/conversion_rights/ConversionRight.schema.json
+  // docs/markdown/INDEX.md
+  relativePathToSource = () =>
+    `${relativePathToOtherPath(
+      this.sourceSchemaAbsolutePath(),
+      this.outputFileAbsolutePath()
+    )}/${this.basename()}.schema.json`;
+
+  relativePathToOutputDocumentation = (relative_to_absolute_path: string) =>
+    `${relativePathToOtherPath(
+      this.outputFileAbsolutePath(),
+      relative_to_absolute_path
+    )}/${this.basename()}.md`;
 
   propertiesJson = () => this.json["properties"];
 
@@ -100,7 +126,11 @@ export default abstract class SchemaNode {
     ...this.allOf().flatMap((schemaNode) => schemaNode.required()),
   ];
 
-  markdownHeader = () => `:house: [Documentation Home](/README.md)
+  markdownHeader =
+    () => `:house: [Documentation Home](${relativePathToOtherPath(
+      "../README.md",
+      this.directory()
+    )}/README.md)
 
 ---
 
@@ -113,7 +143,7 @@ export default abstract class SchemaNode {
       this.supplementalMarkdowns().length > 0
         ? this.supplementalMarkdowns()
         : null,
-      `**Source Code:** ${this.markdownSourceLink()}`,
+      `**Source Code:** ${this.mdLinkToSourceSchema()}`,
       this.markdownExamples() ? this.markdownExamples() : null,
       `Copyright © ${format(new Date(), "Y")} Open Cap Table Coalition.`,
     ]
@@ -121,7 +151,8 @@ export default abstract class SchemaNode {
       .filter(Boolean)
       .join("\n\n") + "\n";
 
-  markdownTableType = () => `\`${this.type().toUpperCase()}\``;
+  markdownTableType = (in_markdown_file_path: string) =>
+    `\`${this.type().toUpperCase()}\``;
 
   markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
@@ -130,7 +161,7 @@ export default abstract class SchemaNode {
       ["Property", "Type", "Description", "Required"],
       ...this.properties().map((property) => [
         property.id(),
-        property.markdownTableType(),
+        property.markdownTableType(this.outputFileAbsolutePath()),
         property.markdownTableDescription(),
         this.required().includes(property.id()) ? "`REQUIRED`" : "-",
       ]),
@@ -138,7 +169,11 @@ export default abstract class SchemaNode {
 
   abstract markdownOutput(): string;
 
-  markdownSourceLink = () => `[${this.shortId()}](${this.sourcePath()})`;
+  mdLinkToSourceSchema = () =>
+    `[${this.shortId()}](${this.relativePathToSource()})`;
 
-  markdownOutputLink = () => `[${this.shortId()}](${this.outputPath()})`;
+  mdLinkToNodesMdDocs = (relative_to_absolute_path: string) =>
+    `[${this.shortId()}](${this.relativePathToOutputDocumentation(
+      relative_to_absolute_path
+    )})`;
 }

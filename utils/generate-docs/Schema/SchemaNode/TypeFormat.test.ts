@@ -16,7 +16,7 @@ describe("TypeFormat", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypeFormat(schema, FIXTURE).markdownOutput();
 
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -30,7 +30,7 @@ describe("TypeFormat", () => {
 
 **Value:** \`STRING - _Must match JSONSchema Format: DATE_\`
 
-**Source Code:** [schema/types/TestTypeFormat](/schema/types/TestTypeFormat.schema.json)
+**Source Code:** [schema/types/TestTypeFormat](../../../../schema/types/TestTypeFormat.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

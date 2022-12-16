@@ -28,8 +28,8 @@ export default class OneOfArryProperty extends InlineProperty {
 
   markdownTableDescription = () => this.description();
 
-  markdownTableType = (): string =>
+  markdownTableType = (inMdFileAtPath: string): string =>
     `**Array of ONE OF the Following Types/Objs:**</br>&bull; ${this.oneOfProperties()
-      .map((property) => property.markdownTableType())
+      .map((property) => property.markdownTableType(inMdFileAtPath))
       .join("</br>&bull; ")}`;
 }

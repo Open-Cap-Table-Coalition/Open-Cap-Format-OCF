@@ -21,8 +21,7 @@ describe("TypeObject", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypeObject(schema, FIXTURE).markdownOutput();
-
-      expect(actual).toEqual(`:house: [Documentation Home](/README.md)
+      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -36,12 +35,12 @@ _This is a test fixture exemplifying an TypeObject schema from OCF_
 
 **Properties:**
 
-| Property     | Type                                                                | Description                                                       | Required   |
-| ------------ | ------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------- |
-| 1            | \`STRING\`                                                            | Example description                                               | \`REQUIRED\` |
-| refProperty1 | [schema/types/TestTypeObject](/docs/schema/types/TestTypeObject.md) | This is a test fixture exemplifying an TypeObject schema from OCF | -          |
+| Property     | Type                                              | Description                                                       | Required   |
+| ------------ | ------------------------------------------------- | ----------------------------------------------------------------- | ---------- |
+| 1            | \`STRING\`                                          | Example description                                               | \`REQUIRED\` |
+| refProperty1 | [schema/types/TestTypeObject](/TestTypeObject.md) | This is a test fixture exemplifying an TypeObject schema from OCF | -          |
 
-**Source Code:** [schema/types/TestTypeObject](/schema/types/TestTypeObject.schema.json)
+**Source Code:** [schema/types/TestTypeObject](../../../../schema/types/TestTypeObject.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
 `);

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingAcceleration.schema.json",
+  "title": "Object - Vesting Acceleration Transaction",
+  "description": "Object describing an acceleration of vesting, in which additional shares vest ahead of the schedule specified in security's vesting terms.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_VESTING_ACCELERATION"
+    },
+    "quantity": {
+      "description": "Number of shares vesting ahead of schedule",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "reason_text": {
+      "description": "Reason for the acceleration; unstructured text",
+      "type": "string"
+    },
+    "id": {},
+    "comments": {},
+    "date": {},
+    "security_id": {}
+  },
+  "additionalProperties": false,
+  "required": ["quantity", "reason_text"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting/VestingAcceleration.schema.json"
+}

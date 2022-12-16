@@ -72,8 +72,12 @@ export async function enforceOcfCopyrightNotices(
   force_overwrite: boolean = false,
   tag: string = "main"
 ): Promise<boolean> {
-  if (verbose) console.log(`ENFORCE COPYRIGHT NOTICES ----------------------`);
-
+  if (verbose) {
+    console.log(`ENFORCE COPYRIGHT NOTICES ----------------------`);
+    console.log(
+      `\tforce_overwrite: ${force_overwrite} \n\tadd_missing_comments: ${add_missing_comments} \n\ttag: ${tag} \n\ttest: ${test}`
+    );
+  }
   try {
     // Grab the copyright year we're going to use for the entire schema collection
     let copyright_year = new Date().getFullYear();

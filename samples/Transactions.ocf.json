@@ -356,6 +356,14 @@
       "date": "2020-01-01"
     },
     {
+      "object_type": "TX_VESTING_ACCELERATION",
+      "quantity": "32458",
+      "reason_text": "Founder was terminated following change in control. 100% double-trigger acceleration.",
+      "id": "founder-vest-acceleration-1",
+      "date": "2020-01-01",
+      "security_id": "test-plan-security-id"
+    },
+    {
       "object_type": "TX_PLAN_SECURITY_ISSUANCE",
       "id": "test-plan-security-issuance-any-of-block-for-compensation-type-option",
       "security_id": "test-security-id",
@@ -708,6 +716,27 @@
         "numerator": "2",
         "denominator": "1"
       }
+    },
+    {
+      "object_type": "TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT",
+      "id": "change-conversion-ratio-following-down-round",
+      "date": "2022-11-02",
+      "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+      "new_ratio_conversion_mechanism": {
+        "type": "RATIO_CONVERSION",
+        "rounding_type": "CEILING",
+        "conversion_price": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "ratio": {
+          "numerator": "1.00",
+          "denominator": "0.20"
+        }
+      },
+      "comments": [
+        "Broad-based anti-dilution repricing due to massive down-round. Calculated by Law Firms R Us LLP on November 1st, 2022."
+      ]
     },
     {
       "object_type": "TX_STOCK_REISSUANCE",
