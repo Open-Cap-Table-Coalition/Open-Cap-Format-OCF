@@ -234,13 +234,13 @@ Conditions support either a relative `portion` or a fixed `quantity` of shares.
   schema/objects/VestingTerms
 -->
 
-[condition]: ../schema_markdown/types/vesting/VestingCondition.md
-[start-trigger]: ../schema_markdown/types/vesting/VestingStartTrigger.md
-[relative-trigger]: ../schema_markdown/types/vesting/VestingScheduleRelativeTrigger.md
-[relative-trigger]: ../schema_markdown/types/vesting/VestingScheduleAbsoluteTrigger.md
-[event-txn]: ../schema_markdown/objects/transactions/vesting/VestingEvent.md
-[start-txn]: ../schema_markdown/objects/transactions/vesting/VestingStart.md
-[portion]: ../schema_markdown/types/vesting/VestiongConditionPortion.md
+[condition]: ../../../schema_markdown/schema/types/vesting/VestingCondition.md
+[start-trigger]: ../../../schema_markdown/schema/types/vesting/VestingStartTrigger.md
+[relative-trigger]: ../../../schema_markdown/schema/types/vesting/VestingScheduleRelativeTrigger.md
+[relative-trigger]: ../../../schema_markdown/schema/types/vesting/VestingScheduleAbsoluteTrigger.md
+[event-txn]: ../../../schema_markdown/schema/objects/transactions/vesting/VestingEvent.md
+[start-txn]: ../../../schema_markdown/schema/objects/transactions/vesting/VestingStart.md
+[portion]: ../../../../schema_markdown/schema/types/vesting/VestiongConditionPortion.md
 
 ```
 flowchart TB
