@@ -7,6 +7,13 @@
       "security_id": "vesting-ex-1",
       "date": "2022-07-14",
       "vesting_condition_id": "qualifying-sale"
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "08f8b870",
+      "security_id": "vesting-ex-1",
+      "date": "2021-01-01",
+      "vesting_condition_id": "vesting-start"
     }
   ]
 }
