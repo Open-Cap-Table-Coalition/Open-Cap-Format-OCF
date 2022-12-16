@@ -51,7 +51,10 @@
     "date": "2022-02-01",
     "reason_text": "Warrant needs to be cancelled",
     "quantity": "1000",
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "balance_security_id": "balance-security-id"
   }
 ]

@@ -59,7 +59,10 @@
     },
     "quantity": "33",
     "consideration_text": "3.00 CAD",
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "balance_security_id": "balance-security-id"
   }
 ]

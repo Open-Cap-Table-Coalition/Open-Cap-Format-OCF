@@ -47,7 +47,10 @@
     "security_id": "test-security-id",
     "date": "2022-02-01",
     "reason_text": "Retract the stocks",
-    "comments": ["Here is a comment", "Here is another comment"]
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ]
   }
 ]
 ```

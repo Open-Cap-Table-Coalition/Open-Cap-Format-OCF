@@ -47,7 +47,11 @@
     "security_id": "test-convertible-retraction",
     "date": "2021-01-14",
     "reason_text": "oops",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

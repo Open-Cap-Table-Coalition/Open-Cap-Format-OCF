@@ -38,7 +38,9 @@
     "id": "test-plan-security-issuance-full-fields-vesting-event",
     "security_id": "test-plan-security-issuance-full-fields",
     "date": "2021-01-11",
-    "comments": ["100% up front due to custom vesting tranche"],
+    "comments": [
+      "100% up front due to custom vesting tranche"
+    ],
     "vesting_condition_id": "full-vesting"
   }
 ]

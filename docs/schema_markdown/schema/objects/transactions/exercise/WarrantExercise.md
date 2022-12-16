@@ -57,7 +57,10 @@
       "resultant-security-id-1",
       "resultant-security-id-2"
     ],
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "consideration_text": "1.23 USD"
   }
 ]

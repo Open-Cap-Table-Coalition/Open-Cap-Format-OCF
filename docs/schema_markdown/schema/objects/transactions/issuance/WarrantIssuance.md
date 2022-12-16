@@ -122,7 +122,10 @@
       "amount": "1.00",
       "currency": "USD"
     },
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "vesting_terms_id": "4yr-1yr-cliff-schedule",
     "warrant_expiration_date": "2032-02-01"
   }

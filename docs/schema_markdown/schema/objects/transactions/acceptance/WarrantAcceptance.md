@@ -44,7 +44,10 @@
     "id": "test-warrant-acceptance-full-fields",
     "security_id": "test-security-id",
     "date": "2022-02-01",
-    "comments": ["Here is a comment", "Here is another comment"]
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ]
   }
 ]
 ```

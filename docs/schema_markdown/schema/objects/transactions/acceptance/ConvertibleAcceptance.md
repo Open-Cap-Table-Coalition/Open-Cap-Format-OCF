@@ -44,7 +44,11 @@
     "id": "test-convertible-acceptance-all-fields",
     "security_id": "2936wa8yefhdsvcn",
     "date": "2022-01-20",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

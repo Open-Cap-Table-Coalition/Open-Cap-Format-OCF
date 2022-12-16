@@ -42,7 +42,9 @@
     "id": "test-warrant-transfer-minimal",
     "security_id": "test-security-id",
     "date": "2022-02-01",
-    "resulting_security_ids": ["resultant-security-id-1"],
+    "resulting_security_ids": [
+      "resultant-security-id-1"
+    ],
     "quantity": "10000"
   },
   {
@@ -55,7 +57,10 @@
       "resultant-security-id-2"
     ],
     "quantity": "10000",
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "consideration_text": "0.50 USD",
     "balance_security_id": "balance-security-id"
   }
