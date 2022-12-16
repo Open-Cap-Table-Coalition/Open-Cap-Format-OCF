@@ -739,6 +739,17 @@
       ]
     },
     {
+      "object_type": "TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT",
+      "id": "decrease-authorized-series-a-preferred-after-financing",
+      "date": "2022-12-16",
+      "stock_class_id": "series-a-preferred-stock",
+      "new_shares_authorized": "9365000",
+      "board_approval_date": "2022-12-16",
+      "comments": [
+        "10,000,000 Series A Preferred shares were authorized for issuance and offered for sale, however only 9,365,000 were sold. Board authorized reduction in authorized shares to 9,365,000 shares."
+      ]
+    },
+    {
       "object_type": "TX_STOCK_REISSUANCE",
       "id": "test-stock-split-minimal",
       "security_id": "test-security-id",
