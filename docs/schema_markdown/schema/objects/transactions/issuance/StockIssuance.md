@@ -70,6 +70,35 @@
   },
   {
     "object_type": "TX_STOCK_ISSUANCE",
+    "id": "test-stock-issuance-with-share-tracking",
+    "security_id": "test-security-id",
+    "date": "2022-02-01",
+    "security_law_exemptions": [],
+    "stakeholder_id": "stakeholder-id",
+    "custom_id": "S-1",
+    "stock_class_id": "stock-class-id",
+    "share_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "quantity": "1000",
+    "cost_basis": {
+      "amount": "0",
+      "currency": "USD"
+    },
+    "share_numbers_issued": [
+      {
+        "starting_share_number": "1",
+        "ending_share_number": "1000"
+      }
+    ],
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
+  },
+  {
+    "object_type": "TX_STOCK_ISSUANCE",
     "id": "test-stock-issuance-full-fields",
     "security_id": "test-stock-issuance-security-id",
     "date": "2022-02-01",
