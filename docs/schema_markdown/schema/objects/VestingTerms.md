@@ -262,15 +262,13 @@ Conditions support either a relative `portion` or a fixed `quantity` of shares.
   schema/objects/VestingTerms
 -->
 
-#### TODO don't forget to make these relative
-
-[condition]: docs/schema/types/vesting/VestingCondition.md
-[start-trigger]: docs/scheam/types/vesting/VestingStartTrigger.md
-[relative-trigger]: docs/schema/types/vesting/VestingScheduleRelativeTrigger.md
-[relative-trigger]: docs/schema/types/vesting/VestingScheduleAbsoluteTrigger.md
-[event-txn]: docs/schema/objects/transactions/vesting/VestingEvent.md
-[start-txn]: docs/schema/objects/transactions/vesting/VestingStart.md
-[portion]: docs/schema/types/vesting/VestiongConditionPortion.md
+[condition]: ../schema_markdown/types/vesting/VestingCondition.md
+[start-trigger]: ../schema_markdown/types/vesting/VestingStartTrigger.md
+[relative-trigger]: ../schema_markdown/types/vesting/VestingScheduleRelativeTrigger.md
+[relative-trigger]: ../schema_markdown/types/vesting/VestingScheduleAbsoluteTrigger.md
+[event-txn]: ../schema_markdown/objects/transactions/vesting/VestingEvent.md
+[start-txn]: ../schema_markdown/objects/transactions/vesting/VestingStart.md
+[portion]: ../schema_markdown/types/vesting/VestiongConditionPortion.md
 
 ```
 flowchart TB
