@@ -41,7 +41,9 @@
     "id": "test-stock-conversion-minimal",
     "security_id": "test-security-id",
     "date": "2022-02-01",
-    "resulting_security_ids": ["resultant-security-id-1"],
+    "resulting_security_ids": [
+      "resultant-security-id-1"
+    ],
     "quantity_converted": "1"
   },
   {
@@ -55,7 +57,10 @@
       "resultant-security-id-3"
     ],
     "quantity_converted": "10",
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "balance_security_id": "balance-security-id"
   }
 ]

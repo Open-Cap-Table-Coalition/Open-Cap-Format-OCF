@@ -63,7 +63,9 @@
       "currency": "CAD"
     },
     "consideration_text": "9.00 CAD",
-    "comments": ["Release the securities"],
+    "comments": [
+      "Release the securities"
+    ],
     "resulting_security_ids": [
       "resultant-security-id-1",
       "resultant-security-id-2"

@@ -99,6 +99,6 @@ export const schemaUrlFromRepoPath = (
   schema_path: string,
   tag: string = "main"
 ) =>
-  `${repo_url_root}/${tag}/schema${basenameRelativePathToSchemaDir(
+  `${repo_url_root}/${tag}/schema/${basenameRelativePathToSchemaDir(
     schema_path
   )}.schema.json`;

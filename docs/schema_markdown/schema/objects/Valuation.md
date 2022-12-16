@@ -43,7 +43,9 @@
     },
     "effective_date": "2022-01-28",
     "valuation_type": "409A",
-    "comments": ["Wow, what a great deal this guy gave us."]
+    "comments": [
+      "Wow, what a great deal this guy gave us."
+    ]
   }
 ]
 ```

@@ -58,7 +58,11 @@
     ],
     "quantity": "100",
     "consideration_text": "1.00 USD",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

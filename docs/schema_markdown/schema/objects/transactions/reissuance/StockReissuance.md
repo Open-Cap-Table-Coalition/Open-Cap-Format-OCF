@@ -57,7 +57,10 @@
       "resultant-security-id-2",
       "resultant-security-id-3"
     ],
-    "comments": ["Here is a comment", "Here is another comment"]
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ]
   },
   {
     "object_type": "TX_STOCK_REISSUANCE",
@@ -81,7 +84,10 @@
     ],
     "split_transaction_id": "test-split1-common",
     "reason_text": "Reissue due to 2-for-1 Common stock split",
-    "comments": ["Here is a comment", "Here is another comment"]
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ]
   }
 ]
 ```

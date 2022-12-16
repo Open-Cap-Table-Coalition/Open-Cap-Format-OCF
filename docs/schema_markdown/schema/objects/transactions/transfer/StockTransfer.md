@@ -60,7 +60,10 @@
       "resultant-security-id-3"
     ],
     "quantity": "10",
-    "comments": ["Here is a comment", "Here is another comment"],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "consideration_text": "1.00 USD",
     "balance_security_id": "balance-security-id"
   }

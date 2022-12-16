@@ -58,7 +58,11 @@
     },
     "reason_text": "for testing",
     "balance_security_id": "new-security",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```

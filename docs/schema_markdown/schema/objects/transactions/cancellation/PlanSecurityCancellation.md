@@ -52,7 +52,11 @@
     "reason_text": "need to cancel",
     "quantity": "100",
     "balance_security_id": "test-balance-security-id",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```
