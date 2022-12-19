@@ -221,7 +221,7 @@
           "type": "CONVERTIBLE_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "SAFE_CONVERSION",
-            "conversion_flavor": "PRE_MONEY",
+            "conversion_timing": "PRE_MONEY",
             "conversion_mfn": false
           },
           "converts_to_future_round": true
