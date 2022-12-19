@@ -224,6 +224,48 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_CONVERTIBLE_ISSUANCE",
+      "id": "test-safe-issuance-all-fields",
+      "security_id": "safe_123456",
+      "date": "1978-05-27",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "US"
+        }
+      ],
+      "board_approval_date": "2022-01-01",
+      "stakeholder_id": "stk_567890",
+      "consideration_text": "1000.0 USD",
+      "custom_id": "SAFE-1",
+      "convertible_type": "SAFE",
+      "investment_amount": {
+        "amount": "1000",
+        "currency": "USD"
+      },
+      "conversion_triggers": [
+        {
+          "trigger_id": "CN-1.TRIG.1",
+          "nickname": "Next Financing",
+          "trigger_description": "Conversion at Next Equity Financing",
+          "type": "AUTOMATIC_ON_CONDITION",
+          "trigger_condition": "SAFE shall convert upon completion of next equity financing (as defined in the instrument)",
+          "conversion_right": {
+            "type": "CONVERTIBLE_CONVERSION_RIGHT",
+            "conversion_mechanism": {
+              "type": "SAFE_CONVERSION",
+              "conversion_timing": "PRE_MONEY",
+              "conversion_mfn": false
+            },
+            "converts_to_future_round": true
+          }
+        }
+      ],
+      "seniority": 1,
+      "pro_rata": "2500",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
       "object_type": "TX_CONVERTIBLE_RETRACTION",
       "id": "test-convertible-retraction-minimal",
       "security_id": "test-convertible-retraction",
