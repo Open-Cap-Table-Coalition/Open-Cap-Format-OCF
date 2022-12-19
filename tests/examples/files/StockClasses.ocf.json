@@ -7,7 +7,7 @@
       "name": "Common Stock",
       "class_type": "COMMON",
       "default_id_prefix": "CS-",
-      "current_shares_authorized": "1000000000.00",
+      "initial_shares_authorized": "1000000000.00",
       "board_approval_date": "2001-02-28",
       "votes_per_share": "1",
       "par_value": {
@@ -30,7 +30,7 @@
       "name": "Series Seed Preferred",
       "class_type": "PREFERRED",
       "default_id_prefix": "PS-",
-      "current_shares_authorized": "10000000.00",
+      "initial_shares_authorized": "10000000.00",
       "board_approval_date": "2021-01-28",
       "votes_per_share": "1",
       "par_value": {
