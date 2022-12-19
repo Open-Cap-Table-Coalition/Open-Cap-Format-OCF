@@ -32,6 +32,7 @@
 | consideration_text      | `STRING`                                                                                                   | Unstructured text description of consideration provided in exchange for security issuance                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 | security_law_exemptions | [ [schema/types/SecurityExemption](../../../types/SecurityExemption.md) ]                                  | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
 | stock_class_id          | `STRING`                                                                                                   | Identifier of the stock class for this stock issuance                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
+| share_numbers_issued    | [ [schema/types/ShareNumberRange](../../../types/ShareNumberRange.md) ]                                    | Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, *which* specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.                                                                         | -          |
 | share_price             | [schema/types/Monetary](../../../types/Monetary.md)                                                        | The price per share paid for the stock by the holder                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | quantity                | [schema/types/Numeric](../../../types/Numeric.md)                                                          | Number of shares issued to the stakeholder                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
 | vesting_terms_id        | `STRING`                                                                                                   | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
@@ -62,6 +63,35 @@
       "amount": "0",
       "currency": "USD"
     },
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
+  },
+  {
+    "object_type": "TX_STOCK_ISSUANCE",
+    "id": "test-stock-issuance-with-share-tracking",
+    "security_id": "test-security-id",
+    "date": "2022-02-01",
+    "security_law_exemptions": [],
+    "stakeholder_id": "stakeholder-id",
+    "custom_id": "S-1",
+    "stock_class_id": "stock-class-id",
+    "share_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "quantity": "1000",
+    "cost_basis": {
+      "amount": "0",
+      "currency": "USD"
+    },
+    "share_numbers_issued": [
+      {
+        "starting_share_number": "1",
+        "ending_share_number": "1000"
+      }
+    ],
     "stock_legend_ids": [
       "stock-legend-id-1",
       "stock-legend-id-2"

@@ -25,8 +25,8 @@
       "description": "Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1). If certificate IDs have a dash, the prefix should end in the dash like CS-",
       "type": "string"
     },
-    "current_shares_authorized": {
-      "description": "The most current number of shares authorized for this stock class",
+    "initial_shares_authorized": {
+      "description": "The initial number of shares authorized for this stock class",
       "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
     },
     "board_approval_date": {
@@ -73,7 +73,7 @@
     "name",
     "class_type",
     "default_id_prefix",
-    "current_shares_authorized",
+    "initial_shares_authorized",
     "votes_per_share",
     "seniority"
   ],

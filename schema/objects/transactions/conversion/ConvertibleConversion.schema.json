@@ -39,7 +39,7 @@
       "type": "string"
     },
     "capitalization_definition": {
-      "description": "If this conversion event was d on the company's capitalization as calculated at the time of conversion, please specify what stock classes, stock plans and securities were included in the calculation",
+      "description": "If this conversion event and its `quantity_converted` value was based on the company's capitalization, please specify what stock classes, stock plans and securities were aggregated to calculate the capitalization value used in the calculation (e.g. if it was based on \"fully diluted\" capitalization, please provide details on how this was calculated using the capitalization type datastructure).",
       "$ref": "https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json"
     },
     "id": {},

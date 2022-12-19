@@ -12,10 +12,10 @@ _Type representation of a securities issuance exemption that includes an unstruc
 
 **Properties:**
 
-| Property     | Type                                        | Description                                                                 | Required   |
-| ------------ | ------------------------------------------- | --------------------------------------------------------------------------- | ---------- |
-| description  | `STRING`                                    | Description of an applicable security law exemption governing the issuance  | `REQUIRED` |
-| jurisdiction | [schema/types/CountryCode](/CountryCode.md) | Country code of the jurisdiction of the applicable law (ISO 3166-1 alpha-2) | `REQUIRED` |
+| Property     | Type     | Description                                                                                                                                                                                                                                                         | Required   |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| description  | `STRING` | Description of an applicable security law exemption governing the issuance                                                                                                                                                                                          | `REQUIRED` |
+| jurisdiction | `STRING` | Jurisdiction of the applicable law. This is a free-text field as there is no known enumeration of all global legal jurisdictions, but please try to use ISO 3166-1 alpha-2, if appropriate. Otherwise, we rely on implementers to choose an appropriate value here. | `REQUIRED` |
 
 **Source Code:** [schema/types/SecurityExemption](../../../../schema/types/SecurityExemption.schema.json)
 

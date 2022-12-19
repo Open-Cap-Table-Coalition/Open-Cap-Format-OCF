@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://opencaptablecoalition.com/schema/types/ShareNumberRange.schema.json",
+  "title": "Type - Share Number Range",
+  "description": "Type representation of a range of share numbers associated with an event (such as the share numbers associated with an issuance) - for use where shares are not fungible and need unique identifiers *per share*",
+  "type": "object",
+  "properties": {
+    "starting_share_number": {
+      "description": "The starting share number of a range of shares impacted by a particular event (**INCLUSIVE** and assuming **share counts start at 1**)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "ending_share_number": {
+      "description": "The ending share number of a range of shares impacted by a particular event (**INCLUSIVE**)",
+      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["starting_share_number", "ending_share_number"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/ShareNumberRange.schema.json"
+}

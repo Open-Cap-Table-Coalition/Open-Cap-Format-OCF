@@ -37,45 +37,48 @@
   "generated_at": "2022-03-22T01:23:45-06:00",
   "stock_plans_files": [
     {
-      "filepath": "./StockPlans.json",
+      "filepath": "./StockPlans.ocf.json",
       "md5": "c3e68dd645c6ab810f036923706355c8"
     }
   ],
   "stock_legend_templates_files": [
     {
-      "filepath": "./StockLegends.json",
+      "filepath": "./StockLegends.ocf.json",
       "md5": "931d44dbd132cc09aef64ae4bab61987"
     }
   ],
   "stock_classes_files": [
     {
-      "filepath": "./StockClasses.json",
+      "filepath": "./StockClasses.ocf.json",
       "md5": "45bbd5a565154f8c4a762c3d4fd711f1"
     }
   ],
   "transactions_files": [
     {
-      "filepath": "./Transactions.json",
+      "filepath": "./Transactions.ocf.json",
       "md5": "ab35839164924530cac5eecbb19f2c4d"
     }
   ],
   "stakeholders_files": [
     {
-      "filepath": "./Stakeholders.json",
+      "filepath": "./Stakeholders.ocf.json",
       "md5": "12c14ee9ac8e71a120cee15d075ecea6"
     }
   ],
   "vesting_terms_files": [
     {
-      "filepath": "./VestingTerms.json",
+      "filepath": "./VestingTerms.ocf.json",
       "md5": "c386f2a435dcb00ff89e08f30ed8e843"
     }
   ],
   "valuations_files": [
     {
-      "filepath": "./Valuations.json",
+      "filepath": "./Valuations.ocf.json",
       "md5": "2a284a50fed8a0d07f10ed36edb14fc5"
     }
   ],
-  "comments": ["This is an optional comment"]
+  "comments": [
+    "This is an optional comment",
+    "These md5 hashes are just dummy values. They've not been recalculated in a long time, but we should look into recalculating them dynamically via an actions or pre-commit hook."
+  ]
 }
