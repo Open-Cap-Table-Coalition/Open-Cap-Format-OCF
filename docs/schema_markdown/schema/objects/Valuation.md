@@ -25,6 +25,7 @@
 | board_approval_date | [schema/types/Date](../types/Date.md)                                                                                | Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation. | -          |
 | price_per_share     | [schema/types/Monetary](../types/Monetary.md)                                                                        | Valued price per share                                                                                                                              | `REQUIRED` |
 | effective_date      | [schema/types/Date](../types/Date.md)                                                                                | Date on which this valuation is first valid                                                                                                         | `REQUIRED` |
+| stock_class_id      | `STRING`                                                                                                             | Identifier of the stock class for this valuation                                                                                                    | -          |
 | valuation_type      | `Enum - Valuation Type`</br></br>_Description:_ Enumeration of valuation types</br></br>**ONE OF:** </br>&bull; 409A | Seam for supporting different types of valuations in future versions                                                                                | `REQUIRED` |
 
 **Source Code:** [schema/objects/Valuation](../../../../schema/objects/Valuation.schema.json)
@@ -43,9 +44,8 @@
     },
     "effective_date": "2022-01-28",
     "valuation_type": "409A",
-    "comments": [
-      "Wow, what a great deal this guy gave us."
-    ]
+    "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
+    "comments": ["Wow, what a great deal this guy gave us."]
   }
 ]
 ```

@@ -29,6 +29,10 @@
       "description": "Date on which this valuation is first valid",
       "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
     },
+    "stock_class_id": {
+      "description": "Identifier of the stock class for this valuation",
+      "type": "string"
+    },
     "valuation_type": {
       "description": "Seam for supporting different types of valuations in future versions",
       "$ref": "https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json"
