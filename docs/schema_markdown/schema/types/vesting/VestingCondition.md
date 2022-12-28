@@ -283,7 +283,7 @@ flowchart TB
 
 And this graph is expressed in JSON as:
 
-https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/77e5085c92484218cb9b5f8c6ca07090a74b93c5/samples/VestingTerms.ocf.json#L4-L50
+https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/77e5085c92484218cb9b5f8c6ca07090a74b93c5/samples/VestingTerms.ocf.json#L4-L52
 
 A lot of the concepts used here were introduced in Example 2. A security
 associated with this set of Vesting Terms ...
@@ -311,6 +311,10 @@ associated with this set of Vesting Terms ...
   "vesting_condition_id": "vesting-start"
 }
 ```
+
+Note this will normally be the only vesting transaction in the transaction
+log for this security, as all other vesting is scheduled and thus the events
+are implicit based on the passage of time.
 
 The `vesting-start` condition lists a single `next_condition_id` named "cliff",
 which is configured to trigger 12 months after vesting start on 2022-01-31, and
@@ -360,8 +364,8 @@ Each subsequent occurrence of the periodic monthly trigger would apply the same
 logic. Since every other month has a day 30, the rest of the occurrences would
 occur on the 30th of the month.
 
-If vesting terms are specified using 365-day years, relative triggers should
-be expressed in days instead of months.
+If legal documents specify vesting using 365-day years, relative triggers
+should be expressed in days instead of months.
 
 <!-- Supplemental for:
   schema/objects/VestingTerms
@@ -375,32 +379,6 @@ be expressed in days instead of months.
 [start-txn]: ../../../schema_markdown/schema/objects/transactions/vesting/VestingStart.md
 [portion]: ../../../../schema_markdown/schema/types/vesting/VestiongConditionPortion.md
 [day-of-month]: ../../../schema_markdown/schema/enums/VestingDayOfMonth.md
-
-```
-flowchart TB
-id(( ))
-start[[vesting-start]]
-expired(vesting-expired)
-dbl[[double-trigger-acceleration]]
-evt1[[twentypct-1]]
-evt2[[twentypct-2]]
-evt3[[twentypct-3]]
-evt4[[twentypct-4]]
-evt5[[twentypct-5]]
-
-id-->start
-start-->|+4 years|expired
-start-->dbl
-start-->evt1-->evt2-->evt3-->evt4-->evt5
-evt1-->expired
-evt2-->expired
-evt3-->expired
-evt4-->expired
-evt1-->dbl
-evt2-->dbl
-evt3-->dbl
-evt4-->dbl
-```
 
 
 **Source Code:** [schema/types/vesting/VestingCondition](../../../../../schema/types/vesting/VestingCondition.schema.json)
