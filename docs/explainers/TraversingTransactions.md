@@ -19,7 +19,7 @@ A **terminal** transaction is one which none of the securities originally issued
 
 Keep in mind, however, that, even where the event acts on an issuance only in-part and some of the original issuance remains outstanding in the name of the original holder, the OCF spec requires that you us a new issuance event for this remainder of the original issuance. This remainder will have its own `security_id` for the "remainder" that remains outstanding in the name of the original holder. At this point, the original `security_id` from the original issuance is no longer in use.
 
-[](../images/OCF%20Terminal%20Transaction.png)
+![](../images/OCF%20Terminal%20Transaction.png)
 
 ## Transactions by Type
 
