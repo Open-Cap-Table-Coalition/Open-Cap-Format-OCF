@@ -1,0 +1,13 @@
+{
+  "file_type": "OCF_STAKEHOLDERS_FILE",
+  "items": [
+    {
+      "object_type": "STAKEHOLDER",
+      "id": "be7d1e2e-0c9c-485b-a27d-a5c982c4e659",
+      "name": {
+        "legal_name": "Jim Jangles"
+      },
+      "stakeholder_type": "INDIVIDUAL"
+    }
+  ]
+}
