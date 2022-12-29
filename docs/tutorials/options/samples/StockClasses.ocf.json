@@ -9,6 +9,16 @@
       "default_id_prefix": "PS-",
       "initial_shares_authorized": "100000.00",
       "votes_per_share": "1",
+      "seniority": "2"
+    },
+    {
+      "object_type": "STOCK_CLASS",
+      "id": "e1d930f7-592d-4414-a3ab-a78fe4b932d1",
+      "name": "Common Stock",
+      "class_type": "COMMON",
+      "default_id_prefix": "C-",
+      "initial_shares_authorized": "10000000.00",
+      "votes_per_share": "1",
       "seniority": "1"
     }
   ]

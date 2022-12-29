@@ -14,28 +14,38 @@
   "stock_legend_templates_files": [
     {
       "filepath": "./StockLegends.ocf.json",
-      "md5": "fba8a2d205cd0274a456d5a97be4341f"
+      "md5": "fcd39efb789260234edeb7844e2c2105"
     }
   ],
   "stock_classes_files": [
     {
       "filepath": "./StockClasses.ocf.json",
-      "md5": "32108674399a9ea48e8d6c030e7b18cd"
+      "md5": "2d28aa51c9d2c0c6ed7785782e8f0bc2"
     }
   ],
   "transactions_files": [
     {
       "filepath": "./Transactions.ocf.json",
-      "md5": "834b6749b3f93b2c6009324ee5009b00"
+      "md5": "cb8bf312e4d5dd32429b58bf9a733837"
     }
   ],
   "stakeholders_files": [
     {
-      "filepath": "./Stakeholders.json",
-      "md5": "993514b3ec899d0d091c2a9dafa41e26"
+      "filepath": "./Stakeholders.ocf.json",
+      "md5": "514afb66d0ec21e0d7c24b0a8b39263c"
     }
   ],
-  "stock_plans_files": [],
+  "stock_plans_files": [
+    {
+      "filepath": "./StockPlans.ocf.json",
+      "md5": "13e7a39bef163a6d32f7d8bb790a865a"
+    }
+  ],
   "valuations_files": [],
-  "vesting_terms_files": []
+  "vesting_terms_files": [
+    {
+      "filepath": "./VestingTerms.ocf.json",
+      "md5": "40e8a25be4aa084fa97c7bd1ddbd0a27"
+    }
+  ]
 }
