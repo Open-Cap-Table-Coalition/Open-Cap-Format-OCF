@@ -110,7 +110,9 @@ flowchart TB
 
 This graph is expressed in JSON as:
 
-https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/ea3b6986d4546ca3ac39bbba80ab97cb31945eee/samples/VestingTerms.example2.ocf.json#L4-L66
+```
+--8<-- "samples/VestingTerms.example2.ocf.json:4:66"
+```
 
 We're introducing a few new concepts here, so let's tackle them one at a time.
 
