@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../README.md)
+:house: [Documentation Home](../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Stock Class Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockClassTransaction.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/StockClassTransaction.schema.json`
 
 **Description** _Abstract transaction object to be extended by all transaction objects that affect the stock class_
 
@@ -16,6 +16,6 @@
 | -------------- | -------- | ------------------------------------------------------------------ | ---------- |
 | stock_class_id | `STRING` | Identifier of the StockClass object, a subject of this transaction | `REQUIRED` |
 
-**Source Code:** [schema/primitives/objects/transactions/StockClassTransaction](../../../../../../schema/primitives/objects/transactions/StockClassTransaction.schema.json)
+**Source Code:** [/schema/primitives/objects/transactions/StockClassTransaction](../../../../../../../../../../schema/primitives/objects/transactions/StockClassTransaction.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

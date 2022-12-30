@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Object - Valuation
 
-`https://opencaptablecoalition.com/schema/objects/Valuation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation.schema.json`
 
 **Description:** _Object describing a valuation used in the cap table_
 
@@ -12,7 +12,7 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/Object](../primitives/objects/Object.md)
+- [/schema/primitives/objects/Object](../primitives/objects/Object.md)
 
 **Properties:**
 
@@ -20,15 +20,15 @@
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | id                  | `STRING`                                                                                                             | Identifier for the object                                                                                                                           | `REQUIRED` |
 | comments            | [`STRING`]                                                                                                           | Unstructured text comments related to and stored for the object                                                                                     | -          |
-| object_type         | **Constant:** `VALUATION`</br>_Defined in [schema/enums/ObjectType](../enums/ObjectType.md)_                         | Object type field                                                                                                                                   | `REQUIRED` |
+| object_type         | **Constant:** `VALUATION`</br>_Defined in [/schema/enums/ObjectType](../enums/ObjectType.md)_                        | Object type field                                                                                                                                   | `REQUIRED` |
 | provider            | `STRING`                                                                                                             | Entity which provided the valuation                                                                                                                 | -          |
-| board_approval_date | [schema/types/Date](../types/Date.md)                                                                                | Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation. | -          |
-| price_per_share     | [schema/types/Monetary](../types/Monetary.md)                                                                        | Valued price per share                                                                                                                              | `REQUIRED` |
-| effective_date      | [schema/types/Date](../types/Date.md)                                                                                | Date on which this valuation is first valid                                                                                                         | `REQUIRED` |
+| board_approval_date | [/schema/types/Date](../types/Date.md)                                                                               | Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation. | -          |
+| price_per_share     | [/schema/types/Monetary](../types/Monetary.md)                                                                       | Valued price per share                                                                                                                              | `REQUIRED` |
+| effective_date      | [/schema/types/Date](../types/Date.md)                                                                               | Date on which this valuation is first valid                                                                                                         | `REQUIRED` |
 | stock_class_id      | `STRING`                                                                                                             | Identifier of the stock class for this valuation                                                                                                    | `REQUIRED` |
 | valuation_type      | `Enum - Valuation Type`</br></br>_Description:_ Enumeration of valuation types</br></br>**ONE OF:** </br>&bull; 409A | Seam for supporting different types of valuations in future versions                                                                                | `REQUIRED` |
 
-**Source Code:** [schema/objects/Valuation](../../../../schema/objects/Valuation.schema.json)
+**Source Code:** [/schema/objects/Valuation](../../../../../../../../schema/objects/Valuation.schema.json)
 
 **Examples:**
 

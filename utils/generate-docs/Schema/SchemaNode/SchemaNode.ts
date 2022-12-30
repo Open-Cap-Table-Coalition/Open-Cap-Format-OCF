@@ -5,6 +5,7 @@ import { format } from "date-fns";
 
 import Schema from "../Schema.js";
 import PropertyFactory, { PropertyJson } from "./Property/Factory.js";
+import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 
 export interface SchemaNodeJson {
   $id: string;
@@ -33,7 +34,7 @@ export default abstract class SchemaNode {
   protected basename = () => path.basename(this.id(), ".schema.json");
 
   protected directory = () =>
-    path.dirname(this.id().slice("https://opencaptablecoalition.com/".length));
+    path.dirname(this.id().slice(`${repo_raw_url_root}/main`.length));
 
   protected allOf = (): SchemaNode[] =>
     "allOf" in this.json && this.json["allOf"]

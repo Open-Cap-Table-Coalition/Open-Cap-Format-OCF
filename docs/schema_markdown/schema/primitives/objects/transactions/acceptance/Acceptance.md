@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../../README.md)
+:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Security Acceptance Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/acceptance/Acceptance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/acceptance/Acceptance.schema.json`
 
 **Description** _Abstract object describing a security acceptance transaction_
 
@@ -15,6 +15,6 @@
 | Property | Type | Description | Required |
 | -------- | ---- | ----------- | -------- |
 
-**Source Code:** [schema/primitives/objects/transactions/acceptance/Acceptance](../../../../../../../schema/primitives/objects/transactions/acceptance/Acceptance.schema.json)
+**Source Code:** [/schema/primitives/objects/transactions/acceptance/Acceptance](../../../../../../../../../../../schema/primitives/objects/transactions/acceptance/Acceptance.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

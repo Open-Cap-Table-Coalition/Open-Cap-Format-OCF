@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Enum - Allocation Type
 
-`https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AllocationType.schema.json`
 
 **Description:** _Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: 
   1.  Cumulative Rounding (5 - 4 - 5 - 4)
@@ -17,6 +17,6 @@
 
 **ONE OF:**</br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL
 
-**Source Code:** [schema/enums/AllocationType](../../../../schema/enums/AllocationType.schema.json)
+**Source Code:** [/schema/enums/AllocationType](../../../../../../../../schema/enums/AllocationType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

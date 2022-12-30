@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Type - Name
 
-`https://opencaptablecoalition.com/schema/types/Name.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json`
 
 _Type comprising of multiple name components_
 
@@ -18,6 +18,6 @@ _Type comprising of multiple name components_
 | first_name | `STRING` | First/given name for the individual            | -          |
 | last_name  | `STRING` | Last/family name for the individual            | -          |
 
-**Source Code:** [schema/types/Name](../../../../schema/types/Name.schema.json)
+**Source Code:** [/schema/types/Name](../../../../../../../../schema/types/Name.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

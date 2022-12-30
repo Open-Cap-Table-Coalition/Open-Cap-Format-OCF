@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Type - Termination Window
 
-`https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TerminationWindow.schema.json`
 
 _Type representation of a termination window_
 
@@ -18,6 +18,6 @@ _Type representation of a termination window_
 | period      | `INTEGER`                                                                                                                                                                                                                                                                                                                                             | The length of the period in this termination window (in number of periods of type period_type) | `REQUIRED` |
 | period_type | `Enum - Period Type`</br></br>_Description:_ Enumeration of time period types</br></br>**ONE OF:** </br>&bull; DAYS </br>&bull; MONTHS </br>&bull; YEARS                                                                                                                                                                                              | The type of period being measured (e.g. days or month)                                         | `REQUIRED` |
 
-**Source Code:** [schema/types/TerminationWindow](../../../../schema/types/TerminationWindow.schema.json)
+**Source Code:** [/schema/types/TerminationWindow](../../../../../../../../schema/types/TerminationWindow.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../README.md)
+:house: [Documentation Home](../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Stock Plan Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockPlanTransaction.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/StockPlanTransaction.schema.json`
 
 **Description** _Abstract transaction object to be extended by all transaction objects that affect a stock plan_
 
@@ -16,6 +16,6 @@
 | ------------- | -------- | ------------------------------------------------------------------ | ---------- |
 | stock_plan_id | `STRING` | Identifier of the Stock Plan object, a subject of this transaction | `REQUIRED` |
 
-**Source Code:** [schema/primitives/objects/transactions/StockPlanTransaction](../../../../../../schema/primitives/objects/transactions/StockPlanTransaction.schema.json)
+**Source Code:** [/schema/primitives/objects/transactions/StockPlanTransaction](../../../../../../../../../../schema/primitives/objects/transactions/StockPlanTransaction.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -21,7 +21,7 @@ shares to Alice, if you look at the transfer schema, you'll probably notice a pr
     },
     "quantity": {
       "description": "Quantity of non-monetary security units transferred",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "id": {},
     "comments": {},

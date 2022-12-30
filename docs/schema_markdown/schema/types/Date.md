@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Type - Date
 
-`https://opencaptablecoalition.com/schema/types/Date.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json`
 
 **Description:** _Type represention of an ISO-8601 date, e.g. 2022-01-28_
 
@@ -12,6 +12,6 @@
 
 **Value:** `STRING - _Must match JSONSchema Format: DATE_`
 
-**Source Code:** [schema/types/Date](../../../../schema/types/Date.schema.json)
+**Source Code:** [/schema/types/Date](../../../../../../../../schema/types/Date.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -1,15 +1,15 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### Enum - Valuation Type
 
-`https://opencaptablecoalition.com/schema/enums/ValuationType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ValuationType.schema.json`
 
 **Description:** _Enumeration of valuation types_
 
 **ONE OF:**</br>&bull; 409A
 
-**Source Code:** [schema/enums/ValuationType](../../../../schema/enums/ValuationType.schema.json)
+**Source Code:** [/schema/enums/ValuationType](../../../../../../../../schema/enums/ValuationType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

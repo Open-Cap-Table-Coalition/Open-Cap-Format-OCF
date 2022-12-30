@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../../README.md)
+:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Security Reissuance Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/reissuance/Reissuance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/reissuance/Reissuance.schema.json`
 
 **Description** _Abstract object describing common properties to a reissuance of a security_
 
@@ -18,6 +18,6 @@
 | split_transaction_id   | `STRING`   | When stock is reissued as a result of a stock split, this field contains id of the respective stock class split transaction. It is not set otherwise. | -          |
 | reason_text            | `STRING`   | Free-form human-readable reason for stock reissuance                                                                                                  | -          |
 
-**Source Code:** [schema/primitives/objects/transactions/reissuance/Reissuance](../../../../../../../schema/primitives/objects/transactions/reissuance/Reissuance.schema.json)
+**Source Code:** [/schema/primitives/objects/transactions/reissuance/Reissuance](../../../../../../../../../../../schema/primitives/objects/transactions/reissuance/Reissuance.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

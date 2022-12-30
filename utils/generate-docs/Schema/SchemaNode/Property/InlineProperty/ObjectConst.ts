@@ -21,7 +21,7 @@ export default class ObjectConstProperty extends InlineProperty {
 
   protected objectTypeEnumSchemaNode = () =>
     this.schema.findSchemaNodeById(
-      "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json"
+      "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json"
     );
 
   markdownTableType = (inMdFileAtPath: string) =>

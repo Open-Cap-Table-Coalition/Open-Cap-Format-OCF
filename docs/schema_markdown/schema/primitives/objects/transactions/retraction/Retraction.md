@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../../README.md)
+:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Security Retraction Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/retraction/Retraction.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/retraction/Retraction.schema.json`
 
 **Description** _Abstract object describing a security retraction transaction_
 
@@ -16,6 +16,6 @@
 | ----------- | -------- | ------------------------- | ---------- |
 | reason_text | `STRING` | Reason for the retraction | `REQUIRED` |
 
-**Source Code:** [schema/primitives/objects/transactions/retraction/Retraction](../../../../../../../schema/primitives/objects/transactions/retraction/Retraction.schema.json)
+**Source Code:** [/schema/primitives/objects/transactions/retraction/Retraction](../../../../../../../../../../../schema/primitives/objects/transactions/retraction/Retraction.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

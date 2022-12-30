@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../README.md)
+:house: [Documentation Home](../../home/xudiera/code/README.md)
 
 ---
 
 ### File - Stock Classes
 
-`https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of stock classes_
 
@@ -12,15 +12,15 @@
 
 **Composed From:**
 
-- [schema/primitives/files/File](../primitives/files/File.md)
+- [/schema/primitives/files/File](../primitives/files/File.md)
 
 **Properties:**
 
-| Property  | Type                                                                                                  | Description                     | Required   |
-| --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
-| file_type | **Constant:** `OCF_STOCK_CLASSES_FILE`</br>_Defined in [schema/enums/FileType](../enums/FileType.md)_ | Object type field               | `REQUIRED` |
-| items     | [ [schema/objects/StockClass](../objects/StockClass.md) ]                                             | List of OCF stock class objects | `REQUIRED` |
+| Property  | Type                                                                                                   | Description                     | Required   |
+| --------- | ------------------------------------------------------------------------------------------------------ | ------------------------------- | ---------- |
+| file_type | **Constant:** `OCF_STOCK_CLASSES_FILE`</br>_Defined in [/schema/enums/FileType](../enums/FileType.md)_ | Object type field               | `REQUIRED` |
+| items     | [ [/schema/objects/StockClass](../objects/StockClass.md) ]                                             | List of OCF stock class objects | `REQUIRED` |
 
-**Source Code:** [schema/files/StockClassesFile](../../../../schema/files/StockClassesFile.schema.json)
+**Source Code:** [/schema/files/StockClassesFile](../../../../../../../../schema/files/StockClassesFile.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

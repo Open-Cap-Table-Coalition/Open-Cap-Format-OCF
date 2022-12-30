@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../README.md)
+:house: [Documentation Home](../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Conversion Mechanism Type
 
-`https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json`
 
 **Description** _Abstract type setting forth required field(s) for ALL conversion mechanism types_
 
@@ -16,6 +16,6 @@
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------- | ---------- |
 | type     | `Enum - Conversion Mechanism Type`</br></br>_Description:_ Enumeration of convertible conversion calculation types.</br></br>**ONE OF:** </br>&bull; FIXED_AMOUNT_CONVERSION </br>&bull; FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION </br>&bull; RATIO_CONVERSION </br>&bull; SAFE_CONVERSION </br>&bull; CONVERTIBLE_NOTE_CONVERSION </br>&bull; CUSTOM_CONVERSION | Identifies the specific conversion trigger type | `REQUIRED` |
 
-**Source Code:** [schema/primitives/types/conversion_mechanisms/ConversionMechanism](../../../../../../schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json)
+**Source Code:** [/schema/primitives/types/conversion_mechanisms/ConversionMechanism](../../../../../../../../../../schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

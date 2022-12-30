@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../README.md)
+:house: [Documentation Home](../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Object - Stock Class Conversion Ratio Adjustment Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
 
 **Description:** _Object describing the conversion ratio adjustment of a stock class that has a RatioConversionMechanism conversion mechanism where there was an actual repricing due to a down-round. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection._
 
@@ -12,22 +12,22 @@
 
 **Composed From:**
 
-- [schema/primitives/objects/Object](../../../primitives/objects/Object.md)
-- [schema/primitives/objects/transactions/Transaction](../../../primitives/objects/transactions/Transaction.md)
-- [schema/primitives/objects/transactions/StockClassTransaction](../../../primitives/objects/transactions/StockClassTransaction.md)
+- [/schema/primitives/objects/Object](../../../primitives/objects/Object.md)
+- [/schema/primitives/objects/transactions/Transaction](../../../primitives/objects/transactions/Transaction.md)
+- [/schema/primitives/objects/transactions/StockClassTransaction](../../../primitives/objects/transactions/StockClassTransaction.md)
 
 **Properties:**
 
-| Property                       | Type                                                                                                                                | Description                                                                                                                                                                                                                                                                             | Required   |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| id                             | `STRING`                                                                                                                            | Identifier for the object                                                                                                                                                                                                                                                               | `REQUIRED` |
-| comments                       | [`STRING`]                                                                                                                          | Unstructured text comments related to and stored for the object                                                                                                                                                                                                                         | -          |
-| object_type                    | **Constant:** `TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                                                                                                                                                                                                                                                                       | `REQUIRED` |
-| date                           | [schema/types/Date](../../../types/Date.md)                                                                                         | Date on which the transaction occurred                                                                                                                                                                                                                                                  | `REQUIRED` |
-| stock_class_id                 | `STRING`                                                                                                                            | Identifier of the StockClass object, a subject of this transaction                                                                                                                                                                                                                      | `REQUIRED` |
-| new_ratio_conversion_mechanism | [schema/types/conversion_mechanisms/RatioConversionMechanism](../../../types/conversion_mechanisms/RatioConversionMechanism.md)     | New conversion ratio mechanism describing new conversion price and conversion ratio in effect following a repricing - based on original issue price to new conversion price (provided in this transaction). For 2-for-1 split the numerator of the ratio is 2 and the denominator is 1. | `REQUIRED` |
+| Property                       | Type                                                                                                                                 | Description                                                                                                                                                                                                                                                                             | Required   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| id                             | `STRING`                                                                                                                             | Identifier for the object                                                                                                                                                                                                                                                               | `REQUIRED` |
+| comments                       | [`STRING`]                                                                                                                           | Unstructured text comments related to and stored for the object                                                                                                                                                                                                                         | -          |
+| object_type                    | **Constant:** `TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`</br>_Defined in [/schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                                                                                                                                                                                                                                                                       | `REQUIRED` |
+| date                           | [/schema/types/Date](../../../types/Date.md)                                                                                         | Date on which the transaction occurred                                                                                                                                                                                                                                                  | `REQUIRED` |
+| stock_class_id                 | `STRING`                                                                                                                             | Identifier of the StockClass object, a subject of this transaction                                                                                                                                                                                                                      | `REQUIRED` |
+| new_ratio_conversion_mechanism | [/schema/types/conversion_mechanisms/RatioConversionMechanism](../../../types/conversion_mechanisms/RatioConversionMechanism.md)     | New conversion ratio mechanism describing new conversion price and conversion ratio in effect following a repricing - based on original issue price to new conversion price (provided in this transaction). For 2-for-1 split the numerator of the ratio is 2 and the denominator is 1. | `REQUIRED` |
 
-**Source Code:** [schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment](../../../../../../schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json)
+**Source Code:** [/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment](../../../../../../../../../../schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json)
 
 **Examples:**
 

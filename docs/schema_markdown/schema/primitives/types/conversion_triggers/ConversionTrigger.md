@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../../README.md)
+:house: [Documentation Home](../../../../home/xudiera/code/README.md)
 
 ---
 
 ### Primitive - Conversion Trigger Type
 
-`https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json`
 
 **Description** _Abstract type representation of required fields require for conversion rights types._
 
@@ -18,8 +18,8 @@
 | trigger_id          | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Id for this conversion trigger, unique within list of ConversionTriggers in parent convertible issuance's `conversion_triggers` field. | `REQUIRED` |
 | nickname            | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Human-friendly nickname to describe the conversion right                                                                               | -          |
 | trigger_description | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Long-form description of the trigger                                                                                                   | -          |
-| conversion_right    | **ONE OF the Following Types/Objs:**</br>&bull; [schema/types/conversion_rights/ConvertibleConversionRight](../../../types/conversion_rights/ConvertibleConversionRight.md)</br>&bull; [schema/types/conversion_rights/WarrantConversionRight](../../../types/conversion_rights/WarrantConversionRight.md)</br>&bull; [schema/types/conversion_rights/StockClassConversionRight](../../../types/conversion_rights/StockClassConversionRight.md)                                                                            | When the conditions of the trigger are met, how does the convertible convert?                                                          | `REQUIRED` |
+| conversion_right    | **ONE OF the Following Types/Objs:**</br>&bull; [/schema/types/conversion_rights/ConvertibleConversionRight](../../../types/conversion_rights/ConvertibleConversionRight.md)</br>&bull; [/schema/types/conversion_rights/WarrantConversionRight](../../../types/conversion_rights/WarrantConversionRight.md)</br>&bull; [/schema/types/conversion_rights/StockClassConversionRight](../../../types/conversion_rights/StockClassConversionRight.md)                                                                         | When the conditions of the trigger are met, how does the convertible convert?                                                          | `REQUIRED` |
 
-**Source Code:** [schema/primitives/types/conversion_triggers/ConversionTrigger](../../../../../../schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json)
+**Source Code:** [/schema/primitives/types/conversion_triggers/ConversionTrigger](../../../../../../../../../../schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

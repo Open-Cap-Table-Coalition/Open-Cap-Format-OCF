@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../README.md)
+:house: [Documentation Home](../../../home/xudiera/code/README.md)
 
 ---
 
 ### Type - Vesting Start Trigger
 
-`https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingStartTrigger.schema.json`
 
 _Describes a vesting condition satisfied at the security's vesting commencement date_
 
@@ -16,6 +16,6 @@ _Describes a vesting condition satisfied at the security's vesting commencement 
 | -------- | ---------------------------------- | --------------- | ---------- |
 | type     | **Constant:** `VESTING_START_DATE` | Scalar Constant | `REQUIRED` |
 
-**Source Code:** [schema/types/vesting/VestingStartTrigger](../../../../../schema/types/vesting/VestingStartTrigger.schema.json)
+**Source Code:** [/schema/types/vesting/VestingStartTrigger](../../../../../../../../../schema/types/vesting/VestingStartTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

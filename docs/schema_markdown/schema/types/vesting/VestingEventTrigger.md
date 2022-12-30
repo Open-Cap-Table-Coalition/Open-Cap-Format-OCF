@@ -1,10 +1,10 @@
-:house: [Documentation Home](../../../../README.md)
+:house: [Documentation Home](../../../home/xudiera/code/README.md)
 
 ---
 
 ### Type - Vesting Event Trigger
 
-`https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventTrigger.schema.json`
 
 _Describes a vesting condition satisfied when a particular unscheduled event occurs_
 
@@ -16,6 +16,6 @@ _Describes a vesting condition satisfied when a particular unscheduled event occ
 | -------- | ----------------------------- | --------------- | ---------- |
 | type     | **Constant:** `VESTING_EVENT` | Scalar Constant | `REQUIRED` |
 
-**Source Code:** [schema/types/vesting/VestingEventTrigger](../../../../../schema/types/vesting/VestingEventTrigger.schema.json)
+**Source Code:** [/schema/types/vesting/VestingEventTrigger](../../../../../../../../../schema/types/vesting/VestingEventTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
