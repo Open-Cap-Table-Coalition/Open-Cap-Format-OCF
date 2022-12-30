@@ -31,7 +31,9 @@ flowchart TB
 
 And this graph is expressed in JSON as:
 
-https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/77e5085c92484218cb9b5f8c6ca07090a74b93c5/samples/VestingTerms.example1.ocf.json#L4-L26
+```
+--8<-- "samples/VestingTerms.example1.ocf.json:4:24"
+```
 
 Let's break down the single [Vesting Condition][condition] here.
 
@@ -264,7 +266,9 @@ flowchart TB
 
 And this graph is expressed in JSON as:
 
-https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/77e5085c92484218cb9b5f8c6ca07090a74b93c5/samples/VestingTerms.ocf.json#L4-L52
+```
+--8<-- "samples/VestingTerms.ocf.json:4:52"
+```
 
 A lot of the concepts used here were introduced in Example 2. A security
 associated with this set of Vesting Terms ...
