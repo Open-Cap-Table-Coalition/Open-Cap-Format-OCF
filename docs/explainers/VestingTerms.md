@@ -1,4 +1,6 @@
-## Vesting Terms Explained
+# Vesting System
+
+## Overview
 
 Vesting Terms objects support a structured representation of security
 vesting. This is accomplished by expressing security vesting as a graph of
