@@ -1,0 +1,51 @@
+{
+  "ocf_version": "1.0.0-a3",
+  "file_type": "OCF_MANIFEST_FILE",
+  "as_of": "2022-12-01",
+  "generated_at": "2022-12-01T11:30:45-06:00",
+  "issuer": {
+    "object_type": "ISSUER",
+    "id": "07450528-10c4-4f38-855b-defe92563546",
+    "legal_name": "Aperture Science, Inc.",
+    "formation_date": "1940-09-25",
+    "country_of_formation": "US",
+    "country_subdivision_of_formation": "MI"
+  },
+  "stock_legend_templates_files": [
+    {
+      "filepath": "./StockLegends.ocf.json",
+      "md5": "fcd39efb789260234edeb7844e2c2105"
+    }
+  ],
+  "stock_classes_files": [
+    {
+      "filepath": "./StockClasses.ocf.json",
+      "md5": "2d28aa51c9d2c0c6ed7785782e8f0bc2"
+    }
+  ],
+  "transactions_files": [
+    {
+      "filepath": "./Transactions.ocf.json",
+      "md5": "cb8bf312e4d5dd32429b58bf9a733837"
+    }
+  ],
+  "stakeholders_files": [
+    {
+      "filepath": "./Stakeholders.ocf.json",
+      "md5": "514afb66d0ec21e0d7c24b0a8b39263c"
+    }
+  ],
+  "stock_plans_files": [
+    {
+      "filepath": "./StockPlans.ocf.json",
+      "md5": "13e7a39bef163a6d32f7d8bb790a865a"
+    }
+  ],
+  "valuations_files": [],
+  "vesting_terms_files": [
+    {
+      "filepath": "./VestingTerms.ocf.json",
+      "md5": "40e8a25be4aa084fa97c7bd1ddbd0a27"
+    }
+  ]
+}
