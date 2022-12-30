@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json",
   "title": "File - Stock Legend Templates",
   "description": "JSON containing file type identifier and list of stock legend templates",
   "type": "object",

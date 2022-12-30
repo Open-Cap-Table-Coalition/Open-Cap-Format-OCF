@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json",
   "title": "Object - Stock Class Authorized Shares Adjustment Transaction",
   "description": "Object describing an event to change the number of authoried shares of a stock class.",
   "type": "object",

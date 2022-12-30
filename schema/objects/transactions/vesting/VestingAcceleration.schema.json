@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingAcceleration.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingAcceleration.schema.json",
   "title": "Object - Vesting Acceleration Transaction",
   "description": "Object describing an acceleration of vesting, in which additional shares vest ahead of the schedule specified in security's vesting terms.",
   "type": "object",

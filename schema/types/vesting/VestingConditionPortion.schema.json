@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingConditionPortion.schema.json",
   "title": "Type - Vesting Condition Portion",
   "description": "Describes a fractional portion (ratio) of shares associated with a Vesting Condition",
   "type": "object",

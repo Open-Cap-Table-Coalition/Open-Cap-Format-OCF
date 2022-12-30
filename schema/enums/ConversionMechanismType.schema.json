@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json",
   "title": "Enum - Conversion Mechanism Type",
   "description": "Enumeration of convertible conversion calculation types.",
   "type": "string",

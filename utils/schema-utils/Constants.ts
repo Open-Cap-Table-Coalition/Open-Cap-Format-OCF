@@ -35,5 +35,8 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
 };
 
+export const repo_raw_url_root =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF";
+
 export const repo_url_root =
   "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree";
