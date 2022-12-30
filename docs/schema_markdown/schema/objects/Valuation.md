@@ -45,7 +45,9 @@
     "effective_date": "2022-01-28",
     "valuation_type": "409A",
     "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
-    "comments": ["Wow, what a great deal this guy gave us."]
+    "comments": [
+      "Wow, what a great deal this guy gave us."
+    ]
   }
 ]
 ```
