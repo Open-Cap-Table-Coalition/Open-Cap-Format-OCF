@@ -7,11 +7,11 @@
   "properties": {
     "price": {
       "description": "Repurchase price per share of the stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "quantity": {
       "description": "Number of shares of stock repurchased",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "consideration_text": {
       "description": "Unstructured text description of consideration provided in exchange for security repurchase",

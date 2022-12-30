@@ -7,7 +7,7 @@
   "properties": {
     "address_type": {
       "description": "What type of address is this (e.g. legal address, contact address, etc.)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/AddressType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AddressType.schema.json"
     },
     "street_suite": {
       "description": "Street address (multi-line string)",
@@ -19,11 +19,11 @@
     },
     "country_subdivision": {
       "description": "State, province, or equivalent identifier required for an address in this country",
-      "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json"
     },
     "country": {
       "description": "Country code for this address (ISO 3166-1 alpha-2)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json"
     },
     "postal_code": {
       "description": "Address postal code",

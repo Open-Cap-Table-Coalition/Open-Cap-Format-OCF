@@ -7,7 +7,7 @@
   "properties": {
     "type": {
       "description": "Identifies the sub-type of trigger",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingTriggerType.schema.json"
     }
   },
   "required": ["type"],

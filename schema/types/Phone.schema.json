@@ -7,7 +7,7 @@
   "properties": {
     "phone_type": {
       "description": "Type of phone number (e.g. mobile, home or business)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/PhoneType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PhoneType.schema.json"
     },
     "phone_number": {
       "description": "A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890)",

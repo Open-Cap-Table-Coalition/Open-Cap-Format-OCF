@@ -7,14 +7,14 @@
   "properties": {
     "name": {
       "description": "Contact's name",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Name.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json"
     },
     "phone_numbers": {
       "title": "Contact Info - Phone Number Array",
       "description": "Phone numbers to reach the contact at",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/Phone.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Phone.schema.json"
       }
     },
     "emails": {
@@ -22,7 +22,7 @@
       "description": "Emails to reach the contact at",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/Email.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Email.schema.json"
       }
     }
   },

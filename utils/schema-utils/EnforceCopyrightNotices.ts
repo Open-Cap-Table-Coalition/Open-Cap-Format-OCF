@@ -12,6 +12,8 @@ import {
   schemaUrlFromRepoPath,
 } from "./PathTools.js";
 
+import { repo_raw_url_root } from "./Constants.js";
+
 /**
  * Given a schema, with a known local schema_path, generate an url to the corresponding file in the repo
  * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
@@ -38,6 +40,29 @@ export function addValidOcfCommentToSchema(
     console.log(
       `\t--> Inserted valid $comment field in schema ${schema_inst["$id"]}`
     );
+}
+
+/**
+ * Given a schema, with a known local schema_path, set the repo raw url for the ref fields
+ * @param schema_path -> Local path where schema_obj was loaded from. WILL BE OVERWRITTEN with serialized data from updated schema_obj.
+ * @param schema_inst -> OCF schema JSON to update.
+ * @param tag -> String: What branch tag should be added to repo root to generate valid url to GitHub docs?
+ * @param verbose -> Boolean: Display detailed logs.
+ */
+export function setRefField(
+  schema_path: string,
+  schema_inst: Record<string, any>,
+  tag: string = "main",
+  verbose: boolean = false
+) {
+  let schema_data = JSON.stringify(schema_inst, null, 2);
+  schema_data = schema_data.replace(
+    /"\$ref": "https:\/\/opencaptablecoalition.com/g,
+    `"$ref": "${repo_raw_url_root}/${tag}`
+  );
+  fs.writeFileSync(schema_path, schema_data);
+  if (verbose)
+    console.log(`\t--> Set ref fields in schema ${schema_inst["$id"]}`);
 }
 
 /**
@@ -218,8 +243,11 @@ export async function enforceOcfCopyrightNotices(
         }
       }
 
-      if (verbose) console.log("Setting the repo raw url");
+      if (verbose) console.log("Setting the repo raw url for id field");
       setRawUrl(schema_paths[i], schemas[i], tag, verbose);
+
+      if (verbose) console.log("Setting the repo raw url for ref fields");
+      setRefField(schema_paths[i], schema_inst, tag, verbose);
     }
     if (verbose)
       console.log("ENFORCE COPYRIGHT NOTICES COMPLETE -------------");

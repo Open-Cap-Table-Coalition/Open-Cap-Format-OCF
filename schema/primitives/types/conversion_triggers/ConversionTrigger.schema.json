@@ -7,7 +7,7 @@
   "properties": {
     "type": {
       "description": "When the trigger condition is met, is the conversion automatic, elective or automatic with an elective right not to convert",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionTriggerType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTriggerType.schema.json"
     },
     "trigger_id": {
       "description": "Id for this conversion trigger, unique within list of ConversionTriggers in parent convertible issuance's `conversion_triggers` field.",
@@ -25,13 +25,13 @@
       "description": "When the conditions of the trigger are met, how does the convertible convert?",
       "oneOf": [
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/ConvertibleConversionRight.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/ConvertibleConversionRight.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/WarrantConversionRight.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/WarrantConversionRight.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_rights/StockClassConversionRight.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/StockClassConversionRight.schema.json"
         }
       ]
     }

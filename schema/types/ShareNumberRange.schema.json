@@ -7,11 +7,11 @@
   "properties": {
     "starting_share_number": {
       "description": "The starting share number of a range of shares impacted by a particular event (**INCLUSIVE** and assuming **share counts start at 1**)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "ending_share_number": {
       "description": "The ending share number of a range of shares impacted by a particular event (**INCLUSIVE**)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     }
   },
   "additionalProperties": false,

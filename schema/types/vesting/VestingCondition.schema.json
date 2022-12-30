@@ -16,26 +16,26 @@
     },
     "portion": {
       "description": "If specified, the fractional part of the whole security that is vested, e.g. 25:100 for 25%. Use `quantity` for a fixed vesting amount.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingConditionPortion.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingConditionPortion.schema.json"
     },
     "quantity": {
       "description": "If specified, the fixed amount of the whole security to vest, e.g. 10000 shares. Use `portion` for a proportional vesting amount.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "trigger": {
       "description": "Describes how this vesting condition is met, resulting in vesting the specified tranche of shares",
       "oneOf": [
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingStartTrigger.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingEventTrigger.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventTrigger.schema.json"
         }
       ]
     },

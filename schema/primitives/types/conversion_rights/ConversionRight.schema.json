@@ -7,28 +7,28 @@
   "properties": {
     "type": {
       "description": "What kind of conversion right is this?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionRightType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionRightType.schema.json"
     },
     "conversion_mechanism": {
       "description": "What conversion mechanism applies to calculate the number of resulting securities?",
       "oneOf": [
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
         }
       ]
     },

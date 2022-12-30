@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
     }
   ],
   "properties": {
@@ -15,15 +15,15 @@
     },
     "conversion_discount": {
       "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
     },
     "conversion_valuation_cap": {
       "description": "What is the valuation cap (if applicable)?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "exit_multiple": {
       "description": "For cash proceeds calculation during a liquidity event.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json"
     },
     "conversion_mfn": {
       "description": "Is this an MFN flavored SAFE?",
@@ -31,7 +31,7 @@
     },
     "conversion_timing": {
       "description": "Should the conversion amount be based on pre or post money capitalization",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionTimingType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTimingType.schema.json"
     },
     "capitalization_definition": {
       "description": "How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument.",

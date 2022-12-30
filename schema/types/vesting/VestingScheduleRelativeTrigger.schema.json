@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -17,10 +17,10 @@
       "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger. For weeks or \"ideal\" years (365 days), use `VestingPeriodInDays`. For calendar years use `VestingPeriodInMonths`.",
       "oneOf": [
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInDays.schema.json"
         },
         {
-          "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json"
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json"
         }
       ]
     },

@@ -7,7 +7,7 @@
   "properties": {
     "date": {
       "description": "Date on which the transaction occurred",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     }
   },
   "required": ["date"],

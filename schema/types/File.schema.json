@@ -11,7 +11,7 @@
     },
     "md5": {
       "description": "MD5 file checksum",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Md5.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Md5.schema.json"
     }
   },
   "additionalProperties": false,

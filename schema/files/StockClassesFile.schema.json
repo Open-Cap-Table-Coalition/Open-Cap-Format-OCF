@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
     }
   ],
   "properties": {
@@ -14,7 +14,7 @@
       "type": "array",
       "description": "List of OCF stock class objects",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/StockClass.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/StockClass.schema.json"
       }
     },
     "file_type": {

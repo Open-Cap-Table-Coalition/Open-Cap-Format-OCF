@@ -7,7 +7,7 @@
   "properties": {
     "file_type": {
       "description": "File type field (used to select proper schema for validation)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/FileType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/FileType.schema.json"
     }
   },
   "required": ["file_type"],

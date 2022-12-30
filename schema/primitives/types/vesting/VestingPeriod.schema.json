@@ -12,7 +12,7 @@
     },
     "type": {
       "description": "The unit of time for the period, e.g. `MONTHS` or `DAYS`",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PeriodType.schema.json"
     },
     "occurrences": {
       "description": "The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36`",

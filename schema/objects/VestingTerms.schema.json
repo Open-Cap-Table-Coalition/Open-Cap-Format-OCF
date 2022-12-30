@@ -6,7 +6,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -23,13 +23,13 @@
     },
     "allocation_type": {
       "description": "Allocation/rounding type for the vesting schedule",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/AllocationType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AllocationType.schema.json"
     },
     "vesting_conditions": {
       "description": "Conditions and triggers that describe the graph of vesting schedules and events",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/vesting/VestingCondition.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingCondition.schema.json"
       },
       "minItems": 1
     },

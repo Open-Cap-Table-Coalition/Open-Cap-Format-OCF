@@ -7,15 +7,15 @@
   "properties": {
     "rate": {
       "description": "Interest rate for the convertible (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
     },
     "accrual_start_date": {
       "description": "Commencement date for interest accruing at the specified rate",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "accrual_end_date": {
       "description": "Optional end date (inclusive) for interest accruing at the specified rate. If none specified, interest will accrue indefinitely or until accrual of next interest rate commences",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     }
   },
   "additionalProperties": false,
