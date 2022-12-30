@@ -26,12 +26,109 @@
 | allocation_type    | `Enum - Allocation Type`</br></br>_Description:_ Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: </br>  1.  Cumulative Rounding (5 - 4 - 5 - 4)</br>  2.  Cumulative Round Down (4 - 5 - 4 - 5)</br>  3.  Front Loaded (5 - 5 - 4 - 4)</br>  4.  Back Loaded (4 - 4 - 5 - 5)</br>  5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)</br>  6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)</br>  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)</br></br>**ONE OF:** </br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL | Allocation/rounding type for the vesting schedule                               | `REQUIRED` |
 | vesting_conditions | [ [schema/types/vesting/VestingCondition](../types/vesting/VestingCondition.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Conditions and triggers that describe the graph of vesting schedules and events | `REQUIRED` |
 
+Vesting Terms objects support a structured representation of security
+vesting. This is accomplished by expressing security vesting as a graph of
+"Vesting Conditions", and then recording vesting transactions for each
+security.
+
+For a more thorough explanation, see
+[Vesting Terms Explained](../../../explainers/VestingTerms.md).
+
+<!-- Supplemental for:
+  schema/objects/VestingTerms
+-->
+
+
 **Source Code:** [schema/objects/VestingTerms](../../../../schema/objects/VestingTerms.schema.json)
 
 **Examples:**
 
 ```json
 [
+  {
+    "id": "all-or-nothing",
+    "object_type": "VESTING_TERMS",
+    "name": "Documentation: Example 1",
+    "description": "100% of the options vest on a security-specific date",
+    "allocation_type": "CUMULATIVE_ROUND_DOWN",
+    "vesting_conditions": [
+      {
+        "id": "qualifying-sale",
+        "description": "Company is acquired for > $100MM",
+        "portion": {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      }
+    ]
+  },
+  {
+    "id": "all-or-nothing-with-expiration",
+    "object_type": "VESTING_TERMS",
+    "name": "Documentation: Example 2",
+    "description": "100% of the options vest on a security-specific date, within time boundaries",
+    "allocation_type": "CUMULATIVE_ROUND_DOWN",
+    "vesting_conditions": [
+      {
+        "id": "vesting-start",
+        "description": "The date on which the vesting period begins",
+        "trigger": {
+          "type": "VESTING_START_DATE"
+        },
+        "quantity": "0",
+        "next_condition_ids": [
+          "relative-expiration",
+          "absolute-expiration",
+          "qualifying-sale"
+        ]
+      },
+      {
+        "id": "relative-expiration",
+        "description": "0% vesting three years after vesting start",
+        "portion": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "trigger": {
+          "type": "VESTING_SCHEDULE_RELATIVE",
+          "period": {
+            "length": 36,
+            "type": "MONTHS",
+            "occurrences": 1,
+            "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+          },
+          "relative_to_condition_id": "vesting-start"
+        },
+        "next_condition_ids": []
+      },
+      {
+        "id": "absolute-expiration",
+        "description": "0% vesting after 1 Jan, 2025",
+        "quantity": "0",
+        "trigger": {
+          "type": "VESTING_SCHEDULE_ABSOLUTE",
+          "date": "2025-01-01"
+        },
+        "next_condition_ids": []
+      },
+      {
+        "id": "qualifying-sale",
+        "description": "Company is acquired for > $100MM",
+        "portion": {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        "trigger": {
+          "type": "VESTING_EVENT"
+        },
+        "next_condition_ids": []
+      }
+    ]
+  },
   {
     "id": "4yr-1yr-cliff-schedule",
     "object_type": "VESTING_TERMS",

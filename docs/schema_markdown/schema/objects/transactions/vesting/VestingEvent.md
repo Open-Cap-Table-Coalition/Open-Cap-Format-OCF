@@ -42,6 +42,13 @@
       "100% up front due to custom vesting tranche"
     ],
     "vesting_condition_id": "full-vesting"
+  },
+  {
+    "object_type": "TX_VESTING_EVENT",
+    "id": "d0a02b7a",
+    "security_id": "vesting-ex-1",
+    "date": "2022-07-14",
+    "vesting_condition_id": "qualifying-sale"
   }
 ]
 ```
