@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -12,11 +12,11 @@ _Type representation of a range of share numbers associated with an event (such 
 
 **Properties:**
 
-| Property              | Type                                 | Description                                                                                                                            | Required   |
-| --------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| starting_share_number | [/schema/types/Numeric](/Numeric.md) | The starting share number of a range of shares impacted by a particular event (**INCLUSIVE** and assuming **share counts start at 1**) | `REQUIRED` |
-| ending_share_number   | [/schema/types/Numeric](/Numeric.md) | The ending share number of a range of shares impacted by a particular event (**INCLUSIVE**)                                            | `REQUIRED` |
+| Property              | Type                                | Description                                                                                                                            | Required   |
+| --------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| starting_share_number | [schema/types/Numeric](/Numeric.md) | The starting share number of a range of shares impacted by a particular event (**INCLUSIVE** and assuming **share counts start at 1**) | `REQUIRED` |
+| ending_share_number   | [schema/types/Numeric](/Numeric.md) | The ending share number of a range of shares impacted by a particular event (**INCLUSIVE**)                                            | `REQUIRED` |
 
-**Source Code:** [/schema/types/ShareNumberRange](../../../../../../../../schema/types/ShareNumberRange.schema.json)
+**Source Code:** [schema/types/ShareNumberRange](../../../../schema/types/ShareNumberRange.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

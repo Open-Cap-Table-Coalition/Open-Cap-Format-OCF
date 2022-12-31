@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -15,6 +15,6 @@
 | Property | Type | Description | Required |
 | -------- | ---- | ----------- | -------- |
 
-**Source Code:** [/schema/primitives/objects/transactions/acceptance/Acceptance](../../../../../../../../../../../schema/primitives/objects/transactions/acceptance/Acceptance.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/acceptance/Acceptance](../../../../../../../schema/primitives/objects/transactions/acceptance/Acceptance.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

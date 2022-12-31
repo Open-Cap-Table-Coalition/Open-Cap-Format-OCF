@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import TypePattern, { TypePatternSchemaNodeJson } from "./TypePattern.js";
 
 const FIXTURE: TypePatternSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/types/TestTypePattern.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TestTypePattern.schema.json",
   title: "Test Title",
   description:
     "This is a test fixture exemplifying an TypePattern schema from OCF",
@@ -22,7 +22,7 @@ describe("TypePattern", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/types/TestTypePattern.schema.json\`
+\`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TestTypePattern.schema.json\`
 
 **Description:** _This is a test fixture exemplifying an TypePattern schema from OCF_
 

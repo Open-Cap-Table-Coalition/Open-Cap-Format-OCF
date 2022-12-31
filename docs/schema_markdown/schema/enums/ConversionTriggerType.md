@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; AUTOMATIC_ON_CONDITION </br>&bull; AUTOMATIC_ON_DATE </br>&bull; ELECTIVE_IN_RANGE </br>&bull; ELECTIVE_ON_CONDITION </br>&bull; ELECTIVE_AT_WILL </br>&bull; UNSPECIFIED
 
-**Source Code:** [/schema/enums/ConversionTriggerType](../../../../../../../../schema/enums/ConversionTriggerType.schema.json)
+**Source Code:** [schema/enums/ConversionTriggerType](../../../../schema/enums/ConversionTriggerType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

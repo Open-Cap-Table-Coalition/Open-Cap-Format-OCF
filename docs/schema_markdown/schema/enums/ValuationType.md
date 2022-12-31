@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; 409A
 
-**Source Code:** [/schema/enums/ValuationType](../../../../../../../../schema/enums/ValuationType.schema.json)
+**Source Code:** [schema/enums/ValuationType](../../../../schema/enums/ValuationType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

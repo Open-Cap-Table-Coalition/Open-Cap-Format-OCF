@@ -3,7 +3,7 @@ import Schema, { REPO_ROOT } from "./Schema.js";
 import TableOfContents from "./TableOfContents.js";
 
 const SCHEMA_NODE_FIXTURE = {
-  $id: "https://opencaptablecoalition.com/schema/files/TestFile.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying a File schema from OCF",
   type: "object",
@@ -30,9 +30,9 @@ _Describes the eight top-level files that hold OCF objects and are required to e
 
 - **Test Title**
 
-  - **Id:** \`https://opencaptablecoalition.com/schema/files/TestFile.schema.json\`
+  - **Id:** \`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json\`
   - **Description:** This is a test fixture exemplifying a File schema from OCF
-  - **View more:** [schema/files/TestFile](schema/files/TestFile.md)
+  - **View more:** [schema/files/TestFile](../schema_markdown/schema/files/TestFile.md)
 
 ### Objects
 

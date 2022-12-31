@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../README.md)
 
 ---
 
@@ -16,6 +16,6 @@ _Describes a vesting condition satisfied at the security's vesting commencement 
 | -------- | ---------------------------------- | --------------- | ---------- |
 | type     | **Constant:** `VESTING_START_DATE` | Scalar Constant | `REQUIRED` |
 
-**Source Code:** [/schema/types/vesting/VestingStartTrigger](../../../../../../../../../schema/types/vesting/VestingStartTrigger.schema.json)
+**Source Code:** [schema/types/vesting/VestingStartTrigger](../../../../../schema/types/vesting/VestingStartTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

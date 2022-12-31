@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; VESTING_START_DATE </br>&bull; VESTING_SCHEDULE_ABSOLUTE </br>&bull; VESTING_SCHEDULE_RELATIVE </br>&bull; VESTING_EVENT
 
-**Source Code:** [/schema/enums/VestingTriggerType](../../../../../../../../schema/enums/VestingTriggerType.schema.json)
+**Source Code:** [schema/enums/VestingTriggerType](../../../../schema/enums/VestingTriggerType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

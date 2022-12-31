@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../README.md)
 
 ---
 
@@ -16,6 +16,6 @@
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------- |
 | type     | `Enum - Vesting Trigger Type`</br></br>_Description:_ Enumeration of vesting trigger types</br></br>**ONE OF:** </br>&bull; VESTING_START_DATE </br>&bull; VESTING_SCHEDULE_ABSOLUTE </br>&bull; VESTING_SCHEDULE_RELATIVE </br>&bull; VESTING_EVENT | Identifies the sub-type of trigger | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/types/vesting/VestingConditionTrigger](../../../../../../../../../../schema/primitives/types/vesting/VestingConditionTrigger.schema.json)
+**Source Code:** [schema/primitives/types/vesting/VestingConditionTrigger](../../../../../../schema/primitives/types/vesting/VestingConditionTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

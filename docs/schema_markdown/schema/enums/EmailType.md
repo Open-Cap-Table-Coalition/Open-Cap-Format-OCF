@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; PERSONAL </br>&bull; BUSINESS </br>&bull; OTHER
 
-**Source Code:** [/schema/enums/EmailType](../../../../../../../../schema/enums/EmailType.schema.json)
+**Source Code:** [schema/enums/EmailType](../../../../schema/enums/EmailType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

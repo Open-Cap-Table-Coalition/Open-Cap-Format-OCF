@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -12,6 +12,6 @@
 
 **Value:** `STRING` - _Must Match Regex Pattern: `^[a-fA-F0-9]{32}$`_
 
-**Source Code:** [/schema/types/Md5](../../../../../../../../schema/types/Md5.schema.json)
+**Source Code:** [schema/types/Md5](../../../../schema/types/Md5.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

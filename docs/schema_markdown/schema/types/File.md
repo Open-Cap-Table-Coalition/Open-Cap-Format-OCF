@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -12,11 +12,11 @@ _Type representation of a file_
 
 **Properties:**
 
-| Property | Type                         | Description                               | Required   |
-| -------- | ---------------------------- | ----------------------------------------- | ---------- |
-| filepath | `STRING`                     | Path to the file within the OCF container | `REQUIRED` |
-| md5      | [/schema/types/Md5](/Md5.md) | MD5 file checksum                         | `REQUIRED` |
+| Property | Type                        | Description                               | Required   |
+| -------- | --------------------------- | ----------------------------------------- | ---------- |
+| filepath | `STRING`                    | Path to the file within the OCF container | `REQUIRED` |
+| md5      | [schema/types/Md5](/Md5.md) | MD5 file checksum                         | `REQUIRED` |
 
-**Source Code:** [/schema/types/File](../../../../../../../../schema/types/File.schema.json)
+**Source Code:** [schema/types/File](../../../../schema/types/File.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

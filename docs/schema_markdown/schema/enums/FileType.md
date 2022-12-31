@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; OCF_MANIFEST_FILE </br>&bull; OCF_STAKEHOLDERS_FILE </br>&bull; OCF_STOCK_CLASSES_FILE </br>&bull; OCF_STOCK_LEGEND_TEMPLATES_FILE </br>&bull; OCF_STOCK_PLANS_FILE </br>&bull; OCF_TRANSACTIONS_FILE </br>&bull; OCF_VALUATIONS_FILE </br>&bull; OCF_VESTING_TERMS_FILE
 
-**Source Code:** [/schema/enums/FileType](../../../../../../../../schema/enums/FileType.schema.json)
+**Source Code:** [schema/enums/FileType](../../../../schema/enums/FileType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

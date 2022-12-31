@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -12,12 +12,12 @@ _Type representation of an interest rate, including accrual start and end dates_
 
 **Properties:**
 
-| Property           | Type                                       | Description                                                                                                                                                                      | Required   |
-| ------------------ | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| rate               | [/schema/types/Percentage](/Percentage.md) | Interest rate for the convertible (decimal representation - e.g. 0.125 for 12.5%)                                                                                                | `REQUIRED` |
-| accrual_start_date | [/schema/types/Date](/Date.md)             | Commencement date for interest accruing at the specified rate                                                                                                                    | `REQUIRED` |
-| accrual_end_date   | [/schema/types/Date](/Date.md)             | Optional end date (inclusive) for interest accruing at the specified rate. If none specified, interest will accrue indefinitely or until accrual of next interest rate commences | -          |
+| Property           | Type                                      | Description                                                                                                                                                                      | Required   |
+| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| rate               | [schema/types/Percentage](/Percentage.md) | Interest rate for the convertible (decimal representation - e.g. 0.125 for 12.5%)                                                                                                | `REQUIRED` |
+| accrual_start_date | [schema/types/Date](/Date.md)             | Commencement date for interest accruing at the specified rate                                                                                                                    | `REQUIRED` |
+| accrual_end_date   | [schema/types/Date](/Date.md)             | Optional end date (inclusive) for interest accruing at the specified rate. If none specified, interest will accrue indefinitely or until accrual of next interest rate commences | -          |
 
-**Source Code:** [/schema/types/InterestRate](../../../../../../../../schema/types/InterestRate.schema.json)
+**Source Code:** [schema/types/InterestRate](../../../../schema/types/InterestRate.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

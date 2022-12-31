@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -17,6 +17,6 @@
 | consideration_text     | `STRING`   | Unstructured text description of consideration provided in exchange for security exercise | -          |
 | resulting_security_ids | [`STRING`] | Identifier for the security (or securities) that resulted from the exercise               | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/objects/transactions/exercise/Exercise](../../../../../../../../../../../schema/primitives/objects/transactions/exercise/Exercise.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/exercise/Exercise](../../../../../../../schema/primitives/objects/transactions/exercise/Exercise.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; NOTE </br>&bull; SAFE </br>&bull; CONVERTIBLE_SECURITY
 
-**Source Code:** [/schema/enums/ConvertibleType](../../../../../../../../schema/enums/ConvertibleType.schema.json)
+**Source Code:** [schema/enums/ConvertibleType](../../../../schema/enums/ConvertibleType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

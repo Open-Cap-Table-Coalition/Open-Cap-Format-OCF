@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../README.md)
 
 ---
 
@@ -16,6 +16,6 @@
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- |
 | file_type | `Enum - OCF File Type`</br></br>_Description:_ Enumeration of different OCF file types which are used to load proper schemas for validation</br></br>**ONE OF:** </br>&bull; OCF_MANIFEST_FILE </br>&bull; OCF_STAKEHOLDERS_FILE </br>&bull; OCF_STOCK_CLASSES_FILE </br>&bull; OCF_STOCK_LEGEND_TEMPLATES_FILE </br>&bull; OCF_STOCK_PLANS_FILE </br>&bull; OCF_TRANSACTIONS_FILE </br>&bull; OCF_VALUATIONS_FILE </br>&bull; OCF_VESTING_TERMS_FILE | File type field (used to select proper schema for validation) | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/files/File](../../../../../../../../../schema/primitives/files/File.schema.json)
+**Source Code:** [schema/primitives/files/File](../../../../../schema/primitives/files/File.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

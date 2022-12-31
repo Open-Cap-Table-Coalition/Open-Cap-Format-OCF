@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; CONVERTIBLE_CONVERSION_RIGHT </br>&bull; WARRANT_CONVERSION_RIGHT </br>&bull; STOCK_CLASS_CONVERSION_RIGHT
 
-**Source Code:** [/schema/enums/ConversionRightType](../../../../../../../../schema/enums/ConversionRightType.schema.json)
+**Source Code:** [schema/enums/ConversionRightType](../../../../schema/enums/ConversionRightType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; 1.0.0-a3 </br>&bull; 1.0.0-b1 </br>&bull; 1.0.0-b2 </br>&bull; 1.0.0-b3 </br>&bull; 1.0.0
 
-**Source Code:** [/schema/enums/OCFVersionType](../../../../../../../../schema/enums/OCFVersionType.schema.json)
+**Source Code:** [schema/enums/OCFVersionType](../../../../schema/enums/OCFVersionType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

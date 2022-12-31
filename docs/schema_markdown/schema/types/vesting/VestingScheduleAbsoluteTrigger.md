@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../README.md)
 
 ---
 
@@ -15,8 +15,8 @@ _Describes a vesting condition satisfied on an absolute date._
 | Property | Type                                      | Description                                | Required   |
 | -------- | ----------------------------------------- | ------------------------------------------ | ---------- |
 | type     | **Constant:** `VESTING_SCHEDULE_ABSOLUTE` | Scalar Constant                            | `REQUIRED` |
-| date     | [/schema/types/Date](../Date.md)          | The date on which this condition triggers. | `REQUIRED` |
+| date     | [schema/types/Date](../Date.md)           | The date on which this condition triggers. | `REQUIRED` |
 
-**Source Code:** [/schema/types/vesting/VestingScheduleAbsoluteTrigger](../../../../../../../../../schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json)
+**Source Code:** [schema/types/vesting/VestingScheduleAbsoluteTrigger](../../../../../schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

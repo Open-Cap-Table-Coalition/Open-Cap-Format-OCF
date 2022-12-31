@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -18,6 +18,6 @@
 | split_transaction_id   | `STRING`   | When stock is reissued as a result of a stock split, this field contains id of the respective stock class split transaction. It is not set otherwise. | -          |
 | reason_text            | `STRING`   | Free-form human-readable reason for stock reissuance                                                                                                  | -          |
 
-**Source Code:** [/schema/primitives/objects/transactions/reissuance/Reissuance](../../../../../../../../../../../schema/primitives/objects/transactions/reissuance/Reissuance.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/reissuance/Reissuance](../../../../../../../schema/primitives/objects/transactions/reissuance/Reissuance.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

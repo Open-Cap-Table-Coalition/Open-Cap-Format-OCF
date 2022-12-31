@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; COMPOUNDING </br>&bull; SIMPLE
 
-**Source Code:** [/schema/enums/CompoundingType](../../../../../../../../schema/enums/CompoundingType.schema.json)
+**Source Code:** [schema/enums/CompoundingType](../../../../schema/enums/CompoundingType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

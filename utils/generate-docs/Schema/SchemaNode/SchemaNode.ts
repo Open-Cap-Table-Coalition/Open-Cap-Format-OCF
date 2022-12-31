@@ -34,7 +34,7 @@ export default abstract class SchemaNode {
   protected basename = () => path.basename(this.id(), ".schema.json");
 
   protected directory = () =>
-    path.dirname(this.id().slice(`${repo_raw_url_root}/main`.length));
+    path.dirname(this.id().slice(`${repo_raw_url_root}/main/`.length));
 
   protected allOf = (): SchemaNode[] =>
     "allOf" in this.json && this.json["allOf"]

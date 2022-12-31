@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; CEILING </br>&bull; FLOOR </br>&bull; NORMAL
 
-**Source Code:** [/schema/enums/RoundingType](../../../../../../../../schema/enums/RoundingType.schema.json)
+**Source Code:** [schema/enums/RoundingType](../../../../schema/enums/RoundingType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -16,6 +16,6 @@
 | ----------- | -------- | ------------------------- | ---------- |
 | reason_text | `STRING` | Reason for the retraction | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/objects/transactions/retraction/Retraction](../../../../../../../../../../../schema/primitives/objects/transactions/retraction/Retraction.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/retraction/Retraction](../../../../../../../schema/primitives/objects/transactions/retraction/Retraction.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

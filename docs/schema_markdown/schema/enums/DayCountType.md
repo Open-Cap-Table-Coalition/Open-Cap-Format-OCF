@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; ACTUAL_365 </br>&bull; 30_360
 
-**Source Code:** [/schema/enums/DayCountType](../../../../../../../../schema/enums/DayCountType.schema.json)
+**Source Code:** [schema/enums/DayCountType](../../../../schema/enums/DayCountType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

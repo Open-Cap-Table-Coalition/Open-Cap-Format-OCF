@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../README.md)
 
 ---
 
@@ -18,6 +18,6 @@ _Describes a period of time expressed in days (e.g. 365 days) for use in Vesting
 | type        | **Constant:** `DAYS` | Scalar Constant                                                                                                            | `REQUIRED` |
 | occurrences | `INTEGER`            | The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36` | `REQUIRED` |
 
-**Source Code:** [/schema/types/vesting/VestingPeriodInDays](../../../../../../../../../schema/types/vesting/VestingPeriodInDays.schema.json)
+**Source Code:** [schema/types/vesting/VestingPeriodInDays](../../../../../schema/types/vesting/VestingPeriodInDays.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

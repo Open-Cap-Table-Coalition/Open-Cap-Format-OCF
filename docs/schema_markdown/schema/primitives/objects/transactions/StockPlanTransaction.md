@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../README.md)
 
 ---
 
@@ -16,6 +16,6 @@
 | ------------- | -------- | ------------------------------------------------------------------ | ---------- |
 | stock_plan_id | `STRING` | Identifier of the Stock Plan object, a subject of this transaction | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/objects/transactions/StockPlanTransaction](../../../../../../../../../../schema/primitives/objects/transactions/StockPlanTransaction.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/StockPlanTransaction](../../../../../../schema/primitives/objects/transactions/StockPlanTransaction.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

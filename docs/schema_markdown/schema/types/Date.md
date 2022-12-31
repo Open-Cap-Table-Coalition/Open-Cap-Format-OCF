@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -12,6 +12,6 @@
 
 **Value:** `STRING - _Must match JSONSchema Format: DATE_`
 
-**Source Code:** [/schema/types/Date](../../../../../../../../schema/types/Date.schema.json)
+**Source Code:** [schema/types/Date](../../../../schema/types/Date.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

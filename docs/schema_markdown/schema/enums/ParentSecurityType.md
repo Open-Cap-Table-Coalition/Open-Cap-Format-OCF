@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../README.md)
 
 ---
 
@@ -10,6 +10,6 @@
 
 **ONE OF:**</br>&bull; STOCK_PLAN </br>&bull; STOCK </br>&bull; WARRANT </br>&bull; CONVERTIBLE
 
-**Source Code:** [/schema/enums/ParentSecurityType](../../../../../../../../schema/enums/ParentSecurityType.schema.json)
+**Source Code:** [schema/enums/ParentSecurityType](../../../../schema/enums/ParentSecurityType.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

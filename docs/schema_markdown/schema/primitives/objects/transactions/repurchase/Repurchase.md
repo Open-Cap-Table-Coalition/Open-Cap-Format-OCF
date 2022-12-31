@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -12,13 +12,13 @@
 
 **Properties:**
 
-| Property            | Type                                                    | Description                                                                                 | Required   |
-| ------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------- |
-| price               | [/schema/types/Monetary](../../../../types/Monetary.md) | Repurchase price per share of the stock                                                     | `REQUIRED` |
-| quantity            | [/schema/types/Numeric](../../../../types/Numeric.md)   | Number of shares of stock repurchased                                                       | `REQUIRED` |
-| consideration_text  | `STRING`                                                | Unstructured text description of consideration provided in exchange for security repurchase | -          |
-| balance_security_id | `STRING`                                                | Identifier for the security that holds the remainder balance (for partial repurchases)      | -          |
+| Property            | Type                                                   | Description                                                                                 | Required   |
+| ------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ---------- |
+| price               | [schema/types/Monetary](../../../../types/Monetary.md) | Repurchase price per share of the stock                                                     | `REQUIRED` |
+| quantity            | [schema/types/Numeric](../../../../types/Numeric.md)   | Number of shares of stock repurchased                                                       | `REQUIRED` |
+| consideration_text  | `STRING`                                               | Unstructured text description of consideration provided in exchange for security repurchase | -          |
+| balance_security_id | `STRING`                                               | Identifier for the security that holds the remainder balance (for partial repurchases)      | -          |
 
-**Source Code:** [/schema/primitives/objects/transactions/repurchase/Repurchase](../../../../../../../../../../../schema/primitives/objects/transactions/repurchase/Repurchase.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/repurchase/Repurchase](../../../../../../../schema/primitives/objects/transactions/repurchase/Repurchase.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

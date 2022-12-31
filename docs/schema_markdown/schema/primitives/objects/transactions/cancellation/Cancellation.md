@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../../README.md)
 
 ---
 
@@ -17,6 +17,6 @@
 | balance_security_id | `STRING` | Identifier for the security that holds the remainder balance (for partial cancellations) | -          |
 | reason_text         | `STRING` | Reason for the cancellation                                                              | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/objects/transactions/cancellation/Cancellation](../../../../../../../../../../../schema/primitives/objects/transactions/cancellation/Cancellation.schema.json)
+**Source Code:** [schema/primitives/objects/transactions/cancellation/Cancellation](../../../../../../../schema/primitives/objects/transactions/cancellation/Cancellation.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.

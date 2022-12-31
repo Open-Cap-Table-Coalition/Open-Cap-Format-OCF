@@ -1,4 +1,4 @@
-:house: [Documentation Home](../../../../home/xudiera/code/README.md)
+:house: [Documentation Home](../../../../../README.md)
 
 ---
 
@@ -18,6 +18,6 @@
 | type        | `Enum - Period Type`</br></br>_Description:_ Enumeration of time period types</br></br>**ONE OF:** </br>&bull; DAYS </br>&bull; MONTHS </br>&bull; YEARS | The unit of time for the period, e.g. `MONTHS` or `DAYS`                                                                   | `REQUIRED` |
 | occurrences | `INTEGER`                                                                                                                                                | The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36` | `REQUIRED` |
 
-**Source Code:** [/schema/primitives/types/vesting/VestingPeriod](../../../../../../../../../../schema/primitives/types/vesting/VestingPeriod.schema.json)
+**Source Code:** [schema/primitives/types/vesting/VestingPeriod](../../../../../../schema/primitives/types/vesting/VestingPeriod.schema.json)
 
 Copyright © 2022 Open Cap Table Coalition.
