@@ -32,7 +32,7 @@ _Describes the eight top-level files that hold OCF objects and are required to e
 
   - **Id:** \`https://opencaptablecoalition.com/schema/files/TestFile.schema.json\`
   - **Description:** This is a test fixture exemplifying a File schema from OCF
-  - **View more:** [schema/files/TestFile](schema/files/TestFile.md)
+  - **View more:** [schema/files/TestFile](../schema_markdown/schema/files/TestFile.md)
 
 ### Objects
 
