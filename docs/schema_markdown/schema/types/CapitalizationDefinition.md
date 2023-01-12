@@ -21,4 +21,4 @@ _Type represents a group of securities that constitutes some formally defined pa
 
 **Source Code:** [schema/types/CapitalizationDefinition](../../../../schema/types/CapitalizationDefinition.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

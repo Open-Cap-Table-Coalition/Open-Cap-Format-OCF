@@ -25,6 +25,7 @@ describe("Enum", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([SCHEMA_NODE_FIXTURE]);
       const actual = new Enum(schema, SCHEMA_NODE_FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
 
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
@@ -40,7 +41,7 @@ describe("Enum", () => {
 
 **Source Code:** [schema/enums/TestEnum](../../../../schema/enums/TestEnum.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });

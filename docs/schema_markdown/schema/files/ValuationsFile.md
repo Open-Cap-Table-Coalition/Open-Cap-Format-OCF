@@ -23,4 +23,4 @@
 
 **Source Code:** [schema/files/ValuationsFile](../../../../schema/files/ValuationsFile.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

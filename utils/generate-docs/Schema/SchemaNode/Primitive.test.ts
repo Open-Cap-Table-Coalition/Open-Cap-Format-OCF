@@ -21,6 +21,7 @@ describe("Primitive", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new Primitive(schema, FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
 
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
@@ -43,7 +44,7 @@ describe("Primitive", () => {
 
 **Source Code:** [schema/primitives/TestPrimitive](../../../../schema/primitives/TestPrimitive.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });

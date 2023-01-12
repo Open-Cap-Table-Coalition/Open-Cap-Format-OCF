@@ -21,4 +21,4 @@
 
 **Source Code:** [schema/primitives/objects/transactions/repurchase/Repurchase](../../../../../../../schema/primitives/objects/transactions/repurchase/Repurchase.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

@@ -20,4 +20,4 @@
 
 **Source Code:** [schema/primitives/objects/Object](../../../../../schema/primitives/objects/Object.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

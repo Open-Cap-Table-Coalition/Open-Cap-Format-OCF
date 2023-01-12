@@ -19,4 +19,4 @@ _Type representation of the parent security of a given stock issuance (e.g. if a
 
 **Source Code:** [schema/types/StockParent](../../../../schema/types/StockParent.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

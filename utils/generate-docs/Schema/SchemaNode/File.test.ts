@@ -112,6 +112,7 @@ describe("File", () => {
         FILE_FIXTURE,
       ]);
       const actual = new File(schema, FILE_FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
 
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
@@ -138,7 +139,7 @@ describe("File", () => {
 
 **Source Code:** [schema/files/TestFile](../../../../schema/files/TestFile.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });

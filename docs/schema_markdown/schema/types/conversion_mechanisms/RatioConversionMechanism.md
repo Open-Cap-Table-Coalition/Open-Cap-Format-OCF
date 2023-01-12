@@ -21,4 +21,4 @@ _Sets forth inputs and conversion mechanism of a ratio conversion (primarily use
 
 **Source Code:** [schema/types/conversion_mechanisms/RatioConversionMechanism](../../../../../schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

@@ -19,4 +19,4 @@ _Type representation of a range of share numbers associated with an event (such 
 
 **Source Code:** [schema/types/ShareNumberRange](../../../../schema/types/ShareNumberRange.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.
