@@ -1,0 +1,60 @@
+{
+  "file_type": "OCF_VESTING_TERMS_FILE",
+  "items": [
+    {
+      "id": "f58fa866-be71-4d79-b52a-ea5379a71551",
+      "object_type": "VESTING_TERMS",
+      "name": "Four Year / One Year Cliff",
+      "description": "25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.",
+      "allocation_type": "CUMULATIVE_ROUNDING",
+      "vesting_conditions": [
+        {
+          "id": "3010a0b6-b79f-45c8-9abe-68d827d4dfc9",
+          "quantity": "0",
+          "trigger": {
+            "type": "VESTING_START_DATE"
+          },
+          "next_condition_ids": ["057d08c6-d7a8-4e0c-917c-bdf610651c25"]
+        },
+        {
+          "id": "057d08c6-d7a8-4e0c-917c-bdf610651c25",
+          "description": "25% payout at 1 year",
+          "portion": {
+            "numerator": "12",
+            "denominator": "48"
+          },
+          "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+              "length": 12,
+              "type": "MONTHS",
+              "occurrences": 1,
+              "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "3010a0b6-b79f-45c8-9abe-68d827d4dfc9"
+          },
+          "next_condition_ids": ["f8a04380-114a-467a-8d08-e58cf31a9cb4"]
+        },
+        {
+          "id": "f8a04380-114a-467a-8d08-e58cf31a9cb4",
+          "description": "1/48th payout each month thereafter",
+          "portion": {
+            "numerator": "1",
+            "denominator": "48"
+          },
+          "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+              "length": 1,
+              "type": "MONTHS",
+              "occurrences": 36,
+              "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "cliff"
+          },
+          "next_condition_ids": []
+        }
+      ]
+    }
+  ]
+}
