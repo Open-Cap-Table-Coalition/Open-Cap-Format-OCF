@@ -20,4 +20,4 @@ _Sets forth inputs and conversion mechanism of percent of capitalization convers
 
 **Source Code:** [schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism](/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

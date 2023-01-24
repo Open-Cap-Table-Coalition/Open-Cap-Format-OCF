@@ -20,4 +20,4 @@ _Type comprising of multiple name components_
 
 **Source Code:** [schema/types/Name](/schema/types/Name.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.
