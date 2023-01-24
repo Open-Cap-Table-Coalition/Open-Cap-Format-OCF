@@ -12,11 +12,13 @@ freely available for anyone to use, though changes must be made through the Coal
 
 ## How Does It Work?
 
-### OCF File Types
+### OCF File Rules
 
-OCF is a multi-file format designed to make it easy to split, compress or stream company capitalization tables.
-A valid OCF cap table is made up of JSON objects that match the schemas available in our repo in
-the [Schemas folder](/schema).
+OCF defines several JSON schemas that comprehensively represent elements of a Cap Table. The manifest file is the root file of OCF, and **references other files by filename**. The manifest file itself, and all the files referenced by it, **must** contain JSON files compliant with one of the OCF schemas.
+
+Any **"unknown file"** not referenced by the manifest may contain anything and should generally be ignored. This flexibility allows a system to export data unknown to OCF such as certificate PNG or document DOCX files. To facilitate ineropablity in the OCF ecosystem, any program that modifies OCF files **must not** modify or delete unrecognized files.
+
+### OCF File Types
 
 OCF objects are grouped and stored in eight file types (defined in our [file schemas folder](/schema/files)).
 
@@ -39,11 +41,11 @@ There are currently 8 file types that make up a cap table:
 8. [Vesting Schedules File(s)](/schema/files/VestingSchedulesFile.schema.json) - One or more files storing vesting
    schedules used by the issuer.
 
-**At the moment, we recommend combining all of these files into a single compressed file with a \*.ocf.zip extension:**
+**We recommend combining all of these files into a single compressed file with a \*.ocf.zip extension:**
 
 ![](docs/images/OCF%20Container.png)
 
-We are working on sample tooling to interact with compressed \*.ocf.zip files.
+We are working on sample tooling to interact with compressed \*.ocf.zip files. When handling a \*.ocf.zip file, this tooling will obey the "unknown file" rule above and leave any other files in the zip untouched.
 
 **You can also break out the various OCF Types and OCF Objects and make those available separately via API or other, suitable mechanism. The key part of OCF is the data structure, not the container itself, though, to ensure complete cap table integrity, a full cap table export is recommended.**
 

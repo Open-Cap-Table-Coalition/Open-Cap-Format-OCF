@@ -19,4 +19,4 @@
 
 **Source Code:** [schema/enums/AllocationType](/schema/enums/AllocationType.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

@@ -20,4 +20,4 @@ _Describes a period of time expressed in days (e.g. 365 days) for use in Vesting
 
 **Source Code:** [schema/types/vesting/VestingPeriodInDays](/schema/types/vesting/VestingPeriodInDays.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

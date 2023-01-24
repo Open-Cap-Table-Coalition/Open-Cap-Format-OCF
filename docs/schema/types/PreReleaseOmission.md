@@ -19,4 +19,4 @@ _Transitional type; allows an otherwise "required" field to support omission by 
 
 **Source Code:** [schema/types/PreReleaseOmission](/schema/types/PreReleaseOmission.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

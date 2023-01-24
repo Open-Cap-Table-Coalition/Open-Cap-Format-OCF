@@ -19,4 +19,4 @@ _Describes how a security converts into a fixed amount of a stock class_
 
 **Source Code:** [schema/types/conversion_mechanisms/FixedAmountConversionMechanism](/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

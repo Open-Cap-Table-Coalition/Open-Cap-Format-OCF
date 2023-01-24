@@ -23,4 +23,4 @@ _Describes condition / triggers to be satisfied for vesting to occur_
 
 **Source Code:** [schema/types/vesting/VestingCondition](/schema/types/vesting/VestingCondition.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.
