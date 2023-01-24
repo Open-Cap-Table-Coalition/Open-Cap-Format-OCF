@@ -20,4 +20,4 @@ _Type representation of an interest rate, including accrual start and end dates_
 
 **Source Code:** [schema/types/InterestRate](/schema/types/InterestRate.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

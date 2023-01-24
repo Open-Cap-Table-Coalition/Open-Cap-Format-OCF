@@ -20,4 +20,4 @@ _Describes a fractional portion (ratio) of shares associated with a Vesting Cond
 
 **Source Code:** [schema/types/vesting/VestingConditionPortion](/schema/types/vesting/VestingConditionPortion.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.
