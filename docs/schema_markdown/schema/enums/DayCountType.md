@@ -4,7 +4,7 @@
 
 ### Enum - Day Count Type
 
-`https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/DayCountType.schema.json`
 
 **Description:** _Enumeration of how the number of days are determined per period_
 

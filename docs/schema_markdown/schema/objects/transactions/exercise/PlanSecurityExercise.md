@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Exercise Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json`
 
 **Description:** _Object describing a plan security exercise transaction_
 

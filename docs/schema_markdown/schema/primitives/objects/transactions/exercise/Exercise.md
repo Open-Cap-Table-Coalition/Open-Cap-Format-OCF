@@ -4,7 +4,7 @@
 
 ### Primitive - Security Exercise Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/Exercise.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/exercise/Exercise.schema.json`
 
 **Description** _Abstract object describing fields common to all exercise transaction objects_
 

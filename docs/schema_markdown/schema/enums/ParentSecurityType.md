@@ -4,7 +4,7 @@
 
 ### Enum - Parent Security Type
 
-`https://opencaptablecoalition.com/schema/enums/ParentSecurityType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ParentSecurityType.schema.json`
 
 **Description:** _Enumeration of parent sources a stock can be issued or created from_
 

@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/WarrantIssuance.schema.json",
   "title": "Object - Warrant Issuance Transaction",
   "description": "Object describing warrant issuance transaction by the issuer and held by a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
     }
   ],
   "properties": {
@@ -24,15 +24,15 @@
     },
     "quantity": {
       "description": "Quantity of shares the warrant is exercisable for",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "exercise_price": {
       "description": "The exercise price of the warrant",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "purchase_price": {
       "description": "Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "exercise_triggers": {
       "title": "Warrant Issuance - Exercise Trigger Array",
@@ -41,22 +41,22 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
           },
           {
-            "$ref": "https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json"
           }
         ]
       }
@@ -64,7 +64,7 @@
     "warrant_expiration_date": {
       "description": "What is expiration date of the warrant (if applicable)",
       "$comment": "This may not be necessary as it can be expressed with the exercise_triggers",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "vesting_terms_id": {
       "description": "Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.",

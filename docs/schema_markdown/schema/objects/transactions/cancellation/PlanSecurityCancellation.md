@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Cancellation Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json`
 
 **Description:** _Object describing a cancellation of a plan security_
 

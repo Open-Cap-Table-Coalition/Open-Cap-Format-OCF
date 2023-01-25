@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
   "title": "Type - Vesting Schedule Absolute Trigger",
   "description": "Describes a vesting condition satisfied on an absolute date.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -15,7 +15,7 @@
     },
     "date": {
       "description": "The date on which this condition triggers.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     }
   },
   "required": ["date"],

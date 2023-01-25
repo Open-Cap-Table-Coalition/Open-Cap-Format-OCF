@@ -4,7 +4,7 @@
 
 ### Object - Convertible Acceptance Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
 
 **Description:** _Object describing a convertible acceptance transaction_
 

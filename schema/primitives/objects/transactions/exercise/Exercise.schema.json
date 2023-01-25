@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/exercise/Exercise.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/exercise/Exercise.schema.json",
   "title": "Primitive - Security Exercise Transaction",
   "description": "Abstract object describing fields common to all exercise transaction objects",
   "type": "object",

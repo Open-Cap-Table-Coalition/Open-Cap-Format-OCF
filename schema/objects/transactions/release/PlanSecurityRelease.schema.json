@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/release/PlanSecurityRelease.schema.json",
   "title": "Object - Plan Security Release Transaction",
   "description": "Object describing a plan security release transaction",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/release/Release.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/release/Release.schema.json"
     }
   ],
   "properties": {

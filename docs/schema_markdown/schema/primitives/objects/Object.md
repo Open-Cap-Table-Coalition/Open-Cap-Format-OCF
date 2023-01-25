@@ -4,7 +4,7 @@
 
 ### Primitive - Object
 
-`https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json`
 
 **Description** _Abstract object to be extended by all other objects_
 

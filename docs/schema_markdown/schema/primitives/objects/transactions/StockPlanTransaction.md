@@ -4,7 +4,7 @@
 
 ### Primitive - Stock Plan Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockPlanTransaction.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/StockPlanTransaction.schema.json`
 
 **Description** _Abstract transaction object to be extended by all transaction objects that affect a stock plan_
 

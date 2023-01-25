@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/retraction/Retraction.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/retraction/Retraction.schema.json",
   "title": "Primitive - Security Retraction Transaction",
   "description": "Abstract object describing a security retraction transaction",
   "type": "object",

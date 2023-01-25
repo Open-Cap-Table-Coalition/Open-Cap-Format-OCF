@@ -4,7 +4,7 @@
 
 ### Object - Stock Repurchase Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/repurchase/StockRepurchase.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repurchase/StockRepurchase.schema.json`
 
 **Description:** _Object describing a stock repurchase transaction_
 

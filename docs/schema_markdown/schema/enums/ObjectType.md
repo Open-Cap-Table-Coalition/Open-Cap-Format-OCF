@@ -4,7 +4,7 @@
 
 ### Enum - Object Type
 
-`https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json`
 
 **Description:** _Enumeration of object types_
 

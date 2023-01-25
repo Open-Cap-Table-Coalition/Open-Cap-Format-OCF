@@ -4,7 +4,7 @@
 
 ### Type - Vesting Schedule Absolute Trigger
 
-`https://opencaptablecoalition.com/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json`
 
 _Describes a vesting condition satisfied on an absolute date._
 

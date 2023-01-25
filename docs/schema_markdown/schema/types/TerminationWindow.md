@@ -4,7 +4,7 @@
 
 ### Type - Termination Window
 
-`https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TerminationWindow.schema.json`
 
 _Type representation of a termination window_
 

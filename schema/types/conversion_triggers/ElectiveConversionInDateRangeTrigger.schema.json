@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json",
   "title": "Type - Elective Conversion In Date Range Trigger",
   "description": "Type representation of elective trigger valid on or after start_date and until or before end_date.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -16,11 +16,11 @@
     },
     "start_date": {
       "description": "Start date of range (inclusive)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "end_date": {
       "description": "End date of range (inclusive)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "nickname": {},
     "trigger_description": {},

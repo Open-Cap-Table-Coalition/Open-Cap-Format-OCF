@@ -4,7 +4,7 @@
 
 ### Enum - Vesting Trigger Type
 
-`https://opencaptablecoalition.com/schema/enums/VestingTriggerType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingTriggerType.schema.json`
 
 **Description:** _Enumeration of vesting trigger types_
 

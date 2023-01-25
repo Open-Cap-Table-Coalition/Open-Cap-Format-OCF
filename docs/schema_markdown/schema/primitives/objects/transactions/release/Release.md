@@ -4,7 +4,7 @@
 
 ### Primitive - Security Release Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/release/Release.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/release/Release.schema.json`
 
 **Description** _Abstract object describing fields common to all release transaction objects_
 

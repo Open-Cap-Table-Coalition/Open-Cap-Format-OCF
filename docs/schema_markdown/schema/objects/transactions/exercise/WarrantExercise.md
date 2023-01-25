@@ -4,7 +4,7 @@
 
 ### Object - Warrant Exercise Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/exercise/WarrantExercise.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/exercise/WarrantExercise.schema.json`
 
 **Description:** _Object describing a warrant exercise transaction_
 

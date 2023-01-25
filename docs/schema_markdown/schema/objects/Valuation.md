@@ -4,7 +4,7 @@
 
 ### Object - Valuation
 
-`https://opencaptablecoalition.com/schema/objects/Valuation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation.schema.json`
 
 **Description:** _Object describing a valuation used in the cap table_
 

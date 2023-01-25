@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json",
   "title": "Object - File",
   "description": "Abstract file to be extended by all other files",
   "type": "object",
   "properties": {
     "file_type": {
       "description": "File type field (used to select proper schema for validation)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/FileType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/FileType.schema.json"
     }
   },
   "required": ["file_type"],

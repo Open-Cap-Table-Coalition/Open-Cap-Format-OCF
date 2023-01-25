@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/issuance/Issuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json",
   "title": "Primitive - Security Issuance Transaction",
   "description": "Abstract object describing fields common to all issuance objects",
   "type": "object",
@@ -15,7 +15,7 @@
     },
     "board_approval_date": {
       "description": "Date of board approval for the security",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "consideration_text": {
       "description": "Unstructured text description of consideration provided in exchange for security issuance",
@@ -26,7 +26,7 @@
       "description": "List of security law exemptions (and applicable jurisdictions) for this security",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/SecurityExemption.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json"
       }
     }
   },

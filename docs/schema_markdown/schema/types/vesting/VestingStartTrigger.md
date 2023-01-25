@@ -4,7 +4,7 @@
 
 ### Type - Vesting Start Trigger
 
-`https://opencaptablecoalition.com/schema/types/vesting/VestingStartTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingStartTrigger.schema.json`
 
 _Describes a vesting condition satisfied at the security's vesting commencement date_
 

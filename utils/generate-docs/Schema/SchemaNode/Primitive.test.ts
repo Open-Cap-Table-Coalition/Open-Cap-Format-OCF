@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import Primitive, { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
 const FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/TestPrimitive.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/TestPrimitive.schema.json",
   title: "Primitive - Test Title",
   description:
     "This is a test fixture exemplifying an Primitive schema from OCF",
@@ -10,7 +10,7 @@ const FIXTURE: PrimitiveSchemaNodeJson = {
   properties: {
     1: { description: "Example description", type: "string" },
     refProperty1: {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/TestPrimitive.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/TestPrimitive.schema.json",
     },
   },
   required: ["1"],
@@ -28,7 +28,7 @@ describe("Primitive", () => {
 
 ### Primitive - Test Title
 
-\`https://opencaptablecoalition.com/schema/primitives/TestPrimitive.schema.json\`
+\`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/TestPrimitive.schema.json\`
 
 **Description** _This is a test fixture exemplifying an Primitive schema from OCF_
 

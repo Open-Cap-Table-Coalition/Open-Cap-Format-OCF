@@ -4,7 +4,7 @@
 
 ### Type - Ratio
 
-`https://opencaptablecoalition.com/schema/types/Ratio.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json`
 
 _Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values_
 

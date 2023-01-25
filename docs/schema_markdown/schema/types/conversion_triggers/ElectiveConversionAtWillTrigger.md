@@ -4,7 +4,7 @@
 
 ### Type - Elective Conversion At Will
 
-`https://opencaptablecoalition.com/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json`
 
 _Type representation of elective trigger valid at will (so long as instrument is valid and outstanding)._
 

@@ -13,6 +13,7 @@ import TypePatternSchemaNode, {
   TypePatternSchemaNodeJson,
 } from "./TypePattern.js";
 export { default as SchemaNode } from "./SchemaNode.js";
+import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 
 export type SchemaNodeJson =
   | FileSchemaNodeJson
@@ -25,9 +26,7 @@ export type SchemaNodeJson =
 
 export default class SchemaNodeFactory {
   static schemaTypeFromJson = (json: SchemaNodeJson) =>
-    json["$id"]
-      .slice("https://opencaptablecoalition.com/".length)
-      .split("/")[1];
+    json["$id"].slice(repo_raw_url_root.length).split("/")[3];
 
   static isFileSchemaNodeJson = (
     json: SchemaNodeJson

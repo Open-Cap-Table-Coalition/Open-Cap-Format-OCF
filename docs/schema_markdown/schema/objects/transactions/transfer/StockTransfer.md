@@ -4,7 +4,7 @@
 
 ### Object - Stock Transfer Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/transfer/StockTransfer.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json`
 
 **Description:** _Object describing a transfer or secondary sale of a stock security_
 

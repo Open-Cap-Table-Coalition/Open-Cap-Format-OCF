@@ -4,7 +4,7 @@
 
 ### Enum - Rounding Type
 
-`https://opencaptablecoalition.com/schema/enums/RoundingType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/RoundingType.schema.json`
 
 **Description:** _Enumeration of rounding types_
 

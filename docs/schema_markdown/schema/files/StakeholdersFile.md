@@ -4,7 +4,7 @@
 
 ### File - Stakeholders
 
-`https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of stakeholders_
 

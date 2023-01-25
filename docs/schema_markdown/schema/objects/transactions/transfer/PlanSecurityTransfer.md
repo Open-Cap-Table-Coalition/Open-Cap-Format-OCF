@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Transfer Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json`
 
 **Description:** _Object describing a transfer of a plan security_
 

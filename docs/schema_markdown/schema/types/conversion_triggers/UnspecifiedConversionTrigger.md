@@ -4,7 +4,7 @@
 
 ### Type - Unspecified Conversion Trigger
 
-`https://opencaptablecoalition.com/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json`
 
 _Use this where no structured data is available regarding what triggers the conversion of a given security._
 

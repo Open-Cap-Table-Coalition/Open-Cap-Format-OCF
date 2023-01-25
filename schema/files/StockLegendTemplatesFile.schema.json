@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json",
   "title": "File - Stock Legend Templates",
   "description": "JSON containing file type identifier and list of stock legend templates",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
     }
   ],
   "properties": {
@@ -14,7 +14,7 @@
       "type": "array",
       "description": "List of OCF stock legend template objects",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/objects/StockLegendTemplate.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/StockLegendTemplate.schema.json"
       }
     },
     "file_type": {

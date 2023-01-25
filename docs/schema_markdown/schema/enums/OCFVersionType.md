@@ -4,7 +4,7 @@
 
 ### Enum - OCF Version Type
 
-`https://opencaptablecoalition.com/schema/enums/OCFVersionType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OCFVersionType.schema.json`
 
 **Description:** _Enumeration of recognized OCF versions_
 

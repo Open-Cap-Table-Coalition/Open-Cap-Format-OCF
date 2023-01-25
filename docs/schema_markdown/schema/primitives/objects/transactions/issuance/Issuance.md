@@ -4,7 +4,7 @@
 
 ### Primitive - Security Issuance Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/issuance/Issuance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json`
 
 **Description** _Abstract object describing fields common to all issuance objects_
 

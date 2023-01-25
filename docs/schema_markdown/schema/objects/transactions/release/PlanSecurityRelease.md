@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Release Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/release/PlanSecurityRelease.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/release/PlanSecurityRelease.schema.json`
 
 **Description:** _Object describing a plan security release transaction_
 

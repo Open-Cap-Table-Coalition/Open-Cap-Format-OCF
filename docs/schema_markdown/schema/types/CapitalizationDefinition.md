@@ -4,7 +4,7 @@
 
 ### Type - Capitalization Definition
 
-`https://opencaptablecoalition.com/schema/types/CapitalizationDefinition.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinition.schema.json`
 
 _Type represents a group of securities that constitutes some formally defined part of the company (e.g. post-money capitalization vs pre-money for a security)_
 

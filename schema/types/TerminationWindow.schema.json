@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/TerminationWindow.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TerminationWindow.schema.json",
   "title": "Type - Termination Window",
   "description": "Type representation of a termination window",
   "type": "object",
   "properties": {
     "reason": {
       "description": "What cause of termination is this window for?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TerminationWindowType.schema.json"
     },
     "period": {
       "description": "The length of the period in this termination window (in number of periods of type period_type)",
@@ -15,7 +15,7 @@
     },
     "period_type": {
       "description": "The type of period being measured (e.g. days or month)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/PeriodType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PeriodType.schema.json"
     }
   },
   "additionalProperties": false,

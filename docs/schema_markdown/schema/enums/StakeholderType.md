@@ -4,7 +4,7 @@
 
 ### Enum - Stakeholder Type
 
-`https://opencaptablecoalition.com/schema/enums/StakeholderType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderType.schema.json`
 
 **Description:** _Enumeration of stakeholder types - individual (human) or institution (entity)_
 

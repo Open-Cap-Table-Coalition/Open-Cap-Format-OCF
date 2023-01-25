@@ -4,7 +4,7 @@
 
 ### Primitive - Vesting Condition Trigger Type
 
-`https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingConditionTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json`
 
 **Description** _Abstract type describing fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met_
 

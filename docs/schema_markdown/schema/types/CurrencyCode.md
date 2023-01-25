@@ -4,7 +4,7 @@
 
 ### Type - Currency Code
 
-`https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CurrencyCode.schema.json`
 
 **Description:** _Type representation of an ISO 4217 currency code_
 

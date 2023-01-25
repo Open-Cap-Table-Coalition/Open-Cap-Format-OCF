@@ -4,7 +4,7 @@
 
 ### Type - Contact Info
 
-`https://opencaptablecoalition.com/schema/types/ContactInfo.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfo.schema.json`
 
 _Type representation of a primary contact person for a stakeholder (e.g. a fund)_
 

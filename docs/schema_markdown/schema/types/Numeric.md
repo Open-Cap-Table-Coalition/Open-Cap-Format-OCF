@@ -4,7 +4,7 @@
 
 ### Type - Numeric
 
-`https://opencaptablecoalition.com/schema/types/Numeric.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json`
 
 **Description:** _Fixed-point string representation of a number (up to 10 decimal places supported)_
 

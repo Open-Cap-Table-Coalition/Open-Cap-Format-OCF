@@ -5,7 +5,7 @@ import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 import { ObjectSchemaNodeJson } from "./Object.js";
 
 const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json",
   title: "Object - Object",
   description: "Abstract object to be extended by all other objects",
   type: "object",
@@ -24,20 +24,20 @@ const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
     },
     object_type: {
       description: "Object type field",
-      $ref: "https://opencaptablecoalition.com/schema/enums/ObjectType.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json",
     },
   },
   required: ["id", "object_type"],
 };
 
 const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/objects/Valuation",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation",
   title: "Object - Valuation",
   description: "Object describing a valuation used in the cap table",
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json",
     },
   ],
   properties: {
@@ -45,7 +45,7 @@ const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
       const: "VALUATION",
     },
     refProperty1: {
-      $ref: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TestEnum.schema.json",
     },
   },
   additionalProperties: false,
@@ -53,13 +53,13 @@ const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
 };
 
 const FILE_FIXTURE: FileSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/files/TestFile.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying a File schema from OCF",
   type: "object",
   allOf: [
     {
-      $ref: "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json",
     },
   ],
   properties: {
@@ -68,7 +68,7 @@ const FILE_FIXTURE: FileSchemaNodeJson = {
       type: "array",
       description: "Example ref array property",
       items: {
-        $ref: "https://opencaptablecoalition.com/schema/objects/Valuation",
+        $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation",
       },
     },
   },
@@ -76,7 +76,7 @@ const FILE_FIXTURE: FileSchemaNodeJson = {
 };
 
 const ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/FileType.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/FileType.schema.json",
   title: "Enum - Object Type",
   description: "Enumeration of object types",
   type: "string",
@@ -84,7 +84,7 @@ const ENUM_FILE_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
 };
 
 const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/primitives/files/File.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json",
   title: "Object - File",
   description: "Abstract file to be extended by all other files",
   type: "object",
@@ -93,7 +93,7 @@ const BASE_FILE_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
 };
 
 const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/enums/TestEnum.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TestEnum.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying an Enum schema from OCF",
   type: "string",
@@ -119,7 +119,7 @@ describe("File", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/files/TestFile.schema.json\`
+\`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json\`
 
 **Description:** _This is a test fixture exemplifying a File schema from OCF_
 

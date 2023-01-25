@@ -4,7 +4,7 @@
 
 ### Object - Stock Split Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/split/StockClassSplit.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/split/StockClassSplit.schema.json`
 
 **Description:** _Object describing a split of a stock class_
 

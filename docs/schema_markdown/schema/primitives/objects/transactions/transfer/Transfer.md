@@ -4,7 +4,7 @@
 
 ### Primitive - Security Transfer Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/transfer/Transfer.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json`
 
 **Description** _Abstract object describing a security transfer or secondary sale transaction_
 

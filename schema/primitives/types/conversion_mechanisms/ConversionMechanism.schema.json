@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json",
   "title": "Primitive - Conversion Mechanism Type",
   "description": "Abstract type setting forth required field(s) for ALL conversion mechanism types",
   "type": "object",
   "properties": {
     "type": {
       "description": "Identifies the specific conversion trigger type",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json"
     }
   },
   "required": ["type"],

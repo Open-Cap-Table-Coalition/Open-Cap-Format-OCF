@@ -4,7 +4,7 @@
 
 ### Type - Tax Identifier
 
-`https://opencaptablecoalition.com/schema/types/TaxID.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TaxID.schema.json`
 
 _Type representation of a government identifier for tax purposes (e.g. EIN) and corresponding country code (ISO-3166)_
 

@@ -4,7 +4,7 @@
 
 ### Object - Vesting Terms
 
-`https://opencaptablecoalition.com/schema/objects/VestingTerms.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/VestingTerms.schema.json`
 
 **Description:** _Object describing the terms under which a security vests_
 

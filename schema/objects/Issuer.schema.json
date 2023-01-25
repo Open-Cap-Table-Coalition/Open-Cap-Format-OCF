@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Issuer.schema.json",
   "title": "Object - Issuer",
   "description": "Object describing the issuer of the cap table (the company whose cap table this is)",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -23,35 +23,35 @@
     },
     "formation_date": {
       "description": "Date of formation",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "country_of_formation": {
       "description": "The country where the issuer company was legally formed (ISO 3166-1 alpha-2)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/CountryCode.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json"
     },
     "country_subdivision_of_formation": {
       "description": "The state, province, or subdivision where the issuer company was legally formed",
-      "$ref": "https://opencaptablecoalition.com/schema/types/CountrySubdivisionCode.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json"
     },
     "tax_ids": {
       "title": "Issuer - Tax ID Array",
       "description": "The tax ids for this issuer company",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/TaxID.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TaxID.schema.json"
       }
     },
     "email": {
       "description": "A work email that the issuer company can be reached at",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Email.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Email.schema.json"
     },
     "phone": {
       "description": "A phone number that the issuer company can be reached at",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Phone.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Phone.schema.json"
     },
     "address": {
       "description": "The headquarters address of the issuing company",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Address.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Address.schema.json"
     },
     "id": {},
     "comments": {}

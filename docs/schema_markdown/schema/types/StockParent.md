@@ -4,7 +4,7 @@
 
 ### Type - Stock Parent
 
-`https://opencaptablecoalition.com/schema/types/StockParent.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/StockParent.schema.json`
 
 _Type representation of the parent security of a given stock issuance (e.g. if a stock issuance came from a plan, such as an RSA, or if a stock came from a previous stock entry)_
 

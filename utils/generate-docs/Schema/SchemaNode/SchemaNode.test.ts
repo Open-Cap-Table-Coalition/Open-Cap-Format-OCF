@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import SchemaNode from "./SchemaNode.js";
 
 const FIXTURE = {
-  $id: "https://opencaptablecoalition.com/schema/files/TestFile.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying a File schema from OCF",
   type: "object",

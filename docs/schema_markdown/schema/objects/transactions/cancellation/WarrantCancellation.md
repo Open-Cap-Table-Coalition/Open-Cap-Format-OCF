@@ -4,7 +4,7 @@
 
 ### Object - Warrant Cancellation Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/cancellation/WarrantCancellation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/WarrantCancellation.schema.json`
 
 **Description:** _Object describing a cancellation of a warrant security_
 

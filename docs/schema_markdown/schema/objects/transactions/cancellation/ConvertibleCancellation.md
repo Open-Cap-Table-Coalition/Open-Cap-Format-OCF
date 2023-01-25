@@ -4,7 +4,7 @@
 
 ### Object - Convertible Cancellation Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
 
 **Description:** _Object describing a cancellation of a convertible security_
 

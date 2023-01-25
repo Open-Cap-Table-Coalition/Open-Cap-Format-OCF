@@ -4,7 +4,7 @@
 
 ### Primitive - Conversion Right Type
 
-`https://opencaptablecoalition.com/schema/primitives/types/conversion_rights/ConversionRight.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json`
 
 **Description** _Abstract type representation of a conversion right from a non-plan security into another non-plan security_
 

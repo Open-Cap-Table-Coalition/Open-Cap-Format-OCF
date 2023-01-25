@@ -4,7 +4,7 @@
 
 ### OCF Manifest File
 
-`https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json`
 
 **Description:** _Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc._
 

@@ -4,7 +4,7 @@
 
 ### Enum - Compensation Type
 
-`https://opencaptablecoalition.com/schema/enums/CompensationType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompensationType.schema.json`
 
 **Description:** _Enumeration of stock compensation types_
 

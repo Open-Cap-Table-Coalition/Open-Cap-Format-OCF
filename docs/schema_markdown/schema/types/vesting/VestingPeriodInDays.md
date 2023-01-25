@@ -4,7 +4,7 @@
 
 ### Type - Vesting Period in Days
 
-`https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInDays.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInDays.schema.json`
 
 _Describes a period of time expressed in days (e.g. 365 days) for use in Vesting Terms_
 

@@ -4,7 +4,7 @@
 
 ### Object - Vesting Event Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/vesting/VestingEvent.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingEvent.schema.json`
 
 **Description:** _Object describing the transaction of an non-schedule-driven vesting event associated with a security_
 

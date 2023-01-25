@@ -4,7 +4,7 @@
 
 ### Object - Warrant Issuance Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/issuance/WarrantIssuance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/WarrantIssuance.schema.json`
 
 **Description:** _Object describing warrant issuance transaction by the issuer and held by a stakeholder_
 

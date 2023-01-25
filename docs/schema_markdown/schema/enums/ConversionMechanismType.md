@@ -4,7 +4,7 @@
 
 ### Enum - Conversion Mechanism Type
 
-`https://opencaptablecoalition.com/schema/enums/ConversionMechanismType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json`
 
 **Description:** _Enumeration of convertible conversion calculation types._
 

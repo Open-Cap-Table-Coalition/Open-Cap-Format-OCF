@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json",
   "title": "Conversion Mechanism - Note",
   "description": "Sets forth inputs and conversion mechanism of a convertible note",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
     }
   ],
   "properties": {
@@ -18,36 +18,36 @@
       "description": "Interest rate(s) of the convertible (if applicable)",
       "type": "array",
       "items": {
-        "$ref": "https://opencaptablecoalition.com/schema/types/InterestRate.schema.json"
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/InterestRate.schema.json"
       }
     },
     "day_count_convention": {
       "description": "How many days are there is a given period for calculation purposes?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/DayCountType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/DayCountType.schema.json"
     },
     "interest_payout": {
       "description": "How is interest paid out (if at applicable)",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/InterestPayoutType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/InterestPayoutType.schema.json"
     },
     "interest_accrual_period": {
       "description": "What is the period over which interest is calculated?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/AccrualPeriodType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AccrualPeriodType.schema.json"
     },
     "compounding_type": {
       "description": "What type of interest compounding?",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompoundingType.schema.json"
     },
     "conversion_discount": {
       "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Percentage.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
     },
     "conversion_valuation_cap": {
       "description": "What is the valuation cap (if applicable)?",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "exit_multiple": {
       "description": "For cash proceeds calculation during a liquidity event.",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Ratio.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json"
     },
     "conversion_mfn": {
       "description": "Is this an MFN (Most Favored Nations) flavored Convertible Note?",

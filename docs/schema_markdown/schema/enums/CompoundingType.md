@@ -4,7 +4,7 @@
 
 ### Enum - Compounding Type
 
-`https://opencaptablecoalition.com/schema/enums/CompoundingType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompoundingType.schema.json`
 
 **Description:** _Enumeration of interest compounding types_
 

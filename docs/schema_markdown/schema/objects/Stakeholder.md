@@ -4,7 +4,7 @@
 
 ### Object - Stakeholder
 
-`https://opencaptablecoalition.com/schema/objects/Stakeholder.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Stakeholder.schema.json`
 
 **Description:** _Object describing a stakeholder_
 

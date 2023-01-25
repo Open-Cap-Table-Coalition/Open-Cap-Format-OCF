@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/types/vesting/VestingPeriodInMonths.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json",
   "title": "Type - Vesting Period in Months",
   "description": "Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/types/vesting/VestingPeriod.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingPeriod.schema.json"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
     "occurrences": {},
     "day_of_month": {
       "description": "The calendar day of a month to award vesting.",
-      "$ref": "https://opencaptablecoalition.com/schema/enums/VestingDayOfMonth.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingDayOfMonth.schema.json"
     }
   },
   "required": ["day_of_month"],

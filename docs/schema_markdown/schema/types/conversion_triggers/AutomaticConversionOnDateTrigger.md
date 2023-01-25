@@ -4,7 +4,7 @@
 
 ### Type - Automatic Conversion on Date Trigger
 
-`https://opencaptablecoalition.com/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json`
 
 _Type representation of an automatic trigger on a date._
 

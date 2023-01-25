@@ -4,7 +4,7 @@
 
 ### Enum - Stock Class Type
 
-`https://opencaptablecoalition.com/schema/enums/StockClassType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockClassType.schema.json`
 
 **Description:** _Enumeration of stock class types_
 

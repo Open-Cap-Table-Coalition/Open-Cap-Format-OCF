@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json",
   "title": "Object - Convertible Transfer Transaction",
   "description": "Object describing a transfer or secondary sale of a convertible security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/transfer/Transfer.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json"
     }
   ],
   "properties": {
@@ -24,7 +24,7 @@
     },
     "amount": {
       "description": "Amount of monetary value transferred",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "id": {},
     "comments": {},

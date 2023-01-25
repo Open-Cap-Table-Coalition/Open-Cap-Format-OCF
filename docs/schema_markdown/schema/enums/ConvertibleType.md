@@ -4,7 +4,7 @@
 
 ### Enum - Convertible Type
 
-`https://opencaptablecoalition.com/schema/enums/ConvertibleType.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConvertibleType.schema.json`
 
 **Description:** _Enumeration of convertible instrument types_
 

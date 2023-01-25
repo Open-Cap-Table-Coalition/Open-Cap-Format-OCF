@@ -4,7 +4,7 @@
 
 ### Object - Warrant Retraction Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/retraction/WarrantRetraction.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/WarrantRetraction.schema.json`
 
 **Description:** _Object describing a retraction of a warrant security_
 

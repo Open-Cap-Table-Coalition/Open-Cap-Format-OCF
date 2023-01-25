@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Issuance Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json`
 
 **Description:** _Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder_
 

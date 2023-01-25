@@ -4,7 +4,7 @@
 
 ### Object - Plan Security Acceptance Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json`
 
 **Description:** _Object describing a plan security acceptance transaction_
 

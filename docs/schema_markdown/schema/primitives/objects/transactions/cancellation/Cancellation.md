@@ -4,7 +4,7 @@
 
 ### Primitive - Security Cancellation Transaction
 
-`https://opencaptablecoalition.com/schema/primitives/objects/transactions/cancellation/Cancellation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/cancellation/Cancellation.schema.json`
 
 **Description** _Abstract object describing fields common to all cancellation transaction objects_
 

@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import TypeObject, { TypeObjectSchemaNodeJson } from "./TypeObject.js";
 
 const FIXTURE: TypeObjectSchemaNodeJson = {
-  $id: "https://opencaptablecoalition.com/schema/types/TestTypeObject.schema.json",
+  $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TestTypeObject.schema.json",
   title: "Test Title",
   description:
     "This is a test fixture exemplifying an TypeObject schema from OCF",
@@ -10,7 +10,7 @@ const FIXTURE: TypeObjectSchemaNodeJson = {
   properties: {
     1: { description: "Example description", type: "string" },
     refProperty1: {
-      $ref: "https://opencaptablecoalition.com/schema/types/TestTypeObject.schema.json",
+      $ref: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TestTypeObject.schema.json",
     },
   },
   required: ["1"],
@@ -27,7 +27,7 @@ describe("TypeObject", () => {
 
 ### Test Title
 
-\`https://opencaptablecoalition.com/schema/types/TestTypeObject.schema.json\`
+\`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TestTypeObject.schema.json\`
 
 _This is a test fixture exemplifying an TypeObject schema from OCF_
 

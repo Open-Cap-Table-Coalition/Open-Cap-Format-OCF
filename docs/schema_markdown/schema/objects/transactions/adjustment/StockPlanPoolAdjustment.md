@@ -4,7 +4,7 @@
 
 ### Object - Stock Plan Pool Adjustment Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
 
 **Description:** _Object describing the change in the size of a Stock Plan pool._
 

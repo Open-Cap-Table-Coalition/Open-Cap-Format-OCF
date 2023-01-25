@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/StockPlanTransaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/StockPlanTransaction.schema.json",
   "title": "Primitive - Stock Plan Transaction",
   "description": "Abstract transaction object to be extended by all transaction objects that affect a stock plan",
   "type": "object",

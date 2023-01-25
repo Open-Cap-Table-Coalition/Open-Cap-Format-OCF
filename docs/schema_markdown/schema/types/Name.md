@@ -4,7 +4,7 @@
 
 ### Type - Name
 
-`https://opencaptablecoalition.com/schema/types/Name.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json`
 
 _Type comprising of multiple name components_
 

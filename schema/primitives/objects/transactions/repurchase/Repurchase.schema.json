@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://opencaptablecoalition.com/schema/primitives/objects/transactions/repurchase/Repurchase.schema.json",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/repurchase/Repurchase.schema.json",
   "title": "Primitive - Security Repurchase Transaction",
   "description": "Abstract object describing common properties to a repurchase transaction",
   "type": "object",
   "properties": {
     "price": {
       "description": "Repurchase price per share of the stock",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "quantity": {
       "description": "Number of shares of stock repurchased",
-      "$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "consideration_text": {
       "description": "Unstructured text description of consideration provided in exchange for security repurchase",

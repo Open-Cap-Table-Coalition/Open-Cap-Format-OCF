@@ -4,7 +4,7 @@
 
 ### Type - Country Code
 
-`https://opencaptablecoalition.com/schema/types/CountryCode.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json`
 
 **Description:** _Type representation of an ISO 3166-1 alpha 2 country code_
 

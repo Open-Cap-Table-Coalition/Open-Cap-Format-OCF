@@ -4,7 +4,7 @@
 
 ### Object - Stock Cancellation Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/cancellation/StockCancellation.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/StockCancellation.schema.json`
 
 **Description:** _Object describing a cancellation of a stock security_
 

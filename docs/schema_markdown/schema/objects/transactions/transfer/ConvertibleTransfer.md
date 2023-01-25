@@ -4,7 +4,7 @@
 
 ### Object - Convertible Transfer Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
 
 **Description:** _Object describing a transfer or secondary sale of a convertible security_
 

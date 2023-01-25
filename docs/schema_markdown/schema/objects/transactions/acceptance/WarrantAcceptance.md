@@ -4,7 +4,7 @@
 
 ### Object - Warrant Acceptance Transaction
 
-`https://opencaptablecoalition.com/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json`
 
 **Description:** _Object describing a warrant acceptance transaction_
 

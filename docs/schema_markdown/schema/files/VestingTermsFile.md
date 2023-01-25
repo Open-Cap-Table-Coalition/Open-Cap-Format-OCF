@@ -4,7 +4,7 @@
 
 ### File - Vesting Terms
 
-`https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of vesting terms_
 

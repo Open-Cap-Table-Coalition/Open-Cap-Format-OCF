@@ -4,7 +4,7 @@
 
 ### Primitive - Conversion Mechanism Type
 
-`https://opencaptablecoalition.com/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json`
 
 **Description** _Abstract type setting forth required field(s) for ALL conversion mechanism types_
 

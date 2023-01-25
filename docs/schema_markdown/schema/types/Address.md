@@ -4,7 +4,7 @@
 
 ### Type - Address
 
-`https://opencaptablecoalition.com/schema/types/Address.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Address.schema.json`
 
 _Type representation of an address_
 
