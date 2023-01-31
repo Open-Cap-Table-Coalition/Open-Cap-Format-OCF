@@ -21,6 +21,8 @@ describe("TypeObject", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypeObject(schema, FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
+
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
 ---
@@ -42,7 +44,7 @@ _This is a test fixture exemplifying an TypeObject schema from OCF_
 
 **Source Code:** [schema/types/TestTypeObject](../../../../schema/types/TestTypeObject.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });

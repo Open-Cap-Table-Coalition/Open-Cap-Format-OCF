@@ -23,4 +23,4 @@ _Type representation of an address_
 
 **Source Code:** [schema/types/Address](../../../../schema/types/Address.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

@@ -20,4 +20,4 @@ _Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 **Source Code:** [schema/types/ContactInfo](../../../../schema/types/ContactInfo.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

@@ -15,6 +15,7 @@ describe("TypePattern", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypePattern(schema, FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
 
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
@@ -32,7 +33,7 @@ describe("TypePattern", () => {
 
 **Source Code:** [schema/types/TestTypePattern](../../../../schema/types/TestTypePattern.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });

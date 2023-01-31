@@ -53,4 +53,4 @@
 ]
 ```
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © 2023 Open Cap Table Coalition.

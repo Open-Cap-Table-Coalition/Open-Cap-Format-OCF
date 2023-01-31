@@ -15,6 +15,7 @@ describe("TypeFormat", () => {
     it("returns a string representing the node as Markdown", () => {
       const schema = new Schema([FIXTURE]);
       const actual = new TypeFormat(schema, FIXTURE).markdownOutput();
+      let copyright_year = new Date().getFullYear();
 
       expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
 
@@ -32,7 +33,7 @@ describe("TypeFormat", () => {
 
 **Source Code:** [schema/types/TestTypeFormat](../../../../schema/types/TestTypeFormat.schema.json)
 
-Copyright © 2022 Open Cap Table Coalition.
+Copyright © ${copyright_year} Open Cap Table Coalition.
 `);
     });
   });
