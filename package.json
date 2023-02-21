@@ -9,8 +9,8 @@
     "generate-release-docs": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GenerateReleaseDocs.ts generate-release-docs -v",
     "enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -fvart --tag main",
     "prepare": "husky install",
-    "validate-ocf-file-schemas": "node ./utils/validate.mjs validate-ocf-schema -v -t",
-    "validate-example-ocf-files": "node ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
+    "validate-ocf-file-schemas": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-schema -v -t",
+    "validate-example-ocf-files": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
     "test": "node test-script.js",
     "test:watch": "node test-script.js watch"
   },
