@@ -102,9 +102,7 @@ export async function validateOcfDirectory(
           `\tFile Type URI: ${URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]}`
         );
       }
-      console.log(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
       const validator = ajv.getSchema(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
-      console.log("validator", validator);
       const valid = validator(obj);
 
       if (!valid) {
