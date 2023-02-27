@@ -1,28 +1,28 @@
 // Constants for various URIs
 // TODO - move to separate constants file
 export const OCF_MANIFEST_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/OCFManifestFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json";
 
 export const OCF_TRANSACTIONS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/TransactionsFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json";
 
 export const OCF_STAKEHOLDERS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/StakeholdersFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json";
 
 export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/StockPlansFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json";
 
 export const OCF_VALUATIONS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/ValuationsFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json";
 
 export const OCF_VESTING_TERMS_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/VestingTermsFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json";
 
 export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/StockClassesFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json";
 
 export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
-  "https://opencaptablecoalition.com/schema/files/StockLegendTemplatesFile.schema.json";
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json";
 
 export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,
