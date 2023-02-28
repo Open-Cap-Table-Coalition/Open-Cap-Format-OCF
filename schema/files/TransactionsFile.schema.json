@@ -85,6 +85,9 @@
             "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/WarrantRetraction.schema.json"
           },
           {
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/return_to_pool/PlanSecurityReturnToPool.schema.json"
+          },
+          {
             "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/split/StockClassSplit.schema.json"
           },
           {
