@@ -30,7 +30,7 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "cancellation_behavior": {
-      "description": "If a Plan Security issued under this Stock Plan is cancelled, What happens to the reserved shares?.",
+      "description": "If a Plan Security issued under this Stock Plan is cancelled, what happens to the reserved shares?.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockPlanCancellationBehaviorType.schema.json"
     },
     "stock_class_id": {
