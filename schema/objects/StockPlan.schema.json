@@ -29,6 +29,10 @@
       "description": "The initial number of shares reserved in the pool for this stock plan by the Board or equivalent body.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
+    "cancellation_behavior": {
+      "description": "If a Plan Security issued under this Stock Plan is cancelled, What happens to the reserved shares?.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockPlanCancellationBehaviorType.schema.json"
+    },
     "stock_class_id": {
       "description": "Identifier of the StockClass object this plan is composed of",
       "type": "string"
@@ -37,6 +41,11 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": ["plan_name", "stock_class_id", "initial_shares_reserved"],
+  "required": [
+    "plan_name",
+    "stock_class_id",
+    "initial_shares_reserved",
+    "cancellation_behavior"
+  ],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockPlan.schema.json"
 }

@@ -7,6 +7,7 @@
       "plan_name": "2021 Stock Incentive Plan",
       "board_approval_date": "1983-12-31",
       "initial_shares_reserved": "+10000000.00",
+      "cancellation_behavior": "RETURN_TO_POOL",
       "stock_class_id": "8d8371e8-d41d-4a49-9f42-b91758fd155d",
       "comments": [
         "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
