@@ -23,9 +23,9 @@ export default class ExamplesReader {
   protected loadJsonFromEntryInfo = (
     entryInfo: EntryInfo
   ): Promise<ExampleJson> =>
-    import(pathToFileURL(entryInfo.fullPath).href).then(
-      (json: { default: ExampleJson }) => json["default"]
-    );
+    import(pathToFileURL(entryInfo.fullPath).href, {
+      assert: { type: "json" },
+    }).then((json: { default: ExampleJson }) => json["default"]);
 
   protected loadJsonFromEntryInfos = (
     entryInfos: EntryInfo[]
