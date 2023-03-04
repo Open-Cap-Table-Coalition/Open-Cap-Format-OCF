@@ -37,10 +37,10 @@ _This is a test fixture exemplifying an TypeObject schema from OCF_
 
 **Properties:**
 
-| Property     | Type                                              | Description                                                       | Required   |
-| ------------ | ------------------------------------------------- | ----------------------------------------------------------------- | ---------- |
-| 1            | \`STRING\`                                          | Example description                                               | \`REQUIRED\` |
-| refProperty1 | [schema/types/TestTypeObject](/TestTypeObject.md) | This is a test fixture exemplifying an TypeObject schema from OCF | -          |
+| Property     | Type                                               | Description                                                       | Required   |
+| ------------ | -------------------------------------------------- | ----------------------------------------------------------------- | ---------- |
+| 1            | \`STRING\`                                           | Example description                                               | \`REQUIRED\` |
+| refProperty1 | [schema/types/TestTypeObject](./TestTypeObject.md) | This is a test fixture exemplifying an TypeObject schema from OCF | -          |
 
 **Source Code:** [schema/types/TestTypeObject](../../../../schema/types/TestTypeObject.schema.json)
 
