@@ -53,20 +53,16 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
 async function buildObjectSchemaMap(verbose = false) {
   const schemaMap = {};
 
-  if (verbose) console.log("\n-->\tLoad Schema Files...\n");
   const schemaPaths = await getSchemaObjectsFilepaths();
 
-  if (verbose) console.log("\n-->\tParse Schema Objs...");
   const schema_buffers = await Promise.all(
     schemaPaths.map((path) => readFile(path))
   );
 
-  if (verbose) console.log("\n-->\tParsing Schema JSONs");
   const schemas = schema_buffers.map((schema_buffer) => {
     return JSON.parse(schema_buffer.toString());
   });
 
-  if (verbose) console.log("\n-->\tBuilding Schema Map");
   schemas.forEach((schema) => {
     schemaMap[schema.properties.object_type.const] = schema.$id;
   });
@@ -204,14 +200,15 @@ export async function validateOcfDirectory(
         // if file is not a manifest, loop through items
         // for each item, get the object_type and then run the validator against that schema
       } else if (obj.hasOwnProperty("items")) {
+        if (verbose) console.log("\n-->\tvalidating items:");
+
         const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
         for (let j = 0; j < obj.items.length; j++) {
           let object_type = obj.items[j].object_type;
           let object_schema_uri = objectTypeToSchemaIdMap[object_type];
 
           if (verbose) {
-            console.log("item being validated:");
-            console.log(obj.items[j]);
+            console.dir(obj.items[j], { depth: null, colors: true });
           }
 
           const validator = ajv.getSchema(object_schema_uri);
@@ -231,8 +228,6 @@ export async function validateOcfDirectory(
               console.log(validator.errors);
             }
             return false;
-          } else {
-            if (verbose) console.log("\n\t** VALID OCF **");
           }
         }
       }
