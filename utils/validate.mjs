@@ -49,6 +49,31 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
 };
 
+// build map of object_type to schema $id
+async function buildObjectSchemaMap(verbose = false) {
+  const schemaMap = {};
+
+  if (verbose) console.log("\n-->\tLoad Schema Files...\n");
+  const schemaPaths = await getSchemaObjectsFilepaths();
+
+  if (verbose) console.log("\n-->\tParse Schema Objs...");
+  const schema_buffers = await Promise.all(
+    schemaPaths.map((path) => readFile(path))
+  );
+
+  if (verbose) console.log("\n-->\tParsing Schema JSONs");
+  const schemas = schema_buffers.map((schema_buffer) => {
+    return JSON.parse(schema_buffer.toString());
+  });
+
+  if (verbose) console.log("\n-->\tBuilding Schema Map");
+  schemas.forEach((schema) => {
+    schemaMap[schema.properties.object_type.const] = schema.$id;
+  });
+
+  return schemaMap;
+}
+
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 async function* getFiles(dir) {
   /**
@@ -64,6 +89,21 @@ async function* getFiles(dir) {
       yield res;
     }
   }
+}
+
+async function getSchemaObjectsFilepaths(verbose = false) {
+  /**
+   * Crawl ./schema directory from repo root and get all
+   * of the filepaths to schema files (ending in .schema.json)
+   */
+  const paths = [];
+  for await (const f of getFiles("./schema/objects")) {
+    paths.push(f);
+    if (verbose) {
+      console.log(`•\t${f}`);
+    }
+  }
+  return paths;
 }
 
 async function getSchemaFilepaths(verbose = false) {
@@ -138,22 +178,63 @@ export async function validateOcfDirectory(
           `\tFile Type URI: ${URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]}`
         );
       }
-      const validator = ajv.getSchema(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
-      const valid = validator(obj);
 
-      if (!valid) {
-        if (test)
-          core.setFailed(
-            `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
-            validator.errors
-          );
-        if (verbose) {
-          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-          console.log(validator.errors);
+      // if file is manifest, just validate against the manifest schema
+      if (obj.file_type === "OCF_MANIFEST_FILE") {
+        const validator = ajv.getSchema(
+          URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]
+        );
+        const valid = validator(obj);
+
+        if (!valid) {
+          if (test)
+            core.setFailed(
+              `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
+              validator.errors
+            );
+          if (verbose) {
+            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+            console.log(validator.errors);
+          }
+          return false;
+        } else {
+          if (verbose) console.log("\n\t** VALID OCF **");
         }
-        return false;
-      } else {
-        if (verbose) console.log("\n\t** VALID OCF **");
+        // collect the errors per file and then return them
+        // if file is not a manifest, loop through items
+        // for each item, get the object_type and then run the validator against that schema
+      } else if (obj.hasOwnProperty("items")) {
+        const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
+        for (let j = 0; j < obj.items.length; j++) {
+          let object_type = obj.items[j].object_type;
+          let object_schema_uri = objectTypeToSchemaIdMap[object_type];
+
+          if (verbose) {
+            console.log("item being validated:");
+            console.log(obj.items[j]);
+          }
+
+          const validator = ajv.getSchema(object_schema_uri);
+          const valid = validator(obj.items[j]);
+
+          if (!valid) {
+            if (test)
+              core.setFailed(
+                `\t** OCF file ${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
+                validator.errors
+              );
+            if (verbose) {
+              console.log(
+                `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
+              );
+              console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+              console.log(validator.errors);
+            }
+            return false;
+          } else {
+            if (verbose) console.log("\n\t** VALID OCF **");
+          }
+        }
       }
     }
     return true;
