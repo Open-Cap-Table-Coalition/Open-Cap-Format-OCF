@@ -1,5 +1,4 @@
 import path from "node:path";
-import fs from "fs";
 
 import { repo_raw_url_root, repo_url_root } from "./Constants.js";
 
@@ -56,10 +55,12 @@ export const relativePathToOtherPath = (
   target_path: string,
   source_path: string = "./schema"
 ) => {
-  return `${path.relative(
+  const relativePath = `${path.relative(
     isFile(source_path) ? path.dirname(source_path) : source_path,
     isFile(target_path) ? path.dirname(target_path) : target_path
   )}`.replace(new RegExp("\\" + path.sep, "g"), "/");
+
+  return relativePath == "" ? "." : relativePath;
 };
 
 /**

@@ -358,5 +358,5 @@ should be expressed in days instead of months.
 [relative-trigger]: ../schema_markdown/schema/types/vesting/VestingScheduleAbsoluteTrigger.md
 [event-txn]: ../schema_markdown/schema/objects/transactions/vesting/VestingEvent.md
 [start-txn]: ../schema_markdown/schema/objects/transactions/vesting/VestingStart.md
-[portion]: ../schema_markdown/schema/types/vesting/VestiongConditionPortion.md
+[portion]: ../schema_markdown/schema/types/vesting/VestingConditionPortion.md
 [day-of-month]: ../schema_markdown/schema/enums/VestingDayOfMonth.md

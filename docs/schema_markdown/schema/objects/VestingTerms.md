@@ -32,7 +32,7 @@ vesting. This is accomplished by expressing security vesting as a graph of
 security.
 
 For a more thorough explanation, see
-[Vesting Terms Explained](../../../explainers/VestingTerms.md).
+[Vesting Terms Explained](../../explainers/VestingTerms.md).
 
 <!-- Supplemental for:
   schema/objects/VestingTerms

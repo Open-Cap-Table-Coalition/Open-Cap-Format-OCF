@@ -30,7 +30,7 @@ Next, we define our [StockClass](../../schema_markdown/schema/objects/StockClass
   "name": "Preferred Shares",
   "class_type": "PREFERRED",
   "default_id_prefix": "PS-",
-  "current_shares_authorized": "100000.00",
+  "initial_shares_authorized": "100000.00",
   "votes_per_share": "1",
   "seniority": "1"
 }
