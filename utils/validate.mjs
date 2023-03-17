@@ -7,7 +7,6 @@ import addFormats from "ajv-formats";
 import fs from "fs";
 import { readFile, readdir } from "fs/promises";
 import { resolve } from "path";
-import { URI_LOOKUP_FOR_FILE_TYPE } from "./schema-utils/Constants.ts";
 
 // For GitHub actions integrations
 // TODO - move action integrations into a separate file to keep validator utils clean
@@ -67,6 +66,17 @@ async function getOcfFilesFromDir(path, verbose = false) {
 }
 
 /**
+ * Reads the dictionary of URIs for file types lookup from UriLookupForFileType.json
+ * @returns a dictionary with the URIs for file types lookup
+ */
+function readUriLookupForFileTypes() {
+  var buffer = fs.readFileSync(
+    "./utils/schema-utils/UriLookupForFileType.json"
+  );
+  return JSON.parse(buffer.toString());
+}
+
+/**
  * Meant to validate our new multi-file format. Point it at a directory
  * with ocf file jsons, and it will first identify all files with .ocf.json
  * extensions, then load each one, then check for a file_type and then
@@ -82,9 +92,12 @@ export async function validateOcfDirectory(
   test = false
 ) {
   try {
-    let results = true;
     const ajv = await getOcfValidator(verbose, false, false, false);
     const ocf_paths = await getOcfFilesFromDir(path, verbose);
+
+    if (verbose)
+      console.log("\n--- Loading URI Lookup for file types ---------------");
+    const uriLookupForFileType = readUriLookupForFileTypes();
 
     if (verbose)
       console.log("\n--- Loading OCF File Buffers... ---------------");
@@ -98,11 +111,9 @@ export async function validateOcfDirectory(
       const obj = JSON.parse(ocf_file_buffers[i].toString());
       if (verbose) {
         console.log(`\tOCF File Type: ${obj.file_type}`);
-        console.log(
-          `\tFile Type URI: ${URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]}`
-        );
+        console.log(`\tFile Type URI: ${uriLookupForFileType[obj.file_type]}`);
       }
-      const validator = ajv.getSchema(URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]);
+      const validator = ajv.getSchema(uriLookupForFileType[obj.file_type]);
       const valid = validator(obj);
 
       if (!valid) {
@@ -242,10 +253,14 @@ export async function ValidateOcfFile(
   show_all_errors = false
 ) {
   try {
+    if (verbose)
+      console.log("\n--- Loading URI Lookup for file types ---------------");
+    const uriLookupForFileType = readUriLookupForFileTypes();
+
     console.log("-->\tValidate OCF File");
     const ajv = await getOcfValidator(verbose, false, test, show_all_errors);
     const validator = ajv.getSchema(
-      URI_LOOKUP_FOR_FILE_TYPE[ocf_file_obj.file_type]
+      uriLookupForFileType[ocf_file_obj.file_type]
     );
     const valid = validator(ocf_file_obj);
     if (!valid) {
@@ -300,17 +315,22 @@ export async function validateOcfSchemas(
       test,
       show_all_errors
     );
+
+    if (verbose)
+      console.log("\n--- Loading URI Lookup for file types ---------------");
+    const uriLookupForFileType = readUriLookupForFileTypes();
+
     if (verbose) {
       console.log(
         "\nVALIDATE OCF FILE SCHEMAS (WILL LOAD AND VALIDATE $REFS)\n"
       );
     }
-    for (var key in URI_LOOKUP_FOR_FILE_TYPE) {
+    for (var key in uriLookupForFileType) {
       if (verbose) {
         console.log(`${counter}) \tCheck file type: ${key}`);
-        console.log(`\tCorresponding URI: ${URI_LOOKUP_FOR_FILE_TYPE[key]}`);
+        console.log(`\tCorresponding URI: ${uriLookupForFileType[key]}`);
       }
-      validator.getSchema(URI_LOOKUP_FOR_FILE_TYPE[key]);
+      validator.getSchema(uriLookupForFileType[key]);
       if (verbose) console.log("\t** VALID **\n");
       counter++;
     }
