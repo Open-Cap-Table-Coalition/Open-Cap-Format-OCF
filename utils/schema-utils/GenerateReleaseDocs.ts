@@ -56,6 +56,30 @@ export function setRawUrl(
 }
 
 /**
+ * Sets the URI for file types lookup to the release's url
+ * @param tag  -> String: What branch tag should be added to the urls.
+ * @param verbose -> Boolean: Display detailed logs.
+ */
+function setUriLookupForFileType(tag: string = "main", verbose = false) {
+  var uriLookupForFileTypePath =
+    "./utils/schema-utils/UriLookupForFileType.json";
+  var buffer = fs.readFileSync(uriLookupForFileTypePath);
+  var uriDict = JSON.parse(buffer.toString());
+
+  for (var key in uriDict) {
+    if (verbose) {
+      console.log(`\t--> Set URI for file type: ${key}`);
+    }
+    uriDict[key] = uriDict[key].replace(
+      `${repo_raw_url_root}\/main\/schema\/`,
+      `${release_url}/${tag}/`
+    );
+  }
+
+  fs.writeFileSync(uriLookupForFileTypePath, JSON.stringify(uriDict, null, 2));
+}
+
+/**
  * Load all schema files in the /schemas folder. Replace the urls with the release urls.
  *
  * Returns true if the schemas all have valid release urls, otherwise returns false.
@@ -72,6 +96,9 @@ export async function generateReleaseDocs(
     console.log(`GENERATE RELEASE DOCS ----------------------`);
   }
   try {
+    if (verbose) console.log("\nSetting URIs for file types lookup...");
+    setUriLookupForFileType(tag, verbose);
+
     if (verbose) console.log("\nTraverse schema dir for schema paths...");
     const schema_paths = await getSchemaFilepaths(verbose);
 
