@@ -23,11 +23,12 @@ Here's our new Stock Plan object:
 }
 ```
 
-You'll notice you must also set the default behavior for what happens to shares reserved for a Plan Security issued under this Stock Plan if the Plan Security is cancelled. The `cancellation_behavior` field of the plan object takes a `StockPlanCancellationBehaviorType` enumeration. The enum gives you three options:
+You'll notice you must also set the default behavior for what happens to shares reserved for a Plan Security issued under this Stock Plan if the Plan Security is cancelled. The `cancellation_behavior` field of the plan object takes a `StockPlanCancellationBehaviorType` enumeration. The enum gives you four options:
 
 1. `RETURN_TO_POOL` - Shares return to the pool.
-2. `CAPITAL_STOCK` - Shares are held by company as capital stock.
+2. `HOLD_AS_CAPITAL_STOCK` - Shares are held by company as capital stock.
 3. `RETIRE` - Shares are retired entirely.
+4. `DEFINED_PER_PLAN_SECURITY` - No plan-wide default and this is handled on a Plan-Security-by-Plan-Security basis.
 
 ## Create a Vesting Schedule
 
