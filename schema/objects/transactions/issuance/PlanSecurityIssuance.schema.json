@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json",
-  "title": "Object - Plan Security Issuance Transaction",
-  "description": "Object describing securities issuance transaction from a plan by the issuer and held by a stakeholder",
+  "title": "Object - Equity Compensation Issuance Transaction",
+  "description": "Object describing securities issuance transaction by the issuer and held by a stakeholder as a form of compensation (as noted elsewhere, RSAs are not included here intentionally and should be modelled using Stock Issuances).",
   "type": "object",
   "allOf": [
     {
@@ -20,10 +20,18 @@
   ],
   "properties": {
     "object_type": {
-      "const": "TX_PLAN_SECURITY_ISSUANCE"
+      "oneOf": [
+        {
+          "const": "TX_PLAN_SECURITY_ISSUANCE"
+        },
+        {
+          "const": "TX_EQUITY_COMPENSATION_ISSUANCE"
+        }
+      ],
+      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
     },
     "stock_plan_id": {
-      "description": "Identifier of StockPlan the PlanSecurities were issued from",
+      "description": "If the equity compensation was issued from a plan (don't forget, plan-less options are a thing), what is the plan id.",
       "type": "string"
     },
     "compensation_type": {
@@ -32,14 +40,19 @@
     },
     "option_grant_type": {
       "description": "If the plan security is an option, what kind?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OptionType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OptionType.schema.json",
+      "$comment": "DEPRECATION WARNING - This field is being retained for compatibility, but these variations have been incorporated into CompensationType.schema.json enum options"
     },
     "quantity": {
       "description": "How many shares are subject to this plan security?",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
     "exercise_price": {
-      "description": "What is the exercise price?",
+      "description": "If this is an option, what is the exercise price of the option?",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    },
+    "base_price": {
+      "description": "If this is a stock appreciation right, what is the base price used to calculate the appreciation of the SAR?",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "vesting_terms_id": {
@@ -82,22 +95,58 @@
           "const": "OPTION"
         }
       },
-      "required": ["option_grant_type"]
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Options require exercise price.",
+      "required": ["exercise_price"]
+    },
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "OPTION_NSO"
+        }
+      },
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Options require exercise price.",
+      "required": ["exercise_price"]
+    },
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "OPTION_ISO"
+        }
+      },
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Options require exercise price.",
+      "required": ["exercise_price"]
     },
     {
       "properties": {
         "compensation_type": {
           "const": "RSU"
         }
-      }
+      },
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. RSUs usually don't have exercise prices."
+    },
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "CSAR"
+        }
+      },
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Stock appreciation rights have grant prices.",
+      "required": ["base_price"]
+    },
+    {
+      "properties": {
+        "compensation_type": {
+          "const": "SSAR"
+        }
+      },
+      "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Stock appreciation rights have grant prices.",
+      "required": ["base_price"]
     }
   ],
   "additionalProperties": false,
   "required": [
-    "stock_plan_id",
     "compensation_type",
     "quantity",
-    "exercise_price",
     "expiration_date",
     "termination_exercise_windows"
   ],

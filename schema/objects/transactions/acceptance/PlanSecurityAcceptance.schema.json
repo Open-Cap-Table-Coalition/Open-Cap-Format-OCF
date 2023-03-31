@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json",
-  "title": "Object - Plan Security Acceptance Transaction",
-  "description": "Object describing a plan security acceptance transaction",
+  "title": "Object - Equity Compensation Acceptance Transaction",
+  "description": "Object describing equity compensation acceptance transaction",
   "type": "object",
   "allOf": [
     {
@@ -20,7 +20,15 @@
   ],
   "properties": {
     "object_type": {
-      "const": "TX_PLAN_SECURITY_ACCEPTANCE"
+      "oneOf": [
+        {
+          "const": "TX_PLAN_SECURITY_ACCEPTANCE"
+        },
+        {
+          "const": "TX_EQUITY_COMPENSATION_ACCEPTANCE"
+        }
+      ],
+      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
     },
     "id": {},
     "comments": {},

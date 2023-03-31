@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json",
-  "title": "Object - Plan Security Exercise Transaction",
-  "description": "Object describing a plan security exercise transaction",
+  "title": "Object - Equity Compensation Exercise Transaction",
+  "description": "Object describing equity compensation exercise transaction",
   "type": "object",
   "allOf": [
     {
@@ -20,7 +20,15 @@
   ],
   "properties": {
     "object_type": {
-      "const": "TX_PLAN_SECURITY_EXERCISE"
+      "oneOf": [
+        {
+          "const": "TX_PLAN_SECURITY_EXERCISE"
+        },
+        {
+          "const": "TX_EQUITY_COMPENSATION_EXERCISE"
+        }
+      ],
+      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
     },
     "quantity": {
       "description": "Quantity of shares exercised",
