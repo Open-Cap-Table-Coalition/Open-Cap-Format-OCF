@@ -28,7 +28,7 @@
           "const": "TX_EQUITY_COMPENSATION_RELEASE"
         }
       ],
-      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
+      "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_RELEASE` will be deprecated in v2.0.0"
     },
     "id": {},
     "comments": {},

@@ -28,7 +28,7 @@
           "const": "TX_EQUITY_COMPENSATION_ISSUANCE"
         }
       ],
-      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
+      "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_ISSUANCE` will be deprecated in v2.0.0"
     },
     "stock_plan_id": {
       "description": "If the equity compensation was issued from a plan (don't forget, plan-less options are a thing), what is the plan id.",
