@@ -35,21 +35,19 @@ export default class ObjectSchemaNode extends SchemaNode {
   };
 
   protected objectDataTypeDescriptionBlock = (): string => {
-    let text_block = "**Data Type:** `OCF Object - ";
+    let text_block = "**Data Type:** `";
     let object_type_field = this.json["properties"]["object_type"];
     if ("oneOf" in object_type_field) {
       text_block += "Multiple Supported for Backwards Compatibility`</br>";
       for (let i = 0; i < object_type_field["oneOf"].length; i++) {
         let object_type_obj = object_type_field["oneOf"][i];
-        text_block += "- `" + object_type_obj["const"].toUpperCase() + "`";
-        if (object_type_obj.$comment) {
-          text_block +=
-            "\n  - ***COMMENT:*** *" + object_type_obj.$comment + "*";
-        }
-        return text_block;
+        text_block +=
+          "`OCF Object - " + object_type_obj["const"].toUpperCase() + "`";
       }
+      return text_block;
     } else {
-      text_block += object_type_field["const"].toUpperCase() + "`";
+      text_block +=
+        "OCF Object - " + object_type_field["const"].toUpperCase() + "`";
     }
     return text_block;
   };

@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a retraction of equity compensation_
 
-**Data Type:** `OCF Object - Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_RETRACTION`
+**Data Type:** `Multiple Supported for Backwards Compatibility`</br>`OCF Object - TX_PLAN_SECURITY_RETRACTION``OCF Object - TX_EQUITY_COMPENSATION_RETRACTION`
 
 **Composed From:**
 
