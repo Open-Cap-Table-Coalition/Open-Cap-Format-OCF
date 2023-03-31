@@ -8,7 +8,7 @@
 
 **Description:** _Object describing equity compensation exercise transaction_
 
-**Data Type:** `OCF Object -Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_EXERCISE`
+**Data Type:** `OCF Object - Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_EXERCISE`
 
 **Composed From:**
 

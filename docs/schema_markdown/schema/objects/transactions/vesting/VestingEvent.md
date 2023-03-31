@@ -8,7 +8,7 @@
 
 **Description:** _Object describing the transaction of an non-schedule-driven vesting event associated with a security_
 
-**Data Type:** `OCF Object -TX_VESTING_EVENT`
+**Data Type:** `OCF Object - TX_VESTING_EVENT`
 
 **Composed From:**
 

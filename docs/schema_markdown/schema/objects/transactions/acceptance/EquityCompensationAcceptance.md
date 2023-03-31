@@ -8,7 +8,7 @@
 
 **Description:** _Object describing equity compensation acceptance transaction_
 
-**Data Type:** `OCF Object -Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_ACCEPTANCE`
+**Data Type:** `OCF Object - Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_ACCEPTANCE`
 
 **Composed From:**
 

@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a warrant exercise transaction_
 
-**Data Type:** `OCF Object -TX_WARRANT_EXERCISE`
+**Data Type:** `OCF Object - TX_WARRANT_EXERCISE`
 
 **Composed From:**
 

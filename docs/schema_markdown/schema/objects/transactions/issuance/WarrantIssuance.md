@@ -8,7 +8,7 @@
 
 **Description:** _Object describing warrant issuance transaction by the issuer and held by a stakeholder_
 
-**Data Type:** `OCF Object -TX_WARRANT_ISSUANCE`
+**Data Type:** `OCF Object - TX_WARRANT_ISSUANCE`
 
 **Composed From:**
 

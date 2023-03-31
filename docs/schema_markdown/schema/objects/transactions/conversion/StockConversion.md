@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a conversion of stock_
 
-**Data Type:** `OCF Object -TX_STOCK_CONVERSION`
+**Data Type:** `OCF Object - TX_STOCK_CONVERSION`
 
 **Composed From:**
 

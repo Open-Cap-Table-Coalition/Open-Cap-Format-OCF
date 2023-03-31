@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a stock legend template_
 
-**Data Type:** `OCF Object -STOCK_LEGEND_TEMPLATE`
+**Data Type:** `OCF Object - STOCK_LEGEND_TEMPLATE`
 
 **Composed From:**
 

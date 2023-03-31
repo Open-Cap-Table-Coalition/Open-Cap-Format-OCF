@@ -35,7 +35,7 @@ export default class ObjectSchemaNode extends SchemaNode {
   };
 
   protected objectDataTypeDescriptionBlock = (): string => {
-    let text_block = "**Data Type:** `OCF Object -";
+    let text_block = "**Data Type:** `OCF Object - ";
     let object_type_field = this.json["properties"]["object_type"];
     if ("oneOf" in object_type_field) {
       text_block += "Multiple Supported for Backwards Compatibility`</br>";

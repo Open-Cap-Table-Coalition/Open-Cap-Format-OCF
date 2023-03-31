@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a conversion of a convertible security_
 
-**Data Type:** `OCF Object -TX_CONVERTIBLE_CONVERSION`
+**Data Type:** `OCF Object - TX_CONVERTIBLE_CONVERSION`
 
 **Composed From:**
 

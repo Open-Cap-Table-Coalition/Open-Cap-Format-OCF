@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a transfer or secondary sale of a stock security_
 
-**Data Type:** `OCF Object -TX_STOCK_TRANSFER`
+**Data Type:** `OCF Object - TX_STOCK_TRANSFER`
 
 **Composed From:**
 

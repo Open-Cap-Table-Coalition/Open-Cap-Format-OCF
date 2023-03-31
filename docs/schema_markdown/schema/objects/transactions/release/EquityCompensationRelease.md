@@ -8,7 +8,7 @@
 
 **Description:** _Object describing equity compensation security release transaction_
 
-**Data Type:** `OCF Object -Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_RELEASE`
+**Data Type:** `OCF Object - Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_RELEASE`
 
 **Composed From:**
 

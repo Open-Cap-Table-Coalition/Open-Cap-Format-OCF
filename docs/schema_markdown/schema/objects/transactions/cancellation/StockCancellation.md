@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a cancellation of a stock security_
 
-**Data Type:** `OCF Object -TX_STOCK_CANCELLATION`
+**Data Type:** `OCF Object - TX_STOCK_CANCELLATION`
 
 **Composed From:**
 

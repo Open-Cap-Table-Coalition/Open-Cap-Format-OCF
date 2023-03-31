@@ -8,7 +8,7 @@
 
 **Description:** _Object describing the issuer of the cap table (the company whose cap table this is)_
 
-**Data Type:** `OCF Object -ISSUER`
+**Data Type:** `OCF Object - ISSUER`
 
 **Composed From:**
 

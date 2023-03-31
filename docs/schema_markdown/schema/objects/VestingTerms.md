@@ -8,7 +8,7 @@
 
 **Description:** _Object describing the terms under which a security vests_
 
-**Data Type:** `OCF Object -VESTING_TERMS`
+**Data Type:** `OCF Object - VESTING_TERMS`
 
 **Composed From:**
 

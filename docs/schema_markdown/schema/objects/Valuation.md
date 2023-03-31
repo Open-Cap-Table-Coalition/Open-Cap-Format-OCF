@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a valuation used in the cap table_
 
-**Data Type:** `OCF Object -VALUATION`
+**Data Type:** `OCF Object - VALUATION`
 
 **Composed From:**
 

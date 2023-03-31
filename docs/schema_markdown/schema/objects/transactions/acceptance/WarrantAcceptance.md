@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a warrant acceptance transaction_
 
-**Data Type:** `OCF Object -TX_WARRANT_ACCEPTANCE`
+**Data Type:** `OCF Object - TX_WARRANT_ACCEPTANCE`
 
 **Composed From:**
 

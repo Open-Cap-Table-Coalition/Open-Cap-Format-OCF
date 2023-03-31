@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a transfer of equity compensation_
 
-**Data Type:** `OCF Object -Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_TRANSFER`
+**Data Type:** `OCF Object - Multiple Supported for Backwards Compatibility`</br>- `TX_PLAN_SECURITY_TRANSFER`
 
 **Composed From:**
 

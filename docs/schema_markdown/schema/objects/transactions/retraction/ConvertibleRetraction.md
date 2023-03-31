@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a retraction of a convertible security_
 
-**Data Type:** `OCF Object -TX_CONVERTIBLE_RETRACTION`
+**Data Type:** `OCF Object - TX_CONVERTIBLE_RETRACTION`
 
 **Composed From:**
 

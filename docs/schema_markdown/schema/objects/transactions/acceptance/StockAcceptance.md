@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a stock acceptance transaction_
 
-**Data Type:** `OCF Object -TX_STOCK_ACCEPTANCE`
+**Data Type:** `OCF Object - TX_STOCK_ACCEPTANCE`
 
 **Composed From:**
 

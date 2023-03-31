@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a split of a stock class_
 
-**Data Type:** `OCF Object -TX_STOCK_CLASS_SPLIT`
+**Data Type:** `OCF Object - TX_STOCK_CLASS_SPLIT`
 
 **Composed From:**
 

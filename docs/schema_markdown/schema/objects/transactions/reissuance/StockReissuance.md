@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a re-issuance of stock_
 
-**Data Type:** `OCF Object -TX_STOCK_REISSUANCE`
+**Data Type:** `OCF Object - TX_STOCK_REISSUANCE`
 
 **Composed From:**
 

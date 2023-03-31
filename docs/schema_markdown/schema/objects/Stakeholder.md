@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a stakeholder_
 
-**Data Type:** `OCF Object -STAKEHOLDER`
+**Data Type:** `OCF Object - STAKEHOLDER`
 
 **Composed From:**
 

@@ -8,7 +8,7 @@
 
 **Description:** _Object describing an event to change the number of authoried shares of a stock class._
 
-**Data Type:** `OCF Object -TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`
+**Data Type:** `OCF Object - TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`
 
 **Composed From:**
 

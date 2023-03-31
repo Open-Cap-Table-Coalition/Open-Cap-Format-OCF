@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a stock repurchase transaction_
 
-**Data Type:** `OCF Object -TX_STOCK_REPURCHASE`
+**Data Type:** `OCF Object - TX_STOCK_REPURCHASE`
 
 **Composed From:**
 
