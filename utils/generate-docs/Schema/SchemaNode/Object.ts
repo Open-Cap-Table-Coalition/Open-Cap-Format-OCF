@@ -38,11 +38,13 @@ export default class ObjectSchemaNode extends SchemaNode {
     let text_block = "**Data Type:** `";
     let object_type_field = this.json["properties"]["object_type"];
     if ("oneOf" in object_type_field) {
-      text_block += "Multiple Supported for Backwards Compatibility`</br>";
+      text_block += "Multiple Supported for Backwards Compatibility`";
       for (let i = 0; i < object_type_field["oneOf"].length; i++) {
         let object_type_obj = object_type_field["oneOf"][i];
         text_block +=
-          "`OCF Object - " + object_type_obj["const"].toUpperCase() + "`";
+          "</br>- `OCF Object - " +
+          object_type_obj["const"].toUpperCase() +
+          "`";
       }
       return text_block;
     } else {
