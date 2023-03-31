@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a class of stock issued by the issuer_
 
-**Data Type:** `OCF Object - STOCK_CLASS`
+**Data Type:** `OCF Object -`STOCK_CLASS`
 
 **Composed From:**
 

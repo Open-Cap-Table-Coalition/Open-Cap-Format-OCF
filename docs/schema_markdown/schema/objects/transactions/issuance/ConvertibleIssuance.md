@@ -8,7 +8,7 @@
 
 **Description:** _Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder_
 
-**Data Type:** `OCF Object - TX_CONVERTIBLE_ISSUANCE`
+**Data Type:** `OCF Object -`TX_CONVERTIBLE_ISSUANCE`
 
 **Composed From:**
 

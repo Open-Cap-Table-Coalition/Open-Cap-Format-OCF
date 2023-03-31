@@ -7,6 +7,7 @@ interface Schema {
 
 export interface ObjectConstJson {
   const: string;
+  $comment?: string;
 }
 
 export default class ObjectConstProperty extends InlineProperty {
@@ -27,7 +28,11 @@ export default class ObjectConstProperty extends InlineProperty {
   markdownTableType = (inMdFileAtPath: string) =>
     `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.objectTypeEnumSchemaNode().mdLinkToNodesMdDocs(
       inMdFileAtPath
-    )}_`;
+    )}_ ${
+      this.json.$comment
+        ? "</br>**Comment**: __" + this.json.$comment + "__"
+        : ""
+    }`;
 
   markdownTableDescription = () => "Object type field";
 }

@@ -1,11 +1,14 @@
 import Schema from "../Schema.js";
 import SchemaNode, { SchemaNodeJson } from "./SchemaNode.js";
 import { PropertyJson } from "./Property/Factory.js";
+import { OneOfArrayJson } from "./Property/InlineProperty/OneOfArray.js";
+import { ObjectConstJson } from "./Property/InlineProperty/ObjectConst.js";
+import { OneOfJson } from "./Property/InlineProperty/OneOf.js";
 
 export interface ObjectSchemaNodeJson extends SchemaNodeJson {
   allOf: Array<{ $ref: string }>;
   properties: {
-    object_type: { const: string };
+    object_type: { const: string } | OneOfJson<ObjectConstJson>;
   } & { [key: string]: PropertyJson };
   additionalProperties: boolean;
   required?: string[];
@@ -22,10 +25,37 @@ export default class ObjectSchemaNode extends SchemaNode {
     this.json = json;
   }
 
-  protected objectType = () => this.json["properties"]["object_type"]["const"];
+  protected objectTypes = (): string[] => {
+    let object_type = this.json["properties"]["object_type"];
+    if ("oneOf" in object_type) {
+      return object_type["oneOf"].map((item) => item.const);
+    } else {
+      return [object_type["const"]];
+    }
+  };
+
+  protected objectDataTypeDescriptionBlock = (): string => {
+    let text_block = "**Data Type:** `OCF Object -";
+    let object_type_field = this.json["properties"]["object_type"];
+    if ("oneOf" in object_type_field) {
+      text_block += "Multiple Supported for Backwards Compatibility`</br>";
+      for (let i = 0; i < object_type_field["oneOf"].length; i++) {
+        let object_type_obj = object_type_field["oneOf"][i];
+        text_block += "- `" + object_type_obj["const"].toUpperCase() + "`";
+        if (object_type_obj.$comment) {
+          text_block +=
+            "\n  - ***COMMENT:*** *" + object_type_obj.$comment + "*";
+        }
+        return text_block;
+      }
+    } else {
+      text_block += "`" + object_type_field["const"].toUpperCase() + "`";
+    }
+    return text_block;
+  };
 
   protected examples = () =>
-    this.schema.findExampleItemsByObjectType(this.objectType());
+    this.schema.findExampleItemsByObjectTypes(this.objectTypes());
 
   protected markdownExamples = () =>
     this.examples().length > 0
@@ -43,7 +73,7 @@ ${JSON.stringify(this.examples(), null, 2)}
 
 **Description:** _${this.description()}_
 
-**Data Type:** \`OCF Object - ${this.objectType().toUpperCase()}\`
+${this.objectDataTypeDescriptionBlock()}
 
 **Composed From:**
 

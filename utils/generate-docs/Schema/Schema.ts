@@ -7,7 +7,6 @@ import ExamplesReader from "./ExamplesReader.js";
 import SupplementalsReader from "./SupplementalsReader.js";
 import Supplementals from "./Supplementals.js";
 import Examples, { ExampleJson } from "./Examples.js";
-import TableOfContents from "./TableOfContents.js";
 import SchemaNodeFactory, {
   SchemaNode,
   SchemaNodeJson,
@@ -69,8 +68,8 @@ export default class Schema {
     return schemaNode;
   };
 
-  findExampleItemsByObjectType = (objectType: string) =>
-    this.examples.findExampleItemsByObjectType(objectType);
+  findExampleItemsByObjectTypes = (objectTypes: string[]) =>
+    this.examples.findExampleItemsByObjectTypes(objectTypes);
 
   findSupplementalMarkdownsByShortId = (shortId: string) =>
     this.supplementals.findSupplementalMarkdownByShortId(shortId);
