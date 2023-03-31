@@ -28,11 +28,7 @@ export default class ObjectConstProperty extends InlineProperty {
   markdownTableType = (inMdFileAtPath: string) =>
     `**Constant:** \`${this.const().toUpperCase()}\`</br>_Defined in ${this.objectTypeEnumSchemaNode().mdLinkToNodesMdDocs(
       inMdFileAtPath
-    )}_ ${
-      this.json.$comment
-        ? "</br>**Comment**: __" + this.json.$comment + "__"
-        : ""
-    }`;
+    )}_ ${this.json.$comment ? "(_Comment: " + this.json.$comment + "_)" : ""}`;
 
   markdownTableDescription = () => "Object type field";
 }

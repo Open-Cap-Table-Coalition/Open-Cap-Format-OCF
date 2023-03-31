@@ -28,7 +28,7 @@
           "const": "TX_EQUITY_COMPENSATION_TRANSFER"
         }
       ],
-      "$comment": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
+      "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0"
     },
     "quantity": {
       "description": "Quantity of non-monetary security units transferred",
