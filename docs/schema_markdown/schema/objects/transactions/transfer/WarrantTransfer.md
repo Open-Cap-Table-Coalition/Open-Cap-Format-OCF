@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a transfer or secondary sale of a warrant security_
 
-**Data Type:** `OCF Object -`TX_WARRANT_TRANSFER`
+**Data Type:** `OCF Object -TX_WARRANT_TRANSFER`
 
 **Composed From:**
 

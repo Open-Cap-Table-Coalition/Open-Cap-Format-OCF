@@ -8,7 +8,7 @@
 
 **Description:** _Object describing the transaction of vesting schedule start / commencement associated with a security_
 
-**Data Type:** `OCF Object -`TX_VESTING_START`
+**Data Type:** `OCF Object -TX_VESTING_START`
 
 **Composed From:**
 

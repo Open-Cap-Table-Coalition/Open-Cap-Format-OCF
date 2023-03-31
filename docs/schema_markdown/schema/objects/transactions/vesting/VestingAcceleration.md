@@ -8,7 +8,7 @@
 
 **Description:** _Object describing an acceleration of vesting, in which additional shares vest ahead of the schedule specified in security's vesting terms._
 
-**Data Type:** `OCF Object -`TX_VESTING_ACCELERATION`
+**Data Type:** `OCF Object -TX_VESTING_ACCELERATION`
 
 **Composed From:**
 

@@ -49,7 +49,7 @@ export default class ObjectSchemaNode extends SchemaNode {
         return text_block;
       }
     } else {
-      text_block += "`" + object_type_field["const"].toUpperCase() + "`";
+      text_block += object_type_field["const"].toUpperCase() + "`";
     }
     return text_block;
   };

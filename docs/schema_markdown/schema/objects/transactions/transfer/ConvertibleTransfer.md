@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a transfer or secondary sale of a convertible security_
 
-**Data Type:** `OCF Object -`TX_CONVERTIBLE_TRANSFER`
+**Data Type:** `OCF Object -TX_CONVERTIBLE_TRANSFER`
 
 **Composed From:**
 

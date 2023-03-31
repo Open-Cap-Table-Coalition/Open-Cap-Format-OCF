@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a cancellation of a warrant security_
 
-**Data Type:** `OCF Object -`TX_WARRANT_CANCELLATION`
+**Data Type:** `OCF Object -TX_WARRANT_CANCELLATION`
 
 **Composed From:**
 

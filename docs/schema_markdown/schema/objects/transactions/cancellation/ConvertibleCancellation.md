@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a cancellation of a convertible security_
 
-**Data Type:** `OCF Object -`TX_CONVERTIBLE_CANCELLATION`
+**Data Type:** `OCF Object -TX_CONVERTIBLE_CANCELLATION`
 
 **Composed From:**
 

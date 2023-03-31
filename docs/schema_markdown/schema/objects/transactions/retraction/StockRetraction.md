@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a retraction of a stock security_
 
-**Data Type:** `OCF Object -`TX_STOCK_RETRACTION`
+**Data Type:** `OCF Object -TX_STOCK_RETRACTION`
 
 **Composed From:**
 

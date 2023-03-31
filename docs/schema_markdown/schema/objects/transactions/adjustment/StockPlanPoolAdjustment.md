@@ -8,7 +8,7 @@
 
 **Description:** _Object describing the change in the size of a Stock Plan pool._
 
-**Data Type:** `OCF Object -`TX_STOCK_PLAN_POOL_ADJUSTMENT`
+**Data Type:** `OCF Object -TX_STOCK_PLAN_POOL_ADJUSTMENT`
 
 **Composed From:**
 

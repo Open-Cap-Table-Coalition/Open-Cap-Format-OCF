@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a convertible acceptance transaction_
 
-**Data Type:** `OCF Object -`TX_CONVERTIBLE_ACCEPTANCE`
+**Data Type:** `OCF Object -TX_CONVERTIBLE_ACCEPTANCE`
 
 **Composed From:**
 

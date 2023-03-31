@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a stock issuance transaction by the issuer and held by a stakeholder_
 
-**Data Type:** `OCF Object -`TX_STOCK_ISSUANCE`
+**Data Type:** `OCF Object -TX_STOCK_ISSUANCE`
 
 **Composed From:**
 

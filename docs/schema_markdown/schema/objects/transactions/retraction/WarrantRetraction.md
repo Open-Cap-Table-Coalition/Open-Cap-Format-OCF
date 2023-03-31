@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a retraction of a warrant security_
 
-**Data Type:** `OCF Object -`TX_WARRANT_RETRACTION`
+**Data Type:** `OCF Object -TX_WARRANT_RETRACTION`
 
 **Composed From:**
 

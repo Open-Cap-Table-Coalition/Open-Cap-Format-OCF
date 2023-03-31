@@ -8,7 +8,7 @@
 
 **Description:** _Object describing a plan which stock options are issued from_
 
-**Data Type:** `OCF Object -`STOCK_PLAN`
+**Data Type:** `OCF Object -STOCK_PLAN`
 
 **Composed From:**
 
