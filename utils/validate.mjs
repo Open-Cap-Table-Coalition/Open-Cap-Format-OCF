@@ -12,6 +12,64 @@ import { resolve } from "path";
 // TODO - move action integrations into a separate file to keep validator utils clean
 import core from "@actions/core";
 
+// Constants for various URIs
+// TODO - move to separate constants file
+export const OCF_MANIFEST_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json";
+
+export const OCF_TRANSACTIONS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json";
+
+export const OCF_STAKEHOLDERS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json";
+
+export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json";
+
+export const OCF_VALUATIONS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json";
+
+export const OCF_VESTING_TERMS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json";
+
+export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json";
+
+export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json";
+
+export const URI_LOOKUP_FOR_FILE_TYPE = {
+  OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,
+  OCF_STAKEHOLDERS_FILE: OCF_STAKEHOLDERS_FILE_SCHEMA_URI,
+  OCF_STOCK_CLASSES_FILE: OCF_STOCK_CLASSES_FILE_SCHEMA_URI,
+  OCF_STOCK_LEGEND_TEMPLATES_FILE: OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI,
+  OCF_STOCK_PLANS_FILE: OCF_STOCK_PLANS_FILE_SCHEMA_URI,
+  OCF_TRANSACTIONS_FILE: OCF_TRANSACTIONS_FILE_SCHEMA_URI,
+  OCF_VALUATIONS_FILE: OCF_VALUATIONS_FILE_SCHEMA_URI,
+  OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
+};
+
+// build map of object_type to schema $id
+async function buildObjectSchemaMap(verbose = false) {
+  const schemaMap = {};
+
+  const schemaPaths = await getSchemaObjectsFilepaths();
+
+  const schema_buffers = await Promise.all(
+    schemaPaths.map((path) => readFile(path))
+  );
+
+  const schemas = schema_buffers.map((schema_buffer) => {
+    return JSON.parse(schema_buffer.toString());
+  });
+
+  schemas.forEach((schema) => {
+    schemaMap[schema.properties.object_type.const] = schema.$id;
+  });
+
+  return schemaMap;
+}
+
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 async function* getFiles(dir) {
   /**
@@ -27,6 +85,21 @@ async function* getFiles(dir) {
       yield res;
     }
   }
+}
+
+async function getSchemaObjectsFilepaths(verbose = false) {
+  /**
+   * Crawl ./schema directory from repo root and get all
+   * of the filepaths to schema files (ending in .schema.json)
+   */
+  const paths = [];
+  for await (const f of getFiles("./schema/objects")) {
+    paths.push(f);
+    if (verbose) {
+      console.log(`•\t${f}`);
+    }
+  }
+  return paths;
 }
 
 async function getSchemaFilepaths(verbose = false) {
@@ -113,22 +186,62 @@ export async function validateOcfDirectory(
         console.log(`\tOCF File Type: ${obj.file_type}`);
         console.log(`\tFile Type URI: ${uriLookupForFileType[obj.file_type]}`);
       }
-      const validator = ajv.getSchema(uriLookupForFileType[obj.file_type]);
-      const valid = validator(obj);
 
-      if (!valid) {
-        if (test)
-          core.setFailed(
-            `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
-            validator.errors
-          );
-        if (verbose) {
-          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-          console.log(validator.errors);
+      // if file is manifest, just validate against the manifest schema
+      if (obj.file_type === "OCF_MANIFEST_FILE") {
+        const validator = ajv.getSchema(
+          URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]
+        );
+        const valid = validator(obj);
+
+        if (!valid) {
+          if (test)
+            core.setFailed(
+              `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
+              validator.errors
+            );
+          if (verbose) {
+            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+            console.log(validator.errors);
+          }
+          return false;
+        } else {
+          if (verbose) console.log("\n\t** VALID OCF **");
         }
-        return false;
-      } else {
-        if (verbose) console.log("\n\t** VALID OCF **");
+        // collect the errors per file and then return them
+        // if file is not a manifest, loop through items
+        // for each item, get the object_type and then run the validator against that schema
+      } else if (obj.hasOwnProperty("items")) {
+        if (verbose) console.log("\n-->\tvalidating items:");
+
+        const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
+        for (let j = 0; j < obj.items.length; j++) {
+          let object_type = obj.items[j].object_type;
+          let object_schema_uri = objectTypeToSchemaIdMap[object_type];
+
+          if (verbose) {
+            console.dir(obj.items[j], { depth: null, colors: true });
+          }
+
+          const validator = ajv.getSchema(object_schema_uri);
+          const valid = validator(obj.items[j]);
+
+          if (!valid) {
+            if (test)
+              core.setFailed(
+                `\t** OCF file ${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
+                validator.errors
+              );
+            if (verbose) {
+              console.log(
+                `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
+              );
+              console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+              console.log(validator.errors);
+            }
+            return false;
+          }
+        }
       }
     }
     return true;
