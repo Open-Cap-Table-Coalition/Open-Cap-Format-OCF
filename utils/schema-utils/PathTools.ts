@@ -1,6 +1,6 @@
 import path from "node:path";
 
-import { repo_raw_url_root, repo_url_root } from "./Constants.js";
+import { repo_url_root } from "./Constants.js";
 
 export const schemaDirPath = path.join("__dirname", "../../schema");
 
@@ -89,20 +89,6 @@ export const relativeSchemaPathToRepoRoot = (schema_path: string) =>
  */
 export const schemaPathRelativeToRepoRoot = (schema_path: string) =>
   `/schema${schemaPathRelativeToSchemaDir(schema_path)}`;
-
-/**
- * Given the local path to the schema, return the absolute raw url to the schema file in the repo.
- * @param schema_path String -> Local path to the schema
- * @param tag String -> What branch tag should be appended to the repo root url? Lets us specify a specific version to view (main by default).
- * @returns String -> absolute raw url to the schema file in the repo corresponding to schema at schema_path
- */
-export const schemaRawUrlFromRepoPath = (
-  schema_path: string,
-  tag: string = "main"
-) =>
-  `${repo_raw_url_root}/${tag}/schema/${basenameRelativePathToSchemaDir(
-    schema_path
-  )}.schema.json`;
 
 /**
  * Given the local path to the schema, return the absolute url to the schema file in the repo.
