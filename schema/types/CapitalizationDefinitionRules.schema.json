@@ -6,35 +6,35 @@
   "type": "object",
   "properties": {
     "include_outstanding_shares": {
-      "description": "Include all outstanding share issuances in the capitalization defintion",
+      "description": "Include all outstanding share issuances in the capitalization definition",
       "type": "boolean"
     },
     "include_outstanding_options": {
-      "description": "Include all outstanding options in the capitalization defintion",
+      "description": "Include all outstanding options in the capitalization definition",
       "type": "boolean"
     },
     "include_outstanding_unissued_options": {
-      "description": "Include all outstanding options that have been reserved but have not been issued yet in the capitalization defintion",
+      "description": "Include all outstanding options that have been reserved but have not been issued yet in the capitalization definition",
       "type": "boolean"
     },
     "include_this_security": {
-      "description": "Include the shares issued for converting this security in the capitalization defintion",
+      "description": "Include the shares issued for converting this security in the capitalization definition",
       "type": "boolean"
     },
     "include_other_converting_securities": {
-      "description": "Include the shares issued for converting all other convertibles that are converted as part of the conversion event in the capitalization defintion",
+      "description": "Include the shares issued for converting all other convertibles that are converted as part of the conversion event in the capitalization definition",
       "type": "boolean"
     },
     "include_option_pool_topup_for_promised_options": {
-      "description": "Include the shares reserved for increasing option plans to cover all promised options in the capitalization defintion",
+      "description": "Include the shares reserved for increasing option plans to cover all promised options in the capitalization definition",
       "type": "boolean"
     },
     "include_additional_option_pool_topup": {
-      "description": "Include the shares reserved for increasing option plans beyond the amount needed for any promised options in the capitalization defintion",
+      "description": "Include the shares reserved for increasing option plans beyond the amount needed for any promised options in the capitalization definition",
       "type": "boolean"
     },
     "include_new_money": {
-      "description": "Include the shares issued for any new share subscriptions that are part of the conversion event in the capitalization defintion",
+      "description": "Include the shares issued for any new share subscriptions that are part of the conversion event in the capitalization definition",
       "type": "boolean"
     }
   },
