@@ -1,14 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfo.schema.json",
-  "title": "Type - Contact Info",
-  "description": "Type representation of a primary contact person for a stakeholder (e.g. a fund)",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfoWithoutName.schema.json",
+  "title": "Type - Contact Info Without Name",
+  "description": "Type representation of the contact info for an individual stakeholder",
   "type": "object",
   "properties": {
-    "name": {
-      "description": "Contact's name",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json"
-    },
     "phone_numbers": {
       "title": "Contact Info - Phone Number Array",
       "description": "Phone numbers to reach the contact at",
@@ -29,11 +25,11 @@
   "additionalProperties": false,
   "anyOf": [
     {
-    	"required": ["name","phone_numbers"]
+    	"required": ["phone_numbers"]
     },
     {
-      "required": ["name","emails"]
+      "required": ["emails"]
     }
   ],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/ContactInfo.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/ContactInfoWithoutNameSchema.schema.json"
 }
