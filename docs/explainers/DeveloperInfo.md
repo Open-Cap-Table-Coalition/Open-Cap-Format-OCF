@@ -13,6 +13,10 @@
 
 This repo requires Prettier to be run on all files. Run `npm install` to install dev dependencies and Prettier will automatically run pre-commit.
 
+### Windows Development Environment Setup
+
+Follow the step-by-step guide for setting up a [WSL development environment](https://learn.microsoft.com/en-us/windows/wsl/setup/environment?source=recommendations) and then setup the repo on WSL.
+
 ## Testing
 
 We have created npm scripts to perform various validations, such as validating the schemas themselves and our
