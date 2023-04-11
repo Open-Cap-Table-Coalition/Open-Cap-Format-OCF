@@ -63,7 +63,49 @@ async function buildObjectSchemaMap(verbose = false) {
     return JSON.parse(schema_buffer.toString());
   });
 
+  // Need to update this to handle the two options for object_type props (stll not in
+  // love with this choice, but it was required to avoid a breaking change). Where
+  // a schema has multiple potential object types for backwards compatibility,
+  // there is a mapping entry for each object type in the object_type.oneOf array
+  // for each of the const values in that array to the $id of the given schema
   schemas.forEach((schema) => {
+    let object_type = schema.properties.object_type;
+    if (
+      typeof object_type === "object" &&
+      !Array.isArray(object_type) &&
+      object_type !== null
+    ) {
+      if (object_type.const && typeof object_type.const === "string") {
+        schemaMap[object_type.const] = schema.$id;
+      } else if (object_type.oneOf && Array.isArray(object_type.oneOf)) {
+        for (const item of object_type.oneOf) {
+          if (item.const) {
+            schemaMap[item.const] = schema.$id;
+          }
+        }
+      } else {
+        if (verbose) {
+          console.error(
+            `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
+              schema,
+              null,
+              4
+            )}`
+          );
+        }
+      }
+    } else {
+      if (verbose) {
+        console.error(
+          `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
+            schema,
+            null,
+            4
+          )}`
+        );
+      }
+    }
+
     schemaMap[schema.properties.object_type.const] = schema.$id;
   });
 
