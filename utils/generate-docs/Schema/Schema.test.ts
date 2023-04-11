@@ -31,6 +31,18 @@ describe("Schema", () => {
     });
   });
 
+  describe("#findSchemaNodeBySchemaRelativeId", () => {
+    it("return the SchemaNode matching the given `partial id`", () => {
+      const schema = new Schema([FILE_SCHEMA_JSON_FIXTURE]);
+
+      const actual = schema.findSchemaNodeBySchemaRelativeId("files/test_file");
+
+      expect(actual?.id()).toEqual(
+        "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/test_file"
+      );
+    });
+  });
+
   describe("#filterSchemaNodesByParentType", () => {
     it("return the SchemaNode matching the given `id`", () => {
       const schema = new Schema([FILE_SCHEMA_JSON_FIXTURE]);

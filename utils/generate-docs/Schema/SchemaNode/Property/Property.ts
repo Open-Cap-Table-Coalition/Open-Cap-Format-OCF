@@ -1,10 +1,7 @@
 import SchemaNode from "../SchemaNode.js";
 import { InlinePropertyJson } from "./InlineProperty/Factory.js";
 import { RefPropertyJson } from "./RefProperty.js";
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
+import Schema from "./SchemaLookupInterface";
 
 export type PropertyJson = InlinePropertyJson | RefPropertyJson;
 

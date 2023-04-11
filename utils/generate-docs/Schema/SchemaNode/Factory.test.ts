@@ -20,5 +20,28 @@ describe("SchemaNodeFactory", () => {
 
       expect(actual).toEqual("files");
     });
+
+    it("can handle release $id forms", () => {
+      const releaseSchema: FileSchemaNodeJson = {
+        ...FILE_SCHEMA_JSON_FIXTURE,
+        $id: "https://schema.opencaptablecoalition.com/v/9.9.99/files/TestFile.schema.json",
+      };
+      const actual = SchemaNodeFactory.schemaTypeFromJson(releaseSchema);
+
+      expect(actual).toEqual("files");
+    });
+
+    it("can handle release candidate $id forms", () => {
+      const releaseCandidateSchema: FileSchemaNodeJson = {
+        ...FILE_SCHEMA_JSON_FIXTURE,
+        $id: "https://schema.opencaptablecoalition.com/v/9.9.99-beta1/files/TestFile.schema.json",
+      };
+
+      const actual = SchemaNodeFactory.schemaTypeFromJson(
+        releaseCandidateSchema
+      );
+
+      expect(actual).toEqual("files");
+    });
   });
 });

@@ -1,10 +1,7 @@
 import SchemaNode from "../../SchemaNode.js";
 import PropertyFactory from "../Factory.js";
 import InlineProperty from "./InlineProperty.js";
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
+import Schema from "../SchemaLookupInterface";
 
 export interface AnyOfArrayJson {
   description: string;

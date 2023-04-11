@@ -69,6 +69,21 @@ export default class Schema {
     return schemaNode;
   };
 
+  findSchemaNodeBySchemaRelativeId = (partialId: string) => {
+    const parentType = partialId.split("/")[0];
+    const candidates = this.filterSchemaNodesByParentType(parentType);
+    if (partialId === "enums/ObjectType.schema.json") {
+      console.log(parentType);
+      console.log(candidates.map((c) => c.id()).join("\n"));
+    }
+    const schemaNode = candidates.find((node) => node.id().endsWith(partialId));
+
+    if (!schemaNode) {
+      throw new Error(`Cannot find SchemaNode '.../${partialId}'`);
+    }
+    return schemaNode;
+  };
+
   findExampleItemsByObjectType = (objectType: string) =>
     this.examples.findExampleItemsByObjectType(objectType);
 

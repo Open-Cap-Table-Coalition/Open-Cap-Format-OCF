@@ -25,8 +25,13 @@ export type SchemaNodeJson =
   | TypePatternSchemaNodeJson;
 
 export default class SchemaNodeFactory {
-  static schemaTypeFromJson = (json: SchemaNodeJson) =>
-    json["$id"].slice(repo_raw_url_root.length).split("/")[3];
+  static schemaTypeFromJson = (json: SchemaNodeJson) => {
+    const id = json["$id"];
+    const splitter = id.includes("/schema/")
+      ? { indicator: "/schema/", slashIndex: 0 } // handles GitHub paths
+      : { indicator: "/v/", slashIndex: 1 }; // handles schema.opencaptablecoalition.com paths
+    return id.split(splitter.indicator)[1].split("/")[splitter.slashIndex];
+  };
 
   static isFileSchemaNodeJson = (
     json: SchemaNodeJson
