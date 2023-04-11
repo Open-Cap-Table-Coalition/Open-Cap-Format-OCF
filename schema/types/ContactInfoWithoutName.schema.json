@@ -25,7 +25,7 @@
   "additionalProperties": false,
   "anyOf": [
     {
-    	"required": ["phone_numbers"]
+      "required": ["phone_numbers"]
     },
     {
       "required": ["emails"]
