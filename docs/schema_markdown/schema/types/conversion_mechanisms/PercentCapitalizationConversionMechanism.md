@@ -12,11 +12,12 @@ _Sets forth inputs and conversion mechanism of percent of capitalization convers
 
 **Properties:**
 
-| Property                  | Type                                                       | Description                                                                                                                    | Required   |
-| ------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| type                      | **Constant:** `FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION` | Scalar Constant                                                                                                                | `REQUIRED` |
-| converts_to_percent       | [schema/types/Percentage](../Percentage.md)                | What percentage of the company capitalization does this convert to                                                             | `REQUIRED` |
-| capitalization_definition | `STRING`                                                   | How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument. | -          |
+| Property                        | Type                                                                              | Description                                                                                                                    | Required   |
+| ------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| type                            | **Constant:** `FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION`                        | Scalar Constant                                                                                                                | `REQUIRED` |
+| converts_to_percent             | [schema/types/Percentage](../Percentage.md)                                       | What percentage of the company capitalization does this convert to                                                             | `REQUIRED` |
+| capitalization_definition       | `STRING`                                                                          | How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument. | -          |
+| capitalization_definition_rules | [schema/types/CapitalizationDefinitionRules](../CapitalizationDefinitionRules.md) | The rules for which types of securities would be included in the capitalization definition.                                    | -          |
 
 **Source Code:** [schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism](../../../../../schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json)
 
