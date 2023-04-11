@@ -61,6 +61,10 @@
         "type": "string"
       }
     },
+    "issuance_type": {
+      "description": "Optional field to flag certain special types of issuances (like RSAs)",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockIssuanceType.schema.json"
+    },
     "id": {},
     "comments": {},
     "security_id": {},
