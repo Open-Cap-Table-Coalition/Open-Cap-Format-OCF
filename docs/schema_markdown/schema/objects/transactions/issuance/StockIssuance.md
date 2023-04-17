@@ -74,6 +74,8 @@
     "object_type": "TX_STOCK_ISSUANCE",
     "id": "test-stock-issuance-minimal-RSA",
     "issuance_type": "RSA",
+    "stock_plan_id": "2022-Plan",
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
     "security_id": "test-security-id",
     "date": "2022-02-01",
     "security_law_exemptions": [],
