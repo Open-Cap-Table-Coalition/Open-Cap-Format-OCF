@@ -1,9 +1,6 @@
 import Property from "./Property.js";
 import SchemaNode from "../SchemaNode.js";
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
+import Schema from "./SchemaLookupInterface";
 
 export interface RefPropertyJson {
   $ref: string;

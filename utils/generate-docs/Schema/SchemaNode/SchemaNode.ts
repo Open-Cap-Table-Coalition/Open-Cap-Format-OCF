@@ -33,8 +33,19 @@ export default abstract class SchemaNode {
 
   protected basename = () => path.basename(this.id(), ".schema.json");
 
-  protected directory = () =>
-    path.dirname(this.id().slice(`${repo_raw_url_root}/main/`.length));
+  protected directory = () => {
+    const id = this.id();
+    const splitter = id.includes("/schema/")
+      ? { indicator: "/schema/", slashIndex: 0 } // handles GitHub paths
+      : { indicator: "/v/", slashIndex: 1 }; // handles schema.opencaptablecoalition.com paths
+
+    const subpath = id
+      .split(splitter.indicator)[1]
+      .split("/")
+      .slice(splitter.slashIndex)
+      .join("/");
+    return path.dirname(`schema/${subpath}`);
+  };
 
   protected allOf = (): SchemaNode[] =>
     "allOf" in this.json && this.json["allOf"]
