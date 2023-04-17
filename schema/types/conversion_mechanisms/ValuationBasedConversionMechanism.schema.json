@@ -23,17 +23,7 @@
     },
     "conversion_timing": {
       "description": "Should the conversion amount be based on pre or post money capitalization",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTimingType.schema.json",
-      "$comment": "To be deprecated in v2.0.0"
-    },
-    "capitalization_definition": {
-      "description": "How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument.",
-      "type": "string"
-    },
-    "capitalization_definition_rules": {
-      "description": "The rules for which types of securities would be included in the capitalization definition.",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinitionRules.schema.json",
-      "$comment": "Preferred over `conversion_timing`"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTimingType.schema.json"
     }
   },
   "required": ["type"],
