@@ -2,11 +2,11 @@
 
 ---
 
-### Type - Contact Info
+### Type - Contact Info Without Name
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfo.schema.json`
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfoWithoutName.schema.json`
 
-_Type representation of a primary contact person for a stakeholder (e.g. a fund)_
+_Type representation of the contact info for an individual stakeholder_
 
 **Data Type:** `OCF TYPE`
 
@@ -14,10 +14,9 @@ _Type representation of a primary contact person for a stakeholder (e.g. a fund)
 
 | Property      | Type                                 | Description                           | Required |
 | ------------- | ------------------------------------ | ------------------------------------- | -------- |
-| name          | [schema/types/Name](./Name.md)       | Contact's name                        | -        |
 | phone_numbers | [ [schema/types/Phone](./Phone.md) ] | Phone numbers to reach the contact at | -        |
 | emails        | [ [schema/types/Email](./Email.md) ] | Emails to reach the contact at        | -        |
 
-**Source Code:** [schema/types/ContactInfo](../../../../schema/types/ContactInfo.schema.json)
+**Source Code:** [schema/types/ContactInfoWithoutName](../../../../schema/types/ContactInfoWithoutName.schema.json)
 
 Copyright © 2023 Open Cap Table Coalition.
