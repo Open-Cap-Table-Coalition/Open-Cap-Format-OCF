@@ -32,7 +32,7 @@
 | consideration_text      | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Unstructured text description of consideration provided in exchange for security issuance                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
 | security_law_exemptions | [ [schema/types/SecurityExemption](../../../types/SecurityExemption.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
 | quantity                | [schema/types/Numeric](../../../types/Numeric.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Quantity of shares the warrant is exercisable for                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
-| exercise_price          | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | The exercise price of the warrant                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
+| exercise_price          | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | The exercise price of the warrant                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | -          |
 | purchase_price          | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Actual purchase price of the warrant (sum up purported value of all consideration, including in-kind)                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
 | exercise_triggers       | **Array of Any Of Following Types/Objs:**</br>&bull; [schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger](../../../types/conversion_triggers/AutomaticConversionOnConditionTrigger.md)</br>&bull; [schema/types/conversion_triggers/AutomaticConversionOnDateTrigger](../../../types/conversion_triggers/AutomaticConversionOnDateTrigger.md)</br>&bull; [schema/types/conversion_triggers/ElectiveConversionAtWillTrigger](../../../types/conversion_triggers/ElectiveConversionAtWillTrigger.md)</br>&bull; [schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger](../../../types/conversion_triggers/ElectiveConversionInDateRangeTrigger.md)</br>&bull; [schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger](../../../types/conversion_triggers/ElectiveConversionOnConditionTrigger.md)</br>&bull; [schema/types/conversion_triggers/UnspecifiedConversionTrigger](../../../types/conversion_triggers/UnspecifiedConversionTrigger.md) | In event the Warrant can convert due to trigger events (e.g. Maturity, Next Qualified Financing, Change of Control, at Election of Holder), what are the terms?                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
 | warrant_expiration_date | [schema/types/Date](../../../types/Date.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | What is expiration date of the warrant (if applicable)                                                                                                                                                                                                                                                                                                                                                                                                                                                      | -          |
@@ -108,9 +108,61 @@
           "type": "WARRANT_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "FIXED_AMOUNT_CONVERSION",
-            "converts_to_quantity": "10000.00"
+            "converts_to_quantity": "1000.00"
           },
           "converts_to_stock_class_id": "stock-class-id"
+        }
+      }
+    ],
+    "purchase_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "exercise_price": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
+    "warrant_expiration_date": "2032-02-01"
+  },
+  {
+    "object_type": "TX_WARRANT_ISSUANCE",
+    "id": "test-valuation-based-warrant-issuance-full-fields",
+    "security_id": "test-warrant-security-id",
+    "date": "2022-02-01",
+    "security_law_exemptions": [
+      {
+        "description": "Exemption",
+        "jurisdiction": "US"
+      }
+    ],
+    "board_approval_date": "2022-02-01",
+    "stakeholder_id": "stakeholder-id",
+    "consideration_text": "1.00 USD",
+    "custom_id": "W-2",
+    "quantity": "1000",
+    "exercise_triggers": [
+      {
+        "trigger_id": "WARRANT-1.FINANCING-TRIG",
+        "nickname": "Exercised at next financing",
+        "trigger_description": "The warrant automatically exercises at the next financing with conversion amount determined by the valuation in the financing.",
+        "type": "AUTOMATIC_ON_CONDITION",
+        "trigger_condition": "This warrant will be automatically exercised upon the closing of the Company's next preferred equity financing with total proceeds in excessof $100,000,000.00",
+        "conversion_right": {
+          "type": "WARRANT_CONVERSION_RIGHT",
+          "conversion_mechanism": {
+            "type": "VALUATION_BASED_CONVERSION",
+            "conversion_discount": "0.125",
+            "conversion_valuation_cap": {
+              "amount": "1000000000.00",
+              "currency": "USD"
+            }
+          },
+          "converts_to_future_round": true
         }
       }
     ],
