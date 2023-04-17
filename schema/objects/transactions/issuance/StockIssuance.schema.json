@@ -26,6 +26,10 @@
       "description": "Identifier of the stock class for this stock issuance",
       "type": "string"
     },
+    "stock_plan_id": {
+      "description": "Identifier of StockPlan the Stock was issued from (in the case of RSAs or Stock issued from a plan).",
+      "type": "string"
+    },
     "share_numbers_issued": {
       "description": "Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, *which* specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.",
       "type": "array",
@@ -56,6 +60,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "issuance_type": {
+      "description": "Optional field to flag certain special types of issuances (like RSAs)",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockIssuanceType.schema.json"
     },
     "id": {},
     "comments": {},
