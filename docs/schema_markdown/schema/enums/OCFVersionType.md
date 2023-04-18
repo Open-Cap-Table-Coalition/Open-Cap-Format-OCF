@@ -8,7 +8,7 @@
 
 **Description:** _Enumeration of recognized OCF versions_
 
-**ONE OF:**</br>&bull; 1.0.0-a3 </br>&bull; 1.0.0-b1 </br>&bull; 1.0.0-b2 </br>&bull; 1.0.0-b3 </br>&bull; 1.0.0
+**ONE OF:**</br>&bull; 1.0.1-alpha+main </br>&bull; ~~~ SAMPLE ~~~
 
 **Source Code:** [schema/enums/OCFVersionType](../../../../schema/enums/OCFVersionType.schema.json)
 
