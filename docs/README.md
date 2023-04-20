@@ -8,7 +8,11 @@ OCF (or **O**pen **C**ap Table **F**ormat) is an open source data standard for c
 
 OCF is a JSON-based format, wherein individual objects required to describe a company cap table are stored in JSONs that match our OCF JSON Schemas. Our reference implementation suggests storing these JSONs in a specific set of files in a zip archive, but OCF-compatible data could be provided via API as well. Please see our documentation for more details on JSON Schema, OCF's schemas or how to use them.
 
-Check out some of past announcements related to OCF and the Coalition on our [Medium Page](https://medium.com/@opencaptable).
+|                                              Useful links |                                                              |
+| --------------------------------------------------------: | ------------------------------------------------------------ |
+| [Primary Website](https://www.opencaptablecoalition.com/) | Sharable landing site for OCF and the Coalition              |
+|           [Medium Page](https://medium.com/@opencaptable) | Past announcements related to OCF and the Coalition          |
+|                          [PROJECTS.md](/docs/PROJECTS.md) | Collection of public projects in the OCF ecosystem listed in |
 
 ## Documentation
 
