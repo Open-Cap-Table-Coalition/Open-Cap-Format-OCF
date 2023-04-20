@@ -28,7 +28,7 @@
     },
     "quantity_source": {
       "description": "If quantity is provided, use this to specify where the number came from - e.g. was it a fixed value from the instrument (`INSTRUMENT_FIXED`), a user estimate (`USER_ESTIMATED`), etc. If quantity is provided and this field is not, this is assumed to be `UNSPECIFIED`",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/QuantityType.schema.json",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/QuantitySourceType.schema.json",
       "default": "UNSPECIFIED"
     },
     "exercise_price": {
