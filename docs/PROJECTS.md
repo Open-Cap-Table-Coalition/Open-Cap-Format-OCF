@@ -2,15 +2,21 @@
 
 Publicly available projects or initiatives that work with OCF can be listed here. As OCF is still new, this list is very small. If you have or know of something to add, please open a PR to add it here!
 
-## Contract Express Exporter
+## Existing Projects
 
-@JSv4 is working on OCF export functionality for Incorporation Documents managed in [Contract Express](https://www.thomsonreuters.ca/en/contract-express.html.html), a document and contract automation solution from Thomson Reuters.
+### Contract Express Exporter
 
-## Formal Validation for OCF
+Gunderson Dettmer and @JSv4 are working on OCF export functionality for Incorporation Documents managed in [Contract Express](https://www.thomsonreuters.ca/en/contract-express.html.html), a document and contract automation solution from Thomson Reuters.
+
+### Formal Validation for OCF
 
 @roehst is working on a [formal specification](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/discussions/278#discussioncomment-3916016) of the OCF format, which will help verify the integrity of cap table exports and validate correctness of new OCF projects.
 
-# Project Ideas
+### PyOCF Python Bindings
+
+Shoobx and @regebro are working on PyOCF, a Python library to read and create Open Cap Table Format files. Check it out [here](https://github.com/Shoobx/pyocf).
+
+## New Project Ideas
 
 Here are a few project ideas if you want to contribute to the OCF ecosystem:
 
