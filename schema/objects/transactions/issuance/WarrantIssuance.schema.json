@@ -26,6 +26,11 @@
       "description": "Quantity of shares the warrant is exercisable for",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
+    "quantity_source": {
+      "description": "If quantity is provided, use this to specify where the number came from - e.g. was it a fixed value from the instrument (`INSTRUMENT_FIXED`), a user estimate (`USER_ESTIMATED`), etc. If quantity is provided and this field is not, this is assumed to be `UNSPECIFIED`",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/QuantityType.schema.json",
+      "default": "UNSPECIFIED"
+    },
     "exercise_price": {
       "description": "The exercise price of the warrant",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
@@ -81,6 +86,6 @@
     "security_law_exemptions": {}
   },
   "additionalProperties": false,
-  "required": ["quantity", "exercise_triggers", "purchase_price"],
+  "required": ["exercise_triggers", "purchase_price"],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/WarrantIssuance.schema.json"
 }
