@@ -8,7 +8,7 @@ import { OneOfJson } from "./Property/InlineProperty/OneOf.js";
 export interface ObjectSchemaNodeJson extends SchemaNodeJson {
   allOf: Array<{ $ref: string }>;
   properties: {
-    object_type: { const: string } | OneOfJson<ObjectConstJson>;
+    object_type: { const: string } | { enum: string[] };
   } & { [key: string]: PropertyJson };
   additionalProperties: boolean;
   required?: string[];
@@ -27,8 +27,8 @@ export default class ObjectSchemaNode extends SchemaNode {
 
   protected objectTypes = (): string[] => {
     let object_type = this.json["properties"]["object_type"];
-    if ("oneOf" in object_type) {
-      return object_type["oneOf"].map((item) => item.const);
+    if ("enum" in object_type) {
+      return object_type["enum"];
     } else {
       return [object_type["const"]];
     }
@@ -37,14 +37,12 @@ export default class ObjectSchemaNode extends SchemaNode {
   protected objectDataTypeDescriptionBlock = (): string => {
     let text_block = "**Data Type:** `";
     let object_type_field = this.json["properties"]["object_type"];
-    if ("oneOf" in object_type_field) {
-      text_block += "Multiple Supported for Backwards Compatibility`";
-      for (let i = 0; i < object_type_field["oneOf"].length; i++) {
-        let object_type_obj = object_type_field["oneOf"][i];
+    if ("enum" in object_type_field) {
+      text_block += "`Includes Backwards Compatibility Alias(es)`";
+      for (let i = 0; i < object_type_field["enum"].length; i++) {
+        let object_type_obj = object_type_field["enum"][i];
         text_block +=
-          "</br>- `OCF Object - " +
-          object_type_obj["const"].toUpperCase() +
-          "`";
+          "</br>- `OCF Object - " + object_type_obj.toUpperCase() + "`";
       }
       return text_block;
     } else {

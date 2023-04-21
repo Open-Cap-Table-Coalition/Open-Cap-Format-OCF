@@ -14,6 +14,9 @@ import TypePatternSchemaNode, {
 } from "./TypePattern.js";
 export { default as SchemaNode } from "./SchemaNode.js";
 import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
+import BackwardsCompatibleSchemaNode, {
+  BackwardsCompatibleObjectSchemaNodeJson,
+} from "./BackwardsCompatibleObjectSchemaNode.js";
 
 export type SchemaNodeJson =
   | FileSchemaNodeJson
@@ -22,7 +25,8 @@ export type SchemaNodeJson =
   | PrimitiveSchemaNodeJson
   | TypeObjectSchemaNodeJson
   | TypeFormatSchemaNodeJson
-  | TypePatternSchemaNodeJson;
+  | TypePatternSchemaNodeJson
+  | BackwardsCompatibleObjectSchemaNodeJson;
 
 export default class SchemaNodeFactory {
   static schemaTypeFromJson = (json: SchemaNodeJson) =>
@@ -52,7 +56,18 @@ export default class SchemaNodeFactory {
     json: SchemaNodeJson
   ): json is TypeObjectSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" &&
-    json["type"] === "object";
+    "type" in json &&
+    json.type === "object";
+
+  static isCompatiblityWrapperSchemaNodeJson = (
+    json: SchemaNodeJson
+  ): json is BackwardsCompatibleObjectSchemaNodeJson =>
+    SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
+    "allOf" in json &&
+    Array.isArray(json["allOf"]) &&
+    json["allOf"].length === 1 &&
+    "$ref" in json["allOf"][0] &&
+    !("properties" in json);
 
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
@@ -65,6 +80,8 @@ export default class SchemaNodeFactory {
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
   static build = (schema: Schema, json: SchemaNodeJson) => {
+    if (SchemaNodeFactory.isCompatiblityWrapperSchemaNodeJson(json))
+      return new BackwardsCompatibleSchemaNode(schema, json);
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))
       return new FileSchemaNode(schema, json);
     if (SchemaNodeFactory.isEnumSchemaNodeJson(json))

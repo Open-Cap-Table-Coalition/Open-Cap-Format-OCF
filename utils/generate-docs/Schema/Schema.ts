@@ -1,5 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 import SchemaReader from "./SchemaReader.js";
 import SchemaWriter from "./SchemaWriter.js";
@@ -53,14 +54,39 @@ export default class Schema {
     exampleJsons: ExampleJson[] = [],
     supplementalMarkdowns: string[] = []
   ) {
-    this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
-      SchemaNodeFactory.build(this, json)
-    );
-    this.examples = new Examples(exampleJsons);
-    this.supplementals = new Supplementals(supplementalMarkdowns);
+    this.schemaNodes = [];
+    this.examples = new Examples([]);
+    this.supplementals = new Supplementals([]);
+    try {
+      const filePath = "/home/jman/JSONDump/file.json";
+      fs.writeFile(filePath, JSON.stringify(schemaNodeJsons), (err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log("File has been saved successfully.");
+        }
+      });
+
+      console.log("Build a schema object...");
+      console.log("schemaNodeJsons", schemaNodeJsons.length);
+      this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) => {
+        console.log("json", json);
+        return SchemaNodeFactory.build(this, json);
+      });
+      console.log("SchemaNodes: ", this.schemaNodes.length);
+      this.examples = new Examples(exampleJsons);
+      this.supplementals = new Supplementals(supplementalMarkdowns);
+    } catch (e) {
+      console.error("Error building schema object", e);
+    }
   }
 
   findSchemaNodeById = (id: string) => {
+    console.log("Find schema node by id", id);
+    console.log(
+      "Existing nodes: ",
+      this.schemaNodes.map((node) => node.id())
+    );
     const schemaNode = this.schemaNodes.find((node) => node.id() === id);
     if (!schemaNode) {
       throw new Error(`Cannot find SchemaNode '${id}'`);

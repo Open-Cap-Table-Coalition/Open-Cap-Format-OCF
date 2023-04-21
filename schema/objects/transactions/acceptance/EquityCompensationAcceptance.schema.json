@@ -20,13 +20,9 @@
   ],
   "properties": {
     "object_type": {
-      "oneOf": [
-        {
-          "const": "TX_PLAN_SECURITY_ACCEPTANCE"
-        },
-        {
-          "const": "TX_EQUITY_COMPENSATION_ACCEPTANCE"
-        }
+      "enum": [
+        "TX_PLAN_SECURITY_ACCEPTANCE",
+        "TX_EQUITY_COMPENSATION_ACCEPTANCE"
       ],
       "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_ACCEPTANCE` will be deprecated in v2.0.0"
     },

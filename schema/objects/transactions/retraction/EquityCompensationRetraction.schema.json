@@ -20,13 +20,9 @@
   ],
   "properties": {
     "object_type": {
-      "oneOf": [
-        {
-          "const": "TX_PLAN_SECURITY_RETRACTION"
-        },
-        {
-          "const": "TX_EQUITY_COMPENSATION_RETRACTION"
-        }
+      "enum": [
+        "TX_PLAN_SECURITY_RETRACTION",
+        "TX_EQUITY_COMPENSATION_RETRACTION"
       ],
       "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_RETRACTION` will be deprecated in v2.0.0"
     },

@@ -1,84 +1,72 @@
 import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
-import { markdownTable } from "markdown-table";
 import { format } from "date-fns";
 
 import Schema from "../Schema.js";
-import PropertyFactory, { PropertyJson } from "./Property/Factory.js";
+import { PropertyJson } from "./Property/Factory.js";
 import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
+import SchemaNode from "./SchemaNode.js";
+import ObjectSchemaNode from "./Object.js";
 
-export interface SchemaNodeJson {
+export interface BackwardsCompatibleObjectSchemaNodeJson {
   $id: string;
   title: string;
   description: string;
-  type?: string;
-  properties?: { [id: string]: PropertyJson };
-  required?: string[];
-  allOf?: Array<{ $ref: string }>;
+  allOf: {
+    $ref: string;
+  }[];
 }
 
 /**
  * Abstract class for any schema node. Houses useful, shared behavior.
  */
-export default abstract class SchemaNode {
-  protected readonly schema: Schema;
-  protected readonly json: SchemaNodeJson;
+export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
+  protected readonly replacementSchemaId: string;
 
-  constructor(schema: Schema, json: SchemaNodeJson) {
-    this.schema = schema;
-    this.json = json;
+  constructor(schema: Schema, json: BackwardsCompatibleObjectSchemaNodeJson) {
+    super(schema, json);
+
+    if (this.json && this.json.allOf && this.json.allOf.length > 0) {
+      this.replacementSchemaId = this.json.allOf[0]["$ref"];
+    } else {
+      throw new Error(
+        "BackwardsCompatibleObjectSchemaNode must have an allOf array with at least 1 elements."
+      );
+    }
   }
 
-  type = () => (this.json?.type ? this.json.type : "DOC GENERATOR ERROR");
+  type = () => {
+    return this.schema.findSchemaNodeById(this.replacementSchemaId).type();
+  };
 
   protected basename = () => path.basename(this.id(), ".schema.json");
 
   protected directory = () =>
     path.dirname(this.id().slice(`${repo_raw_url_root}/main/`.length));
 
-  protected allOf = (): SchemaNode[] =>
-    "allOf" in this.json && this.json["allOf"]
-      ? this.json["allOf"].map((schemaNodeRefJson) =>
-          this.schema.findSchemaNodeById(schemaNodeRefJson["$ref"])
-        )
-      : [];
+  protected allOf = (): SchemaNode[] => [];
 
-  protected allOfMarkdown = (): string =>
-    this.allOf()
-      .map(
-        (schemaNode) =>
-          `- ${schemaNode.mdLinkToNodesMdDocs(this.outputFileAbsolutePath())}`
-      )
-      .join("\n");
+  protected allOfMarkdown = (): string => "";
 
   /**
    * Only those properties that are defined directly in the JSON (as opposed to
    * those that are left blank and meant to be inherited from the allOf array).
    */
-  protected directProperties = () =>
-    Object.fromEntries(
-      Object.entries(this.json["properties"] || {}).filter(
-        ([_id, json]) => Object.keys(json).length > 0
-      )
-    );
+  protected directProperties = () => {
+    return {};
+  };
 
-  protected allOfPropertiesJson = (): { [id: string]: PropertyJson } =>
-    this.allOf().reduce(
-      (previousPropertiesJson, schemaNode) => ({
-        ...previousPropertiesJson,
-        ...schemaNode.propertiesJson(),
-      }),
-      {}
-    );
+  protected allOfPropertiesJson = (): { [id: string]: PropertyJson } => {
+    return {};
+  };
 
   protected markdownExamples = (): string | null => null;
 
-  protected supplementalMarkdowns = (): string[] =>
-    this.schema.findSupplementalMarkdownsByShortId(this.shortId());
-
-  rawJson = () => this.json;
+  protected supplementalMarkdowns = (): string[] => [];
 
   id = () => this.json["$id"];
+
+  rawJson = () => this.json;
 
   parentType = () => this.shortId().split("/")[1];
 
@@ -114,20 +102,13 @@ export default abstract class SchemaNode {
       relative_to_absolute_path
     )}/${this.basename()}.md`;
 
-  propertiesJson = () => this.json["properties"];
+  propertiesJson = () => {
+    return {};
+  };
 
-  properties = () =>
-    Object.entries({
-      ...this.allOfPropertiesJson(),
-      ...this.directProperties(),
-    }).map(([id, json]: [string, PropertyJson]) =>
-      PropertyFactory.build(this.schema, json, id)
-    );
+  properties = () => [];
 
-  required = (): string[] => [
-    ...(this.json["required"] || []),
-    ...this.allOf().flatMap((schemaNode) => schemaNode.required()),
-  ];
+  required = (): string[] => [];
 
   markdownHeader =
     () => `:house: [Documentation Home](${relativePathToOtherPath(
@@ -159,18 +140,9 @@ export default abstract class SchemaNode {
 
   markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
-  markdownPropertiesTable = () =>
-    markdownTable([
-      ["Property", "Type", "Description", "Required"],
-      ...this.properties().map((property) => [
-        property.id(),
-        property.markdownTableType(this.outputFileAbsolutePath()),
-        property.markdownTableDescription(),
-        this.required().includes(property.id()) ? "`REQUIRED`" : "-",
-      ]),
-    ]);
+  markdownPropertiesTable = () => "";
 
-  abstract markdownOutput(): string;
+  markdownOutput = () => "";
 
   mdLinkToSourceSchema = () =>
     `[${this.shortId()}](${this.relativePathToSource()})`;

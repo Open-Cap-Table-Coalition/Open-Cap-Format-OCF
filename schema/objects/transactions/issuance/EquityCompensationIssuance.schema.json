@@ -20,19 +20,18 @@
   ],
   "properties": {
     "object_type": {
-      "oneOf": [
-        {
-          "const": "TX_PLAN_SECURITY_ISSUANCE"
-        },
-        {
-          "const": "TX_EQUITY_COMPENSATION_ISSUANCE"
-        }
-      ],
+      "enum": ["TX_PLAN_SECURITY_ISSUANCE", "TX_EQUITY_COMPENSATION_ISSUANCE"],
       "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_ISSUANCE` will be deprecated in v2.0.0"
     },
     "stock_plan_id": {
       "description": "If the equity compensation was issued from a plan (don't forget, plan-less options are a thing), what is the plan id.",
-      "type": "string"
+      "type": "string",
+      "$comment": "If this is provided, stock_class_id cannot be set due to the oneOf below"
+    },
+    "stock_class_id": {
+      "description": "If the equity compensation was NOT issued from a plan (don't forget, plan-less options are a thing), we need to know what underlying stock class it converts to.",
+      "type": "string",
+      "$comment": "If this is provided, stock_plan_id cannot be set due to the oneOf below"
     },
     "compensation_type": {
       "description": "If the plan security is compensation, what kind?",
@@ -141,6 +140,22 @@
       },
       "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Stock appreciation rights have grant prices.",
       "required": ["base_price"]
+    }
+  ],
+  "oneOf": [
+    {
+      "required": ["stock_class_id"],
+      "not": {
+        "required": ["stock_plan_id"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_id is present, stock_plan_id cannot be present"
+    },
+    {
+      "required": ["stock_plan_id"],
+      "not": {
+        "required": ["stock_class_id"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_plan_id is present, stock_class_id cannot be present"
     }
   ],
   "additionalProperties": false,

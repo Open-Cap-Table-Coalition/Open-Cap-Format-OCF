@@ -20,14 +20,7 @@
   ],
   "properties": {
     "object_type": {
-      "oneOf": [
-        {
-          "const": "TX_PLAN_SECURITY_TRANSFER"
-        },
-        {
-          "const": "TX_EQUITY_COMPENSATION_TRANSFER"
-        }
-      ],
+      "enum": ["TX_PLAN_SECURITY_TRANSFER", "TX_EQUITY_COMPENSATION_TRANSFER"],
       "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_TRANSFER` will be deprecated in v2.0.0"
     },
     "quantity": {

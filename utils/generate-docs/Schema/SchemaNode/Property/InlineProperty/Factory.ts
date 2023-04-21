@@ -51,7 +51,7 @@ export default class InlinePropertyFactory {
 
   static isObjectConstJson = (
     json: InlinePropertyJson
-  ): json is ObjectConstJson => "const" in json;
+  ): json is ObjectConstJson => "const" in json || "enum" in json;
 
   static isIntegerJson = (json: InlinePropertyJson): json is IntegerJson =>
     "type" in json && json["type"] === "integer";
