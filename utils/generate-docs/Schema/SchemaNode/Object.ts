@@ -1,9 +1,6 @@
 import Schema from "../Schema.js";
 import SchemaNode, { SchemaNodeJson } from "./SchemaNode.js";
 import { PropertyJson } from "./Property/Factory.js";
-import { OneOfArrayJson } from "./Property/InlineProperty/OneOfArray.js";
-import { ObjectConstJson } from "./Property/InlineProperty/ObjectConst.js";
-import { OneOfJson } from "./Property/InlineProperty/OneOf.js";
 
 export interface ObjectSchemaNodeJson extends SchemaNodeJson {
   allOf: Array<{ $ref: string }>;

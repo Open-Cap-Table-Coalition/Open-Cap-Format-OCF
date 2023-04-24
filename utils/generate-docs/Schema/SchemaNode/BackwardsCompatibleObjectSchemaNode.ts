@@ -6,7 +6,6 @@ import Schema from "../Schema.js";
 import { PropertyJson } from "./Property/Factory.js";
 import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 import SchemaNode from "./SchemaNode.js";
-import ObjectSchemaNode from "./Object.js";
 
 export interface BackwardsCompatibleObjectSchemaNodeJson {
   $id: string;
@@ -15,6 +14,9 @@ export interface BackwardsCompatibleObjectSchemaNodeJson {
   allOf: {
     $ref: string;
   }[];
+  properties: {
+    object_type: { const: string };
+  };
 }
 
 /**
@@ -36,7 +38,13 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
   }
 
   type = () => {
-    return this.schema.findSchemaNodeById(this.replacementSchemaId).type();
+    let parentSchemaId = this.replacementSchemaId;
+    let parentSchema = this.schema.findSchemaNodeById(parentSchemaId);
+    let parentSchemaType = parentSchema.type();
+    console.log(
+      `Get parent type for ${this.json["$id"]}: ${parentSchemaId} - type ${parentSchemaType}`
+    );
+    return parentSchemaType;
   };
 
   protected basename = () => path.basename(this.id(), ".schema.json");
@@ -88,6 +96,16 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
    */
   sourceSchemaAbsolutePath = () => `${this.shortId()}.schema.json`;
 
+  protected objectDataTypeDescriptionBlock = (): string => {
+    let text_block = "**Data Type:** `";
+    let object_type_field = (
+      this.json as BackwardsCompatibleObjectSchemaNodeJson
+    ).properties.object_type;
+    text_block +=
+      "OCF Object - " + object_type_field["const"].toUpperCase() + "`";
+    return text_block;
+  };
+
   // schema/primitives/types/conversion_rights/ConversionRight.schema.json
   // docs/markdown/INDEX.md
   relativePathToSource = () =>
@@ -101,6 +119,14 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
       this.outputFileAbsolutePath(),
       relative_to_absolute_path
     )}/${this.basename()}.md`;
+
+  relativeLinkToParent = () => {
+    let parent = this.schema.findSchemaNodeById(this.replacementSchemaId);
+    let path_to_parent = parent.relativePathToOutputDocumentation(
+      this.outputFileAbsolutePath()
+    );
+    return `[${parent.shortId()}](${path_to_parent})`;
+  };
 
   propertiesJson = () => {
     return {};
@@ -135,14 +161,23 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
       .filter(Boolean)
       .join("\n\n") + "\n";
 
-  markdownTableType = (in_markdown_file_path: string) =>
-    `\`${this.type().toUpperCase()}\``;
+  markdownTableType = () => `\`${this.type().toUpperCase()}\``;
 
   markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
   markdownPropertiesTable = () => "";
 
-  markdownOutput = () => "";
+  markdownOutput = () => `${this.markdownHeader()}
+
+  **Description:** _${this.description()}_
+  
+  ${this.objectDataTypeDescriptionBlock()}
+  
+  **Compatiblity Wrapper For:** ${this.relativeLinkToParent()}
+  
+  ${this.allOfMarkdown()}
+      
+  ${this.markdownFooter()}`;
 
   mdLinkToSourceSchema = () =>
     `[${this.shortId()}](${this.relativePathToSource()})`;

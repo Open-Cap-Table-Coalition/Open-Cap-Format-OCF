@@ -6,5 +6,13 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/EquityCompensationAcceptance.schema.json"
     }
   ],
+  "title": "Object - Plan Security Acceptance",
+  "description": "An object that represents a plan security acceptance transaction, which is just a compatibility wrapper for an Equity Compensation Acceptance.",
+  "properties": {
+    "object_type": {
+      "const": "TX_PLAN_SECURITY_ACCEPTANCE",
+      "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_ACCEPTANCE` will be deprecated in v2.0.0"
+    }
+  },
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json"
 }

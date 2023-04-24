@@ -67,13 +67,9 @@ export default class Schema {
         }
       });
 
-      console.log("Build a schema object...");
-      console.log("schemaNodeJsons", schemaNodeJsons.length);
-      this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) => {
-        console.log("json", json);
-        return SchemaNodeFactory.build(this, json);
-      });
-      console.log("SchemaNodes: ", this.schemaNodes.length);
+      this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
+        SchemaNodeFactory.build(this, json)
+      );
       this.examples = new Examples(exampleJsons);
       this.supplementals = new Supplementals(supplementalMarkdowns);
     } catch (e) {
@@ -82,11 +78,6 @@ export default class Schema {
   }
 
   findSchemaNodeById = (id: string) => {
-    console.log("Find schema node by id", id);
-    console.log(
-      "Existing nodes: ",
-      this.schemaNodes.map((node) => node.id())
-    );
     const schemaNode = this.schemaNodes.find((node) => node.id() === id);
     if (!schemaNode) {
       throw new Error(`Cannot find SchemaNode '${id}'`);

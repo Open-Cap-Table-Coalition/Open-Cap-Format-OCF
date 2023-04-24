@@ -28,6 +28,39 @@ export type SchemaNodeJson =
   | TypePatternSchemaNodeJson
   | BackwardsCompatibleObjectSchemaNodeJson;
 
+function isBackwardsCompatibleJson(obj: Record<string, any>): boolean {
+  if (!obj || typeof obj !== "object") {
+    return false;
+  }
+
+  const properties = obj.properties;
+  if (!properties || typeof properties !== "object") {
+    return false;
+  }
+
+  const keys = Object.keys(properties);
+  if (keys.length !== 1) {
+    return false;
+  }
+
+  const objectType = properties.object_type;
+  if (!objectType || typeof objectType !== "object") {
+    return false;
+  }
+
+  const allOf = obj.allOf;
+  if (!Array.isArray(allOf) || allOf.length !== 1) {
+    return false;
+  }
+
+  const ref = allOf[0].$ref;
+  if (!ref || typeof ref !== "string") {
+    return false;
+  }
+
+  return true;
+}
+
 export default class SchemaNodeFactory {
   static schemaTypeFromJson = (json: SchemaNodeJson) =>
     json["$id"].slice(repo_raw_url_root.length).split("/")[3];
@@ -63,11 +96,7 @@ export default class SchemaNodeFactory {
     json: SchemaNodeJson
   ): json is BackwardsCompatibleObjectSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
-    "allOf" in json &&
-    Array.isArray(json["allOf"]) &&
-    json["allOf"].length === 1 &&
-    "$ref" in json["allOf"][0] &&
-    !("properties" in json);
+    isBackwardsCompatibleJson(json);
 
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
