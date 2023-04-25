@@ -11,8 +11,8 @@
   ],
   "properties": {
     "ocf_version": {
-      "description": "OCF Version Identifier",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OCFVersionType.schema.json"
+      "description": "OCF Version Identifier -- the current semantic version (https://semver.org/spec/v2.0.0.html)",
+      "const": "1.0.1-alpha+main"
     },
     "file_type": {
       "const": "OCF_MANIFEST_FILE"
