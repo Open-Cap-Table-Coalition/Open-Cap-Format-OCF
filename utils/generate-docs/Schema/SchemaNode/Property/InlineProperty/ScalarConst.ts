@@ -4,6 +4,7 @@ import Schema from "../SchemaLookupInterface";
 
 export interface ScalarConstJson {
   const: string | number | boolean;
+  description?: string;
 }
 
 export default class ScalarConstProperty extends InlineProperty {
@@ -16,8 +17,7 @@ export default class ScalarConstProperty extends InlineProperty {
 
   protected const = () => this.json["const"];
 
-  markdownTableType = () =>
-    `**Constant:** \`${String(this.const()).toUpperCase()}\``;
+  markdownTableType = () => `**Constant:** \`${String(this.const())}\``;
 
-  markdownTableDescription = () => "Scalar Constant";
+  markdownTableDescription = () => this.json.description ?? "Scalar Constant";
 }
