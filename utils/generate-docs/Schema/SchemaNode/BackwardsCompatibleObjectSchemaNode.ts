@@ -37,15 +37,7 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
     }
   }
 
-  type = () => {
-    let parentSchemaId = this.replacementSchemaId;
-    let parentSchema = this.schema.findSchemaNodeById(parentSchemaId);
-    let parentSchemaType = parentSchema.type();
-    console.log(
-      `Get parent type for ${this.json["$id"]}: ${parentSchemaId} - type ${parentSchemaType}`
-    );
-    return parentSchemaType;
-  };
+  type = () => this.schema.findSchemaNodeById(this.replacementSchemaId).type();
 
   protected basename = () => path.basename(this.id(), ".schema.json");
 
@@ -106,8 +98,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
     return text_block;
   };
 
-  // schema/primitives/types/conversion_rights/ConversionRight.schema.json
-  // docs/markdown/INDEX.md
   relativePathToSource = () =>
     `${relativePathToOtherPath(
       this.sourceSchemaAbsolutePath(),
@@ -127,14 +117,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
     );
     return `[${parent.shortId()}](${path_to_parent})`;
   };
-
-  propertiesJson = () => {
-    return {};
-  };
-
-  properties = () => [];
-
-  required = (): string[] => [];
 
   markdownHeader =
     () => `:house: [Documentation Home](${relativePathToOtherPath(
@@ -165,8 +147,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
 
   markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
-  markdownPropertiesTable = () => "";
-
   markdownOutput = () => `${this.markdownHeader()}
 
   **Description:** _${this.description()}_
@@ -175,8 +155,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
   
   **Compatiblity Wrapper For:** ${this.relativeLinkToParent()}
   
-  ${this.allOfMarkdown()}
-      
   ${this.markdownFooter()}`;
 
   mdLinkToSourceSchema = () =>

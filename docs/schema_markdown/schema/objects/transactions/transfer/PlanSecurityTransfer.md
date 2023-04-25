@@ -12,8 +12,6 @@
   
   **Compatiblity Wrapper For:** [schema/objects/transactions/transfer/EquityCompensationTransfer](./EquityCompensationTransfer.md)
   
-  
-      
   **Source Code:** [schema/objects/transactions/transfer/PlanSecurityTransfer](../../../../../../schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json)
 
 Copyright © 2023 Open Cap Table Coalition.

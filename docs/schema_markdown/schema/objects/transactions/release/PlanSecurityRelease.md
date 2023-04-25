@@ -12,8 +12,6 @@
   
   **Compatiblity Wrapper For:** [schema/objects/transactions/release/EquityCompensationRelease](./EquityCompensationRelease.md)
   
-  
-      
   **Source Code:** [schema/objects/transactions/release/PlanSecurityRelease](../../../../../../schema/objects/transactions/release/PlanSecurityRelease.schema.json)
 
 Copyright © 2023 Open Cap Table Coalition.

@@ -1,6 +1,5 @@
 import path from "node:path";
 import { fileURLToPath } from "url";
-import fs from "fs";
 
 import SchemaReader from "./SchemaReader.js";
 import SchemaWriter from "./SchemaWriter.js";
@@ -54,27 +53,11 @@ export default class Schema {
     exampleJsons: ExampleJson[] = [],
     supplementalMarkdowns: string[] = []
   ) {
-    this.schemaNodes = [];
-    this.examples = new Examples([]);
-    this.supplementals = new Supplementals([]);
-    try {
-      const filePath = "/home/jman/JSONDump/file.json";
-      fs.writeFile(filePath, JSON.stringify(schemaNodeJsons), (err) => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log("File has been saved successfully.");
-        }
-      });
-
-      this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
-        SchemaNodeFactory.build(this, json)
-      );
-      this.examples = new Examples(exampleJsons);
-      this.supplementals = new Supplementals(supplementalMarkdowns);
-    } catch (e) {
-      console.error("Error building schema object", e);
-    }
+    this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
+      SchemaNodeFactory.build(this, json)
+    );
+    this.examples = new Examples(exampleJsons);
+    this.supplementals = new Supplementals(supplementalMarkdowns);
   }
 
   findSchemaNodeById = (id: string) => {

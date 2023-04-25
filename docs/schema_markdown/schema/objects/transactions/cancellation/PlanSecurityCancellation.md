@@ -12,8 +12,6 @@
   
   **Compatiblity Wrapper For:** [schema/objects/transactions/cancellation/EquityCompensationCancellation](./EquityCompensationCancellation.md)
   
-  
-      
   **Source Code:** [schema/objects/transactions/cancellation/PlanSecurityCancellation](../../../../../../schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json)
 
 Copyright © 2023 Open Cap Table Coalition.

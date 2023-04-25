@@ -12,8 +12,6 @@
   
   **Compatiblity Wrapper For:** [schema/objects/transactions/exercise/EquityCompensationExercise](./EquityCompensationExercise.md)
   
-  
-      
   **Source Code:** [schema/objects/transactions/exercise/PlanSecurityExercise](../../../../../../schema/objects/transactions/exercise/PlanSecurityExercise.schema.json)
 
 Copyright © 2023 Open Cap Table Coalition.
