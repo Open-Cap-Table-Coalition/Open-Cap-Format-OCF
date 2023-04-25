@@ -279,7 +279,6 @@ export async function validateOcfDirectory(
         if (verbose) console.log("\n-->\tvalidating items:");
 
         const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
-        console.log("objectTypeToSchemaIdMap", objectTypeToSchemaIdMap);
         for (let j = 0; j < obj.items.length; j++) {
           let object_type = obj.items[j].object_type;
           let object_schema_uri = objectTypeToSchemaIdMap[object_type];

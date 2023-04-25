@@ -11,7 +11,6 @@ export interface OneOfArrayJson<T extends PropertyJson = PropertyJson> {
   items: {
     oneOf: T[];
   };
-  $comment?: string;
 }
 
 export default class OneOfArryProperty extends InlineProperty {
@@ -32,9 +31,5 @@ export default class OneOfArryProperty extends InlineProperty {
   markdownTableType = (inMdFileAtPath: string): string =>
     `**Array of ONE OF the Following Types/Objs:**</br>&bull; ${this.oneOfProperties()
       .map((property) => property.markdownTableType(inMdFileAtPath))
-      .join("</br>&bull;")}${
-      this.json.$comment
-        ? "</br></br>**Comment**: __" + this.json.$comment + "__"
-        : ""
-    }`;
+      .join("</br>&bull;")}`;
 }

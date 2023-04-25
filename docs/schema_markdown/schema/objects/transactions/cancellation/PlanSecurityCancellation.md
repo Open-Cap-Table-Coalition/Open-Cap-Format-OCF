@@ -6,7 +6,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json`
 
-  **Description:** _undefined_
+  **Description:** _Object describing a plan security cancellation (which is a compatibility wrapper for Equity Compensation Cancellation)_
   
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_CANCELLATION`
   
