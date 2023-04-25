@@ -30,5 +30,5 @@
   },
   "additionalProperties": false,
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/retraction/WarrantRetraction.schema.json",
-  "javaType": "com.ocf.schema.objects.transactions.retraction.WarrantRetraction"
+  "javaType": "com.opencaptablecoalition.ocf.schema.objects.transactions.retraction.WarrantRetraction"
 }

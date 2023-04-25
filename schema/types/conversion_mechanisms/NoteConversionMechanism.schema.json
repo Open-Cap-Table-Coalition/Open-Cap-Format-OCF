@@ -72,5 +72,5 @@
     "compounding_type"
   ],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json",
-  "javaType": "com.ocf.schema.types.conversion_mechanisms.NoteConversionMechanism"
+  "javaType": "com.opencaptablecoalition.ocf.schema.types.conversion_mechanisms.NoteConversionMechanism"
 }

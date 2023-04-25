@@ -21,5 +21,5 @@
   "additionalProperties": false,
   "required": ["trigger_id", "type", "conversion_right"],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json",
-  "javaType": "com.ocf.schema.types.conversion_triggers.ElectiveConversionAtWillTrigger"
+  "javaType": "com.opencaptablecoalition.ocf.schema.types.conversion_triggers.ElectiveConversionAtWillTrigger"
 }

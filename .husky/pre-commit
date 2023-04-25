@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run enforce-copyright-notices && npm run add-java-types && git add schema
+npm run enforce-copyright-notices && npm run add-java-type-to-schemas && git add schema
 npm run generate-docs && git add docs/schema_markdown
 npx lint-staged

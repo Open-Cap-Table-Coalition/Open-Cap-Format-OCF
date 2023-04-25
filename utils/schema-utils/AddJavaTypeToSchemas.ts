@@ -18,7 +18,7 @@ export function addJavaTypePropertyToSchema(
   schema_inst: Record<string, any>,
   verbose: boolean = false
 ) {
-  let java_type_contents = `com.ocf.schema.${basenameRelativePathToSchemaDir(
+  let java_type_contents = `com.opencaptablecoalition.ocf.schema.${basenameRelativePathToSchemaDir(
     schema_path
   )}`;
   java_type_contents = java_type_contents.replaceAll("/", ".");

@@ -17,5 +17,5 @@
   "additionalProperties": false,
   "required": ["parent_object_type", "parent_object_id"],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/StockParent.schema.json",
-  "javaType": "com.ocf.schema.types.StockParent"
+  "javaType": "com.opencaptablecoalition.ocf.schema.types.StockParent"
 }

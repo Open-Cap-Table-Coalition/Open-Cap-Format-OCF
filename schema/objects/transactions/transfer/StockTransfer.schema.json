@@ -37,5 +37,5 @@
   "additionalProperties": false,
   "required": ["quantity"],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/transfer/StockTransfer.schema.json",
-  "javaType": "com.ocf.schema.objects.transactions.transfer.StockTransfer"
+  "javaType": "com.opencaptablecoalition.ocf.schema.objects.transactions.transfer.StockTransfer"
 }
