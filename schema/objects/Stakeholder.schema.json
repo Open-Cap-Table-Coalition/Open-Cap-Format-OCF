@@ -30,8 +30,12 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
     },
     "primary_contact": {
-      "description": "The primary contact info for the stakeholder",
+      "description": "The primary contact info for an institutional stakeholder",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfo.schema.json"
+    },
+    "contact_info": {
+      "description": "The contact info for an individual stakeholder",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfoWithoutName.schema.json"
     },
     "addresses": {
       "title": "Stakeholder - Address Array",

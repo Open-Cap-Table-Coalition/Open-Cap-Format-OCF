@@ -1,9 +1,6 @@
 import SchemaNode from "../../SchemaNode.js";
 import InlineProperty from "./InlineProperty.js";
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
+import Schema from "../SchemaLookupInterface";
 
 export interface ObjectConstJson {
   const?: string;
@@ -38,8 +35,8 @@ export default class ObjectConstProperty extends InlineProperty {
   };
 
   protected objectTypeEnumSchemaNode = () =>
-    this.schema.findSchemaNodeById(
-      "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json"
+    this.schema.findSchemaNodeBySchemaRelativeId(
+      "enums/ObjectType.schema.json"
     );
 
   markdownTableType = (inMdFileAtPath: string) => {

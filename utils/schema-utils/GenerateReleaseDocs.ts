@@ -166,9 +166,8 @@ yargs(hideBin(process.argv))
       tag: {
         describe:
           "What tag should be appended to the url? This lets us specify specific tags other than latest main branch.",
-        demandOption: "false",
+        demandOption: true,
         type: "string",
-        default: "main",
       },
     },
     handler: async (argv: GenerateReleaseDocsArgs) => {

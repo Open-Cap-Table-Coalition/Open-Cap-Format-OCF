@@ -14,6 +14,7 @@ import String, { StringJson } from "./String.js";
 import TypeArray, { TypeArrayJson } from "./TypeArray.js";
 import Null, { NullJson } from "./Null.js";
 import ScalarConst, { ScalarConstJson } from "./ScalarConst.js";
+import Schema from "../SchemaLookupInterface";
 
 export type InlinePropertyJson =
   | AnyOfArrayJson
@@ -29,10 +30,6 @@ export type InlinePropertyJson =
   | StringJson
   | ScalarConstJson
   | TypeArrayJson;
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
 
 export default class InlinePropertyFactory {
   static isAnyOfArrayJson = (

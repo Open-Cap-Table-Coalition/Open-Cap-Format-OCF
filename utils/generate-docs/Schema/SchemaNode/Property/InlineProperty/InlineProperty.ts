@@ -1,12 +1,9 @@
 import SchemaNode from "../../SchemaNode.js";
 import Property from "../Property.js";
 import { InlinePropertyJson } from "./Factory";
+import Schema from "../SchemaLookupInterface";
 
 export { InlinePropertyJson } from "./Factory";
-
-interface Schema {
-  findSchemaNodeById: (id: string) => SchemaNode;
-}
 
 export default abstract class InlineProperty extends Property {
   protected readonly idOverride?: string;

@@ -4,4 +4,5 @@ nav:
   - Schemas: schema_markdown
   - Tutorials: tutorials
   - Contribute: "CONTRIBUTING.md"
+  - Awesome OCF: "PROJECTS.md"
   - Blog: https://medium.com/@opencaptable

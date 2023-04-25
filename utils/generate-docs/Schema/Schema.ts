@@ -71,6 +71,21 @@ export default class Schema {
   findExampleItemsByObjectTypes = (objectTypes: string[]) =>
     this.examples.findExampleItemsByObjectTypes(objectTypes);
 
+  findSchemaNodeBySchemaRelativeId = (partialId: string) => {
+    const parentType = partialId.split("/")[0];
+    const candidates = this.filterSchemaNodesByParentType(parentType);
+    if (partialId === "enums/ObjectType.schema.json") {
+      console.log(parentType);
+      console.log(candidates.map((c) => c.id()).join("\n"));
+    }
+    const schemaNode = candidates.find((node) => node.id().endsWith(partialId));
+
+    if (!schemaNode) {
+      throw new Error(`Cannot find SchemaNode '.../${partialId}'`);
+    }
+    return schemaNode;
+  };
+
   findSupplementalMarkdownsByShortId = (shortId: string) =>
     this.supplementals.findSupplementalMarkdownByShortId(shortId);
 
