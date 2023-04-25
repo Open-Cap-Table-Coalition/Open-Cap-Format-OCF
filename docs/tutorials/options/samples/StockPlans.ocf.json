@@ -7,7 +7,7 @@
       "plan_name": "2023 Stock Incentive Plan",
       "board_approval_date": "2022-12-31",
       "initial_shares_reserved": "10000000.00",
-      "cancellation_behavior": "RETURN_TO_POOL",
+      "default_cancellation_behavior": "RETURN_TO_POOL",
       "stock_class_id": "e1d930f7-592d-4414-a3ab-a78fe4b932d1",
       "comments": [
         "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
