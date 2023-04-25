@@ -337,7 +337,7 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_RETURN_TO_POOL",
+      "object_type": "TX_STOCK_PLAN_RETURN_TO_POOL",
       "id": "test-plan-security-return_to_pool",
       "security_id": "test-security-id",
       "date": "2019-12-11",

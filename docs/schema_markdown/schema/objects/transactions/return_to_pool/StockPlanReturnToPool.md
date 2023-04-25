@@ -33,4 +33,25 @@
 
 **Source Code:** [schema/objects/transactions/return_to_pool/StockPlanReturnToPool](../../../../../../schema/objects/transactions/return_to_pool/StockPlanReturnToPool.schema.json)
 
+**Examples:**
+
+```json
+[
+  {
+    "object_type": "TX_STOCK_PLAN_RETURN_TO_POOL",
+    "id": "test-plan-security-return_to_pool",
+    "security_id": "test-security-id",
+    "date": "2019-12-11",
+    "reason_text": "Options cancelled and rolled over to 2020 plan",
+    "quantity": "100",
+    "stock_plan_id": "2020-stock-plan-id",
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
+  }
+]
+```
+
 Copyright © 2023 Open Cap Table Coalition.
