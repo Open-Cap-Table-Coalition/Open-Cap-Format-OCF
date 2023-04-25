@@ -299,6 +299,7 @@ export async function getOcfValidator(
       validateSchema: check_schema_validity ? true : "log",
       ...(show_all_errors ? { allErrors: true, verbose } : {}),
     });
+    ajv.addKeyword("javaType", {});
 
     // If we don't do this, AJV can't handle certain *built-in* JSONSchema formats (like dates)
     addFormats(ajv);
