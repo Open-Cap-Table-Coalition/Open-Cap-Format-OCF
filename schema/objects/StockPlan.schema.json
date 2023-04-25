@@ -29,8 +29,8 @@
       "description": "The initial number of shares reserved in the pool for this stock plan by the Board or equivalent body.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
     },
-    "cancellation_behavior": {
-      "description": "If a Plan Security issued under this Stock Plan is cancelled, what happens to the reserved shares?.",
+    "default_cancellation_behavior": {
+      "description": "If a security issued under this Stock Plan is cancelled, what happens to the reserved shares by default? NOTE: for any given security issued from the pool, the Plan's default cancellation behavior can be overridden by subsequent transactions cancelling the reserved stock, returning it to pool or marking it as capital stock. The event chain should always control - do not rely on this field and fail to traverse the events.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockPlanCancellationBehaviorType.schema.json"
     },
     "stock_class_id": {
@@ -41,11 +41,6 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": [
-    "plan_name",
-    "stock_class_id",
-    "initial_shares_reserved",
-    "cancellation_behavior"
-  ],
+  "required": ["plan_name", "stock_class_id", "initial_shares_reserved"],
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockPlan.schema.json"
 }
