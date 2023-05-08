@@ -1,5 +1,5 @@
 {
-  "ocf_version": "1.0.0",
+  "ocf_version": "1.0.1-alpha+main",
   "file_type": "OCF_MANIFEST_FILE",
   "issuer": {
     "object_type": "ISSUER",
