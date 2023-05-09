@@ -15,12 +15,20 @@ Here's our new Stock Plan object:
   "plan_name": "2023 Stock Incentive Plan",
   "board_approval_date": "2022-12-31",
   "initial_shares_reserved": "10000000.00",
+  "default_cancellation_behavior": "RETURN_TO_POOL",
   "stock_class_id": "e1d930f7-592d-4414-a3ab-a78fe4b932d1",
   "comments": [
     "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
   ]
 }
 ```
+
+You'll notice you must also set the default behavior for what happens to shares reserved for a Plan Security issued under this Stock Plan if the Plan Security is cancelled. The `default_cancellation_behavior` field of the plan object takes a `StockPlanCancellationBehaviorType` enumeration. The enum gives you four options:
+
+1. `RETURN_TO_POOL` - Shares return to the pool.
+2. `HOLD_AS_CAPITAL_STOCK` - Shares are held by company as capital stock.
+3. `RETIRE` - Shares are retired entirely.
+4. `DEFINED_PER_PLAN_SECURITY` - No plan-wide default and this is handled on a Plan-Security-by-Plan-Security basis.
 
 ## Create a Vesting Schedule
 
