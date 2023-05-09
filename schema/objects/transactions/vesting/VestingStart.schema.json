@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingStart.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/vesting/VestingStart.schema.json",
   "title": "Object - Vesting Start Transaction",
   "description": "Object describing the transaction of vesting schedule start / commencement associated with a security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/SecurityTransaction.schema.json"
     }
   ],
   "properties": {
@@ -30,5 +30,5 @@
   },
   "additionalProperties": false,
   "required": ["vesting_condition_id"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting/VestingStart.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/objects/transactions/vesting/VestingStart.schema.json"
 }

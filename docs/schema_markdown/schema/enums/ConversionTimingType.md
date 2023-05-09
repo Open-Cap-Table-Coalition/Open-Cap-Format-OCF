@@ -4,7 +4,7 @@
 
 ### Enum - Conversion Timing Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTimingType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/enums/ConversionTimingType.schema.json`
 
 **Description:** _Enumeration of convertible conversion timing for calculation purposes (e.g. does the instrument convert based on pre or post money)._
 

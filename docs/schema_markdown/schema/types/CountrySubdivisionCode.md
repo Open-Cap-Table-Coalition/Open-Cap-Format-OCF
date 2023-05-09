@@ -4,7 +4,7 @@
 
 ### Type - Country Subdivision Code
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/types/CountrySubdivisionCode.schema.json`
 
 **Description:** _Type representation of the second part of an ISO 3166-2 country subdivision code_
 

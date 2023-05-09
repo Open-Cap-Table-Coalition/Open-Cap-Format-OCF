@@ -4,7 +4,7 @@
 
 ### Object - Stock Acceptance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/StockAcceptance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/acceptance/StockAcceptance.schema.json`
 
 **Description:** _Object describing a stock acceptance transaction_
 

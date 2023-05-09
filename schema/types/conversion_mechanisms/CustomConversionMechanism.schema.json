@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/types/conversion_mechanisms/CustomConversionMechanism.schema.json",
   "title": "Conversion Mechanism - Custom",
   "description": "Sets forth inputs and conversion mechanism of a custom conversion, a conversion type that cannot be accurately modelled with any other OCF conversion mechanism type",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
     }
   ],
   "properties": {
@@ -20,5 +20,5 @@
   },
   "additionalProperties": false,
   "required": ["type", "custom_conversion_description"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/types/conversion_mechanisms/CustomConversionMechanism.schema.json"
 }

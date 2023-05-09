@@ -4,7 +4,7 @@
 
 ### Object - Equity Compensation Issuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/issuance/EquityCompensationIssuance.schema.json`
 
 **Description:** _Object describing securities issuance transaction by the issuer and held by a stakeholder as a form of compensation (as noted elsewhere, RSAs are not included here intentionally and should be modelled using Stock Issuances)._
 

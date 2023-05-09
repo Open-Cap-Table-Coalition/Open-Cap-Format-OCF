@@ -4,7 +4,7 @@
 
 ### Type - Interest Rate
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/InterestRate.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/types/InterestRate.schema.json`
 
 _Type representation of an interest rate, including accrual start and end dates_
 

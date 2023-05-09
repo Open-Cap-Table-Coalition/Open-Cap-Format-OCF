@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/enums/ConversionMechanismType.schema.json",
   "title": "Enum - Conversion Mechanism Type",
   "description": "Enumeration of convertible conversion calculation types.",
   "type": "string",
@@ -12,5 +12,5 @@
     "CONVERTIBLE_NOTE_CONVERSION",
     "CUSTOM_CONVERSION"
   ],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConversionMechanismType.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/enums/ConversionMechanismType.schema.json"
 }

@@ -1,10 +1,10 @@
 {
-  "OCF_MANIFEST_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json",
-  "OCF_STAKEHOLDERS_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json",
-  "OCF_STOCK_CLASSES_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json",
-  "OCF_STOCK_LEGEND_TEMPLATES_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json",
-  "OCF_STOCK_PLANS_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json",
-  "OCF_TRANSACTIONS_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json",
-  "OCF_VALUATIONS_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json",
-  "OCF_VESTING_TERMS_FILE": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json"
+  "OCF_MANIFEST_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/OCFManifestFile.schema.json",
+  "OCF_STAKEHOLDERS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/StakeholdersFile.schema.json",
+  "OCF_STOCK_CLASSES_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/StockClassesFile.schema.json",
+  "OCF_STOCK_LEGEND_TEMPLATES_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/StockLegendTemplatesFile.schema.json",
+  "OCF_STOCK_PLANS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/StockPlansFile.schema.json",
+  "OCF_TRANSACTIONS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/TransactionsFile.schema.json",
+  "OCF_VALUATIONS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/ValuationsFile.schema.json",
+  "OCF_VESTING_TERMS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/VestingTermsFile.schema.json"
 }

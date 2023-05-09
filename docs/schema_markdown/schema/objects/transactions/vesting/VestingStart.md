@@ -4,7 +4,7 @@
 
 ### Object - Vesting Start Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingStart.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/vesting/VestingStart.schema.json`
 
 **Description:** _Object describing the transaction of vesting schedule start / commencement associated with a security_
 

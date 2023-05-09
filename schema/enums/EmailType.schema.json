@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/EmailType.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/enums/EmailType.schema.json",
   "title": "Enum - Email Type",
   "description": "Enumeration of email types",
   "type": "string",
   "enum": ["PERSONAL", "BUSINESS", "OTHER"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/EmailType.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/enums/EmailType.schema.json"
 }

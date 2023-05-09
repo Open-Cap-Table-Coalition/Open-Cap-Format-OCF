@@ -4,7 +4,7 @@
 
 ### Object - Equity Compensation Exercise Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/exercise/EquityCompensationExercise.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/exercise/EquityCompensationExercise.schema.json`
 
 **Description:** _Object describing equity compensation exercise transaction_
 

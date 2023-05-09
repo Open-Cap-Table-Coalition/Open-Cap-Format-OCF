@@ -4,7 +4,7 @@
 
 ### File - Stock Classes
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/files/StockClassesFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of stock classes_
 

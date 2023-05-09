@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/ConvertibleConversion.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/conversion/ConvertibleConversion.schema.json",
   "title": "Object - Convertible Conversion Transaction",
   "description": "Object describing a conversion of a convertible security",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/conversion/Conversion.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/conversion/Conversion.schema.json"
     }
   ],
   "properties": {
@@ -28,7 +28,7 @@
     },
     "quantity_converted": {
       "description": "Quantity of security units converted",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/types/Numeric.schema.json"
     },
     "balance_security_id": {
       "description": "Identifier for the convertible that holds the remainder balance (for partial conversions)",
@@ -40,7 +40,7 @@
     },
     "capitalization_definition": {
       "description": "If this conversion event and its `quantity_converted` value was based on the company's capitalization, please specify what stock classes, stock plans and securities were aggregated to calculate the capitalization value used in the calculation (e.g. if it was based on \"fully diluted\" capitalization, please provide details on how this was calculated using the capitalization type datastructure).",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinition.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/types/CapitalizationDefinition.schema.json"
     },
     "id": {},
     "comments": {},
@@ -50,5 +50,5 @@
   },
   "additionalProperties": false,
   "required": ["reason_text", "trigger_id"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/conversion/ConvertibleConversion.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/objects/transactions/conversion/ConvertibleConversion.schema.json"
 }

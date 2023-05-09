@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/types/CountryCode.schema.json",
   "title": "Type - Country Code",
   "description": "Type representation of an ISO 3166-1 alpha 2 country code",
   "type": "string",
   "minLength": 2,
   "maxLength": 2,
   "pattern": "^[A-Z]{2}$",
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/CountryCode.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/types/CountryCode.schema.json"
 }

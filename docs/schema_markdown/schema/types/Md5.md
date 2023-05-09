@@ -4,7 +4,7 @@
 
 ### Type - MD5 Hash
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Md5.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/types/Md5.schema.json`
 
 **Description:** _String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers_
 

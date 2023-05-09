@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Phone.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/types/Phone.schema.json",
   "title": "Type - Phone",
   "description": "Type representation of a phone number",
   "type": "object",
   "properties": {
     "phone_type": {
       "description": "Type of phone number (e.g. mobile, home or business)",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PhoneType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/enums/PhoneType.schema.json"
     },
     "phone_number": {
       "description": "A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890)",
@@ -17,5 +17,5 @@
   },
   "additionalProperties": false,
   "required": ["phone_type", "phone_number"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/Phone.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/types/Phone.schema.json"
 }

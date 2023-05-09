@@ -4,7 +4,7 @@
 
 ### Primitive - Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/Transaction.schema.json`
 
 **Description** _Abstract transaction object to be extended by all other transaction objects_
 

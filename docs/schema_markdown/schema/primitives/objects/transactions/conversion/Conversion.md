@@ -4,7 +4,7 @@
 
 ### Primitive - Security Conversion Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/conversion/Conversion.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/primitives/objects/transactions/conversion/Conversion.schema.json`
 
 **Description** _Abstract object describing fields common to all conversion transaction objects_
 

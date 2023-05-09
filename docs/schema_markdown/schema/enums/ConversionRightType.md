@@ -4,7 +4,7 @@
 
 ### Enum - Conversion Right Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionRightType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/enums/ConversionRightType.schema.json`
 
 **Description:** _Enumeration of types of conversion rights._
 

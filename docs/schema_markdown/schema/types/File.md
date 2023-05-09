@@ -4,7 +4,7 @@
 
 ### Type - File
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/types/File.schema.json`
 
 _Type representation of a file_
 

@@ -4,7 +4,7 @@
 
 ### Object - Stock Conversion Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/StockConversion.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/objects/transactions/conversion/StockConversion.schema.json`
 
 **Description:** _Object describing a conversion of stock_
 

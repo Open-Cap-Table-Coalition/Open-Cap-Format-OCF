@@ -4,7 +4,7 @@
 
 ### Enum - OCF File Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/FileType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/enums/FileType.schema.json`
 
 **Description:** _Enumeration of different OCF file types which are used to load proper schemas for validation_
 

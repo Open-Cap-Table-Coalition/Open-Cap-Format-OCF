@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.1.0/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
   "title": "Type - Elective Conversion on Condition Trigger",
   "description": "Type representation of elective trigger on fulfillment of a condition.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.1.0/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -24,5 +24,5 @@
   },
   "additionalProperties": false,
   "required": ["trigger_id", "trigger_condition", "type", "conversion_right"],
-  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.1.0/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
 }

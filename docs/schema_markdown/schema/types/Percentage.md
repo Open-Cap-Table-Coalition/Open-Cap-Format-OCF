@@ -4,7 +4,7 @@
 
 ### Type - Percentage
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.1.0/types/Percentage.schema.json`
 
 **Description:** _Fixed-point string representation of a percentage as a decimal between 0.0 and 1.0 (up to 10 decimal places supported)_
 
