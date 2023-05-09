@@ -2,7 +2,7 @@ import Schema from "../Schema.js";
 import SchemaNode, { SchemaNodeJson } from "./SchemaNode.js";
 
 export interface TypePatternSchemaNodeJson extends SchemaNodeJson {
-  type: "string";
+  type: string;
   pattern: string;
 }
 

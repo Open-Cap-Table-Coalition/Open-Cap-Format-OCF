@@ -11,7 +11,7 @@ export interface SchemaNodeJson {
   $id: string;
   title: string;
   description: string;
-  type: string;
+  type?: string;
   properties?: { [id: string]: PropertyJson };
   required?: string[];
   allOf?: Array<{ $ref: string }>;
@@ -29,7 +29,7 @@ export default abstract class SchemaNode {
     this.json = json;
   }
 
-  protected type = () => this.json["type"];
+  type = () => (this.json?.type ? this.json.type : "DOC GENERATOR ERROR");
 
   protected basename = () => path.basename(this.id(), ".schema.json");
 
@@ -86,6 +86,8 @@ export default abstract class SchemaNode {
 
   protected supplementalMarkdowns = (): string[] =>
     this.schema.findSupplementalMarkdownsByShortId(this.shortId());
+
+  rawJson = () => this.json;
 
   id = () => this.json["$id"];
 

@@ -1,12 +1,12 @@
 import SchemaNode from "../../SchemaNode.js";
 import PropertyFactory, { PropertyJson } from "../Factory.js";
-import InlineProperty from "./InlineProperty.js";
+import InlineProperty, { InlinePropertyJson } from "./InlineProperty.js";
 import Schema from "../SchemaLookupInterface";
 
-export interface OneOfArrayJson {
+export interface OneOfArrayJson<T extends PropertyJson = PropertyJson> {
   description: string;
   items: {
-    oneOf: PropertyJson[];
+    oneOf: T[];
   };
 }
 
@@ -28,5 +28,5 @@ export default class OneOfArryProperty extends InlineProperty {
   markdownTableType = (inMdFileAtPath: string): string =>
     `**Array of ONE OF the Following Types/Objs:**</br>&bull; ${this.oneOfProperties()
       .map((property) => property.markdownTableType(inMdFileAtPath))
-      .join("</br>&bull; ")}`;
+      .join("</br>&bull;")}`;
 }

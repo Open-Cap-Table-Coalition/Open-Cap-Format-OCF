@@ -63,8 +63,72 @@ async function buildObjectSchemaMap(verbose = false) {
     return JSON.parse(schema_buffer.toString());
   });
 
+  // Need to update this to handle the two options for object_type props (stll not in
+  // love with this choice, but it was required to avoid a breaking change). Where
+  // a schema has multiple potential object types for backwards compatibility,
+  // there is a mapping entry for each object type in the object_type.oneOf array
+  // for each of the const values in that array to the $id of the given schema
   schemas.forEach((schema) => {
-    schemaMap[schema.properties.object_type.const] = schema.$id;
+    console.log("Analyze schema", schema);
+
+    if (schema.properties) {
+      let object_type = schema.properties.object_type;
+
+      console.log("Object type", object_type);
+      if (
+        typeof object_type === "object" &&
+        !Array.isArray(object_type) &&
+        object_type !== null
+      ) {
+        if (object_type.const && typeof object_type.const === "string") {
+          schemaMap[object_type.const] = schema.$id;
+        } else if (object_type.enum && Array.isArray(object_type.enum)) {
+          for (const item of object_type.enum) {
+            if (item) {
+              schemaMap[item] = schema.$id;
+            }
+          }
+        } else {
+          if (verbose) {
+            console.error(
+              `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
+                schema,
+                null,
+                4
+              )}`
+            );
+          }
+        }
+      }
+    } else if (
+      schema["$id"] &&
+      schema.allOf &&
+      Array.isArray(schema.allOf) &&
+      schema.allOf.length === 1
+    ) {
+      /**
+       * We have an issue with proposed backwards compatibility wrappers... the validator expects
+       * that each object_type maps to exactly one corresponding schema $id, but the wrappers don't have an
+       * object_type property directly. Since schemaMap maps the type constants to the desired $id,
+       * we can actually ignore the wrapper mappings because the object_type constants should end up in the
+       * schemaMap when we look at the schema that the wrapper references. Those referenced schemas should
+       * validate objects built against the wrapper schema.
+       */
+      if (verbose) {
+        console.log(
+          `Appears schema ${schema["$id"]} is a wrapper for ${schema.allOf[0]["$ref"]}... ignoring.`
+        );
+      }
+    } else {
+      if (verbose) {
+        console.error(
+          `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
+        );
+      }
+      throw new Error(
+        "Schema doesn't match OCF schema format and it's not a wrapper"
+      );
+    }
   });
 
   return schemaMap;

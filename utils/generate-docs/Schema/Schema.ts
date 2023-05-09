@@ -7,7 +7,6 @@ import ExamplesReader from "./ExamplesReader.js";
 import SupplementalsReader from "./SupplementalsReader.js";
 import Supplementals from "./Supplementals.js";
 import Examples, { ExampleJson } from "./Examples.js";
-import TableOfContents from "./TableOfContents.js";
 import SchemaNodeFactory, {
   SchemaNode,
   SchemaNodeJson,
@@ -69,6 +68,9 @@ export default class Schema {
     return schemaNode;
   };
 
+  findExampleItemsByObjectTypes = (objectTypes: string[]) =>
+    this.examples.findExampleItemsByObjectTypes(objectTypes);
+
   findSchemaNodeBySchemaRelativeId = (partialId: string) => {
     const parentType = partialId.split("/")[0];
     const candidates = this.filterSchemaNodesByParentType(parentType);
@@ -83,9 +85,6 @@ export default class Schema {
     }
     return schemaNode;
   };
-
-  findExampleItemsByObjectType = (objectType: string) =>
-    this.examples.findExampleItemsByObjectType(objectType);
 
   findSupplementalMarkdownsByShortId = (shortId: string) =>
     this.supplementals.findSupplementalMarkdownByShortId(shortId);

@@ -515,6 +515,69 @@
       "comments": ["comment 1", "comment 2", "a third comment"]
     },
     {
+      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "id": "test-equity-compensation-issuance-no-plan",
+      "security_id": "planless-equity-compensation-issuance",
+      "stock_class_id": "common-stock",
+      "date": "2019-12-12",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "CA"
+        }
+      ],
+      "board_approval_date": "2021-01-21",
+      "stakeholder_id": "test-stakeholder-id",
+      "consideration_text": "1.00 CAD",
+      "custom_id": "CA-1",
+      "compensation_type": "RSU",
+      "quantity": "100",
+      "exercise_price": {
+        "amount": "50.00",
+        "currency": "CAD"
+      },
+      "vesting_terms_id": "custom-vesting-100pct-upfront",
+      "expiration_date": "2031-01-20",
+      "termination_exercise_windows": [
+        {
+          "reason": "INVOLUNTARY_WITH_CAUSE",
+          "period": 0,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "VOLUNTARY_GOOD_CAUSE",
+          "period": 3,
+          "period_type": "MONTHS"
+        },
+        {
+          "reason": "INVOLUNTARY_OTHER",
+          "period": 14,
+          "period_type": "DAYS"
+        },
+        {
+          "reason": "INVOLUNTARY_DEATH",
+          "period": 3,
+          "period_type": "YEARS"
+        },
+        {
+          "reason": "INVOLUNTARY_DISABILITY",
+          "period": 3,
+          "period_type": "YEARS"
+        },
+        {
+          "reason": "VOLUNTARY_RETIREMENT",
+          "period": 1,
+          "period_type": "MONTHS"
+        },
+        {
+          "reason": "VOLUNTARY_OTHER",
+          "period": 3,
+          "period_type": "MONTHS"
+        }
+      ],
+      "comments": ["comment 1", "comment 2", "a third comment"]
+    },
+    {
       "object_type": "TX_VESTING_EVENT",
       "id": "test-plan-security-issuance-full-fields-vesting-event",
       "security_id": "test-plan-security-issuance-full-fields",

@@ -1,33 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json",
-  "title": "Object - Plan Security Retraction Transaction",
-  "description": "Object describing a retraction of a plan security",
-  "type": "object",
+  "title": "Object - Plan Security Retraction",
+  "description": "Object describing plan security retraction transaction (a compatibility wrapper for equity compensation retraction event)",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/retraction/Retraction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/EquityCompensationRetraction.schema.json"
     }
   ],
   "properties": {
     "object_type": {
       "const": "TX_PLAN_SECURITY_RETRACTION"
-    },
-    "id": {},
-    "comments": {},
-    "security_id": {},
-    "date": {},
-    "reason_text": {}
+    }
   },
-  "additionalProperties": false,
   "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json"
 }

@@ -14,11 +14,11 @@ export default class Examples {
     this.examplesJson = examplesJson;
   }
 
-  findExampleItemsByObjectType = (objectType: string) =>
+  findExampleItemsByObjectTypes = (objectTypes: string[]) =>
     this.examplesJson.flatMap((exampleJson) =>
       "items" in exampleJson
-        ? exampleJson["items"].filter(
-            (item) => item["object_type"] === objectType
+        ? exampleJson["items"].filter((item) =>
+            objectTypes.includes(item["object_type"])
           )
         : []
     );

@@ -3,9 +3,10 @@ import PropertyFactory, { PropertyJson } from "../Factory.js";
 import InlineProperty from "./InlineProperty.js";
 import Schema from "../SchemaLookupInterface";
 
-export interface OneOfJson {
-  description: string;
-  oneOf: PropertyJson[];
+export interface OneOfJson<T extends PropertyJson = PropertyJson> {
+  description?: string;
+  oneOf: T[];
+  $comment?: string;
 }
 
 export default class OneOfProperty extends InlineProperty {
@@ -26,5 +27,9 @@ export default class OneOfProperty extends InlineProperty {
   markdownTableType = (inMdFileAtPath: string): string =>
     `**ONE OF the Following Types/Objs:**</br>&bull; ${this.oneOfProperties()
       .map((property) => property.markdownTableType(inMdFileAtPath))
-      .join("</br>&bull; ")}`;
+      .join("</br>&bull; ")}${
+      this.json.$comment
+        ? "</br>**Comment**: __" + this.json.$comment + "__"
+        : ""
+    }`;
 }

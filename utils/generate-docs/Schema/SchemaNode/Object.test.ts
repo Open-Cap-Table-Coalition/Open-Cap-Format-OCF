@@ -3,7 +3,7 @@ import Object, { ObjectSchemaNodeJson } from "./Object.js";
 import { EnumSchemaNodeJson } from "./Enum.js";
 import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
-const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
+export const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
   $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json",
   title: "Enum - Object Type",
   description: "Enumeration of object types",
@@ -11,7 +11,7 @@ const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
   enum: ["VALUATION"],
 };
 
-const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
+export const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
   $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TestEnum.schema.json",
   title: "Test Title",
   description: "This is a test fixture exemplifying an Enum schema from OCF",
@@ -19,7 +19,7 @@ const ENUM_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
   enum: ["test_enum1"],
 };
 
-const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
+export const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
   $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json",
   title: "Object - Object",
   description: "Abstract object to be extended by all other objects",
@@ -45,7 +45,7 @@ const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
   required: ["id", "object_type"],
 };
 
-const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
+export const OBJECT_SCHEMA_NODE_FIXTURE: ObjectSchemaNodeJson = {
   $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation",
   title: "Object - Valuation",
   description: "Object describing a valuation used in the cap table",
