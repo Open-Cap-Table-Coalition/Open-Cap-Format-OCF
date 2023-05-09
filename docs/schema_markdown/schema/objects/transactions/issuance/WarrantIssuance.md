@@ -152,13 +152,13 @@
         "nickname": "Exercised at next financing",
         "trigger_description": "The warrant automatically exercises at the next financing with conversion amount determined by the valuation in the financing.",
         "type": "AUTOMATIC_ON_CONDITION",
-        "trigger_condition": "This warrant will be automatically exercised upon the closing of the Company's next preferred equity financing with total proceeds in excessof $100,000,000.00",
+        "trigger_condition": "This warrant will be automatically exercised upon the closing of the Company's next preferred equity financing with total proceeds in excess of $100,000,000.00",
         "conversion_right": {
           "type": "WARRANT_CONVERSION_RIGHT",
           "conversion_mechanism": {
             "type": "VALUATION_BASED_CONVERSION",
-            "conversion_discount": "0.125",
-            "conversion_valuation_cap": {
+            "valuation_type": "VALUATION_CAP",
+            "valuation_cap": {
               "amount": "1000000000.00",
               "currency": "USD"
             }
