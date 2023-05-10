@@ -53,6 +53,17 @@
       "description": "The headquarters address of the issuing company",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Address.schema.json"
     },
+    "initial_shares_authorized": {
+      "description": "The initial number of shares authorized for this issuer",
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AuthorizedShares.schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+        }
+      ]
+    },
     "id": {},
     "comments": {}
   },

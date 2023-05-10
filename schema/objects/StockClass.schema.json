@@ -27,7 +27,14 @@
     },
     "initial_shares_authorized": {
       "description": "The initial number of shares authorized for this stock class",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AuthorizedShares.schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+        }
+      ]
     },
     "board_approval_date": {
       "description": "Date on which the board approved the stock class",
