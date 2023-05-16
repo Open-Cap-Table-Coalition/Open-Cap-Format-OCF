@@ -5,7 +5,7 @@
   "description": "Enumeration of quantity source types describing where a quantity value came from",
   "type": "string",
   "enum": [
-    "USER_ESTIMATED",
+    "HUMAN_ESTIMATED",
     "MACHINE_ESTIMATED",
     "UNSPECIFIED",
     "INSTRUMENT_FIXED",
