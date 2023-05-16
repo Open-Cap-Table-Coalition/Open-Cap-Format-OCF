@@ -1128,8 +1128,8 @@
             "type": "WARRANT_CONVERSION_RIGHT",
             "conversion_mechanism": {
               "type": "VALUATION_BASED_CONVERSION",
-              "valuation_type": "VALUATION_CAP",
-              "valuation_cap": {
+              "valuation_type": "CAP",
+              "valuation_amount": {
                 "amount": "1000000000.00",
                 "currency": "USD"
               }
