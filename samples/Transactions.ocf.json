@@ -1065,7 +1065,7 @@
       "custom_id": "W-1",
       "security_law_exemptions": [],
       "quantity": "1000",
-      "quantity_source": "USER_ESTIMATED",
+      "quantity_source": "HUMAN_ESTIMATED",
       "exercise_price": {
         "amount": "1.00",
         "currency": "USD"
