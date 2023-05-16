@@ -12,7 +12,7 @@
   "properties": {
     "ocf_version": {
       "description": "OCF Version Identifier -- the current semantic version (https://semver.org/spec/v2.0.0.html)",
-      "const": "1.0.1-alpha+main"
+      "const": "1.1.1-alpha+main"
     },
     "file_type": {
       "const": "OCF_MANIFEST_FILE"
