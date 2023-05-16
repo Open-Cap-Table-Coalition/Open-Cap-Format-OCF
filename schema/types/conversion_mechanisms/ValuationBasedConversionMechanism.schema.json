@@ -14,11 +14,10 @@
       "const": "VALUATION_BASED_CONVERSION"
     },
     "valuation_type": {
-      "type": "string",
-      "enum": ["VALUATION_CAP", "ACTUAL_VALUATION"]
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ValuationBasedFormulaType.schema.json"
     },
-    "valuation_cap": {
-      "description": "What is the valuation cap (if applicable)?",
+    "valuation_amount": {
+      "description": "If there is a specified valuation figure to use, what is it? Look to `valuatiuon_type` to understand whether this represents, a max valuation (`CAP`), actual valuation at time of exercise (`ACTUAL`) or fixed valuation (`FIXED`).",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
     "capitalization_definition": {
@@ -34,15 +33,23 @@
     {
       "properties": {
         "valuation_type": {
-          "const": "VALUATION_CAP"
+          "const": "CAP"
         }
       },
-      "required": ["valuation_cap"]
+      "required": ["valuation_amount"]
     },
     {
       "properties": {
         "valuation_type": {
-          "const": "ACTUAL_VALUATION"
+          "const": "FIXED"
+        }
+      },
+      "required": ["valuation_amount"]
+    },
+    {
+      "properties": {
+        "valuation_type": {
+          "const": "ACTUAL"
         }
       }
     }
