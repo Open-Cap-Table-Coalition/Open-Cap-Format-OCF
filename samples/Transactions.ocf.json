@@ -1028,6 +1028,44 @@
       "custom_id": "W-1",
       "security_law_exemptions": [],
       "quantity": "1000",
+      "quantity_source": "INSTRUMENT_FIXED",
+      "exercise_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "purchase_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "exercise_triggers": [
+        {
+          "trigger_id": "WARRANT-1.TRIG.1",
+          "nickname": "Automatic exercise immediately prior to qualified public offering",
+          "trigger_description": "Warrant shall be deemed exercise immediately prior to consummation to a qualified public offering.",
+          "trigger_condition": "Qualified Public Offering means the issuance by the issuer or any direct or indirect parent of the issuer of its common Equity Interests in an underwritten primary public offering (other than a public offering pursuant to a registration statement on Form S-8) pursuant to an effective registration statement filed with the U.S. Securities and Exchange Commission in accordance with the Securities Act of 1933, as amended.",
+          "type": "AUTOMATIC_ON_CONDITION",
+          "conversion_right": {
+            "type": "WARRANT_CONVERSION_RIGHT",
+            "conversion_mechanism": {
+              "type": "FIXED_AMOUNT_CONVERSION",
+              "converts_to_quantity": "10000.00"
+            },
+            "converts_to_stock_class_id": "stock-class-id"
+          }
+        }
+      ],
+      "warrant_expiration_date": "2032-02-01"
+    },
+    {
+      "object_type": "TX_WARRANT_ISSUANCE",
+      "id": "test-warrant-issuance-minimal-estimated-quant",
+      "security_id": "test-warrant-id",
+      "date": "2022-02-01",
+      "stakeholder_id": "stakeholder-id",
+      "custom_id": "W-1",
+      "security_law_exemptions": [],
+      "quantity": "1000",
+      "quantity_source": "HUMAN_ESTIMATED",
       "exercise_price": {
         "amount": "1.00",
         "currency": "USD"
