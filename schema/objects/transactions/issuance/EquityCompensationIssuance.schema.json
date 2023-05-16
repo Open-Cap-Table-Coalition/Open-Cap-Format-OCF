@@ -54,6 +54,11 @@
       "description": "If this is a stock appreciation right, what is the base price used to calculate the appreciation of the SAR?",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
     },
+    "early_exercisable": {
+      "type": "boolean",
+      "description": "Is this Equity Compensation exercisable prior to completion of vesting? If so, it's assumed the vesting schedule will remain in effect but, instead of vesting a right to exercise, it becomes the schedule determining when a right to repurchase the resulting stock lapses.",
+      "$comment": "REQUIRED in v2"
+    },
     "vesting_terms_id": {
       "description": "Identifier of the VestingTerms to which this security is subject.  If not present, security is fully vested on issuance.",
       "type": "string"
