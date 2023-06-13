@@ -17,6 +17,10 @@
       "description": "Date of board approval for the security",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
+    "stockholder_approval_date": {
+      "description": "Date on which the stockholders approved the security",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
     "consideration_text": {
       "description": "Unstructured text description of consideration provided in exchange for security issuance",
       "type": "string"

@@ -70,6 +70,11 @@
       "description": "Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.",
       "type": "string"
     },
+    "quantity_source": {
+      "description": "If quantity is provided, use this to specify where the number came from - e.g. was it a fixed value from the instrument (`INSTRUMENT_FIXED`), a human estimate (`HUMAN_ESTIMATED`), etc. If quantity is provided and this field is not, this is assumed to be `UNSPECIFIED`",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/QuantitySourceType.schema.json",
+      "default": "UNSPECIFIED"
+    },
     "id": {},
     "comments": {},
     "security_id": {},
@@ -77,6 +82,7 @@
     "custom_id": {},
     "stakeholder_id": {},
     "board_approval_date": {},
+    "stockholder_approval_date": {},
     "consideration_text": {},
     "security_law_exemptions": {}
   },

@@ -30,6 +30,10 @@
     "board_approval_date": {
       "description": "Date on which the board approved the change to the stock class",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
+    "stockholder_approval_date": {
+      "description": "This optional field tracks when the stockholders approved the change to the stock class.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     }
   },
   "additionalProperties": false,
