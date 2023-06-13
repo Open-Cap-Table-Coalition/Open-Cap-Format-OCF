@@ -1151,6 +1151,50 @@
       "warrant_expiration_date": "2032-02-01"
     },
     {
+      "object_type": "TX_WARRANT_ISSUANCE",
+      "id": "test-pps-based-warrant-issuance-full-fields",
+      "security_id": "test-warrant-security-id",
+      "date": "2022-02-01",
+      "security_law_exemptions": [
+        {
+          "description": "Exemption",
+          "jurisdiction": "US"
+        }
+      ],
+      "board_approval_date": "2022-02-01",
+      "stakeholder_id": "stakeholder-id",
+      "consideration_text": "100,000.00 USD",
+      "custom_id": "W-2",
+      "exercise_triggers": [
+        {
+          "trigger_id": "WARRANT-1.FINANCING-TRIG",
+          "nickname": "Exercised at next qualified financing",
+          "trigger_description": "The warrant automatically exercises at the next financing with conversion amount determined by the valuation in the financing.",
+          "type": "AUTOMATIC_ON_CONDITION",
+          "trigger_condition": "This warrant will be automatically exercised upon the closing of the Company's next preferred equity financing with total proceeds in excess of $100,000,000.00",
+          "conversion_right": {
+            "type": "WARRANT_CONVERSION_RIGHT",
+            "conversion_mechanism": {
+              "type": "PPS_BASED_CONVERSION",
+              "description": "The Holder is entitled, at the next Qualified Financing, to purchase from the Company such number of Preferred Shares as are equal to $100,000 divided by the Exercise Price. 'Exercise Price' shall mean the price per share paid by the investors in the next Qualified Financing less $1.12, unless such price is less than $1.12, in which case the Exercise Price shall be $0.01.",
+              "discount": true,
+              "discount_amount": {
+                "amount": "1.12",
+                "currency": "USD"
+              }
+            },
+            "converts_to_future_round": true
+          }
+        }
+      ],
+      "purchase_price": {
+        "amount": "100000.00",
+        "currency": "USD"
+      },
+      "comments": ["Here is a comment", "Here is another comment"],
+      "warrant_expiration_date": "2032-02-01"
+    },
+    {
       "object_type": "TX_VESTING_START",
       "id": "test-warrant-security-id-vesting-start",
       "security_id": "test-warrant-security-id",
