@@ -21,6 +21,10 @@
       "description": "Date on which board approved the valuation. This is essential for 409A valuations, in particular, which require the Board to approve the valuation.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
+    "stockholder_approval_date": {
+      "description": "This optional field tracks when the stockholders approved the valuation.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
     "price_per_share": {
       "description": "Valued price per share",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
