@@ -40,7 +40,8 @@
     "**/*": "prettier --write --check --ignore-unknown"
   },
   "dependencies": {
-    "date-fns": "^2.28.0"
+    "date-fns": "^2.28.0",
+    "xstate": "^4.38.0"
   },
   "engines": {
     "npm": ">=9.5.1 <10"

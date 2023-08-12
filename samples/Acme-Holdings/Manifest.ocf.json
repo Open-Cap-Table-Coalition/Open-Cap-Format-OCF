@@ -1,0 +1,37 @@
+{
+  "ocf_version": "1.1.1-alpha+main",
+  "file_type": "OCF_MANIFEST_FILE",
+  "issuer": {
+    "id": "649d022c0343bc0007c20536",
+    "comments": [],
+    "object_type": "ISSUER",
+    "legal_name": "Acme Holdings Limited",
+    "formation_date": "2022-01-01",
+    "country_of_formation": "AE"
+  },
+  "as_of": "2023-06-29",
+  "generated_at": "2023-06-29T09:57:16.793Z",
+  "stock_plans_files": [],
+  "stock_legend_templates_files": [],
+  "stock_classes_files": [
+    {
+      "filepath": "./StockClasses.ocf.json",
+      "md5": "45bbd5a565154f8c4a762c3d4fd711f1"
+    }
+  ],
+  "transactions_files": [
+    {
+      "filepath": "./Transactions.ocf.json",
+      "md5": "ab35839164924530cac5eecbb19f2c4d"
+    }
+  ],
+  "stakeholders_files": [
+    {
+      "filepath": "./Stakeholders.ocf.json",
+      "md5": "12c14ee9ac8e71a120cee15d075ecea6"
+    }
+  ],
+  "vesting_terms_files": [],
+  "valuations_files": [],
+  "comments": ["This is an optional comment"]
+}

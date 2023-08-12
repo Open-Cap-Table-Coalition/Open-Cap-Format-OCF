@@ -69,12 +69,12 @@ async function buildObjectSchemaMap(verbose = false) {
   // there is a mapping entry for each object type in the object_type.oneOf array
   // for each of the const values in that array to the $id of the given schema
   schemas.forEach((schema) => {
-    console.log("Analyze schema", schema);
+    // console.log("Analyze schema", schema);
 
     if (schema.properties) {
       let object_type = schema.properties.object_type;
 
-      console.log("Object type", object_type);
+      // console.log("Object type", object_type);
       if (
         typeof object_type === "object" &&
         !Array.isArray(object_type) &&
