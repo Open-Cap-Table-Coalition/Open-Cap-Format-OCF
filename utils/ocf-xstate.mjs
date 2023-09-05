@@ -42,6 +42,11 @@ const transaction_types = [
   "TX_STOCK_ISSUANCE",
   "TX_STOCK_TRANSFER",
   "TX_STOCK_CANCELLATION",
+  "TX_STOCK_RETRACTION",
+  "TX_STOCK_ACCEPTANCE",
+  "TX_STOCK_REISSUANCE",
+  "TX_STOCK_CONVERSION",
+  "TX_STOCK_REPURCHASE",
 ];
 const sorted_transactions = acme_transactions.items.sort(
   (a, b) =>
@@ -122,6 +127,66 @@ const valid_tx_stock_cancellation = (context, event) => {
   }
 };
 
+const valid_tx_stock_retraction = (context, event) => {
+  let valid = false;
+
+  // TBC: validation of tx_stock_retraction
+
+  if (valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const valid_tx_stock_acceptance = (context, event) => {
+  let valid = false;
+
+  // TBC: validation of tx_stock_acceptance
+
+  if (valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const valid_tx_stock_reissuance = (context, event) => {
+  let valid = false;
+
+  // TBC: validation of tx_stock_reissuance
+
+  if (valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const valid_tx_stock_conversion = (context, event) => {
+  let valid = false;
+
+  // TBC: validation of tx_stock_conversion
+
+  if (valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const valid_tx_stock_repurchase = (context, event) => {
+  let valid = false;
+
+  // TBC: validation of tx_stock_repurchase
+
+  if (valid) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 // Set up OCF Xstate machine
 
 const ocfMachine = {
@@ -188,6 +253,106 @@ const ocfMachine = {
             },
           },
         ],
+        TX_STOCK_RETRACTION: [
+          {
+            target: "capTable",
+            cond: valid_tx_stock_retraction,
+            actions: (context, event) => {
+              console.log(`TX_STOCK_RETRACTION ${event.data.id} is valid`);
+              context.stockIssuances = context.stockIssuances.filter((obj) => {
+                return obj.security_id !== event.data.security_id;
+              });
+            },
+          },
+          {
+            target: "validationError",
+            actions: (context, event) => {
+              console.log(
+                `Error validating ${event.data.object_type} with id: ${event.data.id}`
+              );
+            },
+          },
+        ],
+        TX_STOCK_ACCEPTANCE: [
+          {
+            target: "capTable",
+            cond: valid_tx_stock_acceptance,
+            actions: (context, event) => {
+              console.log(`TX_STOCK_ACCEPTANCE ${event.data.id} is valid`);
+              context.stockIssuances = context.stockIssuances.filter((obj) => {
+                return obj.security_id !== event.data.security_id;
+              });
+            },
+          },
+          {
+            target: "validationError",
+            actions: (context, event) => {
+              console.log(
+                `Error validating ${event.data.object_type} with id: ${event.data.id}`
+              );
+            },
+          },
+        ],
+        TX_STOCK_REISSUANCE: [
+          {
+            target: "capTable",
+            cond: valid_tx_stock_reissuance,
+            actions: (context, event) => {
+              console.log(`TX_STOCK_REISSUANCE ${event.data.id} is valid`);
+              context.stockIssuances = context.stockIssuances.filter((obj) => {
+                return obj.security_id !== event.data.security_id;
+              });
+            },
+          },
+          {
+            target: "validationError",
+            actions: (context, event) => {
+              console.log(
+                `Error validating ${event.data.object_type} with id: ${event.data.id}`
+              );
+            },
+          },
+        ],
+        TX_STOCK_CONVERSION: [
+          {
+            target: "capTable",
+            cond: valid_tx_stock_conversion,
+            actions: (context, event) => {
+              console.log(`TX_STOCK_CONVERSION ${event.data.id} is valid`);
+              context.stockIssuances = context.stockIssuances.filter((obj) => {
+                return obj.security_id !== event.data.security_id;
+              });
+            },
+          },
+          {
+            target: "validationError",
+            actions: (context, event) => {
+              console.log(
+                `Error validating ${event.data.object_type} with id: ${event.data.id}`
+              );
+            },
+          },
+        ],
+        TX_STOCK_REPURCHASE: [
+          {
+            target: "capTable",
+            cond: valid_tx_stock_repurchase,
+            actions: (context, event) => {
+              console.log(`TX_STOCK_REPURCHASE ${event.data.id} is valid`);
+              context.stockIssuances = context.stockIssuances.filter((obj) => {
+                return obj.security_id !== event.data.security_id;
+              });
+            },
+          },
+          {
+            target: "validationError",
+            actions: (context, event) => {
+              console.log(
+                `Error validating ${event.data.object_type} with id: ${event.data.id}`
+              );
+            },
+          },
+        ],
         RUN_EOD: {
           taget: "capTable",
           actions: (context, event) => {
@@ -202,10 +367,6 @@ const ocfMachine = {
     },
   },
 };
-
-// Set up guards
-
-// const guards = { guards: { valid_tx_stock_issuance, valid_tx_stock_transfer, valid_tx_stock_cancellation } };
 
 // Create xState machine
 const promiseMachine = createMachine(ocfMachine);
