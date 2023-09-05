@@ -2,6 +2,12 @@ import fs from "fs";
 import xstate from "xstate";
 import { validateOcfDirectory } from "./validate.mjs";
 
+/* 
+PROTOTYPE FOR USING XSTATE TO VALIDATE OCF PACKAGES
+Edit files in ./samples/Acme-Holdings to change input data to prototype.
+Run the prototype validation from the root folder with `node ./utils/ocf-xstate.mjs`.
+*/
+
 const { createMachine, interpret } = xstate;
 
 const acme_directory = "./samples/Acme-Holdings";
@@ -398,6 +404,16 @@ sorted_transactions.forEach((ele) => {
     promiseService.send({ type: "TX_STOCK_TRANSFER", data: ele });
   } else if (ele.object_type == "TX_STOCK_CANCELLATION") {
     promiseService.send({ type: "TX_STOCK_CANCELLATION", data: ele });
+  } else if (ele.object_type == "TX_STOCK_RETRACTION") {
+    promiseService.send({ type: "TX_STOCK_RETRACTION", data: ele });
+  } else if (ele.object_type == "TX_STOCK_ACCEPTANCE") {
+    promiseService.send({ type: "TX_STOCK_ACCEPTANCE", data: ele });
+  } else if (ele.object_type == "TX_STOCK_REISSUANCE") {
+    promiseService.send({ type: "TX_STOCK_REISSUANCE", data: ele });
+  } else if (ele.object_type == "TX_STOCK_CONVERSION") {
+    promiseService.send({ type: "TX_STOCK_CONVERSION", data: ele });
+  } else if (ele.object_type == "TX_STOCK_REPURCHASE") {
+    promiseService.send({ type: "TX_STOCK_REPURCHASE", data: ele });
   }
 });
 
