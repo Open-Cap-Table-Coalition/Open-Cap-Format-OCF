@@ -51,11 +51,16 @@
     "date": "2022-02-01",
     "reason_text": "Cancel the securities",
     "quantity": "37",
-    "comments": [
-      "Here is a comment",
-      "Here is another comment"
-    ],
+    "comments": ["Here is a comment", "Here is another comment"],
     "balance_security_id": "test-balance-security-id"
+  },
+  {
+    "id": "sc_01",
+    "object_type": "TX_STOCK_CANCELLATION",
+    "security_id": "stock_issuance_04",
+    "date": "2022-09-01",
+    "reason_text": "Cancelling the remaining securities",
+    "quantity": "100000"
   }
 ]
 ```

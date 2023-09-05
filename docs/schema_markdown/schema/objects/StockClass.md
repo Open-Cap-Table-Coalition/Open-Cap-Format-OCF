@@ -94,6 +94,36 @@
     "liquidation_preference_multiple": "2",
     "participation_cap_multiple": "2",
     "comments": []
+  },
+  {
+    "id": "649d23b80343bc0007c2507e",
+    "object_type": "STOCK_CLASS",
+    "name": "Ordinary A",
+    "class_type": "PREFERRED",
+    "default_id_prefix": "OA",
+    "initial_shares_authorized": "10000000",
+    "votes_per_share": "1",
+    "seniority": "1"
+  },
+  {
+    "id": "649d23c30343bc0007c250cc",
+    "object_type": "STOCK_CLASS",
+    "name": "Ordinary B",
+    "class_type": "COMMON",
+    "default_id_prefix": "OB",
+    "initial_shares_authorized": "0",
+    "votes_per_share": "1",
+    "seniority": "1"
+  },
+  {
+    "id": "649d23df0343bc0007c25122",
+    "object_type": "STOCK_CLASS",
+    "name": "Preferred",
+    "class_type": "PREFERRED",
+    "default_id_prefix": "P",
+    "initial_shares_authorized": "0",
+    "votes_per_share": "1",
+    "seniority": "1"
   }
 ]
 ```

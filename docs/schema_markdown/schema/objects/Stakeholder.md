@@ -55,6 +55,22 @@
     },
     "stakeholder_type": "INDIVIDUAL",
     "comments": []
+  },
+  {
+    "id": "649d02170343bc0007c204e0",
+    "object_type": "STAKEHOLDER",
+    "name": {
+      "legal_name": "Fiona Felicity Founder"
+    },
+    "stakeholder_type": "INDIVIDUAL"
+  },
+  {
+    "id": "649d02170343bc0007c204e1",
+    "object_type": "STAKEHOLDER",
+    "name": {
+      "legal_name": "Charlie Chuck Cofounder"
+    },
+    "stakeholder_type": "INDIVIDUAL"
   }
 ]
 ```

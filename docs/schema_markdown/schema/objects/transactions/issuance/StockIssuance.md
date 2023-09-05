@@ -145,6 +145,70 @@
     "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
     "comments": ["Here is a comment", "Here is another comment"],
     "vesting_terms_id": "4yr-1yr-cliff-schedule"
+  },
+  {
+    "id": "si_01",
+    "object_type": "TX_STOCK_ISSUANCE",
+    "date": "2022-01-01",
+    "security_id": "stock_issuance_01",
+    "custom_id": "OA-1",
+    "stakeholder_id": "649d02170343bc0007c204e0",
+    "security_law_exemptions": [],
+    "stock_class_id": "649d23b80343bc0007c2507e",
+    "share_price": {
+      "amount": "0.0001",
+      "currency": "USD"
+    },
+    "quantity": "600000",
+    "stock_legend_ids": []
+  },
+  {
+    "id": "si_02",
+    "object_type": "TX_STOCK_ISSUANCE",
+    "date": "2022-01-01",
+    "security_id": "stock_issuance_02",
+    "custom_id": "OA-2",
+    "stakeholder_id": "649d02170343bc0007c204e1",
+    "security_law_exemptions": [],
+    "stock_class_id": "649d23c30343bc0007c250cc",
+    "share_price": {
+      "amount": "0.0001",
+      "currency": "USD"
+    },
+    "quantity": "400000",
+    "stock_legend_ids": []
+  },
+  {
+    "id": "si_03",
+    "object_type": "TX_STOCK_ISSUANCE",
+    "date": "2022-06-15",
+    "security_id": "stock_issuance_03",
+    "custom_id": "OA-3",
+    "stakeholder_id": "649d02170343bc0007c204e0",
+    "security_law_exemptions": [],
+    "stock_class_id": "649d23b80343bc0007c2507e",
+    "share_price": {
+      "amount": "0.0001",
+      "currency": "USD"
+    },
+    "quantity": "300000",
+    "stock_legend_ids": []
+  },
+  {
+    "id": "si_04",
+    "object_type": "TX_STOCK_ISSUANCE",
+    "date": "2022-06-15",
+    "security_id": "stock_issuance_04",
+    "custom_id": "OA-4",
+    "stakeholder_id": "649d02170343bc0007c204e1",
+    "security_law_exemptions": [],
+    "stock_class_id": "649d23c30343bc0007c250cc",
+    "share_price": {
+      "amount": "0.0001",
+      "currency": "USD"
+    },
+    "quantity": "100000",
+    "stock_legend_ids": []
   }
 ]
 ```

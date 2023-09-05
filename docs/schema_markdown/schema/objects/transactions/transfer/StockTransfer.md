@@ -60,12 +60,18 @@
       "resultant-security-id-3"
     ],
     "quantity": "10",
-    "comments": [
-      "Here is a comment",
-      "Here is another comment"
-    ],
+    "comments": ["Here is a comment", "Here is another comment"],
     "consideration_text": "1.00 USD",
     "balance_security_id": "balance-security-id"
+  },
+  {
+    "id": "st_01",
+    "object_type": "TX_STOCK_TRANSFER",
+    "date": "2022-06-15",
+    "security_id": "stock_issuance_02",
+    "quantity": "300000",
+    "resulting_security_ids": ["stock_issuance_03"],
+    "balance_security_id": "stock_issuance_04"
   }
 ]
 ```
