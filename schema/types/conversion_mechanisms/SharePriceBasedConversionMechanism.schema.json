@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - Share-Price-Based Conversion Mechanism",
+  "description": "Sets forth inputs and conversion mechanism based on price per share of a future round (with potential discounts)",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+    }
+  ],
+  "properties": {
+    "type": {
+      "const": "PPS_BASED_CONVERSION"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the specifics of the conversion - e.g. The Holder is entitled, during the Exercise Period, to purchase from the Company such number of Preferred Shares as are equal to $100,000 divided by the Exercise Price. 'Exercise Price' shall mean 80% of the price per share paid by the investors in the next Qualified Financing."
+    },
+    "discount": {
+      "type": "boolean",
+      "description": "True if the conversion shares should be based on a discount off the price-per-share in the next elligible financing"
+    },
+    "discount_percentage": {
+      "description": "If the conversion price is base on a percent discount off the price-per-share of the next elligible financing, what is the discount percent",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
+    },
+    "discount_amount": {
+      "description": "If the resulting conversion shares is based on a fixed amount discount off the price-per-share of the next eilligible financing, what is the discount amount (in currency)",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "discount": {
+          "const": true
+        }
+      },
+      "required": ["discount_percentage"],
+      "not": {
+        "required": ["discount_amount"]
+      }
+    },
+    {
+      "properties": {
+        "discount": {
+          "const": true
+        }
+      },
+      "required": ["discount_amount"],
+      "not": {
+        "required": ["discount_percentage"]
+      }
+    },
+    {
+      "properties": {
+        "discount": {
+          "const": false
+        }
+      },
+      "not": {
+        "required": ["discount_percentage", "discount_amount"]
+      }
+    }
+  ],
+  "required": ["type", "description"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2023 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism.schema.json"
+}
