@@ -23,4 +23,4 @@ _Type representation of an automatic trigger on a date._
 
 **Source Code:** [schema/types/conversion_triggers/AutomaticConversionOnDateTrigger](../../../../../schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

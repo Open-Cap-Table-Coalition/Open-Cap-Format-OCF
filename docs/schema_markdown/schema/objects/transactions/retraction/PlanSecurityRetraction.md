@@ -14,4 +14,4 @@
   
   **Source Code:** [schema/objects/transactions/retraction/PlanSecurityRetraction](../../../../../../schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

@@ -14,4 +14,4 @@
   
   **Source Code:** [schema/objects/transactions/issuance/PlanSecurityIssuance](../../../../../../schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

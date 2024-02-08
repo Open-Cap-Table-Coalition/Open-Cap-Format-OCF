@@ -25,4 +25,4 @@ _Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and i
 
 **Source Code:** [schema/types/conversion_mechanisms/SAFEConversionMechanism](../../../../../schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

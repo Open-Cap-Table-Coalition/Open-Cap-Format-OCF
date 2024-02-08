@@ -18,4 +18,4 @@
 
 **Source Code:** [schema/primitives/objects/transactions/IssuerTransaction](../../../../../../schema/primitives/objects/transactions/IssuerTransaction.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

@@ -19,4 +19,4 @@ _Type representation of the contact info for an individual stakeholder_
 
 **Source Code:** [schema/types/ContactInfoWithoutName](../../../../schema/types/ContactInfoWithoutName.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

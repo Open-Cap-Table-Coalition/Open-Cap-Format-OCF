@@ -19,4 +19,4 @@ _Type representation of a securities issuance exemption that includes an unstruc
 
 **Source Code:** [schema/types/SecurityExemption](../../../../schema/types/SecurityExemption.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

@@ -185,7 +185,11 @@
     ],
     "seniority": 1,
     "pro_rata": "2500",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   },
   {
     "object_type": "TX_CONVERTIBLE_ISSUANCE",
@@ -227,9 +231,13 @@
     ],
     "seniority": 1,
     "pro_rata": "2500",
-    "comments": ["comment-one", "comment-two", "..."]
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
   }
 ]
 ```
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.
