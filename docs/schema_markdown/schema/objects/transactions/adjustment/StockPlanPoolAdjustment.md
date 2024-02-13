@@ -38,7 +38,9 @@
   {
     "object_type": "TX_STOCK_PLAN_POOL_ADJUSTMENT",
     "id": "increase_sop_pool",
-    "comments": ["Increased for upcoming financing."],
+    "comments": [
+      "Increased for upcoming financing."
+    ],
     "date": "2022-11-14",
     "stock_plan_id": "2022 Stock Option Plan",
     "board_approval_date": "2022-11-14",
@@ -48,4 +50,4 @@
 ]
 ```
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

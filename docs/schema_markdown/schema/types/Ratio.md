@@ -19,4 +19,4 @@ _Type representation of a ratio as two parts of a quotient, i.e. numerator and d
 
 **Source Code:** [schema/types/Ratio](../../../../schema/types/Ratio.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

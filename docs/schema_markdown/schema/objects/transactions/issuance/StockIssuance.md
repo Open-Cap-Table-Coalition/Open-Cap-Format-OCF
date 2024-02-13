@@ -34,7 +34,7 @@
 | security_law_exemptions   | [ [schema/types/SecurityExemption](../../../types/SecurityExemption.md) ]                                                                                                                                                                        | List of security law exemptions (and applicable jurisdictions) for this security                                                                                                                                                                                                                                                                                                                                                                                                                            | `REQUIRED` |
 | stock_class_id            | `STRING`                                                                                                                                                                                                                                         | Identifier of the stock class for this stock issuance                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `REQUIRED` |
 | stock_plan_id             | `STRING`                                                                                                                                                                                                                                         | Identifier of StockPlan the Stock was issued from (in the case of RSAs or Stock issued from a plan).                                                                                                                                                                                                                                                                                                                                                                                                        | -          |
-| share_numbers_issued      | [ [schema/types/ShareNumberRange](../../../types/ShareNumberRange.md) ]                                                                                                                                                                          | Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, _which_ specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.                                                                         | -          |
+| share_numbers_issued      | [ [schema/types/ShareNumberRange](../../../types/ShareNumberRange.md) ]                                                                                                                                                                          | Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, *which* specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.                                                                         | -          |
 | share_price               | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                              | The price per share paid for the stock by the holder                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | quantity                  | [schema/types/Numeric](../../../types/Numeric.md)                                                                                                                                                                                                | Number of shares issued to the stakeholder                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
 | vesting_terms_id          | `STRING`                                                                                                                                                                                                                                         | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
@@ -66,7 +66,10 @@
       "amount": "0",
       "currency": "USD"
     },
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"]
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
   },
   {
     "object_type": "TX_STOCK_ISSUANCE",
@@ -89,7 +92,10 @@
       "amount": "0",
       "currency": "USD"
     },
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"]
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
   },
   {
     "object_type": "TX_STOCK_ISSUANCE",
@@ -115,7 +121,10 @@
         "ending_share_number": "1000"
       }
     ],
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"]
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ]
   },
   {
     "object_type": "TX_STOCK_ISSUANCE",
@@ -142,11 +151,17 @@
       "amount": "0",
       "currency": "USD"
     },
-    "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
-    "comments": ["Here is a comment", "Here is another comment"],
+    "stock_legend_ids": [
+      "stock-legend-id-1",
+      "stock-legend-id-2"
+    ],
+    "comments": [
+      "Here is a comment",
+      "Here is another comment"
+    ],
     "vesting_terms_id": "4yr-1yr-cliff-schedule"
   }
 ]
 ```
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

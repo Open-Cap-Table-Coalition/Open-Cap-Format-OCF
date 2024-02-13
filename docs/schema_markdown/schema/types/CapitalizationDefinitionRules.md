@@ -25,4 +25,4 @@ _Type represents the rules for determining the capitalization definition for a s
 
 **Source Code:** [schema/types/CapitalizationDefinitionRules](../../../../schema/types/CapitalizationDefinitionRules.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.

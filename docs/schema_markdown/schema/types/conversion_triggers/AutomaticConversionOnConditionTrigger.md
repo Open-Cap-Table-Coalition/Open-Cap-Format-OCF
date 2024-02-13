@@ -23,4 +23,4 @@ _Type representation of automatic trigger on a tive or condition._
 
 **Source Code:** [schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger](../../../../../schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json)
 
-Copyright © 2023 Open Cap Table Coalition.
+Copyright © 2024 Open Cap Table Coalition.
