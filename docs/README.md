@@ -12,7 +12,7 @@ OCF is a JSON-based format, wherein individual objects required to describe a co
 | --------------------------------------------------------: | ------------------------------------------------------------ |
 | [Primary Website](https://www.opencaptablecoalition.com/) | Sharable landing site for OCF and the Coalition              |
 |           [Medium Page](https://medium.com/@opencaptable) | Past announcements related to OCF and the Coalition          |
-|                          [PROJECTS.md](/docs/PROJECTS.md) | Collection of public projects in the OCF ecosystem listed in |
+|             [PROJECTS.md](/Open-Cap-Format-OCF/PROJECTS/) | Collection of public projects in the OCF ecosystem listed in |
 
 ## Documentation
 
