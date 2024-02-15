@@ -23,11 +23,7 @@ describe("Primitive", () => {
       const actual = new Primitive(schema, FIXTURE).markdownOutput();
       let copyright_year = new Date().getFullYear();
 
-      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
-
----
-
-### Primitive - Test Title
+      expect(actual).toEqual(`### Primitive - Test Title
 
 \`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/TestPrimitive.schema.json\`
 

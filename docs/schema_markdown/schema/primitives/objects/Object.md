@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../README.md)
-
----
-
 ### Primitive - Object
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json`

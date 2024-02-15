@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../../README.md)
-
----
-
 ### Primitive - Security Repurchase Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/repurchase/Repurchase.schema.json`

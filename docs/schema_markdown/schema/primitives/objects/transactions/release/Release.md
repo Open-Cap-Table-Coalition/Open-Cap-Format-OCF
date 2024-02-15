@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../../README.md)
-
----
-
 ### Primitive - Security Release Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/release/Release.schema.json`

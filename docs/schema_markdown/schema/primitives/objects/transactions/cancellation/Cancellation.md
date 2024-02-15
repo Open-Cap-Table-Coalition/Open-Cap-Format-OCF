@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../../README.md)
-
----
-
 ### Primitive - Security Cancellation Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/cancellation/Cancellation.schema.json`
