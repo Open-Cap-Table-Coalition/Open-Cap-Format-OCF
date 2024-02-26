@@ -12,9 +12,9 @@
 
 **Properties:**
 
-| Property  | Type     | Description                                                    | Required |
-| --------- | -------- | -------------------------------------------------------------- | -------- |
-| issuer_id | `STRING` | Identifier of the Issuer object, a subject of this transaction | -        |
+| Property  | Type     | Description                                                    | Required   |
+| --------- | -------- | -------------------------------------------------------------- | ---------- |
+| issuer_id | `STRING` | Identifier of the Issuer object, a subject of this transaction | `REQUIRED` |
 
 **Source Code:** [schema/primitives/objects/transactions/IssuerTransaction](../../../../../../schema/primitives/objects/transactions/IssuerTransaction.schema.json)
 
