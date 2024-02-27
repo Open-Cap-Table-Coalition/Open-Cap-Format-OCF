@@ -33,6 +33,9 @@
     "security_id": {}
   },
   "additionalProperties": false,
-  "required": ["quantity", "reason_text"],
+  "required": [
+    "quantity",
+    "reason_text"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting/VestingAcceleration.schema.json"
 }

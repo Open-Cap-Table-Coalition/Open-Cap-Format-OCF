@@ -41,6 +41,10 @@
     "comments": {}
   },
   "additionalProperties": false,
-  "required": ["plan_name", "stock_class_id", "initial_shares_reserved"],
+  "required": [
+    "plan_name",
+    "stock_class_id",
+    "initial_shares_reserved"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockPlan.schema.json"
 }
