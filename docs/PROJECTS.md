@@ -32,6 +32,10 @@ Shoobx and @regebro are working on PyOCF, a Python library to read and create Op
 
 [cap.octolane.com](https://github.com/octolane-org/cap.octolane.com) is "the open-source cap table management infrastructure for all founders and investors". You can self-host their nice app template or pay octolane for a hosted service. They are [exploring OCF compatibility](https://github.com/octolane-org/cap.octolane.com/issues/14).
 
+### ocf4java
+
+[ocf4java](https://github.com/jacobyavis/ocf4java) is java class generation for Open Cap Table Format (OCF), though it does not yet properly handle OCF's complex composition structure.
+
 ## New Project Ideas
 
 Here are a few project ideas if you want to contribute to the OCF ecosystem:
