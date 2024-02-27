@@ -9,6 +9,10 @@
       "description": "Tax identifier as string",
       "type": "string"
     },
+    "tax_id_type": {
+      "description": "Type of Tax Identifier",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TaxIdentifierType.schema.json"
+    },
     "country": {
       "description": "Issuing country code (ISO 3166-1 alpha-2) for the tax identifier",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json"
