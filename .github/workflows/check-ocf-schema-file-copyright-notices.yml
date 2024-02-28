@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Check for coypright notices
-        run: npm run schema:enforce-copyright-notices
+        run: npm run enforce-copyright-notices
 
       - name: Prettier Fix Formatting
-        run: npm run lint:fix
+        run: npm run fix

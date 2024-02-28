@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Generate documentation
-        run: npm run docs:generate
+        run: npm run generate-docs
 
       - name: Ensure there are no un-committed changes to gen/docs folder
         run: |
@@ -36,6 +36,6 @@ jobs:
             echo "Clean"
             echo "0"
           else
-            echo "Please ensure you are regenerating documentation via 'npm run docs:generate' and have committted those changes. Changed files: $output"
+            echo "Please ensure you are regenerating documentation via 'npm run generate-docs/' and have committted those changes. Changed files: $output"
             echo "1"
           fi

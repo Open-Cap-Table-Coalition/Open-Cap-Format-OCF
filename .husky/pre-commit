@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run schema:enforce-copyright-notices && git add schema
-npm run docs:generate && git add docs/schema_markdown
+npm run enforce-copyright-notices && git add schema
+npm run generate-docs && git add docs/schema_markdown
 npx lint-staged
