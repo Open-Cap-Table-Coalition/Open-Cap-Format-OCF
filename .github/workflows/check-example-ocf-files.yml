@@ -24,4 +24,4 @@ jobs:
         run: npm install
 
       - name: Run Validation Script
-        run: npm run validate-example-ocf-files
+        run: npm run schema:validate-example-ocf-files

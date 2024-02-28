@@ -22,8 +22,8 @@ Follow the step-by-step guide for setting up a [WSL development environment](htt
 We have created npm scripts to perform various validations, such as validating the schemas themselves and our
 example ocf object instances:
 
-- To validate schemas in the repo, run `npm run validate-ocf-file-schemas`
-- To validate examples in the repo, run `npm run validate-example-ocf-files`
+- To validate schemas in the repo, run `npm run schema:validate-ocf-file-schemas`
+- To validate examples in the repo, run `npm run schema:validate-example-ocf-files`
 
 If you want to use the validator for your own files, you can run the following command from the repo root:
 
