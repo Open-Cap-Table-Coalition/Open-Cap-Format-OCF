@@ -26,15 +26,11 @@ Shoobx and @regebro are working on PyOCF, a Python library to read and create Op
 
 ### OpenCap.co
 
-[OpenCap.co](https://opencap.co/) is both an open source project a company. They're building an [open source cap table application](https://github.com/opencapco/opencap.co) that is compatible with the OCF standard.
+[OpenCap.co](https://opencap.co/) is both an open source project and a company. They're building an [open source cap table application](https://github.com/opencapco/opencap.co) that will follow the OCF standard.
 
 ### Cap.octolane.com
 
 [cap.octolane.com](https://github.com/octolane-org/cap.octolane.com) is "the open-source cap table management infrastructure for all founders and investors". You can self-host their nice app template or pay octolane for a hosted service. They are [exploring OCF compatibility](https://github.com/octolane-org/cap.octolane.com/issues/14).
-
-### ocf4java
-
-[ocf4java](https://github.com/jacobyavis/ocf4java) is java class generation for Open Cap Table Format (OCF), though it does not yet properly handle OCF's complex composition structure.
 
 ## New Project Ideas
 
