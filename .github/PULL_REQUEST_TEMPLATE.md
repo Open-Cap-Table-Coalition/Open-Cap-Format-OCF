@@ -3,7 +3,7 @@
 1. Read the [contributing guidelines](../docs/CONTRIBUTING.md).
 2. Ensure you have added or ran the appropriate tests for your PR.
 3. If your PR is unfinished, consider creating a [Draft PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests).
-4. PRs are discussed, reviewed, and responded to on a bi-weekly basis by the Technical Working Group. We'll get back to you soon!
+4. PRs are discussed, reviewed, and responded to every two weeks by the Technical Working Group. We'll get back to you soon!
 -->
 
 #### What type of PR is this?
