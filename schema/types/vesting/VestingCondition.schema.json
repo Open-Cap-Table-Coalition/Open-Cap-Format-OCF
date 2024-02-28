@@ -48,13 +48,21 @@
       "uniqueItems": true
     }
   },
-  "required": ["id", "trigger", "next_condition_ids"],
+  "required": [
+    "id",
+    "trigger",
+    "next_condition_ids"
+  ],
   "oneOf": [
     {
-      "required": ["portion"]
+      "required": [
+        "portion"
+      ]
     },
     {
-      "required": ["quantity"]
+      "required": [
+        "quantity"
+      ]
     }
   ],
   "additionalProperties": false,

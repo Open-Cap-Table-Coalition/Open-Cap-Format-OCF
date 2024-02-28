@@ -4,6 +4,10 @@
   "title": "Enum - Convertible Type",
   "description": "Enumeration of convertible instrument types",
   "type": "string",
-  "enum": ["NOTE", "SAFE", "CONVERTIBLE_SECURITY"],
+  "enum": [
+    "NOTE",
+    "SAFE",
+    "CONVERTIBLE_SECURITY"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConvertibleType.schema.json"
 }

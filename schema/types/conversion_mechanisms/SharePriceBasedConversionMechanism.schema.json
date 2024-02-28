@@ -37,9 +37,13 @@
           "const": true
         }
       },
-      "required": ["discount_percentage"],
+      "required": [
+        "discount_percentage"
+      ],
       "not": {
-        "required": ["discount_amount"]
+        "required": [
+          "discount_amount"
+        ]
       }
     },
     {
@@ -48,9 +52,13 @@
           "const": true
         }
       },
-      "required": ["discount_amount"],
+      "required": [
+        "discount_amount"
+      ],
       "not": {
-        "required": ["discount_percentage"]
+        "required": [
+          "discount_percentage"
+        ]
       }
     },
     {
@@ -60,11 +68,17 @@
         }
       },
       "not": {
-        "required": ["discount_percentage", "discount_amount"]
+        "required": [
+          "discount_percentage",
+          "discount_amount"
+        ]
       }
     }
   ],
-  "required": ["type", "description"],
+  "required": [
+    "type",
+    "description"
+  ],
   "additionalProperties": false,
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism.schema.json"
 }
