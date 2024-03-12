@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/FinancingsFile.schema.json",
+  "title": "File - Financings",
+  "description": "JSON containing file type identifier and list of financings",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
+    }
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "List of OCF financing objects",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Financing.schema.json"
+      }
+    },
+    "file_type": {
+      "const": "OCF_FINANCING_FILE"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["items", "file_type"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/FinancingsFile.schema.json"
+}

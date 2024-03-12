@@ -1,0 +1,12 @@
+{
+  "file_type": "OCF_FINANCINGS_FILE",
+  "items": [
+    {
+      "object_type": "FINANCING",
+      "id": "5bfe12c6-f049-4216-9f94-5a75dc3aaee5",
+      "name": "Series A Funding",
+      "issuance_ids": ["test-stock-issuance-minimal"],
+      "comments": ["A funding round led by Firm Y on 02/15/2024."]
+    }
+  ]
+}
