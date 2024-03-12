@@ -32,6 +32,10 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json"
       }
+    },
+    "financing_id": {
+      "description": "Identifier for the financing round in which this security was issued",
+      "type": "string"
     }
   },
   "required": ["security_law_exemptions", "stakeholder_id", "custom_id"],

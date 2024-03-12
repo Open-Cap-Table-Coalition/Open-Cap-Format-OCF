@@ -20,6 +20,7 @@
 | stockholder_approval_date | [schema/types/Date](../../../../types/Date.md)                               | Date on which the stockholders approved the security                                      | -          |
 | consideration_text        | `STRING`                                                                     | Unstructured text description of consideration provided in exchange for security issuance | -          |
 | security_law_exemptions   | [ [schema/types/SecurityExemption](../../../../types/SecurityExemption.md) ] | List of security law exemptions (and applicable jurisdictions) for this security          | `REQUIRED` |
+| financing_id              | `STRING`                                                                     | Identifier for the financing round in which this security was issued                      | -          |
 
 **Source Code:** [schema/primitives/objects/transactions/issuance/Issuance](../../../../../../../schema/primitives/objects/transactions/issuance/Issuance.schema.json)
 
