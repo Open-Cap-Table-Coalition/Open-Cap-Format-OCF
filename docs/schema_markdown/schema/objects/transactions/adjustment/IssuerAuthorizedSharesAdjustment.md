@@ -6,7 +6,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json`
 
-**Description:** _Object describing an event to change the number of authoried shares of an issuer._
+**Description:** _Object describing an event to change the number of authoried shares at the issuer level._
 
 **Data Type:** `OCF Object - TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT`
 
@@ -30,5 +30,33 @@
 | stockholder_approval_date | [schema/types/Date](../../../types/Date.md)                                                                                     | Date on which the stockholders approved the change to the issuer                        | -          |
 
 **Source Code:** [schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment](../../../../../../schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json)
+
+**Examples:**
+
+```json
+[
+  {
+    "object_type": "TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT",
+    "id": "test-issuer-level-share-adjustment-minimal",
+    "issuer_id": "ad98a30d-aeae-4282-affa-7b9fe033d5e6",
+    "date": "2020-03-22",
+    "new_shares_authorized": "10000000"
+  },
+  {
+    "object_type": "TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT",
+    "id": "test-issuer-level-share-adjustment-all-fields",
+    "issuer_id": "ad98a30d-aeae-4282-affa-7b9fe033d5e6",
+    "date": "2020-03-22",
+    "new_shares_authorized": "10000000",
+    "board_approval_date": "2020-03-31",
+    "stockholder_approval_date": "2020-04-01",
+    "comments": [
+      "comment-one",
+      "comment-two",
+      "..."
+    ]
+  }
+]
+```
 
 Copyright © 2024 Open Cap Table Coalition.
