@@ -42,7 +42,7 @@
       "incoming-security-id-2"
     ],
     "date": "2022-02-01",
-    "resulting_security_ids": "resultant-security-id-1",
+    "resulting_security_id": "resultant-security-id-1",
     "comments": [
       "Here is a comment",
       "Here is another comment"
