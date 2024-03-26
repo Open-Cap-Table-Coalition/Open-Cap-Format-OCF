@@ -1285,6 +1285,14 @@
       "board_approval_date": "2022-11-14",
       "stockholder_approval_date": "2022-11-14",
       "shares_reserved": "100000000"
+    },
+    {
+      "object_type": "TX_STOCK_CONSOLIDATION",
+      "id": "test-stock-consolidation-full-fields",
+      "security_ids": ["incoming-security-id-1", "incoming-security-id-2"],
+      "date": "2022-02-01",
+      "resulting_security_ids": "resultant-security-id-1",
+      "comments": ["Here is a comment", "Here is another comment"]
     }
   ]
 }

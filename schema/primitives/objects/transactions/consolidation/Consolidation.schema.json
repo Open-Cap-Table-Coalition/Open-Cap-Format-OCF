@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/consolidation/Consolidation.schema.json",
+  "title": "Primitive - Security Consolidation Transaction",
+  "description": "Abstract object describing common properties to a consolidation of a security",
+  "type": "object",
+  "properties": {
+    "security_ids": {
+      "title": "Security Consolidation - Incoming Securities ID Array",
+      "description": "Identifier for the securities (stock, plan security, warrant, or convertible) that are being consolidated into one position by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resulting_security_id": {
+      "title": "Security Consolidation - Resulting Security ID",
+      "description": "Identifier of the new security issuance resulting from a consolidation",
+      "type": "string"
+    },
+    "reason_text": {
+      "title": "Reason for stock consolidation",
+      "description": "Free-form human-readable reason for stock consolidation",
+      "type": "string"
+    }
+  },
+  "required": ["resulting_security_id", "security_ids"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/consolidation/Consolidation.schema.json"
+}
