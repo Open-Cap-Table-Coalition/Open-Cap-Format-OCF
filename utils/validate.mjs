@@ -38,6 +38,9 @@ export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
 export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
   "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json";
 
+export const OCF_FINANCINGS_FILE_SCHEMA_URI =
+  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/FinancingsFile.schema.json";
+
 export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,
   OCF_STAKEHOLDERS_FILE: OCF_STAKEHOLDERS_FILE_SCHEMA_URI,
@@ -47,6 +50,7 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
   OCF_TRANSACTIONS_FILE: OCF_TRANSACTIONS_FILE_SCHEMA_URI,
   OCF_VALUATIONS_FILE: OCF_VALUATIONS_FILE_SCHEMA_URI,
   OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
+  OCF_FINANCINGS_FILE: OCF_FINANCINGS_FILE_SCHEMA_URI,
 };
 
 // build map of object_type to schema $id
