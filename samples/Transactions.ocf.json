@@ -2,6 +2,23 @@
   "file_type": "OCF_TRANSACTIONS_FILE",
   "items": [
     {
+      "object_type": "TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT",
+      "id": "test-issuer-level-share-adjustment-minimal",
+      "issuer_id": "ad98a30d-aeae-4282-affa-7b9fe033d5e6",
+      "date": "2020-03-22",
+      "new_shares_authorized": "10000000"
+    },
+    {
+      "object_type": "TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT",
+      "id": "test-issuer-level-share-adjustment-all-fields",
+      "issuer_id": "ad98a30d-aeae-4282-affa-7b9fe033d5e6",
+      "date": "2020-03-22",
+      "new_shares_authorized": "10000000",
+      "board_approval_date": "2020-03-31",
+      "stockholder_approval_date": "2020-04-01",
+      "comments": ["comment-one", "comment-two", "..."]
+    },
+    {
       "object_type": "TX_CONVERTIBLE_ACCEPTANCE",
       "id": "test-convertible-acceptance-minimal",
       "security_id": "2936wa8yefhdsvcn",
