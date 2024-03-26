@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Warrant Retraction Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/WarrantRetraction.schema.json`

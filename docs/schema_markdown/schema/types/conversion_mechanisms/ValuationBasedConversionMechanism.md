@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../README.md)
-
----
-
 ### Conversion Mechanism - Valuation-Based Conversion Mechanism
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/ValuationBasedConversionMechanism.schema.json`

@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Stock Class Conversion Ratio Adjustment Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`

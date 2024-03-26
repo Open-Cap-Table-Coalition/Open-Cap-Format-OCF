@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../README.md)
-
----
-
 ### Object - Stock Plan
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/StockPlan.schema.json`

@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../README.md)
-
----
-
 ### Type - Vesting Event Trigger
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventTrigger.schema.json`

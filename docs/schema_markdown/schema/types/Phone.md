@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../README.md)
-
----
-
 ### Type - Phone
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Phone.schema.json`

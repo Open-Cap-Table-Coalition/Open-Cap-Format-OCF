@@ -1,6 +1,6 @@
 import Schema from "../Schema.js";
-import Object, { ObjectSchemaNodeJson } from "./Object.js";
 import { EnumSchemaNodeJson } from "./Enum.js";
+import Object, { ObjectSchemaNodeJson } from "./Object.js";
 import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
 export const ENUM_OBJECT_TYPE_SCHEMA_NODE_FIXTURE: EnumSchemaNodeJson = {
@@ -83,11 +83,7 @@ describe("Object", () => {
 
       let copyright_year = new Date().getFullYear();
 
-      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
-
----
-
-### Object - Valuation
+      expect(actual).toEqual(`### Object - Valuation
 
 \`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Valuation\`
 

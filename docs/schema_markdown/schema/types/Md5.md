@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../README.md)
-
----
-
 ### Type - MD5 Hash
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Md5.schema.json`

@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Acceptance Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/EquityCompensationAcceptance.schema.json`

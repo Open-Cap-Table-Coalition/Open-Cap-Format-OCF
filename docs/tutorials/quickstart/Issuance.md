@@ -1,5 +1,3 @@
-:house: [Documentation Home](../../README.md)
-
 # OCF - Getting Started with Issuances
 
 ## Overview

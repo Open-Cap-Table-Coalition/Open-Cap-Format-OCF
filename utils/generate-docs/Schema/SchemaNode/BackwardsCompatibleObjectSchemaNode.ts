@@ -1,10 +1,10 @@
+import { format } from "date-fns";
 import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
-import { format } from "date-fns";
 
+import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 import Schema from "../Schema.js";
 import { PropertyJson } from "./Property/Factory.js";
-import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 import SchemaNode from "./SchemaNode.js";
 
 export interface BackwardsCompatibleObjectSchemaNodeJson {
@@ -118,15 +118,7 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
     return `[${parent.shortId()}](${path_to_parent})`;
   };
 
-  markdownHeader =
-    () => `:house: [Documentation Home](${relativePathToOtherPath(
-      "../README.md",
-      this.directory()
-    )}/README.md)
-
----
-
-### ${this.title()}
+  markdownHeader = () => `### ${this.title()}
 
 \`${this.id()}\``;
 
@@ -150,11 +142,11 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
   markdownOutput = () => `${this.markdownHeader()}
 
   **Description:** _${this.description()}_
-  
+
   ${this.objectDataTypeDescriptionBlock()}
-  
+
   **Compatiblity Wrapper For:** ${this.relativeLinkToParent()}
-  
+
   ${this.markdownFooter()}`;
 
   mdLinkToSourceSchema = () =>
