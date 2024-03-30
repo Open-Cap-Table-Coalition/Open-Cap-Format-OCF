@@ -10,7 +10,7 @@ Gunderson Dettmer released [CE2OCF](https://github.com/gunderson-dettmer/CE2OCF)
 
 ### Transfer Agent Protocol
 
-The Transfer Agent Protocol (or [TAP](https://github.com/transfer-agent-protocol/tap-cap-table)) allows you to "create a cap table that is both onchain and offchain. The onchain cap table is the source of truth and the offchain cap table is a duplicate of the onchain cap table." It is based on the OCF standard. Fairmint is the [first SEC-registered trasnfer agent to use the TAP](https://blog.fairmint.com/fairmint-is-the-first-sec-registered-transfer-agent-to-integrate-with-the-transfer-agent-protocol-36c097d854d7).
+The Transfer Agent Protocol (or [TAP](https://github.com/transfer-agent-protocol/tap-cap-table)) allows you to "create a cap table that is both onchain and offchain. The onchain cap table is the source of truth and the offchain cap table is a duplicate of the onchain cap table." It is based on the OCF standard. Fairmint is the [first SEC-registered transfer agent to use the TAP](https://blog.fairmint.com/fairmint-is-the-first-sec-registered-transfer-agent-to-integrate-with-the-transfer-agent-protocol-36c097d854d7).
 
 ### Open Cap eXcel (OCX)
 
