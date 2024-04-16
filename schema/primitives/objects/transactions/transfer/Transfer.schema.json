@@ -22,6 +22,11 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "is_balance_cancelled": {
+      "type": "boolean",
+      "description": "If this is a partial transfer, is the balance cancelled? If yes, we expect no balance_security_id here, and we expect this security_id to also be referenced in a cancellation transaction.",
+      "$comment": "REQUIRED in v2"
     }
   },
   "required": ["resulting_security_ids"],

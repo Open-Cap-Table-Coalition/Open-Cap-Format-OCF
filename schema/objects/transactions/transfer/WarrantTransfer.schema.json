@@ -32,7 +32,8 @@
     "date": {},
     "consideration_text": {},
     "balance_security_id": {},
-    "resulting_security_ids": {}
+    "resulting_security_ids": {},
+    "is_balance_cancelled": {}
   },
   "additionalProperties": false,
   "required": ["quantity"],

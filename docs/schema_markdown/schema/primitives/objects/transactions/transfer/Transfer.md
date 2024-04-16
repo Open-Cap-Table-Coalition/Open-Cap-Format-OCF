@@ -8,11 +8,12 @@
 
 **Properties:**
 
-| Property               | Type       | Description                                                                                  | Required   |
-| ---------------------- | ---------- | -------------------------------------------------------------------------------------------- | ---------- |
-| consideration_text     | `STRING`   | Unstructured text description of consideration provided in exchange for security transfer    | -          |
-| balance_security_id    | `STRING`   | Identifier for the security that holds the remainder balance (for partial transfers)         | -          |
-| resulting_security_ids | [`STRING`] | Array of identifiers for new security (or securities) created as a result of the transaction | `REQUIRED` |
+| Property               | Type       | Description                                                                                                                                                                                 | Required   |
+| ---------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| consideration_text     | `STRING`   | Unstructured text description of consideration provided in exchange for security transfer                                                                                                   | -          |
+| balance_security_id    | `STRING`   | Identifier for the security that holds the remainder balance (for partial transfers)                                                                                                        | -          |
+| resulting_security_ids | [`STRING`] | Array of identifiers for new security (or securities) created as a result of the transaction                                                                                                | `REQUIRED` |
+| is_balance_cancelled   | `BOOLEAN`  | If this is a partial transfer, is the balance cancelled? If yes, we expect no balance_security_id here, and we expect this security_id to also be referenced in a cancellation transaction. | -          |
 
 **Source Code:** [schema/primitives/objects/transactions/transfer/Transfer](../../../../../../../schema/primitives/objects/transactions/transfer/Transfer.schema.json)
 
