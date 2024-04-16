@@ -53,7 +53,7 @@ export const URI_LOOKUP_FOR_FILE_TYPE = {
 async function buildObjectSchemaMap(verbose = false) {
   const schemaMap = {};
 
-  const schemaPaths = await getSchemaObjectsFilepaths();
+  const schemaPaths = await getSchemaObjectsFilepaths(verbose);
 
   const schema_buffers = await Promise.all(
     schemaPaths.map((path) => readFile(path))
@@ -69,12 +69,9 @@ async function buildObjectSchemaMap(verbose = false) {
   // there is a mapping entry for each object type in the object_type.oneOf array
   // for each of the const values in that array to the $id of the given schema
   schemas.forEach((schema) => {
-    console.log("Analyze schema", schema);
-
     if (schema.properties) {
       let object_type = schema.properties.object_type;
 
-      console.log("Object type", object_type);
       if (
         typeof object_type === "object" &&
         !Array.isArray(object_type) &&
@@ -89,15 +86,13 @@ async function buildObjectSchemaMap(verbose = false) {
             }
           }
         } else {
-          if (verbose) {
-            console.error(
-              `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-                schema,
-                null,
-                4
-              )}`
-            );
-          }
+          console.error(
+            `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
+              schema,
+              null,
+              4
+            )}`
+          );
         }
       }
     } else if (
@@ -120,11 +115,9 @@ async function buildObjectSchemaMap(verbose = false) {
         );
       }
     } else {
-      if (verbose) {
-        console.error(
-          `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
-        );
-      }
+      console.error(
+        `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
+      );
       throw new Error(
         "Schema doesn't match OCF schema format and it's not a wrapper"
       );
@@ -159,9 +152,6 @@ async function getSchemaObjectsFilepaths(verbose = false) {
   const paths = [];
   for await (const f of getFiles("./schema/objects")) {
     paths.push(f);
-    if (verbose) {
-      console.log(`•\t${f}`);
-    }
   }
   return paths;
 }
@@ -259,55 +249,49 @@ export async function validateOcfDirectory(
         const valid = validator(obj);
 
         if (!valid) {
-          if (test)
+          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+          console.log(validator.errors);
+          if (test) {
             core.setFailed(
               `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
               validator.errors
             );
-          if (verbose) {
-            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-            console.log(validator.errors);
           }
           return false;
         } else {
-          if (verbose) console.log("\n\t** VALID OCF **");
+          if (verbose) console.log(`\t** VALID OCF **`);
         }
         // collect the errors per file and then return them
         // if file is not a manifest, loop through items
         // for each item, get the object_type and then run the validator against that schema
       } else if (obj.hasOwnProperty("items")) {
-        if (verbose) console.log("\n-->\tvalidating items:");
-
         const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
         for (let j = 0; j < obj.items.length; j++) {
           let object_type = obj.items[j].object_type;
           let object_schema_uri = objectTypeToSchemaIdMap[object_type];
 
-          if (verbose) {
-            console.dir(obj.items[j], { depth: null, colors: true });
-          }
-
           const validator = ajv.getSchema(object_schema_uri);
           const valid = validator(obj.items[j]);
 
           if (!valid) {
-            if (test)
+            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+            console.log(
+              `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
+            );
+            console.log(validator.errors);
+            if (test) {
               core.setFailed(
                 `\t** OCF file ${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
                 validator.errors
               );
-            if (verbose) {
-              console.log(
-                `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
-              );
-              console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-              console.log(validator.errors);
             }
             return false;
           }
         }
+        if (verbose) console.log("\t** VALID OCF **");
       }
     }
+    console.log("\n\t** ALL FILES VALID OCF **");
     return true;
   } catch (e) {
     if (test) {
@@ -512,14 +496,14 @@ export async function validateOcfSchemas(
       counter++;
     }
   } catch (e) {
+    console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
+    console.log(`\t\tOCF Schema Validations failed: ${e.message}`);
     if (test) {
       core.setFailed(`\t\tOCF Validation failed: ${e.message}`);
-    } else if (verbose) {
-      console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
-      console.log(`\t\tOCF Schema Validations failed: ${e.message}`);
     }
     return false;
   }
+  console.log("\t** ALL SCHEMA FILES VALID OCF **");
   return true;
 }
 
