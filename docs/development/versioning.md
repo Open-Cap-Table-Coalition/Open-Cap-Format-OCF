@@ -74,9 +74,9 @@ In this case, we maintain backwards compatibility by:
 3. Use `oneOf` to require _either_ the old property _or_ the new one, to prevent
    ambiguity. Example:
 
-    "oneOf": [ { "required": ["old_property"], "not": { "required":
-    ["new_property"] },
-    "$comment": "Due to how the JSONSchema 'not' works, this means that, if old_property is present, new_property cannot be present"
+   "oneOf": [ { "required": ["old_property"], "not": { "required":
+   ["new_property"] },
+   "$comment": "Due to how the JSONSchema 'not' works, this means that, if old_property is present, new_property cannot be present"
         },
         {
         "required": ["new_property"],
@@ -84,8 +84,8 @@ In this case, we maintain backwards compatibility by:
             "required": ["old_property"]
         },
         "$comment":
-    "Due to how the JSONSchema 'not' works, this means that, if new_property is
-    present, old_property cannot be present" } ],
+   "Due to how the JSONSchema 'not' works, this means that, if new_property is
+   present, old_property cannot be present" } ],
 
 ### Renaming a Schema in the Public API
 
@@ -108,11 +108,7 @@ is in the new schema's `file_type` property.
 <!-- reference links below -->
 
 [semver]: https://semver.org/spec/v2.0.0.html
-[rename-pr]:
-    https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/pull/397
-[rename-2]:
-    https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json#L6-L9
-[rename-3]:
-    https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/enums/ObjectType.schema.json#L27
-[rename-4]:
-    https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json#L22-L25
+[rename-pr]: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/pull/397
+[rename-2]: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json#L6-L9
+[rename-3]: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/enums/ObjectType.schema.json#L27
+[rename-4]: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/blob/9cc442e220aeae8687caf358ba023365c6ad8520/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json#L22-L25
