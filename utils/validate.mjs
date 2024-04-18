@@ -12,43 +12,6 @@ import { resolve } from "path";
 // TODO - move action integrations into a separate file to keep validator utils clean
 import core from "@actions/core";
 
-// Constants for various URIs
-// TODO - move to separate constants file
-export const OCF_MANIFEST_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json";
-
-export const OCF_TRANSACTIONS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json";
-
-export const OCF_STAKEHOLDERS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json";
-
-export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json";
-
-export const OCF_VALUATIONS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json";
-
-export const OCF_VESTING_TERMS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json";
-
-export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json";
-
-export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json";
-
-export const URI_LOOKUP_FOR_FILE_TYPE = {
-  OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,
-  OCF_STAKEHOLDERS_FILE: OCF_STAKEHOLDERS_FILE_SCHEMA_URI,
-  OCF_STOCK_CLASSES_FILE: OCF_STOCK_CLASSES_FILE_SCHEMA_URI,
-  OCF_STOCK_LEGEND_TEMPLATES_FILE: OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI,
-  OCF_STOCK_PLANS_FILE: OCF_STOCK_PLANS_FILE_SCHEMA_URI,
-  OCF_TRANSACTIONS_FILE: OCF_TRANSACTIONS_FILE_SCHEMA_URI,
-  OCF_VALUATIONS_FILE: OCF_VALUATIONS_FILE_SCHEMA_URI,
-  OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
-};
-
 // build map of object_type to schema $id
 async function buildObjectSchemaMap(verbose = false) {
   const schemaMap = {};
@@ -253,9 +216,7 @@ export async function validateOcfDirectory(
 
       // if file is manifest, just validate against the manifest schema
       if (obj.file_type === "OCF_MANIFEST_FILE") {
-        const validator = ajv.getSchema(
-          URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]
-        );
+        const validator = ajv.getSchema(uriLookupForFileType[obj.file_type]);
         const valid = validator(obj);
 
         if (!valid) {
