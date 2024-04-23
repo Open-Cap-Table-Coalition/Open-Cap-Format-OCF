@@ -95,6 +95,15 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
       }
+    },
+    "financings_files": {
+      "title": "Cap Table - Financing File(s) Array",
+      "description": "List of files containing lists of financings, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/financings_file schema to validate loaded files)",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+      }
     }
   },
   "required": [
