@@ -1,21 +1,19 @@
 # Issuing Options
 
-In this walkthrough, we're going to create a new stock option plan for an
-example company - "Aperture Science, Inc." - the same example company we worked
-with in the "getting started" walkthrough. We're going to work from the OCF
-files we started in that earlier tutorial. Please go back to to the getting
-started tutorial if you need a refresher on OCF basics.
+In this walkthrough, we're going to create a new stock option plan for an example company -
+"Aperture Science, Inc." - the same example company we worked with in the "getting started"
+walkthrough. We're going to work from the OCF files we started in that earlier tutorial. Please go
+back to to the getting started tutorial if you need a refresher on OCF basics.
 
 ## Create a Stock Plan
 
 Our first step is going to be creating a
-[Stock Plan](../../schema_markdown/schema/objects/StockPlan.md) for Aperture.
-You need to know a few basic pieces of information to do this. First, you'll
-need the id of the Stock type you want to put into the option pool. Working from
-our earlier example, we'll want to issue `Common Stock`, which, in our
-StockClasses file, has an id of `e1d930f7-592d-4414-a3ab-a78fe4b932d1`. There
-are 100,000,000 shares of common authorized, so let's reserve 10,000,000 shares
-to capture a somewhat realistic 10% of the authorized common in the option pool.
+[Stock Plan](../../schema_markdown/schema/objects/StockPlan.md) for Aperture. You need to know a few
+basic pieces of information to do this. First, you'll need the id of the Stock type you want to put
+into the option pool. Working from our earlier example, we'll want to issue `Common Stock`, which,
+in our StockClasses file, has an id of `e1d930f7-592d-4414-a3ab-a78fe4b932d1`. There are 100,000,000
+shares of common authorized, so let's reserve 10,000,000 shares to capture a somewhat realistic 10%
+of the authorized common in the option pool.
 
 Here's our new Stock Plan object:
 
@@ -28,17 +26,14 @@ Here's our new Stock Plan object:
     "initial_shares_reserved": "10000000.00",
     "default_cancellation_behavior": "RETURN_TO_POOL",
     "stock_class_id": "e1d930f7-592d-4414-a3ab-a78fe4b932d1",
-    "comments": [
-        "Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."
-    ]
+    "comments": ["Using new form of SOP released by Firm Y's benefits & comp team on 10/10/2021."]
 }
 ```
 
-You'll notice you must also set the default behavior for what happens to shares
-reserved for a Plan Security issued under this Stock Plan if the Plan Security
-is cancelled. The `default_cancellation_behavior` field of the plan object takes
-a `StockPlanCancellationBehaviorType` enumeration. The enum gives you four
-options:
+You'll notice you must also set the default behavior for what happens to shares reserved for a Plan
+Security issued under this Stock Plan if the Plan Security is cancelled. The
+`default_cancellation_behavior` field of the plan object takes a `StockPlanCancellationBehaviorType`
+enumeration. The enum gives you four options:
 
 1. `RETURN_TO_POOL` - Shares return to the pool.
 2. `HOLD_AS_CAPITAL_STOCK` - Shares are held by company as capital stock.
@@ -48,14 +43,13 @@ options:
 
 ## Create a Vesting Schedule
 
-In order to issue an option, we're going to want to have some kind of vesting
-schedule. Let's create a (re-usable) vesting object for a standard, four year,
-one-year cliff vesting schedule. Don't worry, once you've created this once, you
-can re-use it on multiple options just by referencing its object id.
+In order to issue an option, we're going to want to have some kind of vesting schedule. Let's create
+a (re-usable) vesting object for a standard, four year, one-year cliff vesting schedule. Don't
+worry, once you've created this once, you can re-use it on multiple options just by referencing its
+object id.
 
-You can refer to our detailed vesting guide for more thorough guidance on
-constructing vesting schedules, but, for the purposes of this tutorial, here's
-what our vesting object should look like:
+You can refer to our detailed vesting guide for more thorough guidance on constructing vesting
+schedules, but, for the purposes of this tutorial, here's what our vesting object should look like:
 
 ```json
 {
@@ -157,39 +151,36 @@ event. Let's issue an option to "Jim Jangles", our stakeholder with id
 
 Note a couple features here:
 
-1. **Termination Exercise Windows** - OCF lets you enumerate the excercise
-   windows for the option / rsu after any of a number of events. See our
-   [Termination Window Types](../../schema_markdown/schema/enums/TerminationWindowType.md)
-   for a full list of supported "termination" causes.
-2. **Securities Exemptions** - You can also enumerate a list of applicable
-   security exemptions applicable to a given issuance, including plan securities
-   like RSUs and Options. While this is a convenient feature, the fields are
-   free text, so try to use consistent and/or logical conventions.
+1. **Termination Exercise Windows** - OCF lets you enumerate the excercise windows for the option /
+   rsu after any of a number of events. See our
+   [Termination Window Types](../../schema_markdown/schema/enums/TerminationWindowType.md) for a
+   full list of supported "termination" causes.
+2. **Securities Exemptions** - You can also enumerate a list of applicable security exemptions
+   applicable to a given issuance, including plan securities like RSUs and Options. While this is a
+   convenient feature, the fields are free text, so try to use consistent and/or logical
+   conventions.
 
 ## (Advanced) Change the Option Pool
 
-What happens if you need to increase (or sometimes, decrease) your option pool
-for a stock plan? OCF has special transaction events to modify certain critical
-fields in objects like Stock Plan Objects and Stock Objects. Although a bit out
-of scope for this walkthrough, we'll briefly mention a couple of these events so
-you can review the concepts separately:
+What happens if you need to increase (or sometimes, decrease) your option pool for a stock plan? OCF
+has special transaction events to modify certain critical fields in objects like Stock Plan Objects
+and Stock Objects. Although a bit out of scope for this walkthrough, we'll briefly mention a couple
+of these events so you can review the concepts separately:
 
 1. [Stock Class Authorized Shares Adjustment](../../schema_markdown/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.md) -
-   records when the authorized shares for a given stock class are adjusted (up
-   or down).
+   records when the authorized shares for a given stock class are adjusted (up or down).
 2. [Stock Class Conversion Ratio Adjustment](../../schema_markdown/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.md) -
-   records when the conversion ratio of a conversion ratio conversion mechanism
-   is adjusted (typically due to an anti-dilution mechanism adjusting the
-   conversion ratio in response to a down round).
+   records when the conversion ratio of a conversion ratio conversion mechanism is adjusted
+   (typically due to an anti-dilution mechanism adjusting the conversion ratio in response to a down
+   round).
 3. [Stock Plan Pool Adjustment](../../schema_markdown/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.md) -
-   records adjustments (up or down) to the number of shares reserved in a stock
-   plan pool.
+   records adjustments (up or down) to the number of shares reserved in a stock plan pool.
 
-We'll likely be adding more such adjustment events in the future to adjust
-specific fields in existing objects and capture these changes over time.
+We'll likely be adding more such adjustment events in the future to adjust specific fields in
+existing objects and capture these changes over time.
 
-To adjust the pool in the "2023 Stock Incentive Plan" from 10,000,000 shares to
-8,000,000, you'll need a `Stock Plan Pool Adjustment` like this:
+To adjust the pool in the "2023 Stock Incentive Plan" from 10,000,000 shares to 8,000,000, you'll
+need a `Stock Plan Pool Adjustment` like this:
 
 ```json
 {
@@ -206,12 +197,12 @@ To adjust the pool in the "2023 Stock Incentive Plan" from 10,000,000 shares to
 
 ## (Advanced) Exercise the Option
 
-Now, let's say that Jim's 1-year cliff date has passed and he's vested in 25% of
-his option. He wants to exercise his vested options. How do we model this in
-OCF? We're going to need a few different objects.
+Now, let's say that Jim's 1-year cliff date has passed and he's vested in 25% of his option. He
+wants to exercise his vested options. How do we model this in OCF? We're going to need a few
+different objects.
 
-First, don't forget to use a vesting start transaciton to specify the vesting
-commencement date for the vesting schedule we attached to Jim's option:
+First, don't forget to use a vesting start transaciton to specify the vesting commencement date for
+the vesting schedule we attached to Jim's option:
 
 ```json
 {
@@ -223,8 +214,8 @@ commencement date for the vesting schedule we attached to Jim's option:
 }
 ```
 
-Now, we need an issuance event for the shares resulting from the exercise
-**and** an exercise event to link the share issuance to the option.
+Now, we need an issuance event for the shares resulting from the exercise **and** an exercise event
+to link the share issuance to the option.
 
 **Issuance**
 
@@ -270,16 +261,14 @@ That's it!
 
 ## Validation
 
-Our current validation tools will check that your OCF files have the appropriate
-data shapes / schemas. We are working on additional tooling to check internal id
-references and cap table constraints, but this second-order validation is
-currently not ready for release.
+Our current validation tools will check that your OCF files have the appropriate data shapes /
+schemas. We are working on additional tooling to check internal id references and cap table
+constraints, but this second-order validation is currently not ready for release.
 
-To check your OCF files implement the proper schema, you can point our
-TypeScript validation tool at your sample directory. Assuming you're running
-your terminal / shell from the root of this repository (and you've first run
-`nvm use` and `npm install`), to validate the examples for this walkthrough,
-type:
+To check your OCF files implement the proper schema, you can point our TypeScript validation tool at
+your sample directory. Assuming you're running your terminal / shell from the root of this
+repository (and you've first run `nvm use` and `npm install`), to validate the examples for this
+walkthrough, type:
 
 ```commandline
 node ./utils/validate.mjs validate-ocf-directory -v -p ./docs/tutorials/options/samples -t

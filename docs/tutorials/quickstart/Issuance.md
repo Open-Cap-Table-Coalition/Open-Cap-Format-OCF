@@ -2,22 +2,18 @@
 
 ## Overview
 
-This is a minimalist example of a cap table may be exported, if it contains a
-single stock plan, single stakeholder, and issued some shares to that
-stakeholder.
+This is a minimalist example of a cap table may be exported, if it contains a single stock plan,
+single stakeholder, and issued some shares to that stakeholder.
 
-While an issuance is an event, it references a few static objects: a
-stakeholder, a stock class, and a stock legend. It's important to remember that
-Objects and Events have different semantics - all events act on one or more
-objects.
+While an issuance is an event, it references a few static objects: a stakeholder, a stock class, and
+a stock legend. It's important to remember that Objects and Events have different semantics - all
+events act on one or more objects.
 
 ## Exporting Static Data
 
-First we define our
-[Stakeholder](../../schema_markdown/schema/objects/Stakeholder.md), Jim Jangles.
-We could make up a UUID on the fly, as long as it's consistent across this
-export, or we could use our internal id. This object would go into the
-`Stakeholders.ocf.json` file.
+First we define our [Stakeholder](../../schema_markdown/schema/objects/Stakeholder.md), Jim Jangles.
+We could make up a UUID on the fly, as long as it's consistent across this export, or we could use
+our internal id. This object would go into the `Stakeholders.ocf.json` file.
 
 ```json
 {
@@ -28,8 +24,7 @@ export, or we could use our internal id. This object would go into the
 }
 ```
 
-Next, we define our
-[StockClass](../../schema_markdown/schema/objects/StockClass.md). It's a very
+Next, we define our [StockClass](../../schema_markdown/schema/objects/StockClass.md). It's a very
 simple, minimal stock class for preferred shares. This object would go into the
 `StockClasses.ocf.json` file.
 
@@ -47,9 +42,8 @@ simple, minimal stock class for preferred shares. This object would go into the
 ```
 
 We're also going to need the
-[StockLegend](../../schema_markdown/schema/objects/StockLegendTemplate.md),
-which is likely defined once and referenced across most shares. This object
-would go into the `StockLegends.ocf.json` file.
+[StockLegend](../../schema_markdown/schema/objects/StockLegendTemplate.md), which is likely defined
+once and referenced across most shares. This object would go into the `StockLegends.ocf.json` file.
 
 ```json
 {
@@ -63,15 +57,14 @@ would go into the `StockLegends.ocf.json` file.
 ## Exporting Issuance Event
 
 Now we export a record of the
-[StockIssuance](../../schema_markdown/schema/objects/transactions/issuance/StockIssuance.md)
-event. This ties together the stock we have defined with the stakeholder Jim
-Jangles, allowing us to issue 5000 shares to him. The lack of vesting terms
-indicates these shares are fully vested upon issuance. This **event** would go
-into the `Transactions.ocf.json` file.
+[StockIssuance](../../schema_markdown/schema/objects/transactions/issuance/StockIssuance.md) event.
+This ties together the stock we have defined with the stakeholder Jim Jangles, allowing us to issue
+5000 shares to him. The lack of vesting terms indicates these shares are fully vested upon issuance.
+This **event** would go into the `Transactions.ocf.json` file.
 
-Note the stakeholder_id is the UUID we gave Jim initially, the stock_class_id is
-the UUID we gave the stock class, and the stock_legend_ids is the UUID we gave
-the stock legend. However, the security_id is new - it identifies this event.
+Note the stakeholder_id is the UUID we gave Jim initially, the stock_class_id is the UUID we gave
+the stock class, and the stock_legend_ids is the UUID we gave the stock legend. However, the
+security_id is new - it identifies this event.
 
 ```json
 {
@@ -98,12 +91,11 @@ the stock legend. However, the security_id is new - it identifies this event.
 
 ## Finishing with a Manifest
 
-No OCF export is complete without a manifest describing the issuer (aka, the
-company). There's only a few critically required fields, though the more you
-fill out, the better.
+No OCF export is complete without a manifest describing the issuer (aka, the company). There's only
+a few critically required fields, though the more you fill out, the better.
 
-It will also need to include md5 hashes and references to the other files
-mentioned, as it's the "starting point" of the format.
+It will also need to include md5 hashes and references to the other files mentioned, as it's the
+"starting point" of the format.
 
 ```json
 {
@@ -118,15 +110,13 @@ mentioned, as it's the "starting point" of the format.
 
 ## Validate Your OCF
 
-Our current validation tools will check that your OCF files have the appropriate
-data shapes / schemas. We are working on additional tooling to check internal id
-references and cap table constraints, but this second-order validation is
-currently not ready for release.
+Our current validation tools will check that your OCF files have the appropriate data shapes /
+schemas. We are working on additional tooling to check internal id references and cap table
+constraints, but this second-order validation is currently not ready for release.
 
-To check your OCF files, you can point our TypeScript validation tool at your
-sample directory. Assuming you're running your terminal / shell from the root of
-this repository (and you've first run `nvm use` and `npm install`), to validate
-the examples for this walkthrough, type:
+To check your OCF files, you can point our TypeScript validation tool at your sample directory.
+Assuming you're running your terminal / shell from the root of this repository (and you've first run
+`nvm use` and `npm install`), to validate the examples for this walkthrough, type:
 
 ```commandline
 node ./utils/validate.mjs validate-ocf-directory -v -p ./docs/tutorials/quickstart/samples -t
@@ -136,7 +126,6 @@ node ./utils/validate.mjs validate-ocf-directory -v -p ./docs/tutorials/quicksta
 
 Once all the files are assembled into a folder (as demonstrated in this
 [Directory](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/docs/tutorials/quickstart/samples)),
-you'll need to generate the md5 hashes of these files to reference them in the
-manifest file (use `md5 *.json` on macos), and finally zip them into a file with
-the `.ocf.zip` extension, as demonstrated with this
-[ZipFile](./issuance_aperture_science_inc.ocf.zip).
+you'll need to generate the md5 hashes of these files to reference them in the manifest file (use
+`md5 *.json` on macos), and finally zip them into a file with the `.ocf.zip` extension, as
+demonstrated with this [ZipFile](./issuance_aperture_science_inc.ocf.zip).
