@@ -1,8 +1,8 @@
 ### Schema and Documentation License
 
-Version 1.0, February 2, 2022
+Version 1.0.1, April 3, 2024
 
-Copyright (C) 2022 Open Cap Table Coalition <https://http://opencaptablecoalition.com/>
+Copyright (C) 2024 Open Cap Table Coalition <https://opencaptablecoalition.com/>
 
 #### 1. LICENSE
 
@@ -43,8 +43,7 @@ programming language code — are licensed under the [Apache 2 License](https://
 The full "Notice" is:
 
 > "Copyright © [$date-of-ocf-file] Open Cap Table Coalition. This software or document
-> includes material copied from or derived from [title and URI of the
-> OCF File]."
+> includes material copied from or derived from [title and URI of the OCF File]."
 
 #### 2. DISCLAIMERS
 
