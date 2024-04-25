@@ -13,27 +13,29 @@ import { resolve } from "path";
 import core from "@actions/core";
 
 // build map of object_type to schema $id
+// throws if an unknown object_type value is encountered
 async function buildObjectSchemaMap(verbose = false) {
-  const schemaMap = {};
-
-  const schemaPaths = await getSchemaObjectsFilepaths(verbose);
-
-  const schema_buffers = await Promise.all(
-    schemaPaths.map((path) => readFile(path))
+  const object_schemas_map = {};
+  const object_schema_paths = await getSchemaObjectsFilepaths(verbose);
+  const object_schema_buffers = await Promise.all(
+    object_schema_paths.map((path) => readFile(path))
   );
-
-  const schemas = schema_buffers.map((schema_buffer) => {
+  const object_schemas = object_schema_buffers.map((schema_buffer) => {
     return JSON.parse(schema_buffer.toString());
   });
+
+  const object_type_enum_schema = JSON.parse(
+    fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
+  );
 
   // Need to update this to handle the two options for object_type props (stll not in
   // love with this choice, but it was required to avoid a breaking change). Where
   // a schema has multiple potential object types for backwards compatibility,
   // there is a mapping entry for each object type in the object_type.oneOf array
   // for each of the const values in that array to the $id of the given schema
-  schemas.forEach((schema) => {
-    if (schema.properties) {
-      let object_type = schema.properties.object_type;
+  object_schemas.forEach((object_schema) => {
+    if (object_schema.properties) {
+      const object_type = object_schema.properties.object_type;
 
       if (
         typeof object_type === "object" &&
@@ -41,17 +43,23 @@ async function buildObjectSchemaMap(verbose = false) {
         object_type !== null
       ) {
         if (object_type.const && typeof object_type.const === "string") {
-          schemaMap[object_type.const] = schema.$id;
+          if (!object_type_enum_schema.enum.includes(object_type.const)) {
+            throw new Error(
+              `Encountered object_type: ${object_type.const} in a schema but this type does not exist in ObjectType.schema.json`
+            );
+          }
+
+          object_schemas_map[object_type.const] = object_schema.$id;
         } else if (object_type.enum && Array.isArray(object_type.enum)) {
           for (const item of object_type.enum) {
             if (item) {
-              schemaMap[item] = schema.$id;
+              object_schemas_map[item] = object_schema.$id;
             }
           }
         } else {
           console.error(
             `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-              schema,
+              object_schema,
               null,
               4
             )}`
@@ -59,10 +67,10 @@ async function buildObjectSchemaMap(verbose = false) {
         }
       }
     } else if (
-      schema["$id"] &&
-      schema.allOf &&
-      Array.isArray(schema.allOf) &&
-      schema.allOf.length === 1
+      object_schema["$id"] &&
+      object_schema.allOf &&
+      Array.isArray(object_schema.allOf) &&
+      object_schema.allOf.length === 1
     ) {
       /**
        * We have an issue with proposed backwards compatibility wrappers... the validator expects
@@ -74,12 +82,12 @@ async function buildObjectSchemaMap(verbose = false) {
        */
       if (verbose) {
         console.log(
-          `Appears schema ${schema["$id"]} is a wrapper for ${schema.allOf[0]["$ref"]}... ignoring.`
+          `Appears schema ${object_schema["$id"]} is a wrapper for ${object_schema.allOf[0]["$ref"]}... ignoring.`
         );
       }
     } else {
       console.error(
-        `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
+        `Unexpected value for schema: ${JSON.stringify(object_schema, null, 4)}`
       );
       throw new Error(
         "Schema doesn't match OCF schema format and it's not a wrapper"
@@ -87,7 +95,7 @@ async function buildObjectSchemaMap(verbose = false) {
     }
   });
 
-  return schemaMap;
+  return object_schemas_map;
 }
 
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
