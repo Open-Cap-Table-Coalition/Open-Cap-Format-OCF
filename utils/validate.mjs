@@ -276,6 +276,83 @@ export async function validateOcfDirectory(
 }
 
 /**
+ * Loads all files from the samples directory, and searches within for
+ * an occurrence of each value for the ObjectType enum (excluding deprecated object types).
+ * This ensures when a new ObjectType is added, a new sample object must
+ * be added as well, so that the new schema is verified by the AJV validator
+ * @param {boolean} verbose - if true, will output script progress to console
+ * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
+ * @returns true if validations pass, false if otherwise
+ */
+export async function validateAllObjectsHaveSamples(
+  verbose = false,
+  test = false
+) {
+  if (verbose)
+    console.log("\n--- Loading ObjectType enum schema ---------------");
+
+  var buffer = fs.readFileSync("./schema/enums/ObjectType.schema.json");
+  const object_type_schema = JSON.parse(buffer.toString());
+
+  if (verbose)
+    console.log("\n--- Loading all OCF file samples ---------------");
+
+  const ocf_sample_paths = await getOcfFilesFromDir("./samples", verbose);
+  const ocf_sample_file_buffers = await Promise.all(
+    ocf_sample_paths.map((path) => readFile(path))
+  );
+
+  const deprecated_object_types = [
+    "TX_PLAN_SECURITY_ACCEPTANCE",
+    "TX_PLAN_SECURITY_CANCELLATION",
+    "TX_PLAN_SECURITY_EXERCISE",
+    "TX_PLAN_SECURITY_ISSUANCE",
+    "TX_PLAN_SECURITY_RELEASE",
+    "TX_PLAN_SECURITY_RETRACTION",
+    "TX_PLAN_SECURITY_TRANSFER",
+  ];
+
+  const errors = [];
+  for (const object_type of object_type_schema.enum) {
+    if (deprecated_object_types.includes(object_type)) {
+      continue;
+    }
+    if (verbose)
+      console.log(
+        `\n--- Searching sample files for "object_type": "${object_type}" ---------------`
+      );
+
+    let i = 0;
+    let object_type_sample_found = false;
+    while (!object_type_sample_found) {
+      try {
+        object_type_sample_found = ocf_sample_file_buffers[i]
+          .toString()
+          .includes(`"object_type": "${object_type}"`);
+        i++;
+      } catch (e) {
+        errors.push(
+          `ObjectType enum value ${object_type} does not appear in the sample OCF files`
+        );
+        break;
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    if (test) {
+      core.setFailed(errors.join("\n"));
+    } else {
+      console.log(errors.join("\n"));
+    }
+    return false;
+  } else {
+    console.log("\n\t** ALL OBJECT TYPES HAVE SAMPLES **");
+    return true;
+  }
+}
+
+/**
  *
  * Load all schema files and compile an AJV validator.
  * Also loads in additional type formats which AJV has
@@ -574,6 +651,29 @@ yargs(hideBin(process.argv))
     },
     handler(argv) {
       validateOcfDirectory(argv.path, argv.verbose, argv.test);
+    },
+  })
+  .command({
+    command: "validate-all-objects-have-samples",
+    describe:
+      "Validate OCF samples files, ensuring every non-deprecated type of object appears in at least one sample",
+    builder: {
+      verbose: {
+        describe: "Verbose outputs show detailed steps and errors",
+        alias: "v",
+        demandOption: false,
+        type: "boolean",
+      },
+      test: {
+        describe:
+          "Run as a test and trigger GitHub action failures accordingly",
+        alias: "t",
+        demandOption: false,
+        type: "boolean",
+      },
+    },
+    handler(argv) {
+      validateAllObjectsHaveSamples(argv.verbose, argv.test);
     },
   })
   .help()
