@@ -19,6 +19,7 @@
 | object_type  | **Constant:** `FINANCING`</br>_Defined in [schema/enums/ObjectType](../enums/ObjectType.md)_ | Object type field                                               | `REQUIRED` |
 | name         | `STRING`                                                                                     | Name for the financing                                          | `REQUIRED` |
 | issuance_ids | [`STRING`]                                                                                   | Array of issuance IDs associated with the financing             | `REQUIRED` |
+| date         | [schema/types/Date](../types/Date.md)                                                        | Date on which the financing event occurred                      | `REQUIRED` |
 
 **Source Code:** [schema/objects/Financing](../../../../schema/objects/Financing.schema.json)
 
