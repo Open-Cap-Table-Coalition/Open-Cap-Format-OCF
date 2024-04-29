@@ -13,11 +13,12 @@
     "object_type": {
       "const": "FINANCING"
     },
+    "id": {},
+    "comments": {},
     "name": {
       "description": "Name for the financing",
       "type": "string"
     },
-    "id": {},
     "issuance_ids": {
       "description": "Array of issuance IDs associated with the financing",
       "type": "array",
@@ -25,8 +26,7 @@
       "items": {
         "type": "string"
       }
-    },
-    "comments": {}
+    }
   },
   "additionalProperties": false,
   "required": ["name", "issuance_ids"],

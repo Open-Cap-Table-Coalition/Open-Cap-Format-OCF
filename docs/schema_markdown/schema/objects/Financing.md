@@ -33,8 +33,9 @@
     "issuance_ids": [
       "test-stock-issuance-minimal"
     ],
+    "date": "2024-02-15",
     "comments": [
-      "A funding round led by Firm Y on 02/15/2024."
+      "Funding round led by Firm Y."
     ]
   }
 ]
