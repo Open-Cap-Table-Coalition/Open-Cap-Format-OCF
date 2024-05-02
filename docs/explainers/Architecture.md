@@ -66,9 +66,9 @@ OCF is a multi-file format designed to make it easy to split, compress or stream
 capitalization tables. A valid OCF cap table is made up of JSON objects that match the schemas
 available in our repo in the schemas folder.
 
-OCF objects are grouped and stored in eight file types (defined in our file schemas folder.
+OCF objects are grouped and stored in eight file types (defined in our file schemas folder).
 
-_There are currently 8 file types that make up a cap table_:
+_There are currently 10 file types that make up a cap table_:
 
 1. [A Manifest File](../schema_markdown/schema/files/OCFManifestFile.md) - The manifest holds basic
    issuer information and references to the instances of the other 7 file types needed to represent
@@ -88,6 +88,10 @@ _There are currently 8 file types that make up a cap table_:
    storing valuations for the issuer.
 8. [Vesting Terms File(s)](../schema_markdown/schema/files/VestingTermsFile.md) - One or more files
    storing vesting schedules used by the issuer.
+9. [Financings File(s)](../schema_markdown/schema/files/FinancingsFile.md) - One or more files
+   storing the issuer's financing events.
+10. [Documents File(s)](../schema_markdown/schema/files/DocumentsFile.md) - One or more files
+    storing references to related stakeholder documents.
 
 **At the moment, we recommend combining all of these files into a single compressed file with a
 \*.ocf.zip extension:**

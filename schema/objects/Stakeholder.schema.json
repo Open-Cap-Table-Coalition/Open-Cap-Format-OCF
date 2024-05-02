@@ -53,6 +53,14 @@
         "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TaxID.schema.json"
       }
     },
+    "document_ids": {
+      "title": "Stakeholder - Document ID Array",
+      "description": "Identifier for the document(s) related to this stakeholder and their holdings/transactions",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "id": {},
     "comments": {}
   },

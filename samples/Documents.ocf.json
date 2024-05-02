@@ -1,0 +1,17 @@
+{
+  "file_type": "OCF_DOCUMENTS_FILE",
+  "items": [
+    {
+      "object_type": "DOCUMENT",
+      "id": "test-document-minimal",
+      "path": "./document1.pdf"
+    },
+    {
+      "object_type": "DOCUMENT",
+      "id": "test-document-all-fields",
+      "path": "./plan_docs/2017 Stock Plan agreement.pdf",
+      "security_id": "49d88dd3-4a10-4a91-b410-115c3dd787ea",
+      "comments": ["comment-one", "comment-two"]
+    }
+  ]
+}
