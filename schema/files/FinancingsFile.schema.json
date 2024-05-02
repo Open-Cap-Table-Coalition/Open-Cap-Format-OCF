@@ -18,7 +18,7 @@
       }
     },
     "file_type": {
-      "const": "OCF_FINANCING_FILE"
+      "const": "OCF_FINANCINGS_FILE"
     }
   },
   "additionalProperties": false,
