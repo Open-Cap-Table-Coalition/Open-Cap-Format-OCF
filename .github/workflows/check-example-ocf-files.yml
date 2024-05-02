@@ -23,5 +23,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Ensure Examples Exist for each Object Type
+        run: npm run schema:validate-all-objects-have-samples
+
       - name: Run Validation Script
         run: npm run schema:validate-example-ocf-files

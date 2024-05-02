@@ -323,20 +323,20 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ACCEPTANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ACCEPTANCE",
       "id": "test-plan-security-acceptance-minimal",
       "security_id": "test-security-id",
       "date": "2019-12-10"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ACCEPTANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ACCEPTANCE",
       "id": "test-plan-security-acceptance-all-fields",
       "security_id": "test-security-id",
       "date": "2019-12-10",
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+      "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
       "id": "test-plan-security-cancellation-minimal",
       "security_id": "test-security-id",
       "date": "2019-12-11",
@@ -344,7 +344,7 @@
       "quantity": "100"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+      "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
       "id": "test-plan-security-cancellation-all-fields",
       "security_id": "test-security-id",
       "date": "2019-12-11",
@@ -364,7 +364,7 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_EXERCISE",
+      "object_type": "TX_EQUITY_COMPENSATION_EXERCISE",
       "id": "test-plan-security-exercise-minimal",
       "security_id": "test-security-id",
       "date": "2019-12-12",
@@ -375,7 +375,7 @@
       "quantity": "100"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_EXERCISE",
+      "object_type": "TX_EQUITY_COMPENSATION_EXERCISE",
       "id": "test-plan-security-exercise-full-fields",
       "security_id": "test-security-id",
       "date": "2019-12-12",
@@ -388,7 +388,7 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
       "id": "test-plan-security-issuance-minimal",
       "security_id": "test-plan-security-id",
       "date": "2019-12-12",
@@ -433,7 +433,7 @@
       "security_id": "test-plan-security-id"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
       "id": "test-plan-security-issuance-any-of-block-for-compensation-type-option",
       "security_id": "test-security-id",
       "date": "2019-12-12",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
       "id": "test-plan-security-issuance-full-fields",
       "security_id": "test-plan-security-issuance-full-fields",
       "date": "2019-12-12",
@@ -532,7 +532,7 @@
       "comments": ["comment 1", "comment 2", "a third comment"]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
       "id": "test-equity-compensation-issuance-no-plan",
       "security_id": "planless-equity-compensation-issuance",
       "stock_class_id": "common-stock",
@@ -603,7 +603,7 @@
       "vesting_condition_id": "full-vesting"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_RELEASE",
+      "object_type": "TX_EQUITY_COMPENSATION_RELEASE",
       "id": "test-plan-security-release-minimal",
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
@@ -616,7 +616,7 @@
       "resulting_security_ids": []
     },
     {
-      "object_type": "TX_PLAN_SECURITY_RELEASE",
+      "object_type": "TX_EQUITY_COMPENSATION_RELEASE",
       "id": "test-plan-security-release-full-fields",
       "security_id": "387878ba-8fb6-4673-812e-32c092947899",
       "date": "2017-07-22",
@@ -634,14 +634,14 @@
       ]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_RETRACTION",
+      "object_type": "TX_EQUITY_COMPENSATION_RETRACTION",
       "id": "test-plan-security-retraction-minimal",
       "security_id": "0f96b82a-6dc5-4205-bcb1-15740e5f8304",
       "date": "2022-01-24",
       "reason_text": "We wish to make a retraction"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_RETRACTION",
+      "object_type": "TX_EQUITY_COMPENSATION_RETRACTION",
       "id": "test-plan-security-retraction-full-fields",
       "security_id": "0f96b82a-6dc5-4205-bcb1-15740e5f8304",
       "date": "2022-01-24",
@@ -649,7 +649,7 @@
       "comments": ["A", "Series", "Of", "Comments"]
     },
     {
-      "object_type": "TX_PLAN_SECURITY_TRANSFER",
+      "object_type": "TX_EQUITY_COMPENSATION_TRANSFER",
       "id": "test-plan-security-transfer-minimal",
       "security_id": "0zHLfmI9G0",
       "date": "2001-01-01",
@@ -657,7 +657,7 @@
       "quantity": "11"
     },
     {
-      "object_type": "TX_PLAN_SECURITY_TRANSFER",
+      "object_type": "TX_EQUITY_COMPENSATION_TRANSFER",
       "id": "test-plan-security-transfer-full-fields",
       "security_id": "0zHLfmI9G0",
       "date": "2001-01-01",

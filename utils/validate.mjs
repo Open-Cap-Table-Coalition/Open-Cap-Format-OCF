@@ -13,27 +13,29 @@ import { resolve } from "path";
 import core from "@actions/core";
 
 // build map of object_type to schema $id
+// throws if an unknown object_type value is encountered
 async function buildObjectSchemaMap(verbose = false) {
-  const schemaMap = {};
-
-  const schemaPaths = await getSchemaObjectsFilepaths(verbose);
-
-  const schema_buffers = await Promise.all(
-    schemaPaths.map((path) => readFile(path))
+  const object_schemas_map = {};
+  const object_schema_paths = await getSchemaObjectsFilepaths(verbose);
+  const object_schema_buffers = await Promise.all(
+    object_schema_paths.map((path) => readFile(path))
   );
-
-  const schemas = schema_buffers.map((schema_buffer) => {
+  const object_schemas = object_schema_buffers.map((schema_buffer) => {
     return JSON.parse(schema_buffer.toString());
   });
+
+  const object_type_enum_schema = JSON.parse(
+    fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
+  );
 
   // Need to update this to handle the two options for object_type props (stll not in
   // love with this choice, but it was required to avoid a breaking change). Where
   // a schema has multiple potential object types for backwards compatibility,
   // there is a mapping entry for each object type in the object_type.oneOf array
   // for each of the const values in that array to the $id of the given schema
-  schemas.forEach((schema) => {
-    if (schema.properties) {
-      let object_type = schema.properties.object_type;
+  object_schemas.forEach((object_schema) => {
+    if (object_schema.properties) {
+      const object_type = object_schema.properties.object_type;
 
       if (
         typeof object_type === "object" &&
@@ -41,17 +43,23 @@ async function buildObjectSchemaMap(verbose = false) {
         object_type !== null
       ) {
         if (object_type.const && typeof object_type.const === "string") {
-          schemaMap[object_type.const] = schema.$id;
+          if (!object_type_enum_schema.enum.includes(object_type.const)) {
+            throw new Error(
+              `Encountered object_type: ${object_type.const} in a schema but this type does not exist in ObjectType.schema.json`
+            );
+          }
+
+          object_schemas_map[object_type.const] = object_schema.$id;
         } else if (object_type.enum && Array.isArray(object_type.enum)) {
           for (const item of object_type.enum) {
             if (item) {
-              schemaMap[item] = schema.$id;
+              object_schemas_map[item] = object_schema.$id;
             }
           }
         } else {
           console.error(
             `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-              schema,
+              object_schema,
               null,
               4
             )}`
@@ -59,10 +67,10 @@ async function buildObjectSchemaMap(verbose = false) {
         }
       }
     } else if (
-      schema["$id"] &&
-      schema.allOf &&
-      Array.isArray(schema.allOf) &&
-      schema.allOf.length === 1
+      object_schema["$id"] &&
+      object_schema.allOf &&
+      Array.isArray(object_schema.allOf) &&
+      object_schema.allOf.length === 1
     ) {
       /**
        * We have an issue with proposed backwards compatibility wrappers... the validator expects
@@ -74,12 +82,12 @@ async function buildObjectSchemaMap(verbose = false) {
        */
       if (verbose) {
         console.log(
-          `Appears schema ${schema["$id"]} is a wrapper for ${schema.allOf[0]["$ref"]}... ignoring.`
+          `Appears schema ${object_schema["$id"]} is a wrapper for ${object_schema.allOf[0]["$ref"]}... ignoring.`
         );
       }
     } else {
       console.error(
-        `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
+        `Unexpected value for schema: ${JSON.stringify(object_schema, null, 4)}`
       );
       throw new Error(
         "Schema doesn't match OCF schema format and it's not a wrapper"
@@ -87,7 +95,7 @@ async function buildObjectSchemaMap(verbose = false) {
     }
   });
 
-  return schemaMap;
+  return object_schemas_map;
 }
 
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
@@ -264,6 +272,83 @@ export async function validateOcfDirectory(
       );
     }
     return false;
+  }
+}
+
+/**
+ * Loads all files from the samples directory, and searches within for
+ * an occurrence of each value for the ObjectType enum (excluding deprecated object types).
+ * This ensures when a new ObjectType is added, a new sample object must
+ * be added as well, so that the new schema is verified by the AJV validator
+ * @param {boolean} verbose - if true, will output script progress to console
+ * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
+ * @returns true if validations pass, false if otherwise
+ */
+export async function validateAllObjectsHaveSamples(
+  verbose = false,
+  test = false
+) {
+  if (verbose)
+    console.log("\n--- Loading ObjectType enum schema ---------------");
+
+  var buffer = fs.readFileSync("./schema/enums/ObjectType.schema.json");
+  const object_type_schema = JSON.parse(buffer.toString());
+
+  if (verbose)
+    console.log("\n--- Loading all OCF file samples ---------------");
+
+  const ocf_sample_paths = await getOcfFilesFromDir("./samples", verbose);
+  const ocf_sample_file_buffers = await Promise.all(
+    ocf_sample_paths.map((path) => readFile(path))
+  );
+
+  const deprecated_object_types = [
+    "TX_PLAN_SECURITY_ACCEPTANCE",
+    "TX_PLAN_SECURITY_CANCELLATION",
+    "TX_PLAN_SECURITY_EXERCISE",
+    "TX_PLAN_SECURITY_ISSUANCE",
+    "TX_PLAN_SECURITY_RELEASE",
+    "TX_PLAN_SECURITY_RETRACTION",
+    "TX_PLAN_SECURITY_TRANSFER",
+  ];
+
+  const errors = [];
+  for (const object_type of object_type_schema.enum) {
+    if (deprecated_object_types.includes(object_type)) {
+      continue;
+    }
+    if (verbose)
+      console.log(
+        `\n--- Searching sample files for "object_type": "${object_type}" ---------------`
+      );
+
+    let i = 0;
+    let object_type_sample_found = false;
+    while (!object_type_sample_found) {
+      try {
+        object_type_sample_found = ocf_sample_file_buffers[i]
+          .toString()
+          .includes(`"object_type": "${object_type}"`);
+        i++;
+      } catch (e) {
+        errors.push(
+          `ObjectType enum value ${object_type} does not appear in the sample OCF files`
+        );
+        break;
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    if (test) {
+      core.setFailed(errors.join("\n"));
+    } else {
+      console.log(errors.join("\n"));
+    }
+    return false;
+  } else {
+    console.log("\n\t** ALL OBJECT TYPES HAVE SAMPLES **");
+    return true;
   }
 }
 
@@ -566,6 +651,29 @@ yargs(hideBin(process.argv))
     },
     handler(argv) {
       validateOcfDirectory(argv.path, argv.verbose, argv.test);
+    },
+  })
+  .command({
+    command: "validate-all-objects-have-samples",
+    describe:
+      "Validate OCF samples files, ensuring every non-deprecated type of object appears in at least one sample",
+    builder: {
+      verbose: {
+        describe: "Verbose outputs show detailed steps and errors",
+        alias: "v",
+        demandOption: false,
+        type: "boolean",
+      },
+      test: {
+        describe:
+          "Run as a test and trigger GitHub action failures accordingly",
+        alias: "t",
+        demandOption: false,
+        type: "boolean",
+      },
+    },
+    handler(argv) {
+      validateAllObjectsHaveSamples(argv.verbose, argv.test);
     },
   })
   .help()
