@@ -10,9 +10,9 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PhoneType.schema.json"
     },
     "phone_number": {
-      "description": "A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890)",
+      "description": "A valid phone number string in ITU E.123 international notation (e.g. +123 123 456 7890). An extension number, if applicable, should be separated by words ''extension'' or ''ext.'' after the phone number (e.g. +123 123 456 7890 ext. 100).",
       "type": "string",
-      "pattern": "^\\+\\d{1,3}\\s\\d{2,3}\\s\\d{2,3}\\s\\d{4}$"
+      "pattern": "^\\+\\d{1,3}\\s\\d{2,3}\\s\\d{2,3}\\s\\d{4}(?:\\s(ext.|extension)\\s\\d+)?$"
     }
   },
   "additionalProperties": false,
