@@ -34,7 +34,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_TRANSFER",
+    "object_type": "TX_EQUITY_COMPENSATION_TRANSFER",
     "id": "test-plan-security-transfer-minimal",
     "security_id": "0zHLfmI9G0",
     "date": "2001-01-01",
@@ -45,7 +45,7 @@
     "quantity": "11"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_TRANSFER",
+    "object_type": "TX_EQUITY_COMPENSATION_TRANSFER",
     "id": "test-plan-security-transfer-full-fields",
     "security_id": "0zHLfmI9G0",
     "date": "2001-01-01",

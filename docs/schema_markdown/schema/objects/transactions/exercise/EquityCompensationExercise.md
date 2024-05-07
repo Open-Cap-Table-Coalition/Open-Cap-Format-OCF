@@ -33,7 +33,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_EXERCISE",
+    "object_type": "TX_EQUITY_COMPENSATION_EXERCISE",
     "id": "test-plan-security-exercise-minimal",
     "security_id": "test-security-id",
     "date": "2019-12-12",
@@ -44,7 +44,7 @@
     "quantity": "100"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_EXERCISE",
+    "object_type": "TX_EQUITY_COMPENSATION_EXERCISE",
     "id": "test-plan-security-exercise-full-fields",
     "security_id": "test-security-id",
     "date": "2019-12-12",
