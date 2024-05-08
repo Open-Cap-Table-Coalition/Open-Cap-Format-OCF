@@ -33,7 +33,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+    "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
     "id": "test-plan-security-cancellation-minimal",
     "security_id": "test-security-id",
     "date": "2019-12-11",
@@ -41,7 +41,7 @@
     "quantity": "100"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+    "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
     "id": "test-plan-security-cancellation-all-fields",
     "security_id": "test-security-id",
     "date": "2019-12-11",

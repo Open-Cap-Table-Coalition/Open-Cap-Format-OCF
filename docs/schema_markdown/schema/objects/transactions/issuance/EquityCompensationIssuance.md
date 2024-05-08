@@ -47,7 +47,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
     "id": "test-plan-security-issuance-minimal",
     "security_id": "test-plan-security-id",
     "date": "2019-12-12",
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
     "id": "test-plan-security-issuance-any-of-block-for-compensation-type-option",
     "security_id": "test-security-id",
     "date": "2019-12-12",
@@ -109,7 +109,7 @@
     ]
   },
   {
-    "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
     "id": "test-plan-security-issuance-full-fields",
     "security_id": "test-plan-security-issuance-full-fields",
     "date": "2019-12-12",
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
     "id": "test-equity-compensation-issuance-no-plan",
     "security_id": "planless-equity-compensation-issuance",
     "stock_class_id": "common-stock",
