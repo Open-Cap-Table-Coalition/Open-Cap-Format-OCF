@@ -30,6 +30,10 @@
           {
             "phone_type": "HOME",
             "phone_number": "+1 617 333 4444"
+          },
+          {
+            "phone_type": "BUSINESS",
+            "phone_number": "+1 800 333 1212 extension 200"
           }
         ]
       },
