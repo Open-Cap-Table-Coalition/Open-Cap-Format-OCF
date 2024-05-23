@@ -17,9 +17,13 @@
       "description": "Relative path/filename for the document. Path is understood to be a relative location within an associated ZIP archive (packaged separately from the OCF archive) e.g. './acceptance_records/John_Wayne_2017_Grant_Agreement.pdf'",
       "type": "string"
     },
-    "security_id": {
-      "description": "Identifier for the security, if any, which this document relates to",
-      "type": "string"
+    "related_objects": {
+      "title": "Document - Related Objects Array",
+      "description": "List of objects which this document is related to",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ObjectReference.schema.json"
+      }
     },
     "id": {},
     "comments": {}

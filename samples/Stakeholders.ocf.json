@@ -58,9 +58,6 @@
           "country": "US"
         }
       ],
-      "document_ids": [
-        "90938a06-7f0c-45f2-ae54-3939c11e289b, a378d6c9-944c-40bc-8a52-ed43fe6198ae"
-      ],
       "comments": ["comment-one", "comment-two"]
     },
     {
@@ -107,7 +104,6 @@
           "country": "US"
         }
       ],
-      "document_ids": ["a981c417-70e8-4419-b4b5-f4a32ef7c002"],
       "comments": ["comment-one", "comment-two"]
     },
     {

@@ -25,7 +25,6 @@
 | contact_info         | [schema/types/ContactInfoWithoutName](../types/ContactInfoWithoutName.md)                                                                                                                                                                                                                                                                                                                                                                                   | The contact info for an individual stakeholder                                                                                     | -          |
 | addresses            | [ [schema/types/Address](../types/Address.md) ]                                                                                                                                                                                                                                                                                                                                                                                                             | Addresses for the stakeholder                                                                                                      | -          |
 | tax_ids              | [ [schema/types/TaxID](../types/TaxID.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                 | The tax ids for this stakeholder                                                                                                   | -          |
-| document_ids         | [`STRING`]                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Identifier for the document(s) related to this stakeholder and their holdings/transactions                                         | -          |
 
 **Source Code:** [schema/objects/Stakeholder](../../../../schema/objects/Stakeholder.schema.json)
 
@@ -90,9 +89,6 @@
         "country": "US"
       }
     ],
-    "document_ids": [
-      "90938a06-7f0c-45f2-ae54-3939c11e289b, a378d6c9-944c-40bc-8a52-ed43fe6198ae"
-    ],
     "comments": [
       "comment-one",
       "comment-two"
@@ -141,9 +137,6 @@
         "tax_id": "256-33-5678",
         "country": "US"
       }
-    ],
-    "document_ids": [
-      "a981c417-70e8-4419-b4b5-f4a32ef7c002"
     ],
     "comments": [
       "comment-one",
