@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json",
   "title": "Object - Issuer Authorized Shares Adjustment Transaction",
-  "description": "Object describing an event to change the number of authoried shares at the issuer level.",
+  "description": "Object describing an event to change the number of authorized shares at the issuer level.",
   "type": "object",
   "allOf": [
     {
