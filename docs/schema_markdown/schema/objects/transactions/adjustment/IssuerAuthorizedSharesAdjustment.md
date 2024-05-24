@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json`
 
-**Description:** _Object describing an event to change the number of authoried shares at the issuer level._
+**Description:** _Object describing an event to change the number of authorized shares at the issuer level._
 
 **Data Type:** `OCF Object - TX_ISSUER_AUTHORIZED_SHARES_ADJUSTMENT`
 
