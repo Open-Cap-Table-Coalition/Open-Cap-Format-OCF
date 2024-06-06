@@ -41,6 +41,14 @@
       "last_name": "X"
     },
     "stakeholder_type": "INDIVIDUAL",
+    "contact_info": {
+      "phone_numbers": [
+        {
+          "phone_type": "BUSINESS",
+          "phone_number": "+1 617 222 3333 ext. 100"
+        }
+      ]
+    },
     "comments": []
   },
   {
@@ -50,6 +58,18 @@
       "legal_name": "Person Y"
     },
     "stakeholder_type": "INDIVIDUAL",
+    "contact_info": {
+      "phone_numbers": [
+        {
+          "phone_type": "HOME",
+          "phone_number": "+1 617 333 4444"
+        },
+        {
+          "phone_type": "BUSINESS",
+          "phone_number": "+1 800 333 1212 extension 200"
+        }
+      ]
+    },
     "comments": []
   }
 ]
