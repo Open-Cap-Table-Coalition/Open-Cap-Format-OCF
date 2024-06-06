@@ -1,0 +1,25 @@
+{
+  "file_type": "OCF_TRANSACTIONS_FILE",
+  "items": [
+    {
+      "object_type": "TX_STOCK_ISSUANCE",
+      "id": "issued-shares-to-jim",
+      "security_id": "b39558bf-07cf-403a-8d07-a17dd9b651e0",
+      "date": "2022-01-01",
+      "security_law_exemptions": [],
+      "stakeholder_id": "be7d1e2e-0c9c-485b-a27d-a5c982c4e659",
+      "custom_id": "PS-1",
+      "stock_class_id": "0c21a4fd-f758-4e8a-b0ec-3fab5a5dc452",
+      "share_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "quantity": "5000",
+      "cost_basis": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "stock_legend_ids": ["650a3a80-868a-411b-b3c0-03ea6a1773ea"]
+    }
+  ]
+}
