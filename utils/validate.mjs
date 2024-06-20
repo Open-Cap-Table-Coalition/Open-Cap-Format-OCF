@@ -12,99 +12,65 @@ import { resolve } from "path";
 // TODO - move action integrations into a separate file to keep validator utils clean
 import core from "@actions/core";
 
-// Constants for various URIs
-// TODO - move to separate constants file
-export const OCF_MANIFEST_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json";
-
-export const OCF_TRANSACTIONS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json";
-
-export const OCF_STAKEHOLDERS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json";
-
-export const OCF_STOCK_PLANS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json";
-
-export const OCF_VALUATIONS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json";
-
-export const OCF_VESTING_TERMS_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json";
-
-export const OCF_STOCK_CLASSES_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json";
-
-export const OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI =
-  "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json";
-
-export const URI_LOOKUP_FOR_FILE_TYPE = {
-  OCF_MANIFEST_FILE: OCF_MANIFEST_FILE_SCHEMA_URI,
-  OCF_STAKEHOLDERS_FILE: OCF_STAKEHOLDERS_FILE_SCHEMA_URI,
-  OCF_STOCK_CLASSES_FILE: OCF_STOCK_CLASSES_FILE_SCHEMA_URI,
-  OCF_STOCK_LEGEND_TEMPLATES_FILE: OCF_STOCK_LEGEND_TEMPLATES_FILE_SCHEMA_URI,
-  OCF_STOCK_PLANS_FILE: OCF_STOCK_PLANS_FILE_SCHEMA_URI,
-  OCF_TRANSACTIONS_FILE: OCF_TRANSACTIONS_FILE_SCHEMA_URI,
-  OCF_VALUATIONS_FILE: OCF_VALUATIONS_FILE_SCHEMA_URI,
-  OCF_VESTING_TERMS_FILE: OCF_VESTING_TERMS_FILE_SCHEMA_URI,
-};
-
 // build map of object_type to schema $id
+// throws if an unknown object_type value is encountered
 async function buildObjectSchemaMap(verbose = false) {
-  const schemaMap = {};
-
-  const schemaPaths = await getSchemaObjectsFilepaths();
-
-  const schema_buffers = await Promise.all(
-    schemaPaths.map((path) => readFile(path))
+  const object_schemas_map = {};
+  const object_schema_paths = await getSchemaObjectsFilepaths(verbose);
+  const object_schema_buffers = await Promise.all(
+    object_schema_paths.map((path) => readFile(path))
   );
-
-  const schemas = schema_buffers.map((schema_buffer) => {
+  const object_schemas = object_schema_buffers.map((schema_buffer) => {
     return JSON.parse(schema_buffer.toString());
   });
+
+  const object_type_enum_schema = JSON.parse(
+    fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
+  );
 
   // Need to update this to handle the two options for object_type props (stll not in
   // love with this choice, but it was required to avoid a breaking change). Where
   // a schema has multiple potential object types for backwards compatibility,
   // there is a mapping entry for each object type in the object_type.oneOf array
   // for each of the const values in that array to the $id of the given schema
-  schemas.forEach((schema) => {
-    console.log("Analyze schema", schema);
+  object_schemas.forEach((object_schema) => {
+    if (object_schema.properties) {
+      const object_type = object_schema.properties.object_type;
 
-    if (schema.properties) {
-      let object_type = schema.properties.object_type;
-
-      console.log("Object type", object_type);
       if (
         typeof object_type === "object" &&
         !Array.isArray(object_type) &&
         object_type !== null
       ) {
         if (object_type.const && typeof object_type.const === "string") {
-          schemaMap[object_type.const] = schema.$id;
+          if (!object_type_enum_schema.enum.includes(object_type.const)) {
+            throw new Error(
+              `Encountered object_type: ${object_type.const} in a schema but this type does not exist in ObjectType.schema.json`
+            );
+          }
+
+          object_schemas_map[object_type.const] = object_schema.$id;
         } else if (object_type.enum && Array.isArray(object_type.enum)) {
           for (const item of object_type.enum) {
             if (item) {
-              schemaMap[item] = schema.$id;
+              object_schemas_map[item] = object_schema.$id;
             }
           }
         } else {
-          if (verbose) {
-            console.error(
-              `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-                schema,
-                null,
-                4
-              )}`
-            );
-          }
+          console.error(
+            `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
+              object_schema,
+              null,
+              4
+            )}`
+          );
         }
       }
     } else if (
-      schema["$id"] &&
-      schema.allOf &&
-      Array.isArray(schema.allOf) &&
-      schema.allOf.length === 1
+      object_schema["$id"] &&
+      object_schema.allOf &&
+      Array.isArray(object_schema.allOf) &&
+      object_schema.allOf.length === 1
     ) {
       /**
        * We have an issue with proposed backwards compatibility wrappers... the validator expects
@@ -116,22 +82,20 @@ async function buildObjectSchemaMap(verbose = false) {
        */
       if (verbose) {
         console.log(
-          `Appears schema ${schema["$id"]} is a wrapper for ${schema.allOf[0]["$ref"]}... ignoring.`
+          `Appears schema ${object_schema["$id"]} is a wrapper for ${object_schema.allOf[0]["$ref"]}... ignoring.`
         );
       }
     } else {
-      if (verbose) {
-        console.error(
-          `Unexpected value for schema: ${JSON.stringify(schema, null, 4)}`
-        );
-      }
+      console.error(
+        `Unexpected value for schema: ${JSON.stringify(object_schema, null, 4)}`
+      );
       throw new Error(
         "Schema doesn't match OCF schema format and it's not a wrapper"
       );
     }
   });
 
-  return schemaMap;
+  return object_schemas_map;
 }
 
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
@@ -159,9 +123,6 @@ async function getSchemaObjectsFilepaths(verbose = false) {
   const paths = [];
   for await (const f of getFiles("./schema/objects")) {
     paths.push(f);
-    if (verbose) {
-      console.log(`•\t${f}`);
-    }
   }
   return paths;
 }
@@ -253,61 +214,53 @@ export async function validateOcfDirectory(
 
       // if file is manifest, just validate against the manifest schema
       if (obj.file_type === "OCF_MANIFEST_FILE") {
-        const validator = ajv.getSchema(
-          URI_LOOKUP_FOR_FILE_TYPE[obj.file_type]
-        );
+        const validator = ajv.getSchema(uriLookupForFileType[obj.file_type]);
         const valid = validator(obj);
 
         if (!valid) {
-          if (test)
+          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+          console.log(validator.errors);
+          if (test) {
             core.setFailed(
               `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
               validator.errors
             );
-          if (verbose) {
-            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-            console.log(validator.errors);
           }
           return false;
         } else {
-          if (verbose) console.log("\n\t** VALID OCF **");
+          if (verbose) console.log(`\t** VALID OCF **`);
         }
         // collect the errors per file and then return them
         // if file is not a manifest, loop through items
         // for each item, get the object_type and then run the validator against that schema
       } else if (obj.hasOwnProperty("items")) {
-        if (verbose) console.log("\n-->\tvalidating items:");
-
         const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
         for (let j = 0; j < obj.items.length; j++) {
           let object_type = obj.items[j].object_type;
           let object_schema_uri = objectTypeToSchemaIdMap[object_type];
 
-          if (verbose) {
-            console.dir(obj.items[j], { depth: null, colors: true });
-          }
-
           const validator = ajv.getSchema(object_schema_uri);
           const valid = validator(obj.items[j]);
 
           if (!valid) {
-            if (test)
+            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
+            console.log(
+              `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
+            );
+            console.log(validator.errors);
+            if (test) {
               core.setFailed(
                 `\t** OCF file ${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
                 validator.errors
               );
-            if (verbose) {
-              console.log(
-                `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
-              );
-              console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-              console.log(validator.errors);
             }
             return false;
           }
         }
+        if (verbose) console.log("\t** VALID OCF **");
       }
     }
+    console.log("\n\t** ALL FILES VALID OCF **");
     return true;
   } catch (e) {
     if (test) {
@@ -319,6 +272,83 @@ export async function validateOcfDirectory(
       );
     }
     return false;
+  }
+}
+
+/**
+ * Loads all files from the samples directory, and searches within for
+ * an occurrence of each value for the ObjectType enum (excluding deprecated object types).
+ * This ensures when a new ObjectType is added, a new sample object must
+ * be added as well, so that the new schema is verified by the AJV validator
+ * @param {boolean} verbose - if true, will output script progress to console
+ * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
+ * @returns true if validations pass, false if otherwise
+ */
+export async function validateAllObjectsHaveSamples(
+  verbose = false,
+  test = false
+) {
+  if (verbose)
+    console.log("\n--- Loading ObjectType enum schema ---------------");
+
+  var buffer = fs.readFileSync("./schema/enums/ObjectType.schema.json");
+  const object_type_schema = JSON.parse(buffer.toString());
+
+  if (verbose)
+    console.log("\n--- Loading all OCF file samples ---------------");
+
+  const ocf_sample_paths = await getOcfFilesFromDir("./samples", verbose);
+  const ocf_sample_file_buffers = await Promise.all(
+    ocf_sample_paths.map((path) => readFile(path))
+  );
+
+  const deprecated_object_types = [
+    "TX_PLAN_SECURITY_ACCEPTANCE",
+    "TX_PLAN_SECURITY_CANCELLATION",
+    "TX_PLAN_SECURITY_EXERCISE",
+    "TX_PLAN_SECURITY_ISSUANCE",
+    "TX_PLAN_SECURITY_RELEASE",
+    "TX_PLAN_SECURITY_RETRACTION",
+    "TX_PLAN_SECURITY_TRANSFER",
+  ];
+
+  const errors = [];
+  for (const object_type of object_type_schema.enum) {
+    if (deprecated_object_types.includes(object_type)) {
+      continue;
+    }
+    if (verbose)
+      console.log(
+        `\n--- Searching sample files for "object_type": "${object_type}" ---------------`
+      );
+
+    let i = 0;
+    let object_type_sample_found = false;
+    while (!object_type_sample_found) {
+      try {
+        object_type_sample_found = ocf_sample_file_buffers[i]
+          .toString()
+          .includes(`"object_type": "${object_type}"`);
+        i++;
+      } catch (e) {
+        errors.push(
+          `ObjectType enum value ${object_type} does not appear in the sample OCF files`
+        );
+        break;
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    if (test) {
+      core.setFailed(errors.join("\n"));
+    } else {
+      console.log(errors.join("\n"));
+    }
+    return false;
+  } else {
+    console.log("\n\t** ALL OBJECT TYPES HAVE SAMPLES **");
+    return true;
   }
 }
 
@@ -512,14 +542,14 @@ export async function validateOcfSchemas(
       counter++;
     }
   } catch (e) {
+    console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
+    console.log(`\t\tOCF Schema Validations failed: ${e.message}`);
     if (test) {
       core.setFailed(`\t\tOCF Validation failed: ${e.message}`);
-    } else if (verbose) {
-      console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
-      console.log(`\t\tOCF Schema Validations failed: ${e.message}`);
     }
     return false;
   }
+  console.log("\t** ALL SCHEMA FILES VALID OCF **");
   return true;
 }
 
@@ -621,6 +651,29 @@ yargs(hideBin(process.argv))
     },
     handler(argv) {
       validateOcfDirectory(argv.path, argv.verbose, argv.test);
+    },
+  })
+  .command({
+    command: "validate-all-objects-have-samples",
+    describe:
+      "Validate OCF samples files, ensuring every non-deprecated type of object appears in at least one sample",
+    builder: {
+      verbose: {
+        describe: "Verbose outputs show detailed steps and errors",
+        alias: "v",
+        demandOption: false,
+        type: "boolean",
+      },
+      test: {
+        describe:
+          "Run as a test and trigger GitHub action failures accordingly",
+        alias: "t",
+        demandOption: false,
+        type: "boolean",
+      },
+    },
+    handler(argv) {
+      validateAllObjectsHaveSamples(argv.verbose, argv.test);
     },
   })
   .help()

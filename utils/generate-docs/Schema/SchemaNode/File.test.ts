@@ -1,8 +1,8 @@
 import Schema from "../Schema.js";
-import File, { FileSchemaNodeJson } from "./File.js";
 import { EnumSchemaNodeJson } from "./Enum.js";
-import { PrimitiveSchemaNodeJson } from "./Primitive.js";
+import File, { FileSchemaNodeJson } from "./File.js";
 import { ObjectSchemaNodeJson } from "./Object.js";
+import { PrimitiveSchemaNodeJson } from "./Primitive.js";
 
 const BASE_OBJECT_SCHEMA_NODE_FIXTURE: PrimitiveSchemaNodeJson = {
   $id: "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json",
@@ -114,11 +114,7 @@ describe("File", () => {
       const actual = new File(schema, FILE_FIXTURE).markdownOutput();
       let copyright_year = new Date().getFullYear();
 
-      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
-
----
-
-### Test Title
+      expect(actual).toEqual(`### Test Title
 
 \`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TestFile.schema.json\`
 

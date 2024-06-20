@@ -27,11 +27,7 @@ describe("Enum", () => {
       const actual = new Enum(schema, SCHEMA_NODE_FIXTURE).markdownOutput();
       let copyright_year = new Date().getFullYear();
 
-      expect(actual).toEqual(`:house: [Documentation Home](../../../README.md)
-
----
-
-### Test Title
+      expect(actual).toEqual(`### Test Title
 
 \`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/TestEnum.schema.json\`
 

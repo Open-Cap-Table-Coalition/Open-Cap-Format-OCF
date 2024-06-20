@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Primitive - Issuer Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/IssuerTransaction.schema.json`
@@ -12,9 +8,9 @@
 
 **Properties:**
 
-| Property  | Type     | Description                                                    | Required |
-| --------- | -------- | -------------------------------------------------------------- | -------- |
-| issuer_id | `STRING` | Identifier of the Issuer object, a subject of this transaction | -        |
+| Property  | Type     | Description                                                    | Required   |
+| --------- | -------- | -------------------------------------------------------------- | ---------- |
+| issuer_id | `STRING` | Identifier of the Issuer object, a subject of this transaction | `REQUIRED` |
 
 **Source Code:** [schema/primitives/objects/transactions/IssuerTransaction](../../../../../../schema/primitives/objects/transactions/IssuerTransaction.schema.json)
 

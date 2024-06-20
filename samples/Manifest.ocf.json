@@ -77,6 +77,12 @@
       "md5": "2a284a50fed8a0d07f10ed36edb14fc5"
     }
   ],
+  "financings_files": [
+    {
+      "filepath": "./Financings.ocf.json",
+      "md5": "1963960448f602208ae82ae3e7f90a57"
+    }
+  ],
   "comments": [
     "This is an optional comment",
     "These md5 hashes are just dummy values. They've not been recalculated in a long time, but we should look into recalculating them dynamically via an actions or pre-commit hook."

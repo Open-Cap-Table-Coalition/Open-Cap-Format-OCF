@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../../README.md)
-
----
-
 ### Primitive - Security Transfer Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json`

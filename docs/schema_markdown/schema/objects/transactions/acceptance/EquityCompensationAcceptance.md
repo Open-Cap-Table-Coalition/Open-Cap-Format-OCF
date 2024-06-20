@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Acceptance Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/EquityCompensationAcceptance.schema.json`
@@ -34,13 +30,13 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_ACCEPTANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ACCEPTANCE",
     "id": "test-plan-security-acceptance-minimal",
     "security_id": "test-security-id",
     "date": "2019-12-10"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_ACCEPTANCE",
+    "object_type": "TX_EQUITY_COMPENSATION_ACCEPTANCE",
     "id": "test-plan-security-acceptance-all-fields",
     "security_id": "test-security-id",
     "date": "2019-12-10",
