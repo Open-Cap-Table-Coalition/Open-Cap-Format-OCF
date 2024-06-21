@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json`
 
-**Description:** _Object describing an event to change the number of authoried shares of a stock class._
+**Description:** _Object describing an event to change the number of authorized shares of a stock class._
 
 **Data Type:** `OCF Object - TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`
 

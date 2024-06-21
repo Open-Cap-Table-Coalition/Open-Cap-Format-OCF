@@ -149,7 +149,29 @@
     "name": {
       "legal_name": "XYZ Holdings Fund IV"
     },
-    "stakeholder_type": "INSTITUTION"
+    "stakeholder_type": "INSTITUTION",
+    "comments": []
+  },
+  {
+    "object_type": "STAKEHOLDER",
+    "id": "d6c49a5a-257d-4b41-9f1d-073a77dfe719",
+    "name": {
+      "legal_name": "Person Y"
+    },
+    "stakeholder_type": "INDIVIDUAL",
+    "contact_info": {
+      "phone_numbers": [
+        {
+          "phone_type": "HOME",
+          "phone_number": "+1 617 333 4444 ext. 100"
+        },
+        {
+          "phone_type": "BUSINESS",
+          "phone_number": "+1 800 333 1212 extension 200"
+        }
+      ]
+    },
+    "comments": []
   }
 ]
 ```
