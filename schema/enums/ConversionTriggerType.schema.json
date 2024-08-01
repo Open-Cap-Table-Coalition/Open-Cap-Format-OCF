@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTriggerType.schema.json",
+  "title": "Enum - Trigger Type",
+  "description": "Enumeration of types of triggers common to various legal rights - e.g. does the satisfaction of a condition trigger an automatic conversion or merely a right to convert? If `UNSPECIFIED`, the system of record cannot represent this data in a structured form.",
+  "type": "string",
+  "enum": [
+    "AUTOMATIC_ON_CONDITION",
+    "AUTOMATIC_ON_DATE",
+    "ELECTIVE_IN_RANGE",
+    "ELECTIVE_ON_CONDITION",
+    "ELECTIVE_AT_WILL",
+    "UNSPECIFIED"
+  ],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConversionTriggerType.schema.json"
+}

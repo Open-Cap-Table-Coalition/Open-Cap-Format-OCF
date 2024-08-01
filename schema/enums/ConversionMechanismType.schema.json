@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json",
+  "title": "Enum - Conversion Mechanism Type",
+  "description": "Enumeration of convertible conversion calculation types.",
+  "type": "string",
+  "enum": [
+    "FIXED_AMOUNT_CONVERSION",
+    "FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION",
+    "RATIO_CONVERSION",
+    "SAFE_CONVERSION",
+    "VALUATION_BASED_CONVERSION",
+    "CONVERTIBLE_NOTE_CONVERSION",
+    "CUSTOM_CONVERSION",
+    "PPS_BASED_CONVERSION"
+  ],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConversionMechanismType.schema.json"
+}

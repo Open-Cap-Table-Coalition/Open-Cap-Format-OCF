@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json",
+  "title": "Type - Name",
+  "description": "Type comprising of multiple name components",
+  "type": "object",
+  "properties": {
+    "legal_name": {
+      "description": "Legal full name for the individual/institution",
+      "type": "string"
+    },
+    "first_name": {
+      "description": "First/given name for the individual",
+      "type": "string"
+    },
+    "last_name": {
+      "description": "Last/family name for the individual",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["legal_name"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/Name.schema.json"
+}

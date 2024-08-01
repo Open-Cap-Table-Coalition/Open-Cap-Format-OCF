@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json",
+  "title": "Primitive - Conversion Trigger Type",
+  "description": "Abstract type representation of required fields require for conversion rights types.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "When the trigger condition is met, is the conversion automatic, elective or automatic with an elective right not to convert",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTriggerType.schema.json"
+    },
+    "trigger_id": {
+      "description": "Id for this conversion trigger, unique within list of ConversionTriggers in parent convertible issuance's `conversion_triggers` field.",
+      "type": "string"
+    },
+    "nickname": {
+      "description": "Human-friendly nickname to describe the conversion right",
+      "type": "string"
+    },
+    "trigger_description": {
+      "description": "Long-form description of the trigger",
+      "type": "string"
+    },
+    "conversion_right": {
+      "description": "When the conditions of the trigger are met, how does the convertible convert?",
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/ConvertibleConversionRight.schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/WarrantConversionRight.schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/StockClassConversionRight.schema.json"
+        }
+      ]
+    }
+  },
+  "required": ["type", "trigger_id", "conversion_right"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+}

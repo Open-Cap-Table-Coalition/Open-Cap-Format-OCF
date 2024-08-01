@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionRightType.schema.json",
+  "title": "Enum - Conversion Right Type",
+  "description": "Enumeration of types of conversion rights.",
+  "type": "string",
+  "enum": [
+    "CONVERTIBLE_CONVERSION_RIGHT",
+    "WARRANT_CONVERSION_RIGHT",
+    "STOCK_CLASS_CONVERSION_RIGHT"
+  ],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/ConversionRightType.schema.json"
+}

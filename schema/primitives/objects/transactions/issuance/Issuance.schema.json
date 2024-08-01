@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json",
+  "title": "Primitive - Security Issuance Transaction",
+  "description": "Abstract object describing fields common to all issuance objects",
+  "type": "object",
+  "properties": {
+    "custom_id": {
+      "description": "A custom ID for this security (e.g. CN-1.)",
+      "type": "string"
+    },
+    "stakeholder_id": {
+      "description": "Identifier for the stakeholder that holds legal title to this security",
+      "type": "string"
+    },
+    "board_approval_date": {
+      "description": "Date of board approval for the security",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
+    "stockholder_approval_date": {
+      "description": "Date on which the stockholders approved the security",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
+    "consideration_text": {
+      "description": "Unstructured text description of consideration provided in exchange for security issuance",
+      "type": "string"
+    },
+    "security_law_exemptions": {
+      "title": "Security Issuance - Security Exemption Array",
+      "description": "List of security law exemptions (and applicable jurisdictions) for this security",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json"
+      }
+    }
+  },
+  "required": ["security_law_exemptions", "stakeholder_id", "custom_id"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
+}
