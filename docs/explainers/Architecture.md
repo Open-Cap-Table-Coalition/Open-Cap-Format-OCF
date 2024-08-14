@@ -91,7 +91,9 @@ _There are currently 10 file types that make up a cap table_:
 9. [Financings File(s)](../schema_markdown/schema/files/FinancingsFile.md) - One or more files
    storing the issuer's financing events.
 10. [Documents File(s)](../schema_markdown/schema/files/DocumentsFile.md) - One or more files
-    storing references to related stakeholder documents.
+    storing references to related stakeholder documents, either via path referring to a location
+    within an associated ZIP archive (packaged separately from the OCF archive), or via a uniform
+    resource identifier (URI).
 
 **At the moment, we recommend combining all of these files into a single compressed file with a
 \*.ocf.zip extension:**

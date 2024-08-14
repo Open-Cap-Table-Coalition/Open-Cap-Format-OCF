@@ -3,8 +3,15 @@
   "items": [
     {
       "object_type": "DOCUMENT",
-      "id": "test-document-minimal",
-      "path": "./document1.pdf"
+      "id": "test-document-minimal-with-path",
+      "path": "./document1.pdf",
+      "md5": "d7f1a770b4a242658565092e3005972d"
+    },
+    {
+      "object_type": "DOCUMENT",
+      "id": "test-document-minimal-with-uri",
+      "uri": "https://example.com/hosted/1239342348021.pdf",
+      "md5": "d7f1a770b4a242658565092e3005972d"
     },
     {
       "object_type": "DOCUMENT",
@@ -20,7 +27,6 @@
           "object_id": "a8c76b10-6566-4495-817c-6ad8bbb3da72"
         }
       ],
-      "uri": "https://example.com/hosted/1239342348021.pdf",
       "md5": "d7f1a770b4a242658565092e3005972d",
       "comments": ["comment-one", "comment-two"]
     }
