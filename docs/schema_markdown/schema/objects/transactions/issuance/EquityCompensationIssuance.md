@@ -36,7 +36,8 @@
 | exercise_price               | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | If this is an option, what is the exercise price of the option?                                                                                                                                                                                                                                                                                                                                                                                                                                             | -          |
 | base_price                   | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | If this is a stock appreciation right, what is the base price used to calculate the appreciation of the SAR?                                                                                                                                                                                                                                                                                                                                                                                                | -          |
 | early_exercisable            | `BOOLEAN`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Is this Equity Compensation exercisable prior to completion of vesting? If so, it's assumed the vesting schedule will remain in effect but, instead of vesting a right to exercise, it becomes the schedule determining when a right to repurchase the resulting stock lapses.                                                                                                                                                                                                                              | -          |
-| vesting_terms_id             | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Identifier of the VestingTerms to which this security is subject.  If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                    | -          |
+| vesting_terms_id             | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Identifier of the VestingTerms to which this security is subject. If neither `vesting_terms_id` or `vestings` are present then the security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                    | -          |
+| vestings                     | [ [schema/types/Vesting](../../../types/Vesting.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | List of exact vesting dates and amounts for this security. When `vestings` array is present then `vesting_terms_id` may be ignored.                                                                                                                                                                                                                                                                                                                                                                         | -          |
 | expiration_date              | **ONE OF the Following Types/Objs:**</br>&bull; `NULL` _()_</br>&bull; [schema/types/Date](../../../types/Date.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Expiration date of the plan security                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | termination_exercise_windows | [ [schema/types/TerminationWindow](../../../types/TerminationWindow.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Exercise periods applicable to plan security after a termination for a given, enumerated reason                                                                                                                                                                                                                                                                                                                                                                                                             | `REQUIRED` |
 
@@ -75,6 +76,38 @@
         "period_type": "DAYS"
       }
     ]
+  },
+  {
+    "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
+    "id": "test-plan-security-issuance-minimal-with-vestings-array",
+    "security_id": "test-plan-security-id",
+    "date": "2023-06-07",
+    "security_law_exemptions": [],
+    "stakeholder_id": "test-stakeholder-id",
+    "custom_id": "CA-2",
+    "stock_plan_id": "test-stock-plan-id",
+    "compensation_type": "RSU",
+    "quantity": "10000",
+    "exercise_price": {
+      "amount": "50.00",
+      "currency": "USD"
+    },
+    "vestings": [
+      {
+        "date": "2024-06-07",
+        "amount": "3333"
+      },
+      {
+        "date": "2025-06-07",
+        "amount": "3334"
+      },
+      {
+        "date": "2026-06-07",
+        "amount": "3333"
+      }
+    ],
+    "expiration_date": "2031-06-07",
+    "termination_exercise_windows": []
   },
   {
     "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
@@ -135,6 +168,12 @@
       "currency": "CAD"
     },
     "vesting_terms_id": "custom-vesting-100pct-upfront",
+    "vestings": [
+      {
+        "date": "2019-12-12",
+        "amount": "100"
+      }
+    ],
     "expiration_date": "2031-01-20",
     "termination_exercise_windows": [
       {
