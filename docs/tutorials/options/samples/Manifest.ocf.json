@@ -9,7 +9,8 @@
     "legal_name": "Aperture Science, Inc.",
     "formation_date": "1940-09-25",
     "country_of_formation": "US",
-    "country_subdivision_of_formation": "MI"
+    "country_subdivision_of_formation": "MI",
+    "jurisdiction_of_formation": "Michigan"
   },
   "stock_legend_templates_files": [
     {
