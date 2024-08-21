@@ -2,7 +2,6 @@ import { format } from "date-fns";
 import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
 
-import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 import Schema from "../Schema.js";
 import { PropertyJson } from "./Property/Factory.js";
 import SchemaNode from "./SchemaNode.js";
@@ -40,9 +39,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
   type = () => this.schema.findSchemaNodeById(this.replacementSchemaId).type();
 
   protected basename = () => path.basename(this.id(), ".schema.json");
-
-  protected directory = () =>
-    path.dirname(this.id().slice(`${repo_raw_url_root}/main/`.length));
 
   protected allOf = (): SchemaNode[] => [];
 
