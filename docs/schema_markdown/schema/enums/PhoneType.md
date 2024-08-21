@@ -1,6 +1,6 @@
 ### Enum - Phone Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PhoneType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/enums/PhoneType.schema.json`
 
 **Description:** _Enumeration of phone number types_
 

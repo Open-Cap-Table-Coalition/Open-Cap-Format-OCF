@@ -1,6 +1,6 @@
 ### Type - Share Number Range
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ShareNumberRange.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/ShareNumberRange.schema.json`
 
 _Type representation of a range of share numbers associated with an event (such as the share numbers associated with an issuance) - for use where shares are not fungible and need unique identifiers *per share*_
 

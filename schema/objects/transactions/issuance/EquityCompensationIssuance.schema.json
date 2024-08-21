@@ -1,21 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/issuance/EquityCompensationIssuance.schema.json",
   "title": "Object - Equity Compensation Issuance Transaction",
   "description": "Object describing securities issuance transaction by the issuer and held by a stakeholder as a form of compensation (as noted elsewhere, RSAs are not included here intentionally and should be modelled using Stock Issuances).",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/SecurityTransaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/issuance/Issuance.schema.json"
     }
   ],
   "properties": {
@@ -33,24 +33,24 @@
     },
     "compensation_type": {
       "description": "If the plan security is compensation, what kind?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompensationType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/CompensationType.schema.json"
     },
     "option_grant_type": {
       "description": "If the plan security is an option, what kind?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OptionType.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/OptionType.schema.json",
       "$comment": "DEPRECATION WARNING - This field is being retained for compatibility, but these variations have been incorporated into CompensationType.schema.json enum options"
     },
     "quantity": {
       "description": "How many shares are subject to this plan security?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Numeric.schema.json"
     },
     "exercise_price": {
       "description": "If this is an option, what is the exercise price of the option?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Monetary.schema.json"
     },
     "base_price": {
       "description": "If this is a stock appreciation right, what is the base price used to calculate the appreciation of the SAR?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Monetary.schema.json"
     },
     "early_exercisable": {
       "type": "boolean",
@@ -67,7 +67,7 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Vesting.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Vesting.schema.json"
       }
     },
     "expiration_date": {
@@ -77,7 +77,7 @@
           "type": "null"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "description": "Exercise periods applicable to plan security after a termination for a given, enumerated reason",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TerminationWindow.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/TerminationWindow.schema.json"
       }
     },
     "id": {},
@@ -162,5 +162,5 @@
     "expiration_date",
     "termination_exercise_windows"
   ],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json"
 }

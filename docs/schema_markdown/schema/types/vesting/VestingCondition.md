@@ -1,6 +1,6 @@
 ### Type - Vesting Condition
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingCondition.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingCondition.schema.json`
 
 _Describes condition / triggers to be satisfied for vesting to occur_
 

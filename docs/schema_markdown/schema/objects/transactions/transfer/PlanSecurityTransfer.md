@@ -1,6 +1,6 @@
 ### Object - Plan Security Transfer
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/transfer/PlanSecurityTransfer.schema.json`
 
   **Description:** _Object describing plan security transfer transaction (a compatibility wrapper for equity compensation transfer event)_
 

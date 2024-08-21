@@ -1,29 +1,29 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/files/OCFManifestFile.schema.json",
   "title": "OCF Manifest File",
   "description": "Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/files/File.schema.json"
     }
   ],
   "properties": {
     "ocf_version": {
       "description": "OCF Version Identifier -- the current semantic version (https://semver.org/spec/v2.0.0.html)",
-      "const": "1.1.1-alpha+main"
+      "const": "1.2.0"
     },
     "file_type": {
       "const": "OCF_MANIFEST_FILE"
     },
     "issuer": {
       "description": "Issuer for the cap table",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Issuer.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/Issuer.schema.json"
     },
     "as_of": {
       "description": "The point-in-time represented by this OCF Package",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
     },
     "generated_at": {
       "description": "Timestamp of when the package was generated. Useful when determining which set of data is most up-to-date, if presented with two packages that have the same `as_of` date, but different cap table data.",
@@ -43,7 +43,7 @@
       "description": "List of files containing lists of issuer stock plans, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_plans_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "stock_legend_templates_files": {
@@ -51,7 +51,7 @@
       "description": "List of files containing lists of issuer stock legend templates, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_legend_templates_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "stock_classes_files": {
@@ -59,7 +59,7 @@
       "description": "List of files containing lists of issuer stock classes, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stock_classes_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "vesting_terms_files": {
@@ -67,7 +67,7 @@
       "description": "List of files containing lists of issuer vesting terms, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/vesting_terms_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "valuations_files": {
@@ -75,7 +75,7 @@
       "description": "List of files containing lists of issuer valuations, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/valuations_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "transactions_files": {
@@ -83,7 +83,7 @@
       "description": "List of files containing lists of issuer transactions, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/transactions_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "stakeholders_files": {
@@ -91,7 +91,7 @@
       "description": "List of files containing lists of issuer stakeholders, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/stakeholders_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "financings_files": {
@@ -99,7 +99,7 @@
       "description": "List of files containing lists of financings, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/financings_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     },
     "documents_files": {
@@ -107,7 +107,7 @@
       "description": "List of files containing lists of document paths, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/documents_file schema to validate loaded files)",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/File.schema.json"
       }
     }
   },
@@ -126,5 +126,5 @@
     "stakeholders_files"
   ],
   "additionalProperties": false,
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/OCFManifestFile.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/files/OCFManifestFile.schema.json"
 }

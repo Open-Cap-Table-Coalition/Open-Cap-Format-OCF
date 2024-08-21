@@ -1,6 +1,6 @@
 ### Primitive - Security Retraction Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/retraction/Retraction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/retraction/Retraction.schema.json`
 
 **Description** _Abstract object describing a security retraction transaction_
 

@@ -1,6 +1,6 @@
 ### Object - Document
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Document.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/Document.schema.json`
 
 **Description:** _Object describing a document_
 

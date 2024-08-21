@@ -1,6 +1,6 @@
 ### Type - Object Reference
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ObjectReference.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/ObjectReference.schema.json`
 
 _A type representing a reference to any kind of OCF object_
 

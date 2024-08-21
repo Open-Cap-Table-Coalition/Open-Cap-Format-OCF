@@ -1,6 +1,6 @@
 ### Type - Security Exemption
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/SecurityExemption.schema.json`
 
 _Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis_
 

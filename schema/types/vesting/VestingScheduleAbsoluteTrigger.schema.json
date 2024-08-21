@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
   "title": "Type - Vesting Schedule Absolute Trigger",
   "description": "Describes a vesting condition satisfied on an absolute date.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/vesting/VestingConditionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -15,10 +15,10 @@
     },
     "date": {
       "description": "The date on which this condition triggers.",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
     }
   },
   "required": ["date"],
   "additionalProperties": false,
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json"
 }

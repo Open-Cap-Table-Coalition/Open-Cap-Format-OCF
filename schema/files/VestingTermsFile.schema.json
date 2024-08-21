@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/VestingTermsFile.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/files/VestingTermsFile.schema.json",
   "title": "File - Vesting Terms",
   "description": "JSON containing file type identifier and list of vesting terms",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/files/File.schema.json"
     }
   ],
   "properties": {
@@ -14,7 +14,7 @@
       "type": "array",
       "description": "List of OCF vesting terms objects",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/VestingTerms.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/VestingTerms.schema.json"
       }
     },
     "file_type": {
@@ -23,5 +23,5 @@
   },
   "additionalProperties": false,
   "required": ["items", "file_type"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/VestingTermsFile.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/files/VestingTermsFile.schema.json"
 }

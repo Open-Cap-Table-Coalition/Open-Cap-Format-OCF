@@ -1,6 +1,6 @@
 ### Object - Equity Compensation Transfer Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/EquityCompensationTransfer.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/transfer/EquityCompensationTransfer.schema.json`
 
 **Description:** _Object describing a transfer of equity compensation_
 

@@ -1,6 +1,6 @@
 ### Object - Plan Security Exercise
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/exercise/PlanSecurityExercise.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/exercise/PlanSecurityExercise.schema.json`
 
   **Description:** _Object for a plan security exercise (which is a compatibility wrapper for Equity Compensation Exercise)_
 

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingPeriod.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/vesting/VestingPeriod.schema.json",
   "title": "Primitive - Vesting Period Type",
   "description": "Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms",
   "type": "object",
@@ -12,7 +12,7 @@
     },
     "type": {
       "description": "The unit of time for the period, e.g. `MONTHS` or `DAYS`",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PeriodType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/PeriodType.schema.json"
     },
     "occurrences": {
       "description": "The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36`",
@@ -21,5 +21,5 @@
     }
   },
   "required": ["length", "type", "occurrences"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/types/vesting/VestingPeriod.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/primitives/types/vesting/VestingPeriod.schema.json"
 }

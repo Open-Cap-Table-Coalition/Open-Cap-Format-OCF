@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/SecurityExemption.schema.json",
   "title": "Type - Security Exemption",
   "description": "Type representation of a securities issuance exemption that includes an unstructured description and a country code for ease of processing and analysis",
   "type": "object",
@@ -16,5 +16,5 @@
   },
   "additionalProperties": false,
   "required": ["description", "jurisdiction"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/SecurityExemption.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/SecurityExemption.schema.json"
 }

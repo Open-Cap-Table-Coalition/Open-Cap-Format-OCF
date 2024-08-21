@@ -1,6 +1,6 @@
 ### Object - Financing
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Financing.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/Financing.schema.json`
 
 **Description:** _Object describing a financing_
 

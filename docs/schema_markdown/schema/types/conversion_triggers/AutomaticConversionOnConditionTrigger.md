@@ -1,6 +1,6 @@
 ### Type - Automatic Conversion on Condition Trigger
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json`
 
 _Type representation of automatic trigger on a tive or condition._
 

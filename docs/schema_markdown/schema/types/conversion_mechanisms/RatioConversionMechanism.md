@@ -1,6 +1,6 @@
 ### Conversion Mechanism - Ratio
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_mechanisms/RatioConversionMechanism.schema.json`
 
 _Sets forth inputs and conversion mechanism of a ratio conversion (primarily used to describe conversion from one stock class (e.g. Preferred) into another (e.g. Common)_
 

@@ -1,6 +1,6 @@
 ### Object - Plan Security Acceptance
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json`
 
   **Description:** _An object that represents a plan security acceptance transaction, which is just a compatibility wrapper for an Equity Compensation Acceptance._
 

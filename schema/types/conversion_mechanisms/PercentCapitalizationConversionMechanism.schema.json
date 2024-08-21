@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json",
   "title": "Conversion Mechanism - Percent of Capitalization",
   "description": "Sets forth inputs and conversion mechanism of percent of capitalization conversion (where an instrument purports to grant a percent of company capitalization at some point in time)",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
     }
   ],
   "properties": {
@@ -15,7 +15,7 @@
     },
     "converts_to_percent": {
       "description": "What percentage of the company capitalization does this convert to",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Percentage.schema.json"
     },
     "capitalization_definition": {
       "description": "How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument.",
@@ -23,10 +23,10 @@
     },
     "capitalization_definition_rules": {
       "description": "The rules for which types of securities would be included in the capitalization definition.",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinitionRules.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/CapitalizationDefinitionRules.schema.json"
     }
   },
   "additionalProperties": false,
   "required": ["converts_to_percent", "type"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism.schema.json"
 }

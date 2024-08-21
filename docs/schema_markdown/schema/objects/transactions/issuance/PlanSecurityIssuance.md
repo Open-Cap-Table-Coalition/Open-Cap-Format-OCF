@@ -1,6 +1,6 @@
 ### Object - Plan Security Issuance
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/PlanSecurityIssuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/issuance/PlanSecurityIssuance.schema.json`
 
   **Description:** _A Plan Security Issuance is a transaction to issue plan securities (it's a compatibility wrapper for Equity Compensation Issuances)_
 

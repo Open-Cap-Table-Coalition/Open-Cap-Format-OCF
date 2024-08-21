@@ -1,6 +1,6 @@
 ### Enum - Stock Issuance Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockIssuanceType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/enums/StockIssuanceType.schema.json`
 
 **Description:** _Enumeration of issuance types where we want to draw attention to some unique aspect of a stock issuance (e.g. is it an RSA)_
 

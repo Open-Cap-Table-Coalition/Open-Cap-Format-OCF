@@ -1,6 +1,6 @@
 ### Object - Plan Security Retraction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/retraction/PlanSecurityRetraction.schema.json`
 
   **Description:** _Object describing plan security retraction transaction (a compatibility wrapper for equity compensation retraction event)_
 

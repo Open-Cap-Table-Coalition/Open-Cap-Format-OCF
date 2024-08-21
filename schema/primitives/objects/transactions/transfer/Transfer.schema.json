@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/transfer/Transfer.schema.json",
   "title": "Primitive - Security Transfer Transaction",
   "description": "Abstract object describing a security transfer or secondary sale transaction",
   "type": "object",
@@ -25,5 +25,5 @@
     }
   },
   "required": ["resulting_security_ids"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/primitives/objects/transactions/transfer/Transfer.schema.json"
 }

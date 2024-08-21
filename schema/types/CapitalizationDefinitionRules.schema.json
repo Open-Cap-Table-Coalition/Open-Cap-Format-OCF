@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinitionRules.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/CapitalizationDefinitionRules.schema.json",
   "title": "Type - Capitalization Definition Rules",
   "description": "Type represents the rules for determining the capitalization definition for a security",
   "type": "object",
@@ -49,5 +49,5 @@
     "include_additional_option_pool_topup",
     "include_new_money"
   ],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/CapitalizationDefinitionRules.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/CapitalizationDefinitionRules.schema.json"
 }

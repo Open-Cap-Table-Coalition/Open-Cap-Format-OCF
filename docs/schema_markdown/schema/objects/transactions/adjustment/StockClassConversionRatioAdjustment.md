@@ -1,6 +1,6 @@
 ### Object - Stock Class Conversion Ratio Adjustment Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
 
 **Description:** _Object describing the conversion ratio adjustment of a stock class that has a RatioConversionMechanism conversion mechanism where there was an actual repricing due to a down-round. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection._
 

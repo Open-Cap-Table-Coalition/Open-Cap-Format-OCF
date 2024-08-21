@@ -1,6 +1,6 @@
 ### Type - Vesting
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Vesting.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/Vesting.schema.json`
 
 _Describes an exact vesting date and amount_
 

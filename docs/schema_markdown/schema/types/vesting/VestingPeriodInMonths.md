@@ -1,6 +1,6 @@
 ### Type - Vesting Period in Months
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingPeriodInMonths.schema.json`
 
 _Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms._
 

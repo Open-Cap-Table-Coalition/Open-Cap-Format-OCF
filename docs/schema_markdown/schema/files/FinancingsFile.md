@@ -1,6 +1,6 @@
 ### File - Financings
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/FinancingsFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/files/FinancingsFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of financings_
 

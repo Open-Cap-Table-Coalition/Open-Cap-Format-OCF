@@ -1,6 +1,6 @@
 ### Primitive - Vesting Period Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingPeriod.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/vesting/VestingPeriod.schema.json`
 
 **Description** _Abstract type describing the fields common to all periods of time (e.g. 3 months, 365 days) for use in Vesting Terms_
 

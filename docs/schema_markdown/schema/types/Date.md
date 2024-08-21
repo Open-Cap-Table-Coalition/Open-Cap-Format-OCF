@@ -1,6 +1,6 @@
 ### Type - Date
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json`
 
 **Description:** _Type represention of an ISO-8601 date, e.g. 2022-01-28_
 

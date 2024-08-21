@@ -1,6 +1,6 @@
 ### Primitive - Conversion Trigger Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_triggers/ConversionTrigger.schema.json`
 
 **Description** _Abstract type representation of required fields require for conversion rights types._
 

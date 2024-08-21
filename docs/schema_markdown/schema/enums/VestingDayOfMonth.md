@@ -1,6 +1,6 @@
 ### Enum - Vesting Day of Month
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingDayOfMonth.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/enums/VestingDayOfMonth.schema.json`
 
 **Description:** _Enumeration representing a vesting "day of month". Since not all months have 29, 30, or 31 days, this enum requires those values to also specify an overflow behavior.
  - `01` - `28` : Day 1, 2... 28 of the month; e.g. `03` means vesting occurs on the 3rd of the month.

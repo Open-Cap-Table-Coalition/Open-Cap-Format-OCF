@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_mechanisms/SAFEConversionMechanism.schema.json",
   "title": "Conversion Mechanism - SAFE",
   "description": "Sets forth inputs and conversion mechanism of a SAFE (mirrors the flavors and inputs of the Y Combinator SAFE)",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
     }
   ],
   "properties": {
@@ -15,15 +15,15 @@
     },
     "conversion_discount": {
       "description": "What is the percentage discount available upon conversion, if applicable? (decimal representation - e.g. 0.125 for 12.5%)",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Percentage.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Percentage.schema.json"
     },
     "conversion_valuation_cap": {
       "description": "What is the valuation cap (if applicable)?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Monetary.schema.json"
     },
     "exit_multiple": {
       "description": "For cash proceeds calculation during a liquidity event.",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Ratio.schema.json"
     },
     "conversion_mfn": {
       "description": "Is this an MFN flavored SAFE?",
@@ -31,7 +31,7 @@
     },
     "conversion_timing": {
       "description": "Should the conversion amount be based on pre or post money capitalization",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionTimingType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/ConversionTimingType.schema.json"
     },
     "capitalization_definition": {
       "description": "How is company capitalization defined for purposes of conversion? If possible, include the legal language from the instrument.",
@@ -39,10 +39,10 @@
     },
     "capitalization_definition_rules": {
       "description": "The rules for which types of securities would be included in the capitalization definition.",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CapitalizationDefinitionRules.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/CapitalizationDefinitionRules.schema.json"
     }
   },
   "required": ["conversion_mfn", "type"],
   "additionalProperties": false,
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/conversion_mechanisms/SAFEConversionMechanism.schema.json"
 }

@@ -1,6 +1,6 @@
 ### Primitive - Return To Pool Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/return_to_pool/ReturnToPool.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/return_to_pool/ReturnToPool.schema.json`
 
 **Description** _Abstract object describing a terminal transaction where securities return to a stock plan pool_
 

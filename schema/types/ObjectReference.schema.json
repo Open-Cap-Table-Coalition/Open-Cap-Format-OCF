@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ObjectReference.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/ObjectReference.schema.json",
   "title": "Type - Object Reference",
   "description": "A type representing a reference to any kind of OCF object",
   "type": "object",
   "properties": {
     "object_type": {
       "description": "The type of object being referenced. Informs which type of identifier is represented by the associated object_id",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ObjectType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/ObjectType.schema.json"
     },
     "object_id": {
       "description": "The identifier for the referenced object",
@@ -16,5 +16,5 @@
   },
   "additionalProperties": false,
   "required": ["object_type", "object_id"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/ObjectReference.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/ObjectReference.schema.json"
 }

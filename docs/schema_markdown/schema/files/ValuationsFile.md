@@ -1,6 +1,6 @@
 ### File - Valuations
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/files/ValuationsFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list of valuations_
 

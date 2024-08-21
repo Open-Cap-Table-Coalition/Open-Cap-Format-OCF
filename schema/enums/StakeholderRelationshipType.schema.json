@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StakeholderRelationshipType.schema.json",
   "title": "Enum - Stakeholder Relationship Type",
   "description": "Enumeration of types of relationships between stakeholder and issuer",
   "type": "string",
@@ -19,5 +19,5 @@
     "OFFICER",
     "OTHER"
   ],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/StakeholderRelationshipType.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/enums/StakeholderRelationshipType.schema.json"
 }

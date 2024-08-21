@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/Stakeholder.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/Stakeholder.schema.json",
   "title": "Object - Stakeholder",
   "description": "Object describing a stakeholder",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -15,11 +15,11 @@
     },
     "name": {
       "description": "Name for the stakeholder",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Name.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Name.schema.json"
     },
     "stakeholder_type": {
       "description": "Distinguish individuals from institutions",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StakeholderType.schema.json"
     },
     "issuer_assigned_id": {
       "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
@@ -27,22 +27,22 @@
     },
     "current_relationship": {
       "description": "What is the current relationship of the stakeholder to the issuer?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StakeholderRelationshipType.schema.json"
     },
     "primary_contact": {
       "description": "The primary contact info for an institutional stakeholder",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfo.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/ContactInfo.schema.json"
     },
     "contact_info": {
       "description": "The contact info for an individual stakeholder",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ContactInfoWithoutName.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/ContactInfoWithoutName.schema.json"
     },
     "addresses": {
       "title": "Stakeholder - Address Array",
       "description": "Addresses for the stakeholder",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Address.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Address.schema.json"
       }
     },
     "tax_ids": {
@@ -50,7 +50,7 @@
       "description": "The tax ids for this stakeholder",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TaxID.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/TaxID.schema.json"
       }
     },
     "id": {},
@@ -58,5 +58,5 @@
   },
   "additionalProperties": false,
   "required": ["name", "stakeholder_type"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Stakeholder.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/Stakeholder.schema.json"
 }

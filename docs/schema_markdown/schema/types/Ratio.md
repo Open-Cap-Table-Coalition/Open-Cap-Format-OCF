@@ -1,6 +1,6 @@
 ### Type - Ratio
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/types/Ratio.schema.json`
 
 _Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values_
 

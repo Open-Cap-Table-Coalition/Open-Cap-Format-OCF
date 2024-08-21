@@ -1,6 +1,6 @@
 ### File - Transactions
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/TransactionsFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/files/TransactionsFile.schema.json`
 
 **Description:** _JSON containing file type identifier and list transactions_
 

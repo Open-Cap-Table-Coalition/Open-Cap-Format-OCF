@@ -1,6 +1,6 @@
 ### Object - Convertible Issuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/issuance/ConvertibleIssuance.schema.json`
 
 **Description:** _Object describing convertible instrument issuance transaction by the issuer and held by a stakeholder_
 

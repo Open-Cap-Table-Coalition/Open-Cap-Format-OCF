@@ -1,6 +1,6 @@
 ### Enum - Compensation Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompensationType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.0/enums/CompensationType.schema.json`
 
 **Description:** _Enumeration of equity compensation types (there are some things around the margins like RSAs that don't currently fit under the EquityCompensation umbrella but might arguably fall under this. If you want to create an RSA, create a stock issuance with vesting - you can link it to a plan as well, if you want).
 

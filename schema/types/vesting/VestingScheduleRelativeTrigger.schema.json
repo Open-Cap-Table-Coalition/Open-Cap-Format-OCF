@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingScheduleRelativeTrigger.schema.json",
   "title": "Type - Vesting Schedule Relative Trigger",
   "description": "Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/vesting/VestingConditionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -17,10 +17,10 @@
       "description": "The span of time that must have elapsed since the condition `relative_to_condition_id` occurred for this condition to trigger. For weeks or \"ideal\" years (365 days), use `VestingPeriodInDays`. For calendar years use `VestingPeriodInMonths`.",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInDays.schema.json"
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingPeriodInDays.schema.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json"
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/vesting/VestingPeriodInMonths.schema.json"
         }
       ]
     },
@@ -31,5 +31,5 @@
   },
   "required": ["period", "relative_to_condition_id"],
   "additionalProperties": false,
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json"
 }
