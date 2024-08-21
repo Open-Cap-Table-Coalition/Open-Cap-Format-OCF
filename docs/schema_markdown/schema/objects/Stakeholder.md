@@ -34,21 +34,122 @@
 [
   {
     "object_type": "STAKEHOLDER",
-    "id": "aceb81e6-2d19-4ef2-ac53-05ff210d3508",
+    "id": "stakeholder-sample-individual-all-fields",
     "name": {
       "legal_name": "Person X",
       "first_name": "Person",
       "last_name": "X"
     },
     "stakeholder_type": "INDIVIDUAL",
+    "issuer_assigned_id": "Employee-1",
+    "current_relationship": "EMPLOYEE",
     "contact_info": {
       "phone_numbers": [
         {
+          "phone_type": "MOBILE",
+          "phone_number": "+1 316 555 6789"
+        },
+        {
           "phone_type": "BUSINESS",
-          "phone_number": "+1 617 222 3333 ext. 100"
+          "phone_number": "+1 316 555 1234"
+        }
+      ],
+      "emails": [
+        {
+          "email_type": "PERSONAL",
+          "email_address": "personal@test.email"
+        },
+        {
+          "email_type": "BUSINESS",
+          "email_address": "company@test.email"
         }
       ]
     },
+    "addresses": [
+      {
+        "address_type": "LEGAL",
+        "street_suite": "123 Abc St.",
+        "city": "Cityville",
+        "country_subdivision": "TX",
+        "country": "US",
+        "postal_code": "12345"
+      },
+      {
+        "address_type": "CONTACT",
+        "street_suite": "P.O. Box 404",
+        "city": "Cityville",
+        "country_subdivision": "TX",
+        "country": "US",
+        "postal_code": "12345"
+      }
+    ],
+    "tax_ids": [
+      {
+        "tax_id": "256-33-1234",
+        "country": "US"
+      }
+    ],
+    "comments": [
+      "comment-one",
+      "comment-two"
+    ]
+  },
+  {
+    "object_type": "STAKEHOLDER",
+    "id": "stakeholder-sample-institution-all-fields",
+    "name": {
+      "legal_name": "XYZ Holdings Fund III"
+    },
+    "stakeholder_type": "INSTITUTION",
+    "issuer_assigned_id": "Entity-1",
+    "current_relationship": "INVESTOR",
+    "primary_contact": {
+      "name": {
+        "legal_name": "Todd Fund Manager",
+        "first_name": "Todd",
+        "last_name": "Fund Manager"
+      },
+      "phone_numbers": [
+        {
+          "phone_type": "MOBILE",
+          "phone_number": "+1 313 555 6789"
+        }
+      ],
+      "emails": [
+        {
+          "email_type": "PERSONAL",
+          "email_address": "toddfundmanager@test.email"
+        }
+      ]
+    },
+    "addresses": [
+      {
+        "address_type": "LEGAL",
+        "street_suite": "456 Xyz St.",
+        "city": "Cityville",
+        "country_subdivision": "NV",
+        "country": "US",
+        "postal_code": "67890"
+      }
+    ],
+    "tax_ids": [
+      {
+        "tax_id": "256-33-5678",
+        "country": "US"
+      }
+    ],
+    "comments": [
+      "comment-one",
+      "comment-two"
+    ]
+  },
+  {
+    "object_type": "STAKEHOLDER",
+    "id": "stakeholder-sample-minimal-fields",
+    "name": {
+      "legal_name": "XYZ Holdings Fund IV"
+    },
+    "stakeholder_type": "INSTITUTION",
     "comments": []
   },
   {
@@ -62,7 +163,7 @@
       "phone_numbers": [
         {
           "phone_type": "HOME",
-          "phone_number": "+1 617 333 4444"
+          "phone_number": "+1 617 333 4444 ext. 100"
         },
         {
           "phone_type": "BUSINESS",
