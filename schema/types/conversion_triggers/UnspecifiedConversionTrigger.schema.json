@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json",
+  "title": "Type - Unspecified Conversion Trigger",
+  "description": "Use this where no structured data is available regarding what triggers the conversion of a given security.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+    }
+  ],
+  "properties": {
+    "trigger_id": {},
+    "nickname": {},
+    "trigger_description": {},
+    "type": {
+      "const": "UNSPECIFIED"
+    },
+    "conversion_right": {}
+  },
+  "additionalProperties": false,
+  "required": ["trigger_id", "type", "conversion_right"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json"
+}

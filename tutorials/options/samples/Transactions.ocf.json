@@ -1,0 +1,103 @@
+{
+  "file_type": "OCF_TRANSACTIONS_FILE",
+  "items": [
+    {
+      "object_type": "TX_STOCK_ISSUANCE",
+      "id": "issued-shares-to-jim",
+      "security_id": "b39558bf-07cf-403a-8d07-a17dd9b651e0",
+      "date": "2022-01-01",
+      "security_law_exemptions": [],
+      "stakeholder_id": "be7d1e2e-0c9c-485b-a27d-a5c982c4e659",
+      "custom_id": "PS-1",
+      "stock_class_id": "0c21a4fd-f758-4e8a-b0ec-3fab5a5dc452",
+      "share_price": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "quantity": "5000",
+      "cost_basis": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "stock_legend_ids": ["650a3a80-868a-411b-b3c0-03ea6a1773ea"]
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_ISSUANCE",
+      "id": "43786349-f791-488f-8da1-687eb25c9603",
+      "security_id": "c0ebbb49-8499-4863-bf27-279bc842bf20",
+      "date": "2022-12-31",
+      "security_law_exemptions": [
+        {
+          "description": "Rule 701",
+          "jurisdiction": "U.S."
+        }
+      ],
+      "stakeholder_id": "be7d1e2e-0c9c-485b-a27d-a5c982c4e659",
+      "custom_id": "CA-1",
+      "stock_plan_id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "compensation_type": "OPTION",
+      "option_grant_type": "ISO",
+      "quantity": "100000",
+      "exercise_price": {
+        "amount": "0.10",
+        "currency": "USD"
+      },
+      "vesting_terms_id": "f58fa866-be71-4d79-b52a-ea5379a71551",
+      "expiration_date": "2032-12-31",
+      "termination_exercise_windows": [
+        {
+          "reason": "INVOLUNTARY_WITH_CAUSE",
+          "period": 1,
+          "period_type": "DAYS"
+        }
+      ]
+    },
+    {
+      "object_type": "TX_STOCK_PLAN_POOL_ADJUSTMENT",
+      "id": "increase_sop_pool",
+      "comments": ["Pool is too large. Decrease to 8,000,000 shares."],
+      "date": "2023-01-01",
+      "stock_plan_id": "257e5da9-5268-465c-84be-f6d4d4703a9b",
+      "board_approval_date": "2023-01-01",
+      "stockholder_approval_date": "2023-01-01",
+      "shares_reserved": "8000000"
+    },
+    {
+      "object_type": "TX_VESTING_START",
+      "id": "688f67dd-6e89-4dbc-b2e8-a9511a7cffff",
+      "security_id": "c0ebbb49-8499-4863-bf27-279bc842bf20",
+      "vesting_condition_id": "3010a0b6-b79f-45c8-9abe-68d827d4dfc9",
+      "date": "2022-12-31"
+    },
+    {
+      "object_type": "TX_STOCK_ISSUANCE",
+      "id": "505bc49d-cd87-44cb-87cb-7a6dfe486fe5",
+      "security_id": "6cf44121-67b7-4868-807b-b2581efe6b21",
+      "date": "2024-01-31",
+      "security_law_exemptions": [],
+      "stakeholder_id": "be7d1e2e-0c9c-485b-a27d-a5c982c4e659",
+      "custom_id": "C-1",
+      "stock_class_id": "e1d930f7-592d-4414-a3ab-a78fe4b932d1",
+      "share_price": {
+        "amount": "0.10",
+        "currency": "USD"
+      },
+      "quantity": "25000",
+      "cost_basis": {
+        "amount": "2500",
+        "currency": "USD"
+      },
+      "stock_legend_ids": ["common_legend_id"]
+    },
+    {
+      "object_type": "TX_PLAN_SECURITY_EXERCISE",
+      "id": "8efcfd8f-80fc-4f89-ae4f-1fd2c3c5cc2d",
+      "security_id": "c0ebbb49-8499-4863-bf27-279bc842bf20",
+      "date": "2024-01-31",
+      "resulting_security_ids": ["resultant-security-id-1"],
+      "quantity": "25000",
+      "consideration_text": "2,500.00 USD, Wire",
+      "comments": [""]
+    }
+  ]
+}

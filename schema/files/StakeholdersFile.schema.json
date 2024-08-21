@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/files/StakeholdersFile.schema.json",
+  "title": "File - Stakeholders",
+  "description": "JSON containing file type identifier and list of stakeholders",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/files/File.schema.json"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "List of OCF stakeholder objects",
+      "items": {
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/Stakeholder.schema.json"
+      }
+    },
+    "file_type": {
+      "const": "OCF_STAKEHOLDERS_FILE"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["items", "file_type"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/files/StakeholdersFile.schema.json"
+}

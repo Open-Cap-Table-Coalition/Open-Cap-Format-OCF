@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json",
+  "title": "Type - Automatic Conversion on Date Trigger",
+  "description": "Type representation of an automatic trigger on a date.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+    }
+  ],
+  "properties": {
+    "trigger_date": {
+      "description": "Date on which trigger occurs automatically (if it hasn't already occured)",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "trigger_id": {},
+    "nickname": {},
+    "trigger_description": {},
+    "type": {
+      "const": "AUTOMATIC_ON_DATE"
+    },
+    "conversion_right": {}
+  },
+  "additionalProperties": false,
+  "required": ["trigger_id", "trigger_date", "type", "conversion_right"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger.schema.json"
+}

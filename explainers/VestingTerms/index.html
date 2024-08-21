@@ -1,0 +1,4365 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Open Cap Format (OCF).">
+      
+      
+        <meta name="author" content="Open Cap Table Coalition">
+      
+      
+        <link rel="canonical" href="https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/explainers/VestingTerms/">
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Vesting System - Open Cap Table Format Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vesting-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Open Cap Table Format Documentation" class="md-header__button md-logo" aria-label="Open Cap Table Format Documentation" data-md-component="logo">
+      
+  <img src="../../images/OCF Logo Transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Cap Table Format Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vesting System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+        Architecture
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../schema_markdown/schema/enums/AccrualPeriodType/" class="md-tabs__link">
+        Schema
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/quickstart/Issuance/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../CONTRIBUTING/" class="md-tabs__link">
+      Contribute
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../PROJECTS/" class="md-tabs__link">
+      Awesome OCF
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://medium.com/@opencaptable" class="md-tabs__link">
+      Blog
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Open Cap Table Format Documentation" class="md-nav__button md-logo" aria-label="Open Cap Table Format Documentation" data-md-component="logo">
+      
+  <img src="../../images/OCF Logo Transparent.png" alt="logo">
+
+    </a>
+    Open Cap Table Format Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Architecture" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        OCF Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DesignPatterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeveloperInfo/" class="md-nav__link">
+        Developer Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TraversingTransactions/" class="md-nav__link">
+        Transaction Tracing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vesting System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Vesting System
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-event-based-vesting" class="md-nav__link">
+    Example 1: Event-based vesting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-event-based-vesting-with-deadlines" class="md-nav__link">
+    Example 2: Event-based vesting with deadlines
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2: Event-based vesting with deadlines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vesting-start" class="md-nav__link">
+    Vesting Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_condition_ids" class="md-nav__link">
+    next_condition_ids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vesting-schedule-relative" class="md-nav__link">
+    Vesting Schedule Relative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vesting-schedule-absolute" class="md-nav__link">
+    Vesting Schedule Absolute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity-vs-portion" class="md-nav__link">
+    Quantity vs Portion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-schedule-based-vesting" class="md-nav__link">
+    Example 3: Schedule-based vesting
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3: Schedule-based vesting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vesting-schedule-relative-occurrences" class="md-nav__link">
+    Vesting Schedule Relative occurrences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vesting-day-of-month" class="md-nav__link">
+    Vesting Day of Month
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Schema
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Schema" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Schema
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Enums
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enums" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Enums
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/AccrualPeriodType/" class="md-nav__link">
+        AccrualPeriodType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/AddressType/" class="md-nav__link">
+        AddressType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/AllocationType/" class="md-nav__link">
+        AllocationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/AuthorizedShares/" class="md-nav__link">
+        AuthorizedShares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/CompensationType/" class="md-nav__link">
+        CompensationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/CompoundingType/" class="md-nav__link">
+        CompoundingType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ConversionMechanismType/" class="md-nav__link">
+        ConversionMechanismType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ConversionRightType/" class="md-nav__link">
+        ConversionRightType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ConversionTimingType/" class="md-nav__link">
+        ConversionTimingType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ConversionTriggerType/" class="md-nav__link">
+        ConversionTriggerType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ConvertibleType/" class="md-nav__link">
+        ConvertibleType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/DayCountType/" class="md-nav__link">
+        DayCountType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/EmailType/" class="md-nav__link">
+        EmailType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/FileType/" class="md-nav__link">
+        FileType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/InterestPayoutType/" class="md-nav__link">
+        InterestPayoutType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ObjectType/" class="md-nav__link">
+        ObjectType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/OptionType/" class="md-nav__link">
+        OptionType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ParentSecurityType/" class="md-nav__link">
+        ParentSecurityType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/PeriodType/" class="md-nav__link">
+        PeriodType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/PhoneType/" class="md-nav__link">
+        PhoneType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/QuantitySourceType/" class="md-nav__link">
+        QuantitySourceType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/RoundingType/" class="md-nav__link">
+        RoundingType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/StakeholderRelationshipType/" class="md-nav__link">
+        StakeholderRelationshipType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/StakeholderType/" class="md-nav__link">
+        StakeholderType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/StockClassType/" class="md-nav__link">
+        StockClassType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/StockIssuanceType/" class="md-nav__link">
+        StockIssuanceType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/StockPlanCancellationBehaviorType/" class="md-nav__link">
+        StockPlanCancellationBehaviorType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/TerminationWindowType/" class="md-nav__link">
+        TerminationWindowType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ValuationBasedFormulaType/" class="md-nav__link">
+        ValuationBasedFormulaType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/ValuationType/" class="md-nav__link">
+        ValuationType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/VestingDayOfMonth/" class="md-nav__link">
+        VestingDayOfMonth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/enums/VestingTriggerType/" class="md-nav__link">
+        VestingTriggerType
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/DocumentsFile/" class="md-nav__link">
+        DocumentsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/FinancingsFile/" class="md-nav__link">
+        FinancingsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/OCFManifestFile/" class="md-nav__link">
+        OCFManifestFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/StakeholdersFile/" class="md-nav__link">
+        StakeholdersFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/StockClassesFile/" class="md-nav__link">
+        StockClassesFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/StockLegendTemplatesFile/" class="md-nav__link">
+        StockLegendTemplatesFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/StockPlansFile/" class="md-nav__link">
+        StockPlansFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/TransactionsFile/" class="md-nav__link">
+        TransactionsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/ValuationsFile/" class="md-nav__link">
+        ValuationsFile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/files/VestingTermsFile/" class="md-nav__link">
+        VestingTermsFile
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Objects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Objects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/Document/" class="md-nav__link">
+        Document
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/Financing/" class="md-nav__link">
+        Financing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/Issuer/" class="md-nav__link">
+        Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/Stakeholder/" class="md-nav__link">
+        Stakeholder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/StockClass/" class="md-nav__link">
+        StockClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/StockLegendTemplate/" class="md-nav__link">
+        StockLegendTemplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/StockPlan/" class="md-nav__link">
+        StockPlan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/Valuation/" class="md-nav__link">
+        Valuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/VestingTerms/" class="md-nav__link">
+        VestingTerms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10" type="checkbox" id="__nav_3_3_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10">
+          Transactions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transactions" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_1" type="checkbox" id="__nav_3_3_10_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_1">
+          Acceptance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Acceptance" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Acceptance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/acceptance/ConvertibleAcceptance/" class="md-nav__link">
+        ConvertibleAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/acceptance/EquityCompensationAcceptance/" class="md-nav__link">
+        EquityCompensationAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/acceptance/PlanSecurityAcceptance/" class="md-nav__link">
+        PlanSecurityAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/acceptance/StockAcceptance/" class="md-nav__link">
+        StockAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/acceptance/WarrantAcceptance/" class="md-nav__link">
+        WarrantAcceptance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_2" type="checkbox" id="__nav_3_3_10_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_2">
+          Adjustment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Adjustment" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Adjustment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment/" class="md-nav__link">
+        IssuerAuthorizedSharesAdjustment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment/" class="md-nav__link">
+        StockClassAuthorizedSharesAdjustment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment/" class="md-nav__link">
+        StockClassConversionRatioAdjustment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/adjustment/StockPlanPoolAdjustment/" class="md-nav__link">
+        StockPlanPoolAdjustment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_3" type="checkbox" id="__nav_3_3_10_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_3">
+          Cancellation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cancellation" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cancellation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/cancellation/ConvertibleCancellation/" class="md-nav__link">
+        ConvertibleCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/cancellation/EquityCompensationCancellation/" class="md-nav__link">
+        EquityCompensationCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/cancellation/PlanSecurityCancellation/" class="md-nav__link">
+        PlanSecurityCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/cancellation/StockCancellation/" class="md-nav__link">
+        StockCancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/cancellation/WarrantCancellation/" class="md-nav__link">
+        WarrantCancellation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_4" type="checkbox" id="__nav_3_3_10_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_4">
+          Conversion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/conversion/ConvertibleConversion/" class="md-nav__link">
+        ConvertibleConversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/conversion/StockConversion/" class="md-nav__link">
+        StockConversion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_5" type="checkbox" id="__nav_3_3_10_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_5">
+          Exercise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercise" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          Exercise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/exercise/EquityCompensationExercise/" class="md-nav__link">
+        EquityCompensationExercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/exercise/PlanSecurityExercise/" class="md-nav__link">
+        PlanSecurityExercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/exercise/WarrantExercise/" class="md-nav__link">
+        WarrantExercise
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_6" type="checkbox" id="__nav_3_3_10_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_6">
+          Issuance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Issuance" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_6">
+          <span class="md-nav__icon md-icon"></span>
+          Issuance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/issuance/ConvertibleIssuance/" class="md-nav__link">
+        ConvertibleIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/issuance/EquityCompensationIssuance/" class="md-nav__link">
+        EquityCompensationIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/issuance/PlanSecurityIssuance/" class="md-nav__link">
+        PlanSecurityIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/issuance/StockIssuance/" class="md-nav__link">
+        StockIssuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/issuance/WarrantIssuance/" class="md-nav__link">
+        WarrantIssuance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/reissuance/StockReissuance/" class="md-nav__link">
+        StockReissuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_8" type="checkbox" id="__nav_3_3_10_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_8">
+          Release
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Release
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/release/EquityCompensationRelease/" class="md-nav__link">
+        EquityCompensationRelease
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/release/PlanSecurityRelease/" class="md-nav__link">
+        PlanSecurityRelease
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/repurchase/StockRepurchase/" class="md-nav__link">
+        StockRepurchase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_10" type="checkbox" id="__nav_3_3_10_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_10">
+          Retraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retraction" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_10">
+          <span class="md-nav__icon md-icon"></span>
+          Retraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/retraction/ConvertibleRetraction/" class="md-nav__link">
+        ConvertibleRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/retraction/EquityCompensationRetraction/" class="md-nav__link">
+        EquityCompensationRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/retraction/PlanSecurityRetraction/" class="md-nav__link">
+        PlanSecurityRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/retraction/StockRetraction/" class="md-nav__link">
+        StockRetraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/retraction/WarrantRetraction/" class="md-nav__link">
+        WarrantRetraction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/return_to_pool/StockPlanReturnToPool/" class="md-nav__link">
+        StockPlanReturnToPool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/split/StockClassSplit/" class="md-nav__link">
+        StockClassSplit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_13" type="checkbox" id="__nav_3_3_10_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_13">
+          Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transfer" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_13">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/transfer/ConvertibleTransfer/" class="md-nav__link">
+        ConvertibleTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/transfer/EquityCompensationTransfer/" class="md-nav__link">
+        EquityCompensationTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/transfer/PlanSecurityTransfer/" class="md-nav__link">
+        PlanSecurityTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/transfer/StockTransfer/" class="md-nav__link">
+        StockTransfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/transfer/WarrantTransfer/" class="md-nav__link">
+        WarrantTransfer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_10_14" type="checkbox" id="__nav_3_3_10_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_10_14">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_10_14">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/vesting/VestingAcceleration/" class="md-nav__link">
+        VestingAcceleration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/vesting/VestingEvent/" class="md-nav__link">
+        VestingEvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/objects/transactions/vesting/VestingStart/" class="md-nav__link">
+        VestingStart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Primitives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Primitives" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Primitives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/files/File/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_2" type="checkbox" id="__nav_3_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_2">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Objects" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Objects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/Object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_2_2" type="checkbox" id="__nav_3_4_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_2_2">
+          Transactions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transactions" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Transactions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/IssuerTransaction/" class="md-nav__link">
+        IssuerTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/SecurityTransaction/" class="md-nav__link">
+        SecurityTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/StockClassTransaction/" class="md-nav__link">
+        StockClassTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/StockPlanTransaction/" class="md-nav__link">
+        StockPlanTransaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/Transaction/" class="md-nav__link">
+        Transaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/acceptance/Acceptance/" class="md-nav__link">
+        Acceptance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/cancellation/Cancellation/" class="md-nav__link">
+        Cancellation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/conversion/Conversion/" class="md-nav__link">
+        Conversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/exercise/Exercise/" class="md-nav__link">
+        Exercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/issuance/Issuance/" class="md-nav__link">
+        Issuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/reissuance/Reissuance/" class="md-nav__link">
+        Reissuance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/release/Release/" class="md-nav__link">
+        Release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/repurchase/Repurchase/" class="md-nav__link">
+        Repurchase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/retraction/Retraction/" class="md-nav__link">
+        Retraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/return_to_pool/ReturnToPool/" class="md-nav__link">
+        ReturnToPool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/objects/transactions/transfer/Transfer/" class="md-nav__link">
+        Transfer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3" type="checkbox" id="__nav_3_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3">
+          Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Types" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/types/conversion_mechanisms/ConversionMechanism/" class="md-nav__link">
+        ConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/types/conversion_rights/ConversionRight/" class="md-nav__link">
+        ConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/types/conversion_triggers/ConversionTrigger/" class="md-nav__link">
+        ConversionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3_4" type="checkbox" id="__nav_3_4_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3_4">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/types/vesting/VestingConditionTrigger/" class="md-nav__link">
+        VestingConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/primitives/types/vesting/VestingPeriod/" class="md-nav__link">
+        VestingPeriod
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Types" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Address/" class="md-nav__link">
+        Address
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/CapitalizationDefinition/" class="md-nav__link">
+        CapitalizationDefinition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/CapitalizationDefinitionRules/" class="md-nav__link">
+        CapitalizationDefinitionRules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/ContactInfo/" class="md-nav__link">
+        ContactInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/ContactInfoWithoutName/" class="md-nav__link">
+        ContactInfoWithoutName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/CountryCode/" class="md-nav__link">
+        CountryCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/CountrySubdivisionCode/" class="md-nav__link">
+        CountrySubdivisionCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/CurrencyCode/" class="md-nav__link">
+        CurrencyCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/File/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/InterestRate/" class="md-nav__link">
+        InterestRate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Md5/" class="md-nav__link">
+        Md5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Monetary/" class="md-nav__link">
+        Monetary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Name/" class="md-nav__link">
+        Name
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Numeric/" class="md-nav__link">
+        Numeric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/ObjectReference/" class="md-nav__link">
+        ObjectReference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Percentage/" class="md-nav__link">
+        Percentage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Phone/" class="md-nav__link">
+        Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Ratio/" class="md-nav__link">
+        Ratio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/SecurityExemption/" class="md-nav__link">
+        SecurityExemption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/ShareNumberRange/" class="md-nav__link">
+        ShareNumberRange
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/StockParent/" class="md-nav__link">
+        StockParent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/TaxID/" class="md-nav__link">
+        TaxID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/TerminationWindow/" class="md-nav__link">
+        TerminationWindow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/Vesting/" class="md-nav__link">
+        Vesting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_27" type="checkbox" id="__nav_3_5_27" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5_27">
+          Conversion mechanisms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion mechanisms" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_27">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion mechanisms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/CustomConversionMechanism/" class="md-nav__link">
+        CustomConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/FixedAmountConversionMechanism/" class="md-nav__link">
+        FixedAmountConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/NoteConversionMechanism/" class="md-nav__link">
+        NoteConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/PercentCapitalizationConversionMechanism/" class="md-nav__link">
+        PercentCapitalizationConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/RatioConversionMechanism/" class="md-nav__link">
+        RatioConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/SAFEConversionMechanism/" class="md-nav__link">
+        SAFEConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism/" class="md-nav__link">
+        SharePriceBasedConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_mechanisms/ValuationBasedConversionMechanism/" class="md-nav__link">
+        ValuationBasedConversionMechanism
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_28" type="checkbox" id="__nav_3_5_28" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5_28">
+          Conversion rights
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion rights" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_28">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion rights
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_rights/ConvertibleConversionRight/" class="md-nav__link">
+        ConvertibleConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_rights/StockClassConversionRight/" class="md-nav__link">
+        StockClassConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_rights/WarrantConversionRight/" class="md-nav__link">
+        WarrantConversionRight
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_29" type="checkbox" id="__nav_3_5_29" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5_29">
+          Conversion triggers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conversion triggers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_29">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion triggers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger/" class="md-nav__link">
+        AutomaticConversionOnConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/AutomaticConversionOnDateTrigger/" class="md-nav__link">
+        AutomaticConversionOnDateTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger/" class="md-nav__link">
+        ElectiveConversionAtWillTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger/" class="md-nav__link">
+        ElectiveConversionInDateRangeTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger/" class="md-nav__link">
+        ElectiveConversionOnConditionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/conversion_triggers/UnspecifiedConversionTrigger/" class="md-nav__link">
+        UnspecifiedConversionTrigger
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_30" type="checkbox" id="__nav_3_5_30" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5_30">
+          Vesting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vesting" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_30">
+          <span class="md-nav__icon md-icon"></span>
+          Vesting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingCondition/" class="md-nav__link">
+        VestingCondition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingConditionPortion/" class="md-nav__link">
+        VestingConditionPortion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingEventTrigger/" class="md-nav__link">
+        VestingEventTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingPeriodInDays/" class="md-nav__link">
+        VestingPeriodInDays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingPeriodInMonths/" class="md-nav__link">
+        VestingPeriodInMonths
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingScheduleAbsoluteTrigger/" class="md-nav__link">
+        VestingScheduleAbsoluteTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingScheduleRelativeTrigger/" class="md-nav__link">
+        VestingScheduleRelativeTrigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_markdown/schema/types/vesting/VestingStartTrigger/" class="md-nav__link">
+        VestingStartTrigger
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/Issuance/" class="md-nav__link">
+        OCF - Getting Started with Issuances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/transfers/Transfers/" class="md-nav__link">
+        Stock Transfers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/options/Options/" class="md-nav__link">
+        Issuing Options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        Contribute
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROJECTS/" class="md-nav__link">
+        Awesome OCF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://medium.com/@opencaptable" class="md-nav__link">
+        Blog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/edit/main/docs/explainers/VestingTerms.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="vesting-system">Vesting System<a class="headerlink" href="#vesting-system" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>Vesting Terms objects support a structured representation of security vesting. This is accomplished
+by expressing security vesting as a graph of "Vesting Conditions", and then recording vesting
+transactions for each security.</p>
+<p>The current philosophy is that these graphs will be <em>directed</em> and <em>acyclic</em>. Each <strong>condition</strong>
+(node) in the graph specifies the <strong>trigger</strong> (edge) for entering that condition, and vesting some
+<strong>portion</strong> or <strong>quantity</strong> of the linked security. The conditions also then list all possible
+subsequent conditions.</p>
+<p>Let's look at some examples.</p>
+<h2 id="example-1-event-based-vesting">Example 1: Event-based vesting<a class="headerlink" href="#example-1-event-based-vesting" title="Permanent link">#</a></h2>
+<p>We'll start with a minimal example of event-based vesting. In this scenario, let's say a Plan
+Security has been issued but it will not vest <em>at all</em> unless the company is sold for $100,000,000
+or more. We can express this as a graph:</p>
+<pre class="mermaid"><code>flowchart TB
+  id(( ))
+  sold[[qualifying-sale: 100%]]
+
+  id--&gt;|Company acquisition &gt; $100MM|sold</code></pre>
+<p>And this graph is expressed in JSON as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      &quot;id&quot;: &quot;all-or-nothing&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      &quot;object_type&quot;: &quot;VESTING_TERMS&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      &quot;name&quot;: &quot;Documentation: Example 1&quot;,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      &quot;description&quot;: &quot;100% of the options vest on a security-specific date&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      &quot;allocation_type&quot;: &quot;CUMULATIVE_ROUND_DOWN&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      &quot;vesting_conditions&quot;: [
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        {
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          &quot;id&quot;: &quot;qualifying-sale&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>          &quot;description&quot;: &quot;Company is acquired for &gt; $100MM&quot;,
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>          &quot;portion&quot;: {
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            &quot;numerator&quot;: &quot;1&quot;,
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            &quot;denominator&quot;: &quot;1&quot;
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>          },
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            &quot;type&quot;: &quot;VESTING_EVENT&quot;
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>          },
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>          &quot;next_condition_ids&quot;: []
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        }
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>      ]
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    }
+</code></pre></div>
+<p>Let's break down the single <a href="../../schema_markdown/schema/types/vesting/VestingCondition/">Vesting Condition</a> here.</p>
+<ol>
+<li>It has <code>trigger.type</code> of <code>VESTING_EVENT</code>. This means that this condition is not met, and thus
+   this portion of vesting does not occur, until an event is triggered and recorded in the
+   transaction log.</li>
+<li>It has a <a href="../../schema_markdown/schema/types/vesting/VestingConditionPortion/">Vesting Condition Portion</a> <code>portion</code> of 1/1; in other words, 100%.</li>
+<li>It has an empty array of <code>next_condition_ids</code>. This means this is a terminating node on the graph
+   and is the end of vesting.</li>
+</ol>
+<p>When the security is first issued, we associate it with the Vesting Terms by ID:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_PLAN_SECURITY_ISSUANCE&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b1746426&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;vesting_terms_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all-or-nothing&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="s2">&quot;...&quot;</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>If the issuance is the only transaction object on record, then this issuance is 0% vested. Let's
+say, however, that a qualifying sale were to occur. To represent this, we add a <a href="../../schema_markdown/schema/objects/transactions/vesting/VestingEvent/">Vesting Event
+Transaction</a> to the record:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_VESTING_EVENT&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d0a02b7a&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-07-14&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;vesting_condition_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qualifying-sale&quot;</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>This event is linked to the issuance by the <code>security_id</code> field, and is linked to the vesting
+condition via the <code>vesting_condition_id</code>. This means that on 14 July 2022, a vesting event occurred
+for the referenced security. The amount vested is derived from:</p>
+<ol>
+<li>The <code>quantity</code> on the security's issuance event.</li>
+<li>The <code>portion</code> on the vesting condition <code>qualifying-sale</code>, which is a condition on the security's
+   vesting terms <code>all-or-nothing</code>.</li>
+</ol>
+<p>This is a simple example, but it also probably isn't a very realistic one. In our next example,
+we'll show how to add time-based deadlines to an event.</p>
+<h2 id="example-2-event-based-vesting-with-deadlines">Example 2: Event-based vesting with deadlines<a class="headerlink" href="#example-2-event-based-vesting-with-deadlines" title="Permanent link">#</a></h2>
+<p>Let's say that our hypothetical company has realized that the terms described in Example 1 are not
+motivating enough, and so they want to add a deadline:</p>
+<blockquote>
+<p>The security will only vest if the qualifying sale happens within three years of issuance, or
+prior to Jan 1, 2025, whichever happens first.</p>
+</blockquote>
+<p>Our graph is now a little more complicated:</p>
+<pre class="mermaid"><code>flowchart TB
+  id(( ))
+  start[[vesting-start]]
+  sold[[qualifying-sale: 100%]]
+  rel([relative-expiration: 0%])
+  abs(absolute-expiration: 0%)
+
+  id--&gt;|Issuance|start
+  start--&gt;|+3 years|rel
+  start--&gt;|Jan 1, 2025|abs
+  start--&gt;|Company acquisition &gt; $100MM|sold</code></pre>
+<p>This graph is expressed in JSON as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    {
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      &quot;id&quot;: &quot;all-or-nothing-with-expiration&quot;,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      &quot;object_type&quot;: &quot;VESTING_TERMS&quot;,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>      &quot;name&quot;: &quot;Documentation: Example 2&quot;,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      &quot;description&quot;: &quot;100% of the options vest on a security-specific date, within time boundaries&quot;,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      &quot;allocation_type&quot;: &quot;CUMULATIVE_ROUND_DOWN&quot;,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      &quot;vesting_conditions&quot;: [
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        {
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>          &quot;id&quot;: &quot;vesting-start&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>          &quot;description&quot;: &quot;The date on which the vesting period begins&quot;,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            &quot;type&quot;: &quot;VESTING_START_DATE&quot;
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>          },
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>          &quot;quantity&quot;: &quot;0&quot;,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>          &quot;next_condition_ids&quot;: [
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            &quot;relative-expiration&quot;,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            &quot;absolute-expiration&quot;,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            &quot;qualifying-sale&quot;
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>          ]
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        },
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        {
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>          &quot;id&quot;: &quot;relative-expiration&quot;,
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>          &quot;description&quot;: &quot;0% vesting three years after vesting start&quot;,
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>          &quot;portion&quot;: {
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            &quot;numerator&quot;: &quot;0&quot;,
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            &quot;denominator&quot;: &quot;1&quot;
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>          },
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            &quot;type&quot;: &quot;VESTING_SCHEDULE_RELATIVE&quot;,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>            &quot;period&quot;: {
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>              &quot;length&quot;: 36,
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>              &quot;type&quot;: &quot;MONTHS&quot;,
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>              &quot;occurrences&quot;: 1,
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>              &quot;day_of_month&quot;: &quot;VESTING_START_DAY_OR_LAST_DAY_OF_MONTH&quot;
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>            },
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>            &quot;relative_to_condition_id&quot;: &quot;vesting-start&quot;
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>          },
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>          &quot;next_condition_ids&quot;: []
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>        },
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>        {
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>          &quot;id&quot;: &quot;absolute-expiration&quot;,
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>          &quot;description&quot;: &quot;0% vesting after 1 Jan, 2025&quot;,
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>          &quot;quantity&quot;: &quot;0&quot;,
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>            &quot;type&quot;: &quot;VESTING_SCHEDULE_ABSOLUTE&quot;,
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>            &quot;date&quot;: &quot;2025-01-01&quot;
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>          },
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>          &quot;next_condition_ids&quot;: []
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>        },
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>        {
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>          &quot;id&quot;: &quot;qualifying-sale&quot;,
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>          &quot;description&quot;: &quot;Company is acquired for &gt; $100MM&quot;,
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>          &quot;portion&quot;: {
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>            &quot;numerator&quot;: &quot;1&quot;,
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>            &quot;denominator&quot;: &quot;1&quot;
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>          },
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>            &quot;type&quot;: &quot;VESTING_EVENT&quot;
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>          },
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>          &quot;next_condition_ids&quot;: []
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>        }
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>      ]
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>    }
+</code></pre></div>
+<p>We're introducing a few new concepts here, so let's tackle them one at a time.</p>
+<h3 id="vesting-start">Vesting Start<a class="headerlink" href="#vesting-start" title="Permanent link">#</a></h3>
+<p>The first condition in our array of vesting conditions has a <a href="../../schema_markdown/schema/types/vesting/VestingStartTrigger/">Vesting Start Trigger</a>.
+This trigger is essentially a special case of a Vesting Event, like from our first example. Since it
+is the first item in our array of conditions, it is the first node in our graph. Its occurrence is
+recorded in the transaction log in the same way as a vesting event, but as a <a href="../../schema_markdown/schema/objects/transactions/vesting/VestingStart/">Vesting Start
+Transaction</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_VESTING_START&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08f8b870&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;vesting_condition_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-start&quot;</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Since our terms said the relative expiration is within three years of issuance, in this case, the
+date of our Vesting Start Transaction is the same as our issuance date. This won't always be the
+case, as you'll see in other examples.</p>
+<h3 id="next_condition_ids"><code>next_condition_ids</code><a class="headerlink" href="#next_condition_ids" title="Permanent link">#</a></h3>
+<p>Unlike in Example 1, we now have a <code>next_condition_ids</code> that is not empty. These strings are
+references to the <code>id</code> of other vesting conditions, and indicate the paths we <em>might</em> follow as we
+navigate our vesting graph. As time passes, or as events occur, we evaluate the triggers for each
+possible "next" condition in the <code>next_condition_ids</code> array order.</p>
+<p>In this case, after <code>vesting-start</code> has been triggered, we have three possible next conditions:</p>
+<ul>
+<li><code>relative-expiration</code></li>
+<li><code>absolute-expiration</code></li>
+<li><code>qualifying-sale</code></li>
+</ul>
+<p>Since the two expirations are date based, one way to think about this is a daily evaluation:</p>
+<ul>
+<li>If <code>relative-expiration</code>'s trigger condition is met, goto <code>relative-expiration</code> and vest
+    nothing, else:</li>
+<li>If <code>absolute-expiration</code>'s trigger condition is met, goto <code>absolute-expiration</code> and vest
+    nothing, else:</li>
+<li>If <code>qualifying-sale</code>'s trigger condition is met, goto <code>qualifying-sale</code> and vest 100%, else:</li>
+<li>Nothing happens</li>
+</ul>
+<p><strong>Only one path is ever taken,</strong> and graphs should be acylic.</p>
+<p>We've already discussed how <code>qualifying-sale</code> is triggered in Example 1, but let's break down the
+new triggers.</p>
+<h3 id="vesting-schedule-relative">Vesting Schedule Relative<a class="headerlink" href="#vesting-schedule-relative" title="Permanent link">#</a></h3>
+<p>Our <code>relative-expiration</code> condition has a <a href="../../schema_markdown/schema/types/vesting/VestingScheduleAbsoluteTrigger/">Vesting Schedule Relative Trigger</a>.
+These triggers are relative to any prior condition that has already been met, as described by
+<code>relative_to_condition_id</code>.</p>
+<p>In this case, the <code>period</code> specifies that this condition triggers 1 time (<code>occurrences</code>) after 36
+MONTHS (<code>length</code> + <code>type</code>). Since <code>relative_to_condition_id</code> is <code>vesting-start</code>, this means the
+condition is triggered 36 months after the Vesting Start transaction. Since the Vesting Start
+transaction is dated 1 Jan, 2021, this will trigger 1 Jan, 2024.</p>
+<p>Unlike the Vesting Start and Vesting Event triggers, Vesting Schedule Relative triggers <em>do not</em>
+have corresponding transactions in the transaction record. Their triggering is implicit based on the
+passage of time.</p>
+<h3 id="vesting-schedule-absolute">Vesting Schedule Absolute<a class="headerlink" href="#vesting-schedule-absolute" title="Permanent link">#</a></h3>
+<p>Our <code>absolute-expiration</code> condition has a [Vesting Schedule Absolute Trigger][absolute-trigger].
+These triggers are met at a specific date, regardless of any other vesting event dates in the
+transaction log.</p>
+<p>In this case, the <code>date</code> specifies that this condition would trigger on 1 Jan, 2025. Since that is
+after the trigger for <code>relative-expiration</code> for this security, it will never happen. If we issued
+another security with a later vesting start, however, this trigger could come into play. For
+example, with this issuance:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_PLAN_SECURITY_ISSUANCE&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6174642b&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-2&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-07-01&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;vesting_terms_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all-or-nothing-with-expiration&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="s2">&quot;...&quot;</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>and this Vesting Start transaction:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_VESTING_START&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80f8b807&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-2&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-07-01&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;vesting_condition_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-start&quot;</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>the <code>relative-expiration</code> would not trigger until 1 July, 2026 -- so the <code>absolute-expiration</code> will
+trigger instead.</p>
+<p>Similar to the Vesting Schedule Relative trigger, Vesting Schedule Absolute triggers <em>do not</em> have
+corresponding transactions in the transaction record. Their triggering is implicit based on the
+passage of time.</p>
+<h3 id="quantity-vs-portion">Quantity vs Portion<a class="headerlink" href="#quantity-vs-portion" title="Permanent link">#</a></h3>
+<p>You may have also noticed along the way that some of the conditions in this example have a
+<code>quantity</code> key instead of a <code>portion</code> key. All Vesting Conditions support either a relative
+<code>portion</code> or a fixed <code>quantity</code> of shares.</p>
+<h2 id="example-3-schedule-based-vesting">Example 3: Schedule-based vesting<a class="headerlink" href="#example-3-schedule-based-vesting" title="Permanent link">#</a></h2>
+<p>A fairly common vesting structure is one that is fully scheduled, with some kind of delay or "cliff"
+before any vesting begins. For this example, we'll construct a set of terms that correspond to four
+years, vested monthly, with 25% vested at a one year cliff.</p>
+<pre class="mermaid"><code>flowchart TB
+  id(( ))
+  start[[vesting-start]]
+  cliff([cliff: 12/48])
+  monthly([monthly-thereafter: 1/48])
+
+  id--&gt;start
+  start--&gt;|+1 year|cliff
+
+  cliff--&gt;|+1 month|monthly
+
+  subgraph periodic
+    monthly-.-&gt;|+1 month, 35x|monthly
+  end</code></pre>
+<p>And this graph is expressed in JSON as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    {
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>      &quot;id&quot;: &quot;4yr-1yr-cliff-schedule&quot;,
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>      &quot;object_type&quot;: &quot;VESTING_TERMS&quot;,
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>      &quot;name&quot;: &quot;Four Year / One Year Cliff&quot;,
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>      &quot;description&quot;: &quot;25% of the total number of shares shall vest on the one-year anniversary of this Agreement, and an additional 1/48th of the total number of Shares shall then vest on the corresponding day of each month thereafter, until all of the Shares have been released on the fourth anniversary of this Agreement.&quot;,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>      &quot;allocation_type&quot;: &quot;CUMULATIVE_ROUNDING&quot;,
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>      &quot;vesting_conditions&quot;: [
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        {
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>          &quot;id&quot;: &quot;vesting-start&quot;,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>          &quot;quantity&quot;: &quot;0&quot;,
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>            &quot;type&quot;: &quot;VESTING_START_DATE&quot;
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>          },
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>          &quot;next_condition_ids&quot;: [&quot;cliff&quot;]
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        },
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        {
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>          &quot;id&quot;: &quot;cliff&quot;,
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>          &quot;description&quot;: &quot;25% payout at 1 year&quot;,
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>          &quot;portion&quot;: { &quot;numerator&quot;: &quot;12&quot;, &quot;denominator&quot;: &quot;48&quot; },
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>            &quot;type&quot;: &quot;VESTING_SCHEDULE_RELATIVE&quot;,
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>            &quot;period&quot;: {
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>              &quot;length&quot;: 12,
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>              &quot;type&quot;: &quot;MONTHS&quot;,
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>              &quot;occurrences&quot;: 1,
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>              &quot;day_of_month&quot;: &quot;VESTING_START_DAY_OR_LAST_DAY_OF_MONTH&quot;
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>            },
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>            &quot;relative_to_condition_id&quot;: &quot;vesting-start&quot;
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>          },
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>          &quot;next_condition_ids&quot;: [&quot;monthly-thereafter&quot;]
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>        },
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>        {
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>          &quot;id&quot;: &quot;monthly-thereafter&quot;,
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>          &quot;description&quot;: &quot;1/48th payout each month thereafter&quot;,
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>          &quot;portion&quot;: { &quot;numerator&quot;: &quot;1&quot;, &quot;denominator&quot;: &quot;48&quot; },
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>          &quot;trigger&quot;: {
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>            &quot;type&quot;: &quot;VESTING_SCHEDULE_RELATIVE&quot;,
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>            &quot;period&quot;: {
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>              &quot;length&quot;: 1,
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>              &quot;type&quot;: &quot;MONTHS&quot;,
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>              &quot;occurrences&quot;: 36,
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>              &quot;day_of_month&quot;: &quot;VESTING_START_DAY_OR_LAST_DAY_OF_MONTH&quot;
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>            },
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>            &quot;relative_to_condition_id&quot;: &quot;cliff&quot;
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>          },
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>          &quot;next_condition_ids&quot;: []
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>        }
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>      ]
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>    },
+</code></pre></div>
+<p>A lot of the concepts used here were introduced in Example 2. A security associated with this set of
+Vesting Terms ...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_PLAN_SECURITY_ISSUANCE&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;607e59ab&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-3&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">&quot;vesting_terms_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4yr-1yr-cliff-schedule&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;480&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="s2">&quot;...&quot;</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>... begins vesting when a Vesting Start transaction is logged:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;object_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TX_VESTING_START&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a32bd9ca&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;security_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-ex-3&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-30&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">&quot;vesting_condition_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vesting-start&quot;</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Note this will normally be the only vesting transaction in the transaction log for this security, as
+all other vesting is scheduled and thus the events are implicit based on the passage of time.</p>
+<p>The <code>vesting-start</code> condition lists a single <code>next_condition_id</code> named "cliff", which is configured
+to trigger 12 months after vesting start on 2022-01-31, and vest 12/48 of the security -- 120
+shares. (This portion could just as easily be 25/100, or 1/4; the example only uses the denominator
+of 48 for consistency.) Once this condition has triggered, the schedule dictates we wait for the
+next condition, "monthly-thereafter", to trigger. This combination of events introduces us to two
+new concepts.</p>
+<h3 id="vesting-schedule-relative-occurrences">Vesting Schedule Relative <code>occurrences</code><a class="headerlink" href="#vesting-schedule-relative-occurrences" title="Permanent link">#</a></h3>
+<p>You may have noticed that the visualized graph for this set of vesting terms appears to have a cycle
+in it, even though in the introduction we stated that graphs were acyclic. After the initial trigger
+of <code>monthly-thereafter</code> as we navigate from the cliff condition, this node appears to trigger itself
+35 more times. The sub-graph and the dashed line in the graph is meant to imply that this is an
+internal state of the condition, not a "next" condition. This repeated triggering is controlled by
+the <code>occurrences</code> attribute.</p>
+<p>In this case, occurrences is set to 36, and the portion is set to 1/48. This means that once this
+trigger condition is met, it will continue to re-trigger until it has triggered 36 times total. Each
+time, 1/48 of the security's quantity will vest.</p>
+<h3 id="vesting-day-of-month">Vesting Day of Month<a class="headerlink" href="#vesting-day-of-month" title="Permanent link">#</a></h3>
+<p>Both the <code>cliff</code> and <code>monthly-thereafter</code> conditions in this example specify a <code>day_of_month</code>
+attribute with the value <code>VESTING_START_DAY_OR_LAST_DAY_OF_MONTH</code>. This attribute is required for
+schedule-relative triggers that are specified in months. Possible values are enumerated
+<a href="../../schema_markdown/schema/enums/VestingDayOfMonth/">here</a>.</p>
+<p>In this case, our value states to use the day of the vesting start transaction <em>or</em> the last day of
+the month. This explicit requirement is important to handle edge cases such as this one, in which
+the vesting start transaction occurred on 30 January, 2021.</p>
+<p>For our <code>cliff</code> condition, the relative time is 12 months. As specified in the schema, months are
+calendar months, so this condition triggers on 30 January, 2022.</p>
+<p>The <code>monthly-thereafter</code> condition, however, uses a relative time of 1 month. Since there is no day
+30 in February, the "or last day of month" logic applies and the first trigger occurs on 28
+February, 2022. This would trigger on 29 February in a leap year as, again, relative months are
+calendar months.</p>
+<p>Each subsequent occurrence of the periodic monthly trigger would apply the same logic. Since every
+other month has a day 30, the rest of the occurrences would occur on the 30th of the month.</p>
+<p>If legal documents specify vesting using 365-day years, relative triggers should be expressed in
+days instead of months.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../TraversingTransactions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Transaction Tracing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Transaction Tracing
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../schema_markdown/schema/enums/AccrualPeriodType/" class="md-footer__link md-footer__link--next" aria-label="Next: AccrualPeriodType" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              AccrualPeriodType
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

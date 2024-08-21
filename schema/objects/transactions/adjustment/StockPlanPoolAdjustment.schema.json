@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json",
+  "title": "Object - Stock Plan Pool Adjustment Transaction",
+  "description": "Object describing the change in the size of a Stock Plan pool.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/transactions/StockPlanTransaction.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_PLAN_POOL_ADJUSTMENT"
+    },
+    "id": {},
+    "comments": {},
+    "date": {},
+    "stock_plan_id": {},
+    "board_approval_date": {
+      "description": "Date on which board approved the change to the plan.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "stockholder_approval_date": {
+      "description": "This optional field tracks when the stockholders approved this change to the stock plan. This is intended for use by US companies that want to issue Incentive Stock Options (ISOs), as the issuing StockPlan must receive shareholder approval within a specified time frame in order to issue valid ISOs.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "shares_reserved": {
+      "description": "The number of shares reserved in the pool for this stock plan by the Board or equivalent body as of the effective date of this pool adjustment.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Numeric.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["shares_reserved"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json"
+}

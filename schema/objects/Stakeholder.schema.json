@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/Stakeholder.schema.json",
+  "title": "Object - Stakeholder",
+  "description": "Object describing a stakeholder",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "STAKEHOLDER"
+    },
+    "name": {
+      "description": "Name for the stakeholder",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Name.schema.json"
+    },
+    "stakeholder_type": {
+      "description": "Distinguish individuals from institutions",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StakeholderType.schema.json"
+    },
+    "issuer_assigned_id": {
+      "description": "This might be any sort of id assigned to the stakeholder by the issuer, such as an internal company ID for an employee stakeholder",
+      "type": "string"
+    },
+    "current_relationship": {
+      "description": "What is the current relationship of the stakeholder to the issuer?",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StakeholderRelationshipType.schema.json"
+    },
+    "primary_contact": {
+      "description": "The primary contact info for an institutional stakeholder",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/ContactInfo.schema.json"
+    },
+    "contact_info": {
+      "description": "The contact info for an individual stakeholder",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/ContactInfoWithoutName.schema.json"
+    },
+    "addresses": {
+      "title": "Stakeholder - Address Array",
+      "description": "Addresses for the stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Address.schema.json"
+      }
+    },
+    "tax_ids": {
+      "title": "Stakeholder - Tax ID Array",
+      "description": "The tax ids for this stakeholder",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/TaxID.schema.json"
+      }
+    },
+    "id": {},
+    "comments": {}
+  },
+  "additionalProperties": false,
+  "required": ["name", "stakeholder_type"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/Stakeholder.schema.json"
+}

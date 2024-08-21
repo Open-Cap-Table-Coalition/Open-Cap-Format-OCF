@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/Issuer.schema.json",
+  "title": "Object - Issuer",
+  "description": "Object describing the issuer of the cap table (the company whose cap table this is)",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "ISSUER"
+    },
+    "legal_name": {
+      "description": "Legal name of the issuer",
+      "type": "string"
+    },
+    "dba": {
+      "description": "Doing Business As name",
+      "type": "string"
+    },
+    "formation_date": {
+      "description": "Date of formation",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "country_of_formation": {
+      "description": "The country where the issuer company was legally formed (ISO 3166-1 alpha-2)",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/CountryCode.schema.json"
+    },
+    "country_subdivision_of_formation": {
+      "description": "The state, province, or subdivision where the issuer company was legally formed",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/CountrySubdivisionCode.schema.json"
+    },
+    "tax_ids": {
+      "title": "Issuer - Tax ID Array",
+      "description": "The tax ids for this issuer company",
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/TaxID.schema.json"
+      }
+    },
+    "email": {
+      "description": "A work email that the issuer company can be reached at",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Email.schema.json"
+    },
+    "phone": {
+      "description": "A phone number that the issuer company can be reached at",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Phone.schema.json"
+    },
+    "address": {
+      "description": "The headquarters address of the issuing company",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Address.schema.json"
+    },
+    "initial_shares_authorized": {
+      "description": "The initial number of shares authorized for this issuer",
+      "oneOf": [
+        {
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/AuthorizedShares.schema.json"
+        },
+        {
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Numeric.schema.json"
+        }
+      ]
+    },
+    "id": {},
+    "comments": {}
+  },
+  "additionalProperties": false,
+  "required": ["legal_name", "formation_date", "country_of_formation"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/Issuer.schema.json"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/StockLegendTemplate.schema.json",
+  "title": "Object - Stock Legend Template",
+  "description": "Object describing a stock legend template",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "STOCK_LEGEND_TEMPLATE"
+    },
+    "name": {
+      "description": "Name for the stock legend template",
+      "type": "string"
+    },
+    "text": {
+      "description": "The full text of the stock legend",
+      "type": "string"
+    },
+    "id": {},
+    "comments": {}
+  },
+  "additionalProperties": false,
+  "required": ["name", "text"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/StockLegendTemplate.schema.json"
+}

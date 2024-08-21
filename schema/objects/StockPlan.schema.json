@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/objects/StockPlan.schema.json",
+  "title": "Object - Stock Plan",
+  "description": "Object describing a plan which stock options are issued from",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "STOCK_PLAN"
+    },
+    "plan_name": {
+      "description": "Name for the stock plan",
+      "type": "string"
+    },
+    "board_approval_date": {
+      "description": "Date on which board approved the plan",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "stockholder_approval_date": {
+      "description": "This optional field tracks when the stockholders approved this stock plan. This is intended for use by US companies that want to issue Incentive Stock Options (ISOs), as the issuing StockPlan must receive shareholder approval within a specified time frame in order to issue valid ISOs.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Date.schema.json"
+    },
+    "initial_shares_reserved": {
+      "description": "The initial number of shares reserved in the pool for this stock plan by the Board or equivalent body.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Numeric.schema.json"
+    },
+    "default_cancellation_behavior": {
+      "description": "If a security issued under this Stock Plan is cancelled, what happens to the reserved shares by default? NOTE: for any given security issued from the pool, the Plan's default cancellation behavior can be overridden by subsequent transactions cancelling the reserved stock, returning it to pool or marking it as capital stock. The event chain should always control - do not rely on this field and fail to traverse the events.",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/enums/StockPlanCancellationBehaviorType.schema.json"
+    },
+    "stock_class_id": {
+      "description": "[DEPRECATED in favor of stock_class_ids] Identifier of the StockClass object this plan is composed of.",
+      "type": "string",
+      "deprecated": "true"
+    },
+    "stock_class_ids": {
+      "description": "Identifiers of StockClass objects this plan is composed of",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {},
+    "comments": {}
+  },
+  "oneOf": [
+    {
+      "required": ["stock_class_id"],
+      "not": {
+        "required": ["stock_class_ids"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_id is present, stock_class_ids cannot be present"
+    },
+    {
+      "required": ["stock_class_ids"],
+      "not": {
+        "required": ["stock_class_id"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_ids is present, stock_class_id cannot be present"
+    }
+  ],
+  "additionalProperties": false,
+  "required": ["plan_name", "initial_shares_reserved"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/objects/StockPlan.schema.json"
+}

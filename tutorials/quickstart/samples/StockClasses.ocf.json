@@ -1,0 +1,15 @@
+{
+  "file_type": "OCF_STOCK_CLASSES_FILE",
+  "items": [
+    {
+      "object_type": "STOCK_CLASS",
+      "id": "0c21a4fd-f758-4e8a-b0ec-3fab5a5dc452",
+      "name": "Preferred Shares",
+      "class_type": "PREFERRED",
+      "default_id_prefix": "PS-",
+      "initial_shares_authorized": "100000.00",
+      "votes_per_share": "1",
+      "seniority": "1"
+    }
+  ]
+}

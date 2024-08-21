@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.0/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - Fixed Amount",
+  "description": "Describes how a security converts into a fixed amount of a stock class",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/primitives/types/conversion_mechanisms/ConversionMechanism.schema.json"
+    }
+  ],
+  "properties": {
+    "type": {
+      "const": "FIXED_AMOUNT_CONVERSION"
+    },
+    "converts_to_quantity": {
+      "description": "How many shares of target Stock Class does this security convert into?",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.0/types/Numeric.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["converts_to_quantity", "type"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.0/schema/types/conversion_mechanisms/FixedAmountConversionMechanism.schema.json"
+}
