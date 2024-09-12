@@ -1376,6 +1376,39 @@
       "board_approval_date": "2022-11-14",
       "stockholder_approval_date": "2022-11-14",
       "shares_reserved": "100000000"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-started-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-01-01",
+      "relationship_started": "INVESTOR"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-ended-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-06-07",
+      "relationship_ended": "BOARD_MEMBER"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-both-started-and-ended-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-09-10",
+      "relationship_started": "CONSULTANT",
+      "relationship_ended": "EMPLOYEE"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_STATUS",
+      "id": "change-event-stakeholder-status-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-08-08",
+      "new_status": "TERMINATION_VOLUNTARY_GOOD_CAUSE"
     }
   ]
 }

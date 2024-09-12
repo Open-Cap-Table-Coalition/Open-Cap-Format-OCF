@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/change_event/StakeholderRelationshipChangeEvent.schema.json",
+  "title": "Object - Stakeholder Relationship Change Event",
+  "description": "Object describing a change event for the relationship(s) between the stakeholder and the issuer",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/change_event/StakeholderChangeEvent.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "CE_STAKEHOLDER_RELATIONSHIP"
+    },
+    "relationship_started": {
+      "description": "Denoting the beginning of this relationship on the change date",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
+    },
+    "relationship_ended": {
+      "description": "Denoting the ending of this relationship on the change date",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
+    },
+    "id": {},
+    "comments": {},
+    "date": {},
+    "stakeholder_id": {}
+  },
+  "additionalProperties": false,
+  "anyOf": [
+    {
+      "required": ["relationship_started"]
+    },
+    {
+      "required": ["relationship_ended"]
+    }
+  ],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/change_event/StakeholderRelationshipChangeEvent.schema.json"
+}
