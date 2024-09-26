@@ -20,7 +20,7 @@
       "uniqueItems": true
     },
     "reason_text": {
-      "title": "Reason for stock reissuance",
+      "title": "Reason for stock consolidation",
       "description": "Free-form human-readable reason for stock consolidation",
       "type": "string"
     }
