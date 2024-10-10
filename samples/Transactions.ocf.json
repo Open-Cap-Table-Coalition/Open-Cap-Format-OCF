@@ -905,6 +905,17 @@
       ]
     },
     {
+      "object_type": "TX_STOCK_CONSOLIDATION",
+      "id": "test-stock-consolidation",
+      "resulting_security_id": "consolidated-security-id",
+      "date": "2022-02-01",
+      "security_ids": [
+        "consolidating-security-id-1",
+        "consolidating-security-id-2"
+      ],
+      "reason_text": "We want to colsolidate these positions for ease of management."
+    },
+    {
       "object_type": "TX_STOCK_REISSUANCE",
       "id": "test-stock-reissuance-full-fields",
       "security_id": "test-security-id",
