@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Release Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/release/EquityCompensationRelease.schema.json`
@@ -39,7 +35,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_RELEASE",
+    "object_type": "TX_EQUITY_COMPENSATION_RELEASE",
     "id": "test-plan-security-release-minimal",
     "security_id": "387878ba-8fb6-4673-812e-32c092947899",
     "date": "2017-07-22",
@@ -52,7 +48,7 @@
     "resulting_security_ids": []
   },
   {
-    "object_type": "TX_PLAN_SECURITY_RELEASE",
+    "object_type": "TX_EQUITY_COMPENSATION_RELEASE",
     "id": "test-plan-security-release-full-fields",
     "security_id": "387878ba-8fb6-4673-812e-32c092947899",
     "date": "2017-07-22",

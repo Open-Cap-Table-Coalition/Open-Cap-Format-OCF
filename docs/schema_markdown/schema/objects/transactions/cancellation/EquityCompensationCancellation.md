@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Cancellation Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/EquityCompensationCancellation.schema.json`
@@ -37,7 +33,7 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+    "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
     "id": "test-plan-security-cancellation-minimal",
     "security_id": "test-security-id",
     "date": "2019-12-11",
@@ -45,7 +41,7 @@
     "quantity": "100"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_CANCELLATION",
+    "object_type": "TX_EQUITY_COMPENSATION_CANCELLATION",
     "id": "test-plan-security-cancellation-all-fields",
     "security_id": "test-security-id",
     "date": "2019-12-11",

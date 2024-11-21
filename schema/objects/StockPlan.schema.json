@@ -34,13 +34,38 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockPlanCancellationBehaviorType.schema.json"
     },
     "stock_class_id": {
-      "description": "Identifier of the StockClass object this plan is composed of",
-      "type": "string"
+      "description": "[DEPRECATED in favor of stock_class_ids] Identifier of the StockClass object this plan is composed of.",
+      "type": "string",
+      "deprecated": "true"
+    },
+    "stock_class_ids": {
+      "description": "Identifiers of StockClass objects this plan is composed of",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
     },
     "id": {},
     "comments": {}
   },
+  "oneOf": [
+    {
+      "required": ["stock_class_id"],
+      "not": {
+        "required": ["stock_class_ids"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_id is present, stock_class_ids cannot be present"
+    },
+    {
+      "required": ["stock_class_ids"],
+      "not": {
+        "required": ["stock_class_id"]
+      },
+      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_ids is present, stock_class_id cannot be present"
+    }
+  ],
   "additionalProperties": false,
-  "required": ["plan_name", "stock_class_id", "initial_shares_reserved"],
+  "required": ["plan_name", "initial_shares_reserved"],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockPlan.schema.json"
 }

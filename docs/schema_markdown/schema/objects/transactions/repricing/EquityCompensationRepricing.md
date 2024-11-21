@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Repricing Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repricing/EquityCompensationRepricing.schema.json`
@@ -33,6 +29,19 @@
 
 ```json
 [
+  {
+    "object_type": "TX_EQUITY_COMPENSATION_REPRICING",
+    "id": "reprice_event_id",
+    "date": "2024-02-01",
+    "security_id": "bobs_equity_issuance_1",
+    "new_exercise_price": {
+      "amount": "2.45",
+      "currency": "USD"
+    },
+    "comments": [
+      "The CEO said 'The troops are getting restless after that down-round. Incetivize those employees!'"
+    ]
+  },
   {
     "object_type": "TX_EQUITY_COMPENSATION_REPRICING",
     "id": "reprice_event_id",

@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../README.md)
-
----
-
 ### Type - Elective Conversion on Condition Trigger
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json`

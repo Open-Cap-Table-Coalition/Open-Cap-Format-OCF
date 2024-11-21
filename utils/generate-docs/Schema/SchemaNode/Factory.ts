@@ -13,7 +13,6 @@ import TypePatternSchemaNode, {
   TypePatternSchemaNodeJson,
 } from "./TypePattern.js";
 export { default as SchemaNode } from "./SchemaNode.js";
-import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 import BackwardsCompatibleSchemaNode, {
   BackwardsCompatibleObjectSchemaNodeJson,
 } from "./BackwardsCompatibleObjectSchemaNode.js";

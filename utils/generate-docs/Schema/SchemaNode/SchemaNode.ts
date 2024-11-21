@@ -1,11 +1,10 @@
+import { markdownTable } from "markdown-table";
 import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
-import { markdownTable } from "markdown-table";
-import { format } from "date-fns";
 
+import { format } from "date-fns";
 import Schema from "../Schema.js";
 import PropertyFactory, { PropertyJson } from "./Property/Factory.js";
-import { repo_raw_url_root } from "../../../schema-utils/Constants.js";
 
 export interface SchemaNodeJson {
   $id: string;
@@ -140,15 +139,7 @@ export default abstract class SchemaNode {
     ...this.allOf().flatMap((schemaNode) => schemaNode.required()),
   ];
 
-  markdownHeader =
-    () => `:house: [Documentation Home](${relativePathToOtherPath(
-      "../README.md",
-      this.directory()
-    )}/README.md)
-
----
-
-### ${this.title()}
+  markdownHeader = () => `### ${this.title()}
 
 \`${this.id()}\``;
 

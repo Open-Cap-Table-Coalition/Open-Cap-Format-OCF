@@ -25,13 +25,11 @@
     },
     "stock_plan_id": {
       "description": "If the equity compensation was issued from a plan (don't forget, plan-less options are a thing), what is the plan id.",
-      "type": "string",
-      "$comment": "If this is provided, stock_class_id cannot be set due to the oneOf below"
+      "type": "string"
     },
     "stock_class_id": {
-      "description": "If the equity compensation was NOT issued from a plan (don't forget, plan-less options are a thing), we need to know what underlying stock class it converts to.",
-      "type": "string",
-      "$comment": "If this is provided, stock_plan_id cannot be set due to the oneOf below"
+      "description": "The stock class options will exercise into. Especially important for plan-less options and any issuances from a plan that supports multiple share classes.",
+      "type": "string"
     },
     "compensation_type": {
       "description": "If the plan security is compensation, what kind?",
@@ -60,8 +58,17 @@
       "$comment": "REQUIRED in v2"
     },
     "vesting_terms_id": {
-      "description": "Identifier of the VestingTerms to which this security is subject.  If not present, security is fully vested on issuance.",
+      "description": "Identifier of the VestingTerms to which this security is subject. If neither `vesting_terms_id` or `vestings` are present then the security is fully vested on issuance.",
       "type": "string"
+    },
+    "vestings": {
+      "title": "Equity Compensation Issuance - Vestings Array",
+      "description": "List of exact vesting dates and amounts for this security. When `vestings` array is present then `vesting_terms_id` may be ignored.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Vesting.schema.json"
+      }
     },
     "expiration_date": {
       "description": "Expiration date of the plan security",
@@ -146,22 +153,6 @@
       },
       "$comment": "For now, we're using JSONSchema to enforce some properties for some compensation types but not others. Stock appreciation rights have grant prices.",
       "required": ["base_price"]
-    }
-  ],
-  "oneOf": [
-    {
-      "required": ["stock_class_id"],
-      "not": {
-        "required": ["stock_plan_id"]
-      },
-      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_class_id is present, stock_plan_id cannot be present"
-    },
-    {
-      "required": ["stock_plan_id"],
-      "not": {
-        "required": ["stock_class_id"]
-      },
-      "$comment": "Due to how the JSONSchema 'not' works, this means that, if stock_plan_id is present, stock_class_id cannot be present"
     }
   ],
   "additionalProperties": false,

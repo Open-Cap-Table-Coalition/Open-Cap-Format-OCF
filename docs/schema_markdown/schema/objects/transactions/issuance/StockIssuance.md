@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Stock Issuance Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/StockIssuance.schema.json`
@@ -37,7 +33,8 @@
 | share_numbers_issued      | [ [schema/types/ShareNumberRange](../../../types/ShareNumberRange.md) ]                                                                                                                                                                          | Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, *which* specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.                                                                         | -          |
 | share_price               | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                              | The price per share paid for the stock by the holder                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `REQUIRED` |
 | quantity                  | [schema/types/Numeric](../../../types/Numeric.md)                                                                                                                                                                                                | Number of shares issued to the stakeholder                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `REQUIRED` |
-| vesting_terms_id          | `STRING`                                                                                                                                                                                                                                         | Identifier of the VestingTerms to which this security is subject. If not present, security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                                                                     | -          |
+| vesting_terms_id          | `STRING`                                                                                                                                                                                                                                         | Identifier of the VestingTerms to which this security is subject. If neither `vesting_terms_id` or `vestings` are present then the security is fully vested on issuance.                                                                                                                                                                                                                                                                                                                                    | -          |
+| vestings                  | [ [schema/types/Vesting](../../../types/Vesting.md) ]                                                                                                                                                                                            | List of exact vesting dates and amounts for this security. When `vestings` array is present then `vesting_terms_id` may be ignored.                                                                                                                                                                                                                                                                                                                                                                         | -          |
 | cost_basis                | [schema/types/Monetary](../../../types/Monetary.md)                                                                                                                                                                                              | The cost basis for this particular stock                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | -          |
 | stock_legend_ids          | [`STRING`]                                                                                                                                                                                                                                       | List of stock legend ids that apply to this stock                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
 | issuance_type             | `Enum - Stock Issuance Type`</br></br>_Description:_ Enumeration of issuance types where we want to draw attention to some unique aspect of a stock issuance (e.g. is it an RSA)</br></br>**ONE OF:** </br>&bull; RSA </br>&bull; FOUNDERS_STOCK | Optional field to flag certain special types of issuances (like RSAs)                                                                                                                                                                                                                                                                                                                                                                                                                                       | -          |
@@ -146,7 +143,7 @@
       "amount": "1.00",
       "currency": "USD"
     },
-    "quantity": "1000",
+    "quantity": "4800",
     "cost_basis": {
       "amount": "0",
       "currency": "USD"
@@ -159,7 +156,157 @@
       "Here is a comment",
       "Here is another comment"
     ],
-    "vesting_terms_id": "4yr-1yr-cliff-schedule"
+    "vesting_terms_id": "4yr-1yr-cliff-schedule",
+    "vestings": [
+      {
+        "date": "2023-02-01",
+        "amount": "1200"
+      },
+      {
+        "date": "2023-03-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-04-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-05-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-06-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-07-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-08-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-09-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-10-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-11-01",
+        "amount": "100"
+      },
+      {
+        "date": "2023-12-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-01-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-02-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-03-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-04-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-05-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-06-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-07-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-08-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-09-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-10-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-11-01",
+        "amount": "100"
+      },
+      {
+        "date": "2024-12-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-01-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-02-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-03-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-04-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-05-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-06-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-07-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-08-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-09-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-10-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-11-01",
+        "amount": "100"
+      },
+      {
+        "date": "2025-12-01",
+        "amount": "100"
+      },
+      {
+        "date": "2026-01-01",
+        "amount": "100"
+      },
+      {
+        "date": "2026-02-01",
+        "amount": "100"
+      }
+    ]
   }
 ]
 ```

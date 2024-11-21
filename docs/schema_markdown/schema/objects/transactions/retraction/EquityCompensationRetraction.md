@@ -1,7 +1,3 @@
-:house: [Documentation Home](../../../../../README.md)
-
----
-
 ### Object - Equity Compensation Retraction Transaction
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/EquityCompensationRetraction.schema.json`
@@ -35,14 +31,14 @@
 ```json
 [
   {
-    "object_type": "TX_PLAN_SECURITY_RETRACTION",
+    "object_type": "TX_EQUITY_COMPENSATION_RETRACTION",
     "id": "test-plan-security-retraction-minimal",
     "security_id": "0f96b82a-6dc5-4205-bcb1-15740e5f8304",
     "date": "2022-01-24",
     "reason_text": "We wish to make a retraction"
   },
   {
-    "object_type": "TX_PLAN_SECURITY_RETRACTION",
+    "object_type": "TX_EQUITY_COMPENSATION_RETRACTION",
     "id": "test-plan-security-retraction-full-fields",
     "security_id": "0f96b82a-6dc5-4205-bcb1-15740e5f8304",
     "date": "2022-01-24",
