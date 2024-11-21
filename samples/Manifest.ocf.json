@@ -9,6 +9,7 @@
     "formation_date": "2010-01-01",
     "country_of_formation": "US",
     "country_subdivision_of_formation": "DE",
+    "jurisdiction_of_formation": "Delaware",
     "tax_ids": [
       {
         "tax_id": "34-2345123",

@@ -30,8 +30,12 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json"
     },
     "country_subdivision_of_formation": {
-      "description": "The state, province, or subdivision where the issuer company was legally formed",
+      "description": "The code for the state, province, or subdivision where the issuer company was legally formed",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json"
+    },
+    "jurisdiction_of_formation": {
+      "description": "The text name of state, province, or subdivision where the issuer company was legally formed",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionName.schema.json"
     },
     "tax_ids": {
       "title": "Issuer - Tax ID Array",
