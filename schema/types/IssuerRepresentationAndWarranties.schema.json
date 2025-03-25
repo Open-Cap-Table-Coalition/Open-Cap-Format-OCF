@@ -1,0 +1,62 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/IssuerRepresentationsAndWarranties.schema.json",
+  "title": "Primitive - 発行会社に関する保証と表明",
+  "description": "発行会社に関する事項についての保証と表明を表すクラス",
+  "type": "object",
+  "properties": {
+    "incorporation_and_existence": {
+      "description": "設立および存続等に関する表明および保証",
+      "type": "string"
+    },
+    "authorization": {
+      "description": "授権に関する表明および保証",
+      "type": "string"
+    },
+    "validity_and_enforceability": {
+      "description": "本契約の有効性および執行可能性に関する表明および保証",
+      "type": "string"
+    },
+    "absence_of_violations": {
+      "description": "違反の不存在に関する表明および保証",
+      "type": "string"
+    },
+    "absence_of_bankruptcy_proceedings": {
+      "description": "倒産手続きの不存在に関する表明および保証",
+      "type": "string"
+    },
+    "complete_and_accurate_capitalization": {
+      "description": "発行会社の株式等に関する表明および保証",
+      "type": "string"
+    },
+    "compliance_with_laws": {
+      "description": "法令遵守に関する表明および保証",
+      "type": "string"
+    },
+    "absence_of_antisocial_forces": {
+      "description": "反社会的勢力に対する表明および保証",
+      "type": "string"
+    },
+    "absence_of_litigation": {
+      "description": "訴訟の不存在に関する表明および保証",
+      "type": "string"
+    },
+    "compliance_with_taxes_and_duties": {
+      "description": "公租公課への適切な対応に関する表明および保証",
+      "type": "string"
+    },
+    "completeness_and_accuracy_of_disclosures": {
+      "description": "開示の完全性および正確性に関する表明および保証",
+      "type": "string"
+    },
+    "ownership_and_acquisition_of_intellectual_property": {
+      "description": "知的財産権の所有および取得に関する表明および保証",
+      "type": "string"
+    },
+    "exemption_from_securities_law_registration": {
+      "description": "証券法に基づく登録・届出が不要なことに関する表明および保証",
+      "type": "string"
+    }
+  },
+  "required": [],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/IssuerRepresentationAndWarranties.schema.json"
+}

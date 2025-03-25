@@ -1,0 +1,39 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_mechanisms/JKISSConversionMechanism.schema.json",
+  "title": "Conversion Mechanism - J-KISS",
+  "description": "J-KISSによる転換メカニズムを表現します",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "J-KISS_CONVERSION"
+    },
+    "description": {
+      "description": "転換メカニズムの説明",
+      "type": "string"
+    },
+    "conversion_price_discount": {
+      "description": "本コンバーティブルエクイティの転換価格算出のために、転換価額決定対象の転換価額に対して適用するディスカウント。 J-KISS上の係数が0.8なら、本パラメータは0.2が設定される。",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Percentage.schema.json"
+    },
+    "minimum_equity_next_financing_threshold": {
+      "description": "転換価額決定の対象となる株式資金調達の最低調達額",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json"
+    },
+    "rounding_type": {
+      "description": "転換時の丸め方",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/RoundingType.schema.json"
+    },
+    "money_valuation_cap": {
+      "description": "プレキャップまたはポストキャップ。J-KISS 1.xではプレキャップ、J-KISS 2.xではポストキャップとなる。",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json"
+    }
+  },
+  "required": [
+    "type",
+    "conversion_price_discount",
+    "minimum_equity_next_financing_threshold",
+    "rounding_type",
+    "money_valuation_cap"
+  ],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms/JKISSConversionMechanism.schema.json"
+}

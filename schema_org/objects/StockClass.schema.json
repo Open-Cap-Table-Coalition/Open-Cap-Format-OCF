@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/StockClass.schema.json",
+  "title": "Object - Stock Class",
+  "description": "Object describing a class of stock issued by the issuer",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "STOCK_CLASS"
+    },
+    "name": {
+      "description": "Name for the stock type (e.g. Series A Preferred or Class A Common)",
+      "type": "string"
+    },
+    "class_type": {
+      "description": "The type of this stock class (e.g. Preferred or Common)",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockClassType.schema.json"
+    },
+    "default_id_prefix": {
+      "description": "Default prefix for certificate numbers in certificated shares (e.g. CS- in CS-1). If certificate IDs have a dash, the prefix should end in the dash like CS-",
+      "type": "string"
+    },
+    "initial_shares_authorized": {
+      "description": "The initial number of shares authorized for this stock class",
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AuthorizedShares.schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+        }
+      ]
+    },
+    "board_approval_date": {
+      "description": "Date on which the board approved the stock class",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
+    "stockholder_approval_date": {
+      "description": "Date on which the stockholders approved the stock class",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+    },
+    "votes_per_share": {
+      "description": "The number of votes each share of this stock class gets",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    },
+    "par_value": {
+      "description": "Per-share par value of this stock class",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    },
+    "price_per_share": {
+      "description": "Per-share price this stock class was issued for",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    },
+    "seniority": {
+      "description": "Seniority of the stock - determines repayment priority. Seniority is ordered by increasing number so that stock classes with a higher seniority have higher repayment priority. The following properties hold for all stock classes for a given company: \na) transitivity: stock classes are absolutely stackable by seniority and in increasing numerical order, \nb) non-uniqueness: multiple stock classes can have the same Seniority number and therefore have the same liquidation/repayment order.\nIn practice, stock classes with same seniority may be created at different points in time and (for example, an extension of an existing preferred financing round), and also a new stock class can be created with seniority between two existing stock classes, in which case it is assigned some decimal number between the numbers representing seniority of the respective classes.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    },
+    "conversion_rights": {
+      "title": "Stock Class - Stock Class Conversion Rights Array",
+      "description": "List of stock class conversion rights possible for this stock class",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/StockClassConversionRight.schema.json"
+      }
+    },
+    "liquidation_preference_multiple": {
+      "description": "The liquidation preference per share for this stock class",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    },
+    "participation_cap_multiple": {
+      "description": "The participation cap multiple per share for this stock class",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    },
+    "id": {},
+    "comments": {}
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "class_type",
+    "default_id_prefix",
+    "initial_shares_authorized",
+    "votes_per_share",
+    "seniority"
+  ],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/StockClass.schema.json"
+}

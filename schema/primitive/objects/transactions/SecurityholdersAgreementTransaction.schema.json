@@ -1,0 +1,25 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityholdersAgreementTransaction.schema.json",
+  "title": "Primitive - Securityholders Agreement Transaction",
+  "description": "証券保有者間同意に影響を与えるすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
+  "type": "object",
+  "properties": {
+    "securityholders_agreement": {
+      "description": "トランザクションの対象である証券保有者間同意",
+      "oneOf": [
+        {
+          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/MasterSecurityholdersAgreement.schema.json"
+        },
+        {
+          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/AcquisitionDistributionAgreement.schema.json"
+        }
+      ]
+    },
+    "securityholders_agreement_id": {
+      "description": "トランザクションの対象である証券保有者間同意の識別子",
+      "type": "string"
+    }
+  },
+  "required": [],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitive/objects/transactions/SecurityholdersAgreementTransaction.schema.json"
+}

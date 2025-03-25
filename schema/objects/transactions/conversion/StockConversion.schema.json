@@ -1,42 +1,49 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/StockConversion.schema.json",
-  "title": "Object - Stock Conversion Transaction",
-  "description": "Object describing a conversion of stock",
+  "title": "株式転換トランザクション",
+  "description": "株式転換トランザクション",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/conversion/Conversion.schema.json"
-    }
-  ],
   "properties": {
     "object_type": {
-      "const": "TX_STOCK_CONVERSION"
-    },
-    "balance_security_id": {
-      "description": "Identifier for the security that holds the remainder balance (for partial conversions)",
-      "type": "string"
+      "const": "TX_CONVERTIBLE_CONVERSION"
     },
     "quantity_converted": {
-      "description": "Quantity of non-monetary security units converted",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "description": "転換された株式数",
+      "$ref": "../../../types/Numeric.schema.json"
     },
-    "id": {},
-    "comments": {},
-    "security_id": {},
-    "date": {},
-    "resulting_security_ids": {}
+    "stock_class_id_converted": {
+      "description": "転換された株式種類のID",
+      "$ref": "../../../types/Numeric.schema.json"
+    },
+    "quantity": {
+      "description": "転換後の株式数",
+      "$ref": "../../../types/Numeric.schema.json"
+    },
+    "stock_class_id": {
+      "description": "転換後の株式種類のID",
+      "$ref": "../../../types/Numeric.schema.json"
+    },
+    "id": {
+      "description": "この株式転換トランザクションのID",
+      "type": "string"
+    },
+    "description": {
+      "description": "説明",
+      "type": "string"
+    },
+    "date": {
+      "description": "発生日時",
+      "type": "string",
+      "format": "date"
+    }
   },
   "additionalProperties": false,
-  "required": ["quantity_converted"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/conversion/StockConversion.schema.json"
+  "required": [
+    "quantity_converted",
+    "stock_class_id_converted",
+    "quantity",
+    "stock_class_id",
+    "id",
+    "date"
+  ],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/conversion/StockConversion.schema.json"
 }

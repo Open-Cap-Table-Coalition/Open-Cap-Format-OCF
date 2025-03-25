@@ -1,0 +1,23 @@
+{
+  "title": "Type - 主要連絡先",
+  "description": "組織（ファンドなど）の連絡先",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "担当者名",
+      "$ref": "./Name.schema.json"
+    },
+    "phone_number": {
+      "description": "担当者の電話番号",
+      "type": "string"
+    },
+    "email": {
+      "description": "担当者のメールアドレス",
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "email"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/SecurityHolderPrimaryContact.schema.json"
+}

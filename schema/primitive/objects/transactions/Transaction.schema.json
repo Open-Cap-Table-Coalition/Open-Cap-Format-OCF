@@ -1,0 +1,14 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/Transaction.schema.json",
+  "title": "Primitive - Transaction",
+  "description": "他のすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
+  "type": "object",
+  "properties": {
+    "date": {
+      "description": "トランザクションが発生した日付",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Date.schema.json"
+    }
+  },
+  "required": ["date"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitive/objects/transactions/Transaction.schema.json"
+}

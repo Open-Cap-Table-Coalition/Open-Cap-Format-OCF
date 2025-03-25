@@ -1,0 +1,48 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/SecurityHolder.schema.json",
+  "title": "証券保有者",
+  "description": "",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "../primitives/objects/Object.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "SECURITY_HOLDER"
+    },
+    "name": {
+      "description": "証券保有者の名前",
+      "$ref": "../types/Name.schema.json"
+    },
+    "id": {
+      "description": "証券保有者のID",
+      "type": "string"
+    },
+    "security_holder_type": {
+      "description": "証券保有者の種類",
+      "$ref": "../enums/SecurityHolderType.schema.json"
+    },
+    "address": {
+      "description": "証券保有者の住所",
+      "type": "string"
+    },
+    "primary_contact": {
+      "type": "array",
+      "description": "組織証券保有者の連絡先",
+      "items": {
+        "$ref": "../types/SecurityHolderPrimaryContact.schema.json"
+      }
+    },
+    "contact_info": {
+      "type": "array",
+      "description": "個人証券保有者の連絡先",
+      "items": {
+        "$ref": "../types/SecurityHolderContactInfo.schema.json"
+      }
+    }
+  },
+  "required": ["object_type", "name", "id"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/SecurityHolder.schema.json"
+}

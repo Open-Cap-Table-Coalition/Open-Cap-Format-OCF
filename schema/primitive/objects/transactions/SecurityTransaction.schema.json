@@ -1,0 +1,14 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json",
+  "title": "Primitive - Security Transaction",
+  "description": "特定の証券単位でのトランザクションに関する基底クラス",
+  "type": "object",
+  "properties": {
+    "security_id": {
+      "description": "証券を一意に特定するための識別子。Issuanceイベントで採番された後、証券の譲渡、解除、解約などのイベントで証券の特定のために利用されるもの。",
+      "type": "string"
+    }
+  },
+  "required": ["security_id"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitive/objects/transactions/SecurityTransaction.schema.json"
+}

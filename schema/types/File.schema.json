@@ -1,20 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json",
+  "$id": "https://jocf.startupstandard.org/jocf/schema/types/File.schema.json",
   "title": "Type - File",
-  "description": "Type representation of a file",
+  "description": "ファイルの基底スキーマ",
   "type": "object",
   "properties": {
     "filepath": {
-      "description": "Path to the file within the OCF container",
+      "description": "JOCFコンテナ内の当該ファイルのパス",
       "type": "string"
     },
     "md5": {
-      "description": "MD5 file checksum",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Md5.schema.json"
+      "description": "MD5ファイルチェックサム",
+      "$ref": "https://jocf.startupstandard.org/jocf/schema/types/Md5.schema.json"
     }
   },
-  "additionalProperties": false,
   "required": ["filepath", "md5"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/File.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/File.schema.json"
 }

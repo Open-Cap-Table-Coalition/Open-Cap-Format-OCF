@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/StockIssuance.schema.json",
+  "title": "Object - Stock Issuance Transaction",
+  "description": "Object describing a stock issuance transaction by the issuer and held by a stakeholder",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_ISSUANCE"
+    },
+    "stock_class_id": {
+      "description": "Identifier of the stock class for this stock issuance",
+      "type": "string"
+    },
+    "stock_plan_id": {
+      "description": "Identifier of StockPlan the Stock was issued from (in the case of RSAs or Stock issued from a plan).",
+      "type": "string"
+    },
+    "share_numbers_issued": {
+      "description": "Range(s) of the specific share numbers included in this issuance. This is different from a certificate number you might include in the `custom_id` field or the `security_id` created in this issuance. This field should be used where, for whatever reason, shares are not fungible and you must track, with each issuance, *which* specific share numbers are included in the issuance - e.g. share numbers 1 - 100 and 250-300.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ShareNumberRange.schema.json"
+      }
+    },
+    "share_price": {
+      "description": "The price per share paid for the stock by the holder",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    },
+    "quantity": {
+      "description": "Number of shares issued to the stakeholder",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    },
+    "vesting_terms_id": {
+      "description": "Identifier of the VestingTerms to which this security is subject. If neither `vesting_terms_id` or `vestings` are present then the security is fully vested on issuance.",
+      "type": "string"
+    },
+    "vestings": {
+      "title": "Stock Issuance - Vestings Array",
+      "description": "List of exact vesting dates and amounts for this security. When `vestings` array is present then `vesting_terms_id` may be ignored.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Vesting.schema.json"
+      }
+    },
+    "cost_basis": {
+      "description": "The cost basis for this particular stock",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+    },
+    "stock_legend_ids": {
+      "title": "Stock Issuance - Stock Legend ID Array",
+      "description": "List of stock legend ids that apply to this stock",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issuance_type": {
+      "description": "Optional field to flag certain special types of issuances (like RSAs)",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockIssuanceType.schema.json"
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "custom_id": {},
+    "stakeholder_id": {},
+    "board_approval_date": {},
+    "stockholder_approval_date": {},
+    "consideration_text": {},
+    "security_law_exemptions": {}
+  },
+  "additionalProperties": false,
+  "required": ["stock_class_id", "share_price", "quantity", "stock_legend_ids"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/StockIssuance.schema.json"
+}

@@ -1,20 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Ratio.schema.json",
-  "title": "Type - Ratio",
-  "description": "Type representation of a ratio as two parts of a quotient, i.e. numerator and denominator numeric values",
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/Ratio.schema.json",
+  "title": "比率",
+  "description": "比率",
   "type": "object",
   "properties": {
     "numerator": {
-      "description": "Numerator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where A is the numerator",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "description": "比率の分子",
+      "$ref": "./Numeric.schema.json"
     },
     "denominator": {
-      "description": "Denominator of the ratio, i.e. the ratio of A to B (A:B) can be expressed as a fraction (A/B), where B is the denominator",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+      "description": "比率の分母",
+      "$ref": "./Numeric.schema.json"
     }
   },
   "additionalProperties": false,
   "required": ["numerator", "denominator"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/Ratio.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/Ratio.schema.json"
 }

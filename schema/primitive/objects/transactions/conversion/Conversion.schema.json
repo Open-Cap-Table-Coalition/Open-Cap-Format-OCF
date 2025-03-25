@@ -1,0 +1,18 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/conversion/Conversion.schema.json",
+  "title": "Primitive - 転換トランザクション",
+  "description": "証券の転換権の行使に関するトランザクションの基底クラス",
+  "type": "object",
+  "properties": {
+    "resulting_security_ids": {
+      "title": "転換後の証券IDのリスト",
+      "description": "転換により発行された証券のID",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["resulting_security_ids"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitive/objects/transactions/conversion/Conversion.schema.json"
+}

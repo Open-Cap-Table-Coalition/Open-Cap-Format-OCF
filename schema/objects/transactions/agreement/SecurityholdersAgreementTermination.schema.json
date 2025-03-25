@@ -1,0 +1,31 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/agreement/SecurityholdersAgreementTermination.schema.json",
+  "title": "Transaction - Securityholders Agreement Termination",
+  "description": "証券保有者間同意の終了に関するトランザクション",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityholdersAgreementTransaction.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_SECURITYHOLDERS_AGREEMENT_TERMINATION"
+    },
+    "reason_text": {
+      "description": "証券保有者間同意の終了の理由",
+      "type": "string"
+    },
+    "id": {},
+    "date": {},
+    "securityholders_agreement_id": {}
+  },
+  "required": ["object_type", "id", "date", "securityholders_agreement_id"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/agreement/SecurityholdersAgreementTermination.schema.json"
+}

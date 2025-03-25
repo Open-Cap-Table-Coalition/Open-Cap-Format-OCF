@@ -1,28 +1,26 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
-  "title": "Type - Elective Conversion on Condition Trigger",
-  "description": "Type representation of elective trigger on fulfillment of a condition.",
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
+  "title": "Type - Elective Conversion On Condition",
+  "description": "特定の条件を満たした場合に転換するかどうかを選択可能なトリガー",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
     }
   ],
   "properties": {
+    "type": {
+      "const": "ELECTIVE_ON_CONDITION"
+    },
     "trigger_condition": {
-      "description": "Legal language describing what conditions must be satisfied for the conversion to take place (ideally, this should be excerpted from the instrument where possible)",
+      "description": "転換を選択可能となる条件を表す法的文言",
       "type": "string"
     },
     "trigger_id": {},
     "nickname": {},
     "trigger_description": {},
-    "type": {
-      "const": "ELECTIVE_ON_CONDITION"
-    },
     "conversion_right": {}
   },
-  "additionalProperties": false,
-  "required": ["trigger_id", "trigger_condition", "type", "conversion_right"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+  "required": ["type", "trigger_id", "trigger_condition", "conversion_right"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
 }

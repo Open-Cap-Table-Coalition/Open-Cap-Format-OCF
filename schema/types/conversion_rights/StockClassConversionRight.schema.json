@@ -1,12 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/StockClassConversionRight.schema.json",
+  "$id": "https://jocf.startupstandard.org/jocf/schema/types/conversion_rights/StockClassConversionRight.schema.json",
   "title": "Type - Stock Class Conversion Rights",
-  "description": "Type representation of a conversion right from one Stock Class into another Stock Class",
+  "description": "ある株式クラスから別の株式クラスへの転換を表現するもの",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json"
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json"
     }
   ],
   "properties": {
@@ -16,14 +15,13 @@
     "conversion_mechanism": {
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
+          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json"
         }
       ]
     },
     "converts_to_future_round": {},
     "converts_to_stock_class_id": {}
   },
-  "additionalProperties": false,
-  "required": ["conversion_mechanism"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_rights/StockClassConversionRight.schema.json"
+  "required": ["type", "conversion_mechanism"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_rights/StockClassConversionRight.schema.json"
 }

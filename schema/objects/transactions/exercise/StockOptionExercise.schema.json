@@ -1,0 +1,29 @@
+{
+  "title": "ストックオプション行使トランザクション",
+  "description": "ストックオプション行使トランザクション",
+  "type": "object",
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_OPTION_EXERCISE"
+    },
+    "id": {
+      "description": "このストックオプション行使トランザクションのID",
+      "type": "string"
+    },
+    "quantity": {
+      "description": "行使個数",
+      "$ref": "../../../types/Numeric.schema.json"
+    },
+    "description": {
+      "description": "説明",
+      "type": "string"
+    },
+    "date": {
+      "description": "発生日時",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["id", "quantity", "date"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/exercise/StockOptionExercise.schema.json"
+}

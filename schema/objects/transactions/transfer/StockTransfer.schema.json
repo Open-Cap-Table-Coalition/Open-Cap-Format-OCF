@@ -1,40 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json",
-  "title": "Object - Stock Transfer Transaction",
-  "description": "Object describing a transfer or secondary sale of a stock security",
+  "title": "株式異動トランザクション",
+  "description": "株式異動トランザクション",
   "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/transfer/Transfer.schema.json"
-    }
-  ],
   "properties": {
     "object_type": {
       "const": "TX_STOCK_TRANSFER"
     },
-    "quantity": {
-      "description": "Quantity of non-monetary security units transferred",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    "id": {
+      "description": "この株式異動トランザクションのID",
+      "type": "string"
     },
-    "id": {},
-    "comments": {},
-    "security_id": {},
-    "date": {},
-    "consideration_text": {},
-    "balance_security_id": {},
-    "resulting_security_ids": {}
+    "stock_class_id": {
+      "description": "この株式異動で異動された株式種類のID",
+      "type": "string"
+    },
+    "quantity": {
+      "description": "この株式異動で異動された株式数",
+      "$ref": "../../../types/Numeric.schema.json"
+    },
+    "description": {
+      "description": "説明",
+      "type": "string"
+    },
+    "date": {
+      "description": "発生日時",
+      "type": "string",
+      "format": "date"
+    }
   },
   "additionalProperties": false,
-  "required": ["quantity"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/transfer/StockTransfer.schema.json"
+  "required": ["id", "stock_class_id", "quantity", "date"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/transfer/StockTransfer.schema.json"
 }

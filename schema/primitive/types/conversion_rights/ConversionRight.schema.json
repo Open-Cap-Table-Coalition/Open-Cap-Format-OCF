@@ -1,0 +1,22 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json",
+  "title": "Primitive - Conversion Right Type",
+  "description": "転換権を表す基底クラス",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "転換権の種別",
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/ConversionRightType.schema.json"
+    },
+    "converts_to_future_round": {
+      "description": "現時点で未確定な株式クラスに転換可能かどうか",
+      "type": "boolean"
+    },
+    "converts_to_stock_class_id": {
+      "description": "転換可能な既存の株式クラスのID",
+      "type": "string"
+    }
+  },
+  "required": ["type"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitive/types/conversion_rights/ConversionRight.schema.json"
+}

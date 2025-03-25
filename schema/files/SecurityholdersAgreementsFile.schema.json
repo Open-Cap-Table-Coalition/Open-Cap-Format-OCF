@@ -1,0 +1,32 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/files/SecurityHoldersAgreementFile.schema.json",
+  "title": "JOCF Securityholders Agreement File",
+  "description": "証券保有者間同意に関するファイル",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/files/File.schema.json"
+    }
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "証券保有者間同意の一覧",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/MasterSecurityholdersAgreement.schema.json"
+          },
+          {
+            "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/AcquisitionDistributionAgreement.schema.json"
+          }
+        ]
+      }
+    },
+    "file_type": {
+      "const": "JOCF_SECURITYHOLDERS_AGREEMENT_FILE"
+    }
+  },
+  "required": ["items", "file_type"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/SecurityholdersAgreementsFile.schema.json"
+}

@@ -1,0 +1,7 @@
+{
+  "title": "累積型種別 - Enum",
+  "description": "累積型/非累積型のEnum",
+  "type": "string",
+  "enum": ["CUMULATIVE", "NON_CUMULATIVE"],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/CumulativeCategory.schema.json"
+}

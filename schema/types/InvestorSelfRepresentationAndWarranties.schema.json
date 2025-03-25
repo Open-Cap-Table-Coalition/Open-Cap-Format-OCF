@@ -1,0 +1,26 @@
+{
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/InvestorSelfRepresentationsAndWarranties.schema.json",
+  "title": "Primitive - 投資家の自身に関する表明および保証",
+  "description": "投資家による投資家自身に関する表明および保証",
+  "type": "object",
+  "properties": {
+    "authorization": {
+      "description": "授権に関する表明および保証",
+      "type": "string"
+    },
+    "absence_of_antisocial_forces": {
+      "description": "反社会的勢力に対する表明および保証",
+      "type": "string"
+    },
+    "subscription_by_investor_for_their_own_account": {
+      "description": "投資家自身による株式等の引受に関する表明および保証",
+      "type": "string"
+    },
+    "investment_judgment_ability_and_risk_taking_ability": {
+      "description": "投資家の投資判断能力およびリスク管理能力に関する表明および保証",
+      "type": "string"
+    }
+  },
+  "required": [],
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/InvestorSelfRepresentationAndWarranties.schema.json"
+}
