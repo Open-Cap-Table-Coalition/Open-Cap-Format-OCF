@@ -17,7 +17,7 @@
     },
     "split_ratio": {
       "description": "古い株数に対して新株数の比率",
-      "$ref": "../../../types/Ratio.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Ratio.schema.json"
     },
     "description": {
       "description": "説明",

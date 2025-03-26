@@ -5,7 +5,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "../primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -14,7 +14,7 @@
     },
     "name": {
       "description": "証券保有者の名前",
-      "$ref": "../types/Name.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Name.schema.json"
     },
     "id": {
       "description": "証券保有者のID",
@@ -22,7 +22,7 @@
     },
     "security_holder_type": {
       "description": "証券保有者の種類",
-      "$ref": "../enums/SecurityHolderType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/SecurityHolderType.schema.json"
     },
     "address": {
       "description": "証券保有者の住所",
@@ -32,14 +32,14 @@
       "type": "array",
       "description": "組織証券保有者の連絡先",
       "items": {
-        "$ref": "../types/SecurityHolderPrimaryContact.schema.json"
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/SecurityHolderPrimaryContact.schema.json"
       }
     },
     "contact_info": {
       "type": "array",
       "description": "個人証券保有者の連絡先",
       "items": {
-        "$ref": "../types/SecurityHolderContactInfo.schema.json"
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/SecurityHolderContactInfo.schema.json"
       }
     }
   },

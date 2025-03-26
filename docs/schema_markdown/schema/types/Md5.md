@@ -1,8 +1,8 @@
 ### Type - MD5 Hash
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Md5.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Md5.schema.json`
 
-**Description:** _String representation of MD5 hash with basic validation for a string of 32 characters composed of letters (uppercase or lowercase) and numbers_
+**Description:** _文字（大文字または小文字）と数字で構成される32文字の文字列の基本的な検証によるMD5ハッシュの文字列表現_
 
 **Data Type:** `Primitive`
 
@@ -10,4 +10,4 @@
 
 **Source Code:** [schema/types/Md5](../../../../schema/types/Md5.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

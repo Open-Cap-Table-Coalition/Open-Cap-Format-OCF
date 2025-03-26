@@ -13,7 +13,7 @@
     },
     "quantity": {
       "description": "消却個数",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "description": {
       "description": "説明",

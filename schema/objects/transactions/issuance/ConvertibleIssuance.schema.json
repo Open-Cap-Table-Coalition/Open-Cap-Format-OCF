@@ -73,34 +73,6 @@
       "description": "参加上限額倍率",
       "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Ratio.schema.json"
     },
-    "investor_roles_and_authorities": {
-      "description": "投資家の種類と権限",
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "investor_type_name": {
-              "description": "投資家の種類名",
-              "type": "string"
-            },
-            "investor_type_condition": {
-              "description": "当該投資家種類とみなされるための条件",
-              "type": "string"
-            },
-            "information_request_rights": {
-              "description": "当該投資家種類が持つ情報請求権",
-              "type": "string"
-            },
-            "preemptive_rights": {
-              "description": "当該投資家種類が持つ優先引受権",
-              "type": "string"
-            }
-          },
-          "required": ["investor_type_name", "investor_type_condition"]
-        }
-      ]
-    },
     "representations_and_warranties_by_issuing_company": {
       "description": "発行会社による表明および保証",
       "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/IssuerRepresentationsAndWarranties.schema.json"
@@ -134,21 +106,6 @@
       "description": "割当日",
       "type": "string",
       "format": "date"
-    },
-    "mandatory_redemption_attributes": {
-      "description": "発行体の強制償還義務に関する項目",
-      "type": "object",
-      "properties": {
-        "has_mandatory_redemption_trigger": {
-          "description": "強制償還条件。強制償還条項が発動する条件の有無",
-          "type": "boolean"
-        },
-        "mandatory_redemption_multiple": {
-          "description": "強制償還倍率。発行体は、コンバーティブルエクイティ1個ごとに、発行価額に対して当該倍率をかけた金額を支払う。",
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Ratio.schema.json"
-        }
-      },
-      "required": ["has_mandatory_redemption_trigger"]
     },
     "id": {},
     "comments": {},

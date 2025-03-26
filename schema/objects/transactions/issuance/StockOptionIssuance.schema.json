@@ -13,15 +13,15 @@
     },
     "unit_price": {
       "description": "1個あたりの払込金額",
-      "$ref": "../../../types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Monetary.schema.json"
     },
     "share_per_unit": {
       "description": "1個あたりの付与株式数",
-      "$ref": "../../../types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Monetary.schema.json"
     },
     "quantity": {
       "description": "発行個数",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "description": {
       "description": "説明",

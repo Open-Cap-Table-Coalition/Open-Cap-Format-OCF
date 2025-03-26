@@ -1,8 +1,8 @@
-### Type - Currency Code
+### 通貨コード
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CurrencyCode.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/CurrencyCode.schema.json`
 
-**Description:** _Type representation of an ISO 4217 currency code_
+**Description:** _ISO 4217 国別通貨コード_
 
 **Data Type:** `Primitive`
 
@@ -10,4 +10,4 @@
 
 **Source Code:** [schema/types/CurrencyCode](../../../../schema/types/CurrencyCode.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

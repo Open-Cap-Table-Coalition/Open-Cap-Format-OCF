@@ -19,41 +19,9 @@
     "securityholders_who_agreed": {
       "type": "array",
       "description": "分配合意書に合意する証券保有者の一覧",
-      "properties": {
-        "securityholder": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolder.schema.json"
-        }
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolder.schema.json"
       }
-    },
-    "put_option_on_aquisition_attributes": {
-      "type": "object",
-      "description": "買収時の売却請求権に関する属性",
-      "properties": {
-        "has_put_option_on_aquisition": {
-          "description": "買収時の売却請求権の有無",
-          "type": "boolean"
-        },
-        "clause_text": {
-          "description": "買収時の売却請求権に関する条文",
-          "type": "string"
-        }
-      },
-      "required": ["has_put_option_on_aquisition"]
-    },
-    "put_option_on_ipo_failure_attributes": {
-      "type": "object",
-      "description": "IPOが期限までに実施されなかった場合の売却請求権に関する属性",
-      "properties": {
-        "has_put_option_on_ipo_failure": {
-          "description": "IPOが期限までに実施されなかった場合の売却請求権の有無",
-          "type": "boolean"
-        },
-        "clause_text": {
-          "description": "IPOが期限までに実施されなかった場合の売却請求権に関する条文",
-          "type": "string"
-        }
-      },
-      "required": ["has_put_option_on_ipo_failure"]
     },
     "id": {}
   },

@@ -1,8 +1,8 @@
 ### Type - Numeric
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json`
 
-**Description:** _Fixed-point string representation of a number (up to 10 decimal places supported)_
+**Description:** _固定小数点の実数(小数点以下最大10桁)_
 
 **Data Type:** `Primitive`
 
@@ -10,4 +10,4 @@
 
 **Source Code:** [schema/types/Numeric](../../../../schema/types/Numeric.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

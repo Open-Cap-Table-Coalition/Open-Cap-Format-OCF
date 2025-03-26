@@ -1,11 +1,11 @@
 ### Enum - Authorized Shares Types
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AuthorizedShares.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/AuthorizedShares.schema.json`
 
-**Description:** _Enumeration of authorized shares types_
+**Description:** _発行可能株式数のENUM値_
 
 **ONE OF:**</br>&bull; NOT APPLICABLE </br>&bull; UNLIMITED
 
 **Source Code:** [schema/enums/AuthorizedShares](../../../../schema/enums/AuthorizedShares.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

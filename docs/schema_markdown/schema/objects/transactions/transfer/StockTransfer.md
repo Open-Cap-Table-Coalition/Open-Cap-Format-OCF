@@ -1,31 +1,25 @@
-### Object - Stock Transfer Transaction
+### 株式異動トランザクション
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json`
 
-**Description:** _Object describing a transfer or secondary sale of a stock security_
+**Description:** _株式異動トランザクション_
 
 **Data Type:** `OCF Object - TX_STOCK_TRANSFER`
 
 **Composed From:**
 
-- [schema/primitives/objects/Object](../../../primitives/objects/Object.md)
-- [schema/primitives/objects/transactions/Transaction](../../../primitives/objects/transactions/Transaction.md)
-- [schema/primitives/objects/transactions/SecurityTransaction](../../../primitives/objects/transactions/SecurityTransaction.md)
-- [schema/primitives/objects/transactions/transfer/Transfer](../../../primitives/objects/transactions/transfer/Transfer.md)
+
 
 **Properties:**
 
-| Property               | Type                                                                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Required   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| id                     | `STRING`                                                                                                   | Identifier for the object                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `REQUIRED` |
-| comments               | [`STRING`]                                                                                                 | Unstructured text comments related to and stored for the object                                                                                                                                                                                                                                                                                                                                                                                                                                             | -          |
-| object_type            | **Constant:** `TX_STOCK_TRANSFER`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `REQUIRED` |
-| date                   | [schema/types/Date](../../../types/Date.md)                                                                | Date on which the transaction occurred                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `REQUIRED` |
-| security_id            | `STRING`                                                                                                   | Identifier for the security (stock, plan security, warrant, or convertible) by which it can be referenced by other transaction objects. Note that while this identifier is created with an issuance object, it should be different than the issuance object's `id` field which identifies the issuance transaction object itself. All future transactions on the security (e.g. acceptance, transfer, cancel, etc.) must reference this `security_id` to qualify which security the transaction applies to. | `REQUIRED` |
-| consideration_text     | `STRING`                                                                                                   | Unstructured text description of consideration provided in exchange for security transfer                                                                                                                                                                                                                                                                                                                                                                                                                   | -          |
-| balance_security_id    | `STRING`                                                                                                   | Identifier for the security that holds the remainder balance (for partial transfers)                                                                                                                                                                                                                                                                                                                                                                                                                        | -          |
-| resulting_security_ids | [`STRING`]                                                                                                 | Array of identifiers for new security (or securities) created as a result of the transaction                                                                                                                                                                                                                                                                                                                                                                                                                | `REQUIRED` |
-| quantity               | [schema/types/Numeric](../../../types/Numeric.md)                                                          | Quantity of non-monetary security units transferred                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `REQUIRED` |
+| Property       | Type                                                                                                       | Description         | Required   |
+| -------------- | ---------------------------------------------------------------------------------------------------------- | ------------------- | ---------- |
+| object_type    | **Constant:** `TX_STOCK_TRANSFER`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field   | -          |
+| id             | `STRING`                                                                                                   | この株式異動トランザクションのID   | `REQUIRED` |
+| stock_class_id | `STRING`                                                                                                   | この株式異動で異動された株式種類のID | `REQUIRED` |
+| quantity       | [schema/types/Numeric](../../../types/Numeric.md)                                                          | この株式異動で異動された株式数     | `REQUIRED` |
+| description    | `STRING`                                                                                                   | 説明                  | -          |
+| date           | `STRING`                                                                                                   | 発生日時                | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/transfer/StockTransfer](../../../../../../schema/objects/transactions/transfer/StockTransfer.schema.json)
 
@@ -66,4 +60,4 @@
 ]
 ```
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

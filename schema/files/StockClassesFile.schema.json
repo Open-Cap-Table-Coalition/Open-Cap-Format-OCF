@@ -10,7 +10,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "../objects/StockClass.schema.json"
+            "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/StockClass.schema.json"
           }
         ]
       }

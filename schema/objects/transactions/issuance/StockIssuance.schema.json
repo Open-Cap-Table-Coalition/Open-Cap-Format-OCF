@@ -59,14 +59,6 @@
       "description": "シリーズ名",
       "type": "string"
     },
-    "representations_and_warranties_by_issuing_company": {
-      "description": "発行会社による表明および保証",
-      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/types/IssuerRepresentationsAndWarranties.schema.json"
-    },
-    "representations_and_warranties_by_investor": {
-      "description": "投資家による表明および保証",
-      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/types/IssuerRepresentationsAndWarranties.schema.json"
-    },
     "security_id": {}
   },
   "additionalProperties": false,

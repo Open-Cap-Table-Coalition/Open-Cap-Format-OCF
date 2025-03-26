@@ -20,69 +20,15 @@
           "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolder.schema.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityholderGroup.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolderGroup.schema.json"
         }
       ]
-    },
-    "parties_and_authority_attributes": {
-      "type": "array",
-      "description": "証券保有者間同意における当事者の一覧とその権限属性",
-      "properties": {
-        "securityholder_group": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityholderGroup.schema.json"
-        },
-        "securityholder": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/Securityholder.schema.json"
-        },
-        "number_of_electable_directors": {
-          "description": "取締役選任可能人数",
-          "type": "integer"
-        },
-        "number_of_electable_observers": {
-          "description": "オブザーバー選任可能人数",
-          "type": "integer"
-        },
-        "matters_requiring_prior_approval": {
-          "description": "事前承諾が必要な事項のリスト",
-          "type": "array",
-          "properties": {
-            "matter_requiring_prior_action": {
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
-            }
-          }
-        },
-        "matters_requiring_prior_consultation": {
-          "description": "事前協議が必要な事項のリスト",
-          "type": "array",
-          "properties": {
-            "matter_requiring_prior_action": {
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
-            }
-          }
-        },
-        "matters_requiring_prior_notice": {
-          "description": "事前通知が必要な事項のリスト",
-          "type": "array",
-          "properties": {
-            "matter_requiring_prior_action": {
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
-            }
-          }
-        },
-        "has_information_rights": {
-          "description": "情報提供権の保有の有無",
-          "type": "boolean"
-        }
-      },
-      "required": []
     },
     "obligation_to_provide_financial_information": {
       "description": "財務情報等の提供の義務",
       "type": "array",
-      "properties": {
-        "financial_information": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/FinancialInformationType.schema.json"
-        }
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/FinancialInformationType.schema.json"
       }
     },
     "right_to_access_financial_information": {
@@ -92,19 +38,15 @@
     "obligation_to_provide_material_information": {
       "description": "発行会社の重要情報提供義務",
       "type": "array",
-      "properties": {
-        "material_information": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MaterialInformationType.schema.json"
-        }
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MaterialInformationType.schema.json"
       }
     },
     "obligation_of_managing_securityholder_to_fully_commit": {
       "description": "経営株主の経営専念義務",
       "type": "array",
-      "properties": {
-        "action_of_managing_securityholder_requiring_prior_approval": {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json"
-        }
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json"
       }
     },
     "preemptive_right": {

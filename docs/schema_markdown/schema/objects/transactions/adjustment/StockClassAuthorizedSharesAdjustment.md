@@ -1,8 +1,8 @@
-### Object - Stock Class Authorized Shares Adjustment Transaction
+### Object - 株式クラス発行可能株式調整トランザクション
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json`
 
-**Description:** _Object describing an event to change the number of authorized shares of a stock class._
+**Description:** _株式クラスの発行可能株式数を変更するためのイベント_
 
 **Data Type:** `OCF Object - TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`
 
@@ -14,16 +14,16 @@
 
 **Properties:**
 
-| Property                  | Type                                                                                                                                 | Description                                                                                  | Required   |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------- |
-| id                        | `STRING`                                                                                                                             | Identifier for the object                                                                    | `REQUIRED` |
-| comments                  | [`STRING`]                                                                                                                           | Unstructured text comments related to and stored for the object                              | -          |
-| object_type               | **Constant:** `TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                                                                            | `REQUIRED` |
-| date                      | [schema/types/Date](../../../types/Date.md)                                                                                          | Date on which the transaction occurred                                                       | `REQUIRED` |
-| stock_class_id            | `STRING`                                                                                                                             | Identifier of the StockClass object, a subject of this transaction                           | `REQUIRED` |
-| new_shares_authorized     | [schema/types/Numeric](../../../types/Numeric.md)                                                                                    | The new number of shares authorized for this stock class as of the event of this transaction | `REQUIRED` |
-| board_approval_date       | [schema/types/Date](../../../types/Date.md)                                                                                          | Date on which the board approved the change to the stock class                               | -          |
-| stockholder_approval_date | [schema/types/Date](../../../types/Date.md)                                                                                          | This optional field tracks when the stockholders approved the change to the stock class.     | -          |
+| Property                  | Type                                                                                                                                 | Description                         | Required   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | ---------- |
+| id                        | `STRING`                                                                                                                             | オブジェクトの識別子                          | `REQUIRED` |
+| comments                  | [`STRING`]                                                                                                                           | オブジェクトに関連して保存されている構造化されていないテキストコメント | -          |
+| object_type               | **Constant:** `TX_STOCK_CLASS_AUTHORIZED_SHARES_ADJUSTMENT`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                   | `REQUIRED` |
+| date                      | [schema/types/Date](../../../types/Date.md)                                                                                          | トランザクションが発生した日付                     | `REQUIRED` |
+| stock_class_id            | `STRING`                                                                                                                             | 株式クラスオブジェクトの識別子                     | `REQUIRED` |
+| new_shares_authorized     | [schema/types/Numeric](../../../types/Numeric.md)                                                                                    | 新しい発行可能株式数                          | `REQUIRED` |
+| board_approval_date       | [schema/types/Date](../../../types/Date.md)                                                                                          | 取締役会承認日付                            | -          |
+| stockholder_approval_date | [schema/types/Date](../../../types/Date.md)                                                                                          | 株主承認日付                              | -          |
 
 **Source Code:** [schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment](../../../../../../schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json)
 
@@ -45,4 +45,4 @@
 ]
 ```
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

@@ -1,11 +1,11 @@
-### Enum - Convertible Type
+### コンバーティブルエクイティの種類
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConvertibleType.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConvertibleType.schema.json`
 
-**Description:** _Enumeration of convertible instrument types_
+**Description:** _コンバーティブルエクイティ種類のEnum_
 
-**ONE OF:**</br>&bull; NOTE </br>&bull; SAFE </br>&bull; CONVERTIBLE_SECURITY
+**ONE OF:**</br>&bull; J-KISS_1 </br>&bull; J-KISS_2 </br>&bull; SAFE </br>&bull; OTHER
 
 **Source Code:** [schema/enums/ConvertibleType](../../../../schema/enums/ConvertibleType.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

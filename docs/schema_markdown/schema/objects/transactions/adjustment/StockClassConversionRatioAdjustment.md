@@ -1,8 +1,8 @@
-### Object - Stock Class Conversion Ratio Adjustment Transaction
+### 株式クラスの転換比率の調整トランザクション
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
 
-**Description:** _Object describing the conversion ratio adjustment of a stock class that has a RatioConversionMechanism conversion mechanism where there was an actual repricing due to a down-round. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection._
+**Description:** _ダウンラウンドなどに起因した希薄化防止条項の発動による、優先株の転換比率の調整の発生を表現するトランザクション_
 
 **Data Type:** `OCF Object - TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`
 
@@ -14,14 +14,16 @@
 
 **Properties:**
 
-| Property                       | Type                                                                                                                                | Description                                                                                                                                                                                                                                                                             | Required   |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| id                             | `STRING`                                                                                                                            | Identifier for the object                                                                                                                                                                                                                                                               | `REQUIRED` |
-| comments                       | [`STRING`]                                                                                                                          | Unstructured text comments related to and stored for the object                                                                                                                                                                                                                         | -          |
-| object_type                    | **Constant:** `TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                                                                                                                                                                                                                                                                       | `REQUIRED` |
-| date                           | [schema/types/Date](../../../types/Date.md)                                                                                         | Date on which the transaction occurred                                                                                                                                                                                                                                                  | `REQUIRED` |
-| stock_class_id                 | `STRING`                                                                                                                            | Identifier of the StockClass object, a subject of this transaction                                                                                                                                                                                                                      | `REQUIRED` |
-| new_ratio_conversion_mechanism | [schema/types/conversion_mechanisms/RatioConversionMechanism](../../../types/conversion_mechanisms/RatioConversionMechanism.md)     | New conversion ratio mechanism describing new conversion price and conversion ratio in effect following a repricing - based on original issue price to new conversion price (provided in this transaction). For 2-for-1 split the numerator of the ratio is 2 and the denominator is 1. | `REQUIRED` |
+| Property                       | Type                                                                                                                                | Description                         | Required   |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ---------- |
+| id                             | `STRING`                                                                                                                            | オブジェクトの識別子                          | `REQUIRED` |
+| comments                       | [`STRING`]                                                                                                                          | オブジェクトに関連して保存されている構造化されていないテキストコメント | -          |
+| object_type                    | **Constant:** `TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`</br>_Defined in [schema/enums/ObjectType](../../../enums/ObjectType.md)_ | Object type field                   | `REQUIRED` |
+| date                           | [schema/types/Date](../../../types/Date.md)                                                                                         | トランザクションが発生した日付                     | `REQUIRED` |
+| stock_class_id                 | `STRING`                                                                                                                            | 株式クラスオブジェクトの識別子                     | `REQUIRED` |
+| adjusted_trigger_id            | `STRING`                                                                                                                            | 調整対象のトリガーの識別子                       | -          |
+| initial_trigger_id             | `STRING`                                                                                                                            | 調整の起因となったトリガーの識別子                   | -          |
+| new_ratio_conversion_mechanism | [schema/types/conversion_mechanisms/RatioConversionMechanism](../../../types/conversion_mechanisms/RatioConversionMechanism.md)     | 元の転換価額から新しい転換価額への変更に基づく新しい転換メカニズム   | `REQUIRED` |
 
 **Source Code:** [schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment](../../../../../../schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json)
 
@@ -53,4 +55,4 @@
 ]
 ```
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

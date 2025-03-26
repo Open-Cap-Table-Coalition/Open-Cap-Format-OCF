@@ -1,18 +1,18 @@
 ### Type - File
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/File.schema.json`
 
-_Type representation of a file_
+_ファイルの基底スキーマ_
 
 **Data Type:** `OCF TYPE`
 
 **Properties:**
 
-| Property | Type                         | Description                               | Required   |
-| -------- | ---------------------------- | ----------------------------------------- | ---------- |
-| filepath | `STRING`                     | Path to the file within the OCF container | `REQUIRED` |
-| md5      | [schema/types/Md5](./Md5.md) | MD5 file checksum                         | `REQUIRED` |
+| Property | Type                         | Description         | Required   |
+| -------- | ---------------------------- | ------------------- | ---------- |
+| filepath | `STRING`                     | JOCFコンテナ内の当該ファイルのパス | `REQUIRED` |
+| md5      | [schema/types/Md5](./Md5.md) | MD5ファイルチェックサム       | `REQUIRED` |
 
 **Source Code:** [schema/types/File](../../../../schema/types/File.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

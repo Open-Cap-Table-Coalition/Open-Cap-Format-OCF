@@ -1,22 +1,17 @@
-### Primitive - Security Issuance Transaction
+### Primitive - 証券発行トランザクション
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json`
 
-**Description** _Abstract object describing fields common to all issuance objects_
+**Description** _発行トランザクションの基底クラス_
 
 **:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**
 
 **Properties:**
 
-| Property                  | Type                                                                         | Description                                                                               | Required   |
-| ------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ---------- |
-| custom_id                 | `STRING`                                                                     | A custom ID for this security (e.g. CN-1.)                                                | `REQUIRED` |
-| stakeholder_id            | `STRING`                                                                     | Identifier for the stakeholder that holds legal title to this security                    | `REQUIRED` |
-| board_approval_date       | [schema/types/Date](../../../../types/Date.md)                               | Date of board approval for the security                                                   | -          |
-| stockholder_approval_date | [schema/types/Date](../../../../types/Date.md)                               | Date on which the stockholders approved the security                                      | -          |
-| consideration_text        | `STRING`                                                                     | Unstructured text description of consideration provided in exchange for security issuance | -          |
-| security_law_exemptions   | [ [schema/types/SecurityExemption](../../../../types/SecurityExemption.md) ] | List of security law exemptions (and applicable jurisdictions) for this security          | `REQUIRED` |
+| Property          | Type     | Description         | Required   |
+| ----------------- | -------- | ------------------- | ---------- |
+| securityholder_id | `STRING` | 発行する株式を受け取る証券保有者のID | `REQUIRED` |
 
 **Source Code:** [schema/primitives/objects/transactions/issuance/Issuance](../../../../../../../schema/primitives/objects/transactions/issuance/Issuance.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

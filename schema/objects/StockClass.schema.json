@@ -26,7 +26,7 @@
     },
     "class_type": {
       "description": "株式種類のタイプ（例. 普通、もしくは優先）",
-      "$ref": "../enums/StockClassType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/StockClassType.schema.json"
     },
     "votes_per_share": {
       "description": "一株あたりの議決権(株主総会)",
@@ -40,117 +40,12 @@
       "description": "株式発行時点での種類株式の発行可能株式数",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/AuthorizedShares.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/AuthorizedShares.schema.json"
         },
         {
           "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
         }
       ]
-    },
-    "preffered_stock_attributes": {
-      "description": "優先株の発行に関する項目",
-      "type": "object",
-      "properties": {
-        "conversion_triggers": {
-          "description": "優先株が持つ転換条件一覧",
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AntiDilutionProtectionInDownRoundTrigger.schema.json"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
-              }
-            ]
-          }
-        },
-        "dividend_attributes": {
-          "description": "配当に関する項目",
-          "type": "object",
-          "properties": {
-            "dividend_rate": {
-              "description": "配当率(年率)",
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "participation_category": {
-              "description": "配当参加型区分",
-              "$ref": "https://jocf.startupstandard.org/jocf/enums/ParticipationCategory.schema.json"
-            },
-            "cumulative_category": {
-              "description": "配当累積区分",
-              "$ref": "https://jocf.startupstandard.org/jocf/enums/CumulativeCategory.schema.json"
-            },
-            "seniority": {
-              "description": "配当順位",
-              "type": "integer"
-            }
-          },
-          "required": ["dividend_rate"]
-        },
-        "liquidation_preference_attributes": {
-          "description": "清算時の残余財産分配の優先権に関する項目",
-          "type": "object",
-          "properties": {
-            "liquidation_preference_multiple": {
-              "description": "残余財産分配倍率",
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json",
-              "minimum": 0
-            },
-            "participation_category": {
-              "description": "清算時の残余財産分配の参加型区分",
-              "$ref": "https://jocf.startupstandard.org/jocf/enums/ParticipationCategory.schema.json"
-            },
-            "cumulative_category": {
-              "description": "清算時の残余財産分配の累積区分",
-              "$ref": "https://jocf.startupstandard.org/jocf/enums/CumulativeCategory.schema.json"
-            },
-            "seniority": {
-              "description": "残余財産分配順位",
-              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
-            }
-          },
-          "required": ["liquidation_preference_multiple"]
-        },
-        "redemption_right_attributes": {
-          "description": "償還請求権に関する項目",
-          "type": "object",
-          "properties": {
-            "redemption_trigger": {
-              "description": "償還請求権が行使可能となる条件",
-              "type": "string"
-            },
-            "redemption_formula": {
-              "description": "償還額を決定する計算式",
-              "type": "string"
-            }
-          }
-        },
-        "mandatory_conversion_attributes": {
-          "description": "強制転換条項に関する項目",
-          "type": "object",
-          "properties": {
-            "mandatory_conversion_trigger": {
-              "description": "強制転換条項が行使可能となる条件を記述する法的文言",
-              "type": "string"
-            },
-            "mandatory_conversion_formula": {
-              "description": "強制転換額を決定する計算式を記述する法的文言",
-              "type": "string"
-            }
-          }
-        },
-        "has_transfer_restrictions": {
-          "description": "譲渡制限の有無",
-          "type": "boolean"
-        }
-      },
-      "required": ["conversion_triggers"]
     }
   },
   "additionalProperties": false,

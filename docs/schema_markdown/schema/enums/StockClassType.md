@@ -1,11 +1,11 @@
-### Enum - Stock Class Type
+### 株式種類 - Enum
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StockClassType.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/StockClassType.schema.json`
 
-**Description:** _Enumeration of stock class types_
+**Description:** _株式種類のEnum_
 
 **ONE OF:**</br>&bull; COMMON </br>&bull; PREFERRED
 
 **Source Code:** [schema/enums/StockClassType](../../../../schema/enums/StockClassType.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

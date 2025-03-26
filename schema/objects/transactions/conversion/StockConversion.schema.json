@@ -9,19 +9,19 @@
     },
     "quantity_converted": {
       "description": "転換された株式数",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "stock_class_id_converted": {
       "description": "転換された株式種類のID",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "quantity": {
       "description": "転換後の株式数",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "stock_class_id": {
       "description": "転換後の株式種類のID",
-      "$ref": "../../../types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "id": {
       "description": "この株式転換トランザクションのID",

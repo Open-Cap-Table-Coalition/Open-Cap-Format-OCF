@@ -1,11 +1,11 @@
-### Enum - Conversion Mechanism Type
+### Enum - 転換メカニズム
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/ConversionMechanismType.schema.json`
+`https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConversionMechanismType.schema.json`
 
-**Description:** _Enumeration of convertible conversion calculation types._
+**Description:** _転換メカニズムの種別_
 
-**ONE OF:**</br>&bull; FIXED_AMOUNT_CONVERSION </br>&bull; FIXED_PERCENT_OF_CAPITALIZATION_CONVERSION </br>&bull; RATIO_CONVERSION </br>&bull; SAFE_CONVERSION </br>&bull; VALUATION_BASED_CONVERSION </br>&bull; CONVERTIBLE_NOTE_CONVERSION </br>&bull; CUSTOM_CONVERSION </br>&bull; PPS_BASED_CONVERSION
+**ONE OF:**</br>&bull; RATIO_CONVERSION </br>&bull; J-KISS_CONVERSION
 
 **Source Code:** [schema/enums/ConversionMechanismType](../../../../schema/enums/ConversionMechanismType.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.
