@@ -6,7 +6,7 @@
   "properties": {
     "name": {
       "description": "担当者名",
-      "$ref": "./Name.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Name.schema.json"
     },
     "phone_number": {
       "description": "担当者の電話番号",

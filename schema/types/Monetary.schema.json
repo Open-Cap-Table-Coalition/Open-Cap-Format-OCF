@@ -6,11 +6,11 @@
   "properties": {
     "amount": {
       "description": "総額",
-      "$ref": "./Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "currency": {
       "description": "ISO 4217 国別通貨コード",
-      "$ref": "./CurrencyCode.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/CurrencyCode.schema.json"
     }
   },
   "additionalProperties": false,

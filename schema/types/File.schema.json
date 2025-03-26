@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/schema/types/File.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/File.schema.json",
   "title": "Type - File",
   "description": "ファイルの基底スキーマ",
   "type": "object",
@@ -10,7 +10,7 @@
     },
     "md5": {
       "description": "MD5ファイルチェックサム",
-      "$ref": "https://jocf.startupstandard.org/jocf/schema/types/Md5.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Md5.schema.json"
     }
   },
   "required": ["filepath", "md5"],

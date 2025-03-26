@@ -5,7 +5,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json"
     }
   ],
   "properties": {
@@ -15,7 +15,7 @@
     "conversion_mechanism": {
       "oneOf": [
         {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_mechanisms/JKISSConversionMechanism.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_mechanisms/JKISSConversionMechanism.schema.json"
         }
       ]
     },

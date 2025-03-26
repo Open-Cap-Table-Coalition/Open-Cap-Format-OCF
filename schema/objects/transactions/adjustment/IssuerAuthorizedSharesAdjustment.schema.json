@@ -5,13 +5,13 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/IssuerTransaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/IssuerTransaction.schema.json"
     }
   ],
   "properties": {
@@ -24,15 +24,15 @@
     "issuer_id": {},
     "new_shares_authorized": {
       "description": "新しい発行可能株式数",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "board_approval_date": {
       "description": "取締役会承認日付",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Date.schema.json"
     },
     "stockholder_approval_date": {
       "description": "株主承認日付",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Date.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Date.schema.json"
     }
   },
   "required": ["new_shares_authorized"],

@@ -6,7 +6,7 @@
       "type": "array",
       "description": "証券保有者のリスト",
       "items": {
-        "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/SecurityHolder.schema.json"
+        "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolder.schema.json"
       }
     },
     "file_type": {

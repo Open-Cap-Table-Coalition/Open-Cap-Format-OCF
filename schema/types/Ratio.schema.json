@@ -6,11 +6,11 @@
   "properties": {
     "numerator": {
       "description": "比率の分子",
-      "$ref": "./Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "denominator": {
       "description": "比率の分母",
-      "$ref": "./Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     }
   },
   "additionalProperties": false,

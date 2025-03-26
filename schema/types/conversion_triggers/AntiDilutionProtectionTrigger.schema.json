@@ -5,7 +5,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json"
     }
   ],
   "properties": {
@@ -35,7 +35,7 @@
     },
     "incentive_exclusion_ratio": {
       "description": "希薄化防止対象から除外される従業員インセンティブの比率",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "trigger_id": {},
     "trigger_description": {},

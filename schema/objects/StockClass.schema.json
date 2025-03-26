@@ -5,7 +5,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -30,20 +30,20 @@
     },
     "votes_per_share": {
       "description": "一株あたりの議決権(株主総会)",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "votes_per_share_at_class_meeting": {
       "description": "一株あたりの議決権(種類株主総会)",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "initial_shares_authorized": {
       "description": "株式発行時点での種類株式の発行可能株式数",
       "oneOf": [
         {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/AuthorizedShares.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/AuthorizedShares.schema.json"
         },
         {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
         }
       ]
     },
@@ -57,13 +57,13 @@
           "items": {
             "oneOf": [
               {
-                "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
+                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json"
               },
               {
-                "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/AntiDilutionProtectionInDownRoundTrigger.schema.json"
+                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AntiDilutionProtectionInDownRoundTrigger.schema.json"
               },
               {
-                "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
+                "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
               }
             ]
           }
@@ -74,7 +74,7 @@
           "properties": {
             "dividend_rate": {
               "description": "配当率(年率)",
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json",
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json",
               "minimum": 0,
               "maximum": 1
             },
@@ -99,7 +99,7 @@
           "properties": {
             "liquidation_preference_multiple": {
               "description": "残余財産分配倍率",
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json",
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json",
               "minimum": 0
             },
             "participation_category": {
@@ -112,7 +112,7 @@
             },
             "seniority": {
               "description": "残余財産分配順位",
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
             }
           },
           "required": ["liquidation_preference_multiple"]

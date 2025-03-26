@@ -5,16 +5,16 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json"
     },
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
     }
   ],
   "properties": {
@@ -23,19 +23,19 @@
     },
     "investment_amount": {
       "description": "発行されたコンバーティブルエクイティに対する総投資額",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Monetary.schema.json"
     },
     "investment_amount_per_quantity": {
       "description": "1コンバーティブルエクイティあたりの投資額",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Monetary.schema.json"
     },
     "quantity": {
       "description": "発行されるコンバーティブルエクイティの個数",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Numeric.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json"
     },
     "convertible_type": {
       "description": "発行されたコンバーティブルエクイティの種類",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/ConvertibleType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConvertibleType.schema.json"
     },
     "description": {
       "description": "説明",
@@ -56,7 +56,7 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
+            "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json"
           }
         ]
       }
@@ -71,7 +71,7 @@
     },
     "participation_cap_multiple": {
       "description": "参加上限額倍率",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Ratio.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Ratio.schema.json"
     },
     "investor_roles_and_authorities": {
       "description": "投資家の種類と権限",
@@ -103,11 +103,11 @@
     },
     "representations_and_warranties_by_issuing_company": {
       "description": "発行会社による表明および保証",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/IssuerRepresentationsAndWarranties.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/IssuerRepresentationsAndWarranties.schema.json"
     },
     "self_representations_and_warranties_by_investor": {
       "description": "投資家による発行会社に対する投資家自身に関する事項の表明および保証",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/InvestorSelfRepresentationsAndWarranties.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/InvestorSelfRepresentationsAndWarranties.schema.json"
     },
     "has_most_favored_nation_clause": {
       "description": "最恵待遇条項の有無",
@@ -123,7 +123,7 @@
     },
     "exercise_price": {
       "description": "コンバーティブルエクイティ1個あたりの行使時払込額",
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Monetary.schema.json"
     },
     "payment_due_date": {
       "description": "払込期日",
@@ -145,7 +145,7 @@
         },
         "mandatory_redemption_multiple": {
           "description": "強制償還倍率。発行体は、コンバーティブルエクイティ1個ごとに、発行価額に対して当該倍率をかけた金額を支払う。",
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/types/Ratio.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Ratio.schema.json"
         }
       },
       "required": ["has_mandatory_redemption_trigger"]

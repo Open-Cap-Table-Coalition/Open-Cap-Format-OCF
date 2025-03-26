@@ -5,7 +5,7 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/Object.schema.json"
     }
   ],
   "properties": {
@@ -17,10 +17,10 @@
       "description": "証券保有者間基本契約に合意する証券保有者の一覧",
       "oneOf": [
         {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/SecurityHolder.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolder.schema.json"
         },
         {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/SecurityholderGroup.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityholderGroup.schema.json"
         }
       ]
     },
@@ -29,10 +29,10 @@
       "description": "証券保有者間同意における当事者の一覧とその権限属性",
       "properties": {
         "securityholder_group": {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/SecurityholderGroup.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityholderGroup.schema.json"
         },
         "securityholder": {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/objects/Securityholder.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/Securityholder.schema.json"
         },
         "number_of_electable_directors": {
           "description": "取締役選任可能人数",
@@ -47,7 +47,7 @@
           "type": "array",
           "properties": {
             "matter_requiring_prior_action": {
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/MattersRequiringPriorActionType.schema.json"
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
             }
           }
         },
@@ -56,7 +56,7 @@
           "type": "array",
           "properties": {
             "matter_requiring_prior_action": {
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/MattersRequiringPriorActionType.schema.json"
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
             }
           }
         },
@@ -65,7 +65,7 @@
           "type": "array",
           "properties": {
             "matter_requiring_prior_action": {
-              "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/MattersRequiringPriorActionType.schema.json"
+              "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorActionType.schema.json"
             }
           }
         },
@@ -81,7 +81,7 @@
       "type": "array",
       "properties": {
         "financial_information": {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/FinancialInformationType.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/FinancialInformationType.schema.json"
         }
       }
     },
@@ -94,7 +94,7 @@
       "type": "array",
       "properties": {
         "material_information": {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/MaterialInformationType.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MaterialInformationType.schema.json"
         }
       }
     },
@@ -103,7 +103,7 @@
       "type": "array",
       "properties": {
         "action_of_managing_securityholder_requiring_prior_approval": {
-          "$ref": "https://jocf.startupstandard.org/jocf/main/schema/enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json"
+          "$ref": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json"
         }
       }
     },
