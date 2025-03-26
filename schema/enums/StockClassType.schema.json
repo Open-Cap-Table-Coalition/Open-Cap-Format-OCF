@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/StockClassType.schema.json",
   "title": "株式種類 - Enum",
   "description": "株式種類のEnum",
   "type": "string",

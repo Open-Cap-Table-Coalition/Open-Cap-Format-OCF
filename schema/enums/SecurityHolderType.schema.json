@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/SecurityHolderType.schema.json",
   "title": "証券保有者種類 - Enum",
   "description": "証券保有者種類のEnum",
   "type": "string",

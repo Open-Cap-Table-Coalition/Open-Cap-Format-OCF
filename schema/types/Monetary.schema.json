@@ -1,5 +1,5 @@
 {
-  "id": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json",
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/Monetary.schema.json",
   "title": "金額",
   "description": "特定の通貨における金額",
   "type": "object",

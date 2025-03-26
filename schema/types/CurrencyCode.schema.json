@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/CurrencyCode.schema.json",
   "title": "通貨コード",
   "description": "ISO 4217 国別通貨コード",
   "type": "string",

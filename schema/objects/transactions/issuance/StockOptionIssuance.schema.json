@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/issuance/StockOptionIssuance.schema.json",
   "title": "ストックオプション発行トランザクション",
   "description": "ストックオプション発行トランザクション",
   "type": "object",

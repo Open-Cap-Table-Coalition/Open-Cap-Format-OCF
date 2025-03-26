@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/ParticipationCategory.schema.json",
   "title": "参加型種別 - Enum",
   "description": "参加型/非参加型のEnum",
   "type": "string",

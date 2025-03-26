@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/CumulativeCategory.schema.json",
   "title": "累積型種別 - Enum",
   "description": "累積型/非累積型のEnum",
   "type": "string",

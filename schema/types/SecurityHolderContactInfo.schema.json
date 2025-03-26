@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/SecurityHolderContactInfo.schema.json",
   "title": "Type - 連絡先",
   "description": "個人の連絡先",
   "type": "object",

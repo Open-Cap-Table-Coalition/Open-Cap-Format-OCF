@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/transfer/StockTransfer.schema.json",
   "title": "株式異動トランザクション",
   "description": "株式異動トランザクション",
   "type": "object",

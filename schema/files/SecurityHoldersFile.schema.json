@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/files/SecurityHoldersFile.schema.json",
   "type": "object",
   "properties": {
     "items": {

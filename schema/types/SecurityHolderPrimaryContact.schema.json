@@ -1,4 +1,5 @@
 {
+  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/SecurityHolderPrimaryContact.schema.json",
   "title": "Type - 主要連絡先",
   "description": "組織（ファンドなど）の連絡先",
   "type": "object",
