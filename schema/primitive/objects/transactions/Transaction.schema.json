@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/Transaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/Transaction.schema.json",
   "title": "Primitive - Transaction",
   "description": "他のすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
   "type": "object",

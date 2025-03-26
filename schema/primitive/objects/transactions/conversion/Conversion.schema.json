@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/conversion/Conversion.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/conversion/Conversion.schema.json",
   "title": "Primitive - 転換トランザクション",
   "description": "証券の転換権の行使に関するトランザクションの基底クラス",
   "type": "object",

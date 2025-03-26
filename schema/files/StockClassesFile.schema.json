@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/files/StockClassesFile.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//files/StockClassesFile.schema.json",
   "title": "JOCF Stock Classes File",
   "description": "株式種類に関するファイル",
   "type": "object",

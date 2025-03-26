@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/cancellation/StockOptionCancellation.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/cancellation/StockOptionCancellation.schema.json",
   "title": "ストックオプション消却トランザクション",
   "description": "ストックオプション消却トランザクション",
   "type": "object",

@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/conversion/StockConversion.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/conversion/StockConversion.schema.json",
   "title": "株式転換トランザクション",
   "description": "株式転換トランザクション",
   "type": "object",

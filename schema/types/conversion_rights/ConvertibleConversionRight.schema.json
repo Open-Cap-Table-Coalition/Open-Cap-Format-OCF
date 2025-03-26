@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_rights/ConvertibleConversionRight.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_rights/ConvertibleConversionRight.schema.json",
   "title": "Type - コンバーティブルエクイティの転換権",
   "description": "コンバーティブルエクイティの株式クラスへの転換権を表現するクラス",
   "type": "object",

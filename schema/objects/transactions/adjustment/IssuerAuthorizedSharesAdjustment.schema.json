@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json",
   "title": "Object - Issuer Authorized Shares Adjustment Transaction",
   "description": "発行者レベルで認可された株式の数を変更するイベントを説明するオブジェクト。",
   "type": "object",

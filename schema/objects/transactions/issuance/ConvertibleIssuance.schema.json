@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/issuance/ConvertibleIssuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/issuance/ConvertibleIssuance.schema.json",
   "title": "コンバーティブルエクイティ発行トランザクション",
   "description": "コンバーティブルエクイティ発行トランザクション",
   "type": "object",

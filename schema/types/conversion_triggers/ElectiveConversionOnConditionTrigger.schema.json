@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json",
   "title": "Type - Elective Conversion On Condition",
   "description": "特定の条件を満たした場合に転換するかどうかを選択可能なトリガー",
   "type": "object",

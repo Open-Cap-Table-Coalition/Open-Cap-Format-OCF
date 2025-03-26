@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/split/StockSplit.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/split/StockSplit.schema.json",
   "title": "株式分割トランザクション",
   "description": "株式分割トランザクション",
   "type": "object",

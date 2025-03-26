@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/FinancialInformationType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/FinancialInformationType.schema.json",
   "title": "Enum - Financial Information Type",
   "description": "財務情報等の種別",
   "type": "string",

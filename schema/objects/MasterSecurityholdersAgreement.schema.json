@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/MasterSecurityholdersAgreement.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/MasterSecurityholdersAgreement.schema.json",
   "title": "Object - Master of Securityholders Agreement",
   "description": "証券保有者間同意における基本契約",
   "type": "object",

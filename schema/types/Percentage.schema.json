@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/Percentage.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/Percentage.schema.json",
   "title": "Type - Percentage",
   "description": "0から1までの小数点以下10桁までのパーセンテージ",
   "type": "string",

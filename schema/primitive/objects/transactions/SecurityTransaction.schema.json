@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/SecurityTransaction.schema.json",
   "title": "Primitive - Security Transaction",
   "description": "特定の証券単位でのトランザクションに関する基底クラス",
   "type": "object",

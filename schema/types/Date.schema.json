@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/Date.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/Date.schema.json",
   "title": "Type - Date",
   "description": "ISO-8601日付を表すタイプ、例えば2022-01-28",
   "type": "string",

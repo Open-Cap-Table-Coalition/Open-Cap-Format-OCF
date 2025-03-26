@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/AuthorizedShares.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/AuthorizedShares.schema.json",
   "title": "Enum - Authorized Shares Types",
   "description": "発行可能株式数のENUM値",
   "type": "string",

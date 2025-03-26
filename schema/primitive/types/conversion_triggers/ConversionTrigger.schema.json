@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/types/conversion_triggers/ConversionTrigger.schema.json",
   "title": "Primitive - Conversion Trigger Type",
   "description": "転換トリガーに関する基底クラス",
   "type": "object",

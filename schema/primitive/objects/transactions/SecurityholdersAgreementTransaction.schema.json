@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/primitives/objects/transactions/SecurityholdersAgreementTransaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/SecurityholdersAgreementTransaction.schema.json",
   "title": "Primitive - Securityholders Agreement Transaction",
   "description": "証券保有者間同意に影響を与えるすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
   "type": "object",

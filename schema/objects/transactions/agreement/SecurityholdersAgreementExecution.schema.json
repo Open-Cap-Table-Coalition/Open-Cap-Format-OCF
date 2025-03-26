@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/objects/transactions/agreement/SecurityholdersAgreementExecution.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/agreement/SecurityholdersAgreementExecution.schema.json",
   "title": "Transaction - Securityholders Agreement Execution",
   "description": "証券保有者間同意の成立に関するトランザクション",
   "type": "object",

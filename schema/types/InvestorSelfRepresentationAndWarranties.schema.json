@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/InvestorSelfRepresentationsAndWarranties.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/InvestorSelfRepresentationsAndWarranties.schema.json",
   "title": "Primitive - 投資家の自身に関する表明および保証",
   "description": "投資家による投資家自身に関する表明および保証",
   "type": "object",

@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/types/IssuerRepresentationsAndWarranties.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/IssuerRepresentationsAndWarranties.schema.json",
   "title": "Primitive - 発行会社に関する保証と表明",
   "description": "発行会社に関する事項についての保証と表明を表すクラス",
   "type": "object",

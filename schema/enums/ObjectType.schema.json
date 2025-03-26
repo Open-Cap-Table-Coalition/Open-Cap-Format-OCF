@@ -1,5 +1,5 @@
 {
-  "$id": "https://jocf.startupstandard.org/jocf/main/schema/enums/ObjectType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/ObjectType.schema.json",
   "title": "Enum - Object Type",
   "description": "オブジェクトタイプの列挙",
   "type": "string",
