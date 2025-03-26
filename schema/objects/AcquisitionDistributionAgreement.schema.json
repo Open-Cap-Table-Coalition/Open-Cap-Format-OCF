@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/AcquisitionDistributionAgreement.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/AcquisitionDistributionAgreement.schema.json",
   "title": "Object - Acquisition Distribution Agreement",
   "description": "買収に係る分配に関する契約",
   "type": "object",

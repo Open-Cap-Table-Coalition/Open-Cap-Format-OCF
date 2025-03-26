@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/ConversionMechanismType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConversionMechanismType.schema.json",
   "title": "Enum - 転換メカニズム",
   "description": "転換メカニズムの種別",
   "type": "string",

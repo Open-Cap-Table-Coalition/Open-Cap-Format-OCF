@@ -1,6 +1,6 @@
 {
   "title": "Type - Elective Conversion At Will",
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json",
   "description": "投資家の意思で実行されるトリガー",
   "type": "object",
   "allOf": [

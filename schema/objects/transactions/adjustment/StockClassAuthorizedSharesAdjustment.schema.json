@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json",
   "title": "Object - 株式クラス発行可能株式調整トランザクション",
   "description": "株式クラスの発行可能株式数を変更するためのイベント",
   "type": "object",

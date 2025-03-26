@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/types/conversion_rights/ConversionRight.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/types/conversion_rights/ConversionRight.schema.json",
   "title": "Primitive - Conversion Right Type",
   "description": "転換権を表す基底クラス",
   "type": "object",

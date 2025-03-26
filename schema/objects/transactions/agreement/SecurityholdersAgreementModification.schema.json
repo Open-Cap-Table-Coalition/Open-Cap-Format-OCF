@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/agreement/SecurityholdersAgreementModification.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/agreement/SecurityholdersAgreementModification.schema.json",
   "title": "Transaction - Securityholders Agreement Modification",
   "description": "証券保有者間同意の改定に関するトランザクション",
   "type": "object",

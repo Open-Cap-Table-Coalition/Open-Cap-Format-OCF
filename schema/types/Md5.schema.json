@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/Md5.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Md5.schema.json",
   "title": "Type - MD5 Hash",
   "description": "文字（大文字または小文字）と数字で構成される32文字の文字列の基本的な検証によるMD5ハッシュの文字列表現",
   "type": "string",

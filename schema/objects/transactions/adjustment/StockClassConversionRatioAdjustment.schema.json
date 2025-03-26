@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json",
   "title": "株式クラスの転換比率の調整トランザクション",
   "description": "ダウンラウンドなどに起因した希薄化防止条項の発動による、優先株の転換比率の調整の発生を表現するトランザクション",
   "type": "object",

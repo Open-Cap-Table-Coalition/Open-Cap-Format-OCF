@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/Numeric.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/Numeric.schema.json",
   "title": "Type - Numeric",
   "description": "固定小数点の実数(小数点以下最大10桁)",
   "type": "string",

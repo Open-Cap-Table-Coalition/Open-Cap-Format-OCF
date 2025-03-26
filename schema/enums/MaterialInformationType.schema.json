@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/MaterialInformationType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MaterialInformationType.schema.json",
   "title": "Enum - Material Information Type",
   "description": "重要情報の種別",
   "type": "string",

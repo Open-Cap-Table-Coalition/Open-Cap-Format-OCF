@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/RoundingType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/RoundingType.schema.json",
   "title": "Enum - Rounding Type",
   "description": "丸め方のEnum",
   "type": "string",

@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/MattersRequiringPriorAction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/MattersRequiringPriorAction.schema.json",
   "title": "Enum - Matters Requiring Prior Action",
   "description": "承諾・協議・通知などの事前の行動が必要な事項",
   "type": "string",

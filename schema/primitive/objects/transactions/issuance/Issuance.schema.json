@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/issuance/Issuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/issuance/Issuance.schema.json",
   "title": "Primitive - 証券発行トランザクション",
   "description": "発行トランザクションの基底クラス",
   "type": "object",

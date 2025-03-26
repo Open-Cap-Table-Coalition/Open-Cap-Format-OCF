@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ActionsOfManagingSecurityholderRequiringPriorApprovalType.schema.json",
   "title": "Enum - Actions of Managing Securityholder Requiring Prior Approval Type",
   "description": "事前に投資家株主の承認が必要な経営株主の行為の種別",
   "type": "string",

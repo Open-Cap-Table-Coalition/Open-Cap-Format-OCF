@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/ConvertibleType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConvertibleType.schema.json",
   "title": "コンバーティブルエクイティの種類",
   "description": "コンバーティブルエクイティ種類のEnum",
   "type": "string",

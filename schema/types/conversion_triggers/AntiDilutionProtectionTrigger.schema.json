@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_triggers/AntiDilutionProtectionTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AntiDilutionProtectionTrigger.schema.json",
   "title": "Type - Conversion on Down Round Trigger",
   "description": "ダウンラウンドによる希薄化防止条項が発動するトリガー",
   "type": "object",

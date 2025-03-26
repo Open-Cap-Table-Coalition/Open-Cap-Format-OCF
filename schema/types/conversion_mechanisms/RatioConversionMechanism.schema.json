@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_mechanisms/RatioConversionMechanism.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_mechanisms/RatioConversionMechanism.schema.json",
   "title": "Conversion Mechanism - Ratio",
   "description": "比率による転換メカニズムを設定します（例えば、優先株から普通株式への転換を記述するために使用されます)",
   "type": "object",

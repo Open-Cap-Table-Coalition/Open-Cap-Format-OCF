@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/issuance/StockOptionIssuance.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/issuance/StockOptionIssuance.schema.json",
   "title": "ストックオプション発行トランザクション",
   "description": "ストックオプション発行トランザクション",
   "type": "object",

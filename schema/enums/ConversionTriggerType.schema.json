@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/ConversionTriggerType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/ConversionTriggerType.schema.json",
   "title": "Enum - Trigger Type",
   "description": "様々な転換トリガーの種別を表現するENUM値",
   "type": "string",

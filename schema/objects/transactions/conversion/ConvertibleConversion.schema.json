@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/transactions/conversion/ConvertibleConversion.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/transactions/conversion/ConvertibleConversion.schema.json",
   "title": "コンバーティブルエクイティ転換トランザクション",
   "description": "コンバーティブルエクイティ転換トランザクション",
   "type": "object",

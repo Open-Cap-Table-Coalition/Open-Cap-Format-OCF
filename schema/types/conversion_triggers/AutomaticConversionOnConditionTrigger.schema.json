@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/conversion_triggers/AutomaticConversionOnConditionTrigger.schema.json",
   "title": "Type - Automatic Conversion on Condition Trigger",
   "description": "条件により自動的に発動するトリガー",
   "type": "object",

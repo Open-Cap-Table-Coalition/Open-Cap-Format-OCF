@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/StockClassTransaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/StockClassTransaction.schema.json",
   "title": "Primitive - Stock Class Transaction",
   "description": "株式クラスに影響を与えるすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
   "type": "object",

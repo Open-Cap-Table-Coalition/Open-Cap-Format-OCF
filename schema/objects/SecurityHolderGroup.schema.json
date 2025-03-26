@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//objects/SecurityHolderGroup.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/objects/SecurityHolderGroup.schema.json",
   "title": "Object - Security Holder Group",
   "description": "証券保有者グループ",
   "type": "object",

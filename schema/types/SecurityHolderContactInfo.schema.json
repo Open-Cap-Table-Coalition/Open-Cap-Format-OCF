@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//types/SecurityHolderContactInfo.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/types/SecurityHolderContactInfo.schema.json",
   "title": "Type - 連絡先",
   "description": "個人の連絡先",
   "type": "object",

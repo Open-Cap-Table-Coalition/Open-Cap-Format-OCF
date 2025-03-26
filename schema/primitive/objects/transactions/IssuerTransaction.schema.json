@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//primitives/objects/transactions/IssuerTransaction.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/primitives/objects/transactions/IssuerTransaction.schema.json",
   "title": "Primitive - Issuer Transaction",
   "description": "発行者に影響を与えるすべてのトランザクションオブジェクトによって拡張される抽象トランザクションオブジェクト",
   "type": "object",

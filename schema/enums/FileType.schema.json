@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema//enums/FileType.schema.json",
+  "$id": "https://raw.githubusercontent.com/StartupDataStandardizationAssociation/Japan-Open-Cap-Format-JOCF/main/schema/enums/FileType.schema.json",
   "title": "Enum - JOCF File Type",
   "description": "JOCFファイル種別, ファイル内のJSONオブジェクトを適切なスキーマでロードするために使用される",
   "type": "string",
