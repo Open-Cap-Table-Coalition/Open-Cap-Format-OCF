@@ -11,7 +11,8 @@
       },
       "stakeholder_type": "INDIVIDUAL",
       "issuer_assigned_id": "Employee-1",
-      "current_relationship": "EMPLOYEE",
+      "current_relationships": ["EMPLOYEE"],
+      "current_status": "LEAVE_OF_ABSENCE",
       "contact_info": {
         "phone_numbers": [
           {
@@ -68,7 +69,8 @@
       },
       "stakeholder_type": "INSTITUTION",
       "issuer_assigned_id": "Entity-1",
-      "current_relationship": "INVESTOR",
+      "current_relationships": ["INVESTOR", "CONSULTANT", "EX_EMPLOYEE"],
+      "current_status": "ACTIVE",
       "primary_contact": {
         "name": {
           "legal_name": "Todd Fund Manager",

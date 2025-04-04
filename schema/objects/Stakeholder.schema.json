@@ -27,7 +27,20 @@
     },
     "current_relationship": {
       "description": "What is the current relationship of the stakeholder to the issuer?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json",
+      "$comment": "Deprecated in v2, see `current_relationships` array instead"
+    },
+    "current_relationships": {
+      "title": "Stakeholder - Relationships Array",
+      "description": "What is/are the current relationship(s) of the stakeholder to the issuer?",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderRelationshipType.schema.json"
+      }
+    },
+    "current_status": {
+      "description": "What is the current activity status of the stakeholder?",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderStatusType.schema.json"
     },
     "primary_contact": {
       "description": "The primary contact info for an institutional stakeholder",

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/change_event/StakeholderChangeEvent.schema.json",
+  "title": "Primitive - Stakeholder Change Event",
+  "description": "Abstract change event \"transaction\" object to be extended by all change event \"transaction\" objects that affect a stakeholder",
+  "type": "object",
+  "properties": {
+    "stakeholder_id": {
+      "description": "Identifier of the Stakeholder object, a subject of this change event \"transaction\"",
+      "type": "string"
+    }
+  },
+  "required": ["stakeholder_id"],
+  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/primitives/objects/transactions/change_event/StakeholderChangeEvent.schema.json"
+}
