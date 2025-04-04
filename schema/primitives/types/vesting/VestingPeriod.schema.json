@@ -18,6 +18,11 @@
       "description": "The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36`",
       "type": "integer",
       "minimum": 1
+    },
+    "cliff_installment": {
+      "description": "If specified, the 1-indexed vesting installment at which the cliff condition occurs. If this field is not provided or less than 2, it is treated as as if no cliff applies.",
+      "type": "integer",
+      "minimum": 0
     }
   },
   "required": ["length", "type", "occurrences"],

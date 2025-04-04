@@ -18,7 +18,8 @@
     "day_of_month": {
       "description": "The calendar day of a month to award vesting.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingDayOfMonth.schema.json"
-    }
+    },
+    "cliff_installment": {}
   },
   "required": ["day_of_month"],
   "additionalProperties": false,
