@@ -5,5 +5,5 @@
   "description": "Enumeration of how the number of days are determined per period",
   "type": "string",
   "enum": ["ACTUAL_365", "30_360"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/DayCountType.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/DayCountType.schema.json"
 }

@@ -24,5 +24,5 @@
   },
   "additionalProperties": false,
   "required": ["trigger_id", "trigger_condition", "type", "conversion_right"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json"
 }

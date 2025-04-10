@@ -5,5 +5,5 @@
   "description": "Enumeration of stock class types",
   "type": "string",
   "enum": ["COMMON", "PREFERRED"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/StockClassType.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/StockClassType.schema.json"
 }
