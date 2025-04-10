@@ -14,4 +14,4 @@
 
 **Source Code:** [schema/primitives/types/vesting/VestingConditionTrigger](../../../../../../schema/primitives/types/vesting/VestingConditionTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

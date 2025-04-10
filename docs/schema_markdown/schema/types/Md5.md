@@ -10,4 +10,4 @@
 
 **Source Code:** [schema/types/Md5](../../../../schema/types/Md5.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

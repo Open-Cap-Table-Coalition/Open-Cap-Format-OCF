@@ -8,4 +8,4 @@
 
 **Source Code:** [schema/enums/InterestPayoutType](../../../../schema/enums/InterestPayoutType.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

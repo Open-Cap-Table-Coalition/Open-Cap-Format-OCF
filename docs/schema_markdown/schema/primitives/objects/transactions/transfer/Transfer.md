@@ -16,4 +16,4 @@
 
 **Source Code:** [schema/primitives/objects/transactions/transfer/Transfer](../../../../../../../schema/primitives/objects/transactions/transfer/Transfer.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

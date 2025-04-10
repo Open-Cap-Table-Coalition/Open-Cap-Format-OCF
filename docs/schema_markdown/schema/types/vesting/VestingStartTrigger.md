@@ -14,4 +14,4 @@ _Describes a vesting condition satisfied at the security's vesting commencement 
 
 **Source Code:** [schema/types/vesting/VestingStartTrigger](../../../../../schema/types/vesting/VestingStartTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

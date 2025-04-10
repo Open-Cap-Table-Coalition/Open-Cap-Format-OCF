@@ -20,4 +20,4 @@ _Type representation of elective trigger valid on or after start_date and until 
 
 **Source Code:** [schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger](../../../../../schema/types/conversion_triggers/ElectiveConversionInDateRangeTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

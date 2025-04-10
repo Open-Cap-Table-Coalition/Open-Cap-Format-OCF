@@ -35,7 +35,7 @@
     },
     "country_subdivision_name_of_formation": {
       "description": "The text name of state, province, or subdivision where the issuer company was legally formed if the code is not available",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionName.schema.json"
+      "type": "string"
     },
     "tax_ids": {
       "title": "Issuer - Tax ID Array",

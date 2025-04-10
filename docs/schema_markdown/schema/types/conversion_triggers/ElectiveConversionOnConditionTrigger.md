@@ -19,4 +19,4 @@ _Type representation of elective trigger on fulfillment of a condition._
 
 **Source Code:** [schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger](../../../../../schema/types/conversion_triggers/ElectiveConversionOnConditionTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

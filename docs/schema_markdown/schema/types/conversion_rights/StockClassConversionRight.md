@@ -17,4 +17,4 @@ _Type representation of a conversion right from one Stock Class into another Sto
 
 **Source Code:** [schema/types/conversion_rights/StockClassConversionRight](../../../../../schema/types/conversion_rights/StockClassConversionRight.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

@@ -18,4 +18,4 @@ _Use this where no structured data is available regarding what triggers the conv
 
 **Source Code:** [schema/types/conversion_triggers/UnspecifiedConversionTrigger](../../../../../schema/types/conversion_triggers/UnspecifiedConversionTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.
