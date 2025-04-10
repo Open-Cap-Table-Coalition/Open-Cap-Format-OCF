@@ -388,6 +388,19 @@
       "comments": ["comment-one", "comment-two", "..."]
     },
     {
+      "object_type": "TX_EQUITY_COMPENSATION_REPRICING",
+      "id": "reprice_event_id",
+      "date": "2024-02-01",
+      "security_id": "bobs_equity_issuance_1",
+      "new_exercise_price": {
+        "amount": "2.45",
+        "currency": "USD"
+      },
+      "comments": [
+        "The CEO said 'The troops are getting restless after that down-round. Incetivize those employees!'"
+      ]
+    },
+    {
       "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
       "id": "test-plan-security-issuance-minimal",
       "security_id": "test-plan-security-id",
@@ -416,6 +429,29 @@
           "period_type": "DAYS"
         }
       ]
+    },
+    {
+      "object_type": "TX_EQUITY_COMPENSATION_ISSUANCE",
+      "id": "test-plan-security-issuance-minimal-with-vestings-array",
+      "security_id": "test-plan-security-id",
+      "date": "2023-06-07",
+      "security_law_exemptions": [],
+      "stakeholder_id": "test-stakeholder-id",
+      "custom_id": "CA-2",
+      "stock_plan_id": "test-stock-plan-id",
+      "compensation_type": "RSU",
+      "quantity": "10000",
+      "exercise_price": {
+        "amount": "50.00",
+        "currency": "USD"
+      },
+      "vestings": [
+        { "date": "2024-06-07", "amount": "3333" },
+        { "date": "2025-06-07", "amount": "3334" },
+        { "date": "2026-06-07", "amount": "3333" }
+      ],
+      "expiration_date": "2031-06-07",
+      "termination_exercise_windows": []
     },
     {
       "object_type": "TX_VESTING_START",
@@ -491,6 +527,12 @@
         "currency": "CAD"
       },
       "vesting_terms_id": "custom-vesting-100pct-upfront",
+      "vestings": [
+        {
+          "date": "2019-12-12",
+          "amount": "100"
+        }
+      ],
       "expiration_date": "2031-01-20",
       "termination_exercise_windows": [
         {
@@ -809,14 +851,53 @@
         "amount": "1.00",
         "currency": "USD"
       },
-      "quantity": "1000",
+      "quantity": "4800",
       "cost_basis": {
         "amount": "0",
         "currency": "USD"
       },
       "stock_legend_ids": ["stock-legend-id-1", "stock-legend-id-2"],
       "comments": ["Here is a comment", "Here is another comment"],
-      "vesting_terms_id": "4yr-1yr-cliff-schedule"
+      "vesting_terms_id": "4yr-1yr-cliff-schedule",
+      "vestings": [
+        { "date": "2023-02-01", "amount": "1200" },
+        { "date": "2023-03-01", "amount": "100" },
+        { "date": "2023-04-01", "amount": "100" },
+        { "date": "2023-05-01", "amount": "100" },
+        { "date": "2023-06-01", "amount": "100" },
+        { "date": "2023-07-01", "amount": "100" },
+        { "date": "2023-08-01", "amount": "100" },
+        { "date": "2023-09-01", "amount": "100" },
+        { "date": "2023-10-01", "amount": "100" },
+        { "date": "2023-11-01", "amount": "100" },
+        { "date": "2023-12-01", "amount": "100" },
+        { "date": "2024-01-01", "amount": "100" },
+        { "date": "2024-02-01", "amount": "100" },
+        { "date": "2024-03-01", "amount": "100" },
+        { "date": "2024-04-01", "amount": "100" },
+        { "date": "2024-05-01", "amount": "100" },
+        { "date": "2024-06-01", "amount": "100" },
+        { "date": "2024-07-01", "amount": "100" },
+        { "date": "2024-08-01", "amount": "100" },
+        { "date": "2024-09-01", "amount": "100" },
+        { "date": "2024-10-01", "amount": "100" },
+        { "date": "2024-11-01", "amount": "100" },
+        { "date": "2024-12-01", "amount": "100" },
+        { "date": "2025-01-01", "amount": "100" },
+        { "date": "2025-02-01", "amount": "100" },
+        { "date": "2025-03-01", "amount": "100" },
+        { "date": "2025-04-01", "amount": "100" },
+        { "date": "2025-05-01", "amount": "100" },
+        { "date": "2025-06-01", "amount": "100" },
+        { "date": "2025-07-01", "amount": "100" },
+        { "date": "2025-08-01", "amount": "100" },
+        { "date": "2025-09-01", "amount": "100" },
+        { "date": "2025-10-01", "amount": "100" },
+        { "date": "2025-11-01", "amount": "100" },
+        { "date": "2025-12-01", "amount": "100" },
+        { "date": "2026-01-01", "amount": "100" },
+        { "date": "2026-02-01", "amount": "100" }
+      ]
     },
     {
       "object_type": "TX_VESTING_START",
@@ -835,6 +916,17 @@
         "resultant-security-id-2",
         "resultant-security-id-3"
       ]
+    },
+    {
+      "object_type": "TX_STOCK_CONSOLIDATION",
+      "id": "test-stock-consolidation",
+      "resulting_security_id": "consolidated-security-id",
+      "date": "2022-02-01",
+      "security_ids": [
+        "consolidating-security-id-1",
+        "consolidating-security-id-2"
+      ],
+      "reason_text": "We want to colsolidate these positions for ease of management."
     },
     {
       "object_type": "TX_STOCK_REISSUANCE",
@@ -1125,7 +1217,7 @@
       "stakeholder_id": "stakeholder-id",
       "consideration_text": "1.00 USD",
       "custom_id": "W-2",
-      "quantity": "1000",
+      "quantity": "22538",
       "exercise_triggers": [
         {
           "trigger_id": "WARRANT-1.TRIG.1",
@@ -1138,7 +1230,7 @@
             "type": "WARRANT_CONVERSION_RIGHT",
             "conversion_mechanism": {
               "type": "FIXED_AMOUNT_CONVERSION",
-              "converts_to_quantity": "1000.00"
+              "converts_to_quantity": "22538"
             },
             "converts_to_stock_class_id": "stock-class-id"
           }
@@ -1153,7 +1245,13 @@
         "currency": "USD"
       },
       "comments": ["Here is a comment", "Here is another comment"],
-      "vesting_terms_id": "4yr-1yr-cliff-schedule",
+      "vesting_terms_id": "one-year-quarterly",
+      "vestings": [
+        { "date": "2022-05-01", "amount": "5635" },
+        { "date": "2022-08-01", "amount": "5634" },
+        { "date": "2022-11-01", "amount": "5635" },
+        { "date": "2023-02-01", "amount": "5634" }
+      ],
       "warrant_expiration_date": "2032-02-01"
     },
     {
@@ -1302,6 +1400,39 @@
       "board_approval_date": "2022-11-14",
       "stockholder_approval_date": "2022-11-14",
       "shares_reserved": "100000000"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-started-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-01-01",
+      "relationship_started": "INVESTOR"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-ended-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-06-07",
+      "relationship_ended": "BOARD_MEMBER"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_RELATIONSHIP",
+      "id": "change-event-stakeholder-relationship-both-started-and-ended-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-09-10",
+      "relationship_started": "CONSULTANT",
+      "relationship_ended": "EMPLOYEE"
+    },
+    {
+      "object_type": "CE_STAKEHOLDER_STATUS",
+      "id": "change-event-stakeholder-status-sample",
+      "comments": ["Here is a comment", "Here is another comment"],
+      "stakeholder_id": "91c51259-87a0-42bc-b8c7-cf99d295cc8a",
+      "date": "2024-08-08",
+      "new_status": "TERMINATION_VOLUNTARY_GOOD_CAUSE"
     }
   ]
 }
