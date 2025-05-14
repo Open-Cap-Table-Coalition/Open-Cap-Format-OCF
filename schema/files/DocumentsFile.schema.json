@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/DocumentsFile.schema.json",
   "title": "File - Documents",
-  "description": "JSON containing file type identifier and list of document objects",
+  "description": "JSON file schema defining a list of documents. Each object includes either a relative file path (within a ZIP archive) or a URI, an MD5 hash for integrity, and optional references to related OCF objects. This schema links unstructured legal files to structured cap table data.",
   "type": "object",
   "allOf": [
     {
@@ -22,6 +22,9 @@
     }
   },
   "additionalProperties": false,
-  "required": ["items", "file_type"],
+  "required": [
+    "items",
+    "file_type"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/DocumentsFile.schema.json"
 }

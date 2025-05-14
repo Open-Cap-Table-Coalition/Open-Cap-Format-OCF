@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repurchase/StockRepurchase.schema.json",
   "title": "Object - Stock Repurchase Transaction",
-  "description": "Object describing a stock repurchase transaction",
+  "description": "Object describing the repurchase of a stock security, including date, quantity, per-share repurchase price, and related security.",
   "type": "object",
   "allOf": [
     {
