@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json",
   "title": "Object - Convertible Acceptance Transaction",
-  "description": "Object describing a convertible acceptance transaction",
+  "description": "Captures the formal acceptance of a convertible security by the stakeholder, recording the security ID, acceptance date, and optional comments.",
   "type": "object",
   "allOf": [
     {

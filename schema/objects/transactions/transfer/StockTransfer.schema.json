@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json",
   "title": "Object - Stock Transfer Transaction",
-  "description": "Object describing a transfer or secondary sale of a stock security",
+  "description": "Object schema describing a stock transfer or secondary sale transaction, resulting in one or more new securities.",
   "type": "object",
   "allOf": [
     {
@@ -35,6 +35,8 @@
     "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["quantity"],
+  "required": [
+    "quantity"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/transfer/StockTransfer.schema.json"
 }

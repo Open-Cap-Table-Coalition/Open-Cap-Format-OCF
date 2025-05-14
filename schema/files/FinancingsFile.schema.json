@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/FinancingsFile.schema.json",
   "title": "File - Financings",
-  "description": "JSON containing file type identifier and list of financings",
+  "description": "JSON file schema defining a list of financings. Each object represents a financing round, identified by name, date, and associated issuance IDs. Used to group and reference multiple issuances under a single financing event.",
   "type": "object",
   "allOf": [
     {
@@ -22,6 +22,9 @@
     }
   },
   "additionalProperties": false,
-  "required": ["items", "file_type"],
+  "required": [
+    "items",
+    "file_type"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/FinancingsFile.schema.json"
 }

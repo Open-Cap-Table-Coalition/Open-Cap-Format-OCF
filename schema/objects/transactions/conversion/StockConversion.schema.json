@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/StockConversion.schema.json",
   "title": "Object - Stock Conversion Transaction",
-  "description": "Object describing a conversion of stock",
+  "description": "Records the conversion of an existing stock security into one or more new securities, specifying the quantity converted and resulting security identifiers.",
   "type": "object",
   "allOf": [
     {
@@ -37,6 +37,8 @@
     "resulting_security_ids": {}
   },
   "additionalProperties": false,
-  "required": ["quantity_converted"],
+  "required": [
+    "quantity_converted"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/conversion/StockConversion.schema.json"
 }

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingStart.schema.json",
   "title": "Object - Vesting Start Transaction",
-  "description": "Object describing the transaction of vesting schedule start / commencement associated with a security",
+  "description": "Object schema describing the start of a vesting schedule for a security. It records the triggering of a VESTING_START_DATE condition within the associated vesting terms.",
   "type": "object",
   "allOf": [
     {
@@ -29,6 +29,8 @@
     "security_id": {}
   },
   "additionalProperties": false,
-  "required": ["vesting_condition_id"],
+  "required": [
+    "vesting_condition_id"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting/VestingStart.schema.json"
 }

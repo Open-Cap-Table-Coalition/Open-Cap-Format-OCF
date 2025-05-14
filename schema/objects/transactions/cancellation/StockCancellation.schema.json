@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/StockCancellation.schema.json",
   "title": "Object - Stock Cancellation Transaction",
-  "description": "Object describing a cancellation of a stock security",
+  "description": "Records the cancellation of a stock security, including the quantity cancelled, effective date, reason for cancellation, and reference to the affected security. Used to reduce or nullify previously issued stock holdings.",
   "type": "object",
   "allOf": [
     {
@@ -34,6 +34,8 @@
     "reason_text": {}
   },
   "additionalProperties": false,
-  "required": ["quantity"],
+  "required": [
+    "quantity"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/cancellation/StockCancellation.schema.json"
 }

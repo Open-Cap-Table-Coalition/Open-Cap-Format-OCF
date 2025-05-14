@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json",
   "title": "File - Stakeholders",
-  "description": "JSON containing file type identifier and list of stakeholders",
+  "description": "JSON file schema defining a list of stakeholders. Each object includes personal or institutional information, relationship to the issuer, contact info, tax IDs, addresses, and current status (e.g. ACTIVE, TERMINATED). Supports both individuals and institutions with rich, structured identity and role metadata.",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json"
@@ -22,6 +22,9 @@
     }
   },
   "additionalProperties": false,
-  "required": ["items", "file_type"],
+  "required": [
+    "items",
+    "file_type"
+  ],
   "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files/StakeholdersFile.schema.json"
 }

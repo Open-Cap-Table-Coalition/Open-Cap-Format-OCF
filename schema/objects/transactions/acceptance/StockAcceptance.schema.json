@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/StockAcceptance.schema.json",
   "title": "Object - Stock Acceptance Transaction",
-  "description": "Object describing a stock acceptance transaction",
+  "description": "Records the acceptance of a stock security by a stakeholder, including the date and security ID, signaling the stakeholder’s acknowledgment or execution of rights under the stock instrument.",
   "type": "object",
   "allOf": [
     {
