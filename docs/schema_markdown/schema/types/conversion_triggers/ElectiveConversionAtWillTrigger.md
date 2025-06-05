@@ -18,4 +18,4 @@ _Type representation of elective trigger valid at will (so long as instrument is
 
 **Source Code:** [schema/types/conversion_triggers/ElectiveConversionAtWillTrigger](../../../../../schema/types/conversion_triggers/ElectiveConversionAtWillTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

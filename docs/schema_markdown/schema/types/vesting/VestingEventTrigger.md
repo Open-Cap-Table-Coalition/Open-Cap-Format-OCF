@@ -14,4 +14,4 @@ _Describes a vesting condition satisfied when a particular unscheduled event occ
 
 **Source Code:** [schema/types/vesting/VestingEventTrigger](../../../../../schema/types/vesting/VestingEventTrigger.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

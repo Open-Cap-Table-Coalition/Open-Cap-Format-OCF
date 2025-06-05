@@ -18,4 +18,4 @@ _Sets forth inputs and conversion mechanism based on price per share of a future
 
 **Source Code:** [schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism](../../../../../schema/types/conversion_mechanisms/SharePriceBasedConversionMechanism.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

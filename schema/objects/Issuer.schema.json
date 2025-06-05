@@ -30,8 +30,12 @@
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountryCode.schema.json"
     },
     "country_subdivision_of_formation": {
-      "description": "The state, province, or subdivision where the issuer company was legally formed",
+      "description": "The code for the state, province, or subdivision where the issuer company was legally formed",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json"
+    },
+    "country_subdivision_name_of_formation": {
+      "description": "The text name of state, province, or subdivision where the issuer company was legally formed if the code is not available",
+      "type": "string"
     },
     "tax_ids": {
       "title": "Issuer - Tax ID Array",
@@ -67,7 +71,27 @@
     "id": {},
     "comments": {}
   },
+  "anyOf": [
+    {
+      "oneOf": [
+        {
+          "required": ["country_subdivision_of_formation"]
+        },
+        {
+          "required": ["country_subdivision_name_of_formation"]
+        }
+      ]
+    },
+    {
+      "not": {
+        "required": [
+          "country_subdivision_of_formation",
+          "country_subdivision_name_of_formation"
+        ]
+      }
+    }
+  ],
   "additionalProperties": false,
   "required": ["legal_name", "formation_date", "country_of_formation"],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Issuer.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Issuer.schema.json"
 }

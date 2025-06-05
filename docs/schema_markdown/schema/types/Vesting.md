@@ -15,4 +15,4 @@ _Describes an exact vesting date and amount_
 
 **Source Code:** [schema/types/Vesting](../../../../schema/types/Vesting.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

@@ -16,4 +16,4 @@
 
 **Source Code:** [schema/primitives/types/vesting/VestingPeriod](../../../../../../schema/primitives/types/vesting/VestingPeriod.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

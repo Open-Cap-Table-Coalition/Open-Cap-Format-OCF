@@ -17,4 +17,4 @@ _Describes a period of time expressed in months (e.g. 3 months) for use in Vesti
 
 **Source Code:** [schema/types/vesting/VestingPeriodInMonths](../../../../../schema/types/vesting/VestingPeriodInMonths.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

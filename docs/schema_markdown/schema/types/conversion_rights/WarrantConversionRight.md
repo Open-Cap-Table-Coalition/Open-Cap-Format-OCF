@@ -17,4 +17,4 @@ _Type representation of a conversion right from a convertible into another non-p
 
 **Source Code:** [schema/types/conversion_rights/WarrantConversionRight](../../../../../schema/types/conversion_rights/WarrantConversionRight.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

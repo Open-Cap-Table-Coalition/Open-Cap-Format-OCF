@@ -51,5 +51,5 @@
     "valuation_type",
     "stock_class_id"
   ],
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Valuation.schema.json"
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/Valuation.schema.json"
 }

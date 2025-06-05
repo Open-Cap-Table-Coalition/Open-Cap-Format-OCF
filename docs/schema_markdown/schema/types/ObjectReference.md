@@ -15,4 +15,4 @@ _A type representing a reference to any kind of OCF object_
 
 **Source Code:** [schema/types/ObjectReference](../../../../schema/types/ObjectReference.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

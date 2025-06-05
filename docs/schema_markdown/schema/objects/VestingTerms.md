@@ -516,4 +516,4 @@ For a more thorough explanation, see [Vesting Terms Explained](../../explainers/
 ]
 ```
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

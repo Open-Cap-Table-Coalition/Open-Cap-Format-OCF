@@ -8,4 +8,4 @@
 
 **Source Code:** [schema/enums/FileType](../../../../schema/enums/FileType.schema.json)
 
-Copyright © 2024 Open Cap Table Coalition.
+Copyright © 2025 Open Cap Table Coalition.

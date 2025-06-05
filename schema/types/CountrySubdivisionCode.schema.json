@@ -2,10 +2,10 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json",
   "title": "Type - Country Subdivision Code",
-  "description": "Type representation of the second part of an ISO 3166-2 country subdivision code",
+  "description": "State, province, or equivalent identifier required for an address in this country",
   "type": "string",
   "minLength": 1,
   "maxLength": 3,
-  "pattern": "^[A-Z0-9]{1,3}$",
-  "$comment": "Copyright © 2024 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/CountrySubdivisionCode.schema.json"
+  "pattern": "^[A-Z0-9]{1,}$",
+  "$comment": "Copyright © 2025 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/CountrySubdivisionCode.schema.json"
 }
