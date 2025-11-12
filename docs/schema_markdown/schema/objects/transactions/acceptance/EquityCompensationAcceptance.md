@@ -4,7 +4,7 @@
 
 **Description:** _Object describing equity compensation acceptance transaction_
 
-**Data Type:** ``Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_ACCEPTANCE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_ACCEPTANCE`
+**Data Type:** `Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_ACCEPTANCE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_ACCEPTANCE`
 
 **Composed From:**
 

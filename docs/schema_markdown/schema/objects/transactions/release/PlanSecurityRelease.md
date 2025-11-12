@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_RELEASE`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/release/EquityCompensationRelease](./EquityCompensationRelease.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/release/EquityCompensationRelease](./EquityCompensationRelease.md)
 
   **Source Code:** [schema/objects/transactions/release/PlanSecurityRelease](../../../../../../schema/objects/transactions/release/PlanSecurityRelease.schema.json)
 

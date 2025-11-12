@@ -4,7 +4,7 @@
 
 **Description:** _Object describing a retraction of equity compensation_
 
-**Data Type:** ``Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_RETRACTION`</br>- `OCF Object - TX_EQUITY_COMPENSATION_RETRACTION`
+**Data Type:** `Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_RETRACTION`</br>- `OCF Object - TX_EQUITY_COMPENSATION_RETRACTION`
 
 **Composed From:**
 

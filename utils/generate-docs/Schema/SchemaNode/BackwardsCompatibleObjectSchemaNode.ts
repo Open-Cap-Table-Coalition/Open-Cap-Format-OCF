@@ -141,7 +141,7 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
 
   ${this.objectDataTypeDescriptionBlock()}
 
-  **Compatiblity Wrapper For:** ${this.relativeLinkToParent()}
+  **Compatibility Wrapper For:** ${this.relativeLinkToParent()}
 
   ${this.markdownFooter()}`;
 
