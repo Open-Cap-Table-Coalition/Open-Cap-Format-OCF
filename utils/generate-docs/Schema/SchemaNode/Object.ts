@@ -32,7 +32,7 @@ export default class ObjectSchemaNode extends SchemaNode {
   };
 
   protected objectDataTypeDescriptionBlock = (): string => {
-    let text_block = "**Data Type:** `";
+    let text_block = "**Data Type:** ";
     let object_type_field = this.json["properties"]["object_type"];
     if ("enum" in object_type_field) {
       text_block += "`Includes Backwards Compatibility Alias(es)`";
@@ -44,7 +44,7 @@ export default class ObjectSchemaNode extends SchemaNode {
       return text_block;
     } else {
       text_block +=
-        "OCF Object - " + object_type_field["const"].toUpperCase() + "`";
+        "`OCF Object - " + object_type_field["const"].toUpperCase() + "`";
     }
     return text_block;
   };
