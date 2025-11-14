@@ -1,8 +1,6 @@
 import readdirp, { EntryInfo } from "readdirp";
-
-import { SchemaNodeJson } from "./Schema.js";
-
 import { pathToFileURL } from "url";
+import { SchemaNodeJson } from "./SchemaNode/SchemaNode.js";
 
 /**
  *  Reader parses a file tree of JSON schema files and converts them into
