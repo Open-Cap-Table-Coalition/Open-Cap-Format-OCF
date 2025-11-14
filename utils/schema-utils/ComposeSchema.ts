@@ -45,6 +45,7 @@ async function composeSchema(args: ComposeSchemaArgs): Promise<void> {
     console.error(`\n❌ Error: Schema not found: ${schemaNameOrPath}`);
     console.error(`\nTried matching against:`);
     console.error(`  - Full $id URL`);
+    console.error(`  - Object type constant/enum (e.g., "TX_STOCK_ISSUANCE")`);
     console.error(`  - Schema path (e.g., "objects/Issuer")`);
     console.error(`  - Schema filename (e.g., "Issuer.schema.json")`);
     console.error(`  - Title (e.g., "Issuer")`);
@@ -155,14 +156,31 @@ async function composeSchema(args: ComposeSchemaArgs): Promise<void> {
 }
 
 /**
- * Find a schema by name, path, or full ID
+ * Find a schema by name, path, full ID, or object_type value
  */
-function findSchema(
-  schemas: Array<{ $id: string; title: string; description: string }>,
-  searchTerm: string
-): { $id: string; title: string; description: string } | undefined {
+function findSchema(schemas: Array<any>, searchTerm: string): any | undefined {
   // Try exact $id match
   let found = schemas.find((s) => s.$id === searchTerm);
+  if (found) return found;
+
+  // Try object_type match (supports compatibility wrapper pattern with enum)
+  found = schemas.find((s) => {
+    const objectTypeProp = s.properties?.object_type;
+    if (!objectTypeProp) return false;
+
+    // Check const value
+    if (objectTypeProp.const === searchTerm) return true;
+
+    // Check enum values (compatibility wrapper pattern)
+    if (objectTypeProp.enum && Array.isArray(objectTypeProp.enum)) {
+      return objectTypeProp.enum.some(
+        (val: string) =>
+          val === searchTerm || val.toLowerCase() === searchTerm.toLowerCase()
+      );
+    }
+
+    return false;
+  });
   if (found) return found;
 
   // Try schema path match (e.g., "objects/Issuer")

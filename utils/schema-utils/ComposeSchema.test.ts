@@ -66,4 +66,47 @@ describe("ComposeSchema utility", () => {
     expect(stdout).toContain("Properties");
     expect(stdout).toContain("Composed From");
   }, 30000);
+
+  describe("Compatibility wrapper pattern (enum object_type)", () => {
+    it("can find schema by deprecated object_type alias", async () => {
+      const { stdout } = await runComposeCommand("TX_PLAN_SECURITY_ISSUANCE");
+
+      expect(stdout).toContain("Equity Compensation Issuance Transaction");
+      expect(stdout).toContain("TX_PLAN_SECURITY_ISSUANCE");
+      expect(stdout).toContain("TX_EQUITY_COMPENSATION_ISSUANCE");
+    }, 30000);
+
+    it("can find schema by new object_type name", async () => {
+      const { stdout } = await runComposeCommand(
+        "TX_EQUITY_COMPENSATION_ISSUANCE"
+      );
+
+      expect(stdout).toContain("Equity Compensation Issuance Transaction");
+      expect(stdout).toContain("TX_PLAN_SECURITY_ISSUANCE");
+      expect(stdout).toContain("TX_EQUITY_COMPENSATION_ISSUANCE");
+    }, 30000);
+
+    it("returns same schema for both aliases", async () => {
+      const { stdout: output1 } = await runComposeCommand(
+        "TX_PLAN_SECURITY_ISSUANCE"
+      );
+      const { stdout: output2 } = await runComposeCommand(
+        "TX_EQUITY_COMPENSATION_ISSUANCE"
+      );
+
+      // Extract the JSON schema from both outputs
+      const extractJson = (output: string) => {
+        const match = output.match(/\{[\s\S]*\}/);
+        return match ? JSON.parse(match[0]) : null;
+      };
+
+      const schema1 = extractJson(output1);
+      const schema2 = extractJson(output2);
+
+      expect(schema1).toBeTruthy();
+      expect(schema2).toBeTruthy();
+      expect(schema1.$id).toBe(schema2.$id);
+      expect(schema1.title).toBe(schema2.title);
+    }, 30000);
+  });
 });
