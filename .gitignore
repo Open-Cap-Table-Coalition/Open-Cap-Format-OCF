@@ -11,6 +11,9 @@ node_modules
 # Build Artifacts
 build/
 
+# Test Artifacts
+coverage/
+
 # Python 
 *.pyc
 venv/

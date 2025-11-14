@@ -3,6 +3,7 @@ export default {
   preset: "ts-jest/presets/default-esm",
   testEnvironment: "node",
   extensionsToTreatAsEsm: [".ts"],
+  coverageProvider: "v8",
   transform: {
     "^.+\\.ts$": [
       "ts-jest",

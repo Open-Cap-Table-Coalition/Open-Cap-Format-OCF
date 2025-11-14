@@ -1,0 +1,16 @@
+{
+  "object_type": "TX_STOCK_ISSUANCE",
+  "id": "test-stock-issuance-001",
+  "security_id": "test-security-001",
+  "date": "2022-01-15",
+  "security_law_exemptions": [],
+  "stakeholder_id": "test-stakeholder-001",
+  "custom_id": "CS-001",
+  "stock_class_id": "test-stock-class-001",
+  "share_price": {
+    "amount": "1.00",
+    "currency": "USD"
+  },
+  "quantity": "1000",
+  "stock_legend_ids": []
+}

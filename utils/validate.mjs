@@ -2,145 +2,24 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
-import fs from "fs";
-import { readFile, readdir } from "fs/promises";
-import { resolve } from "path";
+import { readFile } from "fs/promises";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
 // For GitHub actions integrations
 // TODO - move action integrations into a separate file to keep validator utils clean
 import core from "@actions/core";
+import { getFiles as getFilesUtil } from "./schema-utils/Loaders.js";
+import { SchemaValidator } from "./validation/SchemaValidator.js";
+import { ValidationError } from "./validation/ValidationTypes.js";
 
-// build map of object_type to schema $id
-// throws if an unknown object_type value is encountered
-async function buildObjectSchemaMap(verbose = false) {
-  const object_schemas_map = {};
-  const object_schema_paths = await getSchemaObjectsFilepaths(verbose);
-  const object_schema_buffers = await Promise.all(
-    object_schema_paths.map((path) => readFile(path))
-  );
-  const object_schemas = object_schema_buffers.map((schema_buffer) => {
-    return JSON.parse(schema_buffer.toString());
-  });
+// Get the directory of the current module for reliable path resolution
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const projectRoot = join(__dirname, "..");
 
-  const object_type_enum_schema = JSON.parse(
-    fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
-  );
-
-  // Need to update this to handle the two options for object_type props (stll not in
-  // love with this choice, but it was required to avoid a breaking change). Where
-  // a schema has multiple potential object types for backwards compatibility,
-  // there is a mapping entry for each object type in the object_type.oneOf array
-  // for each of the const values in that array to the $id of the given schema
-  object_schemas.forEach((object_schema) => {
-    if (object_schema.properties) {
-      const object_type = object_schema.properties.object_type;
-
-      if (
-        typeof object_type === "object" &&
-        !Array.isArray(object_type) &&
-        object_type !== null
-      ) {
-        if (object_type.const && typeof object_type.const === "string") {
-          if (!object_type_enum_schema.enum.includes(object_type.const)) {
-            throw new Error(
-              `Encountered object_type: ${object_type.const} in a schema but this type does not exist in ObjectType.schema.json`
-            );
-          }
-
-          object_schemas_map[object_type.const] = object_schema.$id;
-        } else if (object_type.enum && Array.isArray(object_type.enum)) {
-          for (const item of object_type.enum) {
-            if (item) {
-              object_schemas_map[item] = object_schema.$id;
-            }
-          }
-        } else {
-          console.error(
-            `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-              object_schema,
-              null,
-              4
-            )}`
-          );
-        }
-      }
-    } else if (
-      object_schema["$id"] &&
-      object_schema.allOf &&
-      Array.isArray(object_schema.allOf) &&
-      object_schema.allOf.length === 1
-    ) {
-      /**
-       * We have an issue with proposed backwards compatibility wrappers... the validator expects
-       * that each object_type maps to exactly one corresponding schema $id, but the wrappers don't have an
-       * object_type property directly. Since schemaMap maps the type constants to the desired $id,
-       * we can actually ignore the wrapper mappings because the object_type constants should end up in the
-       * schemaMap when we look at the schema that the wrapper references. Those referenced schemas should
-       * validate objects built against the wrapper schema.
-       */
-      if (verbose) {
-        console.log(
-          `Appears schema ${object_schema["$id"]} is a wrapper for ${object_schema.allOf[0]["$ref"]}... ignoring.`
-        );
-      }
-    } else {
-      console.error(
-        `Unexpected value for schema: ${JSON.stringify(object_schema, null, 4)}`
-      );
-      throw new Error(
-        "Schema doesn't match OCF schema format and it's not a wrapper"
-      );
-    }
-  });
-
-  return object_schemas_map;
-}
-
-// SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
-async function* getFiles(dir) {
-  /**
-   *  Given a directory, recursively (and async) load all file (NOT dir) paths.
-   *  Returns list of paths.
-   */
-  const dirents = await readdir(dir, { withFileTypes: true });
-  for (const dirent of dirents) {
-    const res = resolve(dir, dirent.name);
-    if (dirent.isDirectory()) {
-      yield* getFiles(res);
-    } else {
-      yield res;
-    }
-  }
-}
-
-async function getSchemaObjectsFilepaths(verbose = false) {
-  /**
-   * Crawl ./schema directory from repo root and get all
-   * of the filepaths to schema files (ending in .schema.json)
-   */
-  const paths = [];
-  for await (const f of getFiles("./schema/objects")) {
-    paths.push(f);
-  }
-  return paths;
-}
-
-async function getSchemaFilepaths(verbose = false) {
-  /**
-   * Crawl ./schema directory from repo root and get all
-   * of the filepaths to schema files (ending in .schema.json)
-   */
-  const paths = [];
-  for await (const f of getFiles("./schema")) {
-    paths.push(f);
-    if (verbose) {
-      console.log(`•\t${f}`);
-    }
-  }
-  return paths;
-}
+// Use shared file utility from Loaders.ts
+const getFiles = getFilesUtil;
 
 async function getOcfFilesFromDir(path, verbose = false) {
   /**
@@ -164,14 +43,16 @@ async function getOcfFilesFromDir(path, verbose = false) {
 }
 
 /**
- * Reads the dictionary of URIs for file types lookup from UriLookupForFileType.json
- * @returns a dictionary with the URIs for file types lookup
+ * Pretty prints validation errors
+ * @param {ValidationError[]} errors - A list of validation errors
  */
-function readUriLookupForFileTypes() {
-  var buffer = fs.readFileSync(
-    "./utils/schema-utils/UriLookupForFileType.json"
-  );
-  return JSON.parse(buffer.toString());
+function printValidationErrors(errors) {
+  errors.forEach((error) => {
+    console.log(`\n\tERROR: ${error.message}`);
+    if (error.instancePath) {
+      console.log(`\t  at ${error.instancePath}`);
+    }
+  });
 }
 
 /**
@@ -189,13 +70,17 @@ export async function validateOcfDirectory(
   verbose = false,
   test = false
 ) {
-  try {
-    const ajv = await getOcfValidator(verbose, false, false, false);
-    const ocf_paths = await getOcfFilesFromDir(path, verbose);
+  let allFilesValid = true;
 
+  try {
+    // Create validator once and reuse for all files (performance optimization)
     if (verbose)
-      console.log("\n--- Loading URI Lookup for file types ---------------");
-    const uriLookupForFileType = readUriLookupForFileTypes();
+      console.log("\n--- Initializing Schema Validator ---------------");
+    const validator = await SchemaValidator.create({
+      verbose,
+      allErrors: true,
+    });
+    const ocf_paths = await getOcfFilesFromDir(path, verbose);
 
     if (verbose)
       console.log("\n--- Loading OCF File Buffers... ---------------");
@@ -205,67 +90,34 @@ export async function validateOcfDirectory(
 
     if (verbose) console.log("\n--- Validate OCF Files ---------------");
     for (let i = 0; i < ocf_file_buffers.length; i++) {
-      if (verbose) console.log(`\n${i + 1})\tAnalyze File: ${ocf_paths[i]}`);
-      const obj = JSON.parse(ocf_file_buffers[i].toString());
-      if (verbose) {
-        console.log(`\tOCF File Type: ${obj.file_type}`);
-        console.log(`\tFile Type URI: ${uriLookupForFileType[obj.file_type]}`);
-      }
+      const filePath = ocf_paths[i];
+      if (verbose) console.log(`\n${i + 1})\tAnalyze File: ${filePath}`);
 
-      // if file is manifest, just validate against the manifest schema
-      if (obj.file_type === "OCF_MANIFEST_FILE") {
-        const validator = ajv.getSchema(uriLookupForFileType[obj.file_type]);
-        const valid = validator(obj);
+      const ocfFile = JSON.parse(ocf_file_buffers[i].toString());
+      const result = validator.validateFileWithItems(ocfFile, filePath);
 
-        if (!valid) {
-          console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-          console.log(validator.errors);
-          if (test) {
-            core.setFailed(
-              `\t** OCF @${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
-              validator.errors
-            );
-          }
-          return false;
-        } else {
-          if (verbose) console.log(`\t** VALID OCF **`);
+      if (!result.valid) {
+        allFilesValid = false;
+        console.log(`\n\tXX INVALID DUE TO ERRORS: ${filePath}`);
+        printValidationErrors(result.errors);
+        if (test) {
+          core.setFailed(`OCF validation failed for file: ${filePath}`);
         }
-        // collect the errors per file and then return them
-        // if file is not a manifest, loop through items
-        // for each item, get the object_type and then run the validator against that schema
-      } else if (obj.hasOwnProperty("items")) {
-        const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
-        for (let j = 0; j < obj.items.length; j++) {
-          let object_type = obj.items[j].object_type;
-          let object_schema_uri = objectTypeToSchemaIdMap[object_type];
-
-          const validator = ajv.getSchema(object_schema_uri);
-          const valid = validator(obj.items[j]);
-
-          if (!valid) {
-            console.log(`\n\tXX INVALID DUE TO ERRORS:`);
-            console.log(
-              `\n ${obj.file_type} at item: [${j}] - ${obj.items[j].id}`
-            );
-            console.log(validator.errors);
-            if (test) {
-              core.setFailed(
-                `\t** OCF file ${ocf_paths[i]} FAILED DUE TO ERRORS:\n`,
-                validator.errors
-              );
-            }
-            return false;
-          }
-        }
-        if (verbose) console.log("\t** VALID OCF **");
+      } else {
+        if (verbose) console.log(`\t** VALID OCF **`);
       }
     }
-    console.log("\n\t** ALL FILES VALID OCF **");
-    return true;
+
+    if (allFilesValid) {
+      console.log("\n\t** ALL FILES VALID OCF **");
+    } else {
+      console.log("\n\t** SOME FILES HAD VALIDATION ERRORS **");
+    }
+    return allFilesValid;
   } catch (e) {
     if (test) {
       core.setFailed(`\t\tOCF Validation failed due to error: ${e.message}`);
-    } else if (verbose) {
+    } else {
       console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
       console.log(
         `\t\tOCF Schema Validations failed due to error: ${e.message}`
@@ -291,13 +143,18 @@ export async function validateAllObjectsHaveSamples(
   if (verbose)
     console.log("\n--- Loading ObjectType enum schema ---------------");
 
-  var buffer = fs.readFileSync("./schema/enums/ObjectType.schema.json");
+  const enumSchemaPath = join(
+    projectRoot,
+    "schema/enums/ObjectType.schema.json"
+  );
+  const buffer = await readFile(enumSchemaPath);
   const object_type_schema = JSON.parse(buffer.toString());
 
   if (verbose)
     console.log("\n--- Loading all OCF file samples ---------------");
 
-  const ocf_sample_paths = await getOcfFilesFromDir("./samples", verbose);
+  const samplesPath = join(projectRoot, "samples");
+  const ocf_sample_paths = await getOcfFilesFromDir(samplesPath, verbose);
   const ocf_sample_file_buffers = await Promise.all(
     ocf_sample_paths.map((path) => readFile(path))
   );
@@ -354,68 +211,13 @@ export async function validateAllObjectsHaveSamples(
 
 /**
  *
- * Load all schema files and compile an AJV validator.
- * Also loads in additional type formats which AJV has
- * moved into a seperate npm package for things like dates.
- *
- * @param {boolean} verbose - if true, will output status to console
- * @param {boolean} check_schema_validity - AJV's validation error messages when passing
- * in schemas via the constructor JSON "schema" field are not as verbose as desired.
- * If you switch the validation mode to log, you will get a better validation error when
- * you try to use the validator. This may not give you behavior you want, however.
- * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
- * @returns Ajv object which can be used to validate against the schema or
- *          undefined if schemas fail to load.
- */
-export async function getOcfValidator(
-  verbose = false,
-  check_schema_validity = true,
-  test = false,
-  show_all_errors = false
-) {
-  try {
-    if (verbose) console.log("\n-->\tLoad Schema Files...\n");
-    const schema_paths = await getSchemaFilepaths(verbose);
-
-    if (verbose) console.log("\n-->\tParse Schema Objs...");
-    const schema_buffers = await Promise.all(
-      schema_paths.map((path) => readFile(path))
-    );
-
-    if (verbose) console.log("\n-->\tParsing Schema JSONs");
-    const schemas = schema_buffers.map((schema_buffer) => {
-      return JSON.parse(schema_buffer.toString());
-    });
-
-    if (verbose) console.log("\n-->\tCreate AJV Validator");
-    const ajv = new Ajv({
-      schemas,
-      validateSchema: check_schema_validity ? true : "log",
-      ...(show_all_errors ? { allErrors: true, verbose } : {}),
-    });
-
-    // If we don't do this, AJV can't handle certain *built-in* JSONSchema formats (like dates)
-    addFormats(ajv);
-
-    if (verbose) console.log("\n-->\tValidator Ready");
-
-    return ajv;
-  } catch (e) {
-    if (test) core.setFailed(`\tXX\tCould not load validator: ${e.message}`);
-    else if (verbose)
-      console.log(`\tXX\tCould not load validator: ${e.message}`);
-    return undefined;
-  }
-}
-
-/**
- *
  * Given the path of an ocf file of specified type,
  * check that it is valid by loading appropriate validator.
  *
  * @param {string} filepath - path to the ocf file to test
  * @param {boolean} verbose - if true, will output status to console
  * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
+ * @param {boolean} show_all_errors - if true, will show all validation errors
  * @returns - true if file is valid ocf, false otherwise
  */
 export async function validateOcfFileAtPath(
@@ -426,73 +228,39 @@ export async function validateOcfFileAtPath(
 ) {
   try {
     if (verbose) console.log(`\nEvaluate OCF instance @ ${filepath}`);
-    const ocf_instance_str = fs.readFileSync(filepath);
-    const ocf_instance = JSON.parse(ocf_instance_str);
+
+    const validator = await SchemaValidator.create({
+      verbose,
+      allErrors: show_all_errors,
+    });
+
+    const ocf_instance_str = await readFile(filepath);
+    const ocf_instance = JSON.parse(ocf_instance_str.toString());
     if (verbose)
       console.log("\n\n--- OCF Instance ---------------\n", ocf_instance);
-    await ValidateOcfFile(ocf_instance, verbose, test, show_all_errors);
+
+    const result = validator.validateFileWithItems(ocf_instance, filepath);
+
+    if (!result.valid) {
+      console.log(`\n\tXX INVALID DUE TO ERRORS: ${filepath}`);
+      printValidationErrors(result.errors);
+      if (test) {
+        core.setFailed(`OCF validation failed for file: ${filepath}`);
+      }
+      return false;
+    }
+
+    console.log("\n\t** VALID OCF **");
+    return true;
   } catch (e) {
     if (test) {
       core.setFailed(`\t\tFailed to validate OCF file at path: ${e.message}`);
-    } else if (verbose) {
-      console.log("\t\tXX\tFAILURE DUE TO ERRORS:");
-      console.log(`\t\tFailed to validate OCF file at path: ${ele.message}`);
-    }
-    return false;
-  }
-  return true;
-}
-
-/**
- *
- * Given a JSON objects that purports to be valid OCF top-level file, validate
- * against the proper schema.
- *
- * @param {*} ocf_file_obj - parsed JSON to be validated against OCF File Schemas
- * @param {boolean} verbose - if true, will output status to console
- * @param {boolean} test - if true, will trigger github actions core.setFailed on failure
- * @returns - true if validations pass, false if they fail
- */
-export async function ValidateOcfFile(
-  ocf_file_obj,
-  verbose = false,
-  test = false,
-  show_all_errors = false
-) {
-  try {
-    if (verbose)
-      console.log("\n--- Loading URI Lookup for file types ---------------");
-    const uriLookupForFileType = readUriLookupForFileTypes();
-
-    console.log("-->\tValidate OCF File");
-    const ajv = await getOcfValidator(verbose, false, test, show_all_errors);
-    const validator = ajv.getSchema(
-      uriLookupForFileType[ocf_file_obj.file_type]
-    );
-    const valid = validator(ocf_file_obj);
-    if (!valid) {
-      if (test) {
-        core.setFailed(
-          `\t\tOCF file obj validation failed: ${validator.errors}`
-        );
-      } else if (verbose) {
-        console.log("\t\tXX FAILURE DUE TO ERRORS:");
-        console.log(validator.errors);
-      }
-      return false;
     } else {
-      if (verbose) console.log("VALID OCF");
-    }
-  } catch (e) {
-    if (test) {
-      core.setFailed(`\t\tOCF file obj validation failed: ${e.message}`);
-    } else if (verbose) {
       console.log("\t\tXX\tFAILURE DUE TO ERRORS:");
-      console.log(`\t\tOCF file obj validation failed: ${e.message}`);
+      console.log(`\t\tFailed to validate OCF file at path: ${e.message}`);
     }
     return false;
   }
-  return true;
 }
 
 /**
@@ -513,34 +281,11 @@ export async function validateOcfSchemas(
   test = false,
   show_all_errors = false
 ) {
-  let counter = 1;
-
   try {
-    const validator = await getOcfValidator(
-      verbose,
-      true,
-      test,
-      show_all_errors
-    );
-
-    if (verbose)
-      console.log("\n--- Loading URI Lookup for file types ---------------");
-    const uriLookupForFileType = readUriLookupForFileTypes();
-
-    if (verbose) {
-      console.log(
-        "\nVALIDATE OCF FILE SCHEMAS (WILL LOAD AND VALIDATE $REFS)\n"
-      );
-    }
-    for (var key in uriLookupForFileType) {
-      if (verbose) {
-        console.log(`${counter}) \tCheck file type: ${key}`);
-        console.log(`\tCorresponding URI: ${uriLookupForFileType[key]}`);
-      }
-      validator.getSchema(uriLookupForFileType[key]);
-      if (verbose) console.log("\t** VALID **\n");
-      counter++;
-    }
+    if (verbose) console.log("\n-->\tLoading and validating OCF schemas...");
+    await SchemaValidator.create({ verbose, allErrors: show_all_errors });
+    console.log("\t** ALL SCHEMA FILES VALID OCF **");
+    return true;
   } catch (e) {
     console.log("\n\tXX\tFAILURE DUE TO ERRORS:");
     console.log(`\t\tOCF Schema Validations failed: ${e.message}`);
@@ -549,8 +294,6 @@ export async function validateOcfSchemas(
     }
     return false;
   }
-  console.log("\t** ALL SCHEMA FILES VALID OCF **");
-  return true;
 }
 
 /**
