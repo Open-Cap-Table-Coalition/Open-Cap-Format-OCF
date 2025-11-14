@@ -8,6 +8,7 @@
     "lint:fix": "prettier . --check --write --ignore-unknown",
     "docs:generate": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index-two-stage.ts",
     "docs:generate-release": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GenerateReleaseDocs.ts generate-release-docs -v --tag",
+    "schema:compose": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/ComposeSchema.ts",
     "schema:enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -fvart --tag main",
     "schema:validate-ocf-file-schemas": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-schema -v -t",
     "schema:validate-example-ocf-files": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
