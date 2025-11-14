@@ -4,7 +4,7 @@
 
 **Description:** _Object describing securities issuance transaction by the issuer and held by a stakeholder as a form of compensation (as noted elsewhere, RSAs are not included here intentionally and should be modelled using Stock Issuances)._
 
-**Data Type:** ``Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_ISSUANCE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_ISSUANCE`
+**Data Type:** `Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_ISSUANCE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_ISSUANCE`
 
 **Composed From:**
 

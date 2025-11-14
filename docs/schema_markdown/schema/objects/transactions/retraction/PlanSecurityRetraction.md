@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_RETRACTION`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/retraction/EquityCompensationRetraction](./EquityCompensationRetraction.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/retraction/EquityCompensationRetraction](./EquityCompensationRetraction.md)
 
   **Source Code:** [schema/objects/transactions/retraction/PlanSecurityRetraction](../../../../../../schema/objects/transactions/retraction/PlanSecurityRetraction.schema.json)
 

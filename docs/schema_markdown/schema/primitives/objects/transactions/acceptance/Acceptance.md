@@ -8,8 +8,7 @@
 
 **Properties:**
 
-| Property | Type | Description | Required |
-| -------- | ---- | ----------- | -------- |
+_No properties defined_
 
 **Source Code:** [schema/primitives/objects/transactions/acceptance/Acceptance](../../../../../../../schema/primitives/objects/transactions/acceptance/Acceptance.schema.json)
 

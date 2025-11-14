@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_CANCELLATION`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/cancellation/EquityCompensationCancellation](./EquityCompensationCancellation.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/cancellation/EquityCompensationCancellation](./EquityCompensationCancellation.md)
 
   **Source Code:** [schema/objects/transactions/cancellation/PlanSecurityCancellation](../../../../../../schema/objects/transactions/cancellation/PlanSecurityCancellation.schema.json)
 

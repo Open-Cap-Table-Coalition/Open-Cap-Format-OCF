@@ -8,6 +8,9 @@
 # Node
 node_modules
 
+# Build Artifacts
+build/
+
 # Python 
 *.pyc
 venv/
