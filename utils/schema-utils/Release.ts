@@ -4,6 +4,53 @@ import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 import { execSync } from "child_process";
 import * as fs from "fs";
+import * as readline from "readline";
+
+/**
+ * Prompt user for explicit confirmation by typing "I Understand".
+ * Used for destructive operations to prevent accidental execution.
+ * @param operationName - Short name for the operation (used in header)
+ * @param explanation - Detailed explanation of what will happen
+ * @param skipConfirmation - If true, skip the prompt and return true
+ */
+async function confirmDangerousOperation(
+  operationName: string,
+  explanation: string,
+  skipConfirmation: boolean = false
+): Promise<boolean> {
+  if (skipConfirmation) {
+    console.log(`\n  [--yes] Skipping confirmation for: ${operationName}\n`);
+    return true;
+  }
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  console.log("\n" + "=".repeat(60));
+  console.log(`  ⚠️  CONFIRMATION REQUIRED: ${operationName}`);
+  console.log("=".repeat(60));
+  console.log("");
+  console.log(explanation);
+  console.log("");
+  console.log("  To proceed, type exactly: I Understand");
+  console.log("  To abort, type anything else or press Ctrl+C");
+  console.log("");
+
+  return new Promise((resolve) => {
+    rl.question("  > ", (answer) => {
+      rl.close();
+      if (answer.trim() === "I Understand") {
+        console.log("\n  ✓ Confirmed. Proceeding...\n");
+        resolve(true);
+      } else {
+        console.log("\n  ✗ Aborted by user.\n");
+        resolve(false);
+      }
+    });
+  });
+}
 
 // File paths
 const MANIFEST_SCHEMA_PATH = "./schema/files/OCFManifestFile.schema.json";
@@ -125,7 +172,8 @@ async function release(
   type: "major" | "minor" | "patch",
   dryRun: boolean,
   skipPush: boolean,
-  verbose: boolean
+  verbose: boolean,
+  skipConfirmation: boolean = false
 ): Promise<void> {
   console.log("\n========================================");
   console.log("  OCF Release Script");
@@ -234,6 +282,23 @@ async function release(
 
   // 5. Commit and tag
   console.log("\n4. Creating release commit and tag...\n");
+
+  const commitConfirmed = await confirmDangerousOperation(
+    "Create Release Commit & Tag",
+    `  This will create a LOCAL commit and tag on the main branch:
+
+    • Commit message: "Release ${tag}"
+    • Tag: ${tag}
+
+  All modified schema files will be staged and committed.
+  This does NOT push to the remote yet.`,
+    skipConfirmation
+  );
+
+  if (!commitConfirmed) {
+    throw new Error("Release aborted by user before creating commit.");
+  }
+
   exec("git add .");
   exec(`git commit -m "Release ${tag}"`);
   exec(`git tag ${tag}`);
@@ -251,12 +316,60 @@ async function release(
   console.log("  Updating copyright notices...");
   exec("npm run schema:enforce-copyright-notices");
 
+  const devCommitConfirmed = await confirmDangerousOperation(
+    "Create Next Development Commit",
+    `  This will create a LOCAL commit for the next development cycle:
+
+    • Commit message: "Prepare for ${nextDevVersionStr} development"
+    • Version will be set to: ${nextDevVersionStr}
+    • URLs will be reverted to development URLs
+
+  This commit goes on top of the release commit.`,
+    skipConfirmation
+  );
+
+  if (!devCommitConfirmed) {
+    console.log("\n  Files modified but NOT committed.");
+    console.log("  The release commit and tag still exist.");
+    console.log("  To complete manually:");
+    console.log("    git add .");
+    console.log(
+      `    git commit -m "Prepare for ${nextDevVersionStr} development"\n`
+    );
+    return;
+  }
+
   exec("git add .");
   exec(`git commit -m "Prepare for ${nextDevVersionStr} development"`);
 
   // 7. Push and create release
   if (!skipPush) {
     console.log("\n6. Pushing to remote and creating release...\n");
+
+    const pushConfirmed = await confirmDangerousOperation(
+      "Push to Remote & Create GitHub Release",
+      `  This will push to the REMOTE repository:
+
+    • Push commits to: origin/main
+    • Push tag: ${tag}
+    • Create draft GitHub release: "OCF ${releaseVersionStr}"
+
+  WARNING: This action modifies the remote repository!
+  Once pushed, the commits will be visible to all collaborators.
+  The tag cannot easily be changed after pushing.`,
+      skipConfirmation
+    );
+
+    if (!pushConfirmed) {
+      console.log("\n  Release commits created locally but NOT pushed.");
+      console.log("  To complete manually:");
+      console.log("    git push origin main --tags");
+      console.log(
+        `    gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersionStr}"\n`
+      );
+      return;
+    }
+
     exec("git push origin main --tags");
     exec(
       `gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersionStr}"`
@@ -285,6 +398,7 @@ interface ReleaseArgs extends Arguments {
   "dry-run"?: boolean;
   "skip-push"?: boolean;
   verbose?: boolean;
+  yes?: boolean;
 }
 
 yargs(hideBin(process.argv))
@@ -316,6 +430,13 @@ yargs(hideBin(process.argv))
         type: "boolean",
         default: false,
       },
+      yes: {
+        describe:
+          "Skip confirmation prompts (dangerous - use only if you know what you're doing)",
+        alias: "y",
+        type: "boolean",
+        default: false,
+      },
     },
     handler: async (argv: ReleaseArgs) => {
       try {
@@ -324,7 +445,8 @@ yargs(hideBin(process.argv))
           releaseType,
           argv["dry-run"] ?? false,
           argv["skip-push"] ?? false,
-          argv.verbose ?? false
+          argv.verbose ?? false,
+          argv.yes ?? false
         );
       } catch (e: any) {
         console.error(`\n  [ERROR] ${e.message}\n`);
