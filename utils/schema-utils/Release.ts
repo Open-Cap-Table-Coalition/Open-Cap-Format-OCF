@@ -9,20 +9,15 @@ import * as readline from "readline";
 /**
  * Prompt user for explicit confirmation by typing "I Understand".
  * Used for destructive operations to prevent accidental execution.
+ * Current iteration does not allow skipping the confirmation, as
+ * this is a DANGEROUS script that can mess with production schemas.
  * @param operationName - Short name for the operation (used in header)
  * @param explanation - Detailed explanation of what will happen
- * @param skipConfirmation - If true, skip the prompt and return true
  */
 async function confirmDangerousOperation(
   operationName: string,
-  explanation: string,
-  skipConfirmation: boolean = false
+  explanation: string
 ): Promise<boolean> {
-  if (skipConfirmation) {
-    console.log(`\n  [--yes] Skipping confirmation for: ${operationName}\n`);
-    return true;
-  }
-
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -171,9 +166,7 @@ function isGhAvailable(): boolean {
 async function release(
   type: "major" | "minor" | "patch",
   dryRun: boolean,
-  skipPush: boolean,
-  verbose: boolean,
-  skipConfirmation: boolean = false
+  skipPush: boolean
 ): Promise<void> {
   console.log("\n========================================");
   console.log("  OCF Release Script");
@@ -291,8 +284,7 @@ async function release(
     • Tag: ${tag}
 
   All modified schema files will be staged and committed.
-  This does NOT push to the remote yet.`,
-    skipConfirmation
+  This does NOT push to the remote yet.`
   );
 
   if (!commitConfirmed) {
@@ -324,8 +316,7 @@ async function release(
     • Version will be set to: ${nextDevVersionStr}
     • URLs will be reverted to development URLs
 
-  This commit goes on top of the release commit.`,
-    skipConfirmation
+  This commit goes on top of the release commit.`
   );
 
   if (!devCommitConfirmed) {
@@ -356,8 +347,7 @@ async function release(
 
   WARNING: This action modifies the remote repository!
   Once pushed, the commits will be visible to all collaborators.
-  The tag cannot easily be changed after pushing.`,
-      skipConfirmation
+  The tag cannot easily be changed after pushing.`
     );
 
     if (!pushConfirmed) {
@@ -444,9 +434,7 @@ yargs(hideBin(process.argv))
         await release(
           releaseType,
           argv["dry-run"] ?? false,
-          argv["skip-push"] ?? false,
-          argv.verbose ?? false,
-          argv.yes ?? false
+          argv["skip-push"] ?? false
         );
       } catch (e: any) {
         console.error(`\n  [ERROR] ${e.message}\n`);

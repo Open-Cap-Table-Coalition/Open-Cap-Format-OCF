@@ -34,17 +34,16 @@ The release script handles everything:
 
 ### Options
 
-| Flag            | Description                                                   |
-| --------------- | ------------------------------------------------------------- |
-| `--dry-run`     | Show what would happen without making changes                 |
-| `--skip-push`   | Create commits locally without pushing or GitHub release      |
-| `-v, --verbose` | Show detailed output                                          |
-| `-y, --yes`     | Skip confirmation prompts (dangerous - for experienced users) |
+| Flag          | Description                                              |
+| ------------- | -------------------------------------------------------- |
+| `--dry-run`   | Show what would happen without making changes            |
+| `--skip-push` | Create commits locally without pushing or GitHub release |
 
 ### Safety Confirmations
 
-By default, the release script requires explicit confirmation before each destructive operation. You
-must type `I Understand` to proceed at each checkpoint:
+The release script **always** requires explicit confirmation before each destructive operation.
+There is no way to skip these prompts - this is intentional because the script can modify production
+schemas. You must type `I Understand` to proceed at each checkpoint:
 
 1. **Create Release Commit & Tag** - Before committing and tagging the release locally
 2. **Create Next Development Commit** - Before committing the next dev version locally
@@ -177,19 +176,17 @@ gh release create v1.2.1 --draft --generate-notes --title "OCF 1.2.1"
 
 ### Release.ts
 
-Main orchestration script for automated releases.
+Main orchestration script for automated releases. Requires explicit confirmation at each step.
 
 ```bash
 npm run release -- --type <major|minor|patch> [options]
 ```
 
-| Flag            | Description                                       |
-| --------------- | ------------------------------------------------- |
-| `-t, --type`    | Release type (major, minor, or patch)             |
-| `--dry-run`     | Preview changes without executing                 |
-| `--skip-push`   | Create local commits only                         |
-| `-v, --verbose` | Detailed output                                   |
-| `-y, --yes`     | Skip confirmation prompts (for experienced users) |
+| Flag          | Description                           |
+| ------------- | ------------------------------------- |
+| `-t, --type`  | Release type (major, minor, or patch) |
+| `--dry-run`   | Preview changes without executing     |
+| `--skip-push` | Create local commits only             |
 
 ### GenerateReleaseDocs.ts
 
