@@ -9,5 +9,7 @@ export default {
   },
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
+    "^yargs/helpers$": "<rootDir>/node_modules/yargs/helpers/helpers.mjs",
   },
+  transformIgnorePatterns: ["/node_modules/(?!(yargs|yargs-parser)/)"],
 };
