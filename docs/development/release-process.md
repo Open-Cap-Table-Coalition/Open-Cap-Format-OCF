@@ -34,10 +34,11 @@ The release script handles everything:
 
 ### Options
 
-| Flag          | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| `--dry-run`   | Show what would happen without making changes            |
-| `--skip-push` | Create commits locally without pushing or GitHub release |
+| Flag          | Description                                                                        |
+| ------------- | ---------------------------------------------------------------------------------- |
+| `--dry-run`   | Show what would happen without making changes                                      |
+| `--skip-push` | Create commits locally without pushing or GitHub release                           |
+| `--next-dev`  | Specify base version for next dev cycle (e.g., `2.0.0` becomes `2.0.0-alpha+main`) |
 
 ### Safety Confirmations
 
@@ -182,11 +183,19 @@ Main orchestration script for automated releases. Requires explicit confirmation
 npm run release -- --type <major|minor|patch> [options]
 ```
 
-| Flag          | Description                           |
-| ------------- | ------------------------------------- |
-| `-t, --type`  | Release type (major, minor, or patch) |
-| `--dry-run`   | Preview changes without executing     |
-| `--skip-push` | Create local commits only             |
+| Flag          | Description                                                         |
+| ------------- | ------------------------------------------------------------------- |
+| `-t, --type`  | Release type (major, minor, or patch)                               |
+| `--dry-run`   | Preview changes without executing                                   |
+| `--skip-push` | Create local commits only                                           |
+| `--next-dev`  | Specify base version for next dev cycle (must be > release version) |
+
+#### Example: Release and Start Major Version Development
+
+```bash
+# Release 1.2.1, then start working on 2.0.0
+npm run release:patch -- --next-dev 2.0.0
+```
 
 ### GenerateReleaseDocs.ts
 

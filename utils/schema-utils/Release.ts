@@ -52,7 +52,7 @@ const MANIFEST_SCHEMA_PATH = "./schema/files/OCFManifestFile.schema.json";
 const SAMPLE_MANIFEST_PATH = "./samples/Manifest.ocf.json";
 
 // Version parsing types
-interface Version {
+export interface Version {
   major: number;
   minor: number;
   patch: number;
@@ -63,7 +63,7 @@ interface Version {
  * Parse a semantic version string into components.
  * Handles formats like "1.2.1" and "1.2.1-alpha+main"
  */
-function parseVersion(versionStr: string): Version {
+export function parseVersion(versionStr: string): Version {
   const match = versionStr.match(/^(\d+)\.(\d+)\.(\d+)(?:-(.+))?$/);
   if (!match) throw new Error(`Invalid version format: ${versionStr}`);
   return {
@@ -77,15 +77,45 @@ function parseVersion(versionStr: string): Version {
 /**
  * Format a version object to string.
  */
-function formatVersion(v: Version, includePrerelease = false): string {
+export function formatVersion(v: Version, includePrerelease = false): string {
   const base = `${v.major}.${v.minor}.${v.patch}`;
   return includePrerelease && v.prerelease ? `${base}-${v.prerelease}` : base;
 }
 
 /**
+ * Compare two versions. Returns:
+ *  -1 if a < b
+ *   0 if a === b
+ *   1 if a > b
+ *
+ * Prerelease handling (follows semver):
+ * - Throws if both versions have prerelease tags (word-based tags are not comparable)
+ * - A release version beats its prerelease: 1.2.3 > 1.2.3-alpha+main
+ * - But next prerelease beats prior release: 1.2.4-alpha+main > 1.2.3
+ */
+export function compareVersions(a: Version, b: Version): -1 | 0 | 1 {
+  if (a.prerelease && b.prerelease) {
+    throw new Error(
+      "Cannot compare two prerelease versions - prerelease tags are not comparable"
+    );
+  }
+
+  // Compare major.minor.patch first
+  if (a.major !== b.major) return a.major > b.major ? 1 : -1;
+  if (a.minor !== b.minor) return a.minor > b.minor ? 1 : -1;
+  if (a.patch !== b.patch) return a.patch > b.patch ? 1 : -1;
+
+  // Same base version: release > prerelease
+  if (a.prerelease && !b.prerelease) return -1;
+  if (!a.prerelease && b.prerelease) return 1;
+
+  return 0;
+}
+
+/**
  * Get the current OCF version from the manifest schema.
  */
-function getSchemaVersion(): string {
+export function getSchemaVersion(): string {
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8"));
   return manifest.properties.ocf_version.const;
 }
@@ -119,7 +149,7 @@ function updateSampleManifestVersion(newVersion: string): void {
 /**
  * Calculate the bumped version based on release type.
  */
-function bumpVersion(
+export function bumpVersion(
   current: Version,
   type: "major" | "minor" | "patch"
 ): Version {
@@ -170,11 +200,16 @@ function isGhAvailable(): boolean {
 
 /**
  * Main release function.
+ * @param type - Release type (major, minor, patch)
+ * @param dryRun - If true, show what would happen without making changes
+ * @param skipPush - If true, create commits locally but don't push
+ * @param nextDevBase - Optional base version for next dev cycle (e.g., "2.0.0")
  */
 async function release(
   type: "major" | "minor" | "patch",
   dryRun: boolean,
-  skipPush: boolean
+  skipPush: boolean,
+  nextDevBase?: string
 ): Promise<void> {
   console.log("\n========================================");
   console.log("  OCF Release Script");
@@ -240,13 +275,31 @@ async function release(
   const releaseVersionStr = formatVersion(releaseVersion);
   const tag = `v${releaseVersionStr}`;
 
-  // Next dev version is always patch+1 with alpha+main suffix
-  const nextDevVersion: Version = {
-    major: releaseVersion.major,
-    minor: releaseVersion.minor,
-    patch: releaseVersion.patch + 1,
-    prerelease: "alpha+main",
-  };
+  // Calculate next dev version
+  let nextDevVersion: Version;
+  if (nextDevBase) {
+    // User specified a custom next dev base version
+    const customBase = parseVersion(nextDevBase);
+    if (compareVersions(customBase, releaseVersion) <= 0) {
+      throw new Error(
+        `Next dev version base (${nextDevBase}) must be greater than release version (${releaseVersionStr})`
+      );
+    }
+    nextDevVersion = {
+      major: customBase.major,
+      minor: customBase.minor,
+      patch: customBase.patch,
+      prerelease: "alpha+main",
+    };
+  } else {
+    // Default: patch+1 with alpha+main suffix
+    nextDevVersion = {
+      major: releaseVersion.major,
+      minor: releaseVersion.minor,
+      patch: releaseVersion.patch + 1,
+      prerelease: "alpha+main",
+    };
+  }
   const nextDevVersionStr = formatVersion(nextDevVersion, true);
 
   console.log(`\n  Current version:  ${currentVersionStr}`);
@@ -395,6 +448,7 @@ interface ReleaseArgs extends Arguments {
   type?: string;
   "dry-run"?: boolean;
   "skip-push"?: boolean;
+  "next-dev"?: string;
   verbose?: boolean;
   yes?: boolean;
 }
@@ -422,6 +476,11 @@ yargs(hideBin(process.argv))
         type: "boolean",
         default: false,
       },
+      "next-dev": {
+        describe:
+          "Base version for next dev cycle (e.g., 2.0.0 becomes 2.0.0-alpha+main). Must be > release version.",
+        type: "string",
+      },
       verbose: {
         describe: "Show detailed output",
         alias: "v",
@@ -442,7 +501,8 @@ yargs(hideBin(process.argv))
         await release(
           releaseType,
           argv["dry-run"] ?? false,
-          argv["skip-push"] ?? false
+          argv["skip-push"] ?? false,
+          argv["next-dev"]
         );
       } catch (e: any) {
         console.error(`\n  [ERROR] ${e.message}\n`);
