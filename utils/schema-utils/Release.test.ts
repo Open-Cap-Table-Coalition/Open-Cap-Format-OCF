@@ -5,7 +5,10 @@ import {
   compareVersions,
   bumpVersion,
   getSchemaVersion,
+  planRelease,
   Version,
+  ReleasePlan,
+  ReleaseStep,
 } from "./Release.js";
 
 /**
@@ -281,6 +284,247 @@ describe("bumpVersion", () => {
       major: 1,
       minor: 3,
       patch: 0,
+    });
+  });
+});
+
+describe("planRelease", () => {
+  describe("version calculations", () => {
+    describe("from prerelease version", () => {
+      const current = "1.2.3-alpha+main";
+
+      it("should strip prerelease for patch release", () => {
+        const plan = planRelease("patch", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.2.3",
+          tag: "v1.2.3",
+          nextDevVersion: "1.2.4-alpha+main",
+        });
+      });
+
+      it("should bump minor for minor release", () => {
+        const plan = planRelease("minor", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.3.0",
+          tag: "v1.3.0",
+          nextDevVersion: "1.3.1-alpha+main",
+        });
+      });
+
+      it("should bump major for major release", () => {
+        const plan = planRelease("major", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "2.0.0",
+          tag: "v2.0.0",
+          nextDevVersion: "2.0.1-alpha+main",
+        });
+      });
+    });
+
+    describe("from release version", () => {
+      const current = "1.2.3";
+
+      it("should bump patch for patch release", () => {
+        const plan = planRelease("patch", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.2.4",
+          tag: "v1.2.4",
+          nextDevVersion: "1.2.5-alpha+main",
+        });
+      });
+
+      it("should bump minor for minor release", () => {
+        const plan = planRelease("minor", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.3.0",
+          tag: "v1.3.0",
+          nextDevVersion: "1.3.1-alpha+main",
+        });
+      });
+
+      it("should bump major for major release", () => {
+        const plan = planRelease("major", current);
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "2.0.0",
+          tag: "v2.0.0",
+          nextDevVersion: "2.0.1-alpha+main",
+        });
+      });
+    });
+
+    describe("with custom nextDevBase", () => {
+      const current = "1.2.3-alpha+main";
+
+      it("should use custom next dev base when valid", () => {
+        const plan = planRelease("patch", current, "2.0.0");
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.2.3",
+          tag: "v1.2.3",
+          nextDevVersion: "2.0.0-alpha+main",
+        });
+      });
+
+      it("should accept next dev base one patch greater", () => {
+        const plan = planRelease("patch", current, "1.2.4");
+        expect(plan).toMatchObject({
+          currentVersion: current,
+          releaseVersion: "1.2.3",
+          tag: "v1.2.3",
+          nextDevVersion: "1.2.4-alpha+main",
+        });
+      });
+
+      it("should throw when nextDevBase equals release version", () => {
+        expect(() => planRelease("patch", current, "1.2.3")).toThrow(
+          "Next dev version base (1.2.3) must be greater than release version (1.2.3)"
+        );
+      });
+
+      it("should throw when nextDevBase is less than release version", () => {
+        expect(() => planRelease("patch", current, "1.2.2")).toThrow(
+          "Next dev version base (1.2.2) must be greater than release version (1.2.3)"
+        );
+      });
+
+      it("should throw when nextDevBase has lower major", () => {
+        expect(() => planRelease("patch", current, "0.9.9")).toThrow(
+          "Next dev version base (0.9.9) must be greater than release version (1.2.3)"
+        );
+      });
+    });
+
+    describe("reads from schema when currentVersion not provided", () => {
+      it("should use schema version by default", () => {
+        const plan = planRelease("patch");
+        expect(plan.currentVersion).toBe(getSchemaVersion());
+      });
+    });
+  });
+
+  describe("step generation", () => {
+    const plan = planRelease("patch", "1.2.3-alpha+main");
+
+    it("should include steps array", () => {
+      expect(plan.steps).toBeDefined();
+      expect(Array.isArray(plan.steps)).toBe(true);
+      expect(plan.steps.length).toBeGreaterThan(0);
+    });
+
+    it("should have 3 confirmation gates", () => {
+      const confirmations = plan.steps.filter((s) => s.type === "confirmation");
+      expect(confirmations).toHaveLength(3);
+      expect(confirmations.map((c) => c.phase)).toEqual([
+        "commit-release",
+        "commit-dev",
+        "push",
+      ]);
+    });
+
+    it("should have confirmation gates with descriptive names", () => {
+      const confirmations = plan.steps.filter(
+        (s) => s.type === "confirmation"
+      ) as Extract<ReleaseStep, { type: "confirmation" }>[];
+      expect(confirmations[0].gate).toBe("Create Release Commit & Tag");
+      expect(confirmations[1].gate).toBe("Create Next Development Commit");
+      expect(confirmations[2].gate).toBe(
+        "Push to Remote & Create GitHub Release"
+      );
+    });
+
+    it("should have commands in correct phase order", () => {
+      const phases = plan.steps.map((s) => s.phase);
+      const phaseOrder = [
+        "prepare-release",
+        "commit-release",
+        "prepare-dev",
+        "commit-dev",
+        "push",
+      ];
+
+      let lastPhaseIndex = -1;
+      for (const phase of phases) {
+        const currentIndex = phaseOrder.indexOf(phase);
+        expect(currentIndex).toBeGreaterThanOrEqual(lastPhaseIndex);
+        lastPhaseIndex = currentIndex;
+      }
+    });
+
+    it("should include version-specific commands", () => {
+      const commands = plan.steps.filter(
+        (s) => s.type === "command"
+      ) as Extract<ReleaseStep, { type: "command" }>[];
+
+      // Check release version appears in commands
+      const releaseCommands = commands.filter((c) =>
+        c.command.includes("1.2.3")
+      );
+      expect(releaseCommands.length).toBeGreaterThan(0);
+
+      // Check next dev version appears in commands
+      const devCommands = commands.filter((c) =>
+        c.command.includes("1.2.4-alpha+main")
+      );
+      expect(devCommands.length).toBeGreaterThan(0);
+
+      // Check tag appears in commands
+      const tagCommands = commands.filter((c) => c.command.includes("v1.2.3"));
+      expect(tagCommands.length).toBeGreaterThan(0);
+    });
+
+    it("should include git commands", () => {
+      const commands = plan.steps.filter(
+        (s) => s.type === "command"
+      ) as Extract<ReleaseStep, { type: "command" }>[];
+
+      const gitCommands = commands.filter((c) => c.command.startsWith("git "));
+      expect(gitCommands.map((c) => c.command)).toEqual(
+        expect.arrayContaining([
+          "git add .",
+          'git commit -m "Release v1.2.3"',
+          "git tag v1.2.3",
+          'git commit -m "Prepare for 1.2.4-alpha+main development"',
+          "git push origin main --tags",
+        ])
+      );
+    });
+
+    it("should include npm commands", () => {
+      const commands = plan.steps.filter(
+        (s) => s.type === "command"
+      ) as Extract<ReleaseStep, { type: "command" }>[];
+
+      const npmCommands = commands.filter((c) => c.command.startsWith("npm "));
+      expect(npmCommands.length).toBeGreaterThan(0);
+      expect(npmCommands.map((c) => c.command)).toEqual(
+        expect.arrayContaining([
+          "npm run schema:enforce-copyright-notices",
+          "npm run docs:generate-release -- --release --tag v1.2.3",
+          "npm run docs:generate",
+          "npm test",
+          "npm run schema:validate-ocf-file-schemas",
+          "npm run schema:validate-example-ocf-files",
+          "npm run docs:generate-release -- --dev",
+        ])
+      );
+    });
+
+    it("should include gh release command", () => {
+      const commands = plan.steps.filter(
+        (s) => s.type === "command"
+      ) as Extract<ReleaseStep, { type: "command" }>[];
+
+      const ghCommand = commands.find((c) => c.command.startsWith("gh "));
+      expect(ghCommand).toBeDefined();
+      expect(ghCommand?.command).toBe(
+        'gh release create v1.2.3 --draft --generate-notes --title "OCF 1.2.3"'
+      );
     });
   });
 });

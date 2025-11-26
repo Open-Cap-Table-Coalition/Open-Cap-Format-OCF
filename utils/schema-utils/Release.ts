@@ -199,6 +199,269 @@ function isGhAvailable(): boolean {
 }
 
 /**
+ * A step in the release plan - either a command or a confirmation gate.
+ */
+export type ReleaseStep =
+  | {
+      type: "command";
+      phase:
+        | "prepare-release"
+        | "commit-release"
+        | "prepare-dev"
+        | "commit-dev"
+        | "push";
+      description: string;
+      command: string;
+    }
+  | {
+      type: "confirmation";
+      phase: "commit-release" | "commit-dev" | "push";
+      gate: string;
+      description: string;
+    };
+
+/**
+ * Release plan containing all computed versions and steps.
+ */
+export interface ReleasePlan {
+  currentVersion: string;
+  releaseVersion: string;
+  tag: string;
+  nextDevVersion: string;
+  steps: ReleaseStep[];
+}
+
+/**
+ * Plan a release by calculating all versions.
+ * Does not execute anything - just computes and validates.
+ * @param type - Release type (major, minor, patch)
+ * @param currentVersionStr - Current version string (defaults to reading from schema)
+ * @param nextDevBase - Optional base version for next dev cycle
+ * @throws Error if nextDevBase is invalid
+ */
+export function planRelease(
+  type: "major" | "minor" | "patch",
+  currentVersionStr?: string,
+  nextDevBase?: string
+): ReleasePlan {
+  const current = currentVersionStr ?? getSchemaVersion();
+  const currentVersion = parseVersion(current);
+
+  // Calculate release version
+  let releaseVersion: Version;
+  if (currentVersion.prerelease) {
+    // Currently on alpha, release the base version (strip prerelease)
+    releaseVersion = {
+      major: currentVersion.major,
+      minor: currentVersion.minor,
+      patch: currentVersion.patch,
+    };
+    // But if they explicitly asked for a bump, honor it
+    if (type === "major") {
+      releaseVersion = { major: currentVersion.major + 1, minor: 0, patch: 0 };
+    } else if (type === "minor") {
+      releaseVersion = {
+        major: currentVersion.major,
+        minor: currentVersion.minor + 1,
+        patch: 0,
+      };
+    }
+    // For patch on alpha, we just release the current base version
+  } else {
+    // Already on a release version, bump it
+    releaseVersion = bumpVersion(currentVersion, type);
+  }
+
+  const releaseVersionStr = formatVersion(releaseVersion);
+  const tag = `v${releaseVersionStr}`;
+
+  // Calculate next dev version
+  let nextDevVersion: Version;
+  if (nextDevBase) {
+    const customBase = parseVersion(nextDevBase);
+    if (compareVersions(customBase, releaseVersion) <= 0) {
+      throw new Error(
+        `Next dev version base (${nextDevBase}) must be greater than release version (${releaseVersionStr})`
+      );
+    }
+    nextDevVersion = {
+      major: customBase.major,
+      minor: customBase.minor,
+      patch: customBase.patch,
+      prerelease: "alpha+main",
+    };
+  } else {
+    nextDevVersion = {
+      major: releaseVersion.major,
+      minor: releaseVersion.minor,
+      patch: releaseVersion.patch + 1,
+      prerelease: "alpha+main",
+    };
+  }
+
+  const nextDevVersionStr = formatVersion(nextDevVersion, true);
+
+  // Build step stack with commands and confirmation gates
+  const steps: ReleaseStep[] = [
+    // Phase 1: Prepare release (no confirmation needed - just prep work)
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: `Update schema version to ${releaseVersionStr}`,
+      command: `[internal] updateManifestSchemaVersion("${releaseVersionStr}")`,
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: `Update sample version to ${releaseVersionStr}`,
+      command: `[internal] updateSampleManifestVersion("${releaseVersionStr}")`,
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Update copyright notices",
+      command: "npm run schema:enforce-copyright-notices",
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Transform URLs to release URLs",
+      command: `npm run docs:generate-release -- --release --tag ${tag}`,
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Generate documentation",
+      command: "npm run docs:generate",
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Run tests",
+      command: "npm test",
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Validate schema files",
+      command: "npm run schema:validate-ocf-file-schemas",
+    },
+    {
+      type: "command",
+      phase: "prepare-release",
+      description: "Validate example files",
+      command: "npm run schema:validate-example-ocf-files",
+    },
+
+    // Gate: Confirm before creating release commit
+    {
+      type: "confirmation",
+      phase: "commit-release",
+      gate: "Create Release Commit & Tag",
+      description: `Create local commit "Release ${tag}" and tag ${tag}`,
+    },
+
+    // Phase 2: Commit release
+    {
+      type: "command",
+      phase: "commit-release",
+      description: "Stage all changes",
+      command: "git add .",
+    },
+    {
+      type: "command",
+      phase: "commit-release",
+      description: "Create release commit",
+      command: `git commit -m "Release ${tag}"`,
+    },
+    {
+      type: "command",
+      phase: "commit-release",
+      description: "Create release tag",
+      command: `git tag ${tag}`,
+    },
+
+    // Phase 3: Prepare next dev cycle
+    {
+      type: "command",
+      phase: "prepare-dev",
+      description: `Update schema version to ${nextDevVersionStr}`,
+      command: `[internal] updateManifestSchemaVersion("${nextDevVersionStr}")`,
+    },
+    {
+      type: "command",
+      phase: "prepare-dev",
+      description: `Update sample version to ${nextDevVersionStr}`,
+      command: `[internal] updateSampleManifestVersion("${nextDevVersionStr}")`,
+    },
+    {
+      type: "command",
+      phase: "prepare-dev",
+      description: "Transform URLs to development URLs",
+      command: "npm run docs:generate-release -- --dev",
+    },
+    {
+      type: "command",
+      phase: "prepare-dev",
+      description: "Update copyright notices",
+      command: "npm run schema:enforce-copyright-notices",
+    },
+
+    // Gate: Confirm before creating dev commit
+    {
+      type: "confirmation",
+      phase: "commit-dev",
+      gate: "Create Next Development Commit",
+      description: `Create local commit "Prepare for ${nextDevVersionStr} development"`,
+    },
+
+    // Phase 4: Commit dev cycle
+    {
+      type: "command",
+      phase: "commit-dev",
+      description: "Stage all changes",
+      command: "git add .",
+    },
+    {
+      type: "command",
+      phase: "commit-dev",
+      description: "Create next dev commit",
+      command: `git commit -m "Prepare for ${nextDevVersionStr} development"`,
+    },
+
+    // Gate: Confirm before pushing
+    {
+      type: "confirmation",
+      phase: "push",
+      gate: "Push to Remote & Create GitHub Release",
+      description: `Push to origin/main, push tag ${tag}, create draft GitHub release`,
+    },
+
+    // Phase 5: Push
+    {
+      type: "command",
+      phase: "push",
+      description: "Push commits and tags to remote",
+      command: "git push origin main --tags",
+    },
+    {
+      type: "command",
+      phase: "push",
+      description: "Create GitHub release draft",
+      command: `gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersionStr}"`,
+    },
+  ];
+
+  return {
+    currentVersion: current,
+    releaseVersion: releaseVersionStr,
+    tag,
+    nextDevVersion: nextDevVersionStr,
+    steps,
+  };
+}
+
+/**
  * Main release function.
  * @param type - Release type (major, minor, patch)
  * @param dryRun - If true, show what would happen without making changes
@@ -241,83 +504,52 @@ async function release(
     console.log("  [OK] GitHub CLI is available");
   }
 
-  // 2. Calculate versions
-  const currentVersionStr = getSchemaVersion();
-  const currentVersion = parseVersion(currentVersionStr);
+  // 2. Calculate versions using planRelease
+  const plan = planRelease(type, undefined, nextDevBase);
+  const { currentVersion, releaseVersion, tag, nextDevVersion } = plan;
 
-  // For release, we strip the prerelease suffix and potentially bump
-  // If current is "1.2.1-alpha+main", a patch release becomes "1.2.1"
-  // If current is "1.2.1", a patch release becomes "1.2.2"
-  let releaseVersion: Version;
-  if (currentVersion.prerelease) {
-    // Currently on alpha, release the base version (strip prerelease)
-    releaseVersion = {
-      major: currentVersion.major,
-      minor: currentVersion.minor,
-      patch: currentVersion.patch,
-    };
-    // But if they explicitly asked for a bump, honor it
-    if (type === "major") {
-      releaseVersion = { major: currentVersion.major + 1, minor: 0, patch: 0 };
-    } else if (type === "minor") {
-      releaseVersion = {
-        major: currentVersion.major,
-        minor: currentVersion.minor + 1,
-        patch: 0,
-      };
-    }
-    // For patch on alpha, we just release the current base version
-  } else {
-    // Already on a release version, bump it
-    releaseVersion = bumpVersion(currentVersion, type);
-  }
-
-  const releaseVersionStr = formatVersion(releaseVersion);
-  const tag = `v${releaseVersionStr}`;
-
-  // Calculate next dev version
-  let nextDevVersion: Version;
-  if (nextDevBase) {
-    // User specified a custom next dev base version
-    const customBase = parseVersion(nextDevBase);
-    if (compareVersions(customBase, releaseVersion) <= 0) {
-      throw new Error(
-        `Next dev version base (${nextDevBase}) must be greater than release version (${releaseVersionStr})`
-      );
-    }
-    nextDevVersion = {
-      major: customBase.major,
-      minor: customBase.minor,
-      patch: customBase.patch,
-      prerelease: "alpha+main",
-    };
-  } else {
-    // Default: patch+1 with alpha+main suffix
-    nextDevVersion = {
-      major: releaseVersion.major,
-      minor: releaseVersion.minor,
-      patch: releaseVersion.patch + 1,
-      prerelease: "alpha+main",
-    };
-  }
-  const nextDevVersionStr = formatVersion(nextDevVersion, true);
-
-  console.log(`\n  Current version:  ${currentVersionStr}`);
-  console.log(`  Release version:  ${releaseVersionStr}`);
+  console.log(`\n  Current version:  ${currentVersion}`);
+  console.log(`  Release version:  ${releaseVersion}`);
   console.log(`  Tag:              ${tag}`);
-  console.log(`  Next dev version: ${nextDevVersionStr}`);
+  console.log(`  Next dev version: ${nextDevVersion}`);
 
   if (dryRun) {
-    console.log("\n  [DRY RUN] No changes will be made.\n");
+    console.log("\n  [DRY RUN] No changes will be made.");
+    console.log("\n  Planned steps:\n");
+
+    let currentPhase = "";
+    for (const step of plan.steps) {
+      // Print phase header when phase changes
+      if (step.phase !== currentPhase) {
+        currentPhase = step.phase;
+        const phaseLabels: Record<string, string> = {
+          "prepare-release": "PREPARE RELEASE",
+          "commit-release": "COMMIT RELEASE",
+          "prepare-dev": "PREPARE NEXT DEV",
+          "commit-dev": "COMMIT DEV",
+          push: "PUSH TO REMOTE",
+        };
+        console.log(`  ── ${phaseLabels[currentPhase]} ──`);
+      }
+
+      if (step.type === "confirmation") {
+        console.log(`  🔒 [GATE] ${step.gate}`);
+        console.log(`           ${step.description}`);
+      } else {
+        console.log(`     • ${step.description}`);
+        console.log(`       $ ${step.command}`);
+      }
+    }
+    console.log("");
     return;
   }
 
   // 3. Prepare release (update versions and URLs first)
   console.log("\n2. Preparing release...\n");
 
-  console.log(`  Updating version to ${releaseVersionStr}...`);
-  updateManifestSchemaVersion(releaseVersionStr);
-  updateSampleManifestVersion(releaseVersionStr);
+  console.log(`  Updating version to ${releaseVersion}...`);
+  updateManifestSchemaVersion(releaseVersion);
+  updateSampleManifestVersion(releaseVersion);
 
   console.log("  Updating copyright notices...");
   exec("npm run schema:enforce-copyright-notices");
@@ -359,9 +591,9 @@ async function release(
   // 6. Prepare next dev commit
   console.log("\n5. Preparing next development cycle...\n");
 
-  console.log(`  Updating version to ${nextDevVersionStr}...`);
-  updateManifestSchemaVersion(nextDevVersionStr);
-  updateSampleManifestVersion(nextDevVersionStr);
+  console.log(`  Updating version to ${nextDevVersion}...`);
+  updateManifestSchemaVersion(nextDevVersion);
+  updateSampleManifestVersion(nextDevVersion);
 
   console.log("  Transforming URLs to development URLs...");
   exec("npm run docs:generate-release -- --dev");
@@ -373,8 +605,8 @@ async function release(
     "Create Next Development Commit",
     `  This will create a LOCAL commit for the next development cycle:
 
-    • Commit message: "Prepare for ${nextDevVersionStr} development"
-    • Version will be set to: ${nextDevVersionStr}
+    • Commit message: "Prepare for ${nextDevVersion} development"
+    • Version will be set to: ${nextDevVersion}
     • URLs will be reverted to development URLs
 
   This commit goes on top of the release commit.`
@@ -386,13 +618,13 @@ async function release(
     console.log("  To complete manually:");
     console.log("    git add .");
     console.log(
-      `    git commit -m "Prepare for ${nextDevVersionStr} development"\n`
+      `    git commit -m "Prepare for ${nextDevVersion} development"\n`
     );
     return;
   }
 
   exec("git add .");
-  exec(`git commit -m "Prepare for ${nextDevVersionStr} development"`);
+  exec(`git commit -m "Prepare for ${nextDevVersion} development"`);
 
   // 7. Push and create release
   if (!skipPush) {
@@ -404,7 +636,7 @@ async function release(
 
     • Push commits to: origin/main
     • Push tag: ${tag}
-    • Create draft GitHub release: "OCF ${releaseVersionStr}"
+    • Create draft GitHub release: "OCF ${releaseVersion}"
 
   WARNING: This action modifies the remote repository!
   Once pushed, the commits will be visible to all collaborators.
@@ -416,14 +648,14 @@ async function release(
       console.log("  To complete manually:");
       console.log("    git push origin main --tags");
       console.log(
-        `    gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersionStr}"\n`
+        `    gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersion}"\n`
       );
       return;
     }
 
     exec("git push origin main --tags");
     exec(
-      `gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersionStr}"`
+      `gh release create ${tag} --draft --generate-notes --title "OCF ${releaseVersion}"`
     );
 
     console.log("\n========================================");
