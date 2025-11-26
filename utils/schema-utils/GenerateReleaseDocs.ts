@@ -12,8 +12,10 @@ import { release_url, repo_raw_url_root } from "./Constants.js";
 
 // URL patterns for matching (used in bidirectional transforms)
 const DEV_URL_BASE = `${repo_raw_url_root}/main/schema`;
-const RELEASE_URL_PATTERN =
-  /https:\/\/schema\.opencaptablecoalition\.com\/v\/[^/]+/g;
+const RELEASE_URL_PATTERN = new RegExp(
+  `${release_url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/[^/]+`,
+  "g"
+);
 const DEV_URL_PATTERN = new RegExp(
   `${repo_raw_url_root.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/main/schema`,
   "g"
