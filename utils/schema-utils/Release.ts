@@ -85,9 +85,17 @@ function formatVersion(v: Version, includePrerelease = false): string {
 /**
  * Get the current OCF version from the manifest schema.
  */
-function getCurrentVersion(): string {
+function getSchemaVersion(): string {
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8"));
   return manifest.properties.ocf_version.const;
+}
+
+/**
+ * Get the current OCF version from the sample manifest.
+ */
+function getSampleVersion(): string {
+  const sample = JSON.parse(fs.readFileSync(SAMPLE_MANIFEST_PATH, "utf-8"));
+  return sample.ocf_version;
 }
 
 /**
@@ -199,7 +207,7 @@ async function release(
   }
 
   // 2. Calculate versions
-  const currentVersionStr = getCurrentVersion();
+  const currentVersionStr = getSchemaVersion();
   const currentVersion = parseVersion(currentVersionStr);
 
   // For release, we strip the prerelease suffix and potentially bump
@@ -251,14 +259,8 @@ async function release(
     return;
   }
 
-  // 3. Run validations
-  console.log("\n2. Running validations...\n");
-  exec("npm test");
-  exec("npm run schema:validate-ocf-file-schemas");
-  exec("npm run schema:validate-example-ocf-files");
-
-  // 4. Prepare release commit
-  console.log("\n3. Preparing release...\n");
+  // 3. Prepare release (update versions and URLs first)
+  console.log("\n2. Preparing release...\n");
 
   console.log(`  Updating version to ${releaseVersionStr}...`);
   updateManifestSchemaVersion(releaseVersionStr);
@@ -272,6 +274,12 @@ async function release(
 
   console.log("  Generating documentation...");
   exec("npm run docs:generate");
+
+  // 4. Run validations (after version updates so schema and sample are in sync)
+  console.log("\n3. Running validations...\n");
+  exec("npm test");
+  exec("npm run schema:validate-ocf-file-schemas");
+  exec("npm run schema:validate-example-ocf-files");
 
   // 5. Commit and tag
   console.log("\n4. Creating release commit and tag...\n");
