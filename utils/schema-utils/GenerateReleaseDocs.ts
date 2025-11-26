@@ -42,7 +42,9 @@ export function resolveBaseUrl(
   if (dev) return DEV_URL_BASE;
   if (release) {
     if (!tag) throw new Error("--release requires --tag <version>");
-    return `${release_url}/${tag}`;
+    // Strip 'v' prefix from tag since release_url already ends with /v
+    const version = tag.replace(/^v/, "");
+    return `${release_url}/${version}`;
   }
   throw new Error(
     "Must specify --dev, --release --tag <version>, or --base-url"

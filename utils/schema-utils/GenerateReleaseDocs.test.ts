@@ -11,7 +11,8 @@ import { release_url, repo_raw_url_root } from "./Constants.js";
 // Test constants
 const DEV_URL_BASE = `${repo_raw_url_root}/main/schema`;
 const TEST_TAG = "v1.2.3";
-const RELEASE_URL_BASE = `${release_url}/${TEST_TAG}`;
+// Note: release_url ends with /v, so we strip the v prefix from the tag
+const RELEASE_URL_BASE = `${release_url}/${TEST_TAG.replace(/^v/, "")}`;
 
 describe("resolveBaseUrl", () => {
   it("should return dev URL when --dev flag is set", () => {
@@ -110,7 +111,8 @@ describe("URL transformation idempotency", () => {
     const releaseManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
     const releaseUriLookup = fs.readFileSync(URI_LOOKUP_PATH, "utf-8");
     expect(releaseManifest).toContain(release_url);
-    expect(releaseManifest).toContain(TEST_TAG);
+    // Check for version without 'v' prefix since release_url already ends with /v
+    expect(releaseManifest).toContain(TEST_TAG.replace(/^v/, ""));
     expect(releaseUriLookup).toContain(release_url);
 
     // 3. Transform back to dev URLs
@@ -128,16 +130,16 @@ describe("URL transformation idempotency", () => {
   it("should handle multiple release->dev cycles", async () => {
     const initialManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
 
-    // Cycle 1
-    await generateReleaseDocs(`${release_url}/v1.0.0`, false);
+    // Cycle 1 - use version without 'v' prefix since release_url ends with /v
+    await generateReleaseDocs(`${release_url}/1.0.0`, false);
     await generateReleaseDocs(DEV_URL_BASE, false);
 
     // Cycle 2
-    await generateReleaseDocs(`${release_url}/v2.0.0`, false);
+    await generateReleaseDocs(`${release_url}/2.0.0`, false);
     await generateReleaseDocs(DEV_URL_BASE, false);
 
     // Cycle 3
-    await generateReleaseDocs(`${release_url}/v3.0.0`, false);
+    await generateReleaseDocs(`${release_url}/3.0.0`, false);
     await generateReleaseDocs(DEV_URL_BASE, false);
 
     const finalManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
