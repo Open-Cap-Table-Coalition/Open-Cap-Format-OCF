@@ -1,198 +1,204 @@
 # Release Process
 
-This guide describes the step-by-step process for releasing a new version of the Open Cap Format
-schema. It covers updating version numbers, generating release documentation, and publishing.
+This guide describes the process for releasing a new version of the Open Cap Format schema.
+
+## Quick Start (Automated)
+
+The recommended way to create a release is using the automated release script:
+
+```bash
+# Preview what will happen (no changes made)
+npm run release -- --type patch --dry-run
+
+# Create a patch release (1.2.1 → 1.2.2)
+npm run release:patch
+
+# Create a minor release (1.2.1 → 1.3.0)
+npm run release:minor
+
+# Create a major release (1.2.1 → 2.0.0)
+npm run release:major
+```
+
+The release script handles everything:
+
+1. Validates tests and schemas pass
+2. Updates version in schema and sample files
+3. Updates copyright notices
+4. Transforms URLs to release URLs
+5. Generates documentation
+6. Creates release commit and tag
+7. Reverts URLs to development URLs
+8. Creates next development version commit
+9. Pushes to remote and creates GitHub release draft
+
+### Options
+
+| Flag            | Description                                              |
+| --------------- | -------------------------------------------------------- |
+| `--dry-run`     | Show what would happen without making changes            |
+| `--skip-push`   | Create commits locally without pushing or GitHub release |
+| `-v, --verbose` | Show detailed output                                     |
 
 ## Prerequisites
 
 -   Node.js v18.16.0 (see `.nvmrc`)
 -   npm >= 9.5.1 < 10
--   Python 3.8+ (for mkdocs)
--   All tests passing (`npm test`)
--   All schema validations passing (`npm run schema:validate-ocf-file-schemas`)
+-   GitHub CLI (`gh`) installed and authenticated
+-   Clean git working directory
+-   All tests passing
 
-## Version Locations
+## Version Format
 
-The OCF version appears in one authoritative location:
+| Context     | Format             | Example            |
+| ----------- | ------------------ | ------------------ |
+| Development | `X.Y.Z-alpha+main` | `1.2.1-alpha+main` |
+| Release     | `X.Y.Z`            | `1.2.1`            |
 
-| File                                       | Field                 | Example              |
-| ------------------------------------------ | --------------------- | -------------------- |
-| `schema/files/OCFManifestFile.schema.json` | `ocf_version` (const) | `"1.2.1-alpha+main"` |
-
-During development, the version uses the format `X.Y.Z-alpha+main`. For releases, it becomes
-`X.Y.Z`.
+The version is stored in `schema/files/OCFManifestFile.schema.json` as the `ocf_version` const.
 
 ## URL Transformation
 
 Schema files use different URL patterns for development vs. releases:
 
-| Context                   | `$id` / `$ref` URL Pattern                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------------------------ |
-| Development (main branch) | `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/...` |
-| Released version          | `https://schema.opencaptablecoalition.com/v/{tag}/...`                                           |
+| Context     | URL Pattern                                             |
+| ----------- | ------------------------------------------------------- |
+| Development | `https://raw.githubusercontent.com/.../main/schema/...` |
+| Release     | `https://schema.opencaptablecoalition.com/v/{tag}/...`  |
 
-The `GenerateReleaseDocs.ts` utility transforms these URLs during the release process.
+The `GenerateReleaseDocs.ts` utility handles bidirectional URL transformation:
 
-## Release Steps
+```bash
+# Transform to release URLs
+npm run docs:generate-release -- --release --tag v1.2.1
+
+# Transform to development URLs
+npm run docs:generate-release -- --dev
+
+# Use custom base URL (advanced)
+npm run docs:generate-release -- --base-url "https://custom.example.com/schema"
+```
+
+## Manual Release Steps
+
+If you need to perform a release manually (not recommended), follow these steps:
 
 ### 1. Ensure Clean State
 
 ```bash
-# Verify all tests pass
 npm test
-
-# Verify schema validation passes
 npm run schema:validate-ocf-file-schemas
-
-# Verify example files validate
 npm run schema:validate-example-ocf-files
-
-# Check for lint issues
 npm run lint
 ```
 
-### 2. Update the OCF Version
+### 2. Update Version
 
-Edit `schema/files/OCFManifestFile.schema.json` and change `ocf_version` from the alpha version to
-the release version:
+Edit `schema/files/OCFManifestFile.schema.json`:
 
 ```json
-// Before (development)
 "ocf_version": {
-  "const": "1.2.1-alpha+main"
-}
-
-// After (release)
-"ocf_version": {
-  "const": "1.2.1"
+  "const": "1.2.1"  // Remove -alpha+main suffix
 }
 ```
 
-### 3. Update Copyright Notices
+Also update `samples/Manifest.ocf.json` to match.
 
-Run the copyright notice enforcer to ensure all schemas have current year and valid copyright
-notices:
+### 3. Update Copyright Notices
 
 ```bash
 npm run schema:enforce-copyright-notices
 ```
 
-This command uses the flags `-fvart --tag main` which:
-
--   `-f` (force): Regenerates copyright on all schemas
--   `-v` (verbose): Shows detailed output
--   `-a` (add): Adds missing copyright notices
--   `-r` (replace): Replaces invalid copyright notices
--   `-t` (test): Runs in test mode for CI validation
-
-### 4. Generate Release Documentation
-
-Transform all schema `$id` and `$ref` URLs from development URLs to release URLs:
+### 4. Transform URLs to Release
 
 ```bash
-npm run docs:generate-release -- --tag v1.2.1
+npm run docs:generate-release -- --release --tag v1.2.1
 ```
 
-Replace `v1.2.1` with your actual version tag. This command:
-
-1. Updates `utils/schema-utils/UriLookupForFileType.json` with release URLs
-2. Transforms `$id` fields in all schemas to use
-   `https://schema.opencaptablecoalition.com/v/{tag}/...`
-3. Transforms `$ref` fields in all schemas to use the release URL pattern
-
-### 5. Generate Markdown Documentation
+### 5. Generate Documentation
 
 ```bash
 npm run docs:generate
 ```
 
-This regenerates the markdown documentation in `docs/schema_markdown/` from the updated schemas.
-
-### 6. Verify Changes
-
-```bash
-# Re-run validations to ensure nothing broke
-npm run schema:validate-ocf-file-schemas
-npm run schema:validate-example-ocf-files
-npm test
-```
-
-### 7. Commit and Tag
+### 6. Commit and Tag
 
 ```bash
 git add .
 git commit -m "Release v1.2.1"
 git tag v1.2.1
-git push origin main --tags
 ```
 
-### 8. Create GitHub Release
+### 7. Prepare Next Development Cycle
 
-1. Go to the repository's Releases page on GitHub
-2. Click "Create a new release"
-3. Select the tag you just pushed (e.g., `v1.2.1`)
-4. Add release notes describing changes
-5. Publish the release
+```bash
+# Update version to next alpha
+# Edit schema/files/OCFManifestFile.schema.json and samples/Manifest.ocf.json
 
-When the release is published, the `generate-and-publish-mkdocs.yml` workflow automatically:
+# Transform URLs back to development
+npm run docs:generate-release -- --dev
 
--   Generates documentation (`npm run docs:generate`)
--   Deploys to GitHub Pages (`mkdocs gh-deploy --force`)
+# Update copyright notices
+npm run schema:enforce-copyright-notices
 
-### 9. Prepare for Next Development Cycle
+# Commit
+git add .
+git commit -m "Prepare for v1.2.2-alpha+main development"
+```
 
-After the release is published, prepare the repository for the next development cycle:
+### 8. Push and Create Release
 
-1. Update `ocf_version` back to the next alpha version:
+```bash
+git push origin main --tags
+gh release create v1.2.1 --draft --generate-notes --title "OCF 1.2.1"
+```
 
-    ```json
-    "ocf_version": {
-      "const": "1.2.2-alpha+main"
-    }
-    ```
+### 9. Publish Release
 
-2. Revert schema URLs back to development URLs (pointing to `main` branch):
-
-    ```bash
-    # This needs to be done manually or via a script that reverses GenerateReleaseDocs
-    # The URLs should point back to:
-    # https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/...
-    ```
-
-3. Update copyright notices for the new development cycle:
-
-    ```bash
-    npm run schema:enforce-copyright-notices
-    ```
-
-4. Commit the changes:
-    ```bash
-    git add .
-    git commit -m "Prepare for v1.2.2 development"
-    git push origin main
-    ```
+1. Review the draft release on GitHub
+2. Edit release notes if needed
+3. Publish to trigger documentation deployment
 
 ## Utility Reference
 
-### GenerateReleaseDocs.ts
+### Release.ts
 
-Transforms development URLs to release URLs in all schema files.
+Main orchestration script for automated releases.
 
 ```bash
-node --loader ts-node/esm ./utils/schema-utils/GenerateReleaseDocs.ts generate-release-docs --tag <version>
+npm run release -- --type <major|minor|patch> [options]
 ```
 
-| Flag            | Description                            |
-| --------------- | -------------------------------------- |
-| `--tag`         | Required. Version tag (e.g., `v1.2.1`) |
-| `-v, --verbose` | Show detailed output                   |
+| Flag            | Description                           |
+| --------------- | ------------------------------------- |
+| `-t, --type`    | Release type (major, minor, or patch) |
+| `--dry-run`     | Preview changes without executing     |
+| `--skip-push`   | Create local commits only             |
+| `-v, --verbose` | Detailed output                       |
+
+### GenerateReleaseDocs.ts
+
+Bidirectional URL transformation for schema files.
+
+```bash
+npm run docs:generate-release -- [options]
+```
+
+| Flag            | Description                                   |
+| --------------- | --------------------------------------------- |
+| `--dev`         | Use development URLs (raw.githubusercontent)  |
+| `--release`     | Use release URLs (requires `--tag`)           |
+| `--tag`         | Version tag for release URLs (e.g., `v1.2.1`) |
+| `--base-url`    | Custom base URL (overrides --dev/--release)   |
+| `-v, --verbose` | Show detailed output                          |
 
 ### EnforceCopyrightNotices.ts
 
-Manages copyright notices in the `$comment` field of all schemas.
+Manages copyright notices in schema `$comment` fields.
 
 ```bash
-node --loader ts-node/esm ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices [flags]
+npm run schema:enforce-copyright-notices
 ```
 
 | Flag            | Description                           |
@@ -206,7 +212,7 @@ node --loader ts-node/esm ./utils/schema-utils/EnforceCopyrightNotices.ts check-
 
 ## Automated CI Checks
 
-The following GitHub Actions run on PRs and pushes to main:
+On PRs and pushes to main:
 
 | Workflow                                      | Purpose                               |
 | --------------------------------------------- | ------------------------------------- |
@@ -225,25 +231,30 @@ On release publication:
 
 ## Troubleshooting
 
+### Git working directory not clean
+
+Commit or stash your changes before running the release script:
+
+```bash
+git stash
+npm run release:patch
+git stash pop
+```
+
+### GitHub CLI not available
+
+Install the GitHub CLI or use `--skip-push` to create commits locally:
+
+```bash
+npm run release -- patch --skip-push
+# Then manually: git push origin main --tags
+```
+
 ### Schema validation fails after URL transformation
 
-Ensure the tag you specified matches exactly what you'll use for the GitHub release. The URLs must
-resolve correctly.
+Ensure the tag matches exactly what you'll use for the GitHub release. Run with `--dry-run` first to
+preview.
 
-### Copyright notice check fails
+### Tests fail during release
 
-Run with verbose mode to see which schemas have issues:
-
-```bash
-npm run schema:enforce-copyright-notices -- -v
-```
-
-### Generated docs are out of date
-
-Regenerate and commit:
-
-```bash
-npm run docs:generate
-git add docs/schema_markdown/
-git commit -m "Regenerate documentation"
-```
+Fix the failing tests before attempting a release. The script will abort if validations fail.

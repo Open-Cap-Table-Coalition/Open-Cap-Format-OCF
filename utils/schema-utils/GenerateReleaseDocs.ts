@@ -10,43 +10,82 @@ import { basenameRelativePathToSchemaDir } from "./PathTools.js";
 
 import { release_url, repo_raw_url_root } from "./Constants.js";
 
+// URL patterns for matching (used in bidirectional transforms)
+const DEV_URL_BASE = `${repo_raw_url_root}/main/schema`;
+const RELEASE_URL_PATTERN =
+  /https:\/\/schema\.opencaptablecoalition\.com\/v\/[^/]+/g;
+const DEV_URL_PATTERN = new RegExp(
+  `${repo_raw_url_root.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/main/schema`,
+  "g"
+);
+
 /**
- * Given a schema, with a known local schema_path, set the release url for the ref fields
+ * Resolves the target base URL from CLI flags.
+ * @param dev - Use dev URLs (raw.githubusercontent.com/.../main/schema)
+ * @param release - Use release URLs (schema.opencaptablecoalition.com/v/{tag})
+ * @param tag - Version tag for release URLs
+ * @param baseUrl - Custom base URL (overrides dev/release)
+ * @returns The resolved base URL
+ */
+export function resolveBaseUrl(
+  dev: boolean,
+  release: boolean,
+  tag?: string,
+  baseUrl?: string
+): string {
+  if (baseUrl) return baseUrl;
+  if (dev && release) {
+    throw new Error("Cannot specify both --dev and --release");
+  }
+  if (dev) return DEV_URL_BASE;
+  if (release) {
+    if (!tag) throw new Error("--release requires --tag <version>");
+    return `${release_url}/${tag}`;
+  }
+  throw new Error(
+    "Must specify --dev, --release --tag <version>, or --base-url"
+  );
+}
+
+/**
+ * Given a schema, with a known local schema_path, set the url for the ref fields.
+ * Handles bidirectional transforms between dev and release URLs.
  * @param schema_path -> Local path where schema_obj was loaded from.
  * @param schema_inst -> OCF schema JSON to update.
- * @param tag -> String: What branch tag should be added to the url.
+ * @param targetBaseUrl -> Target base URL for $ref fields.
  * @param verbose -> Boolean: Display detailed logs.
  */
 export function setRefField(
   schema_path: string,
   schema_inst: Record<string, any>,
-  tag: string = "main",
+  targetBaseUrl: string,
   verbose: boolean = false
 ) {
   let schema_data = JSON.stringify(schema_inst, null, 2);
-  schema_data = schema_data.replaceAll(
-    `"$ref": "${repo_raw_url_root}\/main\/schema\/`,
-    `"$ref": "${release_url}/${tag}/`
-  );
+  // Replace both dev and release URL patterns with target
+  schema_data = schema_data
+    .replace(RELEASE_URL_PATTERN, targetBaseUrl)
+    .replace(DEV_URL_PATTERN, targetBaseUrl);
   fs.writeFileSync(schema_path, schema_data);
   if (verbose)
     console.log(`\t--> Set ref fields in schema ${schema_inst["$id"]}`);
 }
 
 /**
- * Given a schema, with a known local schema_path, set the release url for the id fields
- * @param schema_path ->Local path where schema_obj was loaded from.
+ * Given a schema, with a known local schema_path, set the url for the $id field.
+ * Handles bidirectional transforms between dev and release URLs.
+ * @param schema_path -> Local path where schema_obj was loaded from.
  * @param schema_inst -> OCF schema JSON to update.
- * @param tag -> String: What branch tag should be added to the urls.
+ * @param targetBaseUrl -> Target base URL for $id field.
  * @param verbose -> Boolean: Display detailed logs.
  */
-export function setRawUrl(
+export function setIdField(
   schema_path: string,
   schema_inst: Record<string, any>,
-  tag: string = "main",
+  targetBaseUrl: string,
   verbose: boolean = false
 ) {
-  schema_inst["$id"] = `${release_url}/${tag}/${basenameRelativePathToSchemaDir(
+  schema_inst["$id"] = `${targetBaseUrl}/${basenameRelativePathToSchemaDir(
     schema_path
   )}.schema.json`;
   let schema_data = JSON.stringify(schema_inst, null, 2);
@@ -56,11 +95,12 @@ export function setRawUrl(
 }
 
 /**
- * Sets the URI for file types lookup to the release's url
- * @param tag  -> String: What branch tag should be added to the urls.
+ * Sets the URI for file types lookup.
+ * Handles bidirectional transforms between dev and release URLs.
+ * @param targetBaseUrl -> Target base URL for file type URIs.
  * @param verbose -> Boolean: Display detailed logs.
  */
-function setUriLookupForFileType(tag: string = "main", verbose = false) {
+function setUriLookupForFileType(targetBaseUrl: string, verbose = false) {
   var uriLookupForFileTypePath =
     "./utils/schema-utils/UriLookupForFileType.json";
   var buffer = fs.readFileSync(uriLookupForFileTypePath);
@@ -70,34 +110,36 @@ function setUriLookupForFileType(tag: string = "main", verbose = false) {
     if (verbose) {
       console.log(`\t--> Set URI for file type: ${key}`);
     }
-    uriDict[key] = uriDict[key].replace(
-      `${repo_raw_url_root}\/main\/schema\/`,
-      `${release_url}/${tag}/`
-    );
+    // Replace both dev and release URL patterns with target
+    uriDict[key] = uriDict[key]
+      .replace(RELEASE_URL_PATTERN, targetBaseUrl)
+      .replace(DEV_URL_PATTERN, targetBaseUrl);
   }
 
   fs.writeFileSync(uriLookupForFileTypePath, JSON.stringify(uriDict, null, 2));
 }
 
 /**
- * Load all schema files in the /schemas folder. Replace the urls with the release urls.
+ * Load all schema files in the /schemas folder. Replace the urls with the target base URL.
+ * Supports bidirectional transforms between dev and release URLs.
  *
- * Returns true if the schemas all have valid release urls, otherwise returns false.
+ * Returns true if the schemas all have valid urls, otherwise returns false.
  *
+ * @param targetBaseUrl - The target base URL for all schema references.
  * @param verbose - Boolean. If true, display verbose test and result messages to console.
- * @param tag String -> What branch tag should be appended to the url? Lets us specify a specific version to view (main by default).
  * @returns Promise that resolves to true if the urls were replaced, false otherwise.
  */
 export async function generateReleaseDocs(
-  verbose: boolean = false,
-  tag: string = "main"
+  targetBaseUrl: string,
+  verbose: boolean = false
 ): Promise<boolean> {
   if (verbose) {
     console.log(`GENERATE RELEASE DOCS ----------------------`);
+    console.log(`Target base URL: ${targetBaseUrl}`);
   }
   try {
     if (verbose) console.log("\nSetting URIs for file types lookup...");
-    setUriLookupForFileType(tag, verbose);
+    setUriLookupForFileType(targetBaseUrl, verbose);
 
     if (verbose) console.log("\nTraverse schema dir for schema paths...");
     const schema_paths = await getSchemaFilepaths(verbose);
@@ -117,22 +159,19 @@ export async function generateReleaseDocs(
     });
 
     if (verbose)
-      console.log(
-        `Change urls for release on ${schemas.length} total schemas:`
-      );
+      console.log(`Transform urls on ${schemas.length} total schemas:`);
 
     // Loop over the schemas
     for (let i = 0; i < schemas.length; i++) {
       let schema_inst = schemas[i];
 
-      if (verbose)
-        console.log(`•\tChange urls for release on ${schema_inst["$id"]}`);
+      if (verbose) console.log(`•\tTransform urls on ${schema_inst["$id"]}`);
 
-      if (verbose) console.log("Setting the repo raw url for id field");
-      setRawUrl(schema_paths[i], schemas[i], tag, verbose);
+      if (verbose) console.log("Setting the $id field");
+      setIdField(schema_paths[i], schemas[i], targetBaseUrl, verbose);
 
-      if (verbose) console.log("Setting the repo raw url for ref fields");
-      setRefField(schema_paths[i], schema_inst, tag, verbose);
+      if (verbose) console.log("Setting the $ref fields");
+      setRefField(schema_paths[i], schema_inst, targetBaseUrl, verbose);
     }
 
     if (verbose) console.log("GENERATE RELEASE DOCS COMPLETE -------------");
@@ -149,13 +188,17 @@ export async function generateReleaseDocs(
 interface GenerateReleaseDocsArgs extends Arguments {
   verbose?: boolean;
   v?: boolean;
+  dev?: boolean;
+  release?: boolean;
   tag?: string;
+  "base-url"?: string;
 }
 
 yargs(hideBin(process.argv))
   .command({
     command: "generate-release-docs",
-    describe: "Read schema files from disk and generates docs for release.",
+    describe:
+      "Transform schema URLs. Use --dev for development URLs or --release --tag <version> for release URLs.",
     builder: {
       verbose: {
         describe: "Verbose outputs show detailed steps and errors",
@@ -163,18 +206,43 @@ yargs(hideBin(process.argv))
         demandOption: false,
         type: "boolean",
       },
-      tag: {
+      dev: {
         describe:
-          "What tag should be appended to the url? This lets us specify specific tags other than latest main branch.",
-        demandOption: true,
+          "Use development URLs (raw.githubusercontent.com/.../main/schema)",
+        demandOption: false,
+        type: "boolean",
+      },
+      release: {
+        describe:
+          "Use release URLs (schema.opencaptablecoalition.com/v/{tag}). Requires --tag.",
+        demandOption: false,
+        type: "boolean",
+      },
+      tag: {
+        describe: "Version tag for release URLs (e.g., v1.2.1)",
+        demandOption: false,
+        type: "string",
+      },
+      "base-url": {
+        describe: "Custom base URL (advanced). Overrides --dev and --release.",
+        demandOption: false,
         type: "string",
       },
     },
     handler: async (argv: GenerateReleaseDocsArgs) => {
-      await generateReleaseDocs(
-        argv?.verbose ? argv.verbose : argv?.v ? argv.v : false,
-        argv?.tag ? argv.tag : "main"
-      );
+      try {
+        const verbose = argv?.verbose ?? argv?.v ?? false;
+        const targetBaseUrl = resolveBaseUrl(
+          argv?.dev ?? false,
+          argv?.release ?? false,
+          argv?.tag,
+          argv?.["base-url"]
+        );
+        await generateReleaseDocs(targetBaseUrl, verbose);
+      } catch (e: any) {
+        console.error(`Error: ${e.message}`);
+        process.exit(1);
+      }
     },
   })
   .help()

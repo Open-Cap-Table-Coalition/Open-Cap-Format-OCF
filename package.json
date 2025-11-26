@@ -7,13 +7,17 @@
     "lint": "prettier . --check --ignore-unknown",
     "lint:fix": "prettier . --check --write --ignore-unknown",
     "docs:generate": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/generate-docs/index.ts",
-    "docs:generate-release": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GenerateReleaseDocs.ts generate-release-docs -v --tag",
+    "docs:generate-release": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GenerateReleaseDocs.ts generate-release-docs",
     "schema:enforce-copyright-notices": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/EnforceCopyrightNotices.ts check-notices -fvart --tag main",
     "schema:validate-ocf-file-schemas": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-schema -v -t",
     "schema:validate-example-ocf-files": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-ocf-directory -v -p ./samples -t",
     "schema:validate-all-objects-have-samples": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/validate.mjs validate-all-objects-have-samples -t",
     "test": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest",
-    "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch"
+    "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch",
+    "release": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/Release.ts release",
+    "release:patch": "npm run release -- --type patch",
+    "release:minor": "npm run release -- --type minor",
+    "release:major": "npm run release -- --type major"
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
