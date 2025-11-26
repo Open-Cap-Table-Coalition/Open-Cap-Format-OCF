@@ -7,6 +7,7 @@ import {
   setRefField,
 } from "./GenerateReleaseDocs.js";
 import { release_url, repo_raw_url_root } from "./Constants.js";
+import { getSchemaFilepaths } from "./Loaders.js";
 
 // Test constants
 const DEV_URL_BASE = `${repo_raw_url_root}/main/schema`;
@@ -61,34 +62,24 @@ describe("URL transformation idempotency", () => {
   const MANIFEST_SCHEMA_PATH = "./schema/files/OCFManifestFile.schema.json";
   const URI_LOOKUP_PATH = "./utils/schema-utils/UriLookupForFileType.json";
 
-  // Store original contents
-  let originalManifestSchema: string;
+  // Store original contents of ALL files that generateReleaseDocs modifies
   let originalUriLookup: string;
   let originalSchemaFiles: Map<string, string>;
 
   beforeAll(async () => {
-    // Save original state of key files
-    originalManifestSchema = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
+    // Save original state of URI lookup file
     originalUriLookup = fs.readFileSync(URI_LOOKUP_PATH, "utf-8");
 
-    // Save a sample of schema files to verify
+    // Save original state of ALL schema files (generateReleaseDocs modifies all of them)
     originalSchemaFiles = new Map();
-    const samplePaths = [
-      "./schema/files/OCFManifestFile.schema.json",
-      "./schema/objects/Stakeholder.schema.json",
-      "./schema/enums/ObjectType.schema.json",
-      "./schema/types/Date.schema.json",
-    ];
-    for (const path of samplePaths) {
-      if (fs.existsSync(path)) {
-        originalSchemaFiles.set(path, fs.readFileSync(path, "utf-8"));
-      }
+    const allSchemaPaths = await getSchemaFilepaths(false);
+    for (const path of allSchemaPaths) {
+      originalSchemaFiles.set(path, fs.readFileSync(path, "utf-8"));
     }
   });
 
   afterAll(async () => {
-    // Restore original state
-    fs.writeFileSync(MANIFEST_SCHEMA_PATH, originalManifestSchema);
+    // Restore ALL files to their original state
     fs.writeFileSync(URI_LOOKUP_PATH, originalUriLookup);
     for (const [path, content] of originalSchemaFiles) {
       fs.writeFileSync(path, content);
@@ -96,7 +87,10 @@ describe("URL transformation idempotency", () => {
   });
 
   it("should produce identical files after dev->release->dev transformation", async () => {
-    // 1. Capture initial state (should be dev URLs)
+    // 1. Normalize to dev URLs first (in case we're starting from release state)
+    await generateReleaseDocs(DEV_URL_BASE, false);
+
+    // 2. Capture initial state (now guaranteed to be dev URLs)
     const initialManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
     const initialUriLookup = fs.readFileSync(URI_LOOKUP_PATH, "utf-8");
 
@@ -104,7 +98,7 @@ describe("URL transformation idempotency", () => {
     expect(initialManifest).toContain(repo_raw_url_root);
     expect(initialUriLookup).toContain(repo_raw_url_root);
 
-    // 2. Transform to release URLs
+    // 3. Transform to release URLs
     await generateReleaseDocs(RELEASE_URL_BASE, false);
 
     // Verify release transformation worked
@@ -115,10 +109,10 @@ describe("URL transformation idempotency", () => {
     expect(releaseManifest).toContain(TEST_TAG.replace(/^v/, ""));
     expect(releaseUriLookup).toContain(release_url);
 
-    // 3. Transform back to dev URLs
+    // 4. Transform back to dev URLs
     await generateReleaseDocs(DEV_URL_BASE, false);
 
-    // 4. Verify files match initial state
+    // 5. Verify files match initial state
     const finalManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
     const finalUriLookup = fs.readFileSync(URI_LOOKUP_PATH, "utf-8");
 
@@ -128,6 +122,8 @@ describe("URL transformation idempotency", () => {
   });
 
   it("should handle multiple release->dev cycles", async () => {
+    // Normalize to dev URLs first
+    await generateReleaseDocs(DEV_URL_BASE, false);
     const initialManifest = fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8");
 
     // Cycle 1 - use version without 'v' prefix since release_url ends with /v
@@ -147,6 +143,9 @@ describe("URL transformation idempotency", () => {
   });
 
   it("should correctly transform all schema files", async () => {
+    // Normalize to dev URLs first
+    await generateReleaseDocs(DEV_URL_BASE, false);
+
     // Get initial state of all sample files
     const initialStates = new Map<string, object>();
     for (const [path] of originalSchemaFiles) {
