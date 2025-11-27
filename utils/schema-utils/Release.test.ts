@@ -504,12 +504,14 @@ describe("planRelease", () => {
       expect(npmCommands.length).toBeGreaterThan(0);
       expect(npmCommands.map((c) => c.command)).toEqual(
         expect.arrayContaining([
+          "npm run version:set -- 1.2.3",
           "npm run schema:enforce-copyright-notices",
           "npm run docs:generate-release -- --release --tag v1.2.3",
           "npm run docs:generate",
           "npm test",
           "npm run schema:validate-ocf-file-schemas",
           "npm run schema:validate-example-ocf-files",
+          "npm run version:set -- 1.2.4-alpha+main",
           "npm run docs:generate-release -- --dev",
         ])
       );

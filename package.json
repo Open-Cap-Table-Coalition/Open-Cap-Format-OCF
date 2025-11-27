@@ -17,7 +17,8 @@
     "release": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/Release.ts release",
     "release:patch": "npm run release -- --type patch",
     "release:minor": "npm run release -- --type minor",
-    "release:major": "npm run release -- --type major"
+    "release:major": "npm run release -- --type major",
+    "version:set": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/SetVersion.ts set-version"
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",

@@ -3,8 +3,28 @@
 import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 import { execSync } from "child_process";
-import * as fs from "fs";
 import * as readline from "readline";
+
+// Re-export for backwards compatibility
+export { MANIFEST_SCHEMA_PATH, SAMPLE_MANIFEST_PATH } from "./Constants.js";
+
+export {
+  Version,
+  parseVersion,
+  formatVersion,
+  compareVersions,
+  getSchemaVersion,
+  bumpVersion,
+} from "./VersionUtils.js";
+
+import {
+  parseVersion,
+  formatVersion,
+  compareVersions,
+  getSchemaVersion,
+  bumpVersion,
+  type Version,
+} from "./VersionUtils.js";
 
 /**
  * Prompt user for explicit confirmation by typing "I Understand".
@@ -45,126 +65,6 @@ async function confirmDangerousOperation(
       }
     });
   });
-}
-
-// File paths
-const MANIFEST_SCHEMA_PATH = "./schema/files/OCFManifestFile.schema.json";
-const SAMPLE_MANIFEST_PATH = "./samples/Manifest.ocf.json";
-
-// Version parsing types
-export interface Version {
-  major: number;
-  minor: number;
-  patch: number;
-  prerelease?: string;
-}
-
-/**
- * Parse a semantic version string into components.
- * Handles formats like "1.2.1" and "1.2.1-alpha+main"
- */
-export function parseVersion(versionStr: string): Version {
-  const match = versionStr.match(/^(\d+)\.(\d+)\.(\d+)(?:-(.+))?$/);
-  if (!match) throw new Error(`Invalid version format: ${versionStr}`);
-  return {
-    major: parseInt(match[1]),
-    minor: parseInt(match[2]),
-    patch: parseInt(match[3]),
-    prerelease: match[4],
-  };
-}
-
-/**
- * Format a version object to string.
- */
-export function formatVersion(v: Version, includePrerelease = false): string {
-  const base = `${v.major}.${v.minor}.${v.patch}`;
-  return includePrerelease && v.prerelease ? `${base}-${v.prerelease}` : base;
-}
-
-/**
- * Compare two versions. Returns:
- *  -1 if a < b
- *   0 if a === b
- *   1 if a > b
- *
- * Prerelease handling (follows semver):
- * - Throws if both versions have prerelease tags (word-based tags are not comparable)
- * - A release version beats its prerelease: 1.2.3 > 1.2.3-alpha+main
- * - But next prerelease beats prior release: 1.2.4-alpha+main > 1.2.3
- */
-export function compareVersions(a: Version, b: Version): -1 | 0 | 1 {
-  if (a.prerelease && b.prerelease) {
-    throw new Error(
-      "Cannot compare two prerelease versions - prerelease tags are not comparable"
-    );
-  }
-
-  // Compare major.minor.patch first
-  if (a.major !== b.major) return a.major > b.major ? 1 : -1;
-  if (a.minor !== b.minor) return a.minor > b.minor ? 1 : -1;
-  if (a.patch !== b.patch) return a.patch > b.patch ? 1 : -1;
-
-  // Same base version: release > prerelease
-  if (a.prerelease && !b.prerelease) return -1;
-  if (!a.prerelease && b.prerelease) return 1;
-
-  return 0;
-}
-
-/**
- * Get the current OCF version from the manifest schema.
- */
-export function getSchemaVersion(): string {
-  const manifest = JSON.parse(fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8"));
-  return manifest.properties.ocf_version.const;
-}
-
-/**
- * Get the current OCF version from the sample manifest.
- */
-function getSampleVersion(): string {
-  const sample = JSON.parse(fs.readFileSync(SAMPLE_MANIFEST_PATH, "utf-8"));
-  return sample.ocf_version;
-}
-
-/**
- * Update the OCF version in the manifest schema.
- */
-function updateManifestSchemaVersion(newVersion: string): void {
-  const manifest = JSON.parse(fs.readFileSync(MANIFEST_SCHEMA_PATH, "utf-8"));
-  manifest.properties.ocf_version.const = newVersion;
-  fs.writeFileSync(MANIFEST_SCHEMA_PATH, JSON.stringify(manifest, null, 2));
-}
-
-/**
- * Update the OCF version in the sample manifest file.
- */
-function updateSampleManifestVersion(newVersion: string): void {
-  const sample = JSON.parse(fs.readFileSync(SAMPLE_MANIFEST_PATH, "utf-8"));
-  sample.ocf_version = newVersion;
-  fs.writeFileSync(SAMPLE_MANIFEST_PATH, JSON.stringify(sample, null, 2));
-}
-
-/**
- * Calculate the bumped version based on release type.
- */
-export function bumpVersion(
-  current: Version,
-  type: "major" | "minor" | "patch"
-): Version {
-  switch (type) {
-    case "major":
-      return { major: current.major + 1, minor: 0, patch: 0 };
-    case "minor":
-      return { major: current.major, minor: current.minor + 1, patch: 0 };
-    case "patch":
-      return {
-        major: current.major,
-        minor: current.minor,
-        patch: current.patch + 1,
-      };
-  }
 }
 
 /**
@@ -307,14 +207,8 @@ export function planRelease(
     {
       type: "command",
       phase: "prepare-release",
-      description: `Update schema version to ${releaseVersionStr}`,
-      command: `[internal] updateManifestSchemaVersion("${releaseVersionStr}")`,
-    },
-    {
-      type: "command",
-      phase: "prepare-release",
-      description: `Update sample version to ${releaseVersionStr}`,
-      command: `[internal] updateSampleManifestVersion("${releaseVersionStr}")`,
+      description: `Update version to ${releaseVersionStr}`,
+      command: `npm run version:set -- ${releaseVersionStr}`,
     },
     {
       type: "command",
@@ -385,14 +279,8 @@ export function planRelease(
     {
       type: "command",
       phase: "prepare-dev",
-      description: `Update schema version to ${nextDevVersionStr}`,
-      command: `[internal] updateManifestSchemaVersion("${nextDevVersionStr}")`,
-    },
-    {
-      type: "command",
-      phase: "prepare-dev",
-      description: `Update sample version to ${nextDevVersionStr}`,
-      command: `[internal] updateSampleManifestVersion("${nextDevVersionStr}")`,
+      description: `Update version to ${nextDevVersionStr}`,
+      command: `npm run version:set -- ${nextDevVersionStr}`,
     },
     {
       type: "command",
@@ -548,8 +436,7 @@ async function release(
   console.log("\n2. Preparing release...\n");
 
   console.log(`  Updating version to ${releaseVersion}...`);
-  updateManifestSchemaVersion(releaseVersion);
-  updateSampleManifestVersion(releaseVersion);
+  exec(`npm run version:set -- ${releaseVersion}`);
 
   console.log("  Updating copyright notices...");
   exec("npm run schema:enforce-copyright-notices");
@@ -592,8 +479,7 @@ async function release(
   console.log("\n5. Preparing next development cycle...\n");
 
   console.log(`  Updating version to ${nextDevVersion}...`);
-  updateManifestSchemaVersion(nextDevVersion);
-  updateSampleManifestVersion(nextDevVersion);
+  exec(`npm run version:set -- ${nextDevVersion}`);
 
   console.log("  Transforming URLs to development URLs...");
   exec("npm run docs:generate-release -- --dev");
