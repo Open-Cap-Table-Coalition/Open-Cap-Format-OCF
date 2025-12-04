@@ -24,7 +24,7 @@ export default class SchemaReader {
     entryInfo: EntryInfo
   ): Promise<SchemaNodeJson> =>
     import(pathToFileURL(entryInfo.fullPath).href, {
-      assert: { type: "json" },
+      with: { type: "json" },
     }).then((json: { default: SchemaNodeJson }) => json["default"]);
 
   protected loadJsonFromEntryInfos = (

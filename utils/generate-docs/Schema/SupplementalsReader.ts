@@ -22,7 +22,7 @@ export default class SupplementalsReader {
 
   protected loadSupplementalMarkdownFromEntryInfos = (
     entryInfos: EntryInfo[]
-  ): Promise<BufferSource[]> =>
+  ): Promise<Buffer[]> =>
     Promise.all(entryInfos.map(this.loadSupplementalMarkdown));
 
   read = (): Promise<string[]> =>
