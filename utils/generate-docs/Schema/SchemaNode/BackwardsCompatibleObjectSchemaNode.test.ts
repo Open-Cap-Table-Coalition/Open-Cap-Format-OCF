@@ -52,7 +52,7 @@ describe("BackwardsCompatibleObjectSchemaNode", () => {
 
   **Data Type:** \`OCF Object - BACKWARDS_COMPATIBLE_VALUATION\`
 
-  **Compatiblity Wrapper For:** [schema/objects/Valuation](./Valuation.md)
+  **Compatibility Wrapper For:** [schema/objects/Valuation](./Valuation.md)
 
   **Source Code:** [schema/objects/BackwardsCompatibleValuation](../../../../schema/objects/BackwardsCompatibleValuation.schema.json)
 

@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_TRANSFER`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/transfer/EquityCompensationTransfer](./EquityCompensationTransfer.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/transfer/EquityCompensationTransfer](./EquityCompensationTransfer.md)
 
   **Source Code:** [schema/objects/transactions/transfer/PlanSecurityTransfer](../../../../../../schema/objects/transactions/transfer/PlanSecurityTransfer.schema.json)
 

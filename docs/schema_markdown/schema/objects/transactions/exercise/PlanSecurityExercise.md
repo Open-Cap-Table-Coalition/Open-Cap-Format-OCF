@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_EXERCISE`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/exercise/EquityCompensationExercise](./EquityCompensationExercise.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/exercise/EquityCompensationExercise](./EquityCompensationExercise.md)
 
   **Source Code:** [schema/objects/transactions/exercise/PlanSecurityExercise](../../../../../../schema/objects/transactions/exercise/PlanSecurityExercise.schema.json)
 

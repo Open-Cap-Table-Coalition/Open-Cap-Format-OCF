@@ -4,7 +4,7 @@
 
 **Description:** _Object describing equity compensation exercise transaction_
 
-**Data Type:** ``Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_EXERCISE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_EXERCISE`
+**Data Type:** `Includes Backwards Compatibility Alias(es)`</br>- `OCF Object - TX_PLAN_SECURITY_EXERCISE`</br>- `OCF Object - TX_EQUITY_COMPENSATION_EXERCISE`
 
 **Composed From:**
 

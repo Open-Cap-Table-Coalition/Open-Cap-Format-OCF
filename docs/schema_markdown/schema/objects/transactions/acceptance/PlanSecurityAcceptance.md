@@ -6,7 +6,7 @@
 
   **Data Type:** `OCF Object - TX_PLAN_SECURITY_ACCEPTANCE`
 
-  **Compatiblity Wrapper For:** [schema/objects/transactions/acceptance/EquityCompensationAcceptance](./EquityCompensationAcceptance.md)
+  **Compatibility Wrapper For:** [schema/objects/transactions/acceptance/EquityCompensationAcceptance](./EquityCompensationAcceptance.md)
 
   **Source Code:** [schema/objects/transactions/acceptance/PlanSecurityAcceptance](../../../../../../schema/objects/transactions/acceptance/PlanSecurityAcceptance.schema.json)
 

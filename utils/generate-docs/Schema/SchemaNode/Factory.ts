@@ -96,7 +96,7 @@ export default class SchemaNodeFactory {
     "type" in json &&
     json.type === "object";
 
-  static isCompatiblityWrapperSchemaNodeJson = (
+  static isCompatibilityWrapperSchemaNodeJson = (
     json: SchemaNodeJson
   ): json is BackwardsCompatibleObjectSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
@@ -113,7 +113,7 @@ export default class SchemaNodeFactory {
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
   static build = (schema: Schema, json: SchemaNodeJson) => {
-    if (SchemaNodeFactory.isCompatiblityWrapperSchemaNodeJson(json))
+    if (SchemaNodeFactory.isCompatibilityWrapperSchemaNodeJson(json))
       return new BackwardsCompatibleSchemaNode(schema, json);
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))
       return new FileSchemaNode(schema, json);
