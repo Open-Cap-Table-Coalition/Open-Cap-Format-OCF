@@ -5,13 +5,17 @@ conversion, which have both been designed to support the types of complex, bespo
 conversion conditions commonly found on attorney-drafted options and convertibles yet are (today)
 challenging to model in a structured format_
 
-## Event-Driven
+## Event-Driven Architecture
 
-OCF is powered by an event-driven architecture. All Stocks, Plan Securities, Warrants and
-Convertibles have object-specific events that are added to an event "stack" to represent the history
-of that security. These events describe the relevant data needed to describe key events such as
-issuances, transfers, conversions, etc. You can see a full list of event transactions supported in
-our
+OCF is powered by an **event-driven architecture**. All securities—Stocks, Plan Securities,
+Warrants, and Convertibles—have object-specific transaction events that are added to an event
+"stack" to represent the complete lifecycle history of that security. Each transaction event
+describes the relevant data needed to capture key events such as issuances, transfers, conversions,
+cancellations, and more.
+
+Rather than storing mutable state, OCF creates an **immutable, auditable trail** of transactions
+that can be traversed to determine the current state of any security at any point in time. You can
+see a full list of transaction events supported in our
 [transactions schemas folder](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions).
 
 Here's an example of how an event stack would work to track the lifecycle of a single issuance of
@@ -21,18 +25,21 @@ preferred stock:
 
 ## Conversions
 
-The conversion of one OCF security into another is modeled using three key concepts which describe
-how, when and into what a convertible security converts into:
+The conversion of one OCF security into another is modeled using **three key concepts** which
+describe how, when, and into what a convertible security converts:
 
 1. [Conversion Right](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_rights):
-   what can the security convert into?
+   **WHAT** can the security convert into?
 2. [Conversion Trigger](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_triggers):
-   when and under what conditions does the Conversion Right come into effect?
+   **WHEN** and under what conditions does the Conversion Right come into effect?
 3. [Conversion Mechanism](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/conversion_mechanisms):
-   how is the coversion amount calculated?
+   **HOW** is the conversion amount calculated?
 
-We use the same design patterns for convertible stock (e.g. preferred stock converting into common),
-warrants (which don't "convert" but can be "exercised") and convertible securities (e.g. notes).
+This **separation of concerns** allows you to mix and match these components to model complex,
+attorney-drafted conversion terms that would be difficult to express in traditional cap table
+systems. We use the same design patterns for convertible stock (e.g. preferred stock converting into
+common), warrants (which don't "convert" but can be "exercised"), and convertible securities (e.g.
+notes and SAFEs).
 
 Let's illustrate the design pattern using a convertible note as an example:
 
@@ -44,31 +51,40 @@ And here's what some sample data looks like in practice:
 
 ## Lossless Vesting
 
-Our vesting data model supports arbitrarily-complex trees of dependent vesting conditions that can
-mix time-based and event-based vesting (e.g. vesting over time and "milestone" vesting, in any
-execution order with any desired dependencies). We are working on more comprehensive documentation
-for these concepts. In the meantime, please review the
-[vesting terms object](../schema_markdown/schema/objects/VestingTerms.md) (essentially a "vesting
-schedule"). the vesting OCF Types in
-[/schema/types/vesting](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting),
-and the vesting events in
-[/schema/objects/transactions/vesting](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting)
-(which are used to indicate when a given vesting schedule starts for a given security and when a
-milestone-based condition is satisfied).
+Our vesting data model supports **arbitrarily-complex directed graphs** of dependent vesting
+conditions that can mix time-based and event-based vesting (e.g. vesting over time and "milestone"
+vesting, in any execution order with any desired dependencies). Each vesting condition specifies:
 
-You can see example vesting schedules in our samples.
+-   A **trigger** (when the condition is met)
+-   A **portion** or **quantity** (how much vests)
+-   **Next condition IDs** (what can trigger next)
 
-Stay tuned for expanded documentation!
+This graph structure allows OCF to model complex vesting schedules including cliffs, milestones,
+performance-based vesting, and custom conditions that would be impossible to express in traditional
+vesting schedule formats.
 
-## OCF File Type
+For detailed documentation and examples, please review:
 
-OCF is a multi-file format designed to make it easy to split, compress or stream company
+-   The [vesting terms object](../schema_markdown/schema/objects/VestingTerms.md) (essentially a
+    "vesting schedule")
+-   The [VestingTerms explainer](./VestingTerms.md) with comprehensive examples
+-   The vesting OCF Types in
+    [/schema/types/vesting](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting)
+-   The vesting transaction events in
+    [/schema/objects/transactions/vesting](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/vesting)
+
+You can also see example vesting schedules in our samples folder.
+
+## OCF File Format
+
+OCF is a **multi-file format** designed to make it easy to split, compress, or stream company
 capitalization tables. A valid OCF cap table is made up of JSON objects that match the schemas
-available in our repo in the schemas folder.
+available in our repo in the `/schema` folder.
 
-OCF objects are grouped and stored in eight file types (defined in our file schemas folder).
+OCF objects are grouped and stored in file types defined in our
+[file schemas folder](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/files).
 
-_There are currently 10 file types that make up a cap table_:
+_There are currently 10 file types that make up a complete cap table_:
 
 1. [A Manifest File](../schema_markdown/schema/files/OCFManifestFile.md) - The manifest holds basic
    issuer information and references to the instances of the other 7 file types needed to represent
@@ -95,13 +111,24 @@ _There are currently 10 file types that make up a cap table_:
     within an associated ZIP archive (packaged separately from the OCF archive), or via a uniform
     resource identifier (URI).
 
-**At the moment, we recommend combining all of these files into a single compressed file with a
-\*.ocf.zip extension:**
+### OCF Container Format
+
+**We recommend combining all of these files into a single compressed archive with a `*.ocf.zip`
+extension:**
 
 ![](../images/OCF%20Container.png)
 
-We are working on sample tooling to interact with compressed \*.ocf.zip files.
+This approach provides:
 
-**You can also break out the various OCF Types and OCF Objects and make those available separately
-via API or other, suitable mechanism. The key part of OCF is the data structure, not the container
-itself, though, to ensure complete cap table integrity, a full cap table export is recommended.**
+-   **Portability**: A single file contains the complete cap table
+-   **Integrity**: The manifest's MD5 checksums ensure file integrity
+-   **Compression**: Reduces storage and transfer size
+
+We are working on sample tooling to interact with compressed `*.ocf.zip` files.
+
+### Alternative Delivery Methods
+
+**You can also make OCF data available via API or other mechanisms.** The key part of OCF is the
+**data structure**, not the container itself. However, to ensure complete cap table integrity and
+enable full auditing capabilities, we recommend providing a mechanism to export a complete cap table
+snapshot that includes all file types referenced in the manifest.

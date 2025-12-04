@@ -8,11 +8,12 @@ _Describes a period of time expressed in days (e.g. 365 days) for use in Vesting
 
 **Properties:**
 
-| Property    | Type                 | Description                                                                                                                | Required   |
-| ----------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| length      | `INTEGER`            | The quantity of `type` units of time; e.g. for 3 months, this would be `3`; for 30 days, this would be `30`                | `REQUIRED` |
-| type        | **Constant:** `DAYS` | Scalar Constant                                                                                                            | `REQUIRED` |
-| occurrences | `INTEGER`            | The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36` | `REQUIRED` |
+| Property          | Type                 | Description                                                                                                                                                                 | Required   |
+| ----------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| length            | `INTEGER`            | The quantity of `type` units of time; e.g. for 3 months, this would be `3`; for 30 days, this would be `30`                                                                 | `REQUIRED` |
+| type              | **Constant:** `DAYS` | Scalar Constant                                                                                                                                                             | `REQUIRED` |
+| occurrences       | `INTEGER`            | The number of times this vesting period triggers. If vesting occurs monthly for 36 months, for example, this would be `36`                                                  | `REQUIRED` |
+| cliff_installment | `INTEGER`            | If specified, the 1-indexed vesting installment at which the cliff condition occurs. If this field is not provided or less than 2, it is treated as as if no cliff applies. | -          |
 
 **Source Code:** [schema/types/vesting/VestingPeriodInDays](../../../../../schema/types/vesting/VestingPeriodInDays.schema.json)
 
