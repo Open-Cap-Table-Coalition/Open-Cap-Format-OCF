@@ -11,7 +11,7 @@
   ],
   "properties": {
     "trigger_date": {
-      "description": "Date on which trigger occurs automatically (if it hasn't already occured)",
+      "description": "Date on which trigger occurs automatically (if it hasn't already occurred)",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
     },
     "trigger_id": {},
