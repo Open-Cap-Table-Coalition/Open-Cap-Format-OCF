@@ -18,7 +18,7 @@
   "devDependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "@adobe/jsonschema2md": "^6.1.4",
+    "@adobe/jsonschema2md": "^8.0.9",
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^29.5.14",
     "@types/node": "^24.10.0",
