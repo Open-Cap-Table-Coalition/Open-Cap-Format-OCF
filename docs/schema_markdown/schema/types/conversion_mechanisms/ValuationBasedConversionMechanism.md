@@ -18,4 +18,4 @@ _Sets forth inputs and conversion mechanism based on valuations_
 
 **Source Code:** [schema/types/conversion_mechanisms/ValuationBasedConversionMechanism](../../../../../schema/types/conversion_mechanisms/ValuationBasedConversionMechanism.schema.json)
 
-Copyright © 2025 Open Cap Table Coalition.
+Copyright © 2026 Open Cap Table Coalition.
