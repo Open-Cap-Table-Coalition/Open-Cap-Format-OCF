@@ -5,6 +5,9 @@ on:
     types: [released]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   create-mkdocs-docs:
     name: Generate Docs for GitHub Page Hosting

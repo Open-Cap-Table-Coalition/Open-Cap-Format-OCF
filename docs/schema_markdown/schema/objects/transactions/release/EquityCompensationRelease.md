@@ -70,4 +70,4 @@
 ]
 ```
 
-Copyright © 2025 Open Cap Table Coalition.
+Copyright © 2026 Open Cap Table Coalition.
