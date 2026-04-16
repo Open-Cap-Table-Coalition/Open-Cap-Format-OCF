@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   enforce-ocf-schema-file-copyright-notices:
     name: Write OCF Schema File Copyright Notices

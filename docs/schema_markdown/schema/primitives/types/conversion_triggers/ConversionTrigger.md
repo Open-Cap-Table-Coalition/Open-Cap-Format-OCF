@@ -18,4 +18,4 @@
 
 **Source Code:** [schema/primitives/types/conversion_triggers/ConversionTrigger](../../../../../../schema/primitives/types/conversion_triggers/ConversionTrigger.schema.json)
 
-Copyright © 2025 Open Cap Table Coalition.
+Copyright © 2026 Open Cap Table Coalition.
