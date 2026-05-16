@@ -16,7 +16,7 @@
     "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch"
   },
   "devDependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.11.1",
     "@actions/github": "^5.0.0",
     "@adobe/jsonschema2md": "^8.0.9",
     "@types/fs-extra": "^9.0.13",
