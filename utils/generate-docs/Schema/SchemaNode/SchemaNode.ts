@@ -61,26 +61,6 @@ export default abstract class SchemaNode {
       )
       .join("\n");
 
-  /**
-   * Only those properties that are defined directly in the JSON (as opposed to
-   * those that are left blank and meant to be inherited from the allOf array).
-   */
-  protected directProperties = () =>
-    Object.fromEntries(
-      Object.entries(this.json["properties"] || {}).filter(
-        ([_id, json]) => Object.keys(json).length > 0
-      )
-    );
-
-  protected allOfPropertiesJson = (): { [id: string]: PropertyJson } =>
-    this.allOf().reduce(
-      (previousPropertiesJson, schemaNode) => ({
-        ...previousPropertiesJson,
-        ...schemaNode.propertiesJson(),
-      }),
-      {}
-    );
-
   protected markdownExamples = (): string | null => null;
 
   protected supplementalMarkdowns = (): string[] =>
@@ -127,17 +107,12 @@ export default abstract class SchemaNode {
   propertiesJson = () => this.json["properties"];
 
   properties = () =>
-    Object.entries({
-      ...this.allOfPropertiesJson(),
-      ...this.directProperties(),
-    }).map(([id, json]: [string, PropertyJson]) =>
-      PropertyFactory.build(this.schema, json, id)
+    Object.entries(this.json["properties"] || {}).map(
+      ([id, json]: [string, PropertyJson]) =>
+        PropertyFactory.build(this.schema, json, id)
     );
 
-  required = (): string[] => [
-    ...(this.json["required"] || []),
-    ...this.allOf().flatMap((schemaNode) => schemaNode.required()),
-  ];
+  required = (): string[] => this.json["required"] || [];
 
   markdownHeader = () => `### ${this.title()}
 
