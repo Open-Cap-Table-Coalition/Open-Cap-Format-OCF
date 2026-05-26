@@ -37,10 +37,9 @@ describe("BackwardsCompatibleObjectSchemaNode", () => {
         BASE_OBJECT_SCHEMA_NODE_FIXTURE,
         OBJECT_SCHEMA_NODE_FIXTURE,
       ]);
-      const actual = new BackwardsCompatibleObjectSchemaNode(
-        schema,
-        BACKWARDS_COMPATIBLE_OBJECT_SCHEMA_NODE_FIXTURE
-      ).markdownOutput();
+      const actual = schema
+        .findSchemaNodeById(BACKWARDS_COMPATIBLE_OBJECT_SCHEMA_NODE_FIXTURE.$id)
+        .markdownOutput();
 
       let copyright_year = new Date().getFullYear();
 

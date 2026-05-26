@@ -11,6 +11,7 @@ import SchemaNodeFactory, {
   SchemaNode,
   SchemaNodeJson,
 } from "./SchemaNode/Factory.js";
+import { composeAll } from "../../schema-utils/SchemaComposer.js";
 
 export type { SchemaNodeJson };
 export type { ExampleJson };
@@ -53,8 +54,11 @@ export default class Schema {
     exampleJsons: ExampleJson[] = [],
     supplementalMarkdowns: string[] = []
   ) {
-    this.schemaNodes = schemaNodeJsons.map((json: SchemaNodeJson) =>
-      SchemaNodeFactory.build(this, json)
+    const { composed } = composeAll(schemaNodeJsons as any[], {
+      onMissingRef: "skip",
+    });
+    this.schemaNodes = composed.map((json) =>
+      SchemaNodeFactory.build(this, json as unknown as SchemaNodeJson)
     );
     this.examples = new Examples(exampleJsons);
     this.supplementals = new Supplementals(supplementalMarkdowns);
