@@ -24,6 +24,11 @@
  * codegen. Output is a single self-contained module (declaration order does
  * not matter for `type`/`interface` declarations).
  *
+ * The abstract "primitive" base schemas are omitted by default: they exist
+ * only to be inherited via `allOf`, and the composer has already flattened
+ * their properties into each concrete type, so nothing references them. Pass
+ * `includePrimitives: true` to emit them anyway.
+ *
  * Framework-free: plain schema JSON in, a TypeScript source string out.
  */
 
@@ -48,6 +53,11 @@ export type GenerateTypeScriptOptions = {
   /** Behavior when a `$ref` can't be resolved: `"unknown"` (default) emits
    *  the `unknown` type and records a warning; `"throw"` fails. */
   onMissingRef?: "unknown" | "throw";
+  /** Emit the abstract "primitive" base schemas (the `allOf` inheritance bases
+   *  under `/schema/primitives`). Default `false`: their properties are
+   *  flattened into every concrete type via composition, so nothing references
+   *  them — emitting them only adds orphaned, easily-misused base shapes. */
+  includePrimitives?: boolean;
 };
 
 const DEFAULT_PREFIX = "OCF";
@@ -59,6 +69,21 @@ const DEFAULT_BANNER = `/**
  * regenerate from the JSON Schemas under /schema after any change.
  */
 /* eslint-disable */`;
+
+/** Short notice placed under the banner so consumers of the generated module
+ *  understand the primitives policy — why there are no abstract base types
+ *  (or, conversely, why they are present) and how to flip it. */
+function primitivesNotice(includePrimitives: boolean): string {
+  return includePrimitives
+    ? `/* NOTE: the abstract "primitive" base schemas (under /schema/primitives)
+ * are INCLUDED below (generated with --include-primitives). They are
+ * inheritance-only bases; a bare base type is never itself a valid OCF value. */`
+    : `/* NOTE: the abstract "primitive" base schemas (the \`allOf\` inheritance
+ * bases under /schema/primitives) are intentionally omitted. Their properties
+ * are flattened into each concrete type, so nothing references them and a bare
+ * base type is never itself a valid OCF value. Regenerate with
+ * \`--include-primitives\` if you need the base shapes. */`;
+}
 
 /** The five top-level partitions of /schema, used to group output. */
 const CATEGORY_ORDER = [
@@ -206,6 +231,10 @@ function uniqueUnion(members: string[]): string {
 
 type Context = {
   idToName: Map<string, string>;
+  /** Schema `$id`s intentionally not emitted (e.g. omitted primitives). A
+   *  direct `$ref` to one of these resolves to `unknown` with a warning,
+   *  rather than a dangling reference to an undeclared type. */
+  omittedIds: Set<string>;
   onMissingRef: "unknown" | "throw";
   warnings: string[];
 };
@@ -217,6 +246,17 @@ function tsTypeForValue(value: any, ctx: Context): string {
   if (typeof value.$ref === "string") {
     const name = ctx.idToName.get(value.$ref);
     if (name) return name;
+    // A direct $ref to a schema we intentionally omitted (e.g. a primitive
+    // base referenced outside of an allOf). Surface it rather than dangle.
+    if (ctx.omittedIds.has(value.$ref)) {
+      if (ctx.onMissingRef === "throw") {
+        throw new Error(`$ref to omitted primitive base: ${value.$ref}`);
+      }
+      ctx.warnings.push(
+        `$ref to omitted primitive base -> unknown: ${value.$ref}`
+      );
+      return "unknown";
+    }
     if (ctx.onMissingRef === "throw") {
       throw new Error(`Unresolved $ref in codegen: ${value.$ref}`);
     }
@@ -474,8 +514,9 @@ export function generateTypeScript(
   const {
     typePrefix = DEFAULT_PREFIX,
     includeDescriptions = true,
-    banner = DEFAULT_BANNER,
+    banner,
     onMissingRef = "unknown",
+    includePrimitives = false,
   } = options;
 
   // Compose so each object's inherited properties are flattened in; keep refs
@@ -485,12 +526,30 @@ export function generateTypeScript(
   const { composed } = composeAll(rawSchemas, { onMissingRef: "skip" });
 
   const idToName = assignTypeNames(rawSchemas, typePrefix);
-  const ctx: Context = { idToName, onMissingRef, warnings: [] };
+
+  // Primitives are inheritance-only bases: the composer has already flattened
+  // their properties into every concrete type above, so by default we don't
+  // emit them. Drop them from the name map too — that way a stray *direct*
+  // `$ref` to a primitive surfaces as a warning instead of a dangling
+  // reference. Names are assigned over the full set first, so concrete type
+  // names are identical whether or not primitives are emitted.
+  const omittedIds = new Set<string>();
+  if (!includePrimitives) {
+    for (const schema of rawSchemas) {
+      if (categoryFromId(schema.$id) === "primitives") {
+        omittedIds.add(schema.$id);
+        idToName.delete(schema.$id);
+      }
+    }
+  }
+
+  const ctx: Context = { idToName, omittedIds, onMissingRef, warnings: [] };
 
   // Group declarations by partition, sorted by name within each group, for a
   // stable and readable file.
   const byCategory = new Map<Category, string[]>();
   for (const schema of composed) {
+    if (omittedIds.has(schema.$id)) continue;
     const category = categoryFromId(schema.$id);
     const declaration = declareSchema(schema, ctx, includeDescriptions);
     if (!byCategory.has(category)) byCategory.set(category, []);
@@ -509,7 +568,13 @@ export function generateTypeScript(
     sections.push(`${heading}\n\n${declarations.join("\n\n")}`);
   }
 
-  const parts = [banner, sections.join("\n\n")].filter(Boolean);
+  // A caller-supplied banner is used verbatim (pass "" to suppress); otherwise
+  // the default banner gets the primitives-policy notice appended.
+  const effectiveBanner =
+    banner !== undefined
+      ? banner
+      : `${DEFAULT_BANNER}\n\n${primitivesNotice(includePrimitives)}`;
+  const parts = [effectiveBanner, sections.join("\n\n")].filter(Boolean);
   const source = parts.join("\n\n") + "\n";
 
   const typeNames: { [id: string]: string } = {};

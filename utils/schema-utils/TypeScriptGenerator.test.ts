@@ -102,7 +102,6 @@ describe("TypeScriptGenerator", () => {
 
     it("names types <prefix><PascalBasename>, collision-free against globals", () => {
       expect(typeNames[OBJECT_ISSUER.$id]).toBe("OCFIssuer");
-      expect(typeNames[PRIMITIVE_OBJECT.$id]).toBe("OCFObject");
       expect(typeNames[TYPE_DATE.$id]).toBe("OCFDate");
     });
 
@@ -277,5 +276,58 @@ describe("TypeScriptGenerator", () => {
     const { source, warnings } = generateTypeScript([dangling]);
     expect(source).toContain("x?: unknown;");
     expect(warnings.length).toBeGreaterThan(0);
+  });
+
+  describe("primitive base schemas", () => {
+    it("omits abstract primitive bases by default, but keeps their flattened properties on children", () => {
+      const { source, typeNames, warnings } = generateTypeScript(ALL);
+      expect(warnings).toEqual([]);
+      // The primitive is neither declared nor present in the returned name map.
+      expect(typeNames[PRIMITIVE_OBJECT.$id]).toBeUndefined();
+      expect(source).not.toContain("export interface OCFObject");
+      expect(source).not.toContain("// Primitives");
+      // ...yet its inherited properties are still flattened into the concrete
+      // child interface (composition runs regardless of what we emit).
+      expect(source).toContain("export interface OCFIssuer {");
+      expect(source).toContain("id: string;");
+      expect(source).toContain('object_type: "ISSUER";');
+    });
+
+    it("explains the omission in a notice in the generated banner", () => {
+      const { source } = generateTypeScript(ALL);
+      expect(source).toContain("primitive");
+      expect(source).toContain("--include-primitives");
+    });
+
+    it("emits primitives (and a heading) when includePrimitives is true", () => {
+      const { source, typeNames } = generateTypeScript(ALL, {
+        includePrimitives: true,
+      });
+      expect(typeNames[PRIMITIVE_OBJECT.$id]).toBe("OCFObject");
+      expect(source).toContain("export interface OCFObject {");
+      expect(source).toContain("// Primitives");
+    });
+
+    it("warns (not silently dangles) on a direct $ref to an omitted primitive", () => {
+      // A concrete type that references a primitive via a property $ref rather
+      // than via allOf — unusual, but it must not yield an undeclared type name.
+      const refsPrimitive: RawSchemaJson = {
+        $id: `${BASE}/objects/RefsPrimitive.schema.json`,
+        type: "object",
+        properties: { base: { $ref: PRIMITIVE_OBJECT.$id } },
+      };
+      const inputs = [ENUM_OBJECT_TYPE, PRIMITIVE_OBJECT, refsPrimitive];
+
+      const omitted = generateTypeScript(inputs);
+      expect(omitted.source).toContain("base?: unknown;");
+      expect(
+        omitted.warnings.some((w) => w.includes("omitted primitive base"))
+      ).toBe(true);
+
+      // Including primitives resolves the reference to the real named type.
+      const included = generateTypeScript(inputs, { includePrimitives: true });
+      expect(included.source).toContain("base?: OCFObject;");
+      expect(included.warnings).toEqual([]);
+    });
   });
 });

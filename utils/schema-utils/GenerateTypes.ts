@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * `npm run schema:gen-types -- --out <file.ts> [--prefix OCF] [--no-descriptions]`
+ * `npm run schema:gen-types -- --out <file.ts> [--prefix OCF] [--no-descriptions] [--include-primitives] [--fail-on-warnings]`
  *
  * Walks every `.schema.json` under `/schema` and emits a single, self-contained
  * TypeScript module declaring a named type for every OCF schema (see
@@ -38,9 +38,15 @@ export async function generateTypesToFile(
     verbose?: boolean;
     typePrefix?: string;
     includeDescriptions?: boolean;
+    includePrimitives?: boolean;
   } = {}
 ): Promise<{ outFile: string; typeCount: number; warnings: string[] }> {
-  const { verbose = false, typePrefix, includeDescriptions } = options;
+  const {
+    verbose = false,
+    typePrefix,
+    includeDescriptions,
+    includePrimitives,
+  } = options;
 
   if (verbose) console.log(`\nReading raw schemas from ./${SCHEMA_DIR} ...`);
   const rawSchemas = await readRawSchemas(verbose);
@@ -50,6 +56,7 @@ export async function generateTypesToFile(
   const { source, typeNames, warnings } = generateTypeScript(rawSchemas, {
     typePrefix,
     includeDescriptions,
+    includePrimitives,
   });
 
   await mkdir(path.dirname(outFile), { recursive: true });
@@ -69,6 +76,8 @@ interface GenerateTypesArgs extends Arguments {
   o?: string;
   prefix?: string;
   descriptions?: boolean;
+  includePrimitives?: boolean;
+  failOnWarnings?: boolean;
   verbose?: boolean;
   v?: boolean;
 }
@@ -106,6 +115,18 @@ if (invokedAsScript) {
           type: "boolean",
           default: true,
         },
+        "include-primitives": {
+          describe:
+            "Emit the abstract primitive base schemas too. Off by default: they are inheritance-only bases, flattened into every concrete type, and referenced by nothing.",
+          type: "boolean",
+          default: false,
+        },
+        "fail-on-warnings": {
+          describe:
+            "Exit non-zero if generation produces any warnings (e.g. unresolved $refs). Use as a CI guard, since the output is not committed.",
+          type: "boolean",
+          default: false,
+        },
         verbose: {
           describe: "Print per-step progress.",
           alias: "v",
@@ -119,11 +140,18 @@ if (invokedAsScript) {
           process.cwd(),
           (argv.out ?? argv.o) as string
         );
-        await generateTypesToFile(outFile, {
+        const { warnings } = await generateTypesToFile(outFile, {
           verbose: Boolean(argv.verbose ?? argv.v),
           typePrefix: argv.prefix as string | undefined,
           includeDescriptions: argv.descriptions as boolean | undefined,
+          includePrimitives: argv.includePrimitives as boolean | undefined,
         });
+        if (argv.failOnWarnings && warnings.length > 0) {
+          console.error(
+            `\n✖ ${warnings.length} warning(s) and --fail-on-warnings is set; failing.`
+          );
+          process.exit(1);
+        }
       },
     })
     .help()
