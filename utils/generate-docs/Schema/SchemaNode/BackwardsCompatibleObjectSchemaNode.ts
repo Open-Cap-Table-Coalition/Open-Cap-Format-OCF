@@ -3,7 +3,6 @@ import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
 
 import Schema from "../Schema.js";
-import { PropertyJson } from "./Property/Factory.js";
 import SchemaNode from "./SchemaNode.js";
 
 export interface BackwardsCompatibleObjectSchemaNodeJson {
@@ -43,18 +42,6 @@ export default class BackwardsCompatibleObjectSchemaNode extends SchemaNode {
   protected allOf = (): SchemaNode[] => [];
 
   protected allOfMarkdown = (): string => "";
-
-  /**
-   * Only those properties that are defined directly in the JSON (as opposed to
-   * those that are left blank and meant to be inherited from the allOf array).
-   */
-  protected directProperties = () => {
-    return {};
-  };
-
-  protected allOfPropertiesJson = (): { [id: string]: PropertyJson } => {
-    return {};
-  };
 
   protected markdownExamples = (): string | null => null;
 

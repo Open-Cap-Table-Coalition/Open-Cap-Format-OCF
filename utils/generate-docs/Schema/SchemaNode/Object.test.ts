@@ -76,10 +76,9 @@ describe("Object", () => {
         BASE_OBJECT_SCHEMA_NODE_FIXTURE,
         OBJECT_SCHEMA_NODE_FIXTURE,
       ]);
-      const actual = new Object(
-        schema,
-        OBJECT_SCHEMA_NODE_FIXTURE
-      ).markdownOutput();
+      const actual = schema
+        .findSchemaNodeById(OBJECT_SCHEMA_NODE_FIXTURE.$id)
+        .markdownOutput();
 
       let copyright_year = new Date().getFullYear();
 
