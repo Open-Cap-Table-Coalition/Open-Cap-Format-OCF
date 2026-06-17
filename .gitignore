@@ -16,3 +16,6 @@ docs/__pycache__
 
 # MkDocs
 site/
+
+# Generated artifacts (composed schemas, generated TS types, etc.)
+build/

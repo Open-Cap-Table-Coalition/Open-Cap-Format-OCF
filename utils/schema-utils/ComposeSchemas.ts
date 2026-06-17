@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * `npm run schema:compose -- --out <dir>`
+ * `npm run schema:compose -- --out <dir> [--dereference]`
  *
  * Walks every `.schema.json` under `/schema`, composes each via the
  * `SchemaComposer` (flattening `allOf` ancestor chains into a single,
@@ -9,8 +9,12 @@
  * passed through unchanged, matching the semantics used by the doc
  * generator.
  *
- * Use this when you want a flat, self-contained view of every OCF object
- * for downstream consumers (codegen, ad-hoc analysis, exporters, etc.).
+ * With `--dereference`, goes further and recursively inlines every `$ref`
+ * (to types, enums, and nested objects) so each written schema is fully
+ * self-contained with no external references — see `SchemaDereferencer`.
+ *
+ * Use this when you want a flat view of every OCF object for downstream
+ * consumers (codegen, ad-hoc analysis, exporters, etc.).
  */
 import path from "node:path";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -24,6 +28,7 @@ import {
   ComposedSchemaJson,
   RawSchemaJson,
 } from "./SchemaComposer.js";
+import { dereferenceAll } from "./SchemaDereferencer.js";
 
 const SCHEMA_DIR = "schema";
 
@@ -62,28 +67,35 @@ async function writeComposedSchema(
 
 export async function composeSchemasToDir(
   outDir: string,
-  verbose: boolean = false
+  verbose: boolean = false,
+  dereference: boolean = false
 ): Promise<{ written: number }> {
   await mkdir(outDir, { recursive: true });
 
   if (verbose) console.log(`\nReading raw schemas from ./${SCHEMA_DIR} ...`);
   const rawEntries = await readRawSchemas(verbose);
+  const rawJsons = rawEntries.map((e) => e.json);
 
-  if (verbose) console.log(`\nComposing ${rawEntries.length} schemas ...`);
-  const { composedById } = composeAll(rawEntries.map((e) => e.json));
+  const verb = dereference ? "Dereferencing" : "Composing";
+  if (verbose) console.log(`\n${verb} ${rawEntries.length} schemas ...`);
+  const resultById = dereference
+    ? dereferenceAll(rawJsons).dereferencedById
+    : composeAll(rawJsons).composedById;
 
-  if (verbose) console.log(`\nWriting composed schemas to ${outDir} ...`);
+  if (verbose)
+    console.log(`\nWriting ${verb.toLowerCase()} schemas to ${outDir} ...`);
   let written = 0;
   for (const { relPath, json } of rawEntries) {
-    const composed = composedById[json.$id];
-    if (!composed) {
+    const result = resultById[json.$id];
+    if (!result) {
       throw new Error(`Missing composed output for ${json.$id}`);
     }
-    await writeComposedSchema(outDir, relPath, composed, verbose);
+    await writeComposedSchema(outDir, relPath, result, verbose);
     written++;
   }
 
-  console.log(`Composed ${written} schemas into ${outDir}`);
+  const label = dereference ? "Dereferenced" : "Composed";
+  console.log(`${label} ${written} schemas into ${outDir}`);
   return { written };
 }
 
@@ -92,6 +104,8 @@ interface ComposeSchemasArgs extends Arguments {
   o?: string;
   verbose?: boolean;
   v?: boolean;
+  dereference?: boolean;
+  d?: boolean;
 }
 
 // Only wire up the CLI when this module is the entrypoint (not when
@@ -115,6 +129,14 @@ if (invokedAsScript) {
           demandOption: true,
           type: "string",
         },
+        dereference: {
+          describe:
+            "Also inline every $ref so each schema is fully self-contained (no external references).",
+          alias: "d",
+          demandOption: false,
+          type: "boolean",
+          default: false,
+        },
         verbose: {
           describe: "Print per-file progress.",
           alias: "v",
@@ -129,7 +151,8 @@ if (invokedAsScript) {
           (argv.out ?? argv.o) as string
         );
         const verbose = Boolean(argv.verbose ?? argv.v);
-        await composeSchemasToDir(outDir, verbose);
+        const dereference = Boolean(argv.dereference ?? argv.d);
+        await composeSchemasToDir(outDir, verbose, dereference);
       },
     })
     .help()
