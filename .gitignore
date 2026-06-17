@@ -19,3 +19,7 @@ site/
 
 # Generated artifacts (composed schemas, generated TS types, etc.)
 build/
+
+# Generated OCF types package output — produced at build/publish time, never committed.
+packages/ocf-types/index.d.ts
+packages/ocf-types/*.tgz

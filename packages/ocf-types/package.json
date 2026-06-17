@@ -1,0 +1,35 @@
+{
+  "name": "@opencaptablecoalition/ocf-types",
+  "version": "0.0.0",
+  "description": "TypeScript types for the Open Cap Format (OCF), generated from the OCF JSON Schemas.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts"
+    }
+  },
+  "files": [
+    "index.d.ts",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "ocf",
+    "open-cap-format",
+    "cap-table",
+    "typescript",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF.git",
+    "directory": "packages/ocf-types"
+  },
+  "homepage": "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF#readme",
+  "bugs": "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/issues",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
