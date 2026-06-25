@@ -169,9 +169,26 @@ A few rules make this work with draft-07:
     `properties`, `required`, and `additionalProperties: false`). The dispatcher itself must **not**
     set `additionalProperties`.
 3.  Tooling that walks schemas (the validator, the doc generator) follows the dispatcher's `anyOf`
-    down to the versioned shapes. The validator maps every versioned shape's `object_type` to the
-    dispatcher's public `$id`, so validating an item against that `object_type` accepts any active
-    version.
+    down to the versioned shapes. For a top-level **object** dispatcher, the validator maps every
+    versioned shape's `object_type` to the dispatcher's public `$id`, so validating an item against
+    that `object_type` accepts any active version.
+
+### Dispatchers work at any level
+
+The pattern is not limited to objects. A **type** or an **enum** can be versioned the same way — the
+dispatcher is still an `anyOf` of `$ref`s to `.v#` shapes, and another schema's property can point
+at it:
+
+```json
+"vesting_condition": { "$ref": ".../types/vesting/VestingCondition.schema.json" }
+```
+
+For these nested cases the validator does nothing special: AJV resolves the property `$ref` to the
+dispatcher and validates the value against its `anyOf` (the `object_type` map is only for routing
+top-level objects). In the docs, a property that references a dispatcher renders as a link to the
+dispatcher's page annotated with its versions and their stability (e.g.
+`⎇ Versioned: v1 (stable), v2 (alpha)`), so the reader can see the field accepts one of several
+versioned shapes and navigate to them.
 
 ## Stability Flags (`x-ocf-stability`)
 
@@ -197,4 +214,6 @@ The documentation generator detects a dispatcher and produces a **single** markd
 parent (public `$id`) level, folding every versioned shape in as its own section rather than
 scattering them across disconnected per-file pages. Each section is labeled with its stability badge
 and ordered `stable` → `beta` → `alpha` → `deprecated`, so a reader can tell at a glance which shape
-is current, which is not final, and which is on the way out.
+is current, which is not final, and which is on the way out. This works for object, type, and enum
+dispatchers alike — each version section renders the body appropriate to its kind (an object/type
+property table, or an enum's value list).

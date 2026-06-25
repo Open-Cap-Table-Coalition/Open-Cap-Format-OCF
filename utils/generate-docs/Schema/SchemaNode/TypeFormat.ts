@@ -22,6 +22,10 @@ export default class TypeFormatSchemaNode extends SchemaNode {
   markdownTableType = (inMdFileAtPath: string) =>
     `${this.mdLinkToNodesMdDocs(inMdFileAtPath)}`;
 
+  markdownVersionBody = () => `**Data Type:** \`Primitive\`
+
+**Value:** \`${this.type().toUpperCase()} - _Must match JSONSchema Format: ${this.format().toUpperCase()}_\``;
+
   markdownOutput = () => `${this.markdownHeader()}
 
 **Description:** _${this.description()}_

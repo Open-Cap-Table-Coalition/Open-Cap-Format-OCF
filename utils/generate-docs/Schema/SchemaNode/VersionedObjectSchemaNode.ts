@@ -64,6 +64,23 @@ export default class VersionedObjectSchemaNode extends SchemaNode {
       )
       .join("\n\n");
 
+  /**
+   * How this dispatcher renders when another schema references it via a
+   * property `$ref` (e.g. a `type` or `enum` field whose value is itself a
+   * versioned node). Instead of a bare type string, emit a link to the
+   * dispatcher's page plus a compact summary of its versions and their
+   * stability, so the reader can tell the property accepts one of several
+   * versioned shapes and navigate to them.
+   */
+  markdownTableType = (inMdFileAtPath: string) => {
+    const summary = this.versions()
+      .map((version) => `${version.versionLabel()} (${version.stability()})`)
+      .join(", ");
+    return `${this.mdLinkToNodesMdDocs(
+      inMdFileAtPath
+    )}</br>_⎇ Versioned: ${summary}_`;
+  };
+
   markdownOutput = () => `${this.markdownHeader()}
 
 **Description:** _${this.description()}_

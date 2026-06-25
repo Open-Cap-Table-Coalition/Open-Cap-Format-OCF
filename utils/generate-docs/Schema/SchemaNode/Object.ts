@@ -64,6 +64,14 @@ ${JSON.stringify(this.examples(), null, 2)}
   markdownTableType = (in_markdown_file_path: string) =>
     this.mdLinkToNodesMdDocs(in_markdown_file_path);
 
+  markdownVersionBody = (
+    forOutputPath: string = this.outputFileAbsolutePath()
+  ) => `${this.objectDataTypeDescriptionBlock()}
+
+**Properties:**
+
+${this.markdownPropertiesTable(forOutputPath)}`;
+
   markdownOutput = () => `${this.markdownHeader()}
 
 **Description:** _${this.description()}_

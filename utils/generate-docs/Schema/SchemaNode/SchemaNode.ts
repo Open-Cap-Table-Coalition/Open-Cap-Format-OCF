@@ -157,6 +157,27 @@ export default abstract class SchemaNode {
    */
   writesOwnDoc = (): boolean => true;
 
+  /**
+   * The body of this node when it is folded into a version dispatcher's page as
+   * a section (the content between the section heading and the source link),
+   * with links resolved relative to `forOutputPath` (the parent page). This is
+   * what lets a dispatcher render versioned shapes of ANY kind — object, type,
+   * or enum — uniformly: each partition overrides this to render its own
+   * payload. The default covers scalar / other shapes.
+   */
+  markdownVersionBody = (
+    forOutputPath: string = this.outputFileAbsolutePath()
+  ): string => {
+    const properties = this.propertiesJson();
+    const parts = [`**Data Type:** \`${this.type().toUpperCase()}\``];
+    if (properties && Object.keys(properties).length > 0) {
+      parts.push(
+        `**Properties:**\n\n${this.markdownPropertiesTable(forOutputPath)}`
+      );
+    }
+    return parts.join("\n\n");
+  };
+
   abstract markdownOutput(): string;
 
   mdLinkToSourceSchema = () =>

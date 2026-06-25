@@ -1,4 +1,5 @@
 import Schema from "../Schema.js";
+import SchemaNode from "./SchemaNode.js";
 import FileSchemaNode, { FileSchemaNodeJson } from "./File.js";
 import EnumSchemaNode, { EnumSchemaNodeJson } from "./Enum.js";
 import ObjectSchemaNode, { ObjectSchemaNodeJson } from "./Object.js";
@@ -120,19 +121,20 @@ export default class SchemaNodeFactory {
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
     isBackwardsCompatibleJson(json);
 
+  // A version dispatcher works at ANY level (object / type / enum), so
+  // detection is purely structural (an anyOf of bare $refs, no own properties)
+  // rather than gated to a partition.
   static isVersionWrapperSchemaNodeJson = (
     json: SchemaNodeJson
-  ): json is VersionedObjectSchemaNodeJson =>
-    SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
-    isVersionWrapper(json as any);
+  ): json is VersionedObjectSchemaNodeJson => isVersionWrapper(json as any);
 
+  // A versioned shape is any `.v#`-suffixed schema that is not itself a
+  // dispatcher; its partition (object / type / enum) is resolved when the
+  // factory builds the inner node it wraps.
   static isVersionedSubschemaSchemaNodeJson = (
     json: SchemaNodeJson
   ): json is VersionedSubschemaNodeJson =>
-    SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
-    hasVersionSuffix(json) &&
-    "properties" in json &&
-    !!(json as any).properties;
+    hasVersionSuffix(json) && !isVersionWrapper(json as any);
 
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
@@ -144,11 +146,10 @@ export default class SchemaNodeFactory {
   ): json is TypePatternSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
-  static build = (schema: Schema, json: SchemaNodeJson) => {
-    if (SchemaNodeFactory.isVersionWrapperSchemaNodeJson(json))
-      return new VersionedObjectSchemaNode(schema, json);
-    if (SchemaNodeFactory.isVersionedSubschemaSchemaNodeJson(json))
-      return new VersionedSubschemaNode(schema, json);
+  /** Build the ordinary (non-version-wrapper) node for a schema, dispatching on
+   *  its partition / shape. Also used to build the inner node a versioned
+   *  subschema wraps, so a versioned object / type / enum all render correctly. */
+  static buildBaseNode = (schema: Schema, json: SchemaNodeJson): SchemaNode => {
     if (SchemaNodeFactory.isCompatibilityWrapperSchemaNodeJson(json))
       return new BackwardsCompatibleSchemaNode(schema, json);
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))
@@ -166,5 +167,17 @@ export default class SchemaNodeFactory {
     if (SchemaNodeFactory.isTypePatternSchemaNodeJson(json))
       return new TypePatternSchemaNode(schema, json);
     throw new Error(`Unrecgonized JSON schema: ${json}`);
+  };
+
+  static build = (schema: Schema, json: SchemaNodeJson): SchemaNode => {
+    if (SchemaNodeFactory.isVersionWrapperSchemaNodeJson(json))
+      return new VersionedObjectSchemaNode(schema, json);
+    if (SchemaNodeFactory.isVersionedSubschemaSchemaNodeJson(json))
+      return new VersionedSubschemaNode(
+        schema,
+        json,
+        SchemaNodeFactory.buildBaseNode(schema, json)
+      );
+    return SchemaNodeFactory.buildBaseNode(schema, json);
   };
 }
