@@ -12,10 +12,22 @@ import { resolve } from "path";
 // TODO - move action integrations into a separate file to keep validator utils clean
 import core from "@actions/core";
 
+import { buildObjectTypeSchemaMap } from "./schema-utils/ObjectTypeSchemaMap.js";
+import {
+  STABILITY_KEYWORD,
+  STABILITY_LEVELS,
+} from "./schema-utils/SchemaComposer.js";
+
 // build map of object_type to schema $id
 // throws if an unknown object_type value is encountered
+//
+// Recognizes ordinary object schemas, backwards-compatibility wrappers (the
+// aliased schema carries the object_type), and version dispatchers
+// (VersionWrapper: an anyOf of $refs to versioned shapes — every versioned
+// shape's object_type maps to the dispatcher's public $id so that validating
+// an item accepts any active version). The wrapper-aware logic lives in
+// ./schema-utils/ObjectTypeSchemaMap.ts so it can be unit-tested.
 async function buildObjectSchemaMap(verbose = false) {
-  const object_schemas_map = {};
   const object_schema_paths = await getSchemaObjectsFilepaths(verbose);
   const object_schema_buffers = await Promise.all(
     object_schema_paths.map((path) => readFile(path))
@@ -28,74 +40,13 @@ async function buildObjectSchemaMap(verbose = false) {
     fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
   );
 
-  // Need to update this to handle the two options for object_type props (stll not in
-  // love with this choice, but it was required to avoid a breaking change). Where
-  // a schema has multiple potential object types for backwards compatibility,
-  // there is a mapping entry for each object type in the object_type.oneOf array
-  // for each of the const values in that array to the $id of the given schema
-  object_schemas.forEach((object_schema) => {
-    if (object_schema.properties) {
-      const object_type = object_schema.properties.object_type;
-
-      if (
-        typeof object_type === "object" &&
-        !Array.isArray(object_type) &&
-        object_type !== null
-      ) {
-        if (object_type.const && typeof object_type.const === "string") {
-          if (!object_type_enum_schema.enum.includes(object_type.const)) {
-            throw new Error(
-              `Encountered object_type: ${object_type.const} in a schema but this type does not exist in ObjectType.schema.json`
-            );
-          }
-
-          object_schemas_map[object_type.const] = object_schema.$id;
-        } else if (object_type.enum && Array.isArray(object_type.enum)) {
-          for (const item of object_type.enum) {
-            if (item) {
-              object_schemas_map[item] = object_schema.$id;
-            }
-          }
-        } else {
-          console.error(
-            `Unexpected value for object_type: ${object_type} in schema:\n ${JSON.stringify(
-              object_schema,
-              null,
-              4
-            )}`
-          );
-        }
-      }
-    } else if (
-      object_schema["$id"] &&
-      object_schema.allOf &&
-      Array.isArray(object_schema.allOf) &&
-      object_schema.allOf.length === 1
-    ) {
-      /**
-       * We have an issue with proposed backwards compatibility wrappers... the validator expects
-       * that each object_type maps to exactly one corresponding schema $id, but the wrappers don't have an
-       * object_type property directly. Since schemaMap maps the type constants to the desired $id,
-       * we can actually ignore the wrapper mappings because the object_type constants should end up in the
-       * schemaMap when we look at the schema that the wrapper references. Those referenced schemas should
-       * validate objects built against the wrapper schema.
-       */
-      if (verbose) {
-        console.log(
-          `Appears schema ${object_schema["$id"]} is a wrapper for ${object_schema.allOf[0]["$ref"]}... ignoring.`
-        );
-      }
-    } else {
-      console.error(
-        `Unexpected value for schema: ${JSON.stringify(object_schema, null, 4)}`
-      );
-      throw new Error(
-        "Schema doesn't match OCF schema format and it's not a wrapper"
-      );
+  return buildObjectTypeSchemaMap(
+    object_schemas,
+    object_type_enum_schema.enum,
+    {
+      verbose,
     }
-  });
-
-  return object_schemas_map;
+  );
 }
 
 // SO @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
@@ -392,6 +343,15 @@ export async function getOcfValidator(
       schemas,
       validateSchema: check_schema_validity ? true : "log",
       ...(show_all_errors ? { allErrors: true, verbose } : {}),
+    });
+
+    // `x-ocf-stability` is a structured annotation keyword (stable | beta |
+    // alpha | deprecated) used to flag versioned shapes. Register it so AJV's
+    // strict mode accepts it and validates its value, while it contributes
+    // nothing to data validation.
+    ajv.addKeyword({
+      keyword: STABILITY_KEYWORD,
+      metaSchema: { type: "string", enum: [...STABILITY_LEVELS] },
     });
 
     // If we don't do this, AJV can't handle certain *built-in* JSONSchema formats (like dates)

@@ -39,9 +39,11 @@ export default class SchemaWriter {
 
   protected writeNewFiles = () =>
     Promise.all(
-      this.schema.schemaNodes.map((schemaNode) =>
-        this.tryWriteNewFile(schemaNode)
-      )
+      this.schema.schemaNodes
+        // Versioned subschemas are folded into their parent dispatcher's page
+        // rather than getting a disconnected page of their own.
+        .filter((schemaNode) => schemaNode.writesOwnDoc())
+        .map((schemaNode) => this.tryWriteNewFile(schemaNode))
     );
 
   write = async () => {

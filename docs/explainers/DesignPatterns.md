@@ -126,3 +126,75 @@ undocumented fields and types, which could cause:
 
 If you need to store additional metadata, use the `comments` field available on all OCF Objects, or
 maintain a separate mapping table in your system that links OCF object IDs to your custom data.
+
+## Evolving an Object's Shape: the VersionWrapper Dispatcher
+
+OCF already has a **Compatibility Wrapper** (see, e.g.,
+[PlanSecurityIssuance](../schema_markdown/schema/objects/transactions/issuance/PlanSecurityIssuance.md)),
+but that pattern is an _aliasing_ trick — one data shape exposed under multiple `object_type` names.
+It does not help when the underlying **data shape itself** needs to change across a breaking
+version.
+
+The **VersionWrapper** (a "versioned dispatcher") is the shape-changing analogue:
+
+-   The stable, public `$id` lives on a thin **dispatcher** schema whose body is an `anyOf` of
+    `$ref`s to concrete, versioned shapes — and nothing else (no `properties` of its own, no
+    `additionalProperties`).
+-   Each versioned shape lives in its own file under a `versions/` subfolder, following the `.v#`
+    filename convention (`EquityCompensationIssuance.v1.schema.json`,
+    `EquityCompensationIssuance.v2.schema.json`), with its own `$id`. `v1` is the current shape,
+    unchanged.
+-   Consumers that already reference the public `$id` change nothing and transparently accept every
+    listed shape during the transition window.
+-   Cutover at a major version is a one-line edit: drop the retiring `$ref` from the dispatcher's
+    `anyOf` and remove the stale version file.
+
+```json
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": ".../issuance/EquityCompensationIssuance.schema.json",
+    "anyOf": [
+        { "$ref": ".../issuance/versions/EquityCompensationIssuance.v1.schema.json" },
+        { "$ref": ".../issuance/versions/EquityCompensationIssuance.v2.schema.json" }
+    ]
+}
+```
+
+A few rules make this work with draft-07:
+
+1.  Use `anyOf`, **not** `oneOf` — during the overlap window a document will often satisfy more than
+    one shape, and `oneOf` would reject it for matching more than one branch.
+2.  draft-07's `additionalProperties: false` does not see properties pulled in through
+    `$ref`/`allOf`, so each versioned shape must be **fully self-contained** (its own complete
+    `properties`, `required`, and `additionalProperties: false`). The dispatcher itself must **not**
+    set `additionalProperties`.
+3.  Tooling that walks schemas (the validator, the doc generator) follows the dispatcher's `anyOf`
+    down to the versioned shapes. The validator maps every versioned shape's `object_type` to the
+    dispatcher's public `$id`, so validating an item against that `object_type` accepts any active
+    version.
+
+## Stability Flags (`x-ocf-stability`)
+
+A schema — or a single versioned shape — can be flagged as pre-release or on its way out with the
+structured **`x-ocf-stability`** keyword. This is a first-class JSON-Schema annotation keyword (not
+a `$comment` convention), so tooling reads it reliably and consumers can opt in or out of
+pre-release shapes:
+
+| Value        | Meaning                                                                                         |
+| ------------ | ----------------------------------------------------------------------------------------------- |
+| `stable`     | Supported; the current recommended shape. This is the **default** when the flag is absent.      |
+| `beta`       | Feature-complete but still subject to change before it is marked stable.                        |
+| `alpha`      | Pre-release; the shape is **not final** and may change or be withdrawn.                         |
+| `deprecated` | On its way out; retained for compatibility and scheduled for removal at a future major version. |
+
+This pairs with the dispatcher: stability lives on the version files, and the dispatcher just lists
+them. A new shape can ship as `alpha` while the prior shape stays `stable`, so the dispatcher can
+advertise the upcoming shape without anyone treating it as final.
+
+### How Documentation Handles Versioned Schemas
+
+The documentation generator detects a dispatcher and produces a **single** markdown page at the
+parent (public `$id`) level, folding every versioned shape in as its own section rather than
+scattering them across disconnected per-file pages. Each section is labeled with its stability badge
+and ordered `stable` → `beta` → `alpha` → `deprecated`, so a reader can tell at a glance which shape
+is current, which is not final, and which is on the way out.

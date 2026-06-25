@@ -2,8 +2,13 @@ import {
   buildSchemaRegistry,
   composeAll,
   composeSchema,
+  DEFAULT_STABILITY,
   isBackwardsCompatibleWrapper,
+  isVersionWrapper,
   RawSchemaJson,
+  STABILITY_RANK,
+  stabilityOf,
+  versionRefsOf,
 } from "./SchemaComposer.js";
 
 const BASE_OBJECT: RawSchemaJson = {
@@ -57,6 +62,30 @@ const WRAPPER: RawSchemaJson = {
   properties: {
     object_type: { const: "TX_STOCK_ISSUANCE_DEPRECATED" },
   },
+};
+
+const STOCK_ISSUANCE_V2: RawSchemaJson = {
+  $id: "test://stock-issuance.v2",
+  title: "Stock Issuance v2",
+  description: "Upcoming issuance shape",
+  type: "object",
+  "x-ocf-stability": "alpha",
+  allOf: [{ $ref: "test://base-object" }],
+  properties: {
+    object_type: { const: "TX_STOCK_ISSUANCE" },
+    quantity: { description: "Quantity", type: "string" },
+  },
+  required: ["quantity"],
+};
+
+const VERSION_DISPATCHER: RawSchemaJson = {
+  $id: "test://stock-issuance-dispatcher",
+  title: "Stock Issuance",
+  description: "Version dispatcher for stock issuance",
+  anyOf: [
+    { $ref: "test://stock-issuance" },
+    { $ref: "test://stock-issuance.v2" },
+  ],
 };
 
 describe("SchemaComposer", () => {
@@ -211,6 +240,99 @@ describe("SchemaComposer", () => {
         type: "string",
       });
       expect(result.registry[BASE_OBJECT.$id]).toBe(BASE_OBJECT);
+    });
+  });
+
+  describe("isVersionWrapper", () => {
+    it("returns true for an anyOf of bare $refs with no own properties", () => {
+      expect(isVersionWrapper(VERSION_DISPATCHER)).toBe(true);
+    });
+
+    it("returns false for an ordinary object that uses top-level anyOf for constraints", () => {
+      const constrained: RawSchemaJson = {
+        $id: "test://constrained",
+        properties: { object_type: { const: "X" } },
+        anyOf: [{ required: ["a"] }, { required: ["b"] }],
+      };
+      expect(isVersionWrapper(constrained)).toBe(false);
+    });
+
+    it("returns false when an anyOf entry is not a bare $ref", () => {
+      const mixed: RawSchemaJson = {
+        $id: "test://mixed",
+        anyOf: [{ $ref: "test://a" }, { $ref: "test://b", title: "extra" }],
+      };
+      expect(isVersionWrapper(mixed)).toBe(false);
+    });
+
+    it("returns false for a backwards-compat wrapper (allOf, not anyOf)", () => {
+      expect(isVersionWrapper(WRAPPER)).toBe(false);
+    });
+  });
+
+  describe("versionRefsOf", () => {
+    it("returns the ordered list of versioned-shape $refs", () => {
+      expect(versionRefsOf(VERSION_DISPATCHER)).toEqual([
+        "test://stock-issuance",
+        "test://stock-issuance.v2",
+      ]);
+    });
+
+    it("returns [] for a schema with no anyOf", () => {
+      expect(versionRefsOf(STOCK_ISSUANCE)).toEqual([]);
+    });
+  });
+
+  describe("stabilityOf", () => {
+    it("reads the x-ocf-stability flag", () => {
+      expect(stabilityOf(STOCK_ISSUANCE_V2)).toBe("alpha");
+    });
+
+    it("defaults to stable when the flag is absent", () => {
+      expect(stabilityOf(STOCK_ISSUANCE)).toBe(DEFAULT_STABILITY);
+      expect(DEFAULT_STABILITY).toBe("stable");
+    });
+
+    it("falls back to stable for an unrecognized value", () => {
+      expect(stabilityOf({ $id: "x", "x-ocf-stability": "bogus" } as any)).toBe(
+        "stable"
+      );
+    });
+
+    it("orders stable before alpha before deprecated", () => {
+      expect(STABILITY_RANK.stable).toBeLessThan(STABILITY_RANK.alpha);
+      expect(STABILITY_RANK.alpha).toBeLessThan(STABILITY_RANK.deprecated);
+    });
+  });
+
+  describe("composeSchema with a version dispatcher", () => {
+    it("returns the dispatcher unchanged, preserving its anyOf body", () => {
+      const reg = buildSchemaRegistry([
+        BASE_OBJECT,
+        STOCK_ISSUANCE,
+        STOCK_ISSUANCE_V2,
+        VERSION_DISPATCHER,
+      ]);
+      const composed = composeSchema(VERSION_DISPATCHER, reg);
+      // No flattening: the dispatcher has no allOf to flatten and its anyOf is
+      // preserved verbatim for downstream resolution.
+      expect(composed.anyOf).toEqual(VERSION_DISPATCHER.anyOf);
+      expect(Object.keys(composed.properties)).toEqual([]);
+      expect(composed.required).toEqual([]);
+    });
+
+    it("still flattens the versioned shapes themselves (they are real objects)", () => {
+      const reg = buildSchemaRegistry([BASE_OBJECT, STOCK_ISSUANCE_V2]);
+      const composed = composeSchema(STOCK_ISSUANCE_V2, reg);
+      // Inherited base-object props are merged in.
+      expect(Object.keys(composed.properties)).toEqual([
+        "id",
+        "comments",
+        "object_type",
+        "quantity",
+      ]);
+      // The stability flag is carried through untouched.
+      expect((composed as any)["x-ocf-stability"]).toBe("alpha");
     });
   });
 });

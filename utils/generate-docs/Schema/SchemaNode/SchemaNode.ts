@@ -136,16 +136,26 @@ export default abstract class SchemaNode {
 
   markdownTableDescription = () => this.description().replace(/\n/g, "</br>");
 
-  markdownPropertiesTable = () =>
+  markdownPropertiesTable = (
+    forOutputPath: string = this.outputFileAbsolutePath()
+  ) =>
     markdownTable([
       ["Property", "Type", "Description", "Required"],
       ...this.properties().map((property) => [
         property.id(),
-        property.markdownTableType(this.outputFileAbsolutePath()),
+        property.markdownTableType(forOutputPath),
         property.markdownTableDescription(),
         this.required().includes(property.id()) ? "`REQUIRED`" : "-",
       ]),
     ]);
+
+  /**
+   * Whether this node is written to its own standalone markdown file. Almost
+   * every node is; versioned subschemas are the exception — they are folded
+   * into their parent dispatcher's page instead of getting a disconnected page
+   * of their own (see `VersionedSubschemaNode`).
+   */
+  writesOwnDoc = (): boolean => true;
 
   abstract markdownOutput(): string;
 

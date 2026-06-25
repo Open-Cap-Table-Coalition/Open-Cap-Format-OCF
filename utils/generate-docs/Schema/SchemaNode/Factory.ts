@@ -16,6 +16,13 @@ export { default as SchemaNode } from "./SchemaNode.js";
 import BackwardsCompatibleSchemaNode, {
   BackwardsCompatibleObjectSchemaNodeJson,
 } from "./BackwardsCompatibleObjectSchemaNode.js";
+import VersionedObjectSchemaNode, {
+  VersionedObjectSchemaNodeJson,
+} from "./VersionedObjectSchemaNode.js";
+import VersionedSubschemaNode, {
+  VersionedSubschemaNodeJson,
+} from "./VersionedSubschemaNode.js";
+import { isVersionWrapper } from "../../../schema-utils/SchemaComposer.js";
 
 export type SchemaNodeJson =
   | FileSchemaNodeJson
@@ -25,7 +32,18 @@ export type SchemaNodeJson =
   | TypeObjectSchemaNodeJson
   | TypeFormatSchemaNodeJson
   | TypePatternSchemaNodeJson
-  | BackwardsCompatibleObjectSchemaNodeJson;
+  | BackwardsCompatibleObjectSchemaNodeJson
+  | VersionedObjectSchemaNodeJson
+  | VersionedSubschemaNodeJson;
+
+/** The basename of a schema `$id` carries a `.v#` suffix (the versioned-shape
+ *  filename convention, e.g. `EquityCompensationIssuance.v1.schema.json`). */
+function hasVersionSuffix(json: Record<string, any>): boolean {
+  const id = json?.["$id"];
+  if (typeof id !== "string") return false;
+  const basename = (id.split("/").pop() ?? "").replace(/\.schema\.json$/, "");
+  return /\.v\d+$/.test(basename);
+}
 
 function isBackwardsCompatibleJson(obj: Record<string, any>): boolean {
   if (!obj || typeof obj !== "object") {
@@ -102,6 +120,20 @@ export default class SchemaNodeFactory {
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
     isBackwardsCompatibleJson(json);
 
+  static isVersionWrapperSchemaNodeJson = (
+    json: SchemaNodeJson
+  ): json is VersionedObjectSchemaNodeJson =>
+    SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
+    isVersionWrapper(json as any);
+
+  static isVersionedSubschemaSchemaNodeJson = (
+    json: SchemaNodeJson
+  ): json is VersionedSubschemaNodeJson =>
+    SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
+    hasVersionSuffix(json) &&
+    "properties" in json &&
+    !!(json as any).properties;
+
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
   ): json is TypeFormatSchemaNodeJson =>
@@ -113,6 +145,10 @@ export default class SchemaNodeFactory {
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
   static build = (schema: Schema, json: SchemaNodeJson) => {
+    if (SchemaNodeFactory.isVersionWrapperSchemaNodeJson(json))
+      return new VersionedObjectSchemaNode(schema, json);
+    if (SchemaNodeFactory.isVersionedSubschemaSchemaNodeJson(json))
+      return new VersionedSubschemaNode(schema, json);
     if (SchemaNodeFactory.isCompatibilityWrapperSchemaNodeJson(json))
       return new BackwardsCompatibleSchemaNode(schema, json);
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))

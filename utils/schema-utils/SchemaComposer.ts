@@ -62,6 +62,101 @@ export function isBackwardsCompatibleWrapper(
   return typeof ref === "string";
 }
 
+// ---------------------------------------------------------------------------
+// Version dispatcher (VersionWrapper) + stability flags
+// ---------------------------------------------------------------------------
+
+/**
+ * Structured stability flag used to mark a schema (or a single version shape)
+ * as pre-release or on its way out. This is a first-class JSON-Schema keyword
+ * — NOT a `$comment` convention — so tooling can read it reliably and consumers
+ * can opt in or out of pre-release shapes.
+ *
+ *   - `stable`     — supported; the current recommended shape (the default
+ *                    when the keyword is absent).
+ *   - `beta`       — feature-complete but still subject to change.
+ *   - `alpha`      — pre-release; shape is not final and may change or be
+ *                    withdrawn. Strict consumers should not treat it as final.
+ *   - `deprecated` — on its way out; will be removed at a future major version.
+ */
+export const STABILITY_KEYWORD = "x-ocf-stability";
+
+export const STABILITY_LEVELS = [
+  "stable",
+  "beta",
+  "alpha",
+  "deprecated",
+] as const;
+
+export type Stability = typeof STABILITY_LEVELS[number];
+
+export const DEFAULT_STABILITY: Stability = "stable";
+
+/**
+ * Ordering rank for presentation: stable first, then beta, then alpha, then
+ * deprecated. Lets the doc generator surface the current recommended shape at
+ * the top and push pre-release / on-the-way-out shapes below it.
+ */
+export const STABILITY_RANK: { [k in Stability]: number } = {
+  stable: 0,
+  beta: 1,
+  alpha: 2,
+  deprecated: 3,
+};
+
+/** Read the `x-ocf-stability` flag off a schema, defaulting to `stable`. */
+export function stabilityOf(json: RawSchemaJson | undefined | null): Stability {
+  const raw = json && (json as Record<string, unknown>)[STABILITY_KEYWORD];
+  return (STABILITY_LEVELS as readonly string[]).includes(raw as string)
+    ? (raw as Stability)
+    : DEFAULT_STABILITY;
+}
+
+/**
+ * A "version dispatcher" (VersionWrapper) is the versioned analogue of the
+ * backwards-compatibility wrapper. The stable, public `$id` lives on a thin
+ * schema whose body is an `anyOf` of `$ref`s to concrete, self-contained
+ * versioned shapes. Consumers that reference the public `$id` transparently
+ * accept every listed shape during a transition window; cutover at a major
+ * version is a one-line edit (drop a `$ref`).
+ *
+ * Detection mirrors `isBackwardsCompatibleWrapper`: a dispatcher carries no
+ * `properties` of its own and an `anyOf` whose every entry is a bare `$ref`
+ * (exactly one key, `$ref`). The "no own properties" guard keeps this from
+ * matching ordinary object schemas that use a top-level `anyOf` for
+ * conditional constraints (those carry `properties` and non-`$ref` branches).
+ */
+export function isVersionWrapper(
+  json: RawSchemaJson | undefined | null
+): boolean {
+  if (!json || typeof json !== "object") return false;
+
+  const properties = json.properties;
+  if (properties && Object.keys(properties).length > 0) return false;
+
+  const anyOf = (json as Record<string, unknown>).anyOf;
+  if (!Array.isArray(anyOf) || anyOf.length === 0) return false;
+
+  return anyOf.every(
+    (entry) =>
+      entry &&
+      typeof entry === "object" &&
+      typeof (entry as { $ref?: unknown }).$ref === "string" &&
+      Object.keys(entry).length === 1
+  );
+}
+
+/** The ordered list of versioned-shape `$ref`s declared by a dispatcher. */
+export function versionRefsOf(
+  json: RawSchemaJson | undefined | null
+): string[] {
+  const anyOf = json && (json as Record<string, unknown>).anyOf;
+  if (!Array.isArray(anyOf)) return [];
+  return anyOf
+    .map((entry) => (entry as { $ref?: unknown }).$ref)
+    .filter((ref): ref is string => typeof ref === "string");
+}
+
 /**
  * Build an $id -> raw-schema map from a flat list of raw schema JSONs.
  * Throws if two schemas share an `$id`, because that would make composition
@@ -110,7 +205,11 @@ export function composeSchema(
   const cached = cache.get(rawJson.$id);
   if (cached) return cached;
 
-  if (isBackwardsCompatibleWrapper(rawJson)) {
+  if (isBackwardsCompatibleWrapper(rawJson) || isVersionWrapper(rawJson)) {
+    // Wrappers (backwards-compat aliases and version dispatchers alike) stand
+    // alone: there is no `allOf` chain to flatten, and their `anyOf`/`allOf`
+    // body must be preserved verbatim so downstream tooling can resolve the
+    // referenced shapes. Only default `properties`/`required` for the type.
     const wrapper: ComposedSchemaJson = {
       ...rawJson,
       properties: rawJson.properties ?? {},
