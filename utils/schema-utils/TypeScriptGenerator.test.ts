@@ -92,6 +92,84 @@ const ALL = [
   OBJECT_ISSUER,
 ];
 
+// --- Aggregate fixtures: a transaction object with a back-compat `enum`
+// discriminant, its narrowed legacy wrapper, and a file wrapper. ---
+const TX_EQUITY_ISSUANCE: RawSchemaJson = {
+  $id: `${BASE}/objects/transactions/issuance/EquityCompensationIssuance.schema.json`,
+  title: "Object - Equity Compensation Issuance",
+  type: "object",
+  allOf: [{ $ref: PRIMITIVE_OBJECT.$id }],
+  // More than just `object_type` so this is a real interface, not a
+  // back-compat wrapper (the wrapper predicate keys on a lone object_type).
+  properties: {
+    object_type: {
+      enum: ["TX_PLAN_SECURITY_ISSUANCE", "TX_EQUITY_COMPENSATION_ISSUANCE"],
+    },
+    quantity: { $ref: TYPE_NUMERIC.$id },
+  },
+  required: ["object_type", "quantity"],
+};
+
+const TX_PLAN_ISSUANCE_WRAPPER: RawSchemaJson = {
+  $id: `${BASE}/objects/transactions/issuance/PlanSecurityIssuance.schema.json`,
+  title: "Object - Plan Security Issuance",
+  allOf: [{ $ref: TX_EQUITY_ISSUANCE.$id }],
+  properties: {
+    object_type: {
+      const: "TX_PLAN_SECURITY_ISSUANCE",
+      description: "Deprecated in v2.0.0",
+    },
+  },
+};
+
+const FILE_TRANSACTIONS: RawSchemaJson = {
+  $id: `${BASE}/files/TransactionsFile.schema.json`,
+  title: "File - Transactions",
+  type: "object",
+  properties: {
+    file_type: { const: "OCF_TRANSACTIONS_FILE" },
+    items: { type: "array", items: { $ref: TX_EQUITY_ISSUANCE.$id } },
+  },
+  required: ["file_type", "items"],
+};
+
+const AGG_INPUTS = [
+  ENUM_OBJECT_TYPE,
+  TYPE_DATE,
+  TYPE_NUMERIC,
+  PRIMITIVE_OBJECT,
+  OBJECT_ISSUER,
+  TX_EQUITY_ISSUANCE,
+  TX_PLAN_ISSUANCE_WRAPPER,
+  FILE_TRANSACTIONS,
+];
+
+/** Names of every top-level `export interface|type` declaration in a module. */
+const exportedNames = (src: string): string[] =>
+  [...src.matchAll(/^export (?:interface|type) (\w+)/gm)].map((m) => m[1]);
+
+/** The keys declared in `export interface <name> { … }` (quotes stripped). */
+const mapKeysOf = (src: string, name: string): string[] => {
+  const m = src.match(
+    new RegExp(`export interface ${name} \\{([\\s\\S]*?)\\n\\}`)
+  );
+  return m
+    ? [...m[1].matchAll(/^\s+("?[\w]+"?):/gm)].map((x) =>
+        x[1].replace(/"/g, "")
+      )
+    : [];
+};
+
+/** The members of an `export type <name> =\n  | A\n  | B;` union (quotes stripped). */
+const unionMembersOf = (src: string, name: string): string[] => {
+  const m = src.match(new RegExp(`export type ${name} =\\n([\\s\\S]*?);`));
+  return m
+    ? [...m[1].matchAll(/^\s+\|\s+(.+?)\s*$/gm)].map((x) =>
+        x[1].replace(/"/g, "")
+      )
+    : [];
+};
+
 describe("TypeScriptGenerator", () => {
   describe("generateTypeScript", () => {
     const { source, typeNames, warnings } = generateTypeScript(ALL);
@@ -306,6 +384,185 @@ describe("TypeScriptGenerator", () => {
       expect(typeNames[PRIMITIVE_OBJECT.$id]).toBe("OCFObject");
       expect(source).toContain("export interface OCFObject {");
       expect(source).toContain("// Primitives");
+    });
+  });
+
+  describe("aggregates", () => {
+    const { source } = generateTypeScript(AGG_INPUTS);
+
+    it("emits all five aggregate declarations", () => {
+      expect(source).toContain("// Aggregates");
+      expect(source).toContain("export type AnyObject =");
+      expect(source).toContain("export type AnyTransaction =");
+      expect(source).toContain("export type AnyFile =");
+      expect(source).toContain("export interface ObjectTypeMap {");
+      expect(source).toContain("export interface FileTypeMap {");
+    });
+
+    it("unions list concrete types and exclude back-compat wrappers", () => {
+      const any = source.slice(
+        source.indexOf("export type AnyObject ="),
+        source.indexOf("export type AnyTransaction =")
+      );
+      expect(any).toContain("| OCFIssuer");
+      expect(any).toContain("| OCFEquityCompensationIssuance");
+      // The wrapper is a subtype of its parent, so the union must not list it.
+      expect(any).not.toContain("OCFPlanSecurityIssuance");
+    });
+
+    it("AnyTransaction holds transactions only (not plain objects)", () => {
+      const tx = source.slice(
+        source.indexOf("export type AnyTransaction ="),
+        source.indexOf("export type AnyFile =")
+      );
+      expect(tx).toContain("| OCFEquityCompensationIssuance");
+      expect(tx).not.toContain("OCFIssuer"); // non-transaction object
+      expect(tx).not.toContain("OCFPlanSecurityIssuance"); // wrapper
+    });
+
+    it("AnyFile holds file wrappers", () => {
+      const files = source.slice(
+        source.indexOf("export type AnyFile ="),
+        source.indexOf("export interface ObjectTypeMap {")
+      );
+      expect(files).toContain("| OCFTransactionsFile");
+    });
+
+    it("ObjectTypeMap keys every object_type, legacy value to its narrowed wrapper", () => {
+      const map = source.slice(
+        source.indexOf("export interface ObjectTypeMap {"),
+        source.indexOf("export interface FileTypeMap {")
+      );
+      expect(map).toContain("ISSUER: OCFIssuer;");
+      expect(map).toContain(
+        "TX_EQUITY_COMPENSATION_ISSUANCE: OCFEquityCompensationIssuance;"
+      );
+      // The legacy value resolves to the precise wrapper, not the parent.
+      expect(map).toContain(
+        "TX_PLAN_SECURITY_ISSUANCE: OCFPlanSecurityIssuance;"
+      );
+    });
+
+    it("ObjectTypeMap key set is exactly the input object_types (no missing/extra)", () => {
+      // Exact set, not spot-checks: an added/dropped/misspelled key fails here.
+      expect(new Set(mapKeysOf(source, "ObjectTypeMap"))).toEqual(
+        new Set([
+          "ISSUER",
+          "TX_PLAN_SECURITY_ISSUANCE",
+          "TX_EQUITY_COMPENSATION_ISSUANCE",
+        ])
+      );
+    });
+
+    it("FileTypeMap keys each file_type to its wrapper", () => {
+      const map = source.slice(
+        source.indexOf("export interface FileTypeMap {")
+      );
+      expect(map).toContain("OCF_TRANSACTIONS_FILE: OCFTransactionsFile;");
+    });
+
+    it("census: exactly one export per emitted schema, plus the five aggregates", () => {
+      const names = exportedNames(source);
+      // 8 inputs, primitive base omitted -> 7 per-schema declarations.
+      const perSchema = [
+        "OCFObjectType",
+        "OCFDate",
+        "OCFNumeric",
+        "OCFIssuer",
+        "OCFEquityCompensationIssuance",
+        "OCFPlanSecurityIssuance",
+        "OCFTransactionsFile",
+      ];
+      const aggregates = [
+        "AnyObject",
+        "AnyTransaction",
+        "AnyFile",
+        "ObjectTypeMap",
+        "FileTypeMap",
+      ];
+      expect(new Set(names)).toEqual(new Set([...perSchema, ...aggregates]));
+      expect(names).toHaveLength(perSchema.length + aggregates.length);
+    });
+
+    it("throws when two non-wrapper schemas claim the same object_type", () => {
+      const a: RawSchemaJson = {
+        $id: `${BASE}/objects/Alpha.schema.json`,
+        type: "object",
+        properties: { object_type: { const: "DUP" } },
+      };
+      const b: RawSchemaJson = {
+        $id: `${BASE}/objects/Bravo.schema.json`,
+        type: "object",
+        properties: { object_type: { const: "DUP" } },
+      };
+      expect(() => generateTypeScript([a, b])).toThrow(
+        /Multiple schemas claim object_type "DUP"/
+      );
+    });
+
+    it("throws when two non-wrapper schemas claim the same file_type", () => {
+      const a: RawSchemaJson = {
+        $id: `${BASE}/files/AlphaFile.schema.json`,
+        type: "object",
+        properties: { file_type: { const: "OCF_DUP_FILE" } },
+      };
+      const b: RawSchemaJson = {
+        $id: `${BASE}/files/BravoFile.schema.json`,
+        type: "object",
+        properties: { file_type: { const: "OCF_DUP_FILE" } },
+      };
+      expect(() => generateTypeScript([a, b])).toThrow(
+        /Multiple schemas claim file_type "OCF_DUP_FILE"/
+      );
+    });
+
+    it("throws when two back-compat wrappers claim the same object_type", () => {
+      const parent: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/EquityCompensationIssuance.schema.json`,
+        type: "object",
+        properties: {
+          object_type: { enum: ["DUP", "TX_EQUITY_COMPENSATION_ISSUANCE"] },
+          quantity: { type: "string" },
+        },
+        required: ["object_type", "quantity"],
+      };
+      const wrapperA: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/WrapperA.schema.json`,
+        allOf: [{ $ref: parent.$id }],
+        properties: { object_type: { const: "DUP" } },
+      };
+      const wrapperB: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/WrapperB.schema.json`,
+        allOf: [{ $ref: parent.$id }],
+        properties: { object_type: { const: "DUP" } },
+      };
+      expect(() => generateTypeScript([parent, wrapperA, wrapperB])).toThrow(
+        /Multiple wrapper schemas claim object_type "DUP"/
+      );
+    });
+
+    it("throws on duplicate non-wrapper claims even when a wrapper also claims the value", () => {
+      // A lone wrapper must not mask a genuine non-wrapper collision.
+      const concreteA: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/ConcreteA.schema.json`,
+        type: "object",
+        properties: { object_type: { const: "DUP" }, x: { type: "string" } },
+        required: ["object_type", "x"],
+      };
+      const concreteB: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/ConcreteB.schema.json`,
+        type: "object",
+        properties: { object_type: { const: "DUP" }, y: { type: "string" } },
+        required: ["object_type", "y"],
+      };
+      const wrapper: RawSchemaJson = {
+        $id: `${BASE}/objects/transactions/issuance/WrapperC.schema.json`,
+        allOf: [{ $ref: concreteA.$id }],
+        properties: { object_type: { const: "DUP" } },
+      };
+      expect(() => generateTypeScript([concreteA, concreteB, wrapper])).toThrow(
+        /Multiple schemas claim object_type "DUP"/
+      );
     });
 
     it("warns (not silently dangles) on a direct $ref to an omitted primitive", () => {
