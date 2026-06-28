@@ -278,6 +278,21 @@ describe("TypeScriptGenerator", () => {
     expect(warnings.length).toBeGreaterThan(0);
   });
 
+  it("throws when an inherited allOf $ref cannot be resolved", () => {
+    const broken: RawSchemaJson = {
+      $id: `${BASE}/objects/BrokenInheritance.schema.json`,
+      type: "object",
+      allOf: [{ $ref: `${BASE}/primitives/objects/Missing.schema.json` }],
+      properties: {
+        object_type: { const: "BROKEN_INHERITANCE" },
+        own_field: { type: "string" },
+      },
+      required: ["object_type"],
+    };
+
+    expect(() => generateTypeScript([broken])).toThrow(/unknown allOf \$ref/);
+  });
+
   describe("primitive base schemas", () => {
     it("omits abstract primitive bases by default, but keeps their flattened properties on children", () => {
       const { source, typeNames, warnings } = generateTypeScript(ALL);

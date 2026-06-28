@@ -520,10 +520,10 @@ export function generateTypeScript(
   } = options;
 
   // Compose so each object's inherited properties are flattened in; keep refs
-  // (we map them to named types rather than inlining). `skip` mirrors the doc
-  // generator's tolerance of partial inputs.
+  // (we map them to named types rather than inlining). Missing inheritance refs
+  // must fail codegen, otherwise generated types can silently drop base fields.
   buildSchemaRegistry(rawSchemas); // validates: throws on duplicate $id
-  const { composed } = composeAll(rawSchemas, { onMissingRef: "skip" });
+  const { composed } = composeAll(rawSchemas);
 
   const idToName = assignTypeNames(rawSchemas, typePrefix);
 
