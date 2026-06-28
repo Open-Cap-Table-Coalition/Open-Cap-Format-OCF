@@ -1,0 +1,35 @@
+name: Check Type Generation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gen-types:
+    name: Check Type Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      # The generated types are not committed, so this job is the guard: a
+      # schema change that breaks codegen (e.g. an unresolved $ref) fails here.
+      - name: Generate OCF types (fail on warnings)
+        run: npm run schema:gen-types -- --out "$RUNNER_TEMP/ocf.d.ts" --fail-on-warnings
+
+      - name: Type-check the generated output
+        run: npx tsc --noEmit --strict --skipLibCheck --target ES2020 --moduleResolution node "$RUNNER_TEMP/ocf.d.ts"

@@ -1,2 +1,5 @@
 docs/schema_markdown
 LICENSE.md
+
+# Generated OCF types output (auto-generated; not hand-formatted)
+packages/ocf-types/index.d.ts
