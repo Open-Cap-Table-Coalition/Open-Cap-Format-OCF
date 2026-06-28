@@ -1,3 +1,5 @@
+import { objectTypeValues } from "../../../schema-utils/SchemaComposer.js";
+
 import Schema from "../Schema.js";
 import SchemaNode, { SchemaNodeJson } from "./SchemaNode.js";
 import { PropertyJson } from "./Property/Factory.js";
@@ -22,55 +24,47 @@ export default class ObjectSchemaNode extends SchemaNode {
     this.json = json;
   }
 
-  protected objectTypes = (): string[] => {
-    let object_type = this.json["properties"]["object_type"];
-    if ("enum" in object_type) {
-      return object_type["enum"];
-    } else {
-      return [object_type["const"]];
-    }
-  };
+  protected objectTypes = (): string[] =>
+    objectTypeValues(this.json["properties"]?.["object_type"]);
 
   protected objectDataTypeDescriptionBlock = (): string => {
-    let text_block = "**Data Type:** ";
-    let object_type_field = this.json["properties"]["object_type"];
-    if ("enum" in object_type_field) {
-      text_block += "`Includes Backwards Compatibility Alias(es)`";
-      for (let i = 0; i < object_type_field["enum"].length; i++) {
-        let object_type_obj = object_type_field["enum"][i];
-        text_block +=
-          "</br>- `OCF Object - " + object_type_obj.toUpperCase() + "`";
-      }
-      return text_block;
-    } else {
-      text_block +=
-        "`OCF Object - " + object_type_field["const"].toUpperCase() + "`";
+    const object_type_field = this.json["properties"]?.["object_type"] as
+      | { const?: unknown; enum?: unknown }
+      | undefined;
+
+    if (object_type_field && Array.isArray(object_type_field.enum)) {
+      return object_type_field.enum.reduce(
+        (text_block: string, value) =>
+          typeof value === "string"
+            ? `${text_block}</br>- \`OCF Object - ${value.toUpperCase()}\``
+            : text_block,
+        "**Data Type:** `Includes Backwards Compatibility Alias(es)`"
+      );
     }
-    return text_block;
+
+    if (object_type_field && typeof object_type_field.const === "string") {
+      return `**Data Type:** \`OCF Object - ${object_type_field.const.toUpperCase()}\``;
+    }
+
+    // A versioned shape that inherits object_type (a placeholder `{}` or a
+    // `$ref`) composes to an object_type with no literal const/enum; render a
+    // generic label rather than dereferencing a missing `const`.
+    return "**Data Type:** `OCF Object`";
   };
 
-  protected examples = () =>
-    this.schema.findExampleItemsByObjectTypes(this.objectTypes());
-
   protected markdownExamples = () =>
-    this.examples().length > 0
-      ? `**Examples:**
-
-\`\`\`json
-${JSON.stringify(this.examples(), null, 2)}
-\`\`\``
-      : "";
+    this.exampleItemsMarkdown(this.objectTypes());
 
   markdownTableType = (in_markdown_file_path: string) =>
     this.mdLinkToNodesMdDocs(in_markdown_file_path);
 
   markdownVersionBody = (
     forOutputPath: string = this.outputFileAbsolutePath()
-  ) => `${this.objectDataTypeDescriptionBlock()}
-
-**Properties:**
-
-${this.markdownPropertiesTable(forOutputPath)}`;
+  ) =>
+    this.dataTypeWithPropertiesTable(
+      this.objectDataTypeDescriptionBlock(),
+      forOutputPath
+    );
 
   markdownOutput = () => `${this.markdownHeader()}
 

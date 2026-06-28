@@ -1,4 +1,5 @@
 import {
+  objectTypeValues,
   STABILITY_RANK,
   versionRefsOf,
 } from "../../../schema-utils/SchemaComposer.js";
@@ -7,7 +8,7 @@ import Schema from "../Schema.js";
 import SchemaNode from "./SchemaNode.js";
 import VersionedSubschemaNode from "./VersionedSubschemaNode.js";
 
-export interface VersionedObjectSchemaNodeJson {
+export interface VersionDispatcherSchemaNodeJson {
   $id: string;
   title: string;
   description: string;
@@ -26,20 +27,33 @@ export interface VersionedObjectSchemaNodeJson {
  * flagged with its `x-ocf-stability`. Sections are ordered stable → beta →
  * alpha → deprecated so the current recommended shape sits at the top.
  */
-export default class VersionedObjectSchemaNode extends SchemaNode {
-  protected readonly json: VersionedObjectSchemaNodeJson;
+export default class VersionDispatcherSchemaNode extends SchemaNode {
+  protected readonly json: VersionDispatcherSchemaNodeJson;
 
-  constructor(schema: Schema, json: VersionedObjectSchemaNodeJson) {
+  /** Resolved-and-sorted version shapes, computed once (see `versions`). */
+  private cachedVersions?: VersionedSubschemaNode[];
+
+  constructor(schema: Schema, json: VersionDispatcherSchemaNodeJson) {
     super(schema, json as any);
     this.json = json;
   }
 
-  type = () => "object";
+  /** The dispatcher's kind follows the shapes it wraps (object / type / enum)
+   *  rather than a hardcoded value, so a versioned type or enum reports its
+   *  real kind. Falls back to "object" only when it has no versions. */
+  type = () => {
+    const versions = this.versions();
+    return versions.length > 0 ? versions[0].type() : "object";
+  };
 
   /** Resolve each `anyOf` `$ref` to its versioned subschema node, ordered by
-   *  stability (stable first). A `$ref` that does not resolve to a versioned
-   *  subschema is a convention violation and fails loudly. */
+   *  stability (stable first), memoized so the linear `findSchemaNodeById`
+   *  lookups and the sort run once even though `versions` is read from several
+   *  render paths (the page body, the examples block, a property-cell summary).
+   *  A `$ref` that does not resolve to a versioned subschema is a convention
+   *  violation and fails loudly. */
   protected versions = (): VersionedSubschemaNode[] => {
+    if (this.cachedVersions) return this.cachedVersions;
     const resolved = versionRefsOf(this.json as any).map((ref) => {
       const node = this.schema.findSchemaNodeById(ref);
       if (!(node instanceof VersionedSubschemaNode)) {
@@ -52,10 +66,30 @@ export default class VersionedObjectSchemaNode extends SchemaNode {
     });
     // Array.prototype.sort is stable, so shapes sharing a stability level keep
     // their declaration (anyOf) order.
-    return resolved.sort(
+    this.cachedVersions = resolved.sort(
       (a, b) => STABILITY_RANK[a.stability()] - STABILITY_RANK[b.stability()]
     );
+    return this.cachedVersions;
   };
+
+  /** The distinct `object_type` values across all version shapes (empty for a
+   *  type/enum dispatcher), used to surface matching samples on the page. */
+  protected objectTypes = (): string[] => [
+    ...new Set(
+      this.versions().flatMap((version) =>
+        objectTypeValues(
+          (version.rawJson() as { properties?: { object_type?: unknown } })
+            .properties?.object_type
+        )
+      )
+    ),
+  ];
+
+  /** Fold the object's real-world samples into the dispatcher page (the base
+   *  `markdownFooter` renders this). Without it a versioned object's page would
+   *  drop the examples its pre-dispatcher per-object page used to show. */
+  protected markdownExamples = () =>
+    this.exampleItemsMarkdown(this.objectTypes());
 
   protected versionsMarkdown = (): string =>
     this.versions()

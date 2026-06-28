@@ -1,5 +1,5 @@
 import { buildObjectTypeSchemaMap } from "./ObjectTypeSchemaMap.js";
-import { RawSchemaJson } from "./SchemaComposer.js";
+import { buildSchemaRegistry, RawSchemaJson } from "./SchemaComposer.js";
 
 const ALLOWED = [
   "TX_STOCK_ISSUANCE",
@@ -133,5 +133,80 @@ describe("buildObjectTypeSchemaMap", () => {
     expect(() => buildObjectTypeSchemaMap([junk], ALLOWED)).toThrow(
       /doesn't match OCF schema format/
     );
+  });
+
+  describe("with a registry (composed resolution, matching the doc generator)", () => {
+    // A version shape that INHERITS object_type via allOf (placeholder {}) from
+    // a base that is not even in the objectSchemas list. The doc generator
+    // composes before reading object_type; with a registry the validator now
+    // does too, so the two agree.
+    const COMP_BASE: RawSchemaJson = {
+      $id: "test://primitives/EquityCompBase",
+      properties: {
+        object_type: { const: "TX_EQUITY_COMPENSATION_ISSUANCE" },
+        id: { type: "string" },
+      },
+    };
+    const COMP_V1: RawSchemaJson = {
+      $id: "test://objects/issuance/versions/EquityCompensationIssuance.v1",
+      "x-ocf-stability": "stable",
+      allOf: [{ $ref: COMP_BASE.$id }],
+      // object_type is an inherited placeholder; a real version shape carries
+      // more than one property (so it is not a single-property BC wrapper).
+      properties: { object_type: {}, quantity: { type: "string" } },
+    };
+    const COMP_DISPATCHER: RawSchemaJson = {
+      $id: "test://objects/issuance/EquityCompensationIssuance",
+      anyOf: [{ $ref: COMP_V1.$id }],
+    };
+
+    it("resolves a version shape's inherited object_type via composition", () => {
+      const registry = buildSchemaRegistry([
+        COMP_BASE,
+        COMP_V1,
+        COMP_DISPATCHER,
+      ]);
+      // objectSchemas deliberately omits the primitive base (the validator only
+      // feeds the objects partition); the registry still resolves it.
+      const map = buildObjectTypeSchemaMap(
+        [COMP_DISPATCHER, COMP_V1],
+        ALLOWED,
+        {
+          registry,
+        }
+      );
+      expect(map["TX_EQUITY_COMPENSATION_ISSUANCE"]).toBe(COMP_DISPATCHER.$id);
+    });
+
+    it("resolves a version shape present only in the registry (not in objectSchemas)", () => {
+      const v1: RawSchemaJson = {
+        $id: "test://types/versions/SomeShape.v1",
+        "x-ocf-stability": "stable",
+        properties: { object_type: { const: "TX_STOCK_ISSUANCE" } },
+      };
+      const dispatcher: RawSchemaJson = {
+        $id: "test://objects/SomeDispatcher",
+        anyOf: [{ $ref: v1.$id }],
+      };
+      const registry = buildSchemaRegistry([v1, dispatcher]);
+      // v1 is NOT in the objectSchemas list, only in the registry.
+      const map = buildObjectTypeSchemaMap([dispatcher], ALLOWED, { registry });
+      expect(map["TX_STOCK_ISSUANCE"]).toBe(dispatcher.$id);
+    });
+
+    it("still throws when a version shape has no object_type even after composition", () => {
+      const v1: RawSchemaJson = {
+        $id: "test://objects/versions/Bad.v1",
+        properties: {},
+      };
+      const dispatcher: RawSchemaJson = {
+        $id: "test://objects/BadDispatcher",
+        anyOf: [{ $ref: v1.$id }],
+      };
+      const registry = buildSchemaRegistry([v1, dispatcher]);
+      expect(() =>
+        buildObjectTypeSchemaMap([dispatcher, v1], ALLOWED, { registry })
+      ).toThrow(/has no object_type const\/enum/);
+    });
   });
 });

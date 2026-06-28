@@ -178,6 +178,39 @@ export default abstract class SchemaNode {
     return parts.join("\n\n");
   };
 
+  /**
+   * A version-section / object body of a `**Data Type:** …` line followed by a
+   * properties table — the shape shared by object and type-object renderings.
+   * Callers supply the already-formatted data-type markdown so each kind keeps
+   * its own label (e.g. `OCF Object - X` vs `OCF TYPE`).
+   */
+  protected dataTypeWithPropertiesTable = (
+    dataTypeMarkdown: string,
+    forOutputPath: string = this.outputFileAbsolutePath()
+  ): string =>
+    `${dataTypeMarkdown}
+
+**Properties:**
+
+${this.markdownPropertiesTable(forOutputPath)}`;
+
+  /**
+   * The `**Examples:**` block for a set of `object_type` values, pulling the
+   * matching sample items from the schema. Empty string when there are none,
+   * so a node with no samples contributes nothing. Shared by object nodes and
+   * the version dispatcher so both surface real-world samples.
+   */
+  protected exampleItemsMarkdown = (objectTypes: string[]): string => {
+    const items = this.schema.findExampleItemsByObjectTypes(objectTypes);
+    return items.length > 0
+      ? `**Examples:**
+
+\`\`\`json
+${JSON.stringify(items, null, 2)}
+\`\`\``
+      : "";
+  };
+
   abstract markdownOutput(): string;
 
   mdLinkToSourceSchema = () =>

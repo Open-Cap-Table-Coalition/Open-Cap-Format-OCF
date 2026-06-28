@@ -37,9 +37,10 @@ export type SchemaRegistry = { [id: string]: RawSchemaJson };
  * of substance. These wrappers must NOT be flattened: they intentionally
  * stand alone as an alias for another, fully-defined object schema.
  *
- * The detection logic mirrors `isBackwardsCompatibleJson` in
- * `utils/generate-docs/Schema/SchemaNode/Factory.ts` so both call sites
- * agree on what counts as a wrapper.
+ * This is the single source of truth for wrapper detection: the doc-generator
+ * factory (`utils/generate-docs/Schema/SchemaNode/Factory.ts`) imports and
+ * calls this function, so the composer, validator, and doc generator all agree
+ * on what counts as a wrapper.
  */
 export function isBackwardsCompatibleWrapper(
   json: RawSchemaJson | undefined | null
@@ -113,6 +114,42 @@ export function stabilityOf(json: RawSchemaJson | undefined | null): Stability {
 }
 
 /**
+ * The single source of truth for the versioned-shape filename convention: a
+ * schema `$id` (or `$ref`) whose basename carries a `.v#` suffix, e.g.
+ * `EquityCompensationIssuance.v1.schema.json`. Centralized here (rather than
+ * re-implemented in the factory and the doc nodes) so every consumer agrees
+ * on what counts as a version shape.
+ */
+const VERSION_SUFFIX_RE = /\.(v\d+)$/;
+
+/** The trailing path segment of a schema `$id`/`$ref`, with the
+ *  `.schema.json` extension stripped (so `.v#` becomes the basename suffix). */
+function versionShapeBasename(idOrRef: string): string {
+  const last = idOrRef.split("/").pop() ?? "";
+  return last.replace(/\.schema\.json$/, "");
+}
+
+/** Whether a schema `$id`/`$ref` (or a schema object carrying one) follows the
+ *  `.v#` versioned-shape filename convention. */
+export function hasVersionSuffix(
+  idOrJson: string | RawSchemaJson | undefined | null
+): boolean {
+  const id =
+    typeof idOrJson === "string"
+      ? idOrJson
+      : (idOrJson as Record<string, unknown> | null | undefined)?.["$id"];
+  if (typeof id !== "string") return false;
+  return VERSION_SUFFIX_RE.test(versionShapeBasename(id));
+}
+
+/** The `v#` label extracted from a versioned-shape `$id`/`$ref`/basename
+ *  (e.g. `v1`), or `null` when there is no `.v#` suffix. */
+export function versionLabelOf(idOrRef: string): string | null {
+  const match = versionShapeBasename(idOrRef).match(VERSION_SUFFIX_RE);
+  return match ? match[1] : null;
+}
+
+/**
  * A "version dispatcher" (VersionWrapper) is the versioned analogue of the
  * backwards-compatibility wrapper. The stable, public `$id` lives on a thin
  * schema whose body is an `anyOf` of `$ref`s to concrete, self-contained
@@ -122,9 +159,11 @@ export function stabilityOf(json: RawSchemaJson | undefined | null): Stability {
  *
  * Detection mirrors `isBackwardsCompatibleWrapper`: a dispatcher carries no
  * `properties` of its own and an `anyOf` whose every entry is a bare `$ref`
- * (exactly one key, `$ref`). The "no own properties" guard keeps this from
- * matching ordinary object schemas that use a top-level `anyOf` for
- * conditional constraints (those carry `properties` and non-`$ref` branches).
+ * (exactly one key, `$ref`) pointing at a `.v#` versioned shape. The
+ * "no own properties" guard excludes ordinary object schemas that use a
+ * top-level `anyOf` for conditional constraints; the `.v#` requirement
+ * excludes generic `anyOf`-of-`$ref` unions (e.g. a "one of these object
+ * types" union) that are not version dispatchers at all.
  */
 export function isVersionWrapper(
   json: RawSchemaJson | undefined | null
@@ -137,13 +176,18 @@ export function isVersionWrapper(
   const anyOf = (json as Record<string, unknown>).anyOf;
   if (!Array.isArray(anyOf) || anyOf.length === 0) return false;
 
-  return anyOf.every(
+  const allBareRefs = anyOf.every(
     (entry) =>
       entry &&
       typeof entry === "object" &&
       typeof (entry as { $ref?: unknown }).$ref === "string" &&
       Object.keys(entry).length === 1
   );
+  if (!allBareRefs) return false;
+
+  // Every referenced shape must follow the `.v#` versioned-shape convention,
+  // so a generic union of bare `$ref`s is not mistaken for a dispatcher.
+  return versionRefsOf(json).every((ref) => hasVersionSuffix(ref));
 }
 
 /** The ordered list of versioned-shape `$ref`s declared by a dispatcher. */
@@ -155,6 +199,29 @@ export function versionRefsOf(
   return anyOf
     .map((entry) => (entry as { $ref?: unknown }).$ref)
     .filter((ref): ref is string => typeof ref === "string");
+}
+
+/**
+ * The literal `object_type` values a schema's `object_type` property declares,
+ * via either a `const` string or an `enum` array. Returns `[]` for anything
+ * else (missing, a `$ref`, a non-string const, etc.) so callers never
+ * dereference an absent `const`. The single reader of this shape, shared by the
+ * validator's object-type map, the object doc node, and the version dispatcher.
+ */
+export function objectTypeValues(objectType: unknown): string[] {
+  if (
+    !objectType ||
+    typeof objectType !== "object" ||
+    Array.isArray(objectType)
+  ) {
+    return [];
+  }
+  const ot = objectType as { const?: unknown; enum?: unknown };
+  if (typeof ot.const === "string") return [ot.const];
+  if (Array.isArray(ot.enum)) {
+    return ot.enum.filter((v): v is string => typeof v === "string");
+  }
+  return [];
 }
 
 /**
@@ -179,6 +246,18 @@ export function buildSchemaRegistry(
 }
 
 /**
+ * Raised when a schema's `allOf` `$ref` cannot be resolved in the registry.
+ * A typed error (rather than a string-matched message) so callers can decide
+ * whether a dangling ref is fatal without coupling to the message text.
+ */
+export class MissingRefError extends Error {
+  constructor(readonly schemaId: string, readonly ref: string) {
+    super(`Cannot compose ${schemaId}: unknown allOf $ref '${ref}'`);
+    this.name = "MissingRefError";
+  }
+}
+
+/**
  * Compose a single schema by flattening its `allOf` chain.
  *
  * Merge semantics (chosen to be a behavior-preserving extraction of the
@@ -196,11 +275,20 @@ export function buildSchemaRegistry(
  *   - `required` is the concatenation of the schema's own `required` and
  *     every composed parent's `required` (recursive). Duplicates are
  *     intentionally kept to match the pre-extraction behavior.
+ *
+ * `onMissingRef` controls a single unresolved `allOf` `$ref`:
+ *   - `"throw"` (default): raise `MissingRefError`.
+ *   - `"skip"`: warn and drop only that one parent, still merging every parent
+ *     that DOES resolve. This is per-parent — a missing ancestor never causes
+ *     a whole subtree to fall back to its raw, un-merged form, so a schema's
+ *     resolvable inheritance is always reflected regardless of which sibling
+ *     ref is missing or what order schemas are composed in.
  */
 export function composeSchema(
   rawJson: RawSchemaJson,
   registry: SchemaRegistry,
-  cache: Map<string, ComposedSchemaJson> = new Map()
+  cache: Map<string, ComposedSchemaJson> = new Map(),
+  onMissingRef: "throw" | "skip" = "throw"
 ): ComposedSchemaJson {
   const cached = cache.get(rawJson.$id);
   if (cached) return cached;
@@ -220,15 +308,20 @@ export function composeSchema(
   }
 
   const allOf = rawJson.allOf ?? [];
-  const parents: ComposedSchemaJson[] = allOf.map((ref) => {
+  const parents: ComposedSchemaJson[] = [];
+  for (const ref of allOf) {
     const parentRaw = registry[ref.$ref];
     if (!parentRaw) {
-      throw new Error(
-        `Cannot compose ${rawJson.$id}: unknown allOf $ref '${ref.$ref}'`
-      );
+      if (onMissingRef === "skip") {
+        console.warn(
+          `Composing ${rawJson.$id}: skipping unknown allOf $ref '${ref.$ref}' (its inherited properties will be absent).`
+        );
+        continue;
+      }
+      throw new MissingRefError(rawJson.$id, ref.$ref);
     }
-    return composeSchema(parentRaw, registry, cache);
-  });
+    parents.push(composeSchema(parentRaw, registry, cache, onMissingRef));
+  }
 
   const mergedProperties: { [name: string]: any } = {};
   for (const parent of parents) {
@@ -258,30 +351,19 @@ export function composeSchema(
 
 export type ComposeAllOptions = {
   /**
-   * Behavior when an `allOf` `$ref` cannot be resolved in the registry:
-   *  - `"throw"` (default): propagate the error from `composeSchema`. Use
-   *    this for production runs and external utilities — a dangling `$ref`
-   *    is a real schema bug and should fail loudly.
-   *  - `"skip"`: fall back to the raw schema (with `properties`/`required`
-   *    defaulted) for any schema whose composition fails because of a
-   *    missing parent. This preserves the doc-generator's historical
-   *    lazy-resolution semantics, where missing refs only surfaced if the
-   *    consumer actually walked the `allOf` chain (e.g. when rendering
-   *    properties). Used by the doc generator so partial test fixtures
-   *    don't break.
+   * Behavior when an `allOf` `$ref` cannot be resolved in the registry,
+   * forwarded to `composeSchema` (see its doc for the precise per-parent
+   * semantics):
+   *  - `"throw"` (default): a dangling `$ref` raises `MissingRefError`. Use
+   *    this for production runs and external utilities — it is a real schema
+   *    bug and should fail loudly.
+   *  - `"skip"`: warn and drop only the unresolved parent, still merging every
+   *    parent that resolves. Used by the doc generator so partial test fixtures
+   *    (which deliberately omit some ancestors) compose without aborting, while
+   *    each schema still reflects all of its resolvable inheritance.
    */
   onMissingRef?: "throw" | "skip";
 };
-
-const missingRefMessage = "unknown allOf $ref";
-
-function fallbackComposed(raw: RawSchemaJson): ComposedSchemaJson {
-  return {
-    ...raw,
-    properties: raw.properties ?? {},
-    required: raw.required ? [...raw.required] : [],
-  };
-}
 
 /**
  * Compose every schema in `rawSchemas` and return both the registry of raw
@@ -301,20 +383,9 @@ export function composeAll(
   const { onMissingRef = "throw" } = options;
   const registry = buildSchemaRegistry(rawSchemas);
   const cache = new Map<string, ComposedSchemaJson>();
-  const composed = rawSchemas.map((raw) => {
-    try {
-      return composeSchema(raw, registry, cache);
-    } catch (err) {
-      const isMissingRef =
-        err instanceof Error && err.message.includes(missingRefMessage);
-      if (onMissingRef === "skip" && isMissingRef) {
-        const fb = fallbackComposed(raw);
-        cache.set(raw.$id, fb);
-        return fb;
-      }
-      throw err;
-    }
-  });
+  const composed = rawSchemas.map((raw) =>
+    composeSchema(raw, registry, cache, onMissingRef)
+  );
   const composedById: { [id: string]: ComposedSchemaJson } = {};
   for (const c of composed) composedById[c.$id] = c;
   return { registry, composed, composedById };

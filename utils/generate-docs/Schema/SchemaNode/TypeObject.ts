@@ -27,11 +27,11 @@ export default class TypeObjectSchemaNode extends SchemaNode {
 
   markdownVersionBody = (
     forOutputPath: string = this.outputFileAbsolutePath()
-  ) => `**Data Type:** \`OCF TYPE\`
-
-**Properties:**
-
-${this.markdownPropertiesTable(forOutputPath)}`;
+  ) =>
+    this.dataTypeWithPropertiesTable(
+      "**Data Type:** `OCF TYPE`",
+      forOutputPath
+    );
 
   markdownOutput = () => `${this.markdownHeader()}
 

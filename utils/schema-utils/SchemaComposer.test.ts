@@ -3,11 +3,15 @@ import {
   composeAll,
   composeSchema,
   DEFAULT_STABILITY,
+  hasVersionSuffix,
   isBackwardsCompatibleWrapper,
   isVersionWrapper,
+  MissingRefError,
+  objectTypeValues,
   RawSchemaJson,
   STABILITY_RANK,
   stabilityOf,
+  versionLabelOf,
   versionRefsOf,
 } from "./SchemaComposer.js";
 
@@ -83,7 +87,7 @@ const VERSION_DISPATCHER: RawSchemaJson = {
   title: "Stock Issuance",
   description: "Version dispatcher for stock issuance",
   anyOf: [
-    { $ref: "test://stock-issuance" },
+    { $ref: "test://stock-issuance.v1" },
     { $ref: "test://stock-issuance.v2" },
   ],
 };
@@ -206,14 +210,62 @@ describe("SchemaComposer", () => {
       expect(composed.allOf).toEqual(WRAPPER.allOf);
     });
 
-    it("throws when an allOf $ref points at an unknown $id", () => {
+    it("throws a MissingRefError when an allOf $ref points at an unknown $id", () => {
       const orphan: RawSchemaJson = {
         $id: "test://orphan",
         allOf: [{ $ref: "test://does-not-exist" }],
         properties: { x: { const: 1 } },
       };
       const reg = buildSchemaRegistry([orphan]);
+      expect(() => composeSchema(orphan, reg)).toThrow(MissingRefError);
       expect(() => composeSchema(orphan, reg)).toThrow(/unknown allOf \$ref/);
+    });
+
+    it("under onMissingRef:'skip' drops only the missing parent, still merging the resolvable ones", () => {
+      // A child with one resolvable parent (BASE_OBJECT) and one dangling ref.
+      const child: RawSchemaJson = {
+        $id: "test://partial-child",
+        allOf: [{ $ref: BASE_OBJECT.$id }, { $ref: "test://missing-parent" }],
+        properties: { extra: { type: "string" } },
+      };
+      const reg = buildSchemaRegistry([BASE_OBJECT, child]);
+      const composed = composeSchema(child, reg, new Map(), "skip");
+      // BASE_OBJECT's properties are still merged in; only the missing parent
+      // contributes nothing. (The pre-fix fallback dropped EVERYTHING.)
+      expect(Object.keys(composed.properties)).toEqual([
+        "id",
+        "comments",
+        "object_type",
+        "extra",
+      ]);
+    });
+
+    it("does not poison descendants when a deep ancestor has a missing ref (skip)", () => {
+      // grandparent (missing ref) <- parent <- child. The grandparent's own
+      // resolvable properties must still reach the child regardless of order.
+      const grandparent: RawSchemaJson = {
+        $id: "test://gp",
+        allOf: [{ $ref: "test://gp-missing" }],
+        properties: { gp_prop: { type: "string" } },
+      };
+      const parent: RawSchemaJson = {
+        $id: "test://parent",
+        allOf: [{ $ref: "test://gp" }],
+        properties: { parent_prop: { type: "string" } },
+      };
+      const child: RawSchemaJson = {
+        $id: "test://child",
+        allOf: [{ $ref: "test://parent" }],
+        properties: { child_prop: { type: "string" } },
+      };
+      const { composedById } = composeAll([grandparent, parent, child], {
+        onMissingRef: "skip",
+      });
+      expect(Object.keys(composedById["test://child"].properties)).toEqual([
+        "gp_prop",
+        "parent_prop",
+        "child_prop",
+      ]);
     });
 
     it("is memoized — composing the same $id twice returns the cached object", () => {
@@ -265,6 +317,31 @@ describe("SchemaComposer", () => {
       expect(isVersionWrapper(mixed)).toBe(false);
     });
 
+    it("returns false for a generic anyOf-of-$refs union whose targets are not .v# shapes", () => {
+      // A "one of these object types" union is structurally an anyOf of bare
+      // $refs with no own properties, but is NOT a version dispatcher — the
+      // `.v#` requirement keeps it from being misclassified.
+      const union: RawSchemaJson = {
+        $id: "test://object-union",
+        anyOf: [
+          { $ref: "test://stock-issuance" },
+          { $ref: "test://transaction" },
+        ],
+      };
+      expect(isVersionWrapper(union)).toBe(false);
+    });
+
+    it("returns false when only some anyOf targets are .v# shapes", () => {
+      const partial: RawSchemaJson = {
+        $id: "test://partial-versions",
+        anyOf: [
+          { $ref: "test://stock-issuance" },
+          { $ref: "test://stock-issuance.v2" },
+        ],
+      };
+      expect(isVersionWrapper(partial)).toBe(false);
+    });
+
     it("returns false for a backwards-compat wrapper (allOf, not anyOf)", () => {
       expect(isVersionWrapper(WRAPPER)).toBe(false);
     });
@@ -273,13 +350,53 @@ describe("SchemaComposer", () => {
   describe("versionRefsOf", () => {
     it("returns the ordered list of versioned-shape $refs", () => {
       expect(versionRefsOf(VERSION_DISPATCHER)).toEqual([
-        "test://stock-issuance",
+        "test://stock-issuance.v1",
         "test://stock-issuance.v2",
       ]);
     });
 
     it("returns [] for a schema with no anyOf", () => {
       expect(versionRefsOf(STOCK_ISSUANCE)).toEqual([]);
+    });
+  });
+
+  describe("hasVersionSuffix", () => {
+    it("detects the .v# convention on a $id, a $ref string, or a schema object", () => {
+      expect(
+        hasVersionSuffix("test://issuance/versions/Foo.v1.schema.json")
+      ).toBe(true);
+      expect(hasVersionSuffix("test://Foo.v12")).toBe(true);
+      expect(
+        hasVersionSuffix({ $id: "test://Foo.v2.schema.json" } as any)
+      ).toBe(true);
+    });
+
+    it("returns false for non-versioned ids / bad input", () => {
+      expect(hasVersionSuffix("test://Foo.schema.json")).toBe(false);
+      expect(hasVersionSuffix("test://Foo_v2")).toBe(false);
+      expect(hasVersionSuffix(undefined)).toBe(false);
+      expect(hasVersionSuffix({} as any)).toBe(false);
+    });
+  });
+
+  describe("versionLabelOf", () => {
+    it("extracts the v# label, else null", () => {
+      expect(versionLabelOf("test://Foo.v3.schema.json")).toBe("v3");
+      expect(versionLabelOf("Foo.v1")).toBe("v1");
+      expect(versionLabelOf("test://Foo.schema.json")).toBeNull();
+    });
+  });
+
+  describe("objectTypeValues", () => {
+    it("reads a const string, an enum array, or returns [] otherwise", () => {
+      expect(objectTypeValues({ const: "TX_A" })).toEqual(["TX_A"]);
+      expect(objectTypeValues({ enum: ["TX_A", "TX_B"] })).toEqual([
+        "TX_A",
+        "TX_B",
+      ]);
+      expect(objectTypeValues({ $ref: "test://enum" })).toEqual([]);
+      expect(objectTypeValues(undefined)).toEqual([]);
+      expect(objectTypeValues({ const: 5 })).toEqual([]);
     });
   });
 

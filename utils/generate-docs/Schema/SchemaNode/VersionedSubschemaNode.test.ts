@@ -1,5 +1,5 @@
 import Schema from "../Schema.js";
-import VersionedObjectSchemaNode from "./VersionedObjectSchemaNode.js";
+import VersionDispatcherSchemaNode from "./VersionDispatcherSchemaNode.js";
 import VersionedSubschemaNode from "./VersionedSubschemaNode.js";
 
 const BASE =
@@ -112,7 +112,7 @@ describe("Version dispatchers at any level", () => {
     it("builds the dispatcher and its type version shapes", () => {
       const s = schema();
       expect(s.findSchemaNodeById(TYPE_DISPATCHER.$id)).toBeInstanceOf(
-        VersionedObjectSchemaNode
+        VersionDispatcherSchemaNode
       );
       expect(s.findSchemaNodeById(TYPE_V1.$id)).toBeInstanceOf(
         VersionedSubschemaNode

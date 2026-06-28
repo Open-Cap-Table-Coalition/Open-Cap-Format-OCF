@@ -17,13 +17,16 @@ export { default as SchemaNode } from "./SchemaNode.js";
 import BackwardsCompatibleSchemaNode, {
   BackwardsCompatibleObjectSchemaNodeJson,
 } from "./BackwardsCompatibleObjectSchemaNode.js";
-import VersionedObjectSchemaNode, {
-  VersionedObjectSchemaNodeJson,
-} from "./VersionedObjectSchemaNode.js";
+import VersionDispatcherSchemaNode, {
+  VersionDispatcherSchemaNodeJson,
+} from "./VersionDispatcherSchemaNode.js";
 import VersionedSubschemaNode, {
   VersionedSubschemaNodeJson,
 } from "./VersionedSubschemaNode.js";
-import { isVersionWrapper } from "../../../schema-utils/SchemaComposer.js";
+import {
+  isBackwardsCompatibleWrapper,
+  isVersionWrapper,
+} from "../../../schema-utils/SchemaComposer.js";
 
 export type SchemaNodeJson =
   | FileSchemaNodeJson
@@ -34,50 +37,8 @@ export type SchemaNodeJson =
   | TypeFormatSchemaNodeJson
   | TypePatternSchemaNodeJson
   | BackwardsCompatibleObjectSchemaNodeJson
-  | VersionedObjectSchemaNodeJson
+  | VersionDispatcherSchemaNodeJson
   | VersionedSubschemaNodeJson;
-
-/** The basename of a schema `$id` carries a `.v#` suffix (the versioned-shape
- *  filename convention, e.g. `EquityCompensationIssuance.v1.schema.json`). */
-function hasVersionSuffix(json: Record<string, any>): boolean {
-  const id = json?.["$id"];
-  if (typeof id !== "string") return false;
-  const basename = (id.split("/").pop() ?? "").replace(/\.schema\.json$/, "");
-  return /\.v\d+$/.test(basename);
-}
-
-function isBackwardsCompatibleJson(obj: Record<string, any>): boolean {
-  if (!obj || typeof obj !== "object") {
-    return false;
-  }
-
-  const properties = obj.properties;
-  if (!properties || typeof properties !== "object") {
-    return false;
-  }
-
-  const keys = Object.keys(properties);
-  if (keys.length !== 1) {
-    return false;
-  }
-
-  const objectType = properties.object_type;
-  if (!objectType || typeof objectType !== "object") {
-    return false;
-  }
-
-  const allOf = obj.allOf;
-  if (!Array.isArray(allOf) || allOf.length !== 1) {
-    return false;
-  }
-
-  const ref = allOf[0].$ref;
-  if (!ref || typeof ref !== "string") {
-    return false;
-  }
-
-  return true;
-}
 
 export default class SchemaNodeFactory {
   static schemaTypeFromJson = (json: SchemaNodeJson) => {
@@ -119,22 +80,14 @@ export default class SchemaNodeFactory {
     json: SchemaNodeJson
   ): json is BackwardsCompatibleObjectSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
-    isBackwardsCompatibleJson(json);
+    isBackwardsCompatibleWrapper(json as any);
 
   // A version dispatcher works at ANY level (object / type / enum), so
-  // detection is purely structural (an anyOf of bare $refs, no own properties)
-  // rather than gated to a partition.
+  // detection is purely structural (an anyOf of bare $refs to `.v#` shapes,
+  // no own properties) rather than gated to a partition.
   static isVersionWrapperSchemaNodeJson = (
     json: SchemaNodeJson
-  ): json is VersionedObjectSchemaNodeJson => isVersionWrapper(json as any);
-
-  // A versioned shape is any `.v#`-suffixed schema that is not itself a
-  // dispatcher; its partition (object / type / enum) is resolved when the
-  // factory builds the inner node it wraps.
-  static isVersionedSubschemaSchemaNodeJson = (
-    json: SchemaNodeJson
-  ): json is VersionedSubschemaNodeJson =>
-    hasVersionSuffix(json) && !isVersionWrapper(json as any);
+  ): json is VersionDispatcherSchemaNodeJson => isVersionWrapper(json as any);
 
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
@@ -169,14 +122,30 @@ export default class SchemaNodeFactory {
     throw new Error(`Unrecgonized JSON schema: ${json}`);
   };
 
-  static build = (schema: Schema, json: SchemaNodeJson): SchemaNode => {
+  /**
+   * Build the node for a schema.
+   *
+   * Whether a schema is a folded *versioned shape* is decided by OWNERSHIP, not
+   * by its filename: `versionShapeOwners` maps a version shape's `$id` to the
+   * `$id` of the dispatcher whose `anyOf` references it (computed by `Schema`
+   * from the full schema set). A `.v#`-named file that no dispatcher references
+   * is therefore NOT silently folded away — it falls through to a normal node
+   * and gets its own page (with `Schema` warning about the orphan).
+   */
+  static build = (
+    schema: Schema,
+    json: SchemaNodeJson,
+    versionShapeOwners: ReadonlyMap<string, string> = new Map()
+  ): SchemaNode => {
     if (SchemaNodeFactory.isVersionWrapperSchemaNodeJson(json))
-      return new VersionedObjectSchemaNode(schema, json);
-    if (SchemaNodeFactory.isVersionedSubschemaSchemaNodeJson(json))
+      return new VersionDispatcherSchemaNode(schema, json);
+    const ownerId = versionShapeOwners.get((json as { $id: string }).$id);
+    if (ownerId)
       return new VersionedSubschemaNode(
         schema,
-        json,
-        SchemaNodeFactory.buildBaseNode(schema, json)
+        json as VersionedSubschemaNodeJson,
+        SchemaNodeFactory.buildBaseNode(schema, json),
+        ownerId
       );
     return SchemaNodeFactory.buildBaseNode(schema, json);
   };

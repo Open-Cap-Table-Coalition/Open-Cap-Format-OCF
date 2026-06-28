@@ -1,7 +1,7 @@
 import Schema from "../Schema.js";
-import VersionedObjectSchemaNode, {
-  VersionedObjectSchemaNodeJson,
-} from "./VersionedObjectSchemaNode.js";
+import VersionDispatcherSchemaNode, {
+  VersionDispatcherSchemaNodeJson,
+} from "./VersionDispatcherSchemaNode.js";
 import VersionedSubschemaNode, {
   VersionedSubschemaNodeJson,
 } from "./VersionedSubschemaNode.js";
@@ -82,7 +82,7 @@ const V2_FIXTURE: VersionedSubschemaNodeJson = {
 
 // anyOf lists the alpha shape FIRST on purpose, to prove the dispatcher orders
 // the rendered sections by stability (stable first) rather than by declaration.
-const DISPATCHER_FIXTURE: VersionedObjectSchemaNodeJson = {
+const DISPATCHER_FIXTURE: VersionDispatcherSchemaNodeJson = {
   $id: `${BASE}/objects/transactions/issuance/EquityCompensationIssuance.schema.json`,
   title: "Object - Equity Compensation Issuance Transaction",
   description:
@@ -107,11 +107,11 @@ const buildSchema = () =>
     V2_FIXTURE,
   ]);
 
-describe("VersionedObjectSchemaNode (version dispatcher)", () => {
+describe("VersionDispatcherSchemaNode (version dispatcher)", () => {
   it("is built for an anyOf-of-$refs dispatcher schema", () => {
     const schema = buildSchema();
     const node = schema.findSchemaNodeById(DISPATCHER_FIXTURE.$id);
-    expect(node).toBeInstanceOf(VersionedObjectSchemaNode);
+    expect(node).toBeInstanceOf(VersionDispatcherSchemaNode);
   });
 
   it("builds each versioned shape as a VersionedSubschemaNode", () => {

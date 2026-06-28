@@ -11,7 +11,12 @@ import SchemaNodeFactory, {
   SchemaNode,
   SchemaNodeJson,
 } from "./SchemaNode/Factory.js";
-import { composeAll } from "../../schema-utils/SchemaComposer.js";
+import {
+  composeAll,
+  hasVersionSuffix,
+  isVersionWrapper,
+  versionRefsOf,
+} from "../../schema-utils/SchemaComposer.js";
 
 export type { SchemaNodeJson };
 export type { ExampleJson };
@@ -48,6 +53,9 @@ export default class Schema {
   readonly schemaNodes: SchemaNode[];
   readonly examples: Examples;
   readonly supplementals: Supplementals;
+  /** `$id` -> node index for O(1) `findSchemaNodeById` (called once per allOf
+   *  ref, property `$ref`, and version ref while rendering). */
+  private readonly nodesById: Map<string, SchemaNode>;
 
   constructor(
     schemaNodeJsons: SchemaNodeJson[],
@@ -57,15 +65,48 @@ export default class Schema {
     const { composed } = composeAll(schemaNodeJsons as any[], {
       onMissingRef: "skip",
     });
+
+    // Map each versioned shape's `$id` -> the dispatcher that owns it (whose
+    // `anyOf` references it). Ownership — not the `.v#` filename — decides
+    // whether a shape is folded into a dispatcher's page or documented on its
+    // own, so a dispatcher and its versions stay consistent.
+    const versionShapeOwners = new Map<string, string>();
+    for (const json of composed) {
+      if (isVersionWrapper(json)) {
+        for (const ref of versionRefsOf(json))
+          versionShapeOwners.set(ref, json.$id);
+      }
+    }
+
+    // A file that follows the versioned-shape (`.v#`) naming convention but is
+    // referenced by no dispatcher would otherwise be folded away into a page
+    // that never gets written — surface it loudly instead of dropping it.
+    for (const json of composed) {
+      if (
+        hasVersionSuffix(json) &&
+        !isVersionWrapper(json) &&
+        !versionShapeOwners.has(json.$id)
+      ) {
+        console.warn(
+          `Schema ${json.$id} follows the versioned-shape (.v#) naming convention but no version dispatcher references it; it will be documented as a standalone schema.`
+        );
+      }
+    }
+
     this.schemaNodes = composed.map((json) =>
-      SchemaNodeFactory.build(this, json as unknown as SchemaNodeJson)
+      SchemaNodeFactory.build(
+        this,
+        json as unknown as SchemaNodeJson,
+        versionShapeOwners
+      )
     );
+    this.nodesById = new Map(this.schemaNodes.map((node) => [node.id(), node]));
     this.examples = new Examples(exampleJsons);
     this.supplementals = new Supplementals(supplementalMarkdowns);
   }
 
   findSchemaNodeById = (id: string) => {
-    const schemaNode = this.schemaNodes.find((node) => node.id() === id);
+    const schemaNode = this.nodesById.get(id);
     if (!schemaNode) {
       throw new Error(`Cannot find SchemaNode '${id}'`);
     }

@@ -14,6 +14,7 @@ import core from "@actions/core";
 
 import { buildObjectTypeSchemaMap } from "./schema-utils/ObjectTypeSchemaMap.js";
 import {
+  buildSchemaRegistry,
   STABILITY_KEYWORD,
   STABILITY_LEVELS,
 } from "./schema-utils/SchemaComposer.js";
@@ -40,11 +41,26 @@ async function buildObjectSchemaMap(verbose = false) {
     fs.readFileSync("./schema/enums/ObjectType.schema.json").toString()
   );
 
+  // Build a registry over the FULL schema tree (every partition, not just
+  // objects) so a version dispatcher can resolve each versioned shape's
+  // object_type through allOf composition — exactly as the doc generator does.
+  // This keeps the validator's routing map and the doc generator consistent and
+  // lets a versioned shape inherit object_type / live outside ./schema/objects.
+  const all_schema_paths = await getSchemaFilepaths(verbose);
+  const all_schema_buffers = await Promise.all(
+    all_schema_paths.map((path) => readFile(path))
+  );
+  const all_schemas = all_schema_buffers.map((schema_buffer) =>
+    JSON.parse(schema_buffer.toString())
+  );
+  const registry = buildSchemaRegistry(all_schemas);
+
   return buildObjectTypeSchemaMap(
     object_schemas,
     object_type_enum_schema.enum,
     {
       verbose,
+      registry,
     }
   );
 }
@@ -154,6 +170,11 @@ export async function validateOcfDirectory(
       ocf_paths.map((path) => readFile(path))
     );
 
+    // The object_type -> schema $id map is the same for every file, so build
+    // it once up front rather than rebuilding it (re-reading the whole schema
+    // tree) for each file that contains items.
+    const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
+
     if (verbose) console.log("\n--- Validate OCF Files ---------------");
     for (let i = 0; i < ocf_file_buffers.length; i++) {
       if (verbose) console.log(`\n${i + 1})\tAnalyze File: ${ocf_paths[i]}`);
@@ -185,7 +206,6 @@ export async function validateOcfDirectory(
         // if file is not a manifest, loop through items
         // for each item, get the object_type and then run the validator against that schema
       } else if (obj.hasOwnProperty("items")) {
-        const objectTypeToSchemaIdMap = await buildObjectSchemaMap(verbose);
         for (let j = 0; j < obj.items.length; j++) {
           let object_type = obj.items[j].object_type;
           let object_schema_uri = objectTypeToSchemaIdMap[object_type];

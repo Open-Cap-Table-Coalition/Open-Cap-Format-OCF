@@ -3,6 +3,7 @@ import {
   Stability,
   STABILITY_KEYWORD,
   stabilityOf,
+  versionLabelOf,
 } from "../../../schema-utils/SchemaComposer.js";
 
 import Schema from "../Schema.js";
@@ -36,7 +37,7 @@ const STABILITY_NOTE: { [k in Stability]: string } = {
 
 /**
  * A single concrete, versioned shape behind a version dispatcher (see
- * `VersionedObjectSchemaNode`). These live in their own files following the
+ * `VersionDispatcherSchemaNode`). These live in their own files following the
  * `.v#` filename convention and carry a structured `x-ocf-stability` flag.
  *
  * A versioned shape can sit at ANY level — an object, a type, or an enum — so
@@ -54,13 +55,20 @@ export default class VersionedSubschemaNode extends SchemaNode {
    *  knows how to render this shape's body. */
   protected readonly inner: SchemaNode;
 
+  /** The `$id` of the version dispatcher whose `anyOf` references this shape.
+   *  Used to redirect a stray direct property `$ref` to the page where this
+   *  shape is actually documented. */
+  protected readonly ownerId: string;
+
   constructor(
     schema: Schema,
     json: VersionedSubschemaNodeJson,
-    inner: SchemaNode
+    inner: SchemaNode,
+    ownerId: string
   ) {
     super(schema, json);
     this.inner = inner;
+    this.ownerId = ownerId;
   }
 
   /** The structured stability flag for this shape (defaults to `stable`). */
@@ -68,19 +76,19 @@ export default class VersionedSubschemaNode extends SchemaNode {
 
   /** A compact version label pulled from the `.v#` filename suffix
    *  (e.g. `v1`), for use in a parent dispatcher's summary. */
-  versionLabel = (): string => {
-    const match = this.basename().match(/\.(v\d+)$/);
-    return match ? match[1] : this.basename();
-  };
+  versionLabel = (): string =>
+    versionLabelOf(this.basename()) ?? this.basename();
 
   writesOwnDoc = (): boolean => false;
 
-  // If this shape is ever referenced directly by a property, delegate to the
-  // inner node so it renders a proper type/link rather than a bare type string.
-  // (Consumers should reference the dispatcher's public `$id`, not a version
-  // file — but degrade gracefully if they don't.)
+  // A property should reference the dispatcher's public `$id`, not a version
+  // file directly. If one references this version file anyway, link to the
+  // OWNING dispatcher's page — where this shape is actually documented —
+  // rather than to this shape's own page, which is never written (a dead link).
   markdownTableType = (inMdFileAtPath: string) =>
-    this.inner.markdownTableType(inMdFileAtPath);
+    this.schema
+      .findSchemaNodeById(this.ownerId)
+      .markdownTableType(inMdFileAtPath);
 
   markdownOutput = () =>
     this.markdownVersionSection(this.outputFileAbsolutePath());

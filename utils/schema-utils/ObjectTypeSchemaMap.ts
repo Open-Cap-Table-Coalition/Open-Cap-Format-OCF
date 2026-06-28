@@ -22,11 +22,22 @@
  *      dispatcher (an `anyOf`) accepts any active version during a transition
  *      window, which is the whole point of the pattern. The referenced
  *      versioned shapes are therefore NOT mapped to their own `$id`.
+ *
+ * When a `registry` is supplied, a dispatcher's versioned shapes are COMPOSED
+ * (their `allOf` chain flattened) before their `object_type` is read, so the
+ * validator resolves it exactly as the doc generator does — a versioned shape
+ * may then live in any partition and inherit `object_type` through `allOf`
+ * rather than being forced to re-declare it inline. Without a registry the raw
+ * shape is read (the pure-function default used by unit tests).
  */
 
 import {
+  ComposedSchemaJson,
+  composeSchema,
   isVersionWrapper,
+  objectTypeValues,
   RawSchemaJson,
+  SchemaRegistry,
   versionRefsOf,
 } from "./SchemaComposer.js";
 
@@ -34,23 +45,14 @@ export type ObjectTypeSchemaMap = { [objectType: string]: string };
 
 export interface BuildObjectTypeSchemaMapOptions {
   verbose?: boolean;
-}
-
-/** The literal `object_type` values a schema declares (const or enum). */
-function objectTypeValues(objectType: unknown): string[] {
-  if (
-    !objectType ||
-    typeof objectType !== "object" ||
-    Array.isArray(objectType)
-  ) {
-    return [];
-  }
-  const ot = objectType as { const?: unknown; enum?: unknown };
-  if (typeof ot.const === "string") return [ot.const];
-  if (Array.isArray(ot.enum)) {
-    return ot.enum.filter((v): v is string => typeof v === "string");
-  }
-  return [];
+  /**
+   * Registry over the FULL schema set (all partitions), used to resolve a
+   * version dispatcher's shapes through `allOf` composition so the routing map
+   * agrees with the doc generator. Optional: when omitted, version shapes are
+   * read raw (sufficient for self-contained shapes that declare `object_type`
+   * inline, and what the unit tests exercise).
+   */
+  registry?: SchemaRegistry;
 }
 
 export function buildObjectTypeSchemaMap(
@@ -58,7 +60,7 @@ export function buildObjectTypeSchemaMap(
   allowedObjectTypes: Iterable<string>,
   options: BuildObjectTypeSchemaMapOptions = {}
 ): ObjectTypeSchemaMap {
-  const { verbose = false } = options;
+  const { verbose = false, registry } = options;
   const allowed = new Set(allowedObjectTypes);
   const map: ObjectTypeSchemaMap = {};
 
@@ -66,6 +68,21 @@ export function buildObjectTypeSchemaMap(
   for (const schema of objectSchemas) {
     if (schema && typeof schema.$id === "string") byId[schema.$id] = schema;
   }
+
+  // Memoizes composition of versioned shapes across a dispatcher's refs.
+  const composeCache = new Map<string, ComposedSchemaJson>();
+
+  /** Resolve a dispatcher's versioned-shape `$ref` to the schema whose
+   *  `object_type` should be read. Prefer the full `registry` (so a shape in
+   *  any partition resolves, and its `allOf` chain is composed exactly as the
+   *  doc generator composes it); fall back to the raw object-partition schema. */
+  const resolveVersionShape = (
+    ref: string
+  ): RawSchemaJson | ComposedSchemaJson | undefined => {
+    const raw = registry?.[ref] ?? byId[ref];
+    if (!raw) return undefined;
+    return registry ? composeSchema(raw, registry, composeCache, "skip") : raw;
+  };
 
   // Which schemas are versioned shapes owned by a dispatcher? Their
   // object_type is mapped to the dispatcher, not to their own $id.
@@ -91,7 +108,7 @@ export function buildObjectTypeSchemaMap(
     // dispatcher's public $id.
     if (isVersionWrapper(schema)) {
       for (const ref of versionRefsOf(schema)) {
-        const shape = byId[ref];
+        const shape = resolveVersionShape(ref);
         if (!shape) {
           throw new Error(
             `Version dispatcher ${schema.$id} references unknown version shape ${ref}`
@@ -139,13 +156,17 @@ export function buildObjectTypeSchemaMap(
             if (item) map[item] = schema.$id;
           }
         } else {
-          throw new Error(
-            `Unexpected value for object_type in schema ${schema.$id}`
+          // An object_type with neither a const nor an enum is not a shape
+          // this map can key on. The original validator logged and CONTINUED
+          // (it did not throw) so one odd schema would not abort the run;
+          // preserve that tolerance rather than hard-failing CI.
+          console.error(
+            `Unexpected value for object_type in schema ${schema.$id}; skipping (no const/enum to map).`
           );
         }
       } else {
-        throw new Error(
-          `Unexpected value for object_type in schema ${schema.$id}`
+        console.error(
+          `Unexpected value for object_type in schema ${schema.$id}; skipping (object_type is not an object).`
         );
       }
       continue;
@@ -167,6 +188,20 @@ export function buildObjectTypeSchemaMap(
       continue;
     }
 
+    // A schema that HAS properties but no object_type contributes no mapping;
+    // the original validator passed over it silently rather than failing, so
+    // do the same (a schema can legitimately lack an object_type).
+    if (schema.properties) {
+      if (verbose) {
+        console.log(
+          `Schema ${schema.$id} has properties but no object_type; nothing to map.`
+        );
+      }
+      continue;
+    }
+
+    // No properties and not a single-allOf wrapper: genuinely unrecognized.
+    // The original validator threw here, so keep failing loudly.
     throw new Error(
       `Schema ${schema.$id} doesn't match OCF schema format and it's not a wrapper`
     );
