@@ -17,7 +17,13 @@ import yargs, { Arguments } from "yargs";
 import { hideBin } from "yargs/helpers";
 
 import { getSchemaFilepaths } from "./Loaders.js";
-import { RawSchemaJson } from "./SchemaComposer.js";
+import {
+  coerceExperimentalMode,
+  DEFAULT_EXPERIMENTAL_MODE,
+  EXPERIMENTAL_MODES,
+  ExperimentalMode,
+  RawSchemaJson,
+} from "./SchemaComposer.js";
 import { generateTypeScript } from "./TypeScriptGenerator.js";
 
 const SCHEMA_DIR = "schema";
@@ -39,6 +45,7 @@ export async function generateTypesToFile(
     typePrefix?: string;
     includeDescriptions?: boolean;
     includePrimitives?: boolean;
+    experimental?: ExperimentalMode;
   } = {}
 ): Promise<{ outFile: string; typeCount: number; warnings: string[] }> {
   const {
@@ -46,17 +53,21 @@ export async function generateTypesToFile(
     typePrefix,
     includeDescriptions,
     includePrimitives,
+    experimental = DEFAULT_EXPERIMENTAL_MODE,
   } = options;
 
   if (verbose) console.log(`\nReading raw schemas from ./${SCHEMA_DIR} ...`);
   const rawSchemas = await readRawSchemas(verbose);
 
   if (verbose)
-    console.log(`\nGenerating types for ${rawSchemas.length} schemas ...`);
+    console.log(
+      `\nGenerating types for ${rawSchemas.length} schemas (--experimental=${experimental}) ...`
+    );
   const { source, typeNames, warnings } = generateTypeScript(rawSchemas, {
     typePrefix,
     includeDescriptions,
     includePrimitives,
+    experimental,
   });
 
   await mkdir(path.dirname(outFile), { recursive: true });
@@ -77,6 +88,7 @@ interface GenerateTypesArgs extends Arguments {
   prefix?: string;
   descriptions?: boolean;
   includePrimitives?: boolean;
+  experimental?: string;
   failOnWarnings?: boolean;
   verbose?: boolean;
   v?: boolean;
@@ -121,6 +133,12 @@ if (invokedAsScript) {
           type: "boolean",
           default: false,
         },
+        experimental: {
+          describe:
+            "How to resolve version dispatchers. 'compatibility' (default): emit a V1 | V2 | … union of every version. 'none': emit only the latest stable versioned shape. 'unstable': emit the latest alpha/beta shape (else latest stable).",
+          choices: EXPERIMENTAL_MODES as unknown as string[],
+          default: DEFAULT_EXPERIMENTAL_MODE,
+        },
         "fail-on-warnings": {
           describe:
             "Exit non-zero if generation produces any warnings (e.g. unresolved $refs). Use as a CI guard, since the output is not committed.",
@@ -140,11 +158,13 @@ if (invokedAsScript) {
           process.cwd(),
           (argv.out ?? argv.o) as string
         );
+        const experimental = coerceExperimentalMode(argv.experimental);
         const { warnings } = await generateTypesToFile(outFile, {
           verbose: Boolean(argv.verbose ?? argv.v),
           typePrefix: argv.prefix as string | undefined,
           includeDescriptions: argv.descriptions as boolean | undefined,
           includePrimitives: argv.includePrimitives as boolean | undefined,
+          experimental,
         });
         if (argv.failOnWarnings && warnings.length > 0) {
           console.error(

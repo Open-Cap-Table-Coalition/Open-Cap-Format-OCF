@@ -12,9 +12,12 @@ import SchemaNodeFactory, {
   SchemaNodeJson,
 } from "./SchemaNode/Factory.js";
 import {
+  applyExperimentalMode,
   composeAll,
+  ExperimentalMode,
   hasVersionSuffix,
   isVersionWrapper,
+  RawSchemaJson,
   versionShapeOwnerMap,
 } from "../../schema-utils/SchemaComposer.js";
 
@@ -30,10 +33,20 @@ export const REPO_ROOT = path.resolve(
  *  Schema represents the OCF schema format.
  */
 export default class Schema {
-  static generateDocs = async () => {
+  static generateDocs = async (
+    experimental: ExperimentalMode = "compatibility"
+  ) => {
     const schemaNodeJsons = await SchemaReader.read(
       path.join(REPO_ROOT, "schema")
     );
+    // Resolve version dispatchers per the experimental policy before rendering.
+    // Under `none` / `unstable` each dispatcher collapses to a single selected
+    // versioned shape (others removed), so its page documents just that shape;
+    // `compatibility` keeps the dispatcher so its versions fold into one page.
+    const resolvedJsons = applyExperimentalMode(
+      schemaNodeJsons as unknown as RawSchemaJson[],
+      experimental
+    ) as unknown as SchemaNodeJson[];
     const exampleJsons = await ExamplesReader.read(
       path.join(REPO_ROOT, "samples")
     );
@@ -41,7 +54,7 @@ export default class Schema {
       path.join(REPO_ROOT, "docs", "supplemental")
     );
     const schema = new Schema(
-      schemaNodeJsons,
+      resolvedJsons,
       exampleJsons,
       supplementalMarkdowns
     );

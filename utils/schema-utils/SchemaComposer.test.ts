@@ -1,17 +1,26 @@
 import {
+  applyExperimentalMode,
   buildSchemaRegistry,
+  coerceExperimentalMode,
   composeAll,
   composeSchema,
+  DEFAULT_EXPERIMENTAL_MODE,
   DEFAULT_STABILITY,
+  experimentalFromArgv,
+  EXPERIMENTAL_MODES,
   hasVersionSuffix,
   isBackwardsCompatibleWrapper,
+  isExperimentalMode,
   isVersionWrapper,
   MissingRefError,
   objectTypeValues,
+  omitEmptyComposedContainers,
   RawSchemaJson,
+  selectVersionForMode,
   STABILITY_RANK,
   stabilityOf,
   versionLabelOf,
+  versionNumberOf,
   versionRefsOf,
   versionShapeOwnerMap,
 } from "./SchemaComposer.js";
@@ -499,6 +508,309 @@ describe("SchemaComposer", () => {
       ]);
       // The stability flag is carried through untouched.
       expect((composed as any)["x-ocf-stability"]).toBe("alpha");
+    });
+  });
+
+  // ---- Experimental mode (version-dispatcher resolution policy) ----------
+
+  // A self-contained dispatcher + versioned-shape fixture set, with explicit
+  // `.v#` ids and stabilities, used by the selection / collapse tests below.
+  const vShape = (
+    n: number,
+    stability: string,
+    extra: Record<string, unknown> = {}
+  ): RawSchemaJson => ({
+    $id: `test://demo/versions/Demo.v${n}.schema.json`,
+    title: `Demo v${n}`,
+    description: `Demo shape v${n}`,
+    type: "object",
+    ["x-ocf-stability"]: stability,
+    properties: {
+      object_type: { const: "TX_DEMO" },
+      [`field_v${n}`]: { type: "string" },
+    },
+    required: [`field_v${n}`],
+    additionalProperties: false,
+    ...extra,
+  });
+  const demoDispatcher = (refs: number[]): RawSchemaJson => ({
+    $id: "test://demo/Demo.schema.json",
+    title: "Demo",
+    description: "Public Demo dispatcher",
+    ["x-ocf-version-dispatcher"]: true,
+    anyOf: refs.map((n) => ({
+      $ref: `test://demo/versions/Demo.v${n}.schema.json`,
+    })),
+  });
+  const idsOf = (schemas: RawSchemaJson[]) => schemas.map((s) => s.$id);
+
+  describe("versionNumberOf", () => {
+    it("extracts the numeric version from a .v# id/ref/basename", () => {
+      expect(versionNumberOf("test://Foo.v3.schema.json")).toBe(3);
+      expect(versionNumberOf("Foo.v12")).toBe(12);
+    });
+    it("returns null when there is no .v# suffix", () => {
+      expect(versionNumberOf("test://Foo.schema.json")).toBeNull();
+    });
+  });
+
+  describe("isExperimentalMode", () => {
+    it("accepts the known modes and rejects others", () => {
+      for (const mode of EXPERIMENTAL_MODES)
+        expect(isExperimentalMode(mode)).toBe(true);
+      expect(isExperimentalMode("nope")).toBe(false);
+      expect(isExperimentalMode(undefined)).toBe(false);
+      expect(DEFAULT_EXPERIMENTAL_MODE).toBe("compatibility");
+    });
+  });
+
+  describe("coerceExperimentalMode", () => {
+    it("passes a known mode through unchanged", () => {
+      expect(coerceExperimentalMode("none")).toBe("none");
+      expect(coerceExperimentalMode("unstable")).toBe("unstable");
+    });
+    it("falls back to the default for an absent or unknown value", () => {
+      expect(coerceExperimentalMode(undefined)).toBe(DEFAULT_EXPERIMENTAL_MODE);
+      expect(coerceExperimentalMode("nope")).toBe(DEFAULT_EXPERIMENTAL_MODE);
+    });
+  });
+
+  describe("experimentalFromArgv", () => {
+    it("reads the space-separated form (--experimental none)", () => {
+      expect(experimentalFromArgv(["--experimental", "none"])).toBe("none");
+    });
+    it("reads the = form (--experimental=unstable)", () => {
+      expect(experimentalFromArgv(["--experimental=unstable"])).toBe(
+        "unstable"
+      );
+    });
+    it("returns the default when the flag is absent", () => {
+      expect(experimentalFromArgv(["--out", "types.d.ts"])).toBe(
+        DEFAULT_EXPERIMENTAL_MODE
+      );
+    });
+    it("throws on an unrecognized value (either form)", () => {
+      expect(() => experimentalFromArgv(["--experimental", "nope"])).toThrow(
+        /--experimental must be one of/
+      );
+      expect(() => experimentalFromArgv(["--experimental=nope"])).toThrow(
+        /--experimental must be one of/
+      );
+    });
+    it("throws when the flag is given with no value (end of argv)", () => {
+      expect(() => experimentalFromArgv(["--experimental"])).toThrow(
+        /--experimental must be one of/
+      );
+    });
+  });
+
+  describe("selectVersionForMode", () => {
+    it("none: picks the latest strictly-stable shape", () => {
+      const versions = [
+        vShape(1, "stable"),
+        vShape(2, "stable"),
+        vShape(3, "alpha"),
+      ];
+      const result = selectVersionForMode(versions, "none");
+      expect(result?.selected.$id).toBe(
+        "test://demo/versions/Demo.v2.schema.json"
+      );
+      expect(result?.fallback).toBe(false);
+    });
+
+    it("none: ignores a higher-numbered non-stable shape", () => {
+      const versions = [
+        vShape(1, "stable"),
+        vShape(2, "beta"),
+        vShape(3, "alpha"),
+      ];
+      expect(selectVersionForMode(versions, "none")?.selected.$id).toBe(
+        "test://demo/versions/Demo.v1.schema.json"
+      );
+    });
+
+    it("none: falls back to the latest shape overall when nothing is stable", () => {
+      const versions = [vShape(1, "deprecated"), vShape(2, "alpha")];
+      const result = selectVersionForMode(versions, "none");
+      expect(result?.selected.$id).toBe(
+        "test://demo/versions/Demo.v2.schema.json"
+      );
+      expect(result?.fallback).toBe(true);
+    });
+
+    it("unstable: picks the latest alpha/beta shape", () => {
+      const versions = [
+        vShape(1, "stable"),
+        vShape(2, "beta"),
+        vShape(3, "alpha"),
+      ];
+      expect(selectVersionForMode(versions, "unstable")?.selected.$id).toBe(
+        "test://demo/versions/Demo.v3.schema.json"
+      );
+    });
+
+    it("unstable: prefers a beta over an older alpha (latest pre-release wins)", () => {
+      const versions = [vShape(1, "alpha"), vShape(2, "beta")];
+      expect(selectVersionForMode(versions, "unstable")?.selected.$id).toBe(
+        "test://demo/versions/Demo.v2.schema.json"
+      );
+    });
+
+    it("unstable: falls back to the latest stable when no pre-release exists", () => {
+      const versions = [vShape(1, "stable"), vShape(2, "stable")];
+      const result = selectVersionForMode(versions, "unstable");
+      expect(result?.selected.$id).toBe(
+        "test://demo/versions/Demo.v2.schema.json"
+      );
+      expect(result?.fallback).toBe(false);
+    });
+
+    it("returns null for an empty version list", () => {
+      expect(selectVersionForMode([], "none")).toBeNull();
+    });
+  });
+
+  describe("applyExperimentalMode", () => {
+    const OTHER: RawSchemaJson = {
+      $id: "test://other",
+      type: "object",
+      properties: { x: { type: "string" } },
+    };
+
+    it("compatibility: returns the input unchanged (dispatcher + all versions kept)", () => {
+      const input = [
+        OTHER,
+        demoDispatcher([1, 2]),
+        vShape(1, "stable"),
+        vShape(2, "alpha"),
+      ];
+      const result = applyExperimentalMode(input, "compatibility");
+      expect(result).toBe(input);
+    });
+
+    it("none: collapses the dispatcher to the latest stable shape and drops the version files", () => {
+      const input = [
+        OTHER,
+        demoDispatcher([1, 2]),
+        vShape(1, "stable"),
+        vShape(2, "alpha"),
+      ];
+      const result = applyExperimentalMode(input, "none");
+
+      // Only OTHER and the (collapsed) public dispatcher id survive.
+      expect(idsOf(result).sort()).toEqual(
+        ["test://demo/Demo.schema.json", "test://other"].sort()
+      );
+
+      const collapsed = result.find(
+        (s) => s.$id === "test://demo/Demo.schema.json"
+      )!;
+      // It IS the selected (v1/stable) shape, re-homed onto the public id...
+      expect(collapsed.properties?.field_v1).toEqual({ type: "string" });
+      expect(collapsed.type).toBe("object");
+      // ...with the dispatcher's public identity and no union/marker leftovers.
+      expect(collapsed.title).toBe("Demo");
+      expect(collapsed.description).toBe("Public Demo dispatcher");
+      expect(collapsed.anyOf).toBeUndefined();
+      expect((collapsed as any)["x-ocf-version-dispatcher"]).toBeUndefined();
+    });
+
+    it("unstable: collapses to the latest alpha/beta shape", () => {
+      const input = [
+        demoDispatcher([1, 2]),
+        vShape(1, "stable"),
+        vShape(2, "alpha"),
+      ];
+      const result = applyExperimentalMode(input, "unstable");
+      const collapsed = result.find(
+        (s) => s.$id === "test://demo/Demo.schema.json"
+      )!;
+      expect(collapsed.properties?.field_v2).toEqual({ type: "string" });
+      expect((collapsed as any)["x-ocf-stability"]).toBe("alpha");
+    });
+
+    it("keeps the selected shape's title/description when the dispatcher's are empty", () => {
+      const input = [
+        { ...demoDispatcher([1]), title: "", description: "" },
+        vShape(1, "stable"),
+      ];
+      const collapsed = applyExperimentalMode(input, "none").find(
+        (s) => s.$id === "test://demo/Demo.schema.json"
+      )!;
+      // An empty dispatcher title/description must not clobber the shape's own.
+      expect(collapsed.title).toBe("Demo v1");
+      expect(collapsed.description).toBe("Demo shape v1");
+    });
+
+    it("none: warns and uses the latest shape overall when no stable shape exists", () => {
+      const original = console.warn;
+      const warnings: string[] = [];
+      console.warn = (...args: unknown[]) => {
+        warnings.push(args.map(String).join(" "));
+      };
+      try {
+        const input = [
+          demoDispatcher([1, 2]),
+          vShape(1, "deprecated"),
+          vShape(2, "alpha"),
+        ];
+        const result = applyExperimentalMode(input, "none");
+        const collapsed = result.find(
+          (s) => s.$id === "test://demo/Demo.schema.json"
+        )!;
+        expect(collapsed.properties?.field_v2).toEqual({ type: "string" });
+        expect(
+          warnings.some((m) => m.includes("no stable versioned shape"))
+        ).toBe(true);
+      } finally {
+        console.warn = original;
+      }
+    });
+
+    it("leaves a non-dispatcher schema set untouched", () => {
+      const input = [OTHER, STOCK_ISSUANCE, BASE_OBJECT];
+      expect(applyExperimentalMode(input, "none")).toBe(input);
+    });
+  });
+
+  describe("omitEmptyComposedContainers", () => {
+    it("drops a vacuous properties:{} and required:[] (e.g. a composed enum)", () => {
+      const enumComposed = {
+        $id: "test://enum",
+        type: "string",
+        enum: ["A", "B"],
+        properties: {},
+        required: [],
+      };
+      const cleaned = omitEmptyComposedContainers(enumComposed);
+      expect("properties" in cleaned).toBe(false);
+      expect("required" in cleaned).toBe(false);
+      // Other fields are preserved and the input is not mutated.
+      expect(cleaned.enum).toEqual(["A", "B"]);
+      expect("properties" in enumComposed).toBe(true);
+    });
+
+    it("keeps non-empty properties and required", () => {
+      const objectComposed = {
+        $id: "test://obj",
+        type: "object",
+        properties: { id: { type: "string" } },
+        required: ["id"],
+      };
+      const cleaned = omitEmptyComposedContainers(objectComposed);
+      expect(cleaned.properties).toEqual({ id: { type: "string" } });
+      expect(cleaned.required).toEqual(["id"]);
+    });
+
+    it("drops only the empty side when one is empty", () => {
+      const cleaned = omitEmptyComposedContainers({
+        $id: "test://x",
+        type: "object",
+        properties: { a: {} },
+        required: [],
+      });
+      expect(cleaned.properties).toEqual({ a: {} });
+      expect("required" in cleaned).toBe(false);
     });
   });
 });

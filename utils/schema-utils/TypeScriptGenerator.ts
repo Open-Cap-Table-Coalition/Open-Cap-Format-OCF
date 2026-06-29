@@ -33,9 +33,11 @@
  */
 
 import {
+  applyExperimentalMode,
   buildSchemaRegistry,
   composeAll,
   ComposedSchemaJson,
+  ExperimentalMode,
   isBackwardsCompatibleWrapper,
   RawSchemaJson,
   versionShapeOwnerMap,
@@ -59,6 +61,12 @@ export type GenerateTypeScriptOptions = {
    *  flattened into every concrete type via composition, so nothing references
    *  them — emitting them only adds orphaned, easily-misused base shapes. */
   includePrimitives?: boolean;
+  /** How to resolve version dispatchers (see `ExperimentalMode`). Defaults to
+   *  `"compatibility"` — the dispatcher stays a `V1 | V2 | …` union — so output
+   *  is unchanged from before the flag existed. With `"none"` / `"unstable"`
+   *  each dispatcher collapses to a single selected versioned shape and its
+   *  other shapes are not emitted. */
+  experimental?: ExperimentalMode;
 };
 
 const DEFAULT_PREFIX = "OCF";
@@ -544,7 +552,7 @@ export type GenerateTypeScriptResult = {
  * for every schema in `rawSchemas`.
  */
 export function generateTypeScript(
-  rawSchemas: RawSchemaJson[],
+  inputSchemas: RawSchemaJson[],
   options: GenerateTypeScriptOptions = {}
 ): GenerateTypeScriptResult {
   const {
@@ -553,7 +561,15 @@ export function generateTypeScript(
     banner,
     onMissingRef = "unknown",
     includePrimitives = false,
+    experimental = "compatibility",
   } = options;
+
+  // Resolve version dispatchers per the experimental policy. Under `none` /
+  // `unstable` this collapses each dispatcher to a single selected versioned
+  // shape (and drops the others) BEFORE composition, so the rest of codegen
+  // sees only ordinary schemas. `compatibility` leaves the dispatchers intact
+  // for the union/aggregate handling below.
+  const rawSchemas = applyExperimentalMode(inputSchemas, experimental);
 
   // Compose so each object's inherited properties are flattened in; keep refs
   // (we map them to named types rather than inlining). Missing inheritance refs
