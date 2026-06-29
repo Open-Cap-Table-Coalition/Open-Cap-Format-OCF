@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventCondition.schema.json",
+  "title": "Type - Vesting Event Condition",
+  "description": "The named-event axis of a VestingStatement: a gating event (referenced by `event_id`) that must fire before the statement releases. Its firing is recorded by a v2 vesting-event transaction. Present ⟺ the statement is gated.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "description": "Identifier of the gating event. Matches `event_id` on a v2 vesting-event transaction.",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": ["event_id"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingEventCondition.schema.json"
+}

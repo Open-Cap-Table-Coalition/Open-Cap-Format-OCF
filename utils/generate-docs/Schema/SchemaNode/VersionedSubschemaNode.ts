@@ -23,6 +23,7 @@ const STABILITY_BADGE: { [k in Stability]: string } = {
   stable: "✅ STABLE",
   beta: "🧪 BETA",
   alpha: "⚠️ ALPHA",
+  planned_deprecation: "🗓️ PLANNED DEPRECATION",
   deprecated: "⛔ DEPRECATED",
 };
 
@@ -31,6 +32,8 @@ const STABILITY_NOTE: { [k in Stability]: string } = {
   beta: "Feature-complete but still subject to change before it is marked stable.",
   alpha:
     "Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.",
+  planned_deprecation:
+    "Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.",
   deprecated:
     "On its way out — retained for compatibility and scheduled for removal at a future major version.",
 };

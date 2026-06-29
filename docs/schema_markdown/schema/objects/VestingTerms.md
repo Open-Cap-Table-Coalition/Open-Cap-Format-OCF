@@ -2,13 +2,23 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/VestingTerms.schema.json`
 
+**Description:** _Version dispatcher for vesting terms. The stable public `$id` accepts either the current condition-DAG shape (v1) or the forward-looking ordered-statement template shape (v2) during the transition window._
+
+**Data Type:** `Versioned OCF Schema`
+
+This schema is a **version dispatcher**: the stable public identifier above resolves (via `anyOf`) to one of the versioned shapes below. Consumers that reference this `$id` accept any shape listed here during its transition window. Each shape is self-contained and flagged with its stability.
+
+**Versions:**
+
+#### Object - Vesting Terms (v1) — ✅ STABLE
+
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/versions/VestingTerms.v1.schema.json`
+
+> **Stability:** `stable` — Supported — the current recommended shape.
+
 **Description:** _Object describing the terms under which a security vests_
 
 **Data Type:** `OCF Object - VESTING_TERMS`
-
-**Composed From:**
-
-- [schema/primitives/objects/Object](../primitives/objects/Object.md)
 
 **Properties:**
 
@@ -21,6 +31,28 @@
 | description        | `STRING`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Detailed description of the vesting schedule                                    | `REQUIRED` |
 | allocation_type    | `Enum - Allocation Type`</br></br>_Description:_ Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: </br>  1.  Cumulative Rounding (5 - 4 - 5 - 4)</br>  2.  Cumulative Round Down (4 - 5 - 4 - 5)</br>  3.  Front Loaded (5 - 5 - 4 - 4)</br>  4.  Back Loaded (4 - 4 - 5 - 5)</br>  5.  Front Loaded to Single Tranche (6 - 4 - 4 - 4)</br>  6.  Back Loaded to Single Tranche (4 - 4 - 4 - 6)</br>  7.  Fractional (4.5 - 4.5 - 4.5 - 4.5)</br></br>**ONE OF:** </br>&bull; CUMULATIVE_ROUNDING </br>&bull; CUMULATIVE_ROUND_DOWN </br>&bull; FRONT_LOADED </br>&bull; BACK_LOADED </br>&bull; FRONT_LOADED_TO_SINGLE_TRANCHE </br>&bull; BACK_LOADED_TO_SINGLE_TRANCHE </br>&bull; FRACTIONAL | Allocation/rounding type for the vesting schedule                               | `REQUIRED` |
 | vesting_conditions | [ [schema/types/vesting/VestingCondition](../types/vesting/VestingCondition.md) ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Conditions and triggers that describe the graph of vesting schedules and events | `REQUIRED` |
+
+**Source Code:** [schema/objects/versions/VestingTerms.v1](../../../../schema/objects/versions/VestingTerms.v1.schema.json)
+
+#### Object - Vesting Terms (v2) — ⚠️ ALPHA
+
+`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/versions/VestingTerms.v2.schema.json`
+
+> **Stability:** `alpha` — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
+
+**Description:** _Forward-looking vesting terms: a reusable schedule expressed as an ordered list of vesting statements that together describe how a grant vests over time, anchored at the issuance's `vesting_start_date`. Replaces the v1 condition-DAG with a flat, ordered template and assumes CUMULATIVE_ROUND_DOWN allocation throughout. Self-contained (no `allOf` inheritance) per the version-shape convention._
+
+**Data Type:** `OCF Object - VESTING_TERMS`
+
+**Properties:**
+
+| Property    | Type                                                                                             | Description                                                                                                            | Required   |
+| ----------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------- |
+| id          | `STRING`                                                                                         | Identifier the issuance's `vesting_template_id` references.                                                            | `REQUIRED` |
+| object_type | **Constant:** `VESTING_TERMS`</br>_Defined in [schema/enums/ObjectType](../enums/ObjectType.md)_ | Object type field                                                                                                      | `REQUIRED` |
+| statements  | [ [schema/types/vesting/VestingStatement](../types/vesting/VestingStatement.md) ]                | Ordered list of vesting statements. They chain implicitly by their `order` field rather than via explicit graph edges. | `REQUIRED` |
+
+**Source Code:** [schema/objects/versions/VestingTerms.v2](../../../../schema/objects/versions/VestingTerms.v2.schema.json)
 
 Vesting Terms objects support a structured representation of security vesting. This is accomplished
 by expressing security vesting as a graph of "Vesting Conditions", and then recording vesting

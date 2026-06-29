@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleSegment.schema.json",
+  "title": "Type - Vesting Schedule Segment",
+  "description": "The time-schedule axis of a VestingStatement. Present ⟺ the statement vests on a time grid; absent ⟺ a pure milestone that vests only when its `event_condition` fires. Total segment duration is `occurrences * period` in `period_type` units.",
+  "type": "object",
+  "properties": {
+    "occurrences": {
+      "description": "Number of installments in this segment.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "period": {
+      "description": "Length of one installment, in `period_type` units. Total segment duration is `occurrences * period`.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "period_type": {
+      "description": "Time unit for `period`.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PeriodType.schema.json"
+    },
+    "cliff": {
+      "description": "Optional cliff on this schedule.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleCliff.schema.json"
+    }
+  },
+  "required": ["occurrences", "period", "period_type"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/VestingScheduleSegment.schema.json"
+}
