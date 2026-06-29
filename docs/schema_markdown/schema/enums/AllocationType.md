@@ -2,6 +2,8 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/AllocationType.schema.json`
 
+> 🗓️ PLANNED DEPRECATION — Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.
+
 **Description:** _Enumeration of allocation types for vesting terms. Using an example of 18 shares split across 4 tranches, each allocation type results in a different schedule as follows: 
   1.  Cumulative Rounding (5 - 4 - 5 - 4)
   2.  Cumulative Round Down (4 - 5 - 4 - 5)

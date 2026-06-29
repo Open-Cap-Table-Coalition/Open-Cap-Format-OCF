@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json",
   "title": "Type - Vesting Period in Months",
   "description": "Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms.",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "allOf": [
     {

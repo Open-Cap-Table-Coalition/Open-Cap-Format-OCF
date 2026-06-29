@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleAbsoluteTrigger.schema.json",
   "title": "Type - Vesting Schedule Absolute Trigger",
   "description": "Describes a vesting condition satisfied on an absolute date.",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "allOf": [
     {

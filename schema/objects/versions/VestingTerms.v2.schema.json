@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/versions/VestingTerms.v2.schema.json",
+  "title": "Object - Vesting Terms (v2)",
+  "description": "Forward-looking vesting terms: a reusable schedule expressed as an ordered list of vesting statements that together describe how a grant vests over time, anchored at the issuance's `vesting_start_date`. Replaces the v1 condition-DAG with a flat, ordered template and assumes CUMULATIVE_ROUND_DOWN allocation throughout. Self-contained (no `allOf` inheritance) per the version-shape convention.",
+  "x-ocf-stability": "alpha",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifier the issuance's `vesting_template_id` references."
+    },
+    "object_type": {
+      "const": "VESTING_TERMS"
+    },
+    "statements": {
+      "description": "Ordered list of vesting statements. They chain implicitly by their `order` field rather than via explicit graph edges.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/ScheduledVestingStatement.schema.json"
+          },
+          {
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/MilestoneVestingStatement.schema.json"
+          }
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["object_type", "id", "statements"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/versions.schema.json"
+}

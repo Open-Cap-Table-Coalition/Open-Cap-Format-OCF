@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleRelativeTrigger.schema.json",
   "title": "Type - Vesting Schedule Relative Trigger",
   "description": "Describes a vesting condition satisfied when a period of time, relative to another vesting condition, has elapsed.",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "allOf": [
     {

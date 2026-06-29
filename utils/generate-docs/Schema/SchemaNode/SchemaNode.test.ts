@@ -69,4 +69,23 @@ describe("SchemaNode", () => {
       expect(actual).toEqual("files");
     });
   });
+
+  describe("#markdownHeader stability pill", () => {
+    it("renders no pill for a stable (default) schema", () => {
+      const schemaNode = new DummyNode(new Schema([FIXTURE]), FIXTURE);
+      expect(schemaNode.markdownHeader()).not.toMatch(
+        /STABLE|ALPHA|PLANNED DEPRECATION|DEPRECATED/
+      );
+    });
+
+    it("renders a planned-deprecation pill under the header when flagged", () => {
+      const json = {
+        ...FIXTURE,
+        ["x-ocf-stability"]: "planned_deprecation",
+      } as any;
+      const header = new DummyNode(new Schema([json]), json).markdownHeader();
+      expect(header).toContain("🗓️ PLANNED DEPRECATION");
+      expect(header).toContain("not deprecated yet");
+    });
+  });
 });

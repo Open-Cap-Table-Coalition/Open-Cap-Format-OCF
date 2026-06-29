@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json",
   "title": "Primitive - Vesting Condition Trigger Type",
   "description": "Abstract type describing fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "properties": {
     "type": {

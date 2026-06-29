@@ -1,7 +1,9 @@
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
 import {
   Stability,
+  STABILITY_BADGE,
   STABILITY_KEYWORD,
+  STABILITY_NOTE,
   stabilityOf,
   versionLabelOf,
 } from "../../../schema-utils/SchemaComposer.js";
@@ -15,25 +17,6 @@ export interface VersionedSubschemaNodeJson extends SchemaNodeJson {
   // (object_type, additionalProperties, enum, format, ...).
   [extra: string]: any;
 }
-
-/** Short, human-readable badge + note for each stability level. Deprecated and
- *  alpha shapes get a visually distinct marker so a reader can tell at a glance
- *  which shape is current, which is on the way out, and which is not final. */
-const STABILITY_BADGE: { [k in Stability]: string } = {
-  stable: "✅ STABLE",
-  beta: "🧪 BETA",
-  alpha: "⚠️ ALPHA",
-  deprecated: "⛔ DEPRECATED",
-};
-
-const STABILITY_NOTE: { [k in Stability]: string } = {
-  stable: "Supported — the current recommended shape.",
-  beta: "Feature-complete but still subject to change before it is marked stable.",
-  alpha:
-    "Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.",
-  deprecated:
-    "On its way out — retained for compatibility and scheduled for removal at a future major version.",
-};
 
 /**
  * A single concrete, versioned shape behind a version dispatcher (see

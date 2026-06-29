@@ -78,7 +78,19 @@ export function isBackwardsCompatibleWrapper(
  *   - `beta`       — feature-complete but still subject to change.
  *   - `alpha`      — pre-release; shape is not final and may change or be
  *                    withdrawn. Strict consumers should not treat it as final.
+ *   - `planned_deprecation` — slated for removal in the shape OCF is moving
+ *                    toward, but NOT yet deprecated: still fully part of the
+ *                    current stable surface (kept under `none`/`compatibility`).
+ *                    It differs from `deprecated` in that it is dropped from the
+ *                    forward-looking `unstable` preview — both a version
+ *                    dispatcher whose only shape is `planned_deprecation` and a
+ *                    standalone schema (type / enum / primitive) carrying the
+ *                    flag disappear under `--experimental=unstable` (with
+ *                    references to them pruned), modeling "this has no place in
+ *                    the next major". Use it for the dependency closure of a
+ *                    superseded shape, so the whole subtree leaves together.
  *   - `deprecated` — on its way out; will be removed at a future major version.
+ *                    Unlike `planned_deprecation` it is retained in every mode.
  */
 export const STABILITY_KEYWORD = "x-ocf-stability";
 
@@ -86,6 +98,7 @@ export const STABILITY_LEVELS = [
   "stable",
   "beta",
   "alpha",
+  "planned_deprecation",
   "deprecated",
 ] as const;
 
@@ -94,15 +107,43 @@ export type Stability = typeof STABILITY_LEVELS[number];
 export const DEFAULT_STABILITY: Stability = "stable";
 
 /**
- * Ordering rank for presentation: stable first, then beta, then alpha, then
- * deprecated. Lets the doc generator surface the current recommended shape at
- * the top and push pre-release / on-the-way-out shapes below it.
+ * Ordering rank for presentation: stable first, then beta, then alpha, then the
+ * on-the-way-out shapes (planned-deprecation, then deprecated). Lets the doc
+ * generator surface the current recommended shape at the top and push
+ * pre-release / on-the-way-out shapes below it.
  */
 export const STABILITY_RANK: { [k in Stability]: number } = {
   stable: 0,
   beta: 1,
   alpha: 2,
-  deprecated: 3,
+  planned_deprecation: 3,
+  deprecated: 4,
+};
+
+/**
+ * Short presentational badge + one-line note for each stability level — the
+ * single source of truth shared by every surface that renders stability: the
+ * doc generator (a pill under a schema's header and the per-version sections of
+ * a dispatcher page) and the TypeScript codegen (a JSDoc tag on the emitted
+ * type). Centralized here so the wording can't drift between them.
+ */
+export const STABILITY_BADGE: { [k in Stability]: string } = {
+  stable: "✅ STABLE",
+  beta: "🧪 BETA",
+  alpha: "⚠️ ALPHA",
+  planned_deprecation: "🗓️ PLANNED DEPRECATION",
+  deprecated: "⛔ DEPRECATED",
+};
+
+export const STABILITY_NOTE: { [k in Stability]: string } = {
+  stable: "Supported — the current recommended shape.",
+  beta: "Feature-complete but still subject to change before it is marked stable.",
+  alpha:
+    "Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.",
+  planned_deprecation:
+    "Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.",
+  deprecated:
+    "On its way out — retained for compatibility and scheduled for removal at a future major version.",
 };
 
 /**
@@ -296,11 +337,16 @@ export function objectTypeValues(objectType: unknown): string[] {
  *     older shapes never reach the public surface.
  *   - `unstable`: expose the latest **pre-release** (alpha or beta) versioned
  *     shape, falling back to the latest stable shape when none is pre-release.
- *     Use this to preview the shape OCF is moving toward.
+ *     Use this to preview the shape OCF is moving toward. A dispatcher whose
+ *     only shapes are `planned_deprecation` has no shape in this forward-looking
+ *     surface: it is dropped entirely (not collapsed), and every `$ref` to it —
+ *     plus its `object_type`(s) in any enum — is pruned so the remaining schemas
+ *     still compose / codegen / document cleanly.
  *
  * `none` and `unstable` both *collapse* a dispatcher to a single chosen shape
  * (re-homed onto the public `$id`, with every other version shape removed from
- * the output). They differ only in which shape they pick.
+ * the output). They differ only in which shape they pick — and `unstable` may
+ * instead drop a dispatcher outright when it is entirely planned-for-deprecation.
  */
 export const EXPERIMENTAL_MODES = [
   "none",
@@ -357,9 +403,14 @@ export function experimentalFromArgv(argv: string[]): ExperimentalMode {
  * order). "Latest" is the highest `.v#` number, falling back to declaration
  * order for any shape without a numeric suffix.
  *
- *   - `none`: the latest shape whose stability is exactly `stable`.
+ *   - `none`: the latest shape whose stability is exactly `stable`; failing
+ *     that, the latest `planned_deprecation` shape — those are still part of the
+ *     current stable surface (they only leave under `unstable`), so a dispatcher
+ *     of only planned-deprecation shapes still resolves here without a warning.
  *   - `unstable`: the latest `alpha`/`beta` shape; failing that, the latest
- *     `stable` shape.
+ *     `stable` shape. (Callers strip `planned_deprecation` shapes before calling
+ *     in `unstable` mode — see `applyExperimentalMode` — so they are never
+ *     selected here.)
  *
  * When neither pool yields a shape (e.g. a dispatcher of only `deprecated`
  * shapes), it falls back to the latest shape overall and flags `fallback: true`
@@ -384,6 +435,13 @@ export function selectVersionForMode(
   if (mode === "none") {
     const stable = latest(ranked.filter((c) => c.stability === "stable"));
     if (stable) return { selected: stable.json, fallback: false };
+    // `planned_deprecation` is still current (it only departs under `unstable`),
+    // so it is a valid — and non-fallback — `none` selection when no strictly
+    // `stable` shape exists.
+    const planned = latest(
+      ranked.filter((c) => c.stability === "planned_deprecation")
+    );
+    if (planned) return { selected: planned.json, fallback: false };
   } else {
     const preRelease = latest(
       ranked.filter((c) => c.stability === "alpha" || c.stability === "beta")
@@ -432,11 +490,19 @@ function collapseDispatcherToVersion(
  *     every versioned shape it owned is removed from the set. After this pass
  *     there are no dispatchers left, so downstream tooling sees only ordinary
  *     schemas and needs no per-mode special-casing.
+ *   - `unstable` additionally drops every **standalone** schema (a type / enum /
+ *     primitive that is neither a dispatcher nor a versioned shape) flagged
+ *     `x-ocf-stability: "planned_deprecation"`. These are the dependency closure
+ *     of the shapes being superseded — present and active in `none` /
+ *     `compatibility`, but absent from the forward-looking `unstable` surface,
+ *     exactly like a planned-deprecation-only dispatcher.
  *
  * Schemas that reference a dispatcher's public `$id` keep working: that `$id`
  * now resolves to the collapsed shape. (Per the VersionWrapper convention,
  * properties reference the public `$id`, never a `.v#` shape directly, so the
- * removed version shapes leave no dangling references.)
+ * removed version shapes leave no dangling references.) Any `anyOf`/`oneOf`
+ * `$ref` to a wholesale-dropped `$id` — and any dropped `object_type` value in
+ * an enum — is pruned from the survivors so the result still resolves cleanly.
  */
 export function applyExperimentalMode(
   rawSchemas: RawSchemaJson[],
@@ -447,6 +513,23 @@ export function applyExperimentalMode(
   const registry = buildSchemaRegistry(rawSchemas);
   const droppedVersionIds = new Set<string>();
   const collapsedByDispatcherId = new Map<string, RawSchemaJson>();
+  // Public `$id`s removed wholesale (not collapsed). Two sources, both only
+  // under `unstable`: a dispatcher whose only shapes are `planned_deprecation`,
+  // and a standalone planned-for-deprecation schema (see below). They may still
+  // be referenced by survivors (e.g. a transactions-file `oneOf`) and their
+  // `object_type`s may still sit in enums, so both are pruned afterward.
+  const droppedDispatcherIds = new Set<string>();
+  const droppedStandaloneIds = new Set<string>();
+  const prunedObjectTypes = new Set<string>();
+
+  // Every `$id` that is a versioned shape behind some dispatcher — excluded
+  // from the standalone-drop pass below, since the dispatcher loop owns them.
+  const versionShapeIds = new Set<string>();
+  for (const schema of rawSchemas) {
+    if (isVersionWrapper(schema)) {
+      for (const ref of versionRefsOf(schema)) versionShapeIds.add(ref);
+    }
+  }
 
   for (const schema of rawSchemas) {
     if (!isVersionWrapper(schema)) continue;
@@ -472,7 +555,26 @@ export function applyExperimentalMode(
       continue;
     }
 
-    const selection = selectVersionForMode(resolved, mode)!;
+    // Under `unstable`, planned-for-deprecation shapes have no place in the
+    // forward-looking surface. Strip them; if nothing is left, the whole
+    // dispatcher is dropped (and its refs / enum values pruned below).
+    const selectable =
+      mode === "unstable"
+        ? resolved.filter((v) => stabilityOf(v) !== "planned_deprecation")
+        : resolved;
+
+    if (selectable.length === 0) {
+      for (const version of resolved) {
+        droppedVersionIds.add(version.$id);
+        for (const ot of objectTypeValues(version.properties?.object_type)) {
+          prunedObjectTypes.add(ot);
+        }
+      }
+      droppedDispatcherIds.add(schema.$id);
+      continue;
+    }
+
+    const selection = selectVersionForMode(selectable, mode)!;
     if (selection.fallback) {
       const wanted = mode === "none" ? "stable" : "alpha/beta or stable";
       console.warn(
@@ -489,10 +591,36 @@ export function applyExperimentalMode(
     );
   }
 
-  if (collapsedByDispatcherId.size === 0) return rawSchemas;
+  // `unstable` also drops standalone planned-for-deprecation schemas — a type /
+  // enum / primitive that is neither a dispatcher nor a versioned shape. The
+  // forward-looking surface omits the dependency closure of the superseded
+  // shapes, mirroring how a planned-deprecation-only dispatcher disappears.
+  // (`none` / `compatibility` keep them: planned_deprecation is still current.)
+  if (mode === "unstable") {
+    for (const schema of rawSchemas) {
+      if (isVersionWrapper(schema)) continue;
+      if (versionShapeIds.has(schema.$id)) continue;
+      if (stabilityOf(schema) !== "planned_deprecation") continue;
+      droppedStandaloneIds.add(schema.$id);
+      for (const ot of objectTypeValues(schema.properties?.object_type)) {
+        prunedObjectTypes.add(ot);
+      }
+    }
+  }
+
+  // Union of every wholesale-dropped public `$id` (dispatchers + standalones).
+  const droppedPublicIds = new Set<string>([
+    ...droppedDispatcherIds,
+    ...droppedStandaloneIds,
+  ]);
+
+  if (collapsedByDispatcherId.size === 0 && droppedPublicIds.size === 0) {
+    return rawSchemas;
+  }
 
   const result: RawSchemaJson[] = [];
   for (const schema of rawSchemas) {
+    if (droppedPublicIds.has(schema.$id)) continue;
     const collapsed = collapsedByDispatcherId.get(schema.$id);
     if (collapsed) {
       result.push(collapsed);
@@ -501,7 +629,93 @@ export function applyExperimentalMode(
     if (droppedVersionIds.has(schema.$id)) continue;
     result.push(schema);
   }
-  return result;
+
+  // A wholesale drop leaves the rest of the set pointing at a `$id` (and listing
+  // an `object_type`) that no longer exists. Prune both so every surviving
+  // schema still resolves, composes, codegens, and documents cleanly.
+  if (droppedPublicIds.size === 0 && prunedObjectTypes.size === 0) {
+    return result;
+  }
+  return result.map((schema) =>
+    pruneDroppedReferences(schema, droppedPublicIds, prunedObjectTypes)
+  );
+}
+
+/**
+ * Strip every trace of a dropped dispatcher from a surviving schema:
+ *   - any `anyOf`/`oneOf` entry that is a bare `$ref` to a dropped `$id`
+ *     (recursively, so a `oneOf` nested under `properties.items` is handled);
+ *   - any top-level `enum` value that is a dropped `object_type` (the
+ *     `ObjectType` enum).
+ * Returns the input unchanged (same reference) when nothing matches, so the pass
+ * only clones schemas it actually rewrites.
+ */
+export function pruneDroppedReferences(
+  schema: RawSchemaJson,
+  droppedRefIds: ReadonlySet<string>,
+  droppedObjectTypes: ReadonlySet<string>
+): RawSchemaJson {
+  const pruned = deepPruneRefs(schema, droppedRefIds);
+  let next = pruned.changed ? (pruned.value as RawSchemaJson) : schema;
+
+  if (
+    droppedObjectTypes.size > 0 &&
+    Array.isArray((next as Record<string, unknown>).enum)
+  ) {
+    const original = (next as Record<string, unknown>).enum as unknown[];
+    const filtered = original.filter(
+      (v) => !(typeof v === "string" && droppedObjectTypes.has(v))
+    );
+    if (filtered.length !== original.length) {
+      next = { ...next, enum: filtered };
+    }
+  }
+  return next;
+}
+
+/** Recursively drop bare-`$ref` `anyOf`/`oneOf` entries that target a dropped
+ *  `$id`. Returns `{ changed }` so callers avoid cloning untouched subtrees. */
+function deepPruneRefs(
+  node: unknown,
+  droppedRefIds: ReadonlySet<string>
+): { value: unknown; changed: boolean } {
+  if (Array.isArray(node)) {
+    let changed = false;
+    const out = node.map((item) => {
+      const r = deepPruneRefs(item, droppedRefIds);
+      if (r.changed) changed = true;
+      return r.value;
+    });
+    return { value: changed ? out : node, changed };
+  }
+  if (node && typeof node === "object") {
+    let changed = false;
+    const out: Record<string, unknown> = {};
+    for (const [key, val] of Object.entries(node as Record<string, unknown>)) {
+      if ((key === "anyOf" || key === "oneOf") && Array.isArray(val)) {
+        const kept = val.filter(
+          (entry) =>
+            !(
+              entry &&
+              typeof entry === "object" &&
+              Object.keys(entry as object).length === 1 &&
+              typeof (entry as { $ref?: unknown }).$ref === "string" &&
+              droppedRefIds.has((entry as { $ref: string }).$ref)
+            )
+        );
+        if (kept.length !== val.length) changed = true;
+        const r = deepPruneRefs(kept, droppedRefIds);
+        if (r.changed) changed = true;
+        out[key] = r.value;
+        continue;
+      }
+      const r = deepPruneRefs(val, droppedRefIds);
+      if (r.changed) changed = true;
+      out[key] = r.value;
+    }
+    return { value: changed ? out : node, changed };
+  }
+  return { value: node, changed: false };
 }
 
 /**

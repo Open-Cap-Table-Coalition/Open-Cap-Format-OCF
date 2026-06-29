@@ -15,8 +15,10 @@ import {
   MissingRefError,
   objectTypeValues,
   omitEmptyComposedContainers,
+  pruneDroppedReferences,
   RawSchemaJson,
   selectVersionForMode,
+  STABILITY_LEVELS,
   STABILITY_RANK,
   stabilityOf,
   versionLabelOf,
@@ -770,6 +772,245 @@ describe("SchemaComposer", () => {
     it("leaves a non-dispatcher schema set untouched", () => {
       const input = [OTHER, STOCK_ISSUANCE, BASE_OBJECT];
       expect(applyExperimentalMode(input, "none")).toBe(input);
+    });
+  });
+
+  // ---- planned_deprecation: a dispatcher dropped from `unstable` only -------
+
+  describe("planned_deprecation stability", () => {
+    it("is a recognized stability level, ranked after alpha and before/at deprecated", () => {
+      expect(STABILITY_LEVELS).toContain("planned_deprecation");
+      expect(STABILITY_RANK.alpha).toBeLessThan(
+        STABILITY_RANK.planned_deprecation
+      );
+      // It is still a current shape, so `stabilityOf` reads it back verbatim.
+      expect(
+        stabilityOf({
+          $id: "x",
+          "x-ocf-stability": "planned_deprecation",
+        } as RawSchemaJson)
+      ).toBe("planned_deprecation");
+    });
+
+    it("selectVersionForMode none picks a planned_deprecation shape (no fallback) when nothing is strictly stable", () => {
+      const versions = [vShape(1, "planned_deprecation")];
+      const result = selectVersionForMode(versions, "none");
+      expect(result?.selected.$id).toBe(
+        "test://demo/versions/Demo.v1.schema.json"
+      );
+      expect(result?.fallback).toBe(false);
+    });
+
+    it("selectVersionForMode none prefers a strictly-stable shape over a higher planned_deprecation one", () => {
+      const versions = [vShape(1, "stable"), vShape(2, "planned_deprecation")];
+      expect(selectVersionForMode(versions, "none")?.selected.$id).toBe(
+        "test://demo/versions/Demo.v1.schema.json"
+      );
+    });
+
+    // A planned-for-deprecation dispatcher + a consumer that references its
+    // public $id (a oneOf, as a transactions file does) + the ObjectType enum
+    // that lists its object_type.
+    const plannedShape: RawSchemaJson = {
+      $id: "test://vstart/versions/VStart.v1.schema.json",
+      title: "VStart v1",
+      type: "object",
+      ["x-ocf-stability"]: "planned_deprecation",
+      properties: {
+        object_type: { const: "TX_VSTART" },
+        id: { type: "string" },
+      },
+      required: ["object_type", "id"],
+      additionalProperties: false,
+    };
+    const plannedDispatcher: RawSchemaJson = {
+      $id: "test://vstart/VStart.schema.json",
+      title: "VStart",
+      description: "Planned-for-deprecation dispatcher",
+      ["x-ocf-version-dispatcher"]: true,
+      anyOf: [{ $ref: "test://vstart/versions/VStart.v1.schema.json" }],
+    };
+    const consumer: RawSchemaJson = {
+      $id: "test://files/Tx.schema.json",
+      type: "object",
+      properties: {
+        items: {
+          type: "array",
+          items: {
+            oneOf: [
+              { $ref: "test://vstart/VStart.schema.json" },
+              { $ref: "test://other" },
+            ],
+          },
+        },
+      },
+    };
+    const objectTypeEnum: RawSchemaJson = {
+      $id: "test://enums/ObjectType.schema.json",
+      type: "string",
+      enum: ["TX_VSTART", "TX_OTHER"],
+    } as RawSchemaJson;
+    const input = () => [
+      plannedDispatcher,
+      plannedShape,
+      consumer,
+      objectTypeEnum,
+    ];
+
+    it("compatibility keeps the planned-for-deprecation dispatcher (input unchanged)", () => {
+      const set = input();
+      expect(applyExperimentalMode(set, "compatibility")).toBe(set);
+    });
+
+    it("none keeps it — collapsed to its single shape, refs and enum intact", () => {
+      const result = applyExperimentalMode(input(), "none");
+      const ids = result.map((s) => s.$id);
+      // The public dispatcher id survives (collapsed); the consumer + enum stay.
+      expect(ids).toContain("test://vstart/VStart.schema.json");
+      expect(ids).toContain("test://files/Tx.schema.json");
+      const collapsed = result.find(
+        (s) => s.$id === "test://vstart/VStart.schema.json"
+      )!;
+      expect(collapsed.properties?.object_type).toEqual({ const: "TX_VSTART" });
+      const enumSchema = result.find(
+        (s) => s.$id === "test://enums/ObjectType.schema.json"
+      )!;
+      expect(enumSchema.enum).toEqual(["TX_VSTART", "TX_OTHER"]);
+    });
+
+    it("unstable drops the dispatcher + its shape AND prunes the dangling ref and stale enum value", () => {
+      const result = applyExperimentalMode(input(), "unstable");
+      const ids = result.map((s) => s.$id);
+      // Both the dispatcher and its only (planned_deprecation) shape are gone.
+      expect(ids).not.toContain("test://vstart/VStart.schema.json");
+      expect(ids).not.toContain("test://vstart/versions/VStart.v1.schema.json");
+      // The consumer survives, but its oneOf no longer references the dropped id.
+      const consumerOut = result.find(
+        (s) => s.$id === "test://files/Tx.schema.json"
+      )!;
+      const refs = (
+        consumerOut.properties!.items.items.oneOf as Array<{
+          $ref: string;
+        }>
+      ).map((e) => e.$ref);
+      expect(refs).toEqual(["test://other"]);
+      // The dropped object_type is pruned from the ObjectType enum.
+      const enumOut = result.find(
+        (s) => s.$id === "test://enums/ObjectType.schema.json"
+      )!;
+      expect(enumOut.enum).toEqual(["TX_OTHER"]);
+    });
+  });
+
+  describe("standalone planned_deprecation (not a dispatcher)", () => {
+    // A standalone type (neither a dispatcher nor a versioned shape) flagged
+    // planned_deprecation — the dependency closure of a superseded shape — plus
+    // a consumer that references it via a oneOf.
+    const plannedType: RawSchemaJson = {
+      $id: "test://types/OldThing.schema.json",
+      title: "Old Thing",
+      ["x-ocf-stability"]: "planned_deprecation",
+      type: "object",
+      properties: { x: { type: "string" } },
+      additionalProperties: false,
+    };
+    const newThing: RawSchemaJson = {
+      $id: "test://types/NewThing.schema.json",
+      type: "object",
+      properties: { y: { type: "string" } },
+    };
+    const consumer: RawSchemaJson = {
+      $id: "test://types/Consumer.schema.json",
+      type: "object",
+      properties: {
+        thing: {
+          oneOf: [
+            { $ref: "test://types/OldThing.schema.json" },
+            { $ref: "test://types/NewThing.schema.json" },
+          ],
+        },
+      },
+    };
+    const input = () => [plannedType, newThing, consumer];
+
+    it("compatibility keeps it (input unchanged)", () => {
+      const set = input();
+      expect(applyExperimentalMode(set, "compatibility")).toBe(set);
+    });
+
+    it("none keeps it — planned_deprecation is still part of the current surface", () => {
+      const ids = applyExperimentalMode(input(), "none").map((s) => s.$id);
+      expect(ids).toContain("test://types/OldThing.schema.json");
+    });
+
+    it("unstable drops it and prunes the dangling oneOf $ref from survivors", () => {
+      const result = applyExperimentalMode(input(), "unstable");
+      const ids = result.map((s) => s.$id);
+      expect(ids).not.toContain("test://types/OldThing.schema.json");
+      expect(ids).toContain("test://types/NewThing.schema.json");
+      const consumerOut = result.find(
+        (s) => s.$id === "test://types/Consumer.schema.json"
+      )!;
+      const refs = (
+        consumerOut.properties!.thing.oneOf as Array<{ $ref: string }>
+      ).map((e) => e.$ref);
+      expect(refs).toEqual(["test://types/NewThing.schema.json"]);
+    });
+
+    it("does NOT treat a dispatcher-owned planned_deprecation version shape as a standalone drop", () => {
+      // VStart.v1 is planned_deprecation but owned by the VStart dispatcher, so
+      // the dispatcher path handles it (drops the whole dispatcher); it must not
+      // be double-processed by the standalone pass. One clean drop, no throw.
+      const result = applyExperimentalMode(
+        [demoDispatcher([1]), vShape(1, "planned_deprecation")],
+        "unstable"
+      );
+      expect(result.map((s) => s.$id)).toEqual([]);
+    });
+  });
+
+  describe("pruneDroppedReferences", () => {
+    const dropped = new Set(["test://gone"]);
+
+    it("removes a nested oneOf bare-$ref entry to a dropped id, keeping the rest", () => {
+      const schema: RawSchemaJson = {
+        $id: "test://file",
+        properties: {
+          items: {
+            type: "array",
+            items: {
+              oneOf: [{ $ref: "test://gone" }, { $ref: "test://keep" }],
+            },
+          },
+        },
+      };
+      const out = pruneDroppedReferences(schema, dropped, new Set());
+      expect(out.properties!.items.items.oneOf).toEqual([
+        { $ref: "test://keep" },
+      ]);
+    });
+
+    it("removes a dropped object_type from a top-level enum", () => {
+      const schema = {
+        $id: "test://enum",
+        type: "string",
+        enum: ["TX_GONE", "TX_KEEP"],
+      } as RawSchemaJson;
+      const out = pruneDroppedReferences(
+        schema,
+        new Set(),
+        new Set(["TX_GONE"])
+      );
+      expect(out.enum).toEqual(["TX_KEEP"]);
+    });
+
+    it("returns the SAME reference when nothing matches (no needless cloning)", () => {
+      const schema: RawSchemaJson = {
+        $id: "test://untouched",
+        properties: { x: { type: "string" } },
+        anyOf: [{ $ref: "test://still-here" }],
+      };
+      expect(pruneDroppedReferences(schema, dropped, new Set())).toBe(schema);
     });
   });
 

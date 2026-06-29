@@ -1,6 +1,13 @@
 import { markdownTable } from "markdown-table";
 import path from "node:path";
 import { relativePathToOtherPath } from "../../../schema-utils/PathTools.js";
+import {
+  DEFAULT_STABILITY,
+  Stability,
+  STABILITY_BADGE,
+  STABILITY_NOTE,
+  stabilityOf,
+} from "../../../schema-utils/SchemaComposer.js";
 
 import { format } from "date-fns";
 import Schema from "../Schema.js";
@@ -114,9 +121,28 @@ export default abstract class SchemaNode {
 
   required = (): string[] => this.json["required"] || [];
 
-  markdownHeader = () => `### ${this.title()}
+  /** This schema's structured stability flag (defaults to `stable`). */
+  stability = (): Stability => stabilityOf(this.json as any);
 
-\`${this.id()}\``;
+  /**
+   * A one-line stability "pill" rendered under a schema's header for any
+   * non-`stable` shape, so a reader sees at a glance that it is pre-release or
+   * on its way out (e.g. a `planned_deprecation` type). Empty for the default
+   * `stable`, so ordinary pages are unchanged. Reuses the same badge/note text
+   * the version-dispatcher sections use, for one consistent vocabulary.
+   */
+  protected markdownStabilityPill = (): string => {
+    const stability = this.stability();
+    if (stability === DEFAULT_STABILITY) return "";
+    return `> ${STABILITY_BADGE[stability]} — ${STABILITY_NOTE[stability]}`;
+  };
+
+  markdownHeader = () => {
+    const pill = this.markdownStabilityPill();
+    return `### ${this.title()}
+
+\`${this.id()}\`${pill ? `\n\n${pill}` : ""}`;
+  };
 
   markdownFooter = () =>
     [
