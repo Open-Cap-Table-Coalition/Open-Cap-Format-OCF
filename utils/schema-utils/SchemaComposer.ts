@@ -105,6 +105,17 @@ export const STABILITY_RANK: { [k in Stability]: number } = {
   deprecated: 3,
 };
 
+/**
+ * The authoritative, structural marker that a schema is a version dispatcher.
+ * Set `x-ocf-version-dispatcher: true` on the dispatcher and its identity no
+ * longer depends on how its version files happen to be named — a rename of a
+ * `.v#` file can't silently demote it back to a plain `anyOf` union (which
+ * would drop its `object_type` routing and scatter its doc page). When the flag
+ * is absent, detection falls back to the `.v#` filename convention on every
+ * referenced shape, so dispatchers that predate the flag still work.
+ */
+export const VERSION_DISPATCHER_KEYWORD = "x-ocf-version-dispatcher";
+
 /** Read the `x-ocf-stability` flag off a schema, defaulting to `stable`. */
 export function stabilityOf(json: RawSchemaJson | undefined | null): Stability {
   const raw = json && (json as Record<string, unknown>)[STABILITY_KEYWORD];
@@ -159,11 +170,16 @@ export function versionLabelOf(idOrRef: string): string | null {
  *
  * Detection mirrors `isBackwardsCompatibleWrapper`: a dispatcher carries no
  * `properties` of its own and an `anyOf` whose every entry is a bare `$ref`
- * (exactly one key, `$ref`) pointing at a `.v#` versioned shape. The
- * "no own properties" guard excludes ordinary object schemas that use a
- * top-level `anyOf` for conditional constraints; the `.v#` requirement
- * excludes generic `anyOf`-of-`$ref` unions (e.g. a "one of these object
- * types" union) that are not version dispatchers at all.
+ * (exactly one key, `$ref`). The "no own properties" guard excludes ordinary
+ * object schemas that use a top-level `anyOf` for conditional constraints.
+ *
+ * Which `anyOf`-of-`$ref`s is a dispatcher (vs. a generic "one of these object
+ * types" union) is decided by an affirmative signal, never inferred from a
+ * union alone:
+ *   - the explicit `x-ocf-version-dispatcher: true` marker (authoritative,
+ *     rename-proof), or
+ *   - failing that, the `.v#` versioned-shape filename convention on every
+ *     referenced shape (the legacy heuristic).
  */
 export function isVersionWrapper(
   json: RawSchemaJson | undefined | null
@@ -185,8 +201,16 @@ export function isVersionWrapper(
   );
   if (!allBareRefs) return false;
 
-  // Every referenced shape must follow the `.v#` versioned-shape convention,
-  // so a generic union of bare `$ref`s is not mistaken for a dispatcher.
+  // The explicit marker is authoritative: it identifies a dispatcher
+  // structurally, so the convention can't be defeated by renaming a version
+  // file out of the `.v#` pattern.
+  if ((json as Record<string, unknown>)[VERSION_DISPATCHER_KEYWORD] === true) {
+    return true;
+  }
+
+  // Legacy fallback: every referenced shape must follow the `.v#`
+  // versioned-shape convention, so a generic union of bare `$ref`s is not
+  // mistaken for a dispatcher.
   return versionRefsOf(json).every((ref) => hasVersionSuffix(ref));
 }
 
@@ -199,6 +223,26 @@ export function versionRefsOf(
   return anyOf
     .map((entry) => (entry as { $ref?: unknown }).$ref)
     .filter((ref): ref is string => typeof ref === "string");
+}
+
+/**
+ * Map each versioned-shape `$ref` to the `$id` of the version dispatcher whose
+ * `anyOf` references it. Ownership — not the `.v#` filename — is the single
+ * source of truth for "this shape belongs to that dispatcher", shared by the
+ * validator's `object_type` routing, the doc generator's page folding, and the
+ * TypeScript codegen's aggregate types so none of them can disagree on what
+ * counts as a versioned shape.
+ */
+export function versionShapeOwnerMap(
+  schemas: Array<RawSchemaJson | undefined | null>
+): Map<string, string> {
+  const owners = new Map<string, string>();
+  for (const schema of schemas) {
+    if (schema && isVersionWrapper(schema)) {
+      for (const ref of versionRefsOf(schema)) owners.set(ref, schema.$id);
+    }
+  }
+  return owners;
 }
 
 /**

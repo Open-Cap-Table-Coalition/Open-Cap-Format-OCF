@@ -13,6 +13,7 @@ import {
   stabilityOf,
   versionLabelOf,
   versionRefsOf,
+  versionShapeOwnerMap,
 } from "./SchemaComposer.js";
 
 const BASE_OBJECT: RawSchemaJson = {
@@ -342,8 +343,56 @@ describe("SchemaComposer", () => {
       expect(isVersionWrapper(partial)).toBe(false);
     });
 
+    it("returns true via the explicit marker even when targets are NOT .v# shapes", () => {
+      // The authoritative `x-ocf-version-dispatcher: true` marker identifies a
+      // dispatcher structurally, so its identity survives a rename of the
+      // version files out of the `.v#` pattern.
+      const marked: RawSchemaJson = {
+        $id: "test://marked-dispatcher",
+        ["x-ocf-version-dispatcher"]: true,
+        anyOf: [
+          { $ref: "test://stock-issuance-current" },
+          { $ref: "test://stock-issuance-next" },
+        ],
+      };
+      expect(isVersionWrapper(marked)).toBe(true);
+    });
+
+    it("still requires an anyOf of bare $refs even with the marker", () => {
+      const markedButHasProps: RawSchemaJson = {
+        $id: "test://marked-with-props",
+        ["x-ocf-version-dispatcher"]: true,
+        properties: { object_type: { const: "X" } },
+        anyOf: [{ $ref: "test://a.v1" }],
+      };
+      expect(isVersionWrapper(markedButHasProps)).toBe(false);
+    });
+
     it("returns false for a backwards-compat wrapper (allOf, not anyOf)", () => {
       expect(isVersionWrapper(WRAPPER)).toBe(false);
+    });
+  });
+
+  describe("versionShapeOwnerMap", () => {
+    it("maps each versioned-shape $ref to its owning dispatcher's $id", () => {
+      const owners = versionShapeOwnerMap([
+        VERSION_DISPATCHER,
+        STOCK_ISSUANCE,
+        WRAPPER,
+      ]);
+      expect(owners.get("test://stock-issuance.v1")).toBe(
+        VERSION_DISPATCHER.$id
+      );
+      expect(owners.get("test://stock-issuance.v2")).toBe(
+        VERSION_DISPATCHER.$id
+      );
+      // Non-dispatcher schemas contribute no ownership edges.
+      expect(owners.has("test://stock-issuance")).toBe(false);
+      expect(owners.size).toBe(2);
+    });
+
+    it("ignores nullish entries", () => {
+      expect(versionShapeOwnerMap([null, undefined]).size).toBe(0);
     });
   });
 

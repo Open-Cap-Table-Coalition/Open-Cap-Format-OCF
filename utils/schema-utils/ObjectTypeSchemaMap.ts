@@ -39,6 +39,7 @@ import {
   RawSchemaJson,
   SchemaRegistry,
   versionRefsOf,
+  versionShapeOwnerMap,
 } from "./SchemaComposer.js";
 
 export type ObjectTypeSchemaMap = { [objectType: string]: string };
@@ -85,14 +86,9 @@ export function buildObjectTypeSchemaMap(
   };
 
   // Which schemas are versioned shapes owned by a dispatcher? Their
-  // object_type is mapped to the dispatcher, not to their own $id.
-  const versionShapeOwner: { [id: string]: string } = {};
-  for (const schema of objectSchemas) {
-    if (isVersionWrapper(schema)) {
-      for (const ref of versionRefsOf(schema))
-        versionShapeOwner[ref] = schema.$id;
-    }
-  }
+  // object_type is mapped to the dispatcher, not to their own $id. Built by the
+  // same shared helper the doc generator and codegen use, so all three agree.
+  const versionShapeOwner = versionShapeOwnerMap(objectSchemas);
 
   const assign = (objectType: string, schemaId: string, context: string) => {
     if (!allowed.has(objectType)) {
@@ -128,12 +124,12 @@ export function buildObjectTypeSchemaMap(
     }
 
     // A versioned shape owned by a dispatcher — already mapped above.
-    if (versionShapeOwner[schema.$id]) {
+    if (versionShapeOwner.has(schema.$id)) {
       if (verbose) {
         console.log(
-          `Schema ${schema.$id} is a versioned shape of ${
-            versionShapeOwner[schema.$id]
-          }... mapping handled by the dispatcher.`
+          `Schema ${schema.$id} is a versioned shape of ${versionShapeOwner.get(
+            schema.$id
+          )}... mapping handled by the dispatcher.`
         );
       }
       continue;

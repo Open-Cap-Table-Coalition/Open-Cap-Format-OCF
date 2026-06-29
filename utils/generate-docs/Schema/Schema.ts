@@ -15,7 +15,7 @@ import {
   composeAll,
   hasVersionSuffix,
   isVersionWrapper,
-  versionRefsOf,
+  versionShapeOwnerMap,
 } from "../../schema-utils/SchemaComposer.js";
 
 export type { SchemaNodeJson };
@@ -69,14 +69,9 @@ export default class Schema {
     // Map each versioned shape's `$id` -> the dispatcher that owns it (whose
     // `anyOf` references it). Ownership — not the `.v#` filename — decides
     // whether a shape is folded into a dispatcher's page or documented on its
-    // own, so a dispatcher and its versions stay consistent.
-    const versionShapeOwners = new Map<string, string>();
-    for (const json of composed) {
-      if (isVersionWrapper(json)) {
-        for (const ref of versionRefsOf(json))
-          versionShapeOwners.set(ref, json.$id);
-      }
-    }
+    // own, so a dispatcher and its versions stay consistent. The same helper
+    // backs the validator's routing and the codegen's aggregates.
+    const versionShapeOwners = versionShapeOwnerMap(composed);
 
     // A file that follows the versioned-shape (`.v#`) naming convention but is
     // referenced by no dispatcher would otherwise be folded away into a page

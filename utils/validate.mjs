@@ -17,6 +17,7 @@ import {
   buildSchemaRegistry,
   STABILITY_KEYWORD,
   STABILITY_LEVELS,
+  VERSION_DISPATCHER_KEYWORD,
 } from "./schema-utils/SchemaComposer.js";
 
 // build map of object_type to schema $id
@@ -372,6 +373,15 @@ export async function getOcfValidator(
     ajv.addKeyword({
       keyword: STABILITY_KEYWORD,
       metaSchema: { type: "string", enum: [...STABILITY_LEVELS] },
+    });
+
+    // `x-ocf-version-dispatcher: true` is the structural marker on a version
+    // dispatcher. Register it for the same reason as `x-ocf-stability`: so AJV
+    // strict mode accepts (and type-checks) the annotation without it affecting
+    // data validation.
+    ajv.addKeyword({
+      keyword: VERSION_DISPATCHER_KEYWORD,
+      metaSchema: { type: "boolean" },
     });
 
     // If we don't do this, AJV can't handle certain *built-in* JSONSchema formats (like dates)

@@ -50,20 +50,30 @@ export default class VersionDispatcherSchemaNode extends SchemaNode {
    *  stability (stable first), memoized so the linear `findSchemaNodeById`
    *  lookups and the sort run once even though `versions` is read from several
    *  render paths (the page body, the examples block, a property-cell summary).
-   *  A `$ref` that does not resolve to a versioned subschema is a convention
-   *  violation and fails loudly. */
+   *  A `$ref` that doesn't resolve to a versioned subschema (e.g. a renamed or
+   *  removed version file) is skipped with a warning rather than aborting the
+   *  whole docs run — mirroring the soft handling of an orphan `.v#` shape in
+   *  `Schema`, so the same class of missing-ref defect fails the same way. */
   protected versions = (): VersionedSubschemaNode[] => {
     if (this.cachedVersions) return this.cachedVersions;
-    const resolved = versionRefsOf(this.json as any).map((ref) => {
-      const node = this.schema.findSchemaNodeById(ref);
-      if (!(node instanceof VersionedSubschemaNode)) {
-        throw new Error(
-          `Version dispatcher ${this.id()} references ${ref}, which is not a ` +
-            `versioned subschema (expected a '.v#' shape carrying x-ocf-stability).`
-        );
+    const resolved: VersionedSubschemaNode[] = [];
+    for (const ref of versionRefsOf(this.json as any)) {
+      let node: SchemaNode | undefined;
+      try {
+        node = this.schema.findSchemaNodeById(ref);
+      } catch {
+        node = undefined;
       }
-      return node;
-    });
+      if (!(node instanceof VersionedSubschemaNode)) {
+        console.warn(
+          `Version dispatcher ${this.id()} references ${ref}, which does not ` +
+            `resolve to a versioned subschema (expected a '.v#' shape carrying ` +
+            `x-ocf-stability); skipping it on the generated page.`
+        );
+        continue;
+      }
+      resolved.push(node);
+    }
     // Array.prototype.sort is stable, so shapes sharing a stability level keep
     // their declaration (anyOf) order.
     this.cachedVersions = resolved.sort(

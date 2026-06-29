@@ -602,4 +602,103 @@ describe("TypeScriptGenerator", () => {
       expect(included.warnings).toEqual([]);
     });
   });
+
+  // A version dispatcher's two shapes legitimately share one object_type; the
+  // codegen must treat the public dispatcher $id as the surface type (a union
+  // of its versions) rather than emitting each .v# shape as a rival concrete
+  // type — otherwise resolveMap throws "Multiple schemas claim object_type".
+  describe("version dispatchers", () => {
+    const dispatcher = (extra: Record<string, unknown>): RawSchemaJson => ({
+      $id: `${BASE}/objects/transactions/issuance/EquityCompensationIssuance.schema.json`,
+      title: "Object - Equity Compensation Issuance",
+      anyOf: [
+        {
+          $ref: `${BASE}/objects/transactions/issuance/versions/EquityCompensationIssuance.v1.schema.json`,
+        },
+        {
+          $ref: `${BASE}/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json`,
+        },
+      ],
+      ...extra,
+    });
+    const versionShape = (n: number, stability: string): RawSchemaJson => ({
+      $id: `${BASE}/objects/transactions/issuance/versions/EquityCompensationIssuance.v${n}.schema.json`,
+      title: `Object - Equity Compensation Issuance (v${n})`,
+      type: "object",
+      ["x-ocf-stability"]: stability,
+      allOf: [{ $ref: PRIMITIVE_OBJECT.$id }],
+      properties: {
+        object_type: { const: "TX_EQUITY_COMPENSATION_ISSUANCE" },
+        quantity: { $ref: TYPE_NUMERIC.$id },
+        id: {},
+      },
+      required: ["quantity"],
+    });
+    const baseInputs = [ENUM_OBJECT_TYPE, TYPE_NUMERIC, PRIMITIVE_OBJECT];
+    const inputs = [
+      ...baseInputs,
+      dispatcher({ ["x-ocf-version-dispatcher"]: true }),
+      versionShape(1, "stable"),
+      versionShape(2, "alpha"),
+    ];
+
+    it("emits the dispatcher $id as a union of its versioned shapes", () => {
+      const { source } = generateTypeScript(inputs);
+      expect(source).toContain(
+        "export type OCFEquityCompensationIssuance = OCFEquityCompensationIssuanceV1 | OCFEquityCompensationIssuanceV2;"
+      );
+      // The versioned shapes are still emitted as their own interfaces.
+      expect(source).toContain(
+        "export interface OCFEquityCompensationIssuanceV1"
+      );
+      expect(source).toContain(
+        "export interface OCFEquityCompensationIssuanceV2"
+      );
+    });
+
+    it("maps the shared object_type to the dispatcher, not to a rival .v# type", () => {
+      const { source } = generateTypeScript(inputs);
+      const map = source.slice(
+        source.indexOf("export interface ObjectTypeMap {")
+      );
+      expect(map).toContain(
+        "TX_EQUITY_COMPENSATION_ISSUANCE: OCFEquityCompensationIssuance;"
+      );
+    });
+
+    it("makes the dispatcher (not its versions) the AnyObject/AnyTransaction member", () => {
+      const { source } = generateTypeScript(inputs);
+      expect(unionMembersOf(source, "AnyObject")).toContain(
+        "OCFEquityCompensationIssuance"
+      );
+      expect(unionMembersOf(source, "AnyTransaction")).toContain(
+        "OCFEquityCompensationIssuance"
+      );
+      // The internal versioned shapes are reachable via the union, so they are
+      // NOT standalone aggregate members.
+      expect(unionMembersOf(source, "AnyObject")).not.toContain(
+        "OCFEquityCompensationIssuanceV1"
+      );
+      expect(unionMembersOf(source, "AnyTransaction")).not.toContain(
+        "OCFEquityCompensationIssuanceV2"
+      );
+    });
+
+    it("detects a dispatcher via the .v# convention even without the explicit marker", () => {
+      const withoutMarker = [
+        ...baseInputs,
+        dispatcher({}),
+        versionShape(1, "stable"),
+        versionShape(2, "alpha"),
+      ];
+      // No throw, and the dispatcher is still the routed type.
+      const { source } = generateTypeScript(withoutMarker);
+      const map = source.slice(
+        source.indexOf("export interface ObjectTypeMap {")
+      );
+      expect(map).toContain(
+        "TX_EQUITY_COMPENSATION_ISSUANCE: OCFEquityCompensationIssuance;"
+      );
+    });
+  });
 });

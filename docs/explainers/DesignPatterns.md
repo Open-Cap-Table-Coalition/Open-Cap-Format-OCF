@@ -139,7 +139,8 @@ The **VersionWrapper** (a "versioned dispatcher") is the shape-changing analogue
 
 -   The stable, public `$id` lives on a thin **dispatcher** schema whose body is an `anyOf` of
     `$ref`s to concrete, versioned shapes — and nothing else (no `properties` of its own, no
-    `additionalProperties`).
+    `additionalProperties`). It carries the marker `"x-ocf-version-dispatcher": true` so tooling
+    identifies it as a dispatcher **structurally**, independent of how its version files are named.
 -   Each versioned shape lives in its own file under a `versions/` subfolder, following the `.v#`
     filename convention (`EquityCompensationIssuance.v1.schema.json`,
     `EquityCompensationIssuance.v2.schema.json`), with its own `$id`. `v1` is the current shape,
@@ -153,6 +154,7 @@ The **VersionWrapper** (a "versioned dispatcher") is the shape-changing analogue
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": ".../issuance/EquityCompensationIssuance.schema.json",
+    "x-ocf-version-dispatcher": true,
     "anyOf": [
         { "$ref": ".../issuance/versions/EquityCompensationIssuance.v1.schema.json" },
         { "$ref": ".../issuance/versions/EquityCompensationIssuance.v2.schema.json" }
@@ -168,10 +170,17 @@ A few rules make this work with draft-07:
     `$ref`/`allOf`, so each versioned shape must be **fully self-contained** (its own complete
     `properties`, `required`, and `additionalProperties: false`). The dispatcher itself must **not**
     set `additionalProperties`.
-3.  Tooling that walks schemas (the validator, the doc generator) follows the dispatcher's `anyOf`
-    down to the versioned shapes. For a top-level **object** dispatcher, the validator maps every
-    versioned shape's `object_type` to the dispatcher's public `$id`, so validating an item against
-    that `object_type` accepts any active version.
+3.  Mark the dispatcher with `"x-ocf-version-dispatcher": true`. This is the authoritative signal
+    every tool (validator, doc generator, TypeScript codegen) uses to recognize a dispatcher, so the
+    convention can't be silently broken by renaming a version file out of the `.v#` pattern. For
+    backward compatibility the tools also fall back to detecting a dispatcher when **every** `anyOf`
+    target follows the `.v#` filename convention, but new dispatchers should set the marker.
+4.  Tooling that walks schemas (the validator, the doc generator, the type codegen) follows the
+    dispatcher's `anyOf` down to the versioned shapes. For a top-level **object** dispatcher, the
+    validator maps every versioned shape's `object_type` to the dispatcher's public `$id` (so
+    validating an item against that `object_type` accepts any active version), the doc generator
+    folds the versions into one page at the public `$id`, and the codegen emits the public `$id` as
+    a `V1 | V2 | …` union — keeping the versioned shapes off the public surface as separate types.
 
 ### Dispatchers work at any level
 
