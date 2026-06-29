@@ -226,3 +226,32 @@ and ordered `stable` → `beta` → `alpha` → `deprecated`, so a reader can te
 is current, which is not final, and which is on the way out. This works for object, type, and enum
 dispatchers alike — each version section renders the body appropriate to its kind (an object/type
 property table, or an enum's value list).
+
+## Choosing Which Versions Ship: the `--experimental` Flag
+
+The dispatcher carries every active versioned shape, but most consumers only want **one**. The
+`--experimental` flag tells the toolchain — the schema composer (`schema:compose`), the TypeScript
+codegen (`schema:gen-types`), and the documentation generator (`docs:generate`) — how to resolve a
+dispatcher. All three accept the same flag and resolve dispatchers identically, so the composed
+schemas, the generated types, and the docs always agree.
+
+| `--experimental` | What it emits for a dispatcher                                                                                                                                                                                                                                       |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `compatibility`  | **The default.** The dispatcher is kept intact: the public `$id` accepts the **union** of every listed shape (codegen emits `V1 \| V2 \| …`; the docs fold all versions into one page). Output is unchanged from before the flag existed.                            |
+| `none`           | The dispatcher is **dropped**; the public `$id` exposes only the **latest `stable`** versioned shape. Pre-release / older shapes never reach the public surface. (If a dispatcher has no `stable` shape, the latest shape overall is used and a warning is emitted.) |
+| `unstable`       | The public `$id` exposes the **latest pre-release** (`alpha` or `beta`) shape, falling back to the latest `stable` shape when none is pre-release. Use it to preview the shape OCF is moving toward.                                                                 |
+
+"Latest" is the highest `.v#` number among the candidate shapes. Under `none` / `unstable` the
+dispatcher collapses to the single selected shape — re-homed onto the dispatcher's stable public
+`$id`, with every other versioned shape removed from the output entirely (no standalone type, doc
+page, or composed file). A property that references the dispatcher's public `$id` keeps working:
+that `$id` now resolves to the collapsed shape.
+
+```bash
+# Default: dispatchers stay unions / folded pages.
+npm run schema:gen-types -- --out types.d.ts
+# Pin the public surface to the latest stable shape only.
+npm run schema:gen-types -- --out types.d.ts --experimental none
+# Preview the upcoming (alpha/beta) shape.
+npm run docs:generate -- --experimental unstable
+```

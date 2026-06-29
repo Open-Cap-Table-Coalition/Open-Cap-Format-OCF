@@ -700,5 +700,71 @@ describe("TypeScriptGenerator", () => {
         "TX_EQUITY_COMPENSATION_ISSUANCE: OCFEquityCompensationIssuance;"
       );
     });
+
+    // The default mode is `compatibility` (above). `none` / `unstable` collapse
+    // the dispatcher to a single selected shape under the public $id and drop
+    // the other versioned shapes entirely.
+    it("experimental=none: emits the public $id as the latest stable shape, no .v# types", () => {
+      const { source } = generateTypeScript(inputs, { experimental: "none" });
+      // The public type is now a plain interface for v1 (the only stable shape),
+      // NOT a union and NOT an alias to a versioned type.
+      expect(source).toContain(
+        "export interface OCFEquityCompensationIssuance {"
+      );
+      expect(source).not.toContain(
+        "export type OCFEquityCompensationIssuance ="
+      );
+      // The versioned shapes are gone from the public surface.
+      expect(source).not.toContain("OCFEquityCompensationIssuanceV1");
+      expect(source).not.toContain("OCFEquityCompensationIssuanceV2");
+      // The public type is the AnyObject/AnyTransaction member and claims the
+      // object_type, exactly like any ordinary concrete object.
+      expect(unionMembersOf(source, "AnyTransaction")).toContain(
+        "OCFEquityCompensationIssuance"
+      );
+      const map = source.slice(
+        source.indexOf("export interface ObjectTypeMap {")
+      );
+      expect(map).toContain(
+        "TX_EQUITY_COMPENSATION_ISSUANCE: OCFEquityCompensationIssuance;"
+      );
+    });
+
+    it("experimental=unstable: collapses the public $id to the latest alpha/beta shape", () => {
+      // v2 is alpha; under `unstable` it becomes the public shape. Give the two
+      // shapes distinguishable fields so we can tell which one was selected.
+      const v1 = {
+        ...versionShape(1, "stable"),
+        properties: {
+          object_type: { const: "TX_EQUITY_COMPENSATION_ISSUANCE" },
+          legacy_field: { $ref: TYPE_NUMERIC.$id },
+          id: {},
+        },
+        required: ["legacy_field"],
+      };
+      const v2 = {
+        ...versionShape(2, "alpha"),
+        properties: {
+          object_type: { const: "TX_EQUITY_COMPENSATION_ISSUANCE" },
+          new_field: { $ref: TYPE_NUMERIC.$id },
+          id: {},
+        },
+        required: ["new_field"],
+      };
+      const { source } = generateTypeScript(
+        [
+          ...baseInputs,
+          dispatcher({ ["x-ocf-version-dispatcher"]: true }),
+          v1,
+          v2,
+        ],
+        { experimental: "unstable" }
+      );
+      const iface = source.slice(
+        source.indexOf("export interface OCFEquityCompensationIssuance {")
+      );
+      expect(iface).toContain("new_field");
+      expect(source).not.toContain("legacy_field");
+    });
   });
 });

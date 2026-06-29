@@ -24,8 +24,14 @@ import { hideBin } from "yargs/helpers";
 
 import { getSchemaFilepaths } from "./Loaders.js";
 import {
+  applyExperimentalMode,
   composeAll,
   ComposedSchemaJson,
+  DEFAULT_EXPERIMENTAL_MODE,
+  EXPERIMENTAL_MODES,
+  ExperimentalMode,
+  isExperimentalMode,
+  omitEmptyComposedContainers,
   RawSchemaJson,
 } from "./SchemaComposer.js";
 import { dereferenceAll } from "./SchemaDereferencer.js";
@@ -61,14 +67,16 @@ async function writeComposedSchema(
 ): Promise<void> {
   const targetPath = path.join(outDir, relPath);
   await mkdir(path.dirname(targetPath), { recursive: true });
-  await writeFile(targetPath, JSON.stringify(composed, null, 2) + "\n");
+  const output = omitEmptyComposedContainers(composed);
+  await writeFile(targetPath, JSON.stringify(output, null, 2) + "\n");
   if (verbose) console.log(`\t• wrote ${targetPath}`);
 }
 
 export async function composeSchemasToDir(
   outDir: string,
   verbose: boolean = false,
-  dereference: boolean = false
+  dereference: boolean = false,
+  experimental: ExperimentalMode = "compatibility"
 ): Promise<{ written: number }> {
   await mkdir(outDir, { recursive: true });
 
@@ -76,16 +84,35 @@ export async function composeSchemasToDir(
   const rawEntries = await readRawSchemas(verbose);
   const rawJsons = rawEntries.map((e) => e.json);
 
+  // Resolve version dispatchers per the experimental policy. Under `none` /
+  // `unstable` each dispatcher collapses to its selected versioned shape (kept
+  // at the dispatcher's public `$id`) and the other version shapes drop out of
+  // the set — so those source files are skipped on write below.
+  const processed = applyExperimentalMode(rawJsons, experimental);
+  const survivingIds = new Set(processed.map((s) => s.$id));
+
   const verb = dereference ? "Dereferencing" : "Composing";
-  if (verbose) console.log(`\n${verb} ${rawEntries.length} schemas ...`);
+  if (verbose)
+    console.log(
+      `\n${verb} ${processed.length} schemas (--experimental=${experimental}) ...`
+    );
   const resultById = dereference
-    ? dereferenceAll(rawJsons).dereferencedById
-    : composeAll(rawJsons).composedById;
+    ? dereferenceAll(processed).dereferencedById
+    : composeAll(processed).composedById;
 
   if (verbose)
     console.log(`\nWriting ${verb.toLowerCase()} schemas to ${outDir} ...`);
   let written = 0;
   for (const { relPath, json } of rawEntries) {
+    // A versioned shape that the experimental policy folded into its
+    // dispatcher's public `$id`: its source file has no standalone output.
+    if (!survivingIds.has(json.$id)) {
+      if (verbose)
+        console.log(
+          `\t• skipped ${relPath} (folded by --experimental=${experimental})`
+        );
+      continue;
+    }
     const result = resultById[json.$id];
     if (!result) {
       throw new Error(`Missing composed output for ${json.$id}`);
@@ -106,6 +133,7 @@ interface ComposeSchemasArgs extends Arguments {
   v?: boolean;
   dereference?: boolean;
   d?: boolean;
+  experimental?: string;
 }
 
 // Only wire up the CLI when this module is the entrypoint (not when
@@ -137,6 +165,12 @@ if (invokedAsScript) {
           type: "boolean",
           default: false,
         },
+        experimental: {
+          describe:
+            "How to resolve version dispatchers. 'compatibility' (default): write the dispatcher and every version file as-is. 'none': write only the latest stable versioned shape at the public $id and skip the other version files. 'unstable': write the latest alpha/beta shape (else latest stable).",
+          choices: EXPERIMENTAL_MODES as unknown as string[],
+          default: DEFAULT_EXPERIMENTAL_MODE,
+        },
         verbose: {
           describe: "Print per-file progress.",
           alias: "v",
@@ -152,7 +186,10 @@ if (invokedAsScript) {
         );
         const verbose = Boolean(argv.verbose ?? argv.v);
         const dereference = Boolean(argv.dereference ?? argv.d);
-        await composeSchemasToDir(outDir, verbose, dereference);
+        const experimental = isExperimentalMode(argv.experimental)
+          ? argv.experimental
+          : DEFAULT_EXPERIMENTAL_MODE;
+        await composeSchemasToDir(outDir, verbose, dereference, experimental);
       },
     })
     .help()

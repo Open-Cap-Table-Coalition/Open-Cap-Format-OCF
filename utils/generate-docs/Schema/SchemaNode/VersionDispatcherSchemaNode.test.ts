@@ -7,6 +7,10 @@ import VersionedSubschemaNode, {
 } from "./VersionedSubschemaNode.js";
 import { EnumSchemaNodeJson } from "./Enum.js";
 import { PrimitiveSchemaNodeJson } from "./Primitive.js";
+import {
+  applyExperimentalMode,
+  RawSchemaJson,
+} from "../../../schema-utils/SchemaComposer.js";
 
 const BASE =
   "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema";
@@ -198,6 +202,47 @@ describe("VersionDispatcherSchemaNode (version dispatcher)", () => {
       expect(schema.findSchemaNodeById(V2_FIXTURE.$id).writesOwnDoc()).toBe(
         false
       );
+    });
+  });
+
+  // The doc-gen entrypoint applies `applyExperimentalMode` before constructing
+  // the Schema, so `none` / `unstable` collapse the dispatcher to a single shape
+  // BEFORE node building. After that pass the dispatcher is gone and its public
+  // $id is an ordinary page.
+  describe("under --experimental=none (dispatcher collapsed before rendering)", () => {
+    const collapsedSchema = () =>
+      new Schema(
+        applyExperimentalMode(
+          [
+            OBJECT_TYPE_ENUM_FIXTURE,
+            COMPENSATION_TYPE_ENUM_FIXTURE,
+            BASE_OBJECT_FIXTURE,
+            DISPATCHER_FIXTURE,
+            V1_FIXTURE,
+            V2_FIXTURE,
+          ] as RawSchemaJson[],
+          "none"
+        ) as never[]
+      );
+
+    it("documents the public $id as an ordinary page, not a version dispatcher", () => {
+      const node = collapsedSchema().findSchemaNodeById(DISPATCHER_FIXTURE.$id);
+      expect(node).not.toBeInstanceOf(VersionDispatcherSchemaNode);
+      const md = node.markdownOutput();
+      expect(md).not.toContain("version dispatcher");
+      expect(md).not.toContain("**Data Type:** `Versioned OCF Schema`");
+      // It shows the selected (stable v1) shape's properties directly.
+      expect(md).toContain("| compensation_type ");
+    });
+
+    it("drops the versioned shapes entirely (no standalone pages)", () => {
+      const schema = collapsedSchema();
+      expect(() => schema.findSchemaNodeById(V1_FIXTURE.$id)).toThrow();
+      expect(() => schema.findSchemaNodeById(V2_FIXTURE.$id)).toThrow();
+      // The single surviving page for this object writes its own doc.
+      expect(
+        schema.findSchemaNodeById(DISPATCHER_FIXTURE.$id).writesOwnDoc()
+      ).toBe(true);
     });
   });
 });

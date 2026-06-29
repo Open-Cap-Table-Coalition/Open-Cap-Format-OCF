@@ -160,6 +160,17 @@ export function versionLabelOf(idOrRef: string): string | null {
   return match ? match[1] : null;
 }
 
+/** The numeric version pulled from a versioned-shape `$id`/`$ref`/basename
+ *  (e.g. `2` for `…EquityCompensationIssuance.v2.schema.json`), or `null` when
+ *  there is no `.v#` suffix. This is the ordering key for "which version is the
+ *  latest" when `--experimental` collapses a dispatcher to a single shape. */
+export function versionNumberOf(idOrRef: string): number | null {
+  const label = versionLabelOf(idOrRef);
+  if (!label) return null;
+  const n = Number.parseInt(label.slice(1), 10);
+  return Number.isNaN(n) ? null : n;
+}
+
 /**
  * A "version dispatcher" (VersionWrapper) is the versioned analogue of the
  * backwards-compatibility wrapper. The stable, public `$id` lives on a thin
@@ -266,6 +277,202 @@ export function objectTypeValues(objectType: unknown): string[] {
     return ot.enum.filter((v): v is string => typeof v === "string");
   }
   return [];
+}
+
+// ---------------------------------------------------------------------------
+// Experimental mode (version-dispatcher resolution policy)
+// ---------------------------------------------------------------------------
+
+/**
+ * How the toolchain (composer, TypeScript codegen, doc generator) treats a
+ * version dispatcher. Selected by the `--experimental` CLI flag.
+ *
+ *   - `compatibility` (the default): keep the dispatcher as-is — the public
+ *     `$id` accepts the union of every listed shape (codegen emits
+ *     `V1 | V2 | …`; the docs fold all versions into one page). This is the
+ *     historical behavior, so the default output is unchanged.
+ *   - `none`: drop the dispatcher entirely and expose only the latest **stable**
+ *     versioned shape under the dispatcher's public `$id`. The pre-release /
+ *     older shapes never reach the public surface.
+ *   - `unstable`: expose the latest **pre-release** (alpha or beta) versioned
+ *     shape, falling back to the latest stable shape when none is pre-release.
+ *     Use this to preview the shape OCF is moving toward.
+ *
+ * `none` and `unstable` both *collapse* a dispatcher to a single chosen shape
+ * (re-homed onto the public `$id`, with every other version shape removed from
+ * the output). They differ only in which shape they pick.
+ */
+export const EXPERIMENTAL_MODES = [
+  "none",
+  "compatibility",
+  "unstable",
+] as const;
+
+export type ExperimentalMode = typeof EXPERIMENTAL_MODES[number];
+
+/** The default the `--experimental` flag carries when omitted: `compatibility`,
+ *  so the toolchain's default output is unchanged from before the flag existed
+ *  (dispatchers stay unions / folded pages). Opt into `none` / `unstable`
+ *  explicitly to collapse dispatchers to a single shape. */
+export const DEFAULT_EXPERIMENTAL_MODE: ExperimentalMode = "compatibility";
+
+/** Narrow an arbitrary string to an `ExperimentalMode` (for CLI arg parsing). */
+export function isExperimentalMode(value: unknown): value is ExperimentalMode {
+  return (EXPERIMENTAL_MODES as readonly string[]).includes(value as string);
+}
+
+/**
+ * Pick the single versioned shape a collapsing mode (`none` / `unstable`)
+ * exposes, from a dispatcher's resolved version shapes (in `anyOf` declaration
+ * order). "Latest" is the highest `.v#` number, falling back to declaration
+ * order for any shape without a numeric suffix.
+ *
+ *   - `none`: the latest shape whose stability is exactly `stable`.
+ *   - `unstable`: the latest `alpha`/`beta` shape; failing that, the latest
+ *     `stable` shape.
+ *
+ * When neither pool yields a shape (e.g. a dispatcher of only `deprecated`
+ * shapes), it falls back to the latest shape overall and flags `fallback: true`
+ * so the caller can warn. Returns `null` only for an empty input.
+ */
+export function selectVersionForMode(
+  versions: RawSchemaJson[],
+  mode: "none" | "unstable"
+): { selected: RawSchemaJson; fallback: boolean } | null {
+  if (versions.length === 0) return null;
+
+  const ranked = versions.map((json, index) => ({
+    json,
+    stability: stabilityOf(json),
+    rank: versionNumberOf(json.$id) ?? index,
+  }));
+  const latest = (pool: typeof ranked) =>
+    pool.length
+      ? pool.reduce((best, c) => (c.rank > best.rank ? c : best))
+      : null;
+
+  if (mode === "none") {
+    const stable = latest(ranked.filter((c) => c.stability === "stable"));
+    if (stable) return { selected: stable.json, fallback: false };
+  } else {
+    const preRelease = latest(
+      ranked.filter((c) => c.stability === "alpha" || c.stability === "beta")
+    );
+    if (preRelease) return { selected: preRelease.json, fallback: false };
+    const stable = latest(ranked.filter((c) => c.stability === "stable"));
+    if (stable) return { selected: stable.json, fallback: false };
+  }
+
+  // Nothing in the preferred pool(s): expose the latest shape regardless of
+  // stability rather than emit an empty dispatcher, and let the caller warn.
+  return { selected: latest(ranked)!.json, fallback: true };
+}
+
+/**
+ * Re-home a selected versioned shape onto its dispatcher's stable public `$id`,
+ * producing a normal standalone schema. The dispatcher's public identity
+ * (`title` / `description`) wins when present; the union body and the
+ * `x-ocf-version-dispatcher` marker are dropped (they belong to the dispatcher,
+ * not the shape). The selected shape's own `allOf`, `properties`, `required`,
+ * `additionalProperties`, and `x-ocf-stability` carry through untouched so
+ * downstream composition/codegen/docs treat it like any other schema.
+ */
+function collapseDispatcherToVersion(
+  dispatcher: RawSchemaJson,
+  version: RawSchemaJson
+): RawSchemaJson {
+  const collapsed: RawSchemaJson = { ...version, $id: dispatcher.$id };
+  if (typeof dispatcher.title === "string") collapsed.title = dispatcher.title;
+  if (typeof dispatcher.description === "string") {
+    collapsed.description = dispatcher.description;
+  }
+  delete (collapsed as Record<string, unknown>)[VERSION_DISPATCHER_KEYWORD];
+  delete (collapsed as Record<string, unknown>).anyOf;
+  return collapsed;
+}
+
+/**
+ * Apply the `--experimental` policy to a flat list of raw schemas BEFORE any
+ * composition, codegen, or doc rendering. This is the single shared entry point
+ * all three tools call, so they resolve dispatchers identically.
+ *
+ *   - `compatibility`: a no-op — the dispatchers are left intact and the
+ *     existing dispatcher-aware code paths handle the union / folded page.
+ *   - `none` / `unstable`: every version dispatcher is replaced by its selected
+ *     shape (see `selectVersionForMode`) re-homed onto the public `$id`, and
+ *     every versioned shape it owned is removed from the set. After this pass
+ *     there are no dispatchers left, so downstream tooling sees only ordinary
+ *     schemas and needs no per-mode special-casing.
+ *
+ * Schemas that reference a dispatcher's public `$id` keep working: that `$id`
+ * now resolves to the collapsed shape. (Per the VersionWrapper convention,
+ * properties reference the public `$id`, never a `.v#` shape directly, so the
+ * removed version shapes leave no dangling references.)
+ */
+export function applyExperimentalMode(
+  rawSchemas: RawSchemaJson[],
+  mode: ExperimentalMode
+): RawSchemaJson[] {
+  if (mode === "compatibility") return rawSchemas;
+
+  const registry = buildSchemaRegistry(rawSchemas);
+  const droppedVersionIds = new Set<string>();
+  const collapsedByDispatcherId = new Map<string, RawSchemaJson>();
+
+  for (const schema of rawSchemas) {
+    if (!isVersionWrapper(schema)) continue;
+
+    const resolved: RawSchemaJson[] = [];
+    for (const ref of versionRefsOf(schema)) {
+      const target = registry[ref];
+      if (!target) {
+        console.warn(
+          `--experimental=${mode}: version dispatcher ${schema.$id} references ` +
+            `${ref}, which is not in the schema set; ignoring it.`
+        );
+        continue;
+      }
+      resolved.push(target);
+    }
+
+    if (resolved.length === 0) {
+      console.warn(
+        `--experimental=${mode}: version dispatcher ${schema.$id} has no ` +
+          `resolvable versioned shapes; leaving it unchanged.`
+      );
+      continue;
+    }
+
+    const selection = selectVersionForMode(resolved, mode)!;
+    if (selection.fallback) {
+      const wanted = mode === "none" ? "stable" : "alpha/beta or stable";
+      console.warn(
+        `--experimental=${mode}: version dispatcher ${schema.$id} has no ` +
+          `${wanted} versioned shape; falling back to ${selection.selected.$id} ` +
+          `(${stabilityOf(selection.selected)}).`
+      );
+    }
+
+    for (const version of resolved) droppedVersionIds.add(version.$id);
+    collapsedByDispatcherId.set(
+      schema.$id,
+      collapseDispatcherToVersion(schema, selection.selected)
+    );
+  }
+
+  if (collapsedByDispatcherId.size === 0) return rawSchemas;
+
+  const result: RawSchemaJson[] = [];
+  for (const schema of rawSchemas) {
+    const collapsed = collapsedByDispatcherId.get(schema.$id);
+    if (collapsed) {
+      result.push(collapsed);
+      continue;
+    }
+    if (droppedVersionIds.has(schema.$id)) continue;
+    result.push(schema);
+  }
+  return result;
 }
 
 /**
@@ -433,4 +640,32 @@ export function composeAll(
   const composedById: { [id: string]: ComposedSchemaJson } = {};
   for (const c of composed) composedById[c.$id] = c;
   return { registry, composed, composedById };
+}
+
+/**
+ * Drop a vacuous `properties: {}` / `required: []` from a composed (or
+ * dereferenced) schema before it is serialized to a file. The composer defaults
+ * both fields on every schema so the in-memory shape is uniform, but a written
+ * enum or scalar-type schema has no properties and no required list — emitting
+ * the empty containers just adds noise to the output. Non-empty values and
+ * object schemas are left untouched. Returns a shallow clone; the input is not
+ * mutated.
+ */
+export function omitEmptyComposedContainers<T extends Record<string, any>>(
+  schema: T
+): T {
+  const clone: Record<string, any> = { ...schema };
+  const properties = clone.properties;
+  if (
+    properties &&
+    typeof properties === "object" &&
+    !Array.isArray(properties) &&
+    Object.keys(properties).length === 0
+  ) {
+    delete clone.properties;
+  }
+  if (Array.isArray(clone.required) && clone.required.length === 0) {
+    delete clone.required;
+  }
+  return clone as T;
 }
