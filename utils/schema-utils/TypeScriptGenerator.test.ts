@@ -767,4 +767,37 @@ describe("TypeScriptGenerator", () => {
       expect(source).not.toContain("legacy_field");
     });
   });
+
+  describe("stability JSDoc on the emitted type", () => {
+    const mk = (stability?: string): RawSchemaJson =>
+      ({
+        $id: `${BASE}/types/Thing.schema.json`,
+        title: "Type - Thing",
+        description: "A thing",
+        type: "object",
+        ...(stability ? { ["x-ocf-stability"]: stability } : {}),
+        properties: { x: { type: "string" } },
+      } as RawSchemaJson);
+    const docBlock = (source: string) =>
+      source.slice(0, source.indexOf("export interface OCFThing"));
+
+    it("adds no stability line for a stable (default) schema", () => {
+      const { source } = generateTypeScript([mk()]);
+      expect(docBlock(source)).not.toMatch(
+        /PLANNED DEPRECATION|@deprecated|ALPHA|BETA/
+      );
+    });
+
+    it("planned_deprecation: a visible badge note, but NOT @deprecated (not deprecated yet)", () => {
+      const { source } = generateTypeScript([mk("planned_deprecation")]);
+      const block = docBlock(source);
+      expect(block).toContain("🗓️ PLANNED DEPRECATION");
+      expect(block).not.toContain("@deprecated");
+    });
+
+    it("deprecated: emits the standard @deprecated tag for IDE visibility", () => {
+      const { source } = generateTypeScript([mk("deprecated")]);
+      expect(docBlock(source)).toContain("@deprecated");
+    });
+  });
 });

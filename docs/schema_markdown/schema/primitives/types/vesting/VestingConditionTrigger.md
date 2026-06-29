@@ -2,6 +2,8 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/types/vesting/VestingConditionTrigger.schema.json`
 
+> 🗓️ PLANNED DEPRECATION — Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.
+
 **Description** _Abstract type describing fields needed in all triggers types, with a 'trigger' being a condition that must be satisfied for a VestingCondition to be met_
 
 **:warning: Primitives are Abstract and Should Not be Used for Data. They are used to enforce uniformity in OCF data types - specifically "types" and "objects". :warning:**

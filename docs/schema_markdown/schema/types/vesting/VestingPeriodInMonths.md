@@ -2,6 +2,8 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingPeriodInMonths.schema.json`
 
+> 🗓️ PLANNED DEPRECATION — Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.
+
 _Describes a period of time expressed in months (e.g. 3 months) for use in Vesting Terms._
 
 **Data Type:** `OCF TYPE`

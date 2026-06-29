@@ -121,6 +121,32 @@ export const STABILITY_RANK: { [k in Stability]: number } = {
 };
 
 /**
+ * Short presentational badge + one-line note for each stability level — the
+ * single source of truth shared by every surface that renders stability: the
+ * doc generator (a pill under a schema's header and the per-version sections of
+ * a dispatcher page) and the TypeScript codegen (a JSDoc tag on the emitted
+ * type). Centralized here so the wording can't drift between them.
+ */
+export const STABILITY_BADGE: { [k in Stability]: string } = {
+  stable: "✅ STABLE",
+  beta: "🧪 BETA",
+  alpha: "⚠️ ALPHA",
+  planned_deprecation: "🗓️ PLANNED DEPRECATION",
+  deprecated: "⛔ DEPRECATED",
+};
+
+export const STABILITY_NOTE: { [k in Stability]: string } = {
+  stable: "Supported — the current recommended shape.",
+  beta: "Feature-complete but still subject to change before it is marked stable.",
+  alpha:
+    "Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.",
+  planned_deprecation:
+    "Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.",
+  deprecated:
+    "On its way out — retained for compatibility and scheduled for removal at a future major version.",
+};
+
+/**
  * The authoritative, structural marker that a schema is a version dispatcher.
  * Set `x-ocf-version-dispatcher: true` on the dispatcher and its identity no
  * longer depends on how its version files happen to be named — a rename of a

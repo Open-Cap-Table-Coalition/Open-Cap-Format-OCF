@@ -37,9 +37,13 @@ import {
   buildSchemaRegistry,
   composeAll,
   ComposedSchemaJson,
+  DEFAULT_STABILITY,
   ExperimentalMode,
   isBackwardsCompatibleWrapper,
   RawSchemaJson,
+  STABILITY_BADGE,
+  STABILITY_NOTE,
+  stabilityOf,
   versionShapeOwnerMap,
 } from "./SchemaComposer.js";
 
@@ -387,6 +391,23 @@ function annotationTags(value: any): string[] {
   return tags;
 }
 
+/**
+ * JSDoc line(s) reflecting a schema's `x-ocf-stability`, so the generated type
+ * carries the same signal the docs show. A genuinely `deprecated` shape gets
+ * the standard `@deprecated` tag (IDEs strike it through); the other non-stable
+ * levels (alpha / beta / `planned_deprecation`) get a plain badge + note line —
+ * visible on hover but NOT struck through, since they are not (yet) deprecated.
+ * Empty for the default `stable`, so ordinary types are unchanged.
+ */
+function stabilityJsdoc(schema: ComposedSchemaJson): string[] {
+  const stability = stabilityOf(schema);
+  if (stability === DEFAULT_STABILITY) return [];
+  if (stability === "deprecated") {
+    return [`@deprecated ${STABILITY_NOTE.deprecated}`];
+  }
+  return [`${STABILITY_BADGE[stability]} — ${STABILITY_NOTE[stability]}`];
+}
+
 // ---------------------------------------------------------------------------
 // Declarations
 // ---------------------------------------------------------------------------
@@ -488,7 +509,7 @@ function declareSchema(
 ): string {
   const name = ctx.idToName.get(schema.$id)!;
   const doc = includeDescriptions
-    ? jsdoc([schema.title, schema.description], "")
+    ? jsdoc([schema.title, schema.description, ...stabilityJsdoc(schema)], "")
     : "";
 
   // Backwards-compat wrapper (a single `allOf` parent plus only an
@@ -525,7 +546,15 @@ function declareSchema(
   // Scalar type alias (Date, Numeric, CountryCode, ...)
   if (typeof schema.type === "string") {
     const docWithTags = includeDescriptions
-      ? jsdoc([schema.title, schema.description, ...annotationTags(schema)], "")
+      ? jsdoc(
+          [
+            schema.title,
+            schema.description,
+            ...stabilityJsdoc(schema),
+            ...annotationTags(schema),
+          ],
+          ""
+        )
       : "";
     return `${docWithTags}export type ${name} = ${scalarType(schema.type)};`;
   }
