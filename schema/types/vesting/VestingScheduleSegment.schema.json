@@ -19,6 +19,11 @@
       "description": "Time unit for `period`.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/PeriodType.schema.json"
     },
+    "vesting_day_of_month": {
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingDayOfMonthPolicy.schema.json",
+      "description": "Day-of-month policy each of this segment's periodic installments lands on (meaningful only when `period_type` is `MONTHS` or `YEARS`). When omitted, the default VESTING_START_DAY applies.",
+      "default": "VESTING_START_DAY"
+    },
     "cliff": {
       "description": "Optional cliff on this schedule.",
       "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleCliff.schema.json"
