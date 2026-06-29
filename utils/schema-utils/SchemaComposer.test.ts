@@ -1,10 +1,12 @@
 import {
   applyExperimentalMode,
   buildSchemaRegistry,
+  coerceExperimentalMode,
   composeAll,
   composeSchema,
   DEFAULT_EXPERIMENTAL_MODE,
   DEFAULT_STABILITY,
+  experimentalFromArgv,
   EXPERIMENTAL_MODES,
   hasVersionSuffix,
   isBackwardsCompatibleWrapper,
@@ -562,6 +564,46 @@ describe("SchemaComposer", () => {
     });
   });
 
+  describe("coerceExperimentalMode", () => {
+    it("passes a known mode through unchanged", () => {
+      expect(coerceExperimentalMode("none")).toBe("none");
+      expect(coerceExperimentalMode("unstable")).toBe("unstable");
+    });
+    it("falls back to the default for an absent or unknown value", () => {
+      expect(coerceExperimentalMode(undefined)).toBe(DEFAULT_EXPERIMENTAL_MODE);
+      expect(coerceExperimentalMode("nope")).toBe(DEFAULT_EXPERIMENTAL_MODE);
+    });
+  });
+
+  describe("experimentalFromArgv", () => {
+    it("reads the space-separated form (--experimental none)", () => {
+      expect(experimentalFromArgv(["--experimental", "none"])).toBe("none");
+    });
+    it("reads the = form (--experimental=unstable)", () => {
+      expect(experimentalFromArgv(["--experimental=unstable"])).toBe(
+        "unstable"
+      );
+    });
+    it("returns the default when the flag is absent", () => {
+      expect(experimentalFromArgv(["--out", "types.d.ts"])).toBe(
+        DEFAULT_EXPERIMENTAL_MODE
+      );
+    });
+    it("throws on an unrecognized value (either form)", () => {
+      expect(() => experimentalFromArgv(["--experimental", "nope"])).toThrow(
+        /--experimental must be one of/
+      );
+      expect(() => experimentalFromArgv(["--experimental=nope"])).toThrow(
+        /--experimental must be one of/
+      );
+    });
+    it("throws when the flag is given with no value (end of argv)", () => {
+      expect(() => experimentalFromArgv(["--experimental"])).toThrow(
+        /--experimental must be one of/
+      );
+    });
+  });
+
   describe("selectVersionForMode", () => {
     it("none: picks the latest strictly-stable shape", () => {
       const versions = [
@@ -685,6 +727,19 @@ describe("SchemaComposer", () => {
       )!;
       expect(collapsed.properties?.field_v2).toEqual({ type: "string" });
       expect((collapsed as any)["x-ocf-stability"]).toBe("alpha");
+    });
+
+    it("keeps the selected shape's title/description when the dispatcher's are empty", () => {
+      const input = [
+        { ...demoDispatcher([1]), title: "", description: "" },
+        vShape(1, "stable"),
+      ];
+      const collapsed = applyExperimentalMode(input, "none").find(
+        (s) => s.$id === "test://demo/Demo.schema.json"
+      )!;
+      // An empty dispatcher title/description must not clobber the shape's own.
+      expect(collapsed.title).toBe("Demo v1");
+      expect(collapsed.description).toBe("Demo shape v1");
     });
 
     it("none: warns and uses the latest shape overall when no stable shape exists", () => {

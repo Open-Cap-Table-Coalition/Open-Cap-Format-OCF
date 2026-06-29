@@ -321,6 +321,36 @@ export function isExperimentalMode(value: unknown): value is ExperimentalMode {
   return (EXPERIMENTAL_MODES as readonly string[]).includes(value as string);
 }
 
+/** Coerce a parsed CLI value to an `ExperimentalMode`, falling back to the
+ *  default when it is absent or unrecognized. The yargs CLIs validate the flag
+ *  via `choices` first, so this just narrows the parsed string to the union
+ *  type; entrypoints without yargs use `experimentalFromArgv` instead. */
+export function coerceExperimentalMode(value: unknown): ExperimentalMode {
+  return isExperimentalMode(value) ? value : DEFAULT_EXPERIMENTAL_MODE;
+}
+
+/** Parse `--experimental <mode>` / `--experimental=<mode>` from a raw argv
+ *  slice, falling back to the default when the flag is absent and throwing on an
+ *  unrecognized value. A dependency-light parser for entrypoints that don't wire
+ *  up yargs (the doc generator); the yargs CLIs use `coerceExperimentalMode`. */
+export function experimentalFromArgv(argv: string[]): ExperimentalMode {
+  const flag = "--experimental";
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    let value: string | undefined;
+    if (arg === flag) value = argv[i + 1];
+    else if (arg.startsWith(`${flag}=`)) value = arg.slice(flag.length + 1);
+    else continue;
+    if (!isExperimentalMode(value)) {
+      throw new Error(
+        `--experimental must be one of: ${EXPERIMENTAL_MODES.join(", ")}`
+      );
+    }
+    return value;
+  }
+  return DEFAULT_EXPERIMENTAL_MODE;
+}
+
 /**
  * Pick the single versioned shape a collapsing mode (`none` / `unstable`)
  * exposes, from a dispatcher's resolved version shapes (in `anyOf` declaration
@@ -371,7 +401,8 @@ export function selectVersionForMode(
 /**
  * Re-home a selected versioned shape onto its dispatcher's stable public `$id`,
  * producing a normal standalone schema. The dispatcher's public identity
- * (`title` / `description`) wins when present; the union body and the
+ * (`title` / `description`) wins when non-empty, otherwise the selected shape's
+ * own title/description is kept; the union body and the
  * `x-ocf-version-dispatcher` marker are dropped (they belong to the dispatcher,
  * not the shape). The selected shape's own `allOf`, `properties`, `required`,
  * `additionalProperties`, and `x-ocf-stability` carry through untouched so
@@ -382,10 +413,8 @@ function collapseDispatcherToVersion(
   version: RawSchemaJson
 ): RawSchemaJson {
   const collapsed: RawSchemaJson = { ...version, $id: dispatcher.$id };
-  if (typeof dispatcher.title === "string") collapsed.title = dispatcher.title;
-  if (typeof dispatcher.description === "string") {
-    collapsed.description = dispatcher.description;
-  }
+  if (dispatcher.title) collapsed.title = dispatcher.title;
+  if (dispatcher.description) collapsed.description = dispatcher.description;
   delete (collapsed as Record<string, unknown>)[VERSION_DISPATCHER_KEYWORD];
   delete (collapsed as Record<string, unknown>).anyOf;
   return collapsed;

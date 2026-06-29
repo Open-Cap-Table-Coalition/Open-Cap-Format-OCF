@@ -18,10 +18,10 @@ import { hideBin } from "yargs/helpers";
 
 import { getSchemaFilepaths } from "./Loaders.js";
 import {
+  coerceExperimentalMode,
   DEFAULT_EXPERIMENTAL_MODE,
   EXPERIMENTAL_MODES,
   ExperimentalMode,
-  isExperimentalMode,
   RawSchemaJson,
 } from "./SchemaComposer.js";
 import { generateTypeScript } from "./TypeScriptGenerator.js";
@@ -158,9 +158,7 @@ if (invokedAsScript) {
           process.cwd(),
           (argv.out ?? argv.o) as string
         );
-        const experimental = isExperimentalMode(argv.experimental)
-          ? argv.experimental
-          : DEFAULT_EXPERIMENTAL_MODE;
+        const experimental = coerceExperimentalMode(argv.experimental);
         const { warnings } = await generateTypesToFile(outFile, {
           verbose: Boolean(argv.verbose ?? argv.v),
           typePrefix: argv.prefix as string | undefined,

@@ -25,12 +25,12 @@ import { hideBin } from "yargs/helpers";
 import { getSchemaFilepaths } from "./Loaders.js";
 import {
   applyExperimentalMode,
+  coerceExperimentalMode,
   composeAll,
   ComposedSchemaJson,
   DEFAULT_EXPERIMENTAL_MODE,
   EXPERIMENTAL_MODES,
   ExperimentalMode,
-  isExperimentalMode,
   omitEmptyComposedContainers,
   RawSchemaJson,
 } from "./SchemaComposer.js";
@@ -186,9 +186,7 @@ if (invokedAsScript) {
         );
         const verbose = Boolean(argv.verbose ?? argv.v);
         const dereference = Boolean(argv.dereference ?? argv.d);
-        const experimental = isExperimentalMode(argv.experimental)
-          ? argv.experimental
-          : DEFAULT_EXPERIMENTAL_MODE;
+        const experimental = coerceExperimentalMode(argv.experimental);
         await composeSchemasToDir(outDir, verbose, dereference, experimental);
       },
     })
