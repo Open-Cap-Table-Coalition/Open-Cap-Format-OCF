@@ -82,10 +82,13 @@ export function isBackwardsCompatibleWrapper(
  *                    toward, but NOT yet deprecated: still fully part of the
  *                    current stable surface (kept under `none`/`compatibility`).
  *                    It differs from `deprecated` in that it is dropped from the
- *                    forward-looking `unstable` preview — a version dispatcher
- *                    whose only shape is `planned_deprecation` disappears under
- *                    `--experimental=unstable` (and references to it are pruned),
- *                    modeling "this object has no place in the next major".
+ *                    forward-looking `unstable` preview — both a version
+ *                    dispatcher whose only shape is `planned_deprecation` and a
+ *                    standalone schema (type / enum / primitive) carrying the
+ *                    flag disappear under `--experimental=unstable` (with
+ *                    references to them pruned), modeling "this has no place in
+ *                    the next major". Use it for the dependency closure of a
+ *                    superseded shape, so the whole subtree leaves together.
  *   - `deprecated` — on its way out; will be removed at a future major version.
  *                    Unlike `planned_deprecation` it is retained in every mode.
  */
@@ -461,11 +464,19 @@ function collapseDispatcherToVersion(
  *     every versioned shape it owned is removed from the set. After this pass
  *     there are no dispatchers left, so downstream tooling sees only ordinary
  *     schemas and needs no per-mode special-casing.
+ *   - `unstable` additionally drops every **standalone** schema (a type / enum /
+ *     primitive that is neither a dispatcher nor a versioned shape) flagged
+ *     `x-ocf-stability: "planned_deprecation"`. These are the dependency closure
+ *     of the shapes being superseded — present and active in `none` /
+ *     `compatibility`, but absent from the forward-looking `unstable` surface,
+ *     exactly like a planned-deprecation-only dispatcher.
  *
  * Schemas that reference a dispatcher's public `$id` keep working: that `$id`
  * now resolves to the collapsed shape. (Per the VersionWrapper convention,
  * properties reference the public `$id`, never a `.v#` shape directly, so the
- * removed version shapes leave no dangling references.)
+ * removed version shapes leave no dangling references.) Any `anyOf`/`oneOf`
+ * `$ref` to a wholesale-dropped `$id` — and any dropped `object_type` value in
+ * an enum — is pruned from the survivors so the result still resolves cleanly.
  */
 export function applyExperimentalMode(
   rawSchemas: RawSchemaJson[],
@@ -476,12 +487,23 @@ export function applyExperimentalMode(
   const registry = buildSchemaRegistry(rawSchemas);
   const droppedVersionIds = new Set<string>();
   const collapsedByDispatcherId = new Map<string, RawSchemaJson>();
-  // Dispatchers removed wholesale (not collapsed): an `unstable` dispatcher
-  // whose only shapes are `planned_deprecation`. Their public `$id`s are still
-  // referenced by other schemas (e.g. a transactions-file `oneOf`) and their
-  // `object_type`s still sit in enums, so both must be pruned afterward.
+  // Public `$id`s removed wholesale (not collapsed). Two sources, both only
+  // under `unstable`: a dispatcher whose only shapes are `planned_deprecation`,
+  // and a standalone planned-for-deprecation schema (see below). They may still
+  // be referenced by survivors (e.g. a transactions-file `oneOf`) and their
+  // `object_type`s may still sit in enums, so both are pruned afterward.
   const droppedDispatcherIds = new Set<string>();
+  const droppedStandaloneIds = new Set<string>();
   const prunedObjectTypes = new Set<string>();
+
+  // Every `$id` that is a versioned shape behind some dispatcher — excluded
+  // from the standalone-drop pass below, since the dispatcher loop owns them.
+  const versionShapeIds = new Set<string>();
+  for (const schema of rawSchemas) {
+    if (isVersionWrapper(schema)) {
+      for (const ref of versionRefsOf(schema)) versionShapeIds.add(ref);
+    }
+  }
 
   for (const schema of rawSchemas) {
     if (!isVersionWrapper(schema)) continue;
@@ -543,13 +565,36 @@ export function applyExperimentalMode(
     );
   }
 
-  if (collapsedByDispatcherId.size === 0 && droppedDispatcherIds.size === 0) {
+  // `unstable` also drops standalone planned-for-deprecation schemas — a type /
+  // enum / primitive that is neither a dispatcher nor a versioned shape. The
+  // forward-looking surface omits the dependency closure of the superseded
+  // shapes, mirroring how a planned-deprecation-only dispatcher disappears.
+  // (`none` / `compatibility` keep them: planned_deprecation is still current.)
+  if (mode === "unstable") {
+    for (const schema of rawSchemas) {
+      if (isVersionWrapper(schema)) continue;
+      if (versionShapeIds.has(schema.$id)) continue;
+      if (stabilityOf(schema) !== "planned_deprecation") continue;
+      droppedStandaloneIds.add(schema.$id);
+      for (const ot of objectTypeValues(schema.properties?.object_type)) {
+        prunedObjectTypes.add(ot);
+      }
+    }
+  }
+
+  // Union of every wholesale-dropped public `$id` (dispatchers + standalones).
+  const droppedPublicIds = new Set<string>([
+    ...droppedDispatcherIds,
+    ...droppedStandaloneIds,
+  ]);
+
+  if (collapsedByDispatcherId.size === 0 && droppedPublicIds.size === 0) {
     return rawSchemas;
   }
 
   const result: RawSchemaJson[] = [];
   for (const schema of rawSchemas) {
-    if (droppedDispatcherIds.has(schema.$id)) continue;
+    if (droppedPublicIds.has(schema.$id)) continue;
     const collapsed = collapsedByDispatcherId.get(schema.$id);
     if (collapsed) {
       result.push(collapsed);
@@ -562,11 +607,11 @@ export function applyExperimentalMode(
   // A wholesale drop leaves the rest of the set pointing at a `$id` (and listing
   // an `object_type`) that no longer exists. Prune both so every surviving
   // schema still resolves, composes, codegens, and documents cleanly.
-  if (droppedDispatcherIds.size === 0 && prunedObjectTypes.size === 0) {
+  if (droppedPublicIds.size === 0 && prunedObjectTypes.size === 0) {
     return result;
   }
   return result.map((schema) =>
-    pruneDroppedReferences(schema, droppedDispatcherIds, prunedObjectTypes)
+    pruneDroppedReferences(schema, droppedPublicIds, prunedObjectTypes)
   );
 }
 

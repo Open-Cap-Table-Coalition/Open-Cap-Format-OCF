@@ -902,6 +902,73 @@ describe("SchemaComposer", () => {
     });
   });
 
+  describe("standalone planned_deprecation (not a dispatcher)", () => {
+    // A standalone type (neither a dispatcher nor a versioned shape) flagged
+    // planned_deprecation — the dependency closure of a superseded shape — plus
+    // a consumer that references it via a oneOf.
+    const plannedType: RawSchemaJson = {
+      $id: "test://types/OldThing.schema.json",
+      title: "Old Thing",
+      ["x-ocf-stability"]: "planned_deprecation",
+      type: "object",
+      properties: { x: { type: "string" } },
+      additionalProperties: false,
+    };
+    const newThing: RawSchemaJson = {
+      $id: "test://types/NewThing.schema.json",
+      type: "object",
+      properties: { y: { type: "string" } },
+    };
+    const consumer: RawSchemaJson = {
+      $id: "test://types/Consumer.schema.json",
+      type: "object",
+      properties: {
+        thing: {
+          oneOf: [
+            { $ref: "test://types/OldThing.schema.json" },
+            { $ref: "test://types/NewThing.schema.json" },
+          ],
+        },
+      },
+    };
+    const input = () => [plannedType, newThing, consumer];
+
+    it("compatibility keeps it (input unchanged)", () => {
+      const set = input();
+      expect(applyExperimentalMode(set, "compatibility")).toBe(set);
+    });
+
+    it("none keeps it — planned_deprecation is still part of the current surface", () => {
+      const ids = applyExperimentalMode(input(), "none").map((s) => s.$id);
+      expect(ids).toContain("test://types/OldThing.schema.json");
+    });
+
+    it("unstable drops it and prunes the dangling oneOf $ref from survivors", () => {
+      const result = applyExperimentalMode(input(), "unstable");
+      const ids = result.map((s) => s.$id);
+      expect(ids).not.toContain("test://types/OldThing.schema.json");
+      expect(ids).toContain("test://types/NewThing.schema.json");
+      const consumerOut = result.find(
+        (s) => s.$id === "test://types/Consumer.schema.json"
+      )!;
+      const refs = (
+        consumerOut.properties!.thing.oneOf as Array<{ $ref: string }>
+      ).map((e) => e.$ref);
+      expect(refs).toEqual(["test://types/NewThing.schema.json"]);
+    });
+
+    it("does NOT treat a dispatcher-owned planned_deprecation version shape as a standalone drop", () => {
+      // VStart.v1 is planned_deprecation but owned by the VStart dispatcher, so
+      // the dispatcher path handles it (drops the whole dispatcher); it must not
+      // be double-processed by the standalone pass. One clean drop, no throw.
+      const result = applyExperimentalMode(
+        [demoDispatcher([1]), vShape(1, "planned_deprecation")],
+        "unstable"
+      );
+      expect(result.map((s) => s.$id)).toEqual([]);
+    });
+  });
+
   describe("pruneDroppedReferences", () => {
     const dropped = new Set(["test://gone"]);
 

@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingCondition.schema.json",
   "title": "Type - Vesting Condition",
   "description": "Describes condition / triggers to be satisfied for vesting to occur",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "properties": {
     "id": {

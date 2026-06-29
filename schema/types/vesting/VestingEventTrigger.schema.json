@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventTrigger.schema.json",
   "title": "Type - Vesting Event Trigger",
   "description": "Describes a vesting condition satisfied when a particular unscheduled event occurs",
+  "x-ocf-stability": "planned_deprecation",
   "type": "object",
   "allOf": [
     {

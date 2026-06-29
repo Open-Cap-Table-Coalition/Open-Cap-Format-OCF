@@ -3,6 +3,7 @@
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingTriggerType.schema.json",
   "title": "Enum - Vesting Trigger Type",
   "description": "Enumeration of vesting trigger types",
+  "x-ocf-stability": "planned_deprecation",
   "type": "string",
   "enum": [
     "VESTING_START_DATE",
