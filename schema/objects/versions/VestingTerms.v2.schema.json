@@ -17,7 +17,14 @@
       "description": "Ordered list of vesting statements. They chain implicitly by their `order` field rather than via explicit graph edges.",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingStatement.schema.json"
+        "oneOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/ScheduledVestingStatement.schema.json"
+          },
+          {
+            "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/MilestoneVestingStatement.schema.json"
+          }
+        ]
       },
       "minItems": 1
     }

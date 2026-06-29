@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/ScheduledVestingStatement.schema.json",
+  "title": "Type - Scheduled Vesting Statement",
+  "description": "A vesting statement that vests on a time grid: it always carries a `schedule`, and may also carry an `event_condition` (DATE when bare, HYBRID when gated). One of the two shapes a `VestingTerms` (v2) statement can take.",
+  "type": "object",
+  "properties": {
+    "order": {
+      "description": "1-indexed position of this statement within the template. Scheduled Vesting Statements chain implicitly in this order.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "schedule": {
+      "description": "Time-schedule axis.",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingScheduleSegment.schema.json"
+    },
+    "event_condition": {
+      "description": "Optional named-event axis. When present, the grid is gated on this event (HYBRID).",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventCondition.schema.json"
+    },
+    "percentage": {
+      "description": "The share of the grant this statement covers, as an OCF Numeric decimal (e.g. \"0.25\").",
+      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json"
+    }
+  },
+  "required": ["order", "schedule", "percentage"],
+  "additionalProperties": false,
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/types/vesting/ScheduledVestingStatement.schema.json"
+}
