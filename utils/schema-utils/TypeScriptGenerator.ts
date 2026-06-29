@@ -131,6 +131,29 @@ function categoryPriority(id: string): number {
   return idx === -1 ? CATEGORY_ORDER.length : idx;
 }
 
+/** Transaction object schemas live under `/schema/objects/transactions/`. Used
+ *  to split the `objects` partition into `AnyTransaction` vs the rest. */
+function isTransactionId(id: string): boolean {
+  return id.includes("/objects/transactions/");
+}
+
+/** The literal string value(s) of a discriminant property (`object_type` /
+ *  `file_type`) on a composed schema: handles `const` (one value) and inline
+ *  `enum` (the back-compat case, where a concrete type accepts both its legacy
+ *  and current `object_type`). Returns `[]` when there is no such discriminant. */
+function discriminantLiterals(
+  schema: ComposedSchemaJson,
+  key: string
+): string[] {
+  const prop = (schema.properties as any)?.[key];
+  if (!prop || typeof prop !== "object") return [];
+  if ("const" in prop && typeof prop.const === "string") return [prop.const];
+  if (Array.isArray(prop.enum)) {
+    return prop.enum.filter((v: any): v is string => typeof v === "string");
+  }
+  return [];
+}
+
 function toPascalCase(value: string): string {
   const cleaned = value
     .replace(/[^A-Za-z0-9]+(.)?/g, (_m, c) => (c ? c.toUpperCase() : ""))
@@ -359,14 +382,26 @@ function annotationTags(value: any): string[] {
 // Declarations
 // ---------------------------------------------------------------------------
 
-function declareEnum(name: string, schema: ComposedSchemaJson): string {
-  const members = (schema.enum as any[]).map((member) =>
-    JSON.stringify(member)
-  );
-  const union = members.length
+/** A `=`-bordered section banner — the rule-band placed between output sections. */
+function sectionHeading(title: string): string {
+  const rule = "=".repeat(73);
+  return `// ${rule}\n// ${title}\n// ${rule}`;
+}
+
+/** Render `export type Name =\n  | A\n  | B;` (or `never` when empty). Shared by
+ *  the enum declarer and the aggregate unions; `members` are emitted verbatim. */
+function unionType(name: string, members: string[], doc = ""): string {
+  const body = members.length
     ? members.map((m) => `  | ${m}`).join("\n")
     : "  never";
-  return `export type ${name} =\n${union};`;
+  return `${doc}export type ${name} =\n${body};`;
+}
+
+function declareEnum(name: string, schema: ComposedSchemaJson): string {
+  return unionType(
+    name,
+    (schema.enum as any[]).map((member) => JSON.stringify(member))
+  );
 }
 
 function declareInterface(
@@ -562,11 +597,140 @@ export function generateTypeScript(
     const declarations = byCategory.get(category);
     if (!declarations || !declarations.length) continue;
     declarations.sort((a, b) => declaredName(a).localeCompare(declaredName(b)));
-    const heading = `// ${"=".repeat(73)}\n// ${
-      CATEGORY_HEADINGS[category]
-    }\n// ${"=".repeat(73)}`;
+    const heading = sectionHeading(CATEGORY_HEADINGS[category]);
     sections.push(`${heading}\n\n${declarations.join("\n\n")}`);
   }
+
+  // ----- Aggregates: unions + discriminant maps over the emitted schemas -----
+  // `AnyObject` / `AnyTransaction` / `AnyFile` are unions of the *concrete*
+  // types; the back-compat wrapper aliases are deliberately excluded because
+  // each is a subtype of its parent (e.g. `OCFPlanSecurityIssuance extends
+  // OCFEquityCompensationIssuance`) and would be absorbed by the union anyway.
+  // `ObjectTypeMap` / `FileTypeMap` go the other way: they key every
+  // discriminant value — including the legacy back-compat values — to its most
+  // specific concrete type, so a `keyof`-driven dispatch table is exhaustive
+  // over every value a real package can carry.
+  type Claim = { name: string; wrapper: boolean };
+  const objectMembers: string[] = [];
+  const txMembers: string[] = [];
+  const fileMembers: string[] = [];
+  const objectTypeClaims = new Map<string, Claim[]>();
+  const fileTypeClaims = new Map<string, Claim[]>();
+  const addClaim = (m: Map<string, Claim[]>, lit: string, c: Claim) => {
+    if (!m.has(lit)) m.set(lit, []);
+    m.get(lit)!.push(c);
+  };
+
+  for (const schema of composed) {
+    if (omittedIds.has(schema.$id)) continue;
+    const name = idToName.get(schema.$id);
+    if (!name) continue;
+    const wrapper = isBackwardsCompatibleWrapper(schema);
+    const category = categoryFromId(schema.$id);
+
+    if (category === "objects") {
+      if (!wrapper) {
+        objectMembers.push(name);
+        if (isTransactionId(schema.$id)) txMembers.push(name);
+      }
+      for (const lit of discriminantLiterals(schema, "object_type")) {
+        addClaim(objectTypeClaims, lit, { name, wrapper });
+      }
+    } else if (category === "files") {
+      if (!wrapper) fileMembers.push(name);
+      for (const lit of discriminantLiterals(schema, "file_type")) {
+        addClaim(fileTypeClaims, lit, { name, wrapper });
+      }
+    }
+  }
+
+  // Resolve each discriminant value to one concrete type. A wrapper (the
+  // narrowed legacy alias) wins over its parent on a shared value — that is the
+  // whole point of the wrapper. Two *non-wrapper* schemas claiming the same
+  // value is a genuine schema bug, so fail loudly.
+  const resolveMap = (
+    claims: Map<string, Claim[]>,
+    kind: string
+  ): Array<[string, string]> => {
+    const entries: Array<[string, string]> = [];
+    for (const [literal, list] of claims) {
+      const wrappers = list.filter((c) => c.wrapper);
+      const concrete = list.filter((c) => !c.wrapper);
+      // Check each kind of duplicate independently, so a wrapper's presence can
+      // never mask a genuine non-wrapper collision.
+      if (concrete.length > 1)
+        throw new Error(
+          `Multiple schemas claim ${kind} "${literal}": ${concrete
+            .map((c) => c.name)
+            .join(", ")}`
+        );
+      if (wrappers.length > 1)
+        throw new Error(
+          `Multiple wrapper schemas claim ${kind} "${literal}": ${wrappers
+            .map((c) => c.name)
+            .join(", ")}`
+        );
+      // A wrapper (the narrowed legacy alias) wins over its parent on a shared
+      // value; otherwise the lone concrete type claims it.
+      const chosen =
+        wrappers.length === 1 ? wrappers[0].name : concrete[0].name;
+      entries.push([literal, chosen]);
+    }
+    return entries.sort((a, b) => a[0].localeCompare(b[0]));
+  };
+
+  const aggregateDoc = (text: string) =>
+    includeDescriptions ? jsdoc([text], "") : "";
+  const unionDecl = (name: string, members: string[], doc: string) =>
+    unionType(
+      name,
+      [...new Set(members)].sort((a, b) => a.localeCompare(b)),
+      doc
+    );
+  const mapDecl = (
+    name: string,
+    entries: Array<[string, string]>,
+    doc: string
+  ) => {
+    const body = entries
+      .map(([lit, type]) => `  ${propertyKey(lit)}: ${type};`)
+      .join("\n");
+    return `${doc}export interface ${name} {\n${body}\n}`;
+  };
+
+  const aggregateHeading = sectionHeading(
+    "Aggregates (unions + discriminant maps)"
+  );
+  const aggregateSection = `${aggregateHeading}\n\n${[
+    unionDecl(
+      "AnyObject",
+      objectMembers,
+      aggregateDoc("Union of every concrete OCF object (all `object_type`s).")
+    ),
+    unionDecl(
+      "AnyTransaction",
+      txMembers,
+      aggregateDoc("Union of every concrete OCF transaction object.")
+    ),
+    unionDecl(
+      "AnyFile",
+      fileMembers,
+      aggregateDoc("Union of every OCF file wrapper.")
+    ),
+    mapDecl(
+      "ObjectTypeMap",
+      resolveMap(objectTypeClaims, "object_type"),
+      aggregateDoc(
+        "Maps each `object_type` value — legacy back-compat values included — to its most specific concrete type. `keyof ObjectTypeMap` is exhaustive over every value a package can carry."
+      )
+    ),
+    mapDecl(
+      "FileTypeMap",
+      resolveMap(fileTypeClaims, "file_type"),
+      aggregateDoc("Maps each `file_type` value to its file-wrapper type.")
+    ),
+  ].join("\n\n")}`;
+  sections.push(aggregateSection);
 
   // A caller-supplied banner is used verbatim (pass "" to suppress); otherwise
   // the default banner gets the primitives-policy notice appended.
