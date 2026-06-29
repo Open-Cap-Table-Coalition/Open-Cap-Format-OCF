@@ -22,6 +22,10 @@ export default class TypePatternSchemaNode extends SchemaNode {
   markdownTableType = (inMdFileAtPath: string) =>
     `${this.mdLinkToNodesMdDocs(inMdFileAtPath)}`;
 
+  markdownVersionBody = () => `**Data Type:** \`Primitive\`
+
+**Value:** \`${this.type().toUpperCase()}\` - _Must Match Regex Pattern: \`${this.pattern()}\`_`;
+
   markdownOutput = () => `${this.markdownHeader()}
 
 **Description:** _${this.description()}_

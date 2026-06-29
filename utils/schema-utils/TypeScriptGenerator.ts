@@ -38,6 +38,7 @@ import {
   ComposedSchemaJson,
   isBackwardsCompatibleWrapper,
   RawSchemaJson,
+  versionShapeOwnerMap,
 } from "./SchemaComposer.js";
 
 export type GenerateTypeScriptOptions = {
@@ -610,6 +611,15 @@ export function generateTypeScript(
   // discriminant value — including the legacy back-compat values — to its most
   // specific concrete type, so a `keyof`-driven dispatch table is exhaustive
   // over every value a real package can carry.
+  //
+  // Version dispatchers get the same public-surface treatment the validator and
+  // doc generator give them: the dispatcher's `$id` is the public type (emitted
+  // above as a `V1 | V2 | ...` union), so the dispatcher — not its internal
+  // `.v#` shapes — is the `AnyObject` member, and every versioned shape's
+  // `object_type` is attributed to the dispatcher. Without this the version
+  // shapes would surface as separate concrete types all claiming the same
+  // `object_type`, which `resolveMap` (correctly) treats as a collision.
+  const versionShapeOwners = versionShapeOwnerMap(composed);
   type Claim = { name: string; wrapper: boolean };
   const objectMembers: string[] = [];
   const txMembers: string[] = [];
@@ -628,7 +638,20 @@ export function generateTypeScript(
     const wrapper = isBackwardsCompatibleWrapper(schema);
     const category = categoryFromId(schema.$id);
 
+    // A versioned shape behind a dispatcher: it is reachable through the
+    // dispatcher's public union type, so it is not a standalone aggregate
+    // member, and its discriminant is claimed by the dispatcher's type.
+    const ownerName = versionShapeOwners.has(schema.$id)
+      ? idToName.get(versionShapeOwners.get(schema.$id)!)
+      : undefined;
+
     if (category === "objects") {
+      if (ownerName) {
+        for (const lit of discriminantLiterals(schema, "object_type")) {
+          addClaim(objectTypeClaims, lit, { name: ownerName, wrapper: false });
+        }
+        continue;
+      }
       if (!wrapper) {
         objectMembers.push(name);
         if (isTransactionId(schema.$id)) txMembers.push(name);
@@ -637,6 +660,12 @@ export function generateTypeScript(
         addClaim(objectTypeClaims, lit, { name, wrapper });
       }
     } else if (category === "files") {
+      if (ownerName) {
+        for (const lit of discriminantLiterals(schema, "file_type")) {
+          addClaim(fileTypeClaims, lit, { name: ownerName, wrapper: false });
+        }
+        continue;
+      }
       if (!wrapper) fileMembers.push(name);
       for (const lit of discriminantLiterals(schema, "file_type")) {
         addClaim(fileTypeClaims, lit, { name, wrapper });
@@ -655,14 +684,19 @@ export function generateTypeScript(
     const entries: Array<[string, string]> = [];
     for (const [literal, list] of claims) {
       const wrappers = list.filter((c) => c.wrapper);
-      const concrete = list.filter((c) => !c.wrapper);
+      // Distinct concrete type names: a version dispatcher's shapes all resolve
+      // to the same dispatcher name, so dedupe before the collision check —
+      // otherwise the v1/v2 shapes of one dispatcher would read as a clash.
+      const concreteNames = [
+        ...new Set(list.filter((c) => !c.wrapper).map((c) => c.name)),
+      ];
       // Check each kind of duplicate independently, so a wrapper's presence can
       // never mask a genuine non-wrapper collision.
-      if (concrete.length > 1)
+      if (concreteNames.length > 1)
         throw new Error(
-          `Multiple schemas claim ${kind} "${literal}": ${concrete
-            .map((c) => c.name)
-            .join(", ")}`
+          `Multiple schemas claim ${kind} "${literal}": ${concreteNames.join(
+            ", "
+          )}`
         );
       if (wrappers.length > 1)
         throw new Error(
@@ -673,7 +707,7 @@ export function generateTypeScript(
       // A wrapper (the narrowed legacy alias) wins over its parent on a shared
       // value; otherwise the lone concrete type claims it.
       const chosen =
-        wrappers.length === 1 ? wrappers[0].name : concrete[0].name;
+        wrappers.length === 1 ? wrappers[0].name : concreteNames[0];
       entries.push([literal, chosen]);
     }
     return entries.sort((a, b) => a[0].localeCompare(b[0]));

@@ -25,6 +25,14 @@ export default class TypeObjectSchemaNode extends SchemaNode {
   markdownTableType = (inMdFileAtPath: string) =>
     `${this.mdLinkToNodesMdDocs(inMdFileAtPath)}`;
 
+  markdownVersionBody = (
+    forOutputPath: string = this.outputFileAbsolutePath()
+  ) =>
+    this.dataTypeWithPropertiesTable(
+      "**Data Type:** `OCF TYPE`",
+      forOutputPath
+    );
+
   markdownOutput = () => `${this.markdownHeader()}
 
 _${this.description()}_

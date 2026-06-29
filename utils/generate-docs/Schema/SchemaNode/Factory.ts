@@ -1,4 +1,5 @@
 import Schema from "../Schema.js";
+import SchemaNode from "./SchemaNode.js";
 import FileSchemaNode, { FileSchemaNodeJson } from "./File.js";
 import EnumSchemaNode, { EnumSchemaNodeJson } from "./Enum.js";
 import ObjectSchemaNode, { ObjectSchemaNodeJson } from "./Object.js";
@@ -16,6 +17,16 @@ export { default as SchemaNode } from "./SchemaNode.js";
 import BackwardsCompatibleSchemaNode, {
   BackwardsCompatibleObjectSchemaNodeJson,
 } from "./BackwardsCompatibleObjectSchemaNode.js";
+import VersionDispatcherSchemaNode, {
+  VersionDispatcherSchemaNodeJson,
+} from "./VersionDispatcherSchemaNode.js";
+import VersionedSubschemaNode, {
+  VersionedSubschemaNodeJson,
+} from "./VersionedSubschemaNode.js";
+import {
+  isBackwardsCompatibleWrapper,
+  isVersionWrapper,
+} from "../../../schema-utils/SchemaComposer.js";
 
 export type SchemaNodeJson =
   | FileSchemaNodeJson
@@ -25,40 +36,9 @@ export type SchemaNodeJson =
   | TypeObjectSchemaNodeJson
   | TypeFormatSchemaNodeJson
   | TypePatternSchemaNodeJson
-  | BackwardsCompatibleObjectSchemaNodeJson;
-
-function isBackwardsCompatibleJson(obj: Record<string, any>): boolean {
-  if (!obj || typeof obj !== "object") {
-    return false;
-  }
-
-  const properties = obj.properties;
-  if (!properties || typeof properties !== "object") {
-    return false;
-  }
-
-  const keys = Object.keys(properties);
-  if (keys.length !== 1) {
-    return false;
-  }
-
-  const objectType = properties.object_type;
-  if (!objectType || typeof objectType !== "object") {
-    return false;
-  }
-
-  const allOf = obj.allOf;
-  if (!Array.isArray(allOf) || allOf.length !== 1) {
-    return false;
-  }
-
-  const ref = allOf[0].$ref;
-  if (!ref || typeof ref !== "string") {
-    return false;
-  }
-
-  return true;
-}
+  | BackwardsCompatibleObjectSchemaNodeJson
+  | VersionDispatcherSchemaNodeJson
+  | VersionedSubschemaNodeJson;
 
 export default class SchemaNodeFactory {
   static schemaTypeFromJson = (json: SchemaNodeJson) => {
@@ -100,7 +80,14 @@ export default class SchemaNodeFactory {
     json: SchemaNodeJson
   ): json is BackwardsCompatibleObjectSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "objects" &&
-    isBackwardsCompatibleJson(json);
+    isBackwardsCompatibleWrapper(json as any);
+
+  // A version dispatcher works at ANY level (object / type / enum), so
+  // detection is purely structural (an anyOf of bare $refs to `.v#` shapes,
+  // no own properties) rather than gated to a partition.
+  static isVersionWrapperSchemaNodeJson = (
+    json: SchemaNodeJson
+  ): json is VersionDispatcherSchemaNodeJson => isVersionWrapper(json as any);
 
   static isTypeFormatSchemaNodeJson = (
     json: SchemaNodeJson
@@ -112,7 +99,10 @@ export default class SchemaNodeFactory {
   ): json is TypePatternSchemaNodeJson =>
     SchemaNodeFactory.schemaTypeFromJson(json) === "types" && "pattern" in json;
 
-  static build = (schema: Schema, json: SchemaNodeJson) => {
+  /** Build the ordinary (non-version-wrapper) node for a schema, dispatching on
+   *  its partition / shape. Also used to build the inner node a versioned
+   *  subschema wraps, so a versioned object / type / enum all render correctly. */
+  static buildBaseNode = (schema: Schema, json: SchemaNodeJson): SchemaNode => {
     if (SchemaNodeFactory.isCompatibilityWrapperSchemaNodeJson(json))
       return new BackwardsCompatibleSchemaNode(schema, json);
     if (SchemaNodeFactory.isFileSchemaNodeJson(json))
@@ -130,5 +120,33 @@ export default class SchemaNodeFactory {
     if (SchemaNodeFactory.isTypePatternSchemaNodeJson(json))
       return new TypePatternSchemaNode(schema, json);
     throw new Error(`Unrecgonized JSON schema: ${json}`);
+  };
+
+  /**
+   * Build the node for a schema.
+   *
+   * Whether a schema is a folded *versioned shape* is decided by OWNERSHIP, not
+   * by its filename: `versionShapeOwners` maps a version shape's `$id` to the
+   * `$id` of the dispatcher whose `anyOf` references it (computed by `Schema`
+   * from the full schema set). A `.v#`-named file that no dispatcher references
+   * is therefore NOT silently folded away — it falls through to a normal node
+   * and gets its own page (with `Schema` warning about the orphan).
+   */
+  static build = (
+    schema: Schema,
+    json: SchemaNodeJson,
+    versionShapeOwners: ReadonlyMap<string, string> = new Map()
+  ): SchemaNode => {
+    if (SchemaNodeFactory.isVersionWrapperSchemaNodeJson(json))
+      return new VersionDispatcherSchemaNode(schema, json);
+    const ownerId = versionShapeOwners.get((json as { $id: string }).$id);
+    if (ownerId)
+      return new VersionedSubschemaNode(
+        schema,
+        json as VersionedSubschemaNodeJson,
+        SchemaNodeFactory.buildBaseNode(schema, json),
+        ownerId
+      );
+    return SchemaNodeFactory.buildBaseNode(schema, json);
   };
 }
