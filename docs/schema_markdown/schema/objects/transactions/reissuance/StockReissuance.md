@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/reissuance/StockReissuance.schema.json`
 
-**Description:** _Object describing a re-issuance of stock_
+**Description:** _Describes a stock reissuance transaction, including date, quantity, per-share reissuance price, and related security._
 
 **Data Type:** `OCF Object - TX_STOCK_REISSUANCE`
 

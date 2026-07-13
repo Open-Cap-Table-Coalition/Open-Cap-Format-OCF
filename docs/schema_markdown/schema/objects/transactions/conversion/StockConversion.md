@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/StockConversion.schema.json`
 
-**Description:** _Object describing a conversion of stock_
+**Description:** _Records the conversion of an existing stock security into one or more new securities, specifying the quantity converted and resulting security identifiers._
 
 **Data Type:** `OCF Object - TX_STOCK_CONVERSION`
 

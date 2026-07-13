@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json`
 
-**Description:** _JSON containing file type identifier and list of valuations_
+**Description:** _JSON file schema defining a list of valuation objects used in cap tables. Each object includes effective date, stock class ID, valuation type, and price per share, among other fields._
 
 **Data Type:** `OCF_VALUATIONS_FILE`
 

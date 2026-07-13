@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
 
-**Description:** _Object describing a cancellation of a convertible security_
+**Description:** _Describes the cancellation of a convertible security, including the amount voided, reason for cancellation, and optional reference to a remaining balance security._
 
 **Data Type:** `OCF Object - TX_CONVERTIBLE_CANCELLATION`
 

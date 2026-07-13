@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/return_to_pool/StockPlanReturnToPool.schema.json`
 
-**Description:** _Object describing which stock plan pool a particular security's shares were returned to upon cancellation._
+**Description:** _Describes the return of cancelled shares to a specific stock plan pool, including the quantity returned, the stock plan and security involved, and the reason for the return._
 
 **Data Type:** `OCF Object - TX_STOCK_PLAN_RETURN_TO_POOL`
 

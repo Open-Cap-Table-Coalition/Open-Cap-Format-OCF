@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/reissuance/StockReissuance.schema.json",
   "title": "Object - Stock Re-issuance Transaction",
-  "description": "Object describing a re-issuance of stock",
+  "description": "Describes a stock reissuance transaction, including date, quantity, per-share reissuance price, and related security.",
   "type": "object",
   "allOf": [
     {

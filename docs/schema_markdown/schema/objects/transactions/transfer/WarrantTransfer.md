@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/WarrantTransfer.schema.json`
 
-**Description:** _Object describing a transfer or secondary sale of a warrant security_
+**Description:** _Object schema describing the transfer or secondary sale of a warrant. Captures quantity transferred, resulting security IDs, balance security (if partial), and optional consideration text. Used to track changes in ownership of warrant instruments._
 
 **Data Type:** `OCF Object - TX_WARRANT_TRANSFER`
 

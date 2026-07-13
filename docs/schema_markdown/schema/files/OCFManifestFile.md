@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/OCFManifestFile.schema.json`
 
-**Description:** _Top-level schema describing the OCF Manifest, which holds issuer information and references ocf files containing transactions, stakeholders, stock classes, etc._
+**Description:** _Top-level schema for an OCF package. Contains issuer metadata and references to all structured data files—stakeholders, stock classes, plans, valuations, vesting terms, transactions, documents, and financings. Also includes as_of and generated_at timestamps to ensure consistency and traceability across cap table snapshots._
 
 **Data Type:** `OCF_MANIFEST_FILE`
 

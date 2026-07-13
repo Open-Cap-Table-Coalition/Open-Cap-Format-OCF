@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/consolidation/StockConsolidation.schema.json",
   "title": "Object - Stock Consolidation Transaction",
-  "description": "Object describing a consolidation of stock positions",
+  "description": "Describes a stock consolidation, where multiple shares are combined into a single share, with an optional ratio of shares to be consolidated.",
   "type": "object",
   "allOf": [
     {

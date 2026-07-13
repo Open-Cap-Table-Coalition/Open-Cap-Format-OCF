@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
 
-**Description:** _Object describing a transfer or secondary sale of a convertible security_
+**Description:** _Records the transfer or sale of a convertible security, specifying the amount exchanged, the resulting new securities, and the original security ID. Supports tracking partial transfers and associated monetary consideration._
 
 **Data Type:** `OCF Object - TX_CONVERTIBLE_TRANSFER`
 

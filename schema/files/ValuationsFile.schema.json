@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/ValuationsFile.schema.json",
   "title": "File - Valuations",
-  "description": "JSON containing file type identifier and list of valuations",
+  "description": "JSON file schema defining a list of valuation objects used in cap tables. Each object includes effective date, stock class ID, valuation type, and price per share, among other fields.",
   "type": "object",
   "allOf": [
     {

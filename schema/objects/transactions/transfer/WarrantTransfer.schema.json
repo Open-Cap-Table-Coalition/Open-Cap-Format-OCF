@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/WarrantTransfer.schema.json",
   "title": "Object - Warrant Transfer Transaction",
-  "description": "Object describing a transfer or secondary sale of a warrant security",
+  "description": "Object schema describing the transfer or secondary sale of a warrant. Captures quantity transferred, resulting security IDs, balance security (if partial), and optional consideration text. Used to track changes in ownership of warrant instruments.",
   "type": "object",
   "allOf": [
     {

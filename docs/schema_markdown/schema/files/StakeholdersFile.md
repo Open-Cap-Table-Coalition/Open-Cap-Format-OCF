@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StakeholdersFile.schema.json`
 
-**Description:** _JSON containing file type identifier and list of stakeholders_
+**Description:** _JSON file schema defining a list of stakeholders. Each object includes personal or institutional information, relationship to the issuer, contact info, tax IDs, addresses, and current status (e.g. ACTIVE, TERMINATED). Supports both individuals and institutions with rich, structured identity and role metadata._
 
 **Data Type:** `OCF_STAKEHOLDERS_FILE`
 

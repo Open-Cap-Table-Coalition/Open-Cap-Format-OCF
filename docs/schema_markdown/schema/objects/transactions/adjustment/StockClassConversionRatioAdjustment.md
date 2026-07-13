@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassConversionRatioAdjustment.schema.json`
 
-**Description:** _Object describing the conversion ratio adjustment of a stock class that has a RatioConversionMechanism conversion mechanism where there was an actual repricing due to a down-round. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection._
+**Description:** _Records a change in the conversion ratio adjustment of a stock class (typically due to anti-dilution protection / repricing due to a down-round) by specifying a new RATIO_CONVERSION mechanism, with updated price, ratio, and rounding method. The actual determination of the new conversion ratio / conversion price is calculated outside of OCF, so the specific mechanism - e.g. broad-based weighted-average anti-dilution protection vs. full ratchet anti-dilution protection._
 
 **Data Type:** `OCF Object - TX_STOCK_CLASS_CONVERSION_RATIO_ADJUSTMENT`
 

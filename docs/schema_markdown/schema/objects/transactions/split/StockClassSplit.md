@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/split/StockClassSplit.schema.json`
 
-**Description:** _Object describing a split of a stock class_
+**Description:** _Records a stock split event, specifying the split ratio and resulting security IDs._
 
 **Data Type:** `OCF Object - TX_STOCK_CLASS_SPLIT`
 

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/ConvertibleRetraction.schema.json",
   "title": "Object - Convertible Retraction Transaction",
-  "description": "Object describing a retraction of a convertible security",
+  "description": "Describes the retraction (i.e. cancellation or withdrawal) of a convertible security, including the date, the reason, and the security being retracted.",
   "type": "object",
   "allOf": [
     {

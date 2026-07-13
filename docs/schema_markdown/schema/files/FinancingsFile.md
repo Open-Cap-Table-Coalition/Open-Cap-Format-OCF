@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/FinancingsFile.schema.json`
 
-**Description:** _JSON containing file type identifier and list of financings_
+**Description:** _JSON file schema defining a list of financings. Each object represents a financing round, identified by name, date, and associated issuance IDs. Used to group and reference multiple issuances under a single financing event._
 
 **Data Type:** `OCF_FINANCINGS_FILE`
 

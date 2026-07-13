@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
 
-**Description:** _Object describing a convertible acceptance transaction_
+**Description:** _Captures the formal acceptance of a convertible security by the stakeholder, recording the security ID, acceptance date, and optional comments._
 
 **Data Type:** `OCF Object - TX_CONVERTIBLE_ACCEPTANCE`
 

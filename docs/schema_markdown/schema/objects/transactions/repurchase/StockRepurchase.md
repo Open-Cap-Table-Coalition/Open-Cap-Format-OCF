@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repurchase/StockRepurchase.schema.json`
 
-**Description:** _Object describing a stock repurchase transaction_
+**Description:** _Object describing the repurchase of a stock security, including date, quantity, per-share repurchase price, and related security._
 
 **Data Type:** `OCF Object - TX_STOCK_REPURCHASE`
 

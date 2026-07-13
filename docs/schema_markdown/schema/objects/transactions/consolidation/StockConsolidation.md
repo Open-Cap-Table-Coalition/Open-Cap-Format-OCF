@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/consolidation/StockConsolidation.schema.json`
 
-**Description:** _Object describing a consolidation of stock positions_
+**Description:** _Describes a stock consolidation, where multiple shares are combined into a single share, with an optional ratio of shares to be consolidated._
 
 **Data Type:** `OCF Object - TX_STOCK_CONSOLIDATION`
 

@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/StockTransfer.schema.json`
 
-**Description:** _Object describing a transfer or secondary sale of a stock security_
+**Description:** _Object schema describing a stock transfer or secondary sale transaction, resulting in one or more new securities._
 
 **Data Type:** `OCF Object - TX_STOCK_TRANSFER`
 

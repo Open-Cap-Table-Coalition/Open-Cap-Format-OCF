@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/WarrantAcceptance.schema.json`
 
-**Description:** _Object describing a warrant acceptance transaction_
+**Description:** _Object schema describing the acceptance of a warrant security by a stakeholder. Records the date and security ID, signaling the stakeholder’s acknowledgment or execution of rights under the warrant instrument._
 
 **Data Type:** `OCF Object - TX_WARRANT_ACCEPTANCE`
 

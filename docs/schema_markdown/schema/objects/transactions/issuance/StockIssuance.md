@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/StockIssuance.schema.json`
 
-**Description:** _Object describing a stock issuance transaction by the issuer and held by a stakeholder_
+**Description:** _Describes the issuance of stock, including the date, quantity, per-share issuance price, and related security._
 
 **Data Type:** `OCF Object - TX_STOCK_ISSUANCE`
 

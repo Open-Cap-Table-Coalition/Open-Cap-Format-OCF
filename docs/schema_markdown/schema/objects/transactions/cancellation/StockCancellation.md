@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/StockCancellation.schema.json`
 
-**Description:** _Object describing a cancellation of a stock security_
+**Description:** _Records the cancellation of a stock security, including the quantity cancelled, effective date, reason for cancellation, and reference to the affected security. Used to reduce or nullify previously issued stock holdings._
 
 **Data Type:** `OCF Object - TX_STOCK_CANCELLATION`
 

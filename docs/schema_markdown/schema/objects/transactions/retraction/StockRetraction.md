@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/StockRetraction.schema.json`
 
-**Description:** _Object describing a retraction of a stock security_
+**Description:** _Object schema describing the retraction (i.e., nullification or undoing) of a stock security, including date, reason, and reference to the affected security._
 
 **Data Type:** `OCF Object - TX_STOCK_RETRACTION`
 

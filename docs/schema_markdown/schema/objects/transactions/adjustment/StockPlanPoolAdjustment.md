@@ -2,7 +2,7 @@
 
 `https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
 
-**Description:** _Object describing the change in the size of a Stock Plan pool._
+**Description:** _Describes an adjustment to a stock plan pool, including the quantity added or removed, the stock plan and security involved, and the reason for the adjustment._
 
 **Data Type:** `OCF Object - TX_STOCK_PLAN_POOL_ADJUSTMENT`
 
