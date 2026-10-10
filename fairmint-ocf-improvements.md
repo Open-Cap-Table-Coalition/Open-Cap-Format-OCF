@@ -25,6 +25,7 @@ connected-record rail, and the OCP whitepaper.
 | [OCF-IMP-007](#ocf-imp-007-structured-transfer-reason)                      | A   | Open   | No structured transfer reason or capacity                              |
 | [OCF-IMP-008](#ocf-imp-008-external-instrument-identifier)                  | C   | Open   | No external identifier for private-market instruments                  |
 | [OCF-IMP-009](#ocf-imp-009-dividend-declaration)                            | B   | Open   | No dividend declaration; stock dividends land as plain issuances       |
+| [OCF-IMP-010](#ocf-imp-010-joint-ownership)                                 | C   | Open   | No structured joint ownership on `STAKEHOLDER`                         |
 
 ---
 
@@ -270,3 +271,24 @@ reason marking on `TX_STOCK_ISSUANCE`: extend the existing `issuance_type` enum
 `reason` field. Open fork: declaration in core vs. governed TA profile — recorded open. Full
 write-up:
 [dev-docs OCF-IMP-009](https://github.com/Fairmint/dev-docs/blob/main/docs/cap-table/ocf-schema-gaps.md#ocf-imp-009--no-dividend-declaration-stock-dividends-unmarked).
+
+---
+
+## OCF-IMP-010: Joint ownership
+
+**Affects:** Master Securityholder File holder of record; a SAFE or share issued to two natural
+persons as one purchaser; who may instruct the company.
+
+Issuance `stakeholder_id` is one string: the stakeholder that holds legal title. `STAKEHOLDER` has
+one `legal_name` and one contact. `tax_ids` is already an array, but nothing ties a tax ID, email,
+or address to a named co-owner, and nothing records the tenancy or whether both must sign.
+
+**v1 workaround:** One stakeholder whose `legal_name` is the joint name (for example "Krista E. Koch
+and Andrew W. Zschach"). The issuance points at that single `stakeholder_id`. One position, one
+investment amount.
+
+**Direction:** Optional joint-ownership block on that one `STAKEHOLDER`: tenancy, constituent
+persons, and whether both or either may instruct. Do not add a list of `stakeholder_id`s on the
+issuance. Distinct from [OCF-IMP-006](#ocf-imp-006-nominee-omnibus-capacity) (nominee capacity).
+Full write-up:
+[dev-docs OCF-IMP-010](https://github.com/Fairmint/dev-docs/blob/main/docs/cap-table/ocf-schema-gaps.md#ocf-imp-010--no-structured-joint-ownership-on-a-stakeholder).
