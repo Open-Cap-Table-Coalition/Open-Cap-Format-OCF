@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/DayCountType.schema.json",
   "title": "Enum - Day Count Type",
-  "description": "Enumeration of how the number of days are determined per period",
+  "description": "Enumeration of how the number of days are determined per period. `ACTUAL_360` counts the actual calendar days elapsed and divides by a 360-day year (Actual/360).",
   "type": "string",
-  "enum": ["ACTUAL_365", "30_360"],
+  "enum": ["ACTUAL_365", "30_360", "ACTUAL_360"],
   "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/enums/DayCountType.schema.json"
 }
