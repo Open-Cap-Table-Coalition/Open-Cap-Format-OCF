@@ -1,14 +1,7 @@
 import assert from "node:assert/strict";
-import { spawnSync } from "node:child_process";
+import { run } from "./support/cli.mjs";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-const bin = fileURLToPath(new URL("../cli.mjs", import.meta.url));
-export function run(args, input) {
-  return spawnSync(process.execPath, [bin, ...args], {
-    encoding: "utf8",
-    input,
-  });
-}
 const fields = {
   id: "p1",
   name: { legal_name: "A Lee" },

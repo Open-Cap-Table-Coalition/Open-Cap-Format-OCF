@@ -88,7 +88,31 @@ export function catalog(schemas) {
       { errors }
     );
   }
+  const files = new Map(
+    partition("files").map((schema) => [
+      schema.properties.file_type.const,
+      schema,
+    ])
+  );
+  const routes = new Map();
+  for (const [fileType, schema] of files) {
+    const items = schema.properties.items?.items;
+    if (!items) continue;
+    const members = (items.oneOf ?? items.anyOf ?? [items]).map(
+      (item) => registry[item.$ref]
+    );
+    const memberTypes = buildObjectTypeSchemaMap(members, types, { registry });
+    for (const type of Object.keys(memberTypes)) routes.set(type, fileType);
+  }
   return {
+    files,
+    routes,
+    checkFile(expectedType, data, source) {
+      const schema = files.get(expectedType);
+      if (!schema)
+        throw new Error(source + " unknown file type " + expectedType);
+      check(schema, data, source);
+    },
     describe: (type) => dereferenceSchema(objectSchema(type), registry),
     validate(data, source) {
       let schema;

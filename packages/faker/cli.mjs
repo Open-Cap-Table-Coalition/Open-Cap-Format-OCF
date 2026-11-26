@@ -1,11 +1,14 @@
 #!/usr/bin/env node
+import { stat } from "node:fs/promises";
+import { exportRecords, verifyDirectory } from "./lib/export.mjs";
 import { parseArgs } from "node:util";
 import { catalog, loadSchemas } from "./lib/schema.mjs";
 import { records } from "./lib/input.mjs";
 
 const help = `ocf describe TYPE
 ocf object TYPE [--in FILE|-]
-ocf validate FILE|- [--format json|jsonl]
+ocf export FILE|DIR|- --issuer FILE --as-of YYYY-MM-DD --out DIR
+ocf validate FILE|DIR|- [--format json|jsonl]
 Options: --schema-dir DIR, --json (structured errors), --help`;
 
 async function main() {
@@ -15,6 +18,9 @@ async function main() {
   } = parseArgs({
     allowPositionals: true,
     options: {
+      issuer: { type: "string" },
+      "as-of": { type: "string" },
+      out: { type: "string" },
       in: { type: "string" },
       format: { type: "string" },
       "schema-dir": { type: "string" },
@@ -29,7 +35,7 @@ async function main() {
   if (
     !target ||
     extra.length ||
-    !["describe", "object", "validate"].includes(command)
+    !["describe", "object", "validate", "export"].includes(command)
   )
     throw new Error(help);
   const schemas = catalog(await loadSchemas(values));
@@ -50,8 +56,13 @@ async function main() {
     console.log(JSON.stringify(object));
     return;
   }
-  for (const { data, source } of await records(target, values.format))
-    schemas.validate(data, source);
+  if (command === "export") return exportRecords(target, values, schemas);
+  if (target !== "-" && (await stat(target)).isDirectory())
+    return verifyDirectory(target, schemas);
+  for (const { data, source } of await records(target, values.format)) {
+    if (data?.file_type) schemas.checkFile(data.file_type, data, source);
+    else schemas.validate(data, source);
+  }
 }
 
 main().catch((error) => {
