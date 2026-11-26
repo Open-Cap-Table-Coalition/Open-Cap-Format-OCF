@@ -64,6 +64,9 @@ are automatically updated with every update to OCF.
 You can find samples in our repo in the samples folder, or check out our tutorials (again, through
 the documentation) to see how to get started with OCF and download complete, sample OCF cap tables.
 
+For maintainers preparing a new version of `@open-captable/cli`, see
+[Stage a CLI release](development/cli-release.md).
+
 ## OCF Schema
 
 OCF's schema is defined in our JSON Schemas, which can be found in the /schema folder of our
