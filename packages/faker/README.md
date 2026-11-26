@@ -19,3 +19,20 @@ From a repository checkout with the v1.2.0 tag available, run `npm ci` and `npm 
 `packages/faker`. Run the built CLI with `node cli.mjs`. The build compiles the repository’s schema
 composition and object type routing utilities and packages the pinned release schemas with their
 original IDs and notices.
+
+## Assemble an export
+
+```sh
+ocf export records.jsonl --issuer issuer.json --as-of 2024-12-31 --out ./export
+ocf validate ./export
+```
+
+Supply a complete OCF issuer object. The input can also be stdin, a JSON array, or a directory
+containing JSON and JSONL files. Directory inputs are read in filename order, skipping the
+separately supplied issuer file. Record order is preserved within each category. Use a new or empty
+output directory.
+
+The writer stages a manifest and typed files, verifies their schemas and MD5 checksums, then
+publishes the directory. Directory validation starts at `Manifest.ocf.json` and checks each
+referenced file against its manifest category. Validating an individual OCF file checks its schema
+only.
