@@ -109,6 +109,38 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
       }
+    },
+    "profiles": {
+      "title": "Cap Table - Coalition profile declarations",
+      "description": "Coalition profiles (ocf.*) declared by this package. See OCIP-0001.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ProfileDeclaration.schema.json"
+      }
+    },
+    "vendor_extensions": {
+      "title": "Cap Table - Vendor extension declarations",
+      "description": "Vendor extensions (com.*) declared by this package. See OCIP-0001.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ProfileDeclaration.schema.json"
+      }
+    },
+    "profile_files": {
+      "title": "Cap Table - Coalition profile data files",
+      "description": "Checksum-indexed profile payload files under profiles/<profile-id>/.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+      }
+    },
+    "vendor_extension_files": {
+      "title": "Cap Table - Vendor extension data files",
+      "description": "Checksum-indexed vendor extension payload files under vendor/<extension-id>/.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+      }
     }
   },
   "required": [
