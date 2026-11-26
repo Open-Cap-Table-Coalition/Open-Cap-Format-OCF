@@ -2,10 +2,10 @@ name: Check OCF authoring CLI
 on:
   pull_request:
     paths:
-      - "packages/faker/**"
+      - "packages/cli/**"
       - "schema/**"
       - "utils/schema-utils/**"
-      - ".github/workflows/check-faker.yml"
+      - ".github/workflows/check-cli.yml"
 permissions:
   contents: read
 jobs:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/faker
+        working-directory: packages/cli
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,8 +22,8 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-          cache-dependency-path: packages/faker/package-lock.json
+          cache-dependency-path: packages/cli/package-lock.json
       - run: npm ci
       - run: npm test
       - run: npm pack --pack-destination "$RUNNER_TEMP"
-      - run: bash scripts/smoke-pack.sh "$RUNNER_TEMP"/open-captable-faker-*.tgz
+      - run: bash scripts/smoke-pack.sh "$RUNNER_TEMP"/open-captable-cli-*.tgz

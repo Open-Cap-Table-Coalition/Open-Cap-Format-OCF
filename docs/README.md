@@ -23,11 +23,11 @@ them.
 
 ## Create and validate an OCF export
 
-The `ocf` command in `@open-captable/faker` turns supplied field values into schema-validated OCF
+The `ocf` command in `@open-captable/cli` turns supplied field values into schema-validated OCF
 objects. With Node.js 22 or later, install the CLI and inspect the fields for a stakeholder:
 
 ```sh
-npm install --global @open-captable/faker
+npm install --global @open-captable/cli
 ocf describe STAKEHOLDER
 ```
 
@@ -53,7 +53,7 @@ The bundled schemas work offline. To select a different schema source, pass `--o
 for a hosted release, `--schema-ref <branch-tag-or-commit>` for a GitHub snapshot, or
 `--schema-dir ./schema` for a local OCF checkout. Use the same source for authoring, export, and
 validation.
-[CLI reference](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/packages/faker)
+[CLI reference](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/packages/cli)
 
 ## Documentation
 

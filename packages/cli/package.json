@@ -1,5 +1,5 @@
 {
-  "name": "@open-captable/faker",
+  "name": "@open-captable/cli",
   "version": "0.2.0",
   "description": "Command-line tools for authoring and validating Open Cap Format records",
   "type": "module",
@@ -16,7 +16,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF.git",
-    "directory": "packages/faker"
+    "directory": "packages/cli"
   },
   "engines": {
     "node": ">=22"

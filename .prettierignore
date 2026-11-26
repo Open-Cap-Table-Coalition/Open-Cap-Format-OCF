@@ -3,4 +3,4 @@ LICENSE.md
 
 # Generated OCF types output (auto-generated; not hand-formatted)
 packages/ocf-types/index.d.ts
-/packages/faker/build/
+/packages/cli/build/
