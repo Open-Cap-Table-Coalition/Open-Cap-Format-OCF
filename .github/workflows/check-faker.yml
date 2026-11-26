@@ -25,3 +25,5 @@ jobs:
           cache-dependency-path: packages/faker/package-lock.json
       - run: npm ci
       - run: npm test
+      - run: npm pack --pack-destination "$RUNNER_TEMP"
+      - run: bash scripts/smoke-pack.sh "$RUNNER_TEMP"/open-captable-faker-*.tgz

@@ -90,3 +90,34 @@ test("build a mixed export and check manifest membership and exact file bytes", 
     code: "ENOENT",
   });
 });
+
+test("legacy prerelease manifests can require a typed file even with no records", async (t) => {
+  const { catalog, loadSchemas } = await import("../lib/schema.mjs");
+  const { exportRecords, verifyDirectory } = await import("../lib/export.mjs");
+  const raw = await loadSchemas({});
+  const manifest = raw["files/OCFManifestFile.schema.json"];
+  manifest.properties.ocf_version = { enum: ["1.0.0-b1", "1.0.0-b2"] };
+  manifest.properties.transactions_files.minItems = 1;
+  const schemas = catalog(raw);
+  const root = await mkdtemp(join(tmpdir(), "ocf-legacy-"));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const input = join(root, "input.json"),
+    issuer = join(root, "issuer.json"),
+    out = join(root, "export");
+  await writeFile(input, "[]");
+  await writeFile(
+    issuer,
+    JSON.stringify({
+      id: "i1",
+      object_type: "ISSUER",
+      legal_name: "Example",
+      formation_date: "2020-01-01",
+      country_of_formation: "US",
+    })
+  );
+  await exportRecords(input, { out, issuer, "as-of": "2020-01-01" }, schemas);
+  await verifyDirectory(out, schemas);
+  const saved = JSON.parse(await readFile(join(out, "Manifest.ocf.json")));
+  assert.equal(saved.ocf_version, "1.0.0-b2");
+  assert.equal(saved.transactions_files.length, 1);
+});

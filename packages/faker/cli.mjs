@@ -9,8 +9,10 @@ const help = `ocf describe TYPE
 ocf object TYPE [--in FILE|-]
 ocf export FILE|DIR|- --issuer FILE --as-of YYYY-MM-DD --out DIR
 ocf validate FILE|DIR|- [--format json|jsonl]
-Options: --schema-dir DIR, --json (structured errors), --help`;
+Schema source: --schema-dir DIR | --ocf-version VERSION | --schema-ref BRANCH|TAG|SHA
+Options: --json (structured errors), --help`;
 
+let resolvedSha;
 async function main() {
   const {
     values,
@@ -23,6 +25,8 @@ async function main() {
       out: { type: "string" },
       in: { type: "string" },
       format: { type: "string" },
+      "ocf-version": { type: "string" },
+      "schema-ref": { type: "string" },
       "schema-dir": { type: "string" },
       json: { type: "boolean" },
       help: { type: "boolean", short: "h" },
@@ -38,7 +42,11 @@ async function main() {
     !["describe", "object", "validate", "export"].includes(command)
   )
     throw new Error(help);
-  const schemas = catalog(await loadSchemas(values));
+  const schemas = catalog(
+    await loadSchemas(values, (sha) => {
+      resolvedSha = sha;
+    })
+  );
   if (command === "describe") {
     console.log(JSON.stringify(schemas.describe(target), null, 2));
     return;
@@ -65,11 +73,25 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(
-    process.argv.includes("--json")
-      ? JSON.stringify({ errors: error.errors ?? [{ message: error.message }] })
-      : error.message
-  );
-  process.exitCode = 1;
-});
+main()
+  .then(() => {
+    if (resolvedSha)
+      console.error(
+        process.argv.includes("--json")
+          ? JSON.stringify({ schemaCommit: resolvedSha })
+          : "Schema commit " + resolvedSha
+      );
+  })
+  .catch((error) => {
+    console.error(
+      process.argv.includes("--json")
+        ? JSON.stringify({
+            schemaCommit: resolvedSha,
+            errors: error.errors ?? [{ message: error.message }],
+          })
+        : [resolvedSha && "Schema commit " + resolvedSha, error.message]
+            .filter(Boolean)
+            .join("\n")
+    );
+    process.exitCode = 1;
+  });
