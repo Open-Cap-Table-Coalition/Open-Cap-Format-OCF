@@ -106,7 +106,7 @@ export async function exportRecords(target, options, schemas) {
   const manifestSchema = schemas.files.get(manifestType);
   const manifest = {
     file_type: manifestType,
-    ocf_version: manifestSchema.properties.ocf_version.const,
+    ocf_version: schemas.manifestVersion(),
     issuer,
     as_of: asOf,
     generated_at: new Date().toISOString(),
@@ -129,12 +129,15 @@ export async function exportRecords(target, options, schemas) {
   const staged = await mkdtemp(join(dirname(destination), ".ocf-export-"));
   try {
     for (const [type, { field, filename }] of fileCategories) {
-      const items = groups.get(type);
-      if (items) {
+      const required = manifestSchema.required.includes(field);
+      const needsFile =
+        required && manifestSchema.properties[field].minItems > 0;
+      if (groups.has(type) || needsFile) {
+        const items = groups.get(type) ?? [];
         const bytes = serialized({ file_type: type, items });
         await writeFile(join(staged, filename), bytes);
         manifest[field] = [{ filepath: "./" + filename, md5: md5(bytes) }];
-      } else if (manifestSchema.required.includes(field)) manifest[field] = [];
+      } else if (required) manifest[field] = [];
     }
     await writeFile(join(staged, manifestName), serialized(manifest));
     await verifyDirectory(staged, schemas);

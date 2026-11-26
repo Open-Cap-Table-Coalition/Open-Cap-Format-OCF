@@ -1,5 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { remoteSchemas } from "./remote.mjs";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import {
@@ -25,7 +26,16 @@ export async function localSchemas(root, prefix = "") {
   return schemas;
 }
 
-export async function loadSchemas(options) {
+export async function loadSchemas(options, reportSha) {
+  const selected = ["schema-dir", "schema-ref", "ocf-version"].filter(
+    (name) => options[name] !== undefined
+  );
+  if (selected.length > 1)
+    throw new Error(
+      "Choose one schema source: --schema-dir, --ocf-version, or --schema-ref"
+    );
+  if (selected.includes("schema-ref") || selected.includes("ocf-version"))
+    return remoteSchemas(options, reportSha);
   if (options["schema-dir"]) return localSchemas(options["schema-dir"]);
   return JSON.parse(
     await readFile(new URL("../build/schemas.json", import.meta.url), "utf8")
@@ -106,6 +116,16 @@ export function catalog(schemas) {
   }
   return {
     files,
+    manifestVersion() {
+      const rule = files.get("OCF_MANIFEST_FILE").properties.ocf_version;
+      // Older prereleases list recognized versions in chronological order.
+      const version = rule.const ?? (registry[rule.$ref] ?? rule).enum?.at(-1);
+      if (!version)
+        throw new Error(
+          "Cannot determine the export version from the manifest schema"
+        );
+      return version;
+    },
     routes,
     checkFile(expectedType, data, source) {
       const schema = files.get(expectedType);
