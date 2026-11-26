@@ -33,7 +33,7 @@ jobs:
           path: ${{ runner.temp }}/open-captable-faker-*.tgz
           if-no-files-found: error
 
-  publish:
+  stage:
     if: github.event_name == 'push'
     needs: pack
     runs-on: ubuntu-latest
@@ -49,8 +49,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: faker-npm
-      - name: Publish tested package
+      - name: Install npm with staged publishing support
+        run: npm install --global npm@11.17.0
+      - name: Stage tested package for maintainer approval
         run: |
           tag=latest
           if [[ ${GITHUB_REF_NAME#faker-v} == *-* ]]; then tag=next; fi
-          npm publish ./open-captable-faker-*.tgz --access public --provenance --tag "$tag"
+          npm stage publish ./open-captable-faker-*.tgz --access public --provenance --tag "$tag"

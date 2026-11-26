@@ -57,19 +57,30 @@ Complete downloads are cached in `$XDG_CACHE_HOME/open-captable/faker` (default
 `~/.cache/open-captable/faker`). A cached release version or full SHA works offline. Named GitHub
 refs are resolved on each run so a moving branch picks up new commits.
 
-## Publish a CLI release
+## Stage a CLI release
 
-The npm package version is independent of the bundled OCF version. In `packages/faker`, update the
-version with `npm version --no-git-tag-version <version>` and commit the package manifest and
-lockfile. A manual run of `release-faker.yml` builds and smoke-tests an installable tarball for
-inspection.
+The first release and every tagged release go through npm's staging queue. A maintainer reviews the
+tarball in **Staged Packages** on npmjs.com and approves it with 2FA to make that version public.
+[Staged publishing](https://docs.npmjs.com/staged-publishing/)
 
-An npm maintainer with publish access to the `@open-captable` scope must set up the package and its
-trusted publisher. If the package needs a first manual publish to create its settings, publish the
-tested tarball from the manual workflow run. Configure the GitHub Actions trusted publisher for
-`Open-Cap-Table-Coalition/Open-Cap-Format-OCF`, workflow `release-faker.yml`, with direct publishing
-enabled. [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/)
+For the first release, run `release-faker.yml` manually on `main` and download and extract the
+`faker-npm` artifact. From the extracted directory, sign in with an account that has write access to
+`@open-captable` and stage the tested tarball. Use Node 22.14+ and npm 11.15+.
 
-For subsequent releases, push the matching tag (for example, `faker-v0.1.1`). GitHub Actions tests
-the package, installs the packed artifact in a clean project, and publishes that same tarball.
-Stable releases use the npm `latest` tag and prereleases use `next`.
+```sh
+npm login
+npm stage publish ./open-captable-faker-0.1.0.tgz --access public --tag latest
+```
+
+For a new package, npm creates a public `0.0.0-stage` placeholder. The contents of the staged
+version become public when a maintainer approves it.
+
+For automated staging, configure the package's GitHub Actions trusted publisher for
+`Open-Cap-Table-Coalition/Open-Cap-Format-OCF`, workflow `release-faker.yml`. Grant only
+`npm stage publish` permission. Leave direct publishing and dist-tag management disabled.
+[npm trusted publishing](https://docs.npmjs.com/trusted-publishers/)
+
+The CLI version is independent of the bundled OCF version. For subsequent releases, update it in
+`packages/faker` with `npm version --no-git-tag-version <version>`, commit the package manifest and
+lockfile, and push the matching tag (for example, `faker-v0.1.1`). CI stages the tested artifact
+with the npm tag `latest` for stable releases or `next` for prereleases.
