@@ -1,0 +1,103 @@
+import { readdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+import Ajv from "ajv";
+import addFormats from "ajv-formats";
+import {
+  buildSchemaRegistry,
+  STABILITY_KEYWORD,
+  STABILITY_LEVELS,
+  VERSION_DISPATCHER_KEYWORD,
+} from "../build/SchemaComposer.js";
+import { buildObjectTypeSchemaMap } from "../build/ObjectTypeSchemaMap.js";
+import { dereferenceSchema } from "../build/SchemaDereferencer.js";
+
+export async function localSchemas(root, prefix = "") {
+  const schemas = {};
+  for (const entry of await readdir(join(root, prefix), {
+    withFileTypes: true,
+  })) {
+    const path = prefix + entry.name;
+    if (entry.isDirectory())
+      Object.assign(schemas, await localSchemas(root, path + "/"));
+    if (entry.isFile() && path.endsWith(".schema.json"))
+      schemas[path] = JSON.parse(await readFile(join(root, path), "utf8"));
+  }
+  return schemas;
+}
+
+export async function loadSchemas(options) {
+  if (options["schema-dir"]) return localSchemas(options["schema-dir"]);
+  return JSON.parse(
+    await readFile(new URL("../build/schemas.json", import.meta.url), "utf8")
+  );
+}
+
+export function catalog(schemas) {
+  const registry = buildSchemaRegistry(Object.values(schemas));
+  const partition = (name) =>
+    Object.entries(schemas)
+      .filter(([path]) => path.startsWith(name + "/"))
+      .map(([, schema]) => schema);
+  const types = schemas["enums/ObjectType.schema.json"]?.enum;
+  if (!types)
+    throw new Error("Schema source is missing enums/ObjectType.schema.json");
+  const ids = buildObjectTypeSchemaMap(partition("objects"), types, {
+    registry,
+  });
+  const ajv = new Ajv({
+    schemas: Object.values(schemas),
+    allErrors: true,
+    strictTypes: false,
+    ownProperties: true,
+  });
+  ajv.addKeyword({
+    keyword: STABILITY_KEYWORD,
+    metaSchema: { enum: [...STABILITY_LEVELS] },
+  });
+  ajv.addKeyword({
+    keyword: VERSION_DISPATCHER_KEYWORD,
+    metaSchema: { type: "boolean" },
+  });
+  addFormats(ajv);
+  function objectSchema(type) {
+    if (typeof type !== "string" || !Object.hasOwn(ids, type))
+      throw new Error("Unknown object_type: " + JSON.stringify(type));
+    return registry[ids[type]];
+  }
+  function check(schema, data, source) {
+    const validate = ajv.getSchema(schema.$id);
+    if (validate(data)) return;
+    const errors = validate.errors.map(
+      ({ instancePath, keyword, params, message }) => {
+        const property = params.missingProperty ?? params.additionalProperty;
+        const path =
+          property === undefined
+            ? instancePath
+            : instancePath +
+              "/" +
+              property.replaceAll("~", "~0").replaceAll("/", "~1");
+        return { source, path, keyword, message };
+      }
+    );
+    throw Object.assign(
+      new Error(
+        errors
+          .map((e) => [source, e.path, e.message].filter(Boolean).join(" "))
+          .join("\n")
+      ),
+      { errors }
+    );
+  }
+  return {
+    describe: (type) => dereferenceSchema(objectSchema(type), registry),
+    validate(data, source) {
+      let schema;
+      try {
+        schema = objectSchema(data?.object_type);
+      } catch (error) {
+        throw new Error(source + " /object_type " + error.message);
+      }
+      check(schema, data, source);
+    },
+  };
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@open-captable/faker",
+  "version": "0.1.0",
+  "description": "Command-line tools for authoring and validating Open Cap Format records",
+  "type": "module",
+  "bin": {
+    "ocf": "./cli.mjs"
+  },
+  "files": [
+    "cli.mjs",
+    "lib/",
+    "build/",
+    "LICENSE.md"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF.git",
+    "directory": "packages/faker"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/bundle.mjs",
+    "prepack": "npm run build",
+    "pretest": "npm run build",
+    "test": "node --test test/*.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

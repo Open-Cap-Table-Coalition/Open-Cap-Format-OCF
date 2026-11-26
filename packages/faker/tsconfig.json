@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "build",
+    "types": [],
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "../../utils/schema-utils/ObjectTypeSchemaMap.ts",
+    "../../utils/schema-utils/SchemaDereferencer.ts"
+  ]
+}
