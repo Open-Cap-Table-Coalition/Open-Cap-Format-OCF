@@ -1,0 +1,27 @@
+name: Check OCF authoring CLI
+on:
+  pull_request:
+    paths:
+      - "packages/faker/**"
+      - "schema/**"
+      - "utils/schema-utils/**"
+      - ".github/workflows/check-faker.yml"
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/faker
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: packages/faker/package-lock.json
+      - run: npm ci
+      - run: npm test
