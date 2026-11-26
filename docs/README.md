@@ -21,6 +21,40 @@ them.
 |           [Medium Page](https://medium.com/@opencaptable) | Past announcements related to OCF and the Coalition          |
 |                          [PROJECTS.md](/docs/PROJECTS.md) | Collection of public projects in the OCF ecosystem listed in |
 
+## Create and validate an OCF export
+
+The `ocf` command in `@open-captable/cli` turns supplied field values into schema-validated OCF
+objects. With Node.js 22 or later, install the CLI and inspect the fields for a stakeholder:
+
+```sh
+npm install --global @open-captable/cli
+ocf describe STAKEHOLDER
+```
+
+In a new directory, create an issuer and a stakeholder, then assemble an export as of December
+31, 2025. The `object` command reads JSON from stdin and writes one validated record to stdout.
+Append more records to `records.jsonl` as needed.
+
+```sh
+echo '{"id":"issuer-1","legal_name":"Example Inc.","formation_date":"2020-01-01","country_of_formation":"US"}' \
+  | ocf object ISSUER > issuer.json
+echo '{"id":"person-1","name":{"legal_name":"Alex Lee"},"stakeholder_type":"INDIVIDUAL"}' \
+  | ocf object STAKEHOLDER >> records.jsonl
+
+ocf validate records.jsonl
+ocf export records.jsonl --issuer issuer.json --as-of 2025-12-31 --out ./export
+ocf validate ./export
+```
+
+The export directory contains `Manifest.ocf.json` and a typed file for the stakeholder. Directory
+validation checks each referenced file against its schema and verifies its checksum.
+
+The bundled schemas work offline. To select a different schema source, pass `--ocf-version 1.2.0`
+for a hosted release, `--schema-ref <branch-tag-or-commit>` for a GitHub snapshot, or
+`--schema-dir ./schema` for a local OCF checkout. Use the same source for authoring, export, and
+validation.
+[CLI reference](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/packages/cli)
+
 ## Documentation
 
 We have extensive, auto-generated documentation available on our

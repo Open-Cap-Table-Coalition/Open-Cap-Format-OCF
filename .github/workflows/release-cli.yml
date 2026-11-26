@@ -1,7 +1,7 @@
 name: Release OCF authoring CLI
 on:
   push:
-    tags: ["faker-v*"]
+    tags: ["cli-v*"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/faker
+        working-directory: packages/cli
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,18 +19,18 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-          cache-dependency-path: packages/faker/package-lock.json
+          cache-dependency-path: packages/cli/package-lock.json
       - name: Match release tag to package version
         if: github.event_name == 'push'
-        run: test "$GITHUB_REF_NAME" = "faker-v$(node -p 'require("./package.json").version')"
+        run: test "$GITHUB_REF_NAME" = "cli-v$(node -p 'require("./package.json").version')"
       - run: npm ci
       - run: npm test
       - run: npm pack --pack-destination "$RUNNER_TEMP"
-      - run: bash scripts/smoke-pack.sh "$RUNNER_TEMP"/open-captable-faker-*.tgz
+      - run: bash scripts/smoke-pack.sh "$RUNNER_TEMP"/open-captable-cli-*.tgz
       - uses: actions/upload-artifact@v4
         with:
-          name: faker-npm
-          path: ${{ runner.temp }}/open-captable-faker-*.tgz
+          name: cli-npm
+          path: ${{ runner.temp }}/open-captable-cli-*.tgz
           if-no-files-found: error
 
   stage:
@@ -48,11 +48,11 @@ jobs:
           package-manager-cache: false
       - uses: actions/download-artifact@v4
         with:
-          name: faker-npm
+          name: cli-npm
       - name: Install npm with staged publishing support
         run: npm install --global npm@11.17.0
       - name: Stage tested package for maintainer approval
         run: |
           tag=latest
-          if [[ ${GITHUB_REF_NAME#faker-v} == *-* ]]; then tag=next; fi
-          npm stage publish ./open-captable-faker-*.tgz --access public --provenance --tag "$tag"
+          if [[ ${GITHUB_REF_NAME#cli-v} == *-* ]]; then tag=next; fi
+          npm stage publish ./open-captable-cli-*.tgz --access public --provenance --tag "$tag"
