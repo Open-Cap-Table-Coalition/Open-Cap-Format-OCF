@@ -109,3 +109,22 @@ describe("OCF manifest extension fields", () => {
     expect(validate({ ...baseManifest(), not_a_field: [] })).toBe(false);
   });
 });
+
+describe("OCF manifest ocf_version", () => {
+  const ajv = buildAjv();
+  const validate = ajv.getSchema(MANIFEST_ID)!;
+
+  it.each(["1.0.0", "1.2.1-alpha+main", "1.3.0-alpha+main", "1.10.4"])(
+    "accepts 1.x release %s",
+    (ocf_version) => {
+      expect(validate({ ...baseManifest(), ocf_version })).toBe(true);
+    }
+  );
+
+  it.each(["2.0.0", "0.9.0", "1.2", "latest"])(
+    "rejects ocf_version %s",
+    (ocf_version) => {
+      expect(validate({ ...baseManifest(), ocf_version })).toBe(false);
+    }
+  );
+});

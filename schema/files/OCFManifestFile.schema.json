@@ -11,8 +11,9 @@
   ],
   "properties": {
     "ocf_version": {
-      "description": "OCF Version Identifier -- the current semantic version (https://semver.org/spec/v2.0.0.html)",
-      "const": "1.2.1-alpha+main"
+      "description": "OCF Version Identifier -- semantic version of the schema bundle used for this package (https://semver.org/spec/v2.0.0.html). Validators accept any 1.x.y release (including prerelease and build metadata).",
+      "type": "string",
+      "pattern": "^1\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$"
     },
     "file_type": {
       "const": "OCF_MANIFEST_FILE"
