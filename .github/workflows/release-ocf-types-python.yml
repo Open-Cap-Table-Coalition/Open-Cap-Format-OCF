@@ -40,23 +40,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.release_tag }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        shell: bash
-        run: |
-          if [[ ! "$RELEASE_TAG" =~ ^v[0-9][0-9A-Za-z._-]*$ ]]; then
-            echo "::error::Expected an OCF version tag such as v1.2.0"
-            exit 1
-          fi
-          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
-            if [[ "$GITHUB_REF" != "refs/heads/$DEFAULT_BRANCH" ]]; then
-              echo "::error::Run historical releases from $DEFAULT_BRANCH"
-              exit 1
-            fi
-            git fetch --no-tags --depth=1 origin "refs/tags/$RELEASE_TAG"
-            schema_commit=$(git rev-parse --verify 'FETCH_HEAD^{commit}')
-            git restore --source="$schema_commit" --staged --worktree -- schema
-            echo "Using schemas from $RELEASE_TAG ($schema_commit)"
-          fi
-          echo "tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
+        run: bash .github/scripts/select-release-schemas.sh
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -105,11 +89,13 @@ jobs:
           RELEASE_TAG: ${{ steps.release.outputs.tag }}
           GH_TOKEN: ${{ github.token }}
         working-directory: packages/ocf-types-python
+        # The TypeScript release workflow runs on the same tag; whichever creates
+        # the Release first wins, and the other falls through to uploading.
         run: |
-          gh release upload "$RELEASE_TAG" dist/* --clobber \
-            || gh release create "$RELEASE_TAG" --verify-tag dist/* \
-                 --title "$RELEASE_TAG" \
-                 --notes "OCF types for $RELEASE_TAG."
+          gh release create "$RELEASE_TAG" --verify-tag \
+            --title "$RELEASE_TAG" --notes "OCF types for $RELEASE_TAG." \
+            || gh release view "$RELEASE_TAG" >/dev/null
+          gh release upload "$RELEASE_TAG" dist/* --clobber
 
   publish:
     name: Publish to PyPI

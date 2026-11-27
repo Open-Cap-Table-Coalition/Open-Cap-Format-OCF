@@ -32,6 +32,8 @@
  * Framework-free: plain schema JSON in, a TypeScript source string out.
  */
 
+import { release_url } from "./Constants.js";
+import { sourceNotices } from "./SchemaSourceNotices.js";
 import {
   applyExperimentalMode,
   buildSchemaRegistry,
@@ -130,7 +132,13 @@ export function basenameFromId(id: string): string {
 export function categoryFromId(id: string): Category {
   const marker = "/schema/";
   const idx = id.indexOf(marker);
-  const tail = idx >= 0 ? id.slice(idx + marker.length) : id;
+  // Tagged releases use the hosted `${release_url}/<version>/<partition>/` IDs.
+  const tail =
+    idx >= 0
+      ? id.slice(idx + marker.length)
+      : id.startsWith(`${release_url}/`)
+      ? id.slice(release_url.length + 1).replace(/^[^/]+\//, "")
+      : id;
   const segment = tail.split("/")[0];
   return (CATEGORY_ORDER as readonly string[]).includes(segment)
     ? (segment as Category)
@@ -817,7 +825,11 @@ export function generateTypeScript(
     banner !== undefined
       ? banner
       : `${DEFAULT_BANNER}\n\n${primitivesNotice(includePrimitives)}`;
-  const parts = [effectiveBanner, sections.join("\n\n")].filter(Boolean);
+  const parts = [
+    effectiveBanner,
+    ...sections,
+    ...sourceNotices(inputSchemas, "//"),
+  ].filter(Boolean);
   const source = parts.join("\n\n") + "\n";
 
   const typeNames: { [id: string]: string } = {};

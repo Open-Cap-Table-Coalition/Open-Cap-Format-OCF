@@ -1,4 +1,4 @@
-# @opencaptablecoalition/ocf-types
+# @open-captable/ocf-types
 
 TypeScript types for the
 [Open Cap Format (OCF)](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF), generated
@@ -12,26 +12,24 @@ directly from the OCF JSON Schemas.
 ## Versioning
 
 The package version tracks the OCF schema release it was generated from —
-`@opencaptablecoalition/ocf-types@1.2.0` contains the types for OCF `v1.2.0`.
+`@open-captable/ocf-types@1.2.0` contains the types for OCF `v1.2.0`.
 
 ## Install
 
-Once published to npm:
-
 ```bash
-npm install --save-dev @opencaptablecoalition/ocf-types
+npm install --save-dev @open-captable/ocf-types
 ```
 
-Interim (before the npm release): install the tarball attached to the matching GitHub Release:
+You can also install the tarball attached to the matching GitHub Release.
 
 ```bash
-npm install --save-dev https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/releases/download/v1.2.0/opencaptablecoalition-ocf-types-1.2.0.tgz
+npm install --save-dev https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/releases/download/v1.2.0/open-captable-ocf-types-1.2.0.tgz
 ```
 
 ## Usage
 
 ```ts
-import type { OCFStockIssuance, OCFManifestFile } from "@opencaptablecoalition/ocf-types";
+import type { OCFStockIssuance, OCFManifestFile } from "@open-captable/ocf-types";
 
 const issuance: OCFStockIssuance = {
     /* ... */

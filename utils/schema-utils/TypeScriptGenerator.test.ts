@@ -405,6 +405,15 @@ describe("TypeScriptGenerator", () => {
   describe("aggregates", () => {
     const { source } = generateTypeScript(AGG_INPUTS);
 
+    it("generates the same declarations from hosted release schema IDs", () => {
+      const hosted = JSON.parse(
+        JSON.stringify(AGG_INPUTS)
+          .split(BASE)
+          .join("https://schema.opencaptablecoalition.com/v/1.2.0")
+      ) as RawSchemaJson[];
+      expect(generateTypeScript(hosted).source).toBe(source);
+    });
+
     it("emits all five aggregate declarations", () => {
       expect(source).toContain("// Aggregates");
       expect(source).toContain("export type AnyObject =");
