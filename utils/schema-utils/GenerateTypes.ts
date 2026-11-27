@@ -28,7 +28,9 @@ import { generateTypeScript } from "./TypeScriptGenerator.js";
 
 const SCHEMA_DIR = "schema";
 
-async function readRawSchemas(verbose: boolean): Promise<RawSchemaJson[]> {
+export async function readRawSchemas(
+  verbose: boolean
+): Promise<RawSchemaJson[]> {
   const filepaths = await getSchemaFilepaths(verbose);
   return Promise.all(
     filepaths.map(async (absPath) => {

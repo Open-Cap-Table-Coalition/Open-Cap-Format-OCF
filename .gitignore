@@ -23,3 +23,6 @@ build/
 # Generated OCF types package output — produced at build/publish time, never committed.
 packages/ocf-types/index.d.ts
 packages/ocf-types/*.tgz
+packages/ocf-types-python/ocf_types/__init__.py
+packages/ocf-types-python/dist/
+packages/ocf-types-python/.mypy_cache/

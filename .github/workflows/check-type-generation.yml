@@ -33,3 +33,61 @@ jobs:
 
       - name: Type-check the generated output
         run: npx tsc --noEmit --strict --skipLibCheck --target ES2020 --moduleResolution node "$RUNNER_TEMP/ocf.d.ts"
+
+  gen-python-types:
+    name: Check Python Type Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      # The generated module is not committed, so this job is the guard, as the
+      # job above is for the TypeScript types.
+      - name: Generate OCF Python types (fail on warnings)
+        run: npm run build:ocf-types-python -- --fail-on-warnings
+
+      # The oldest Python the package supports.
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Build and install the package
+        run: |
+          python -m pip install build pyright==1.1.414 mypy==2.4.1
+          python -m build packages/ocf-types-python
+          python -m pip install packages/ocf-types-python/dist/*.whl
+
+      # Check the package the way a user has it: installed, with no copy of its
+      # source beside the code being checked.
+      - name: Copy the tests out of the repository
+        run: |
+          mkdir "$RUNNER_TEMP/consumer"
+          cp -r packages/ocf-types-python/tests packages/ocf-types-python/pyproject.toml "$RUNNER_TEMP/consumer/"
+
+      - name: Import the installed module
+        working-directory: ${{ runner.temp }}/consumer
+        run: python -c "import ocf_types; print(ocf_types.__file__)"
+
+      # tests/uses.py must pass. tests/mistakes.py marks each mistake with an
+      # ignore comment, and an ignore that is not needed is an error, so this
+      # fails if the types stop catching a mistake. pyright reports success when
+      # it finds no files, hence the check that it read both.
+      - name: Type-check correct uses and mistakes with pyright
+        working-directory: ${{ runner.temp }}/consumer
+        run: |
+          pyright --verbose | tee pyright.log
+          grep -q "Found 2 source files" pyright.log
+
+      - name: Type-check correct uses and mistakes with mypy
+        working-directory: ${{ runner.temp }}/consumer
+        run: mypy tests
