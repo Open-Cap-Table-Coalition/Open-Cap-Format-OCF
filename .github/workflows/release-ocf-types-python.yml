@@ -111,8 +111,12 @@ jobs:
         working-directory: packages/ocf-types-python
         # The TypeScript release workflow runs on the same tag; whichever creates
         # the Release first wins, and the other falls through to uploading.
+        # A tag with a hyphen, such as v1.3.0-b1, is a pre-release. GitHub then
+        # keeps showing the last stable Release as the latest one.
         run: |
-          gh release create "$RELEASE_TAG" --verify-tag \
+          prerelease=""
+          if [[ "$RELEASE_TAG" == *-* ]]; then prerelease="--prerelease"; fi
+          gh release create "$RELEASE_TAG" --verify-tag $prerelease \
             --title "$RELEASE_TAG" --notes "OCF types for $RELEASE_TAG." \
             || gh release view "$RELEASE_TAG" >/dev/null
           gh release upload "$RELEASE_TAG" dist/* --clobber
