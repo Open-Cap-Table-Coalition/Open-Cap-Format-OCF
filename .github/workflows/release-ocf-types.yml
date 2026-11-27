@@ -1,27 +1,43 @@
-name: Release OCF Types (tarball)
-
-# Interim distribution: build the @opencaptablecoalition/ocf-types package and
-# attach the tarball to the tag's GitHub Release. No npm-registry publish yet —
-# when the npm org and trusted publisher are in place, swap the final step for
-# `npm publish --provenance` (add `permissions: id-token: write`). The package
-# folder and build steps stay identical.
+name: Release OCF TypeScript Types
 
 on:
   push:
     tags:
       - "v*"
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Existing OCF tag to release from main (leave blank for a dry run)"
+        type: string
+        required: false
+      historical_dist_tag:
+        description: "npm dist-tag for a historical stable release"
+        type: choice
+        options: [historical, latest]
+        default: historical
 
 permissions:
-  contents: write # create/update the tag's Release and upload the tarball
+  contents: read
 
 jobs:
   pack:
     name: Pack and attach OCF types tarball
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      release_tag: ${{ steps.release.outputs.tag }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v4
+
+      - name: Select release tag and schemas
+        id: release
+        if: (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')) || inputs.release_tag != ''
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.release_tag }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash .github/scripts/select-release-schemas.sh
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -30,19 +46,32 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Generate types into the package
-        run: npm run schema:gen-types -- --out packages/ocf-types/index.d.ts --fail-on-warnings
+        run: npm run build:ocf-types -- --fail-on-warnings
 
       - name: Pin package version to the tag
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: steps.release.outputs.tag != ''
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
         working-directory: packages/ocf-types
-        run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version --allow-same-version
+        run: npm version "${RELEASE_TAG#v}" --no-git-tag-version --allow-same-version
 
       - name: Pack
         working-directory: packages/ocf-types
         run: npm pack
+
+      - name: Type-check a consumer of the packed declarations
+        shell: bash
+        run: |
+          consumer=$(mktemp -d)
+          npm install --prefix "$consumer" --offline --ignore-scripts --no-audit --no-fund packages/ocf-types/*.tgz
+          cat > "$consumer/check.ts" <<'TS'
+          import type { OCFStockIssuance, AnyTransaction } from "@open-captable/ocf-types";
+          export const transaction = (value: OCFStockIssuance): AnyTransaction => value;
+          TS
+          node_modules/.bin/tsc --strict --noEmit --target ES2020 --module node16 "$consumer/check.ts"
 
       # Always produce an inspectable artifact (manual runs included).
       - name: Upload tarball as a workflow artifact
@@ -50,15 +79,45 @@ jobs:
         with:
           name: ocf-types-tarball
           path: packages/ocf-types/*.tgz
+          if-no-files-found: error
 
       # On a tag, attach the same tarball to that tag's GitHub Release.
       - name: Attach tarball to the GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: steps.release.outputs.tag != ''
         env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
           GH_TOKEN: ${{ github.token }}
         working-directory: packages/ocf-types
         run: |
-          gh release upload "$GITHUB_REF_NAME" ./*.tgz --clobber \
-            || gh release create "$GITHUB_REF_NAME" ./*.tgz \
-                 --title "$GITHUB_REF_NAME" \
-                 --notes "OCF TypeScript types for $GITHUB_REF_NAME."
+          gh release upload "$RELEASE_TAG" ./*.tgz --clobber \
+            || gh release create "$RELEASE_TAG" --verify-tag ./*.tgz \
+                 --title "$RELEASE_TAG" \
+                 --notes "OCF TypeScript types for $RELEASE_TAG."
+
+  stage:
+    name: Stage the tarball on npm
+    needs: pack
+    if: needs.pack.outputs.release_tag != '' && vars.PUBLISH_TYPESCRIPT_TYPES == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: ocf-types-tarball
+      - name: Install npm with staged publishing support
+        run: npm install --global npm@11.17.0
+      - name: Stage the tested package for maintainer approval
+        env:
+          RELEASE_TAG: ${{ needs.pack.outputs.release_tag }}
+          STABLE_DIST_TAG: ${{ github.event_name == 'push' && 'latest' || inputs.historical_dist_tag || 'historical' }}
+        run: |
+          tag="$STABLE_DIST_TAG"
+          if [[ "$RELEASE_TAG" == *-* ]]; then tag=next; fi
+          npm stage publish ./open-captable-ocf-types-*.tgz --access public --provenance --tag "$tag"

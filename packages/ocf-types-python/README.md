@@ -8,8 +8,7 @@ directly from the OCF JSON Schemas.
 > `npm run build:ocf-types-python` from the schemas under [`/schema`](../../schema). It is built at
 > release time and is _not_ committed to the repository.
 
-This is the Python counterpart of [`@opencaptablecoalition/ocf-types`](../ocf-types), the TypeScript
-types.
+This is the Python counterpart of [`@open-captable/ocf-types`](../ocf-types), the TypeScript types.
 
 ## Install
 

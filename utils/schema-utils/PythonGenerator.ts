@@ -34,6 +34,7 @@
  * Framework-free: plain schema JSON in, a Python source string out.
  */
 
+import { sourceNotices } from "./SchemaSourceNotices.js";
 import {
   applyExperimentalMode,
   buildSchemaRegistry,
@@ -203,38 +204,6 @@ function unionAlias(name: string, members: string[]): string {
 function sectionHeading(title: string): string {
   const rule = "#".padEnd(79, " -").trimEnd();
   return `${rule}\n# ${title}\n${rule}`;
-}
-
-/** Read source notices from the original schema collection, before dispatchers
- *  are collapsed and the version files lose their individual identities. */
-function sourceNotices(schemas: RawSchemaJson[]): string[] {
-  const groups = new Map<string, string[]>();
-  for (const schema of schemas) {
-    if (typeof schema.$comment !== "string") continue;
-    const attribution = schema.$comment
-      .trim()
-      .match(/^(Copyright [^\r\n]+) \/ Original File: (\S+)$/);
-    if (!attribution) continue;
-    const [, notice, url] = attribution;
-    const title = (schema.title ?? basenameFromId(schema.$id))
-      .replace(/\s+/g, " ")
-      .trim();
-    const entries = groups.get(notice) ?? [];
-    entries.push(`# ${title}\n#   ${url}`);
-    groups.set(notice, entries);
-  }
-
-  const blocks: string[] = [];
-  for (const notice of [...groups.keys()].sort()) {
-    blocks.push(
-      [
-        `# ${notice}.`,
-        "# This module includes material copied from or derived from the following OCF schema collection.",
-        ...groups.get(notice)!.sort(),
-      ].join("\n")
-    );
-  }
-  return blocks;
 }
 
 /**
@@ -625,7 +594,7 @@ export function generatePython(
     parts.push(...unions);
   }
 
-  const notices = sourceNotices(inputSchemas);
+  const notices = sourceNotices(inputSchemas, "#");
   if (notices.length) parts.push(sectionHeading("Schema sources"), ...notices);
 
   const header = [
