@@ -74,15 +74,27 @@ jobs:
           mkdir "$RUNNER_TEMP/consumer"
           cp -r packages/ocf-types-python/tests packages/ocf-types-python/pyproject.toml "$RUNNER_TEMP/consumer/"
 
-      - name: Import the installed module
+      - name: Check TypedDict metadata in the installed module
         working-directory: ${{ runner.temp }}/consumer
-        run: python -c "import ocf_types; print(ocf_types.__file__)"
+        run: |
+          python - <<'PYTHON'
+          from typing import get_type_hints
+          from typing_extensions import NotRequired
+          from ocf_types import Date, Issuance, Object, StockTransfer
+
+          assert "balance_security_id" in StockTransfer.__optional_keys__
+          assert "balance_security_id" not in StockTransfer.__required_keys__
+          assert "object_type" in Object.__readonly_keys__
+          hints = get_type_hints(Issuance, include_extras=True)
+          assert hints["board_approval_date"] == NotRequired[Date]
+          PYTHON
 
       # tests/uses.py must pass. tests/mistakes.py marks each mistake with an
       # ignore comment, and an ignore that is not needed is an error, so this
       # fails if the types stop catching a mistake. pyright reports success when
       # it finds no files, hence the check that it read both.
       - name: Type-check correct uses and mistakes with pyright
+        shell: bash
         working-directory: ${{ runner.temp }}/consumer
         run: |
           pyright --verbose | tee pyright.log

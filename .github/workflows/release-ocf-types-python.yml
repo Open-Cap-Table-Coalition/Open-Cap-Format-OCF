@@ -47,7 +47,7 @@ jobs:
       # v1.2.0 becomes 1.2.0. A pre-release tag such as v1.3.0-b1 becomes
       # 1.3.0b1 when the package is built.
       - name: Pin package version to the tag
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
         working-directory: packages/ocf-types-python
         run: sed -i "s/^version = .*/version = \"${GITHUB_REF_NAME#v}\"/" pyproject.toml
 
@@ -67,7 +67,7 @@ jobs:
           if-no-files-found: error
 
       - name: Attach the built package to the GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
         working-directory: packages/ocf-types-python
@@ -79,8 +79,8 @@ jobs:
 
   publish:
     name: Publish to PyPI
-    # Only for a tag, and only once a maintainer has turned publishing on.
-    if: startsWith(github.ref, 'refs/tags/v') && vars.PUBLISH_PYTHON_TYPES == 'true'
+    # Only for a tag push, and only once a maintainer has turned publishing on.
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && vars.PUBLISH_PYTHON_TYPES == 'true'
     needs: build
     runs-on: ubuntu-latest
     environment:

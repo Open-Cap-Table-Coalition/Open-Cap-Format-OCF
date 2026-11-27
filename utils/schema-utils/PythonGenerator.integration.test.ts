@@ -61,6 +61,22 @@ describe("Python generation over the real /schema tree", () => {
     }
   });
 
+  it("credits the original schema files in every mode, even without descriptions", () => {
+    for (const experimental of EXPERIMENTAL_MODES) {
+      const { source: bare } = generatePython(rawSchemas, {
+        experimental,
+        includeDescriptions: false,
+      });
+      const footer = bare.split("# Schema sources\n")[1];
+      expect(footer).toBeDefined();
+      for (const schema of rawSchemas) {
+        const [notice, url] = schema.$comment.split(" / Original File: ");
+        expect(footer).toContain(`# ${notice}.\n`);
+        expect(footer).toContain(`# ${schema.title}\n#   ${url}\n`);
+      }
+    }
+  });
+
   it("declares every schema exactly once", () => {
     for (const [id, name] of Object.entries(typeNames)) {
       const declarations = source.match(
@@ -92,10 +108,18 @@ describe("Python generation over the real /schema tree", () => {
       const viaDispatcher = bases.some((base) =>
         isVersionWrapper(rawSchemas.find((one) => one.$id === base))
       );
-      const expected = viaDispatcher
-        ? `${name} = ${typeNames[bases[0]]}`
-        : `class ${name}(${bases.map((base) => typeNames[base]).join(", ")}):`;
-      expect(source).toContain(expected);
+      if (viaDispatcher) {
+        const versions = unionMembersOf(source, typeNames[bases[0]]);
+        const variants = unionMembersOf(source, name);
+        expect(variants).toHaveLength(versions.length);
+        versions.forEach((version, i) =>
+          expect(source).toContain(`class ${variants[i]}(${version}):`)
+        );
+      } else {
+        expect(source).toContain(
+          `class ${name}(${bases.map((base) => typeNames[base]).join(", ")}):`
+        );
+      }
     }
   });
 
@@ -115,6 +139,21 @@ describe("Python generation over the real /schema tree", () => {
       expect(python.filter((member) => !wrappers.has(member)).sort()).toEqual(
         [...ts].sort()
       );
+    }
+  });
+
+  it("keeps the public equity compensation issuance in unstable aggregates", () => {
+    const unstable = generatePython(rawSchemas, { experimental: "unstable" });
+    for (const name of [
+      "AnyIssuance",
+      "AnySecurityTransaction",
+      "AnyTransaction",
+      "AnyObject",
+    ]) {
+      const members = unionMembersOf(unstable.source, name);
+      expect(members).toContain("EquityCompensationIssuance");
+      expect(members).not.toContain("EquityCompensationIssuanceV1");
+      expect(members).not.toContain("EquityCompensationIssuanceV2");
     }
   });
 

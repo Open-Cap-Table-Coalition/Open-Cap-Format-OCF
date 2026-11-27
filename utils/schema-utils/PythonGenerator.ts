@@ -39,6 +39,7 @@ import {
   buildSchemaRegistry,
   DEFAULT_STABILITY,
   ExperimentalMode,
+  isBackwardsCompatibleWrapper,
   isVersionWrapper,
   RawSchemaJson,
   STABILITY_NOTE,
@@ -117,7 +118,7 @@ const NOT_A_TYPE = new Set(["description", "title", "$comment"]);
 const LINE_WIDTH = 100;
 
 /** A field as one schema sees it: its Python type and whether it is required. */
-type Field = { type: string; required: boolean };
+type Field = { type: string; required: boolean; refs: string[] };
 
 const sameField = (a: Field, b: Field) =>
   a.type === b.type && a.required === b.required;
@@ -204,6 +205,38 @@ function sectionHeading(title: string): string {
   return `${rule}\n# ${title}\n${rule}`;
 }
 
+/** Read source notices from the original schema collection, before dispatchers
+ *  are collapsed and the version files lose their individual identities. */
+function sourceNotices(schemas: RawSchemaJson[]): string[] {
+  const groups = new Map<string, string[]>();
+  for (const schema of schemas) {
+    if (typeof schema.$comment !== "string") continue;
+    const attribution = schema.$comment
+      .trim()
+      .match(/^(Copyright [^\r\n]+) \/ Original File: (\S+)$/);
+    if (!attribution) continue;
+    const [, notice, url] = attribution;
+    const title = (schema.title ?? basenameFromId(schema.$id))
+      .replace(/\s+/g, " ")
+      .trim();
+    const entries = groups.get(notice) ?? [];
+    entries.push(`# ${title}\n#   ${url}`);
+    groups.set(notice, entries);
+  }
+
+  const blocks: string[] = [];
+  for (const notice of [...groups.keys()].sort()) {
+    blocks.push(
+      [
+        `# ${notice}.`,
+        "# This module includes material copied from or derived from the following OCF schema collection.",
+        ...groups.get(notice)!.sort(),
+      ].join("\n")
+    );
+  }
+  return blocks;
+}
+
 /**
  * Generate a single Python module declaring a named type for every schema.
  *
@@ -229,19 +262,41 @@ export function generatePython(
   const versionOwners = versionShapeOwnerMap(schemas);
   const warnings: string[] = [];
 
+  // A legacy wrapper intersects its discriminator with every version of its
+  // base. Model each intersection as a private class so the ordinary field
+  // and ReadOnly rules apply to it just as they do to a single-base wrapper.
+  const wrapperVariants = new Map<string, string[]>();
+  const privateNames = new Map<string, string>();
   const nameOf = (id: string): string => {
-    const name = idToName.get(id);
+    const name = idToName.get(id) ?? privateNames.get(id);
     if (!name) throw new Error(`No type name assigned for schema ${id}`);
     return name;
   };
 
+  for (const wrapper of schemas.filter(isBackwardsCompatibleWrapper)) {
+    const base = registry[wrapper.allOf![0].$ref];
+    if (!isVersionWrapper(base)) continue;
+    const variants = versionRefsOf(base).map((version, i) => {
+      const id = `${wrapper.$id}#variant-${i + 1}`;
+      registry[id] = {
+        $id: id,
+        allOf: [{ $ref: version }],
+        properties: wrapper.properties,
+        required: wrapper.required,
+      };
+      privateNames.set(id, `_${nameOf(wrapper.$id)}V${i + 1}`);
+      return id;
+    });
+    wrapperVariants.set(wrapper.$id, variants);
+  }
+
   /** The schemas a schema is directly built from: the `$ref`s in its `allOf`.
    *  A missing one is fatal, because the class would silently lose fields. */
-  const basesOf = (id: string): string[] =>
-    (registry[id].allOf ?? [])
+  const basesOf = (id: string, graph = registry): string[] =>
+    (graph[id].allOf ?? [])
       .filter((entry) => entry && typeof entry.$ref === "string")
       .map((entry) => {
-        if (!registry[entry.$ref]) {
+        if (!graph[entry.$ref]) {
           throw new Error(
             `${id} is built from a missing schema: ${entry.$ref}`
           );
@@ -271,11 +326,14 @@ export function generatePython(
   };
 
   /** The Python type for what a schema says a value is. */
-  const typeFor = (value: any, where: string): string => {
+  const typeFor = (value: any, where: string, refs?: string[]): string => {
     if (value === null || typeof value !== "object") return "object";
     if (typeof value.$ref === "string") {
       const name = idToName.get(value.$ref);
-      if (name) return name;
+      if (name) {
+        refs?.push(value.$ref);
+        return name;
+      }
       warnings.push(`Unresolved $ref -> object: ${value.$ref} (${where})`);
       return "object";
     }
@@ -290,11 +348,13 @@ export function generatePython(
     }
     const choices = value.oneOf ?? value.anyOf;
     if (Array.isArray(choices)) {
-      return unionOf(choices.map((choice: any) => typeFor(choice, where)));
+      return unionOf(
+        choices.map((choice: any) => typeFor(choice, where, refs))
+      );
     }
     if (Array.isArray(value.allOf)) {
       // Python has no intersection type. One member is that member's type.
-      if (value.allOf.length === 1) return typeFor(value.allOf[0], where);
+      if (value.allOf.length === 1) return typeFor(value.allOf[0], where, refs);
       warnings.push(`allOf of several schemas in a value -> object (${where})`);
       return "object";
     }
@@ -302,7 +362,9 @@ export function generatePython(
       return unionOf(value.type.map((one: string) => SCALARS[one] ?? "object"));
     }
     if (value.type === "array") {
-      return `list[${value.items ? typeFor(value.items, where) : "object"}]`;
+      return `list[${
+        value.items ? typeFor(value.items, where, refs) : "object"
+      }]`;
     }
     if (value.type === "object" || value.properties) {
       // OCF names every structured value. An inline one has no name to give a
@@ -349,10 +411,12 @@ export function generatePython(
         node !== null &&
         typeof node === "object" &&
         Object.keys(node).some((property) => !NOT_A_TYPE.has(property));
+      const refs: string[] = [];
       found = {
         type: stated
-          ? typeFor(node, `${nameOf(id)}.${name}`)
+          ? typeFor(node, `${nameOf(id)}.${name}`, refs)
           : earlier?.type ?? "object",
+        refs: stated ? refs : earlier?.refs ?? [],
         required:
           (schema.required ?? []).includes(name) || Boolean(earlier?.required),
       };
@@ -382,7 +446,10 @@ export function generatePython(
     return own;
   };
 
-  const classIds = schemas.map((s) => s.$id).filter(isClass);
+  const classIds = [
+    ...schemas.map((s) => s.$id).filter(isClass),
+    ...privateNames.keys(),
+  ];
 
   // A field that a class redeclares must be ReadOnly in every class it is built
   // from that also declares it. Type checkers refuse the redeclaration otherwise.
@@ -414,6 +481,7 @@ export function generatePython(
       .join("");
   };
 
+  const emitted = new Set<string>();
   const declareClass = (id: string): string => {
     const schema = registry[id];
     const bases = basesOf(id).map(nameOf).join(", ") || "TypedDict";
@@ -421,9 +489,14 @@ export function generatePython(
     const text = includeDescriptions ? describe(schema) : "";
     if (text) lines.push(docstring(text, "    "), "");
     for (const [name, field] of declared(id)) {
-      const kept = redeclared.has(`${id}\n${name}`)
-        ? `ReadOnly[${field.type}]`
+      // TypedDict must see the qualifiers when it builds the class. Only
+      // postpone the value type if it names a later declaration or itself.
+      const valueType = field.refs.some((ref) => !emitted.has(ref))
+        ? JSON.stringify(field.type)
         : field.type;
+      const kept = redeclared.has(`${id}\n${name}`)
+        ? `ReadOnly[${valueType}]`
+        : valueType;
       lines.push(
         `    ${name}: ${field.required ? kept : `NotRequired[${kept}]`}`
       );
@@ -445,12 +518,12 @@ export function generatePython(
         comment(schema) + unionAlias(name, versionRefsOf(schema).map(nameOf))
       );
     }
+    const variants = wrapperVariants.get(id);
+    if (variants)
+      return comment(schema) + unionAlias(name, variants.map(nameOf));
     if (isClass(id)) return declareClass(id);
     const bases = basesOf(id);
     if (bases.length === 1) {
-      // Built from a union, which cannot be a base class. This is an older name
-      // for a versioned object, and its versions already accept its
-      // `object_type`, so it is the same union.
       return `${comment(schema)}${name} = ${nameOf(bases[0])}`;
     }
     if (bases.length > 1) {
@@ -462,7 +535,7 @@ export function generatePython(
   };
 
   /** What must already be defined when a declaration runs: the bases of a
-   *  class, and every schema an alias names. Field types are not evaluated. */
+   *  class, and every schema an alias names. Field types can use forward references. */
   const refsIn = (value: any): string[] => {
     if (value === null || typeof value !== "object") return [];
     if (Array.isArray(value)) return value.flatMap(refsIn);
@@ -512,17 +585,21 @@ export function generatePython(
       section = sectionOf(id);
       parts.push(sectionHeading(SECTION_HEADINGS[section]));
     }
+    for (const variant of wrapperVariants.get(id) ?? [])
+      parts.push(declareClass(variant));
     parts.push(declare(id));
+    emitted.add(id);
   }
 
   // ----- Any<Primitive>: everything built from one primitive -----
 
-  /** Like `builtFrom`, but a dispatcher counts as built from whatever any of
-   *  its versions is built from, since the dispatcher speaks for them. */
+  // A collapsed version can omit the allOf links that identify its primitive ancestors.
+  const rawRegistry = buildSchemaRegistry(inputSchemas);
   const kindsOf = (id: string): string[] => {
-    const through = isDispatcher(id)
-      ? versionRefsOf(registry[id]).filter((ref) => registry[ref])
-      : basesOf(id);
+    const schema = rawRegistry[id];
+    const through = isVersionWrapper(schema)
+      ? versionRefsOf(schema).filter((ref) => rawRegistry[ref])
+      : basesOf(id, rawRegistry);
     return through.flatMap((one) => [one, ...kindsOf(one)]);
   };
   const members = inOrder.filter(
@@ -548,10 +625,11 @@ export function generatePython(
     parts.push(...unions);
   }
 
+  const notices = sourceNotices(inputSchemas);
+  if (notices.length) parts.push(sectionHeading("Schema sources"), ...notices);
+
   const header = [
     docstring(banner, ""),
-    "",
-    "from __future__ import annotations",
     "",
     "from typing import Literal",
     "",

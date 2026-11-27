@@ -3,6 +3,8 @@
 CI runs pyright and mypy over this file in strict mode, against the built package.
 """
 
+from typing import Literal
+
 import ocf_types as ocf
 
 
@@ -39,8 +41,11 @@ def start_of(trigger: ocf.AnyConversionTrigger) -> str | None:
 
 
 def older_name(issuance: ocf.PlanSecurityIssuance) -> ocf.EquityCompensationIssuance:
-    # An older name for a versioned object is the same union of versions.
     return issuance
+
+
+def legacy_discriminator(issuance: ocf.PlanSecurityIssuance) -> Literal["TX_PLAN_SECURITY_ISSUANCE"]:
+    return issuance["object_type"]
 
 
 ISSUER: ocf.Issuer = {

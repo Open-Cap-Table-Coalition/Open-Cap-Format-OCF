@@ -20,6 +20,12 @@ def optional_field_read_as_required(transfer: ocf.StockTransfer) -> str:
     return transfer.get("balance_security_id")  # type: ignore
 
 
+def modern_as_legacy(issuance: ocf.EquityCompensationIssuance) -> ocf.PlanSecurityIssuance | None:
+    if issuance["object_type"] == "TX_EQUITY_COMPENSATION_ISSUANCE":
+        return issuance  # type: ignore
+    return None
+
+
 WRONG_OBJECT_TYPE: ocf.Issuer = {
     "object_type": "STOCK_CLASS",  # type: ignore
     "id": "issuer",

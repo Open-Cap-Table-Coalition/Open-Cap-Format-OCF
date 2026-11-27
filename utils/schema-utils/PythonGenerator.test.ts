@@ -185,7 +185,7 @@ describe("generatePython", () => {
 
   it("writes None last in a union", () => {
     expect(classBody(source, "Transfer")).toContain(
-      "expires: NotRequired[Date | None]"
+      'expires: NotRequired["Date | None"]'
     );
   });
 
@@ -234,10 +234,16 @@ describe("generatePython", () => {
     expect(classBody(source, "GrantV1")).not.toContain("Stability:");
   });
 
-  it("emits an older name for a versioned object as the same union", () => {
-    // A union cannot be a base class.
-    expect(source).toContain("OldGrant = Grant\n");
-    expect(source).not.toContain("class OldGrant");
+  it("narrows each version to the older name's discriminator", () => {
+    expect(source).toContain("OldGrant = _OldGrantV1 | _OldGrantV2");
+    for (const version of ["V1", "V2"]) {
+      expect(classBody(source, `_OldGrant${version}`)).toContain(
+        `class _OldGrant${version}(Grant${version}):\n    object_type: Literal["TX_OLD_GRANT"]`
+      );
+      expect(classBody(source, `Grant${version}`)).toContain(
+        'object_type: ReadOnly[Literal["TX_GRANT", "TX_OLD_GRANT"]]'
+      );
+    }
   });
 
   it("emits a union of everything built from each primitive", () => {
@@ -294,6 +300,13 @@ describe("generatePython on shapes it cannot type exactly", () => {
       properties,
     },
   ];
+
+  it("quotes a self-reference inside a collection and evaluates the key qualifier", () => {
+    const { source } = generatePython(
+      schema({ children: { type: "array", items: ref("types/Thing") } })
+    );
+    expect(source).toContain('children: NotRequired["list[Thing]"]');
+  });
 
   it("warns about a $ref it cannot resolve", () => {
     const { source, warnings } = generatePython(
