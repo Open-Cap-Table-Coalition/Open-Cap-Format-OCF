@@ -11,8 +11,9 @@
   ],
   "properties": {
     "ocf_version": {
-      "description": "OCF Version Identifier -- the current semantic version (https://semver.org/spec/v2.0.0.html)",
-      "const": "1.2.1-alpha+main"
+      "description": "OCF Version Identifier -- semantic version of the schema bundle used for this package (https://semver.org/spec/v2.0.0.html). Validators accept any 1.x.y release (including prerelease and build metadata).",
+      "type": "string",
+      "pattern": "^1\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$"
     },
     "file_type": {
       "const": "OCF_MANIFEST_FILE"
@@ -105,6 +106,38 @@
     "documents_files": {
       "title": "Cap Table - Document File(s) Array",
       "description": "List of files containing lists of document paths, indexed from the file containing the first such object created to the file containing the last (See separate /schema/files/documents_file schema to validate loaded files)",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+      }
+    },
+    "profiles": {
+      "title": "Cap Table - Coalition profile declarations",
+      "description": "Coalition profiles (ocf.*) declared by this package. See OCIP-0001.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ProfileDeclaration.schema.json"
+      }
+    },
+    "vendor_extensions": {
+      "title": "Cap Table - Vendor extension declarations",
+      "description": "Vendor extensions (com.*) declared by this package. See OCIP-0001.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/ProfileDeclaration.schema.json"
+      }
+    },
+    "profile_files": {
+      "title": "Cap Table - Coalition profile data files",
+      "description": "Checksum-indexed profile payload files under profiles/<profile-id>/.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
+      }
+    },
+    "vendor_extension_files": {
+      "title": "Cap Table - Vendor extension data files",
+      "description": "Checksum-indexed vendor extension payload files under vendor/<extension-id>/.",
       "type": "array",
       "items": {
         "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/File.schema.json"
