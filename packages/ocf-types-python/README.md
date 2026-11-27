@@ -115,10 +115,10 @@ A schema often narrows a field of a schema it is built from: every object narrow
 the `ObjectType` enum to its own value. The types allow that by declaring such a field `ReadOnly` in
 the base class ([PEP 705](https://peps.python.org/pep-0705/)).
 
-mypy before 2.0 does not accept that narrowing when it checks the module's own source. It reports
-"Overwriting TypedDict field". This does not affect an installed package, which mypy does not report
-on. It matters only if you copy `ocf_types` into your own source tree. Tested with mypy 1.18.2 and
-2.4.1, and pyright 1.1.414.
+An older mypy does not accept that narrowing when it checks the module's own source: mypy 1.18.2
+reports "Overwriting TypedDict field", and mypy 2.4.1 does not. This does not affect an installed
+package, which mypy does not report on. It matters only if you copy `ocf_types` into your own source
+tree. As an installed package the types were tested with mypy 1.18.2 and 2.4.1, and pyright 1.1.414.
 
 ## License
 
