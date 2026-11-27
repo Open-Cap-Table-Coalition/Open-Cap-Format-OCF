@@ -58,14 +58,14 @@ validation.
 ## Documentation
 
 We have extensive, auto-generated documentation available on our
-[documentation page](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/). The documents
-are automatically updated with every update to OCF.
+[documentation page](https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/). The Publish
+Docs workflow deploys the site for a GitHub release or a manually selected ref.
 
 You can find samples in our repo in the samples folder, or check out our tutorials (again, through
 the documentation) to see how to get started with OCF and download complete, sample OCF cap tables.
 
-For maintainers preparing a new version of `@open-captable/cli`, see
-[Stage a CLI release](development/cli-release.md).
+For schema, types, CLI, and documentation releases, see the
+[maintainer release guide](development/releases.md).
 
 ## OCF Schema
 

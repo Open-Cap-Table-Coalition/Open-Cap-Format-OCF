@@ -7,7 +7,7 @@ blank produces a `0.0.0` workflow artifact for inspection.
 
 ## Build the first release from OCF v1.2.0
 
-Once the workflow is on `main`, run:
+Run the workflow from `main`:
 
 ```sh
 gh workflow run release-ocf-types.yml --ref main -f release_tag=v1.2.0 -f historical_dist_tag=latest
@@ -15,7 +15,16 @@ gh workflow run release-ocf-types.yml --ref main -f release_tag=v1.2.0 -f histor
 
 The generator and packaging code come from the selected `main` commit. The entire `schema/` tree
 comes from the existing `v1.2.0` tag. Download `open-captable-ocf-types-1.2.0.tgz` from the GitHub
-Release or extract it from the run's `ocf-types-tarball` artifact.
+Release or extract it from the run's `ocf-types-tarball` artifact. To download the release asset:
+
+```sh
+gh release download v1.2.0 --pattern open-captable-ocf-types-1.2.0.tgz
+```
+
+If **Pack and attach OCF types tarball** succeeded and **Stage the tarball on npm** was skipped, the
+tarball is ready to download. On a versioned run, staging is enabled only when the repository
+Actions variable `PUBLISH_TYPESCRIPT_TYPES` equals `true`. First-time maintainers can use the
+tarball from that run to bootstrap the package.
 
 For a new npm package, sign in with write access to the `@open-captable` scope and stage that
 tarball once using npm 11.15 or later:
@@ -32,9 +41,15 @@ Approve the version in **Staged Packages** on npmjs.com with 2FA. Consumers can 
 
 Configure the package's npm trusted publisher for GitHub repository
 `Open-Cap-Table-Coalition/Open-Cap-Format-OCF` and workflow file `release-ocf-types.yml`. Grant the
-`npm stage publish` permission and leave the environment field blank. Set the GitHub repository
-Actions variable `PUBLISH_TYPESCRIPT_TYPES` to `true`. The workflow stages the same tarball with
-OIDC and provenance. A maintainer approves the staged version on npm.
+`npm stage publish` permission and leave the environment field blank. Then enable the GitHub
+repository Actions variable:
+
+```sh
+gh variable set PUBLISH_TYPESCRIPT_TYPES --body true
+```
+
+On the next eligible run, the workflow stages the same tarball with OIDC and provenance. A
+maintainer approves the staged version on npm.
 
 Stable tag pushes use the npm dist-tag `latest`, unless the tag is older than the current npm
 `latest` (a backport), which uses `historical`. Prerelease tags use `next`. For older stable
