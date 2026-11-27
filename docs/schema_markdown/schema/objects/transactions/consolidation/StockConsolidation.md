@@ -1,6 +1,6 @@
 ### Object - Stock Consolidation Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/consolidation/StockConsolidation.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/consolidation/StockConsolidation.schema.json`
 
 **Description:** _Describes a stock consolidation, where multiple shares are combined into a single share, with an optional ratio of shares to be consolidated._
 

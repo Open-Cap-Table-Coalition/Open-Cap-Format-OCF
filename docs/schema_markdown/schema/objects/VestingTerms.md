@@ -1,6 +1,6 @@
 ### Object - Vesting Terms
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/VestingTerms.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/VestingTerms.schema.json`
 
 **Description:** _Version dispatcher for vesting terms. The stable public `$id` accepts either the current condition-DAG shape (v1) or the forward-looking ordered-statement template shape (v2) during the transition window._
 
@@ -13,7 +13,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details open markdown="1">
 <summary>v1 — ✅ STABLE</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/versions/VestingTerms.v1.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/versions/VestingTerms.v1.schema.json`
 
 > **Stability:** `stable` — Supported — the current recommended shape.
 
@@ -40,7 +40,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details markdown="1">
 <summary>v2 — ⚠️ ALPHA</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/versions/VestingTerms.v2.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/versions/VestingTerms.v2.schema.json`
 
 > **Stability:** `alpha` — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
 

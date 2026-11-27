@@ -1,6 +1,6 @@
 ### Object - File
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/files/File.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/files/File.schema.json`
 
 **Description** _Abstract file to be extended by all other files_
 

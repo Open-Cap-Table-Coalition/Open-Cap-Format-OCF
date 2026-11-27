@@ -1,6 +1,6 @@
 ### Object - Stock Plan Return to Pool Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/return_to_pool/StockPlanReturnToPool.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/return_to_pool/StockPlanReturnToPool.schema.json`
 
 **Description:** _Describes the return of cancelled shares to a specific stock plan pool, including the quantity returned, the stock plan and security involved, and the reason for the return._
 

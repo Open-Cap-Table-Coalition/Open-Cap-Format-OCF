@@ -1,6 +1,6 @@
 ### Primitive - Security Reissuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/reissuance/Reissuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/objects/transactions/reissuance/Reissuance.schema.json`
 
 **Description** _Abstract object describing common properties to a reissuance of a security_
 

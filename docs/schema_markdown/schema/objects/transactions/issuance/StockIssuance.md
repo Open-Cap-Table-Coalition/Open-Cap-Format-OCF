@@ -1,6 +1,6 @@
 ### Object - Stock Issuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/StockIssuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/issuance/StockIssuance.schema.json`
 
 **Description:** _Describes the issuance of stock, including the date, quantity, per-share issuance price, and related security._
 

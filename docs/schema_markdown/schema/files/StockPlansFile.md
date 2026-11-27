@@ -1,6 +1,6 @@
 ### File - Stock Plans
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockPlansFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/files/StockPlansFile.schema.json`
 
 **Description:** _JSON file schema defining a list of stock plans. Each plan includes metadata like name, approval dates, reserved shares, and associated stock class IDs. Supports both stock_class_id (deprecated) and stock_class_ids._
 

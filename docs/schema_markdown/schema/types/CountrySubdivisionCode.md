@@ -1,6 +1,6 @@
 ### Type - Country Subdivision Code
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/CountrySubdivisionCode.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/CountrySubdivisionCode.schema.json`
 
 **Description:** _State, province, or equivalent identifier required for an address in this country_
 

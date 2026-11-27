@@ -1,6 +1,6 @@
 ### Type - Vesting Event Trigger
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/VestingEventTrigger.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/vesting/VestingEventTrigger.schema.json`
 
 > 🗓️ PLANNED DEPRECATION — Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.
 

@@ -1,6 +1,6 @@
 ### File - Stock Legend Templates
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockLegendTemplatesFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/files/StockLegendTemplatesFile.schema.json`
 
 **Description:** _JSON file schema defining a list of stock legend templates. Each object includes a name and full legend text, used to annotate stock certificates with regulatory or contractual restrictions._
 

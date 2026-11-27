@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json",
   "title": "Object - Equity Compensation Issuance Transaction (v2)",
   "description": "Forward-looking equity-compensation issuance. Field-for-field equivalent to v1 except that the DAG-based `vesting_terms_id` is replaced with `vesting_template_id` (refs a v2 vesting template) and the per-grant vesting commencement date is carried here as `vesting_start_date` (absorbing the role of the now-planned-for-deprecation vesting-start transaction). Self-contained (no `allOf` inheritance) per the version-shape convention.",
   "x-ocf-stability": "alpha",
@@ -22,7 +22,7 @@
       "description": "This is done to avoid a breaking change as we work towards a bigger restructure of the equity types in v2.0.0. `TX_PLAN_SECURITY_ISSUANCE` will be deprecated in v2.0.0"
     },
     "date": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Date.schema.json",
       "description": "Date on which the issuance transaction occurred. Distinct from the vesting commencement date, which is carried separately as `vesting_start_date`."
     },
     "security_id": {
@@ -38,11 +38,11 @@
       "description": "Identifier of the stakeholder holding legal title to the security."
     },
     "board_approval_date": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Date.schema.json",
       "description": "Date of board approval for the security, when applicable."
     },
     "stockholder_approval_date": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Date.schema.json",
       "description": "Date of stockholder approval for the security, when applicable."
     },
     "consideration_text": {
@@ -53,7 +53,7 @@
       "type": "array",
       "description": "Security law exemptions (and applicable jurisdictions) for this security.",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/SecurityExemption.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/SecurityExemption.schema.json"
       }
     },
     "stock_plan_id": {
@@ -65,23 +65,23 @@
       "description": "The stock class the security exercises/settles into. Important for plan-less options and plans that support multiple share classes."
     },
     "compensation_type": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/CompensationType.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/enums/CompensationType.schema.json",
       "description": "The kind of equity compensation. Determines which type-specific fields are required."
     },
     "option_grant_type": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/OptionType.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/enums/OptionType.schema.json",
       "description": "If the security is an option, what kind. Retained from v1 for compatibility; in the new model this has been incorporated into CompensationType."
     },
     "quantity": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Numeric.schema.json",
       "description": "Number of shares subject to this security."
     },
     "exercise_price": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Monetary.schema.json",
       "description": "Required for option compensation types. The price per share at which the option can be exercised."
     },
     "base_price": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Monetary.schema.json",
       "description": "Required for stock appreciation right compensation types (CSAR, SSAR). The base price used to calculate appreciation."
     },
     "early_exercisable": {
@@ -89,7 +89,7 @@
       "description": "If true, the security is exercisable prior to completion of vesting; the schedule then governs a right-of-repurchase lapse rather than the right-to-exercise."
     },
     "vesting_start_date": {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json",
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Date.schema.json",
       "description": "The per-grant vesting commencement date — the anchor every statement of the referenced template grids from. Required whenever `vesting_template_id` is present and always supplied with the grant: when the real commencement date is not yet known (a contingent start), a far-future placeholder date (e.g. 9999-12-31) is supplied rather than omitting the field or modeling the start as an event. Lives on the issuance, not the template, because the template is reusable across grants."
     },
     "vesting_template_id": {
@@ -102,7 +102,7 @@
       "description": "Optional materialized projection of exact vesting dates and amounts. A grant may be described by the declarative template (`vesting_template_id`), by this imperative event list, or by both; when both are present an external tool confirms they agree.",
       "minItems": 1,
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Vesting.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Vesting.schema.json"
       }
     },
     "expiration_date": {
@@ -112,7 +112,7 @@
           "type": "null"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Date.schema.json"
+          "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Date.schema.json"
         }
       ]
     },
@@ -121,7 +121,7 @@
       "type": "array",
       "description": "Exercise periods applicable after a termination, by reason.",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/TerminationWindow.schema.json"
+        "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/TerminationWindow.schema.json"
       }
     }
   },
@@ -191,5 +191,5 @@
     "vesting_template_id": ["vesting_start_date"]
   },
   "additionalProperties": false,
-  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json"
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.1-alpha.1/schema/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json"
 }

@@ -1,6 +1,6 @@
 ### Object - Convertible Transfer Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/transfer/ConvertibleTransfer.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/transfer/ConvertibleTransfer.schema.json`
 
 **Description:** _Records the transfer or sale of a convertible security, specifying the amount exchanged, the resulting new securities, and the original security ID. Supports tracking partial transfers and associated monetary consideration._
 

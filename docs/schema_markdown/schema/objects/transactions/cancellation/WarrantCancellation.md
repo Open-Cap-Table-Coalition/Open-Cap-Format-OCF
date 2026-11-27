@@ -1,6 +1,6 @@
 ### Object - Warrant Cancellation Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/WarrantCancellation.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/cancellation/WarrantCancellation.schema.json`
 
 **Description:** _Object schema describing the cancellation of a warrant security. Specifies the quantity canceled, reason for cancellation, and optionally a balance_security_id for tracking remaining shares. Used to reduce or eliminate a previously issued warrant._
 

@@ -1,6 +1,6 @@
 ### Conversion Mechanism - Note
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_mechanisms/NoteConversionMechanism.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/conversion_mechanisms/NoteConversionMechanism.schema.json`
 
 _Sets forth inputs and conversion mechanism of a convertible note_
 

@@ -1,6 +1,6 @@
 ### Object - Stock Plan Pool Adjustment Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/adjustment/StockPlanPoolAdjustment.schema.json`
 
 **Description:** _Describes an adjustment to a stock plan pool, including the quantity added or removed, the stock plan and security involved, and the reason for the adjustment._
 

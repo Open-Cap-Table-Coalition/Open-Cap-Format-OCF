@@ -1,6 +1,6 @@
 ### Object - Stock Retraction Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/StockRetraction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/retraction/StockRetraction.schema.json`
 
 **Description:** _Object schema describing the retraction (i.e., nullification or undoing) of a stock security, including date, reason, and reference to the affected security._
 

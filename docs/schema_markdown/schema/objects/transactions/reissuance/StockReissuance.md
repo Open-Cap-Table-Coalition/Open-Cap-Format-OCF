@@ -1,6 +1,6 @@
 ### Object - Stock Re-issuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/reissuance/StockReissuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/reissuance/StockReissuance.schema.json`
 
 **Description:** _Describes a stock reissuance transaction, including date, quantity, per-share reissuance price, and related security._
 

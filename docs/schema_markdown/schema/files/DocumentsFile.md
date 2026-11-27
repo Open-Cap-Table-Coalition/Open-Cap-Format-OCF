@@ -1,6 +1,6 @@
 ### File - Documents
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/DocumentsFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/files/DocumentsFile.schema.json`
 
 **Description:** _JSON file schema defining a list of documents. Each object includes either a relative file path (within a ZIP archive) or a URI, an MD5 hash for integrity, and optional references to related OCF objects. This schema links unstructured legal files to structured cap table data._
 

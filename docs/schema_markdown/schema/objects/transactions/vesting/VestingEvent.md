@@ -1,6 +1,6 @@
 ### Object - Vesting Event Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingEvent.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/VestingEvent.schema.json`
 
 **Description:** _Version dispatcher for the vesting-event transaction. The stable public `$id` accepts either the current DAG-condition shape (v1) or the forward-looking named-event shape (v2) during the transition window._
 
@@ -13,7 +13,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details open markdown="1">
 <summary>v1 — ✅ STABLE</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/versions/VestingEvent.v1.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/versions/VestingEvent.v1.schema.json`
 
 > **Stability:** `stable` — Supported — the current recommended shape.
 
@@ -39,7 +39,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details markdown="1">
 <summary>v2 — ⚠️ ALPHA</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/versions/VestingEvent.v2.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/versions/VestingEvent.v2.schema.json`
 
 > **Stability:** `alpha` — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
 

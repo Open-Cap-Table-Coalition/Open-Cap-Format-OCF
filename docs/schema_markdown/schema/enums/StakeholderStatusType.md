@@ -1,6 +1,6 @@
 ### Enum - Stakeholder Status Type
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/StakeholderStatusType.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/enums/StakeholderStatusType.schema.json`
 
 **Description:** _Enumeration of types of activity statuses for a stakeholder_
 

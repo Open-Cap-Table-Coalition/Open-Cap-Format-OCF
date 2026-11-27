@@ -1,6 +1,6 @@
 ### Object - Vesting Acceleration Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingAcceleration.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/VestingAcceleration.schema.json`
 
 **Description:** _Object schema describing a vesting acceleration transaction, where additional shares vest earlier than planned under the security’s vesting terms._
 

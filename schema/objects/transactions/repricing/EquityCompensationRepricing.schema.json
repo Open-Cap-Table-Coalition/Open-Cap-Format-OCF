@@ -1,18 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repricing/EquityCompensationRepricing.schema.json",
+  "$id": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/repricing/EquityCompensationRepricing.schema.json",
   "title": "Object - Equity Compensation Repricing Transaction",
   "description": "Object describing an event that adjusts the exercise price of existing equity compensation, typically done when the current share price falls significantly below the set exercise price, rendering an option underwater.",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/Object.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/objects/Object.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/Transaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/objects/transactions/Transaction.schema.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/SecurityTransaction.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/objects/transactions/SecurityTransaction.schema.json"
     }
   ],
   "properties": {
@@ -25,10 +25,10 @@
     "security_id": {},
     "new_exercise_price": {
       "description": "What is the exercise price of the option after the repricing?",
-      "$ref": "https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Monetary.schema.json"
+      "$ref": "https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Monetary.schema.json"
     }
   },
   "additionalProperties": false,
   "required": ["new_exercise_price"],
-  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/main/schema/objects/transactions/repricing/EquityCompensationRepricing.schema.json"
+  "$comment": "Copyright © 2026 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.2.1-alpha.1/schema/objects/transactions/repricing/EquityCompensationRepricing.schema.json"
 }

@@ -1,6 +1,6 @@
 ### Object - Convertible Cancellation Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/cancellation/ConvertibleCancellation.schema.json`
 
 **Description:** _Describes the cancellation of a convertible security, including the amount voided, reason for cancellation, and optional reference to a remaining balance security._
 

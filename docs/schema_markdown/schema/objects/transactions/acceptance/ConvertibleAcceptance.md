@@ -1,6 +1,6 @@
 ### Object - Convertible Acceptance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/acceptance/ConvertibleAcceptance.schema.json`
 
 **Description:** _Captures the formal acceptance of a convertible security by the stakeholder, recording the security ID, acceptance date, and optional comments._
 

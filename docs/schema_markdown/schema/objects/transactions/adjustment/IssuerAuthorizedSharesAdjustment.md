@@ -1,6 +1,6 @@
 ### Object - Issuer Authorized Shares Adjustment Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/adjustment/IssuerAuthorizedSharesAdjustment.schema.json`
 
 **Description:** _Object describing an event to change the number of authorized shares at the issuer level._
 

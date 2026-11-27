@@ -1,6 +1,6 @@
 ### Object - Stock Split Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/split/StockClassSplit.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/split/StockClassSplit.schema.json`
 
 **Description:** _Records a stock split event, specifying the split ratio and resulting security IDs._
 

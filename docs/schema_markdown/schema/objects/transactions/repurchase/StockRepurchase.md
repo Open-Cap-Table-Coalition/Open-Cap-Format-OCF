@@ -1,6 +1,6 @@
 ### Object - Stock Repurchase Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/repurchase/StockRepurchase.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/repurchase/StockRepurchase.schema.json`
 
 **Description:** _Object describing the repurchase of a stock security, including date, quantity, per-share repurchase price, and related security._
 

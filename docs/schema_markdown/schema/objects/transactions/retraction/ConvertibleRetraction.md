@@ -1,6 +1,6 @@
 ### Object - Convertible Retraction Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/ConvertibleRetraction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/retraction/ConvertibleRetraction.schema.json`
 
 **Description:** _Describes the retraction (i.e. cancellation or withdrawal) of a convertible security, including the date, the reason, and the security being retracted._
 

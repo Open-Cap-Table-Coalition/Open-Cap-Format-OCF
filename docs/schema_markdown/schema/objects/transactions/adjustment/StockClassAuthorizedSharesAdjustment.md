@@ -1,6 +1,6 @@
 ### Object - Stock Class Authorized Shares Adjustment Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/adjustment/StockClassAuthorizedSharesAdjustment.schema.json`
 
 **Description:** _Records a change in the authorized shares for a stock class, specifying the new authorized share amount and referencing the stock class affected._
 

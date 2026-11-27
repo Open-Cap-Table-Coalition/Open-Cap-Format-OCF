@@ -1,6 +1,6 @@
 ### Type - Scheduled Vesting Statement
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/vesting/ScheduledVestingStatement.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/vesting/ScheduledVestingStatement.schema.json`
 
 > ⚠️ ALPHA — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
 

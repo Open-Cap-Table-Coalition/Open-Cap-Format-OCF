@@ -1,6 +1,6 @@
 ### Object - Equity Compensation Issuance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/EquityCompensationIssuance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/issuance/EquityCompensationIssuance.schema.json`
 
 **Description:** _Version dispatcher for the equity-compensation issuance transaction. The stable public `$id` accepts either the current shape (v1, which references vesting via `vesting_terms_id`) or the forward-looking shape (v2, which references a v2 vesting template via `vesting_template_id` and carries the per-grant `vesting_start_date`) during the transition window._
 
@@ -13,7 +13,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details open markdown="1">
 <summary>v1 — ✅ STABLE</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/versions/EquityCompensationIssuance.v1.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/issuance/versions/EquityCompensationIssuance.v1.schema.json`
 
 > **Stability:** `stable` — Supported — the current recommended shape.
 
@@ -56,7 +56,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details markdown="1">
 <summary>v2 — ⚠️ ALPHA</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/issuance/versions/EquityCompensationIssuance.v2.schema.json`
 
 > **Stability:** `alpha` — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
 

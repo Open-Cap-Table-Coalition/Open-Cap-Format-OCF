@@ -1,6 +1,6 @@
 ### Object - Stock Acceptance Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/acceptance/StockAcceptance.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/acceptance/StockAcceptance.schema.json`
 
 **Description:** _Records the acceptance of a stock security by a stakeholder, including the date and security ID, signaling the stakeholder’s acknowledgment or execution of rights under the stock instrument._
 

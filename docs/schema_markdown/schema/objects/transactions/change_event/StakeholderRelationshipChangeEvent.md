@@ -1,6 +1,6 @@
 ### Object - Stakeholder Relationship Change Event
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/change_event/StakeholderRelationshipChangeEvent.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/change_event/StakeholderRelationshipChangeEvent.schema.json`
 
 **Description:** _Object describing a change event for the relationship(s) between the stakeholder and the issuer_
 

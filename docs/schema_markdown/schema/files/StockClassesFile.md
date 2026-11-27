@@ -1,6 +1,6 @@
 ### File - Stock Classes
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/files/StockClassesFile.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/files/StockClassesFile.schema.json`
 
 **Description:** _JSON file schema defining a list of stock classes issued by the company. Each object includes metadata such as name, type (Common or Preferred), share authorization, par value, voting rights, and optional conversion rights into other stock classes._
 

@@ -1,6 +1,6 @@
 ### Object - Convertible Conversion Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/conversion/ConvertibleConversion.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/conversion/ConvertibleConversion.schema.json`
 
 **Description:** _Records the conversion of an existing stock security into one or more new securities, specifying the quantity converted and resulting security identifiers._
 

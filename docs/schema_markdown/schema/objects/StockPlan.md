@@ -1,6 +1,6 @@
 ### Object - Stock Plan
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/StockPlan.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/StockPlan.schema.json`
 
 **Description:** _Object describing a plan which stock options are issued from_
 

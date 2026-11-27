@@ -1,6 +1,6 @@
 ### Object - Vesting Start Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/VestingStart.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/VestingStart.schema.json`
 
 **Description:** _Version dispatcher for the vesting-start transaction. Its single shape (v1) is marked `planned_deprecation`: still fully supported in the current/stable surface, but the vesting commencement date it carried moves onto the issuance (`EquityCompensationIssuance.vesting_start_date`) in the shape OCF is moving toward, so this transaction is omitted from the `unstable` preview._
 
@@ -13,7 +13,7 @@ This schema is a **version dispatcher**: the stable public identifier above reso
 <details open markdown="1">
 <summary>v1 — 🗓️ PLANNED DEPRECATION</summary>
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/vesting/versions/VestingStart.v1.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/vesting/versions/VestingStart.v1.schema.json`
 
 > **Stability:** `planned_deprecation` — Planned for deprecation — **not deprecated yet**: still fully supported in the current/stable surface, but slated for removal and therefore omitted from the forward-looking `unstable` preview.
 

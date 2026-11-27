@@ -1,6 +1,6 @@
 ### Object - Warrant Retraction Transaction
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/objects/transactions/retraction/WarrantRetraction.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/objects/transactions/retraction/WarrantRetraction.schema.json`
 
 **Description:** _Object schema describing the retraction of a warrant. Records the transaction date, associated security, and reason for the retraction. Used to remove or void warrant securities from the cap table._
 

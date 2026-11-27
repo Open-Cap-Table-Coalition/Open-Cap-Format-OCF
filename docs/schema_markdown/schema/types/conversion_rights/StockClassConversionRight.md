@@ -1,6 +1,6 @@
 ### Type - Stock Class Conversion Rights
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/conversion_rights/StockClassConversionRight.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/conversion_rights/StockClassConversionRight.schema.json`
 
 _Type representation of a conversion right from one Stock Class into another Stock Class_
 

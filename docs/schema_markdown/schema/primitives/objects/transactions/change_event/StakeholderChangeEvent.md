@@ -1,6 +1,6 @@
 ### Primitive - Stakeholder Change Event
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/primitives/objects/transactions/change_event/StakeholderChangeEvent.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/primitives/objects/transactions/change_event/StakeholderChangeEvent.schema.json`
 
 **Description** _Abstract change event "transaction" object to be extended by all change event "transaction" objects that affect a stakeholder_
 

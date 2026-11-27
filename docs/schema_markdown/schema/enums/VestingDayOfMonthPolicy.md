@@ -1,6 +1,6 @@
 ### Enum - Vesting Day of Month Policy
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/enums/VestingDayOfMonthPolicy.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/enums/VestingDayOfMonthPolicy.schema.json`
 
 > ⚠️ ALPHA — Pre-release — this shape is **not final** and may change or be withdrawn. Do not treat it as stable.
 

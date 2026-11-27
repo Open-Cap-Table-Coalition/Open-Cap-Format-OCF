@@ -1,6 +1,6 @@
 ### Type - Numeric
 
-`https://raw.githubusercontent.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/main/schema/types/Numeric.schema.json`
+`https://schema.opencaptablecoalition.com/v/1.2.1-alpha.1/types/Numeric.schema.json`
 
 **Description:** _Fixed-point string representation of a number (up to 10 decimal places supported)_
 
