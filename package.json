@@ -15,6 +15,8 @@
     "schema:compose": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/ComposeSchemas.ts",
     "schema:gen-types": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GenerateTypes.ts",
     "build:ocf-types": "npm run schema:gen-types -- --out packages/ocf-types/index.d.ts",
+    "schema:gen-python-types": "node --loader ts-node/esm --no-warnings --experimental-json-modules ./utils/schema-utils/GeneratePythonTypes.ts",
+    "build:ocf-types-python": "npm run schema:gen-python-types -- --out packages/ocf-types-python/ocf_types/__init__.py",
     "test": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest",
     "test:watch": "node --experimental-vm-modules --experimental-json-modules --no-warnings node_modules/.bin/jest --watch"
   },

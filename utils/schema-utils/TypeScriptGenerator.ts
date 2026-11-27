@@ -121,13 +121,13 @@ const CATEGORY_HEADINGS: { [k in Category]: string } = {
 // Naming
 // ---------------------------------------------------------------------------
 
-function basenameFromId(id: string): string {
+export function basenameFromId(id: string): string {
   const last = id.split("/").pop() ?? id;
   return last.replace(/\.schema\.json$/, "");
 }
 
 /** The `$id` path segment that places a schema in a /schema partition. */
-function categoryFromId(id: string): Category {
+export function categoryFromId(id: string): Category {
   const marker = "/schema/";
   const idx = id.indexOf(marker);
   const tail = idx >= 0 ? id.slice(idx + marker.length) : id;
@@ -167,7 +167,7 @@ function discriminantLiterals(
   return [];
 }
 
-function toPascalCase(value: string): string {
+export function toPascalCase(value: string): string {
   const cleaned = value
     .replace(/[^A-Za-z0-9]+(.)?/g, (_m, c) => (c ? c.toUpperCase() : ""))
     .replace(/[^A-Za-z0-9]/g, "");
@@ -185,7 +185,7 @@ function toPascalCase(value: string): string {
  * begins with the prefix is not double-prefixed (e.g. `OCFManifestFile` ->
  * `OCFManifestFile`, not `OCFOCFManifestFile`).
  */
-function assignTypeNames(
+export function assignTypeNames(
   schemas: RawSchemaJson[],
   prefix: string
 ): Map<string, string> {
