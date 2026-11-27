@@ -38,10 +38,25 @@ A maintainer with a PyPI account does this once:
 Until step 3, the workflow builds the package and attaches it to the Release, and skips the upload
 to PyPI.
 
+## Publish types for an existing OCF tag
+
+After the workflow is merged, choose **Actions → Release OCF Python Types → Run workflow**. Select
+`main` as the branch and enter the existing tag (for example, `v1.2.0`) in `release_tag`. From the
+command line, the equivalent is:
+
+```sh
+gh workflow run release-ocf-types-python.yml --ref main -f release_tag=v1.2.0
+```
+
+The run uses the generator and packaging code from the selected `main` commit and replaces its
+entire `schema/` tree with the one from the tag. For `v1.2.0`, it builds `ocf-types` version
+`1.2.0`, attaches the distributions to that tag’s GitHub Release, and publishes to PyPI when
+publishing is enabled. The existing OCF tag stays on its original commit.
+
 ## Check a release before tagging
 
-Run the workflow manually from the **Actions** tab. A manual run builds the package as version
-`0.0.0`, uploads it as the `ocf-types-python` workflow artifact, and publishes nothing.
+Run the workflow manually from the **Actions** tab with `release_tag` blank. This builds the package
+as version `0.0.0`, uploads it as the `ocf-types-python` workflow artifact, and publishes nothing.
 
 To build it locally:
 
