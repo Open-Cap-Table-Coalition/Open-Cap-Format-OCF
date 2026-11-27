@@ -51,6 +51,11 @@ gh variable set PUBLISH_TYPESCRIPT_TYPES --body true
 On the next eligible run, the workflow stages the same tarball with OIDC and provenance. A
 maintainer approves the staged version on npm.
 
+If **Stage the tarball on npm** runs and npm returns `E401`, the flag has already enabled the job.
+For a first release, use the maintainer bootstrap above. For an existing package, check its npm
+trusted-publisher repository, workflow filename, environment, and staging permission before retrying
+the failed job. The tarball from the successful pack job is still available.
+
 Stable tag pushes use the npm dist-tag `latest`, unless the tag is older than the current npm
 `latest` (a backport), which uses `historical`. Prerelease tags use `next`. For older stable
 releases, run from `main` with `release_tag` and leave `historical_dist_tag` at its default,
