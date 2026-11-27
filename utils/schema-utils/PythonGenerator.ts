@@ -533,6 +533,15 @@ export function generatePython(
         nameOf(a).localeCompare(nameOf(b))
     );
 
+  // Every OCF release keeps its schemas in these folders. A schema outside them
+  // is never taken for a primitive, so nothing built from it gets an
+  // Any<Primitive> union: the module would be generated, and be incomplete.
+  for (const id of inOrder.filter((one) => sectionOf(one) === "other")) {
+    warnings.push(
+      `Not under enums/, primitives/, types/, objects/ or files/ -> "Other", never a primitive: ${id}`
+    );
+  }
+
   const written: string[] = [];
   const state = new Map<string, "writing" | "written">();
   const write = (id: string): void => {

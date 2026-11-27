@@ -256,6 +256,29 @@ describe("generatePython", () => {
     expect(source).not.toMatch(/AnyObject = .*GrantV1/);
   });
 
+  it("generates the same module from hosted release schema IDs", () => {
+    // A tagged release identifies its schemas by the hosted URL, with no /schema/ in it.
+    const hosted = JSON.parse(
+      JSON.stringify(ALL)
+        .split(BASE)
+        .join("https://schema.opencaptablecoalition.com/v/1.2.0")
+    ) as RawSchemaJson[];
+    const fromRelease = generatePython(hosted);
+    expect(fromRelease.source).toBe(generatePython(ALL).source);
+    expect(fromRelease.source).toContain("AnyTransfer = StockTransfer");
+    expect(fromRelease.warnings).toEqual([]);
+  });
+
+  it("warns about a schema it cannot place, since it would miss a primitive", () => {
+    const elsewhere = JSON.parse(
+      JSON.stringify(ALL).split(BASE).join("https://example.com/ocf")
+    ) as RawSchemaJson[];
+    const { source, warnings } = generatePython(elsewhere);
+    expect(source).not.toContain("AnyTransfer");
+    expect(warnings).toHaveLength(ALL.length);
+    expect(warnings[0]).toContain("never a primitive");
+  });
+
   it("writes descriptions as docstrings, and omits them on request", () => {
     expect(classBody(source, "StockTransfer")).toContain(
       '"""A stock transfer"""'

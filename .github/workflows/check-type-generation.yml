@@ -74,20 +74,10 @@ jobs:
           mkdir "$RUNNER_TEMP/consumer"
           cp -r packages/ocf-types-python/tests packages/ocf-types-python/pyproject.toml "$RUNNER_TEMP/consumer/"
 
-      - name: Check TypedDict metadata in the installed module
+      # The release workflow runs the same script on the package it is about to publish.
+      - name: Check the installed module
         working-directory: ${{ runner.temp }}/consumer
-        run: |
-          python - <<'PYTHON'
-          from typing import get_type_hints
-          from typing_extensions import NotRequired
-          from ocf_types import Date, Issuance, Object, StockTransfer
-
-          assert "balance_security_id" in StockTransfer.__optional_keys__
-          assert "balance_security_id" not in StockTransfer.__required_keys__
-          assert "object_type" in Object.__readonly_keys__
-          hints = get_type_hints(Issuance, include_extras=True)
-          assert hints["board_approval_date"] == NotRequired[Date]
-          PYTHON
+        run: python "$GITHUB_WORKSPACE/.github/scripts/check-ocf-types-python.py"
 
       # tests/uses.py must pass. tests/mistakes.py marks each mistake with an
       # ignore comment, and an ignore that is not needed is an error, so this
