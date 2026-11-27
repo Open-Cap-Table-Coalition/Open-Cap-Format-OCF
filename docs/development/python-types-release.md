@@ -53,6 +53,33 @@ entire `schema/` tree with the one from the tag. For `v1.2.0`, it builds `ocf-ty
 `1.2.0`, attaches the distributions to that tag’s GitHub Release, and publishes to PyPI when
 publishing is enabled. The existing OCF tag stays on its original commit.
 
+## Replace a faulty release
+
+PyPI never accepts a second upload of a version, even after the first is deleted. To replace the
+files of a release, publish a post-release: the same OCF version with `.post1` added.
+
+```sh
+gh workflow run release-ocf-types-python.yml --ref main -f release_tag=v1.2.0 -f post_release=1
+```
+
+This builds `ocf-types` version `1.2.0.post1` from the schemas at `v1.2.0`, attaches it to that
+tag's GitHub Release, and publishes it. Use `2` if `.post1` also has to be replaced. Then remove the
+faulty files, which the workflow leaves in place:
+
+1.  On PyPI, open the faulty version under **Manage → Releases** and yank it.
+    `pip install ocf-types` and a range such as `ocf-types>=1.2.0` then choose the post-release.
+    `ocf-types==1.2.0` still installs the yanked files, with a warning. `ocf-types==1.2.0.*` matches
+    the post-release.
+2.  Delete the faulty files from the GitHub Release:
+
+    ```sh
+    gh release delete-asset v1.2.0 ocf_types-1.2.0-py3-none-any.whl
+    gh release delete-asset v1.2.0 ocf_types-1.2.0.tar.gz
+    ```
+
+`ocf-types` 1.2.0 itself needs this. It was built before the generator recognized the schema IDs
+that tagged releases use, so it has no `Any<Primitive>` unions such as `AnyTransfer`.
+
 ## Check a release before tagging
 
 Run the workflow manually from the **Actions** tab with `release_tag` blank. This builds the package
@@ -68,3 +95,11 @@ python -m build packages/ocf-types-python
 
 Every pull request also runs `check-type-generation.yml`. That job generates the module, installs
 the built package, and type-checks `packages/ocf-types-python/tests` with pyright and mypy.
+
+Both that job and the release workflow run `.github/scripts/check-ocf-types-python.py` on the
+installed package. It imports the module and checks that objects are built from their primitives and
+that the `Any<Primitive>` unions exist. The release workflow runs it before it uploads anything, so
+a module that was generated but is incomplete stops the release. The script reads only names every
+OCF release has had since `v1.0.0`. The type-checked tests are written for the current schemas and
+fail for `v1.0.0`, which has no `EquityCompensationIssuance`, so the release workflow does not run
+them.
