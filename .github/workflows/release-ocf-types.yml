@@ -88,11 +88,13 @@ jobs:
           RELEASE_TAG: ${{ steps.release.outputs.tag }}
           GH_TOKEN: ${{ github.token }}
         working-directory: packages/ocf-types
+        # The Python release workflow runs on the same tag; whichever creates
+        # the Release first wins, and the other falls through to uploading.
         run: |
-          gh release upload "$RELEASE_TAG" ./*.tgz --clobber \
-            || gh release create "$RELEASE_TAG" --verify-tag ./*.tgz \
-                 --title "$RELEASE_TAG" \
-                 --notes "OCF TypeScript types for $RELEASE_TAG."
+          gh release create "$RELEASE_TAG" --verify-tag \
+            --title "$RELEASE_TAG" --notes "OCF TypeScript types for $RELEASE_TAG." \
+            || gh release view "$RELEASE_TAG" >/dev/null
+          gh release upload "$RELEASE_TAG" ./*.tgz --clobber
 
   stage:
     name: Stage the tarball on npm
@@ -120,4 +122,11 @@ jobs:
         run: |
           tag="$STABLE_DIST_TAG"
           if [[ "$RELEASE_TAG" == *-* ]]; then tag=next; fi
+          # A pushed backport tag below the current npm latest must not replace it.
+          if [[ "$GITHUB_EVENT_NAME" == push && "$tag" == latest ]]; then
+            current=$(npm view @open-captable/ocf-types dist-tags.latest 2>/dev/null || true)
+            if [[ -n "$current" && "$(printf '%s\n' "$current" "${RELEASE_TAG#v}" | sort -V | tail -n1)" != "${RELEASE_TAG#v}" ]]; then
+              tag=historical
+            fi
+          fi
           npm stage publish ./open-captable-ocf-types-*.tgz --access public --provenance --tag "$tag"

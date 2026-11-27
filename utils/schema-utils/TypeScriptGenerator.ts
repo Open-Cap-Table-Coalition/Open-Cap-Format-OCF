@@ -32,6 +32,7 @@
  * Framework-free: plain schema JSON in, a TypeScript source string out.
  */
 
+import { release_url } from "./Constants.js";
 import { sourceNotices } from "./SchemaSourceNotices.js";
 import {
   applyExperimentalMode,
@@ -131,14 +132,13 @@ export function basenameFromId(id: string): string {
 export function categoryFromId(id: string): Category {
   const marker = "/schema/";
   const idx = id.indexOf(marker);
-  // Tagged releases use the Coalition's hosted /v/<version>/<partition>/ IDs.
+  // Tagged releases use the hosted `${release_url}/<version>/<partition>/` IDs.
   const tail =
     idx >= 0
       ? id.slice(idx + marker.length)
-      : id.replace(
-          /^https:\/\/schema\.opencaptablecoalition\.com\/v\/[^/]+\//,
-          ""
-        );
+      : id.startsWith(`${release_url}/`)
+      ? id.slice(release_url.length + 1).replace(/^[^/]+\//, "")
+      : id;
   const segment = tail.split("/")[0];
   return (CATEGORY_ORDER as readonly string[]).includes(segment)
     ? (segment as Category)

@@ -1,4 +1,5 @@
 import type { RawSchemaJson } from "./SchemaComposer.js";
+import { basenameFromId } from "./TypeScriptGenerator.js";
 
 /** Read source notices from the original schema collection, before dispatchers
  *  are collapsed and the version files lose their individual identities. */
@@ -14,7 +15,9 @@ export function sourceNotices(
       .match(/^(Copyright [^\r\n]+) \/ Original File: (\S+)$/);
     if (!attribution) continue;
     const [, notice, url] = attribution;
-    const title = (schema.title ?? schema.$id).replace(/\s+/g, " ").trim();
+    const title = (schema.title ?? basenameFromId(schema.$id))
+      .replace(/\s+/g, " ")
+      .trim();
     const entries = groups.get(notice) ?? [];
     entries.push(`${prefix} ${title}\n${prefix}   ${url}`);
     groups.set(notice, entries);

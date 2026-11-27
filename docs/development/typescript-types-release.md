@@ -36,7 +36,8 @@ Configure the package's npm trusted publisher for GitHub repository
 Actions variable `PUBLISH_TYPESCRIPT_TYPES` to `true`. The workflow stages the same tarball with
 OIDC and provenance. A maintainer approves the staged version on npm.
 
-Stable tag pushes use the npm dist-tag `latest`, and prerelease tags use `next`. For older stable
+Stable tag pushes use the npm dist-tag `latest`, unless the tag is older than the current npm
+`latest` (a backport), which uses `historical`. Prerelease tags use `next`. For older stable
 releases, run from `main` with `release_tag` and leave `historical_dist_tag` at its default,
 `historical`, to preserve the current `latest`. The first-release example explicitly selects
 `latest` so a plain install resolves to 1.2.0.
