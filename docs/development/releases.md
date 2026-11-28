@@ -21,7 +21,9 @@ snapshot used by both types packages. The authoring CLI has its own version and 
    resulting commit. See the [schema release preparation checklist][schema-checklist].
 2. Tag that **release commit** and push the individual tag. For example, with `tag` set to the new
    tag name and `release_commit` set to the reviewed SHA, run `git tag "$tag" "$release_commit"`
-   followed by `git push origin "refs/tags/$tag"`. The two types workflows build from that tag.
+   followed by `git push origin "refs/tags/$tag"`. The two types workflows build from that tag. A
+   tag with a hyphen, such as `v1.3.0-b1`, is a pre-release: its GitHub Release is marked as a
+   pre-release, npm files it under `next`, and PyPI lists it as `1.3.0b1`.
 3. Upload the contents of the tagged `schema/` directory to the schema host under `/v/<version>/`,
    preserving the directory layout. Verify that `files/OCFManifestFile.schema.json` at that URL
    resolves and declares the released version. This upload is a manual release step.
